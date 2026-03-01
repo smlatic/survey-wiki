@@ -1,0 +1,294 @@
+---
+title: Sound Velocity Operations
+category: calibration
+tags: [sound velocity, svp, ctd, calibration, deployment, chen millero, del grosso, caspian sea, valeport, seabird, saiv, mbes, usbl, lbl]
+equipment: [Valeport SVX2, Valeport Midas SVP, Valeport Midas CTD, Valeport miniSVS, Seabird SBE25, Seabird SBE19plus, Seabird SBE9plus, SAIV SD204]
+date_added: 2026-03-01
+source_type: converted_procedure
+---
+
+# :material-thermometer-water: Sound Velocity Operations
+
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-cog-outline: <strong>Operations Guide</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
+
+!!! abstract "Purpose"
+    Detail the requirements for calibration, installation, deployment, and processing of sound velocity measurement equipment so that accurate sound velocity profiles are produced for use in acoustic survey operations including MBES, USBL, LBL, and SBES systems.
+
+---
+
+## :material-information-outline: SVP vs CTD Measurement Methods
+
+The speed of sound converts acoustic travel time to distance across all acoustic systems (LBL, USBL, MBES, SBES/altimeters).
+
+| Method | Measurement Principle | Outputs |
+|--------|----------------------|---------|
+| **SVP (Sound Velocity Profiler)** | Digital time-of-flight measurement | Direct sound velocity |
+| **CTD (Conductivity, Temperature, Depth)** | Measures conductivity, pressure, and temperature; sound velocity is calculated from these using formulae | Sound velocity, salinity, density, depth |
+
+**Advantage of CTD**: density (a function of salinity, temperature, depth, and local gravity) can be calculated for pressure-to-depth conversion.
+
+Both CTD and SVP systems may be:
+
+- **Direct reading** -- data outputs in real time on a display
+- **Self-recording** -- data is recorded internally during deployment and downloaded later. Can be pre-programmed with SV formulae, recording intervals, and trigger source for faster deployment/recovery.
+
+---
+
+## :material-target: Equipment Accuracy Comparison
+
+| Manufacturer | Model | Sound Velocity | Conductivity | Pressure | Temperature |
+|-------------|-------|---------------|--------------|----------|-------------|
+| Valeport | SVX2 | +/-0.03 m/s | +/-0.01 mS/cm | +/-0.01% range | +/-0.01 degC |
+| Valeport | Midas SVP | +/-0.02 m/s | N/A | +/-0.01% range | +/-0.01 degC |
+| Valeport | Midas CTD | N/A | +/-0.01 mS/cm | +/-0.01% range | +/-0.01 degC |
+| Valeport | miniSVS 100 mm | +/-0.017 m/s | N/A | Optional +/-0.05% range | Optional +/-0.01 degC |
+| Valeport | miniSVS 50 mm | +/-0.019 m/s | N/A | Optional +/-0.05% range | Optional +/-0.01 degC |
+| Valeport | miniSVS 25 mm | +/-0.02 m/s | N/A | Optional +/-0.05% range | Optional +/-0.01 degC |
+| Seabird | SBE25 | N/A | +/-0.0003 S/m | +/-0.1% range | +/-0.002 degC |
+| Seabird | SBE19plus | N/A | +/-0.0005 S/m | +/-0.1% range (strain gauge) or +/-0.02% range (quartz) | +/-0.005 degC |
+| Seabird | SBE9plus | N/A | +/-0.0003 S/m | +/-0.015% range | +/-0.001 degC |
+| SAIV | SD204 | Calc 0.05 m/s | 0.02 mS/cm | 0.01% FS | 0.01 degC |
+
+!!! note "miniSVS variants"
+    Optional pressure or temperature sensor may be fitted, but not both simultaneously.
+
+---
+
+## :material-certificate-outline: Calibration Validity Periods
+
+Sound velocity sensors require calibration by the manufacturer or a certified test laboratory against a traceable standard.
+
+| Sensor Type | Calibration Validity |
+|-------------|---------------------|
+| SV probes (SVP) | 2 years |
+| CTD probes | 1 year |
+| Combined CTD/SVP probes | 2 years, provided CTD-derived and directly measured SV agree within instrument and formula accuracy for the water type/depth |
+
+!!! info "Maintaining Validity"
+    - Instruments must be maintained per manufacturer's instructions
+    - Regularly test against other calibrated units as confirmation
+    - If a calibration certificate may expire during a project, arrange a replacement before the expiry date
+    - If operational replacement is not feasible, the client may agree to continue use if the instrument tests successfully against a certified sensor
+
+---
+
+## :material-arrow-down-bold-circle-outline: Deployment Procedures
+
+### Manual Deployment
+
+| Step | Action |
+|------|--------|
+| 1 | Attach a safety line / deck lead to the probe -- do not deploy using only the data cable |
+| 2 | Confirm the water depth at the deployment location |
+| 3 | Obtain permission from the bridge before over-boarding |
+| 4 | Over-board the probe and hold near the surface for **10 minutes** while the instrument acquires ambient water temperature. Record barometric pressure in the logbook |
+| 5 | Lower the probe steadily to the seabed, then recover |
+| 6 | On recovery, check sensors for fouling. If fouled, repeat the measurement. If fouling cannot be avoided, use only the down cast |
+| 7 | Rinse the instrument with fresh water on recovery |
+| 8 | Inform the bridge when the operation is complete |
+
+!!! tip "Cable Management"
+    Unless on a reel, lay the cable out in a figure-of-eight pattern before deployment.
+
+### Downline Deployment
+
+- Connect the probe above any clump weight or headache ball
+- If direct reading, secure the communications cable to the downline at ~5 m intervals to prevent wrapping
+- Follow the same 10-minute surface soak, steady lowering, fouling check, and fresh-water rinse procedures as manual deployment
+
+### ROV Deployment
+
+- Function-check and set up the instrument before launch; enable logging and record barometric pressure
+- After launch, hold the ROV near the surface while the instrument acquires ambient temperature; monitor until temperature stabilises before continuing descent
+- Once the TMS is at depth, the ROV exits the TMS to reach the seabed. Alternatively, with ROV supervisor permission, the TMS can be lowered to the seabed while the ROV remains inside (monitor via ROV altimeter)
+
+!!! info "TMS Depth Gap"
+    Installing the SVP/CTD on the ROV TMS is a second choice to installation on the vehicle itself and should only be considered when insufficient cores are available on the ROV. The gap between TMS depth and ROV operating depth must be accounted for.
+
+- Unless the dive is specifically for obtaining an SVP, logging may be paused during operations but continuous SV monitoring by the online surveyor is recommended
+- Re-enable logging before recovery to obtain an up cast
+- Rinse the instrument with fresh water once on deck
+
+---
+
+## :material-clock-outline: Measurement Frequency Requirements
+
+| Occasion | Requirement |
+|----------|-------------|
+| Prior to USBL calibration or integrity check | Required |
+| Start of a new project | Required |
+| Before and after LBL baseline / box-in measurements | Required (cast need only cover transponder depth range) |
+| During LBL operations | Generally daily; may extend to weekly if water column is known to be stable |
+| During USBL operations | Generally weekly; may extend to monthly if water column is known to be stable |
+| During MBES operations | Generally daily; depends on operational conditions |
+| Prior to position-critical operations (e.g. structure installation) | Required |
+| Significant depth change (>200 m) | Required |
+| Significant location change | Required |
+| Weather change (e.g. storm mixing top layers, altering/removing thermocline) | Required |
+| Thermocline shift (e.g. prolonged warm stable weather lowering thermocline) | Required |
+
+### Factors Affecting SV Measurement Timing
+
+Consider the following when deciding whether to take a new cast:
+
+- Task being carried out
+- Date and location of the previous cast
+- Change in depth
+- Proximity to river mouths or currents
+- Significant tidal changes
+- Recent weather events
+
+---
+
+## :material-function-variant: Sound Velocity Formulae
+
+### Formula Selection
+
+| Depth Range | Recommended Formula |
+|-------------|-------------------|
+| Less than 1000 m | Chen & Millero (1977) or Del Grosso (1974) |
+| Greater than 1000 m | Del Grosso (1974) |
+
+**Chen & Millero** -- C.T. Chen and F.J. Millero (1977), "Speed of sound in seawater at high pressures", Journal of the Acoustic Society of America 62(5):1129-1135
+
+**Del Grosso** -- V.A. Del Grosso (1974), "New Equation for the Speed of Sound in Natural Waters (with Comparisons to Other Equations)", J. Acoust. Soc. Am., 56(4), pp 1084-1091
+
+### Setup Recommendations
+
+- Synchronise instrument time with project time
+- Record **pressure** (not depth) -- depth is calculated during processing
+- Use SI units (metres, dbar, mS/cm); convert to imperial only after processing if required by the client
+- Set the pressure tare before deploying the instrument or launching the ROV; record the tare value in the logbook
+- Enter the correct latitude for the local gravity model (if available)
+- Record atmospheric pressure in the logbook
+- If self-logging, set the probe to record on pressure changes of 1 dbar
+- Enable recording for both up and down casts
+
+---
+
+## :material-earth: Special Cases: Lakes, Caspian Sea, and Closed Water Bodies
+
+### Lakes (Baikal, Tanganyika, Malawi)
+
+These lakes have a salt composition effectively proportional to Standard Seawater diluted to the same salinity. The standard equations for salinity, density, and sound velocity are valid.
+
+### Caspian Sea
+
+The Caspian Sea has a different composition of salts, causing erroneous calculated values.
+
+**Correction method:**
+
+1. Determine salinity using the standard equation
+2. **Add 1.4 ppt** to the salinity value
+3. Calculate density and sound velocity using the standard equations with the adjusted salinity
+
+### Unknown Closed Water Bodies
+
+For bodies of water with no documented evidence of salt composition, sound velocity must be determined by SVP. Simultaneous CTD measurements should also be taken to form profile pairs.
+
+**Least-squares comparison method:**
+
+1. Obtain as many combined CTD/SVP profile pairs as feasible (minimum 5, preferably 20) scattered across the area of interest
+2. For each profile pair:
+    - Calculate salinity using the standard equations
+    - Incrementally add or subtract 0.1 ppt to the calculated salinity
+    - Recalculate sound velocity using the adjusted salinity
+    - Determine residuals between measured (SVP) and calculated (CTD-derived) sound velocity at each depth
+    - Calculate the sum of squared residuals
+    - Continue for at least 5 increments past the point where the sum of squares is minimised
+    - The correction for that profile pair is the increment/decrement at the minimum sum of squares
+3. Use the mean correction across all profile pairs to adjust calculated salinity for density calculations
+
+---
+
+## :material-cog-transfer-outline: Processing Steps
+
+Processing shall be performed in SI units. If non-SI units are required, convert only after processing is complete.
+
+| Step | Action |
+|------|--------|
+| 1 | Download and import data into the processing spreadsheet or software |
+| 2 | Check that data covers the full water column |
+| 3 | Separate into down and up casts (if applicable) |
+| 4 | Check for pressure tare; apply correction if required |
+| 5 | **If CTD**: calculate salinity using temperature, conductivity, and pressure (not depth) |
+| 6 | **If CTD**: calculate density using temperature, conductivity, and pressure (not depth) |
+| 7 | Calculate depths from pressure |
+| 8 | **If CTD**: calculate sound velocity using temperature, conductivity, and pressure (not depth) |
+| 9 | Sort data into ascending depth order |
+| 10 | Prepare graphs and perform comparison checks (compare down vs up cast, compare against second instrument or recent nearby profile) |
+| 11 | Save data in the correct format for the target software/instrumentation |
+
+!!! warning "Mean Velocity"
+    Where the mean velocity is required, report the **harmonic mean** (not arithmetic mean).
+
+### Comparison Requirements
+
+Every velocity profile must be checked against an alternative source:
+
+- A second probe
+- A recently obtained profile from another vessel in the same area
+
+Profiles should be carried out at the **deepest location** of the work site to avoid the need for interpolation.
+
+---
+
+## :material-file-export-outline: Output File Formats
+
+### Sonardyne Fusion Systems
+
+ASCII text files with `.pro` extension. Five lines of header text followed by two tab-separated columns (depth and velocity):
+
+```
+0
+0
+0
+0
+SV Dip description
+2.0  1516.35
+3.0  1516.32
+4.0  1516.36
+```
+
+### Kongsberg HiPAP / APOS Systems
+
+ASCII text files with `.usr` extension. One line of header text followed by two comma-separated columns (depth and velocity):
+
+```
+SV Dip description,
+2.0,1516.35
+3.0,1516.32
+4.0,1516.36
+```
+
+### Navigation Software
+
+Typically ASCII text format. Some systems require depths as negative values and data sorted in ascending depth order with no repeated depths. Refer to the specific software documentation.
+
+---
+
+!!! success "Quality Checks"
+    - [x] Calibration certificate valid for the project duration
+    - [x] Instrument function-tested (wet test during mobilisation where possible)
+    - [x] Pressure tare set and recorded before deployment
+    - [x] 10-minute surface soak completed before profiling
+    - [x] Full water column coverage achieved
+    - [x] Down and up casts separated and compared
+    - [x] Profile compared against a second source (spare instrument or recent nearby cast)
+    - [x] Correct formula selected (Chen & Millero or Del Grosso based on depth)
+    - [x] Data saved in correct format for each target system
+    - [x] Sensors checked for fouling on recovery
+
+---
+
+!!! quote "References"
+    - Chen C.T., Millero F.J. (1977) -- Speed of sound in seawater at high pressures. J. Acoust. Soc. Am. 62(5):1129-1135
+    - Del Grosso V.A. (1974) -- New Equation for the Speed of Sound in Natural Waters. J. Acoust. Soc. Am. 56(4):1084-1091
+    - Fofonoff N.P. and Millard R.C. Jr. (1983) -- Algorithms for computation of fundamental properties of seawater. UNESCO Technical Papers in Marine Science No. 44
+    - Leroy C.C. and Parthiot F. (1998) -- Depth-pressure relationship in the oceans and seas. J. Acoust. Soc. Am. 103(3):1346-1352
+    - Millero F.J. (2000) -- The equation of state of lakes. Aquatic Geochemistry 6(1):1-17
+    - Equipment manufacturer documentation (Valeport, Seabird, SAIV, Kongsberg, Sonardyne)

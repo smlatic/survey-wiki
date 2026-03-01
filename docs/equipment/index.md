@@ -13,6 +13,19 @@ Organized by equipment family. Includes specs, configuration notes, and common i
 
 <div class="grid cards" markdown>
 
+-   :material-navigation-variant: **INS / Inertial Navigation**
+
+    ---
+
+    - [INS Theory & Principles](ins-theory-and-principles.md)
+
+-   :material-waves: **Multibeam**
+
+    ---
+
+    - [MBES Installation & Setup](mbes-installation-and-setup.md)
+    - [MBES Operations & Settings](mbes-operations-and-settings.md)
+
 -   :material-pipe: **Pipeline Tracking**
 
     ---

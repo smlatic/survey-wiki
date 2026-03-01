@@ -89,13 +89,18 @@ nav:
     - calibration/index.md
     - HiPAP USBL Calibration: calibration/hipap-usbl-calibration.md
     - HiPAP USBL Verification (Spin & Transit): calibration/hipap-hpr-verification.md
+    - USBL Theory & Error Budgets: calibration/usbl-theory-and-error-budgets.md
+    - USBL Calibration Data Processing: calibration/usbl-calibration-data-processing.md
     - MBES Calibration (Patch Test): calibration/mbes-calibration.md
     - AHRS Heading, Pitch & Roll Calibration: calibration/ahrs-calibration.md
     - Static AHRS Intersystem Check: calibration/static-ahrs-intersystem-check.md
-    - Dimensional Control Survey (Vessel): calibration/dimensional-control-survey.md
+    - Gyro Types & Calibration: calibration/gyro-types-and-calibration.md
+    - Dimensional Control Survey: calibration/dimensional-control-survey.md
     - Dimensional Control (Tape Measure): calibration/dimensional-control-tape-measure.md
+    - INS DVL Calibration Guide: calibration/ins-dvl-calibration-guide.md
     - SVP Repeatability Test: calibration/svp-repeatability-test.md
     - SV/CTD Comparison Verification: calibration/sv-ctd-comparison-verification.md
+    - Sound Velocity Operations: calibration/sound-velocity-operations.md
     - USBL Responder Latency Check: calibration/usbl-responder-latency-check.md
     - ROVINS/PHINS DVL Calibration: calibration/ixblue-ins-dvl-calibration.md
     - SPRINT-NAV DVL Verification: calibration/sprint-nav-dvl-verification.md
@@ -104,13 +109,21 @@ nav:
     - Surrogate Item Test (GMA1000): calibration/surrogate-item-test-gma1000.md
   - Positioning:
     - positioning/index.md
+    - GNSS Fundamentals: positioning/gnss-fundamentals.md
+    - GNSS Jamming & Spoofing: positioning/gnss-jamming-and-spoofing.md
+    - GNSS Accurate Height Check: positioning/gnss-accurate-height-check.md
     - Static GNSS Intersystem Check: positioning/static-gnss-intersystem-check.md
     - Dynamic GNSS Intersystem Check: positioning/dynamic-gnss-intersystem-check.md
     - Alongside DGNSS Integrity Check: positioning/dgnss-integrity-check.md
   - ROV Operations:
     - rov/index.md
+    - Subsea Metrology Overview: rov/metrology-overview.md
+    - Pipeline & Umbilical Survey Operations: rov/pipeline-survey-operations.md
   - Equipment:
     - equipment/index.md
+    - INS Theory & Principles: equipment/ins-theory-and-principles.md
+    - MBES Installation & Setup: equipment/mbes-installation-and-setup.md
+    - MBES Operations & Settings: equipment/mbes-operations-and-settings.md
     - Pipe Tracker (HydroPACT 440/660) Verification: equipment/pipetracker-hydropact-verification.md
     - Video Camera & DVR Verification: equipment/video-camera-dvr-verification.md
     - Voyis FDI Observer Pro 3 Verification: equipment/voyis-observer-pro3-verification.md

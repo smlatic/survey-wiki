@@ -22,31 +22,31 @@ Built from real-world offshore experience. All content is generic -- no company-
 
     Equipment calibration procedures for USBL, MBES, gyro, DVL, INS, and other survey sensors
 
-    [:octicons-arrow-right-24: 15 procedures](calibration/index.md)
+    [:octicons-arrow-right-24: 20 procedures](calibration/index.md)
 
 -   :material-satellite-variant:{ .lg .middle } **Positioning**
 
     ---
 
-    GNSS, USBL, and integrated positioning setup, operations, and QC procedures
+    GNSS fundamentals, integrity checks, intersystem comparisons, threat awareness, and height verification
 
-    [:octicons-arrow-right-24: 3 procedures](positioning/index.md)
+    [:octicons-arrow-right-24: 6 procedures](positioning/index.md)
 
 -   :material-robot-industrial:{ .lg .middle } **ROV Operations**
 
     ---
 
-    Survey integration with ROV systems, navigation, and metrology procedures
+    Subsea metrology, pipeline survey operations, navigation integration, and ROV-mounted sensors
 
-    [:octicons-arrow-right-24: Coming soon](rov/index.md)
+    [:octicons-arrow-right-24: 2 guides](rov/index.md)
 
 -   :material-cog:{ .lg .middle } **Equipment**
 
     ---
 
-    Equipment-specific setup, operation, and verification guides
+    INS, MBES, sonar, video, and pipeline tracking equipment guides
 
-    [:octicons-arrow-right-24: 4 guides](equipment/index.md)
+    [:octicons-arrow-right-24: 7 guides](equipment/index.md)
 
 -   :material-file-chart:{ .lg .middle } **Reporting**
 
