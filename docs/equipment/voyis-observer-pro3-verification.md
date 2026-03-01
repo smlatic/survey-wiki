@@ -7,27 +7,39 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Voyis FDI Observer Pro 3 Camera Array Verification
+# :material-camera: Voyis FDI Observer Pro 3 Camera Array Verification
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Equipment</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Verification</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Ensure the accuracy and functionality of the Voyis FDI (Fast Digital Imaging) system in providing high-quality underwater images along with precise position and timing metadata. The verification validates the system's ability to capture images with accurate positioning.
+!!! abstract "Purpose"
+    Ensure the accuracy and functionality of the Voyis FDI (Fast Digital Imaging) system in providing high-quality underwater images along with precise position and timing metadata. The verification validates the system's ability to capture images with accurate positioning.
 
-## Equipment Required
+---
 
-- Voyis Observer Pro 3 FDI system (three cameras)
-- ROV with navigation system
-- INS system (typically SPRINT INS with LNAV output at centre camera location)
-- Navigation/acquisition software (NaviPac or equivalent)
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| Voyis Observer Pro 3 FDI system (three cameras) | System under test |
+| ROV with navigation system | Deployment platform |
+| INS system (typically SPRINT INS with LNAV output at centre camera location) | Position and orientation reference |
+| Navigation/acquisition software (NaviPac or equivalent) | Data logging |
 
-- FDI system correctly mounted on the ROV
-- All cameras time-synchronised
-- Each camera interfaced with the ROV's navigation system for real-time position and timing data
-- Survey line planned (500 m length) over a suitable subsea feature
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - FDI system correctly mounted on the ROV
+    - All cameras time-synchronised
+    - Each camera interfaced with the ROV's navigation system for real-time position and timing data
+    - Survey line planned (500 m length) over a suitable subsea feature
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: System Setup
 
@@ -55,7 +67,9 @@ Navigate the ROV along the designated line while capturing images using all thre
 - Extract positions from metadata and tabulate across cameras and from opposite navigation lines
 - Positional accuracy of detected features must meet project requirements
 
-## Recommended Camera Settings
+---
+
+## :material-tune: Recommended Camera Settings
 
 | Parameter | Value |
 |---|---|
@@ -67,20 +81,22 @@ Navigate the ROV along the designated line while capturing images using all thre
 | Processed image format | JPEG |
 | Still Image Levelling | Realistic (recommended) |
 
-## Reporting
+---
 
-The verification results (included in the MAC report) must include:
+!!! note "Reporting"
+    The verification results (included in the MAC report) must include:
 
-- Introduction to the FDI system verification
-- Details of the FDI equipment
-- Sequence of events (test line setup, image capture, data logging)
-- Tabular and graphical representations of results showing position data alignment and image quality
-- Statistical analysis of position accuracy
+    - Introduction to the FDI system verification
+    - Details of the FDI equipment
+    - Sequence of events (test line setup, image capture, data logging)
+    - Tabular and graphical representations of results showing position data alignment and image quality
+    - Statistical analysis of position accuracy
 
-## Quality Checks
+---
 
-- Images clear with no significant artefacts
-- Position metadata consistent across all three cameras
-- Feature positions consistent between reciprocal line runs
-- Positional accuracy within project specifications
-- All cameras time-synchronised throughout the test
+!!! success "Quality Checks"
+    - [x] Images clear with no significant artefacts
+    - [x] Position metadata consistent across all three cameras
+    - [x] Feature positions consistent between reciprocal line runs
+    - [x] Positional accuracy within project specifications
+    - [x] All cameras time-synchronised throughout the test

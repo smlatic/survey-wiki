@@ -7,26 +7,38 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Static GNSS Intersystem Check
+# :material-satellite-variant: Static GNSS Intersystem Check
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Positioning</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Intersystem Check</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Ensure accuracy and consistency between primary and secondary GNSS positioning systems by performing a static intersystem comparison whilst the vessel is alongside. By comparing the outputs of these systems, discrepancies are identified and deviation between them is quantified.
+!!! abstract "Purpose"
+    Ensure accuracy and consistency between primary and secondary GNSS positioning systems by performing a static intersystem comparison whilst the vessel is alongside. By comparing the outputs of these systems, discrepancies are identified and deviation between them is quantified.
 
-## Equipment Required
+---
 
-- Primary GNSS positioning system
-- Secondary GNSS positioning system
-- Supporting heading and attitude system
-- Navigation/acquisition software (NaviPac or Qinsy) for data logging
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| Primary GNSS positioning system | Primary position source |
+| Secondary GNSS positioning system | Secondary position source for comparison |
+| Heading and attitude system | Supporting orientation reference |
+| Navigation/acquisition software (NaviPac or Qinsy) | Data logging |
 
-- Vessel alongside for project mobilisation
-- Correction service active with good signal continuity
-- No crane operations during logging to keep the vessel as static as possible
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Vessel alongside for project mobilisation
+    - Correction service active with good signal continuity
+    - No crane operations during logging to keep the vessel as static as possible
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Configure Logging
 
@@ -49,20 +61,22 @@ Set up the navigation software to log grid position of the vessel CRP using both
 
 Compare primary and secondary system outputs to quantify any deviations in easting, northing, and height.
 
-## Reporting
+---
 
-The verification report must include:
+!!! note "Reporting"
+    The verification report must include:
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
 
-Save as PDF with associated log files.
+    Save as PDF with associated log files.
 
-## Quality Checks
+---
 
-- Both systems should agree within their combined specification tolerances
-- No significant drift visible in the time-series data
-- Statistical analysis confirms consistency between systems
+!!! success "Quality Checks"
+    - [x] Both systems should agree within their combined specification tolerances
+    - [x] No significant drift visible in the time-series data
+    - [x] Statistical analysis confirms consistency between systems

@@ -7,27 +7,39 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Surrogate Item Test Using GMA1000 Gradiometer
+# :material-magnet-on: Surrogate Item Test Using GMA1000 Gradiometer
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Surrogate Item Test</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Evaluate the operational capabilities of the GMA1000 gradiometer by determining its effective altitude and horizontal range, noise tolerance, and target detection thresholds using a surrogate item test (SIT). A metal object is used as a stand-in for actual objects of interest to evaluate system performance.
+!!! abstract "Purpose"
+    Evaluate the operational capabilities of the GMA1000 gradiometer by determining its effective altitude and horizontal range, noise tolerance, and target detection thresholds using a surrogate item test (SIT). A metal object is used as a stand-in for actual objects of interest to evaluate system performance.
 
-## Equipment Required
+---
 
-- GMA1000 gradiometer system
-- ROV
-- Multibeam echosounder (MBES)
-- Surrogate metal targets
-- Navigation and acquisition software
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| GMA1000 gradiometer system | Magnetic gradient measurement |
+| ROV | Sensor deployment platform |
+| Multibeam echosounder (MBES) | Position verification |
+| Surrogate metal targets | Test objects for detection evaluation |
+| Navigation and acquisition software | Data acquisition and positioning |
 
-- Magnetically quiet area identified for testing
-- Marine Geologist available for area suitability confirmation and data quality review
-- MBES system operational for position verification
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Magnetically quiet area identified for testing
+    - Marine Geologist available for area suitability confirmation and data quality review
+    - MBES system operational for position verification
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Trial Area Selection
 
@@ -67,15 +79,17 @@ Based on the collected data, establish the operable limits of the system:
 - Noise level tolerances
 - Target detection thresholds
 
-## Reporting
+---
 
-Present the methodology and results in the MAC report for review and validation.
+!!! success "Quality Checks"
+    - [x] Trial area confirmed magnetically quiet by clearance survey
+    - [x] Surrogate targets separated by minimum 20 m
+    - [x] Target positions verified by MBES
+    - [x] Reciprocal lines show consistent target detection
+    - [x] Altitude limits and detection thresholds clearly determined
+    - [x] Data quality confirmed by Marine Geologist
 
-## Quality Checks
+---
 
-- Trial area confirmed magnetically quiet by clearance survey
-- Surrogate targets separated by minimum 20 m
-- Target positions verified by MBES
-- Reciprocal lines show consistent target detection
-- Altitude limits and detection thresholds clearly determined
-- Data quality confirmed by Marine Geologist
+!!! note "Reporting"
+    Present the methodology and results in the MAC report for review and validation.

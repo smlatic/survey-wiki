@@ -7,36 +7,50 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# MBES Calibration and Verification
+# :material-waves: MBES Calibration and Verification
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Calibration Procedure</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Ensure accurate and reliable MBES data acquisition by resolving residual misalignment between the multibeam echosounder, motion sensor, and gyro. The calibration addresses roll, pitch, heading offsets and position latency to enable correctly corrected bathymetric surfaces.
+!!! abstract "Purpose"
+    Ensure accurate and reliable MBES data acquisition by resolving residual misalignment between the multibeam echosounder, motion sensor, and gyro. The calibration addresses roll, pitch, heading offsets and position latency to enable correctly corrected bathymetric surfaces.
 
-## Equipment Required
+---
 
-- Multibeam echosounder system
-- Motion sensor (MRU/AHRS)
-- Gyrocompass
-- Sound velocity profiler
-- Navigation and acquisition software (NaviPac/Qinsy or equivalent)
-- Processing software for calibration analysis
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|-----------|------|
+| Multibeam echosounder system | Primary bathymetric sensor |
+| Motion sensor (MRU/AHRS) | Attitude measurement |
+| Gyrocompass | Heading reference |
+| Sound velocity profiler | Water column velocity measurement |
+| Navigation and acquisition software (NaviPac/Qinsy or equivalent) | Data acquisition |
+| Processing software for calibration analysis | Calibration computation |
 
-- Correct MBES position offsets from dimensional control survey entered in acquisition software
-- Current sound velocity profile loaded into navigation and acquisition software
-- Suitable calibration area identified (features, slopes, flat seabed as needed)
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Correct MBES position offsets from dimensional control survey entered in acquisition software
+    - Current sound velocity profile loaded into navigation and acquisition software
+    - Suitable calibration area identified (features, slopes, flat seabed as needed)
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: ROV Calibration Depth Considerations
 
-When calibrating MBES on an ROV:
-- Prefer shallower waters where ROV positioning is most accurate
-- At greater depths, compensate for reduced positioning accuracy by running calibration at higher altitude over a larger object
-- Longer lever arms help compensate for diminished ROV positioning accuracy
-- If using a survey ROV, run a recon line at high altitude first to ensure MBES coverage at survey lines and line turns
+!!! tip "ROV Calibration"
+    When calibrating MBES on an ROV:
+
+    - Prefer shallower waters where ROV positioning is most accurate
+    - At greater depths, compensate for reduced positioning accuracy by running calibration at higher altitude over a larger object
+    - Longer lever arms help compensate for diminished ROV positioning accuracy
+    - If using a survey ROV, run a recon line at high altitude first to ensure MBES coverage at survey lines and line turns
 
 ### Step 2: Pre-calibration Checks
 
@@ -79,27 +93,30 @@ For a dual-head MBES, a total of 7 lines shall be run. Ensure coverage over the 
 - Enter corrected values into both acquisition and processing software
 - Reprocess data with new values and verify
 
-## Reporting
+---
 
-The calibration report must include:
+!!! note "Reporting"
+    The calibration report must include:
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
 
-Save as PDF with associated log files.
+    Save as PDF with associated log files.
 
-## Quality Checks
+---
 
-- Corrected data shows consistent bathymetry across overlapping lines
-- Roll: no divergence between reciprocal lines in cross-section
-- Pitch: no along-track displacement between reciprocal lines on slopes
-- Heading: no cross-track offset between parallel lines over features
-- Latency: no along-track shift between different-speed lines
+!!! success "Quality Checks"
+    - [x] Corrected data shows consistent bathymetry across overlapping lines
+    - [x] Roll: no divergence between reciprocal lines in cross-section
+    - [x] Pitch: no along-track displacement between reciprocal lines on slopes
+    - [x] Heading: no cross-track offset between parallel lines over features
+    - [x] Latency: no along-track shift between different-speed lines
 
-## References
+---
 
-- IHO S-44 -- Standards for Hydrographic Surveys
-- Equipment manufacturer calibration guidelines
+!!! quote "References"
+    - IHO S-44 -- Standards for Hydrographic Surveys
+    - Equipment manufacturer calibration guidelines

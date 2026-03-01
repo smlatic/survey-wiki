@@ -7,28 +7,40 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Alongside DGNSS Integrity Check
+# :material-satellite-variant: Alongside DGNSS Integrity Check
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Positioning</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Integrity Check</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Verify the overall health and accuracy of DGNSS positioning systems by comparing logged DGNSS antenna positions against independently measured positions derived from total station observations. Often called an "antenna health check", this procedure uses an External Service Provider (ESP) to measure DGNSS system positions using land survey techniques.
+!!! abstract "Purpose"
+    Verify the overall health and accuracy of DGNSS positioning systems by comparing logged DGNSS antenna positions against independently measured positions derived from total station observations. Often called an "antenna health check", this procedure uses an External Service Provider (ESP) to measure DGNSS system positions using land survey techniques.
 
-## Equipment Required
+---
 
-- DGNSS positioning system(s)
-- Total station (operated by ESP)
-- Reflector prism for total station observations
-- Navigation/acquisition software (NaviPac or Qinsy) for data logging
-- Known control points on the quayside
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| DGNSS positioning system(s) | System under test |
+| Total station (operated by ESP) | Independent reference measurement |
+| Reflector prism | Target for total station observations |
+| Navigation/acquisition software (NaviPac or Qinsy) | Data logging |
+| Known control points on the quayside | Survey reference network |
 
-- Vessel alongside
-- ESP contracted and available
-- Known control points available or to be established on the quayside
-- All lifting operations suspended during the calibration period
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Vessel alongside
+    - ESP contracted and available
+    - Known control points available or to be established on the quayside
+    - All lifting operations suspended during the calibration period
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Establish Control Points
 
@@ -62,21 +74,23 @@ Set the navigation system to log output from all positioning systems at 1 second
 
 Compare the DGNSS positions to those derived from the total station observations to verify overall system health. The ESP procedure will guide the specific comparison methodology.
 
-## Reporting
+---
 
-The verification report must include:
+!!! note "Reporting"
+    The verification report must include:
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
 
-Save as PDF with associated log files.
+    Save as PDF with associated log files.
 
-## Quality Checks
+---
 
-- DGNSS positions should agree with total station-derived positions within expected system tolerances
-- PDOP and HDOP values within acceptable limits throughout the logging period
-- Solution status remains stable during observations
-- No crane operations or other interference during the test period
+!!! success "Quality Checks"
+    - [x] DGNSS positions should agree with total station-derived positions within expected system tolerances
+    - [x] PDOP and HDOP values within acceptable limits throughout the logging period
+    - [x] Solution status remains stable during observations
+    - [x] No crane operations or other interference during the test period

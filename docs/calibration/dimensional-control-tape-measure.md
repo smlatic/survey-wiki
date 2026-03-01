@@ -7,24 +7,40 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Dimensional Control Survey Using Tape Measure
+# :material-tape-measure: Dimensional Control Survey Using Tape Measure
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Procedure</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-A guide to using hand tools to conduct dimensional controls for survey systems when a total station is not available. Applicable for situations such as adding a new survey sensor to an ROV offshore where formal survey equipment is not on hand.
+---
 
-## Equipment Required
+!!! abstract "Purpose"
 
-- Measuring tape
-- Notebook for recording measurements
+    A guide to using hand tools to conduct dimensional controls for survey systems when a total station is not available. Applicable for situations such as adding a new survey sensor to an ROV offshore where formal survey equipment is not on hand.
 
-## Prerequisites
+---
 
-- Reference frame of the survey platform is defined (axes, origin)
-- Knowledge of the platform's sign conventions
-- Understanding that measurements over lengths less than 5 m can be accurate to within 0.1 metres using this method
+## :material-tools: Equipment Required
 
-## Procedure
+| Equipment | Role |
+|---|---|
+| Measuring tape | Taking physical measurements |
+| Notebook | Recording measurements |
+
+---
+
+!!! info "Prerequisites"
+
+    - Reference frame of the survey platform is defined (axes, origin)
+    - Knowledge of the platform's sign conventions
+    - Understanding that measurements over lengths less than 5 m can be accurate to within 0.1 metres using this method
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Preparation
 
@@ -50,19 +66,23 @@ Double-check all measurements to ensure accuracy. Take additional measurements i
 
 Send the measurements and any notes to the onshore project surveyor.
 
-## Reporting
+---
 
-The measurements must be documented in a test report including:
+!!! success "Quality Checks"
 
-- Introduction
-- Images
-- Tabular and graphical representations of results
+    - [x] All measurements taken at least twice for verification
+    - [x] Measurements align with the defined reference frame axes
+    - [x] Sign conventions correctly applied
+    - [x] Accuracy within 0.1 m for measurements under 5 m
 
-Save as PDF and append to the project-specific mobilisation report. Submit the report along with the source document and associated notes.
+---
 
-## Quality Checks
+!!! note "Reporting"
 
-- All measurements taken at least twice for verification
-- Measurements align with the defined reference frame axes
-- Sign conventions correctly applied
-- Accuracy within 0.1 m for measurements under 5 m
+    The measurements must be documented in a test report including:
+
+    - Introduction
+    - Images
+    - Tabular and graphical representations of results
+
+    Save as PDF and append to the project-specific mobilisation report. Submit the report along with the source document and associated notes.

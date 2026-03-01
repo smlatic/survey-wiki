@@ -7,27 +7,39 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# ROVINS/PHINS DVL Calibration
+# :material-navigation-variant: ROVINS/PHINS DVL Calibration
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>DVL Calibration</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Calibrate the Doppler Velocity Log (DVL) to the inertial navigation system (INS) reference frame on an ROV or ROTV. After INS alignment, a DVL calibration is performed according to the manufacturer's routine, and the INS processing software calculates the true misalignments of the DVL.
+!!! abstract "Purpose"
+    Calibrate the Doppler Velocity Log (DVL) to the inertial navigation system (INS) reference frame on an ROV or ROTV. After INS alignment, a DVL calibration is performed according to the manufacturer's routine, and the INS processing software calculates the true misalignments of the DVL.
 
-## Equipment Required
+---
 
-- ROVINS or PHINS INS system
-- Doppler Velocity Log (DVL)
-- ROV or ROTV
-- USBL aiding system
-- DelphINS processing software
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| ROVINS or PHINS INS system | Inertial navigation reference |
+| Doppler Velocity Log (DVL) | Velocity measurement sensor |
+| ROV or ROTV | Subsea vehicle platform |
+| USBL aiding system | Position aiding |
+| DelphINS processing software | Data processing and calibration |
 
-- Full alignment of the INS achieved (heading SD below 0.1 degrees and status reported as "Ready") before starting DVL calibration
-- USBL aiding system operational
-- Sufficient water depth and clear seabed for DVL bottom-track
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Full alignment of the INS achieved (heading SD below 0.1 degrees and status reported as "Ready") before starting DVL calibration
+    - USBL aiding system operational
+    - Sufficient water depth and clear seabed for DVL bottom-track
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Set Up Logging
 
@@ -51,7 +63,8 @@ Travel from Location A to a different location (Location B). The distance travel
 | 1000 | 2 km | - |
 | 2000 | 4 km | - |
 
-The distance must not be less than 1000 times the accuracy of the USBL aiding system.
+!!! warning
+    The distance must not be less than 1000 times the accuracy of the USBL aiding system.
 
 ### Step 5: Return to Location A
 
@@ -65,22 +78,25 @@ Process the logged INS data from the trip between Locations A and B using DelphI
 
 Verify the calibration performance on a separate part of the data or a different file (B-A return leg), as recommended by the manufacturer. Do not solely compare performance against the data used for calibration.
 
-## Reporting
+---
 
-Present the methodology and results in the MAC report, including:
+!!! success "Quality Checks"
+    - [x] Full INS alignment achieved before calibration (heading SD < 0.1 degrees)
+    - [x] Minimum travel distance requirements met for the operating depth
+    - [x] Calibration values verified on independent data (not the calibration dataset)
+    - [x] Any significant discrepancies from factory calibration values investigated
+    - [x] Factory calibration values take precedence unless proven otherwise
 
-- Calibration values calculated
-- Comparison with factory-derived alignment results
-- Any discrepancies identified and investigated
+---
 
-## Quality Checks
+!!! note "Reporting"
+    Present the methodology and results in the MAC report, including:
 
-- Full INS alignment achieved before calibration (heading SD < 0.1 degrees)
-- Minimum travel distance requirements met for the operating depth
-- Calibration values verified on independent data (not the calibration dataset)
-- Any significant discrepancies from factory calibration values investigated
-- Factory calibration values take precedence unless proven otherwise
+    - Calibration values calculated
+    - Comparison with factory-derived alignment results
+    - Any discrepancies identified and investigated
 
-## Notes
+---
 
-The manufacturer advises that calibration can be run over a long section of data with many turns if there is sufficient displacement between start and finish points. However, always verify on separate data.
+??? info "Notes"
+    The manufacturer advises that calibration can be run over a long section of data with many turns if there is sufficient displacement between start and finish points. However, always verify on separate data.

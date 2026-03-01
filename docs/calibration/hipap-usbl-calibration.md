@@ -7,32 +7,44 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# HiPAP USBL Calibration
+# :material-access-point: HiPAP USBL Calibration
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Calibration Procedure</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Perform an acoustic alignment of the HiPAP USBL transducer to the vessel's reference frame. The alignment determines the angular offsets between the heading/roll/pitch sensors and the HiPAP transducer, enabling the system to provide accurate subsea transponder positions at any water depth.
+!!! abstract "Purpose"
+    Perform an acoustic alignment of the HiPAP USBL transducer to the vessel's reference frame. The alignment determines the angular offsets between the heading/roll/pitch sensors and the HiPAP transducer, enabling the system to provide accurate subsea transponder positions at any water depth.
 
-After completion, the built-in transducer alignment function in APOS automatically calculates new installation parameters from the logged data. The function is found in Utility -> Transducer Alignment.
+    After completion, the built-in transducer alignment function in APOS automatically calculates new installation parameters from the logged data. The function is found in Utility -> Transducer Alignment.
 
-## Equipment Required
+---
 
-- Kongsberg HiPAP USBL system with APOS software
-- Motion sensor (MRU/AHRS)
-- Heading sensor (gyrocompass)
-- GNSS receiver with correction data (dGNSS/RTK/PPP)
-- Seabed transponder (180 deg beamwidth for shallow water, 30 deg for deep water)
-- Sound velocity profiler
-- ROV, sandbags, or acoustic release for transponder deployment (if required for depth)
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|-----------|------|
+| Kongsberg HiPAP USBL system with APOS software | Primary acoustic positioning system |
+| Motion sensor (MRU/AHRS) | Attitude measurement |
+| Heading sensor (gyrocompass) | Heading reference |
+| GNSS receiver with correction data (dGNSS/RTK/PPP) | Surface positioning |
+| Seabed transponder (180 deg beamwidth for shallow water, 30 deg for deep water) | Acoustic target |
+| Sound velocity profiler | Water column velocity measurement |
+| ROV, sandbags, or acoustic release for transponder deployment (if required for depth) | Transponder deployment |
 
-- Dimensional control or lever arm verification completed for the transducer and GNSS antenna location, gyro heading, and roll/pitch values
-- If multiple gyro/motion sensors are interfaced, select the highest accuracy sensors for the alignment
-- If multiple GNSS systems are available, use the one with the highest accuracy
-- GNSS must use correction data (dGNSS/RTK/PPP)
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Dimensional control or lever arm verification completed for the transducer and GNSS antenna location, gyro heading, and roll/pitch values
+    - If multiple gyro/motion sensors are interfaced, select the highest accuracy sensors for the alignment
+    - If multiple GNSS systems are available, use the one with the highest accuracy
+    - GNSS must use correction data (dGNSS/RTK/PPP)
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Select Alignment Area
 
@@ -117,33 +129,36 @@ The recommended pattern is four cardinal points and four headings on top of the 
 | 11 | Press PDF Report |
 | 12 | Repeat for the secondary transducer if present |
 
-## Reporting
+---
 
-The alignment utility produces a report consisting of an HTML text file and four JPG images:
+!!! note "Reporting"
+    The alignment utility produces a report consisting of an HTML text file and four JPG images:
 
-- `[transceiver]TdAlignReport.htm`
-- `[transceiver]Results.jpg`
-- `[transceiver]TdAlignVessel.jpg`
-- `[transceiver]TdAlignMeasTpPos.jpg`
-- `[transceiver]TdAlignCompTpPos.jpg`
+    - `[transceiver]TdAlignReport.htm`
+    - `[transceiver]Results.jpg`
+    - `[transceiver]TdAlignVessel.jpg`
+    - `[transceiver]TdAlignMeasTpPos.jpg`
+    - `[transceiver]TdAlignCompTpPos.jpg`
 
-Files are stored under `\APOS\Data\`.
+    Files are stored under `\APOS\Data\`.
 
-The report shall be complemented with:
+    The report shall be complemented with:
 
-- Name of responsible surveyor for the calibration
-- Details of supporting systems (GNSS and INS/AHRS), including configuration screenshots and offsets for each system
+    - Name of responsible surveyor for the calibration
+    - Details of supporting systems (GNSS and INS/AHRS), including configuration screenshots and offsets for each system
 
-Save the completed report as PDF with the full HTML library for review and archiving.
+    Save the completed report as PDF with the full HTML library for review and archiving.
 
-## Quality Checks
+---
 
-- Verify the calculated transducer inclination values are within expected range for the installation
-- Review the graphical plots for consistent position solutions across all cardinal points
-- Check that the standard deviation of the results is acceptable
-- Confirm the SVP used was recorded in the calibration area on the day of calibration
+!!! success "Quality Checks"
+    - [x] Verify the calculated transducer inclination values are within expected range for the installation
+    - [x] Review the graphical plots for consistent position solutions across all cardinal points
+    - [x] Check that the standard deviation of the results is acceptable
+    - [x] Confirm the SVP used was recorded in the calibration area on the day of calibration
 
-## References
+---
 
-- Kongsberg APOS Help files (Utility -> Transducer Alignment)
-- IMCA S 017 -- Guidelines for the use of USBL systems
+!!! quote "References"
+    - Kongsberg APOS Help files (Utility -> Transducer Alignment)
+    - IMCA S 017 -- Guidelines for the use of USBL systems

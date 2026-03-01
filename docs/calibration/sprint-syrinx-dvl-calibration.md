@@ -7,28 +7,40 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# SPRINT (Syrinx) DVL Calibration
+# :material-navigation-outline: SPRINT (Syrinx) DVL Calibration
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>DVL Calibration</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Calibrate the DVL alignment for SPRINT INS systems (typically with Syrinx DVL) when mounted on a new vehicle. After INS alignment, the DVL calibration is performed according to the manufacturer's routine, and the INS software calculates the true misalignments of the DVL.
+!!! abstract "Purpose"
+    Calibrate the DVL alignment for SPRINT INS systems (typically with Syrinx DVL) when mounted on a new vehicle. After INS alignment, the DVL calibration is performed according to the manufacturer's routine, and the INS software calculates the true misalignments of the DVL.
 
-## Equipment Required
+---
 
-- SPRINT INS system
-- Syrinx DVL (or equivalent)
-- ROV
-- USBL aiding system
-- Janus processing software
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| SPRINT INS system | Inertial navigation reference |
+| Syrinx DVL (or equivalent) | Velocity measurement sensor |
+| ROV | Subsea vehicle platform |
+| USBL aiding system | Position aiding |
+| Janus processing software | Data processing and calibration |
 
-- Full alignment of the SPRINT achieved (heading SD below 0.1 degrees and status reported as "System Ready")
-- USBL aiding system operational with good position quality
-- Current SVP loaded
-- Vessel must follow the ROV maintaining constant heading to minimise USBL error
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Full alignment of the SPRINT achieved (heading SD below 0.1 degrees and status reported as "System Ready")
+    - USBL aiding system operational with good position quality
+    - Current SVP loaded
+    - Vessel must follow the ROV maintaining constant heading to minimise USBL error
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Start and Align
 
@@ -54,7 +66,8 @@ Fly the ROV along an approximate linear path with the vessel following. Perform:
 - Heading changes of about 90 degrees (sideways movement maintained for a few minutes)
 - Random dynamic manoeuvres
 
-A total position change of about 800 m should be sufficient.
+!!! warning
+    A total position change of about 800 m should be sufficient.
 
 ### Step 6: End Calibration Log
 
@@ -64,14 +77,16 @@ When the calibration manoeuvres are completed, change the log file suffix back t
 
 Copy the relevant DVL calibration files and process them in Janus.
 
-## Reporting
+---
 
-Present the methodology and results in the MAC report.
+!!! success "Quality Checks"
+    - [x] Full INS alignment achieved before calibration (heading SD < 0.1 degrees)
+    - [x] Minimum 800 m total position change during manoeuvres
+    - [x] Vessel maintained constant heading while following ROV (to minimise USBL error)
+    - [x] Calibration values verified against manufacturer specifications
+    - [x] SVP loaded and current at time of calibration
 
-## Quality Checks
+---
 
-- Full INS alignment achieved before calibration (heading SD < 0.1 degrees)
-- Minimum 800 m total position change during manoeuvres
-- Vessel maintained constant heading while following ROV (to minimise USBL error)
-- Calibration values verified against manufacturer specifications
-- SVP loaded and current at time of calibration
+!!! note "Reporting"
+    Present the methodology and results in the MAC report.

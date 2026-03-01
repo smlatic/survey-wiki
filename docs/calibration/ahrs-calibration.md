@@ -7,38 +7,53 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# AHRS Heading, Pitch and Roll Calibration
+# :material-compass: AHRS Heading, Pitch and Roll Calibration
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Calibration Procedure</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Control the vessel's navigation heading and attitude systems and verify that all offsets are correctly implemented in the navigation software. By time-matching GNSS-derived attitude data against the vessel's gyros and motion sensors over a logging period, discrepancies and drift can be detected through graphical analysis.
+!!! abstract "Purpose"
+    Control the vessel's navigation heading and attitude systems and verify that all offsets are correctly implemented in the navigation software. By time-matching GNSS-derived attitude data against the vessel's gyros and motion sensors over a logging period, discrepancies and drift can be detected through graphical analysis.
 
-## Equipment Required
+---
 
-- Multi-antenna GNSS receiver (e.g., Javad Sigma with Quattro-G3D board) capable of heading, pitch, and roll determination
-- Minimum 4 GNSS antennas (marine-grade, L1/L2 GPS/GLONASS)
-- GNSS receiver management software (e.g., Javad TriVU-P)
-- Attitude Sensor Verification Software (ASVS) for C-O calculation using least squares method
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|-----------|------|
+| Multi-antenna GNSS receiver (e.g., Javad Sigma with Quattro-G3D board) capable of heading, pitch, and roll determination | GNSS attitude reference |
+| Minimum 4 GNSS antennas (marine-grade, L1/L2 GPS/GLONASS) | Satellite signal reception |
+| GNSS receiver management software (e.g., Javad TriVU-P) | Receiver configuration and monitoring |
+| Attitude Sensor Verification Software (ASVS) for C-O calculation using least squares method | Data processing and analysis |
 
-- GNSS antennas surveyed into the vessel's local grid
-- Antenna separation selected to avoid multipath while maximising accuracy
-- All vessel heading and attitude systems powered on and fully aligned
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - GNSS antennas surveyed into the vessel's local grid
+    - Antenna separation selected to avoid multipath while maximising accuracy
+    - All vessel heading and attitude systems powered on and fully aligned
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Antenna Installation
 
 Mount the GNSS antennas in an area with open sky:
+
 - Three antennas on one level (typically helideck area)
 - One antenna at the superstructure (to provide good vector geometry)
 
-Antenna separation determines accuracy:
-- Heading accuracy: ~0.229 degrees / L (baseline length in metres)
-- Roll/Pitch accuracy: ~0.372 degrees / L
+!!! info "Accuracy"
+    Antenna separation determines accuracy:
 
-For a 20 m baseline, heading accuracy is approximately 0.01 degrees.
+    - Heading accuracy: ~0.229 degrees / L (baseline length in metres)
+    - Roll/Pitch accuracy: ~0.372 degrees / L
+
+    For a 20 m baseline, heading accuracy is approximately 0.01 degrees.
 
 ### Step 2: GNSS Receiver Configuration
 
@@ -66,21 +81,24 @@ For a 20 m baseline, heading accuracy is approximately 0.01 degrees.
 ### Step 5: Data Processing
 
 The ASVS software:
+
 - Time-matches data points from GNSS reference and vessel sensors
 - Calculates C-O values and standard deviations using least squares method
 - Presents results in tabular and graphical format
 - Graphs show sensor behaviour over time, making drift easy to detect
 
-## Quality Checks
+---
 
-- C-O values should be consistent across all logging periods
-- Standard deviations should be within expected sensor specifications
-- Graphs should show stable sensor behaviour without significant drift
-- Confidence intervals computed at 95% confidence level
-- Data snooping checks: max antenna separation difference (0.025), max HDOP (3.0), max VDOP (3.0)
-- GNSS vector lengths and C-O values normalised and tested with T-test value 0.95
+!!! success "Quality Checks"
+    - [x] C-O values should be consistent across all logging periods
+    - [x] Standard deviations should be within expected sensor specifications
+    - [x] Graphs should show stable sensor behaviour without significant drift
+    - [x] Confidence intervals computed at 95% confidence level
+    - [x] Data snooping checks: max antenna separation difference (0.025), max HDOP (3.0), max VDOP (3.0)
+    - [x] GNSS vector lengths and C-O values normalised and tested with T-test value 0.95
 
-## References
+---
 
-- Javad Sigma receiver documentation
-- IMCA S 017 -- Guidelines for USBL systems
+!!! quote "References"
+    - Javad Sigma receiver documentation
+    - IMCA S 017 -- Guidelines for USBL systems

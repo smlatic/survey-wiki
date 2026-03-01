@@ -7,27 +7,39 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# SPRINT-NAV DVL Verification
+# :material-navigation: SPRINT-NAV DVL Verification
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>DVL Verification</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Validate the accuracy and functionality of the ROV's SPRINT-NAV Inertial Navigation System (INS) and Doppler Velocity Log (DVL). The verification compares the fully aided INS position solution with INS + DVL only aiding to confirm reliable positioning and velocity estimation during underwater operations.
+!!! abstract "Purpose"
+    Validate the accuracy and functionality of the ROV's SPRINT-NAV Inertial Navigation System (INS) and Doppler Velocity Log (DVL). The verification compares the fully aided INS position solution with INS + DVL only aiding to confirm reliable positioning and velocity estimation during underwater operations.
 
-## Equipment Required
+---
 
-- SPRINT-NAV INS system
-- Doppler Velocity Log (DVL)
-- ROV
-- USBL aiding system
-- Janus processing software
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| SPRINT-NAV INS system | Inertial navigation reference |
+| Doppler Velocity Log (DVL) | Velocity measurement sensor |
+| ROV | Subsea vehicle platform |
+| USBL aiding system | Position aiding |
+| Janus processing software | Data processing and verification |
 
-- INS system aligned and receiving accurate aiding data
-- USBL aiding system operational
-- Sufficient water depth and clear seabed for DVL bottom-track at 20 m altitude
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - INS system aligned and receiving accurate aiding data
+    - USBL aiding system operational
+    - Sufficient water depth and clear seabed for DVL bottom-track at 20 m altitude
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Align INS
 
@@ -45,7 +57,9 @@ Fly the ROV 1 km away from the starting position and back at an altitude of 20 m
 
 Log/split the INS logging at the end of the calibration run.
 
-## Janus Processing
+---
+
+## :material-cog: Janus Processing
 
 ### Step 1: Calculate Calibration Values
 
@@ -67,21 +81,23 @@ Export the navigation from the session with excluded USBL.
 
 Analyse and evaluate the differences in position between the fully aided and DVL-only solutions.
 
-## Reporting
+---
 
-The verification report must include:
+!!! success "Quality Checks"
+    - [x] Calibration values consistent with factory-derived alignment results
+    - [x] Position differences between fully aided and DVL-only solutions within acceptable limits
+    - [x] No significant drift during the USBL exclusion period
+    - [x] DVL bottom-track maintained throughout the calibration run
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+---
 
-Save as PDF with associated log files.
+!!! note "Reporting"
+    The verification report must include:
 
-## Quality Checks
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
 
-- Calibration values consistent with factory-derived alignment results
-- Position differences between fully aided and DVL-only solutions within acceptable limits
-- No significant drift during the USBL exclusion period
-- DVL bottom-track maintained throughout the calibration run
+    Save as PDF with associated log files.

@@ -7,23 +7,39 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# SV/CTD Comparison Verification
+# :material-thermometer-water: SV/CTD Comparison Verification
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Verification</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Verify the integrity of sensors in two separate SV/CTD (Sound Velocity / Conductivity, Temperature, and Depth) units by performing two consecutive casts in close succession and comparing the collected data to confirm accuracy and reliability.
+---
 
-## Equipment Required
+!!! abstract "Purpose"
 
-- Two SV/CTD units
-- Deployment system (winch or manual)
+    Verify the integrity of sensors in two separate SV/CTD (Sound Velocity / Conductivity, Temperature, and Depth) units by performing two consecutive casts in close succession and comparing the collected data to confirm accuracy and reliability.
 
-## Prerequisites
+---
 
-- Both SV/CTD units calibrated to a date that will remain within the required calibration interval during the project period
-- Suitable deployment location identified
+## :material-tools: Equipment Required
 
-## Procedure
+| Equipment | Role |
+|---|---|
+| Two SV/CTD units | Acquiring sound velocity, conductivity, temperature, and depth data |
+| Deployment system (winch or manual) | Deploying and recovering the units |
+
+---
+
+!!! info "Prerequisites"
+
+    - Both SV/CTD units calibrated to a date that will remain within the required calibration interval during the project period
+    - Suitable deployment location identified
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Prepare Units
 
@@ -46,21 +62,25 @@ After both casts are completed, compare the data from the two units. Focus on:
 - Check for discrepancies or anomalies in the data
 - Analyse that both units provide consistent and accurate measurements
 
-## Reporting
+---
 
-The verification report must include:
+!!! success "Quality Checks"
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - [x] Sound velocity profiles from both units should closely match
+    - [x] Conductivity and temperature profiles should be consistent
+    - [x] No unexplained anomalies or discrepancies between the two datasets
+    - [x] Both units within their calibration interval
 
-Save as PDF with associated log files.
+---
 
-## Quality Checks
+!!! note "Reporting"
 
-- Sound velocity profiles from both units should closely match
-- Conductivity and temperature profiles should be consistent
-- No unexplained anomalies or discrepancies between the two datasets
-- Both units within their calibration interval
+    The verification report must include:
+
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
+
+    Save as PDF with associated log files.

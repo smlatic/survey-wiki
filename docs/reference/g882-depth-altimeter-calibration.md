@@ -7,13 +7,20 @@ date_added: 2026-03-01
 source_type: reference_table
 ---
 
-# G882 Magnetometer Depth/Altimeter Calibration Sheet
+# :material-calculator-variant: G882 Magnetometer Depth/Altimeter Calibration Sheet
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Reference</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Calibration Sheet</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Reference calibration worksheet for determining depth and altimeter scale factors and biases for a G882 magnetometer system. The calibration uses raw sensor values at known depths to calculate linear scale/bias corrections.
+!!! abstract "Purpose"
+    Reference calibration worksheet for determining depth and altimeter scale factors and biases for a G882 magnetometer system. The calibration uses raw sensor values at known depths to calculate linear scale/bias corrections.
 
-## Calibration Parameters
+---
+
+## :material-clipboard-text: Calibration Parameters
 
 Record the following before calibration:
 
@@ -22,7 +29,9 @@ Record the following before calibration:
 - Calibration date
 - Site water depth
 
-## Calibration Data Table
+---
+
+## :material-table: Calibration Data Table
 
 Data is recorded at multiple known sensor depths. For each depth, record the raw depth value and raw altitude value, then calculate the corrected values using scale/bias coefficients.
 
@@ -34,7 +43,9 @@ Data is recorded at multiple known sensor depths. For each depth, record the raw
 | ... | ... | ... | ... |
 | 8 | (record) | (record) | (site water depth - 8) |
 
-## Calculated Coefficients
+---
+
+## :material-function-variant: Calculated Coefficients
 
 The calibration produces four coefficients:
 
@@ -47,17 +58,19 @@ The calibration produces four coefficients:
 
 **Corrected altitude** = (RAW altitude value x altimeter scale factor) + altimeter bias
 
-## Verification
+---
 
-After applying scale/bias corrections:
+!!! success "Verification"
+    After applying scale/bias corrections:
 
-- Calibration error at each depth point should approach zero
-- Average error across all depth points should be effectively zero
-- Verify corrections at intermediate depths not used in calibration if possible
+    - [x] Calibration error at each depth point should approach zero
+    - [x] Average error across all depth points should be effectively zero
+    - [x] Verify corrections at intermediate depths not used in calibration if possible
 
-## Notes
+---
 
-- Site water depth must be accurately known for altitude calculations
-- Calibrate across the expected operating depth range
-- Record all raw values before applying corrections
-- Keep the calibration sheet with the equipment records
+??? info "Notes"
+    - Site water depth must be accurately known for altitude calculations
+    - Calibrate across the expected operating depth range
+    - Record all raw values before applying corrections
+    - Keep the calibration sheet with the equipment records

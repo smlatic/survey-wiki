@@ -7,24 +7,40 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Static AHRS Intersystem Check
+# :material-compass-outline: Static AHRS Intersystem Check
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Intersystem Check</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Ensure the accuracy and consistency of different Attitude Heading Reference Systems (AHRS) by performing a static intersystem comparison check. By comparing the outputs of the primary and secondary systems, discrepancies are identified and deviation between them is quantified.
+---
 
-## Equipment Required
+!!! abstract "Purpose"
 
-- Primary heading and attitude system
-- Secondary heading and attitude system
-- Navigation/acquisition software (NaviPac or Qinsy) for data logging
+    Ensure the accuracy and consistency of different Attitude Heading Reference Systems (AHRS) by performing a static intersystem comparison check. By comparing the outputs of the primary and secondary systems, discrepancies are identified and deviation between them is quantified.
 
-## Prerequisites
+---
 
-- Vessel alongside for project mobilisation
-- All heading and attitude systems powered on and fully aligned before recording begins
+## :material-tools: Equipment Required
 
-## Procedure
+| Equipment | Role |
+|---|---|
+| Primary heading and attitude system | Primary AHRS for comparison |
+| Secondary heading and attitude system | Secondary AHRS for comparison |
+| Navigation/acquisition software (NaviPac or Qinsy) | Data logging |
+
+---
+
+!!! info "Prerequisites"
+
+    - Vessel alongside for project mobilisation
+    - All heading and attitude systems powered on and fully aligned before recording begins
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Configure Logging
 
@@ -49,20 +65,24 @@ Record both primary and secondary system fields in the same log file.
 
 Compare primary and secondary system outputs to quantify any deviations in heading, pitch, and roll.
 
-## Reporting
+---
 
-The verification report must include:
+!!! success "Quality Checks"
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - [x] Both systems should agree within their combined specification tolerances
+    - [x] No significant drift visible in the time-series data
+    - [x] Statistical analysis confirms consistency between systems
 
-Save as PDF with associated log files.
+---
 
-## Quality Checks
+!!! note "Reporting"
 
-- Both systems should agree within their combined specification tolerances
-- No significant drift visible in the time-series data
-- Statistical analysis confirms consistency between systems
+    The verification report must include:
+
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
+
+    Save as PDF with associated log files.

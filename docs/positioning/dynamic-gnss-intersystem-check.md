@@ -7,26 +7,38 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Dynamic GNSS Intersystem Check
+# :material-satellite-uplink: Dynamic GNSS Intersystem Check
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Positioning</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Dynamic Check</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Ensure accuracy and consistency between primary and secondary GNSS positioning systems whilst the vessel is moving. By comparing system outputs during a dynamic box pattern, discrepancies are identified and deviation between them is quantified.
+!!! abstract "Purpose"
+    Ensure accuracy and consistency between primary and secondary GNSS positioning systems whilst the vessel is moving. By comparing system outputs during a dynamic box pattern, discrepancies are identified and deviation between them is quantified.
 
-## Equipment Required
+---
 
-- Primary GNSS positioning system
-- Secondary GNSS positioning system
-- Supporting heading and attitude system
-- Navigation/acquisition software (NaviPac or Qinsy) for data logging
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| Primary GNSS positioning system | Primary position source |
+| Secondary GNSS positioning system | Secondary position source for comparison |
+| Heading and attitude system | Supporting orientation reference |
+| Navigation/acquisition software (NaviPac or Qinsy) | Data logging |
 
-- Performed offshore after project mobilisation
-- Correction service active with good signal continuity
-- Vessel capable of maintaining controlled headings
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Performed offshore after project mobilisation
+    - Correction service active with good signal continuity
+    - Vessel capable of maintaining controlled headings
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Plan Box Pattern
 
@@ -60,20 +72,22 @@ Set up the navigation software to log grid position of the vessel CRP using both
 
 Compare primary and secondary system outputs across all four headings to quantify deviations in easting, northing, and height.
 
-## Reporting
+---
 
-The verification report must include:
+!!! note "Reporting"
+    The verification report must include:
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
 
-Save as PDF and append to the project-specific MAC report. Submit with associated log files.
+    Save as PDF and append to the project-specific MAC report. Submit with associated log files.
 
-## Quality Checks
+---
 
-- Both systems should agree within their combined specification tolerances across all headings
-- No heading-dependent biases visible between systems
-- Statistical analysis confirms consistency between systems during dynamic conditions
+!!! success "Quality Checks"
+    - [x] Both systems should agree within their combined specification tolerances across all headings
+    - [x] No heading-dependent biases visible between systems
+    - [x] Statistical analysis confirms consistency between systems during dynamic conditions

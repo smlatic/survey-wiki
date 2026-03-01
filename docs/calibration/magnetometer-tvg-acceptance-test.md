@@ -7,26 +7,38 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Magnetometer/TVG Acceptance Test
+# :material-magnet: Magnetometer/TVG Acceptance Test
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Acceptance Test</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Confirm the position accuracy and data quality of a magnetometer or transverse gradiometer (TVG) system by performing an acceptance test over a suitable magnetic contact.
+!!! abstract "Purpose"
+    Confirm the position accuracy and data quality of a magnetometer or transverse gradiometer (TVG) system by performing an acceptance test over a suitable magnetic contact.
 
-## Equipment Required
+---
 
-- Magnetometer/TVG system
-- Towed vehicle, ROTV, or ROV
-- CSAZ software (for sensor orientation verification)
-- Navigation and acquisition software
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| Magnetometer/TVG system | Magnetic field measurement |
+| Towed vehicle, ROTV, or ROV | Sensor deployment platform |
+| CSAZ software | Sensor orientation verification |
+| Navigation and acquisition software | Data acquisition and positioning |
 
-- Suitable magnetic contact/target identified (pipeline, cable, or wreck)
-- If testing simultaneously with side scan sonar (SSS), avoid using a steel wreck as the target
-- Vehicle pre-dive check completed
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Suitable magnetic contact/target identified (pipeline, cable, or wreck)
+    - If testing simultaneously with side scan sonar (SSS), avoid using a steel wreck as the target
+    - Vehicle pre-dive check completed
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Pre-Dive Check
 
@@ -48,27 +60,30 @@ Sail the same run line back and forth in opposite directions at a constant speed
 
 Data quality and position shall be confirmed by a Marine Geologist.
 
-## Safety Notes for Surrogate Targets
+---
 
-If surrogate targets are used with a surface marker buoy:
+!!! danger "Safety -- Surrogate Targets"
+    If surrogate targets are used with a surface marker buoy:
 
-- Do not attach the marker buoy directly to the surrogate target
-- Attach the buoy to an offset weight 100-200 m away from the target
-- Use a lead line to connect the target and the offset weight
-- Do not conduct tests with marker buoys in darkness or strong currents
-- Take caution to avoid entanglement of the towed magnetometer with the marker buoy line
+    - Do not attach the marker buoy directly to the surrogate target
+    - Attach the buoy to an offset weight 100-200 m away from the target
+    - Use a lead line to connect the target and the offset weight
+    - Do not conduct tests with marker buoys in darkness or strong currents
+    - Take caution to avoid entanglement of the towed magnetometer with the marker buoy line
 
-## Reporting
+---
 
-Methodology and results shall be presented in the MAC report, including:
+!!! success "Quality Checks"
+    - [x] Target position consistent between reciprocal run lines
+    - [x] Magnetic readings consistent between opposite directions
+    - [x] No unexplained deviations in position or signal
+    - [x] Sensor orientation verified via CSAZ
 
-- Run line plots showing target position from both directions
-- Magnetic readings comparison between reciprocal lines
-- Confirmation of data quality by Marine Geologist
+---
 
-## Quality Checks
+!!! note "Reporting"
+    Methodology and results shall be presented in the MAC report, including:
 
-- Target position consistent between reciprocal run lines
-- Magnetic readings consistent between opposite directions
-- No unexplained deviations in position or signal
-- Sensor orientation verified via CSAZ
+    - Run line plots showing target position from both directions
+    - Magnetic readings comparison between reciprocal lines
+    - Confirmation of data quality by Marine Geologist

@@ -7,29 +7,41 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Dimensional Control Survey on Vessels
+# :material-ruler-square-compass: Dimensional Control Survey on Vessels
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Procedure</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Procedure and checklist for dimensional survey and sensor calibration on vessels, whether moored alongside, offshore, or in drydock. Establishes the position and orientation of all survey sensors relative to a common coordinate reference system.
+!!! abstract "Purpose"
+    Procedure and checklist for dimensional survey and sensor calibration on vessels, whether moored alongside, offshore, or in drydock. Establishes the position and orientation of all survey sensors relative to a common coordinate reference system.
 
-## Equipment Required
+---
 
-- Total station with valid calibration certificate
-- Calibrated steel tape
-- Coded targets and scalebars
-- Photogrammetry system (if applicable)
-- All instruments must have valid calibration certificates
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|-----------|------|
+| Total station with valid calibration certificate | Primary measurement instrument |
+| Calibrated steel tape | Distance verification |
+| Coded targets and scalebars | Photogrammetry reference points |
+| Photogrammetry system (if applicable) | 3D position measurement |
+| All instruments must have valid calibration certificates | Quality assurance |
 
-- Scope of work defined
-- Vessel drawings available (top view, side view, survey item drawings), preferably in DWG format
-- Specific procedures to be followed identified
-- Metrology data from previous surveys (if available)
-- Surveyor must have minimum 2 years relevant experience with industrial surveying and sensor calibration
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Scope of work defined
+    - Vessel drawings available (top view, side view, survey item drawings), preferably in DWG format
+    - Specific procedures to be followed identified
+    - Metrology data from previous surveys (if available)
+    - Surveyor must have minimum 2 years relevant experience with industrial surveying and sensor calibration
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Site Arrival and Safety
 
@@ -95,6 +107,7 @@ Procedure and checklist for dimensional survey and sensor calibration on vessels
 Leave at least 5 well-spread reference points in each key location. Every point must be punch-marked with a detail photo showing offsets and an overview photo.
 
 Recommended locations:
+
 - Superstructure
 - Back deck
 - Helideck
@@ -109,21 +122,23 @@ Recommended locations:
 - Remove fencing and markers
 - Inform site responsible and bridge before leaving
 
-## Reporting
+---
 
-The report shall include:
+!!! note "Reporting"
+    The report shall include:
 
-- Project and structure identification
-- Surveyor names, place, and time
-- Scope of work
-- Survey results with accuracy documentation (general, detail, instrument, and total determination accuracy)
-- Clear description of coordinate reference system (axes, reference plane, CRP)
-- Non-conformance or out-of-tolerance situations
-- Overview sketches with axes, CRP, and reference plane
-- Detail photos with positions of all survey items
-- Design drawings as references
+    - Project and structure identification
+    - Surveyor names, place, and time
+    - Scope of work
+    - Survey results with accuracy documentation (general, detail, instrument, and total determination accuracy)
+    - Clear description of coordinate reference system (axes, reference plane, CRP)
+    - Non-conformance or out-of-tolerance situations
+    - Overview sketches with axes, CRP, and reference plane
+    - Detail photos with positions of all survey items
+    - Design drawings as references
 
-## References
+---
 
-- ISO 19901-7 (Metocean and positioning)
-- IMCA S 015 (Guidance on vessel surveys)
+!!! quote "References"
+    - ISO 19901-7 (Metocean and positioning)
+    - IMCA S 015 (Guidance on vessel surveys)

@@ -7,28 +7,46 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Sound Velocity Profiler Repeatability Test
+# :material-waves-arrow-up: Sound Velocity Profiler Repeatability Test
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Repeatability Test</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Validate the accuracy of a sound velocity profiler (SVP) probe by acquiring two casts at the same location in quick succession and comparing the resulting profiles. Sound velocity uncertainties directly affect MBES depth measurements and USBL positioning accuracy.
+---
 
-## Background
+!!! abstract "Purpose"
 
-Acoustic ray paths are a function of water temperature, salinity, and density. These properties are largely unpredictable and vary both spatially and temporally. To preserve overall depth measurement accuracy, sound velocity observations must be made with sufficient frequency, spread, and accuracy.
+    Validate the accuracy of a sound velocity profiler (SVP) probe by acquiring two casts at the same location in quick succession and comparing the resulting profiles. Sound velocity uncertainties directly affect MBES depth measurements and USBL positioning accuracy.
 
-## Equipment Required
+---
 
-- Sound velocity profiler(s) (e.g., SVX2, minSVS, or equivalent)
-- Deployment system (winch or manual)
+??? info "Background"
 
-## Prerequisites
+    Acoustic ray paths are a function of water temperature, salinity, and density. These properties are largely unpredictable and vary both spatially and temporally. To preserve overall depth measurement accuracy, sound velocity observations must be made with sufficient frequency, spread, and accuracy.
 
-- Suitable location with sufficient water depth (aim for water depths of the survey site where possible)
-- Vessel able to maintain a constant location during casts
-- SV probes with valid factory calibration (every two years unless otherwise specified)
+---
 
-## Procedure
+## :material-tools: Equipment Required
+
+| Equipment | Role |
+|---|---|
+| Sound velocity profiler(s) (e.g., SVX2, minSVS, or equivalent) | Acquiring sound velocity profiles |
+| Deployment system (winch or manual) | Deploying and recovering the profiler |
+
+---
+
+!!! info "Prerequisites"
+
+    - Suitable location with sufficient water depth (aim for water depths of the survey site where possible)
+    - Vessel able to maintain a constant location during casts
+    - SV probes with valid factory calibration (every two years unless otherwise specified)
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Select Profilers and Location
 
@@ -48,24 +66,30 @@ Log one SV cast (upcast and downcast). Immediately after, at the same location, 
 
 Load both SV casts into a spreadsheet. Clean anomalies if needed (e.g., repeat depths, bobbing between depths). Plot sound velocity vs. depth with multiple systems/casts overlaid. The profiles should be very similar.
 
-## Operations Notes
+---
 
-- Under optimal conditions, take a minimum of 1 SV profile per 12 hours during operations
-- The senior surveyor on watch decides if additional SVPs are needed based on hydrographical conditions
-- All gathered sound velocity records must be documented with time and position stamps
-- The time of each SVP measurement should be noted in the online survey log
-- Various SV sensors may be used depending on project requirements: deck cast instruments, probes mounted on towed equipment, ROV-mounted probes, and hull-mounted sensors
+??? info "Operations Notes"
 
-## Reporting
+    - Under optimal conditions, take a minimum of 1 SV profile per 12 hours during operations
+    - The senior surveyor on watch decides if additional SVPs are needed based on hydrographical conditions
+    - All gathered sound velocity records must be documented with time and position stamps
+    - The time of each SVP measurement should be noted in the online survey log
+    - Various SV sensors may be used depending on project requirements: deck cast instruments, probes mounted on towed equipment, ROV-mounted probes, and hull-mounted sensors
 
-Generate a comparison report for the MAC report showing:
+---
 
-- Overlay plot of sound velocity vs. depth for all casts
-- Any anomalies identified and removed
-- Confirmation that profiles are consistent
+!!! success "Quality Checks"
 
-## Quality Checks
+    - [x] Profiles from consecutive casts should closely match
+    - [x] No unexplained divergence between casts at any depth
+    - [x] Any anomalies (repeat depths, bobbing) identified and documented
 
-- Profiles from consecutive casts should closely match
-- No unexplained divergence between casts at any depth
-- Any anomalies (repeat depths, bobbing) identified and documented
+---
+
+!!! note "Reporting"
+
+    Generate a comparison report for the MAC report showing:
+
+    - Overlay plot of sound velocity vs. depth for all casts
+    - Any anomalies identified and removed
+    - Confirmation that profiles are consistent

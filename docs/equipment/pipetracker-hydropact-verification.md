@@ -7,27 +7,39 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Pipe Tracker (HydroPACT 440/660) Verification
+# :material-pipe: Pipe Tracker (HydroPACT 440/660) Verification
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Equipment</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Verification</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Validate the accuracy, reliability, and maximum detection range of a HydroPACT 440/660 pipe tracker system for pipeline tracking on an exposed section of pipeline, by comparing pipe tracker-derived positions against reference data from a multibeam echosounder (MBES).
+!!! abstract "Purpose"
+    Validate the accuracy, reliability, and maximum detection range of a HydroPACT 440/660 pipe tracker system for pipeline tracking on an exposed section of pipeline, by comparing pipe tracker-derived positions against reference data from a multibeam echosounder (MBES).
 
-## Equipment Required
+---
 
-- HydroPACT 440/660 pipe tracker system
-- ROV with MBES
-- Naviscan software
-- Navigation and acquisition software
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| HydroPACT 440/660 pipe tracker system | System under test |
+| ROV with MBES | Reference data source |
+| Naviscan software | Pipe tracker data integration |
+| Navigation and acquisition software | Data logging and processing |
 
-- HydroPACT data integrated into Naviscan software and logged into the SBD
-- Pipe tracker offsets measured from a known point on the ROV dimensional control report (if not already known)
-- Exposed section of pipeline with known dimensions identified
-- Ideally in shallower waters (30-120 m) where ROV positioning is most accurate
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - HydroPACT data integrated into Naviscan software and logged into the SBD
+    - Pipe tracker offsets measured from a known point on the ROV dimensional control report (if not already known)
+    - Exposed section of pipeline with known dimensions identified
+    - Ideally in shallower waters (30-120 m) where ROV positioning is most accurate
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Coil Mapping Check (On Deck)
 
@@ -53,9 +65,15 @@ Start the background compensation test at least 25 m from the target. The system
 
 A series of 10 measurements shall be recorded by the calibration software in the topside unit. Individual measurements should not deviate by more than +/-10 uV. Document the results with a screen grab.
 
+!!! warning
+    Individual background compensation measurements must not deviate by more than **+/-10 uV**. If any measurement exceeds this threshold, investigate before proceeding.
+
 ### Step 7: Verify Background Values
 
 After departing from the background compensation location, observe the values from each coil. They normally become negative since seawater has less conductivity than the seabed. However, values should stay within +/-20 uV. If values exceed this range, there was metallic interference at the background compensation location -- redo at a different location.
+
+!!! warning
+    Post-compensation coil values must remain within **+/-20 uV**. Values exceeding this range indicate metallic interference at the background compensation location. Return to Step 5 and repeat at a different location.
 
 ### Step 8: Vertical Range to Target (VRT) Test
 
@@ -71,22 +89,24 @@ Perform a VRT test on an exposed section of the pipeline:
 
 Compare the VRT solution with MBES data at the exposed section at different altitudes. The maximum detection range will also be determined from this test.
 
-## Reporting
+---
 
-The verification report (included in the MAC report) must include:
+!!! note "Reporting"
+    The verification report (included in the MAC report) must include:
 
-- Introduction
-- Measured offsets from ROV reference point to pipe tracker reference point (if applicable)
-- Sequence of events
-- Tabular and graphical representations of results
+    - Introduction
+    - Measured offsets from ROV reference point to pipe tracker reference point (if applicable)
+    - Sequence of events
+    - Tabular and graphical representations of results
 
-Save as PDF with associated log files.
+    Save as PDF with associated log files.
 
-## Quality Checks
+---
 
-- Coil mapping confirmed correct on deck
-- Background compensation within +/-10 uV per measurement
-- Post-compensation values within +/-20 uV
-- Pipe tracker positions consistent with MBES reference data
-- Maximum detection range determined and documented
-- ROV positioning accuracy considered (prefer 30-120 m depth)
+!!! success "Quality Checks"
+    - [x] Coil mapping confirmed correct on deck
+    - [x] Background compensation within +/-10 uV per measurement
+    - [x] Post-compensation values within +/-20 uV
+    - [x] Pipe tracker positions consistent with MBES reference data
+    - [x] Maximum detection range determined and documented
+    - [x] ROV positioning accuracy considered (prefer 30-120 m depth)

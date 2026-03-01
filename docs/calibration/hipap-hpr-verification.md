@@ -7,28 +7,40 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# HiPAP USBL Verification (Spin and Transit Tests)
+# :material-access-point-check: HiPAP USBL Verification (Spin and Transit Tests)
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Verification</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Verify the accuracy and functionality of a HiPAP USBL system in providing reliable underwater positioning data after calibration has been completed. The verification process validates the system's ability to track underwater transponders accurately at operational depth.
+!!! abstract "Purpose"
+    Verify the accuracy and functionality of a HiPAP USBL system in providing reliable underwater positioning data after calibration has been completed. The verification process validates the system's ability to track underwater transponders accurately at operational depth.
 
-## Equipment Required
+---
 
-- HiPAP USBL system
-- Seabed transponder (beacon)
-- ROV (for deep-water transponder deployment)
-- Sound velocity profiler
-- Navigation and acquisition software (NaviPac/Qinsy or equivalent)
-- DP system (for spin and transit manoeuvres)
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|-----------|------|
+| HiPAP USBL system | Primary acoustic positioning system |
+| Seabed transponder (beacon) | Acoustic target |
+| ROV (for deep-water transponder deployment) | Transponder deployment |
+| Sound velocity profiler | Water column velocity measurement |
+| Navigation and acquisition software (NaviPac/Qinsy or equivalent) | Data acquisition |
+| DP system (for spin and transit manoeuvres) | Vessel manoeuvring |
 
-- Acceptable USBL calibration already completed
-- Verification should be conducted at a depth equivalent to the deepest planned operational depth
-- DP system operational (for spin test; non-DP alternative available)
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - Acceptable USBL calibration already completed
+    - Verification should be conducted at a depth equivalent to the deepest planned operational depth
+    - DP system operational (for spin test; non-DP alternative available)
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Transponder Deployment
 
@@ -61,33 +73,36 @@ Run two orthogonal transit lines over the transponder. The vessel heading should
 
 For vessels without DP, create two orthogonal lines over the transponder. Sail both lines at a maximum speed of 2 knots, two times each on reciprocal headings, generating 4 total runs with a separate log file for each.
 
-## Acceptance Criteria
+---
 
-**Spin test:**
+!!! example "Acceptance Criteria"
+    **Spin test:**
 
-- No significant artefacts in the dataset
-- 95% of points within 0.3% of slant range + surface positioning error from the known point or mean USBL position
-- Mean position from each of four individual vessel headings within 0.2% of slant range from the overall mean position
+    - No significant artefacts in the dataset
+    - 95% of points within 0.3% of slant range + surface positioning error from the known point or mean USBL position
+    - Mean position from each of four individual vessel headings within 0.2% of slant range from the overall mean position
 
-**Transit test:**
+    **Transit test:**
 
-- No significant artefacts in the dataset
-- 95% of points within 0.3% of maximum slant range + surface positioning error from the known point or mean USBL position
-- Mean position of each transit dataset within 0.2% of slant range from the mean position determined during the spin verification
-- Transponder depth profile should show residual pitch and roll errors less than or equal to the documented accuracy of the original USBL calibration
+    - No significant artefacts in the dataset
+    - 95% of points within 0.3% of maximum slant range + surface positioning error from the known point or mean USBL position
+    - Mean position of each transit dataset within 0.2% of slant range from the mean position determined during the spin verification
+    - Transponder depth profile should show residual pitch and roll errors less than or equal to the documented accuracy of the original USBL calibration
 
-## Reporting
+---
 
-The verification report must include:
+!!! note "Reporting"
+    The verification report must include:
 
-- Introduction
-- Table of equipment
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - Introduction
+    - Table of equipment
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis
 
-Save as PDF with associated log files.
+    Save as PDF with associated log files.
 
-## References
+---
 
-- IMCA M 244 / IMCA S 017 Rev. 1 -- Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
+!!! quote "References"
+    - IMCA M 244 / IMCA S 017 Rev. 1 -- Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations

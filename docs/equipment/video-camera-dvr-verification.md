@@ -7,26 +7,38 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Video Camera and DVR Quality Verification
+# :material-video: Video Camera and DVR Quality Verification
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Equipment</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Verification</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Validate the operability of the DVR system, the quality of images captured by the camera, confirm accurate recording of images, and ensure correct positioning in the overlay of navigation information.
+!!! abstract "Purpose"
+    Validate the operability of the DVR system, the quality of images captured by the camera, confirm accurate recording of images, and ensure correct positioning in the overlay of navigation information.
 
-## Equipment Required
+---
 
-- ROV video camera system
-- DVR recording system (topside and onshore)
-- Line laser (if applicable)
-- Navigation/acquisition software (Qinsy or equivalent)
+## :material-tools: Equipment Required
 
-## Prerequisites
+| Equipment | Role |
+|---|---|
+| ROV video camera system | Image capture |
+| DVR recording system (topside and onshore) | Video recording |
+| Line laser (if applicable) | Scale reference |
+| Navigation/acquisition software (Qinsy or equivalent) | Positioning and overlay |
 
-- ROV deployed and operational
-- DVR systems configured and connected
-- Object of interest identified for investigation
+---
 
-## Procedure
+!!! info "Prerequisites"
+    - ROV deployed and operational
+    - DVR systems configured and connected
+    - Object of interest identified for investigation
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Position ROV
 
@@ -63,18 +75,20 @@ Verify that the line laser offset is set in Qinsy (if applicable).
 
 Perform any final adjustments if needed.
 
-## Reporting
+---
 
-The verification results (included in the MAC report) must include:
+!!! note "Reporting"
+    The verification results (included in the MAC report) must include:
 
-- Introduction
-- Screenshot of measured laser separation on deck with tape measure (if applicable)
-- Screenshots of video quality with line laser in view over target on reciprocal headings with DVR overlay
+    - Introduction
+    - Screenshot of measured laser separation on deck with tape measure (if applicable)
+    - Screenshots of video quality with line laser in view over target on reciprocal headings with DVR overlay
 
-## Quality Checks
+---
 
-- Image quality acceptable (lighting, resolution, clarity)
-- DVR recording working on both topside and onshore systems
-- Overlay information correct and properly positioned
-- Feature positions consistent between reciprocal heading runs
-- Line laser offset correctly configured (if applicable)
+!!! success "Quality Checks"
+    - [x] Image quality acceptable (lighting, resolution, clarity)
+    - [x] DVR recording working on both topside and onshore systems
+    - [x] Overlay information correct and properly positioned
+    - [x] Feature positions consistent between reciprocal heading runs
+    - [x] Line laser offset correctly configured (if applicable)

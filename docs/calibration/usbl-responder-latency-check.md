@@ -7,26 +7,42 @@ date_added: 2026-03-01
 source_type: converted_procedure
 ---
 
-# Transponder/Responder Latency Check
+# :material-timer-outline: Transponder/Responder Latency Check
 
-## Purpose
+<div class="page-meta" markdown>
+<span class="meta-item">:material-tag-outline: <strong>Calibration</strong></span>
+<span class="meta-item">:material-format-list-checks: <strong>Latency Check</strong></span>
+<span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
+</div>
 
-Confirm or measure any transmission latency of the triggering pulse in responder mode, ensuring accurate and consistent USBL slant range measurements across both transponder and responder operations.
+---
 
-## Equipment Required
+!!! abstract "Purpose"
 
-- USBL system (topside and transducer)
-- Transponder/responder beacon
-- ROV, ROTV, or Towfish
-- Navigation/acquisition software for ASCII logging
+    Confirm or measure any transmission latency of the triggering pulse in responder mode, ensuring accurate and consistent USBL slant range measurements across both transponder and responder operations.
 
-## Prerequisites
+---
 
-- USBL system calibrated and operational
-- Beacon deployed and communicating
-- Vehicle (ROV/ROTV/Towfish) available and operational
+## :material-tools: Equipment Required
 
-## Procedure
+| Equipment | Role |
+|---|---|
+| USBL system (topside and transducer) | Acoustic positioning |
+| Transponder/responder beacon | Target beacon for range measurement |
+| ROV, ROTV, or Towfish | Vehicle carrying the beacon |
+| Navigation/acquisition software | ASCII logging of slant range data |
+
+---
+
+!!! info "Prerequisites"
+
+    - USBL system calibrated and operational
+    - Beacon deployed and communicating
+    - Vehicle (ROV/ROTV/Towfish) available and operational
+
+---
+
+## :material-list-status: Procedure
 
 ### Step 1: Prepare the Log File
 
@@ -55,16 +71,20 @@ Compare transponder vs. responder slant range data and calculate any difference 
 
 Apply any identified trigger pulse transmission delay to the HPR system and confirm the measured data is consistent between responder and transponder modes.
 
-## Reporting
+---
 
-The test results shall be documented in the MAC report or as a distinct test report. The report must include:
+!!! success "Quality Checks"
 
-- Sequence of events
-- Tabular and graphical representations of results
-- Statistical analysis
+    - [x] Slant range values should be consistent between transponder and responder modes after any latency correction is applied
+    - [x] No unexplained jumps or drift in slant range during either recording period
+    - [x] Vehicle position remained stable throughout the test
 
-## Quality Checks
+---
 
-- Slant range values should be consistent between transponder and responder modes after any latency correction is applied
-- No unexplained jumps or drift in slant range during either recording period
-- Vehicle position remained stable throughout the test
+!!! note "Reporting"
+
+    The test results shall be documented in the MAC report or as a distinct test report. The report must include:
+
+    - Sequence of events
+    - Tabular and graphical representations of results
+    - Statistical analysis

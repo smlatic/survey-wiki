@@ -1,0 +1,191 @@
+/* Survey Wiki -- Custom Styles */
+
+/* Page title styling */
+.md-content h1 {
+  font-weight: 700;
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+}
+
+/* Step headers get a subtle left accent */
+.md-content h3 {
+  border-left: 4px solid var(--md-accent-fg-color);
+  padding-left: 0.8em;
+  margin-top: 1.5em;
+}
+
+/* Better table styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.md-typeset table:not([class]) thead {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+.md-typeset table:not([class]) thead th {
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(var(--md-accent-fg-color--rgb, 0, 150, 136), 0.08);
+}
+
+/* Procedure step numbering visual polish */
+.md-typeset .procedure-steps ol {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.md-typeset .procedure-steps ol li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 3em;
+  margin-bottom: 1em;
+}
+
+.md-typeset .procedure-steps ol li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+/* Equipment tag pills in frontmatter area */
+.md-typeset .equipment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0.8em 0 1.2em;
+}
+
+.md-typeset .equipment-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  background: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .equipment-tag {
+  background: rgba(var(--md-accent-fg-color--rgb, 0, 150, 136), 0.2);
+  color: var(--md-accent-fg-color);
+}
+
+/* Admonition tweaks for cleaner look */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  margin: 1.2em 0;
+}
+
+/* Quality checks task list styling */
+.md-typeset .task-list-control input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+/* Cards for index pages */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li {
+  border-radius: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Page header meta section */
+.page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+  padding: 0.8em 1em;
+  margin: -0.5em 0 1.5em;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  font-size: 0.82em;
+}
+
+.page-meta .meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--md-default-fg-color--light);
+}
+
+.page-meta .meta-item strong {
+  color: var(--md-default-fg-color);
+}
+
+/* Horizontal rule as section divider */
+.md-typeset hr {
+  border: none;
+  border-top: 2px solid var(--md-default-fg-color--lightest);
+  margin: 2em 0;
+}
+
+/* Status badge styling */
+.md-typeset .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset .status-badge.verified {
+  background: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+}
+
+.md-typeset .status-badge.procedure {
+  background: rgba(33, 150, 243, 0.15);
+  color: #1565c0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .status-badge.verified {
+  background: rgba(76, 175, 80, 0.2);
+  color: #81c784;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .status-badge.procedure {
+  background: rgba(33, 150, 243, 0.2);
+  color: #64b5f6;
+}
