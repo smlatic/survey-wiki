@@ -54,6 +54,7 @@ nav:
   - Home: index.md
   - Calibration:
     - calibration/index.md
+    - HiPAP USBL Calibration: calibration/hipap-usbl-calibration.md
   - Positioning:
     - positioning/index.md
   - ROV Operations:
