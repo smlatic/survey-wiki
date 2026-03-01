@@ -55,16 +55,38 @@ nav:
   - Calibration:
     - calibration/index.md
     - HiPAP USBL Calibration: calibration/hipap-usbl-calibration.md
+    - HiPAP USBL Verification (Spin & Transit): calibration/hipap-hpr-verification.md
+    - MBES Calibration (Patch Test): calibration/mbes-calibration.md
+    - AHRS Heading, Pitch & Roll Calibration: calibration/ahrs-calibration.md
+    - Static AHRS Intersystem Check: calibration/static-ahrs-intersystem-check.md
+    - Dimensional Control Survey (Vessel): calibration/dimensional-control-survey.md
+    - Dimensional Control (Tape Measure): calibration/dimensional-control-tape-measure.md
+    - SVP Repeatability Test: calibration/svp-repeatability-test.md
+    - SV/CTD Comparison Verification: calibration/sv-ctd-comparison-verification.md
+    - USBL Responder Latency Check: calibration/usbl-responder-latency-check.md
+    - ROVINS/PHINS DVL Calibration: calibration/ixblue-ins-dvl-calibration.md
+    - SPRINT-NAV DVL Verification: calibration/sprint-nav-dvl-verification.md
+    - SPRINT (Syrinx) DVL Calibration: calibration/sprint-syrinx-dvl-calibration.md
+    - Magnetometer/TVG Acceptance Test: calibration/magnetometer-tvg-acceptance-test.md
+    - Surrogate Item Test (GMA1000): calibration/surrogate-item-test-gma1000.md
   - Positioning:
     - positioning/index.md
+    - Static GNSS Intersystem Check: positioning/static-gnss-intersystem-check.md
+    - Dynamic GNSS Intersystem Check: positioning/dynamic-gnss-intersystem-check.md
+    - Alongside DGNSS Integrity Check: positioning/dgnss-integrity-check.md
   - ROV Operations:
     - rov/index.md
   - Equipment:
     - equipment/index.md
+    - Pipe Tracker (HydroPACT 440/660) Verification: equipment/pipetracker-hydropact-verification.md
+    - Video Camera & DVR Verification: equipment/video-camera-dvr-verification.md
+    - Voyis FDI Observer Pro 3 Verification: equipment/voyis-observer-pro3-verification.md
+    - Side Scan Sonar Verification: equipment/side-scan-sonar-verification.md
   - Reporting:
     - reporting/index.md
   - Reference:
     - reference/index.md
+    - G882 Depth/Altimeter Calibration Sheet: reference/g882-depth-altimeter-calibration.md
   - Field Notes:
     - field-notes/index.md
 

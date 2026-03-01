@@ -1,0 +1,63 @@
+---
+title: G882 Magnetometer Depth/Altimeter Calibration Sheet
+category: reference
+tags: [g882, magnetometer, depth, altimeter, calibration, scale factor, bias, reference table]
+equipment: [G882 Magnetometer, Depth Sensor, Altimeter]
+date_added: 2026-03-01
+source_type: reference_table
+---
+
+# G882 Magnetometer Depth/Altimeter Calibration Sheet
+
+## Purpose
+
+Reference calibration worksheet for determining depth and altimeter scale factors and biases for a G882 magnetometer system. The calibration uses raw sensor values at known depths to calculate linear scale/bias corrections.
+
+## Calibration Parameters
+
+Record the following before calibration:
+
+- Magnetometer serial number
+- Altimeter serial number
+- Calibration date
+- Site water depth
+
+## Calibration Data Table
+
+Data is recorded at multiple known sensor depths. For each depth, record the raw depth value and raw altitude value, then calculate the corrected values using scale/bias coefficients.
+
+| Sensor Depth (m) | RAW Value (depth) | RAW Value (altitude) | Sensor Alt. (m) |
+|---|---|---|---|
+| 0 | (record) | (record) | (site water depth) |
+| 1 | (record) | (record) | (site water depth - 1) |
+| 2 | (record) | (record) | (site water depth - 2) |
+| ... | ... | ... | ... |
+| 8 | (record) | (record) | (site water depth - 8) |
+
+## Calculated Coefficients
+
+The calibration produces four coefficients:
+
+- **Depth scale factor** -- multiplier applied to raw depth value
+- **Depth bias** -- offset added after scaling
+- **Altimeter scale factor** -- multiplier applied to raw altitude value
+- **Altimeter bias** -- offset added after scaling
+
+**Corrected depth** = (RAW depth value x depth scale factor) + depth bias
+
+**Corrected altitude** = (RAW altitude value x altimeter scale factor) + altimeter bias
+
+## Verification
+
+After applying scale/bias corrections:
+
+- Calibration error at each depth point should approach zero
+- Average error across all depth points should be effectively zero
+- Verify corrections at intermediate depths not used in calibration if possible
+
+## Notes
+
+- Site water depth must be accurately known for altitude calculations
+- Calibrate across the expected operating depth range
+- Record all raw values before applying corrections
+- Keep the calibration sheet with the equipment records
