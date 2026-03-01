@@ -1,0 +1,68 @@
+site_name: Survey Knowledge Base
+site_description: Hydrographic and offshore survey procedures, calibration guides, and field reference material
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - attr_list
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Calibration:
+    - calibration/index.md
+  - Positioning:
+    - positioning/index.md
+  - ROV Operations:
+    - rov/index.md
+  - Equipment:
+    - equipment/index.md
+  - Reporting:
+    - reporting/index.md
+  - Reference:
+    - reference/index.md
+  - Field Notes:
+    - field-notes/index.md
+
+extra:
+  social: []
