@@ -1,5 +1,8 @@
 site_name: Survey Knowledge Base
+site_url: https://smlatic.github.io/survey-wiki/
 site_description: Hydrographic and offshore survey procedures, calibration guides, and field reference material
+repo_url: https://github.com/smlatic/survey-wiki
+repo_name: smlatic/survey-wiki
 
 theme:
   name: material
