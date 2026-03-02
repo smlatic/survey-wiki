@@ -5,6 +5,7 @@ tags: [gnss, jamming, spoofing, grit, anti-jam, crpa, scintillation, solar-cycle
 equipment: [GNSS Receiver, Anti-Jam Antenna, CRPA Antenna, L-Band Demodulator]
 date_added: 2026-03-01
 source_type: converted_procedure
+last_reviewed: 2026-03-01
 ---
 
 # :material-shield-alert: GNSS Jamming and Spoofing
@@ -55,6 +56,46 @@ Spoofing is often executed in two stages:
 
 1. **Jam** -- disrupt the receiver from tracking authentic GNSS signals
 2. **Transmit** -- send false signals to the target receiver, either from a signal generator or by rebroadcasting recorded GNSS signals
+
+---
+
+## :material-map-marker-alert: Known Hotspots
+
+Jamming and spoofing incidents are concentrated in specific regions. Surveyors mobilising to these areas should plan for GNSS degradation and ensure mitigation equipment is available.
+
+| Region | Threat Type | Notes |
+|---|---|---|
+| **Eastern Mediterranean** | Spoofing and jamming | Persistent and widespread; vessels frequently report false positions |
+| **Black Sea** | Spoofing | Well-documented spoofing events displacing vessels to incorrect locations |
+| **Baltic Sea** | Jamming and spoofing | Increasing incidents, particularly near areas of geopolitical tension |
+| **Southeast Asia** (Strait of Malacca, South China Sea) | Jamming | Intermittent jamming; often associated with illegal fishing or territorial disputes |
+| **Persian Gulf / Red Sea** | Jamming | Related to regional military activity |
+
+!!! warning "Situational Awareness"
+    Check current GNSS interference reports (e.g. from the US Coast Guard NAVCEN, EUROCONTROL, or commercial maritime alerting services) before mobilising to any of these regions.
+
+---
+
+## :material-magnify: Detection Methods
+
+### Automatic Gain Control (AGC) Monitoring
+
+AGC is a key indicator of GNSS interference. The AGC circuit in a GNSS receiver automatically adjusts the signal gain to maintain optimal signal levels. Under normal conditions, AGC values remain stable.
+
+- **Elevated AGC** indicates the receiver is reducing gain because an abnormally strong signal is present -- this is a hallmark of **jamming**
+- **Fluctuating AGC** suggests intermittent interference
+- Most modern survey-grade receivers expose AGC values through their status outputs; these should be monitored in the QC software
+
+!!! tip "AGC as an Early Warning"
+    AGC changes can appear **before** the position solution degrades, making it one of the earliest indicators of GNSS interference. Include AGC monitoring in the standard QC display alongside DOP, satellite count, and error ellipse.
+
+### Other Indicators
+
+- Sudden drop in tracked satellite count
+- Unexpected jump in position or velocity
+- GRIT / spoofing status flags on compatible receivers
+- Position disagreement between independent GNSS systems
+- C/N0 (carrier-to-noise ratio) anomalies
 
 ---
 
@@ -132,7 +173,7 @@ This combination mitigates jamming while leveraging multiple satellite constella
 The solar cycle is a nearly periodic **11-year fluctuation** in solar activity measured by sunspot numbers. Over each cycle, solar radiation, solar flares, coronal mass ejections, and sunspot counts rise from a minimum to a maximum and back.
 
 - **Solar Cycle 25** started in **December 2019** and will continue to approximately 2030
-- Expected peak: **July 2025** (early indications suggest the actual peak may be higher than predicted)
+- Solar Cycle 25 **peaked in late 2024 / early 2025**, with activity exceeding initial predictions. The cycle remains elevated and GNSS disruption risk continues through the declining phase
 
 ### Effects on GNSS Positioning
 
@@ -176,6 +217,75 @@ Scintillation is the **rapid fluctuation in amplitude and phase** of GNSS signal
 - Factor the potential for ionospheric disruption and loss of GNSS/L-band communications into **risk assessments** when planning critical offshore activities
 - Online ionospheric activity forecast tools (e.g., Veripos ionospheric activity forecast maps) can help predict when scintillation might affect the work area
 - QC software can show real-time indicators of whether the system is being affected by scintillation
+
+---
+
+## :material-file-document-alert: Reporting Guidance
+
+When GNSS jamming or spoofing is encountered, it should be formally reported. Accurate reporting helps build awareness and supports industry-wide mitigation efforts.
+
+### Who to Report To
+
+| Authority | When |
+|---|---|
+| **Vessel flag state** | All incidents -- required under maritime safety regulations |
+| **IMCA** | Report via the IMCA Safety Flash or incident reporting mechanism to alert the offshore survey community |
+| **Client / project management** | Immediately upon detection -- include impact on operations and mitigation measures taken |
+| **US Coast Guard NAVCEN** | If operating in or near US waters; accepts voluntary reports from all vessels |
+| **Local maritime authority** | Port state or coastal state authority for the area of operations |
+
+### What to Include
+
+- Date, time (UTC), and vessel position at onset
+- Duration of the event
+- Type of interference (jamming, spoofing, or suspected)
+- Affected systems and constellations
+- Impact on operations (position loss, degraded accuracy, etc.)
+- Mitigation measures deployed and their effectiveness
+- Any corroborating evidence (screenshots, logged data, AGC plots)
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Pre-mobilisation risk assessment** -- evaluate GNSS interference risk for the project area
+- **Equipment planning** -- determine whether anti-jam antennas or GRIT-enabled receivers are needed
+- **During operations** -- reference for identifying and responding to jamming or spoofing events
+- **Post-incident** -- guide for reporting interference events to the appropriate authorities
+- **Solar maximum periods** -- heightened awareness and planning for ionospheric scintillation effects
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|---|---|
+| Position continuity | No unexplained jumps > 5 m in horizontal position |
+| Satellite count recovery | >= 8 satellites tracked within 5 minutes of interference cessation |
+| PPP reconvergence | < 30 minutes to return to specified accuracy after disruption |
+| AGC deviation from baseline | Flag for investigation if AGC deviates > 3 dB from steady-state |
+| System comparison agreement during event | All independent GNSS systems within 2 m of each other, or event flagged |
+| Position solution availability | > 99.5% over 24-hour period (excluding planned outages) |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| Total loss of GNSS signal | Jamming | Check AGC levels; switch to anti-jam antenna if available; revert to INS-aided navigation |
+| Position slowly drifting to wrong location | Spoofing | Compare independent GNSS systems; check GRIT status flags; cross-check against radar/visual references |
+| Elevated AGC but position appears normal | Low-level interference or nearby radio source | Monitor closely; log the event; check for new radio equipment operating near GNSS frequencies |
+| L-band corrections lost | Scintillation or jamming affecting L-band | Switch to backup L-band beam; use internet-based corrections (NTRIP) if available |
+| Intermittent satellite dropouts after sunset | Ionospheric scintillation (Solar Cycle 25) | Enable multi-constellation tracking; increase L-band beam diversity; monitor scintillation forecasts |
+| One GNSS system affected, others normal | Receiver-specific fault or localised multipath | Check antenna and cable; swap receivers if possible; investigate antenna environment |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [GNSS Fundamentals](gnss-fundamentals.md) -- constellations, error sources, augmentation systems
+- [GNSS Accurate Height Check](gnss-accurate-height-check.md) -- vertical accuracy verification
 
 ---
 

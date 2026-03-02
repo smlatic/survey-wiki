@@ -5,6 +5,7 @@ tags: [mbes, multibeam, installation, transducer, mru, gyro, time sync, offsets,
 equipment: [Multibeam Echosounder, Motion Sensor, Gyrocompass, GNSS, INS, DVL, Total Station]
 date_added: 2026-03-01
 source_type: converted_procedure
+last_reviewed: 2026-03-01
 ---
 
 # :material-waves-arrow-right: MBES Installation and Setup
@@ -85,6 +86,51 @@ For temporary installations, transducers are often mounted over the side of vess
     - **Pole length**: must extend below the ship's keel so the transducer has an unobstructed port and starboard view
     - **Speed limitation**: excessive speed causes vibrations or can bend the pole, degrading data quality
 
+### Cable Management for Pole Mounts
+
+Poor cable management on over-the-side pole mounts is a common source of data quality issues and equipment damage.
+
+- **Secure all cables to the pole** using cable ties or tape at regular intervals -- unsecured cables can snag, pull connectors, or introduce vibration
+- **Allow a service loop** at the top of the pole to accommodate vessel motion without stressing connectors
+- **Route cables inboard** at the top of the pole to a protected location -- avoid running cables across walkways or near pinch points
+- **Protect connectors** from spray and wave impact with self-amalgamating tape or waterproof boots
+- **Label all cables** (MBES data, SV probe, MRU, power) to simplify troubleshooting
+
+---
+
+### Bubble Sweep-Down
+
+Bubble sweep-down occurs when air entrained by the vessel's bow wave is swept along the hull and passes under the transducer. This introduces aeration noise that degrades or completely blanks the MBES data.
+
+| Factor | Effect |
+|---|---|
+| **Sea state** | Worse in higher sea states as more air is entrained |
+| **Vessel speed** | Higher speed increases the amount of air swept under the hull |
+| **Transducer location** | Transducers mounted further aft or closer to the centreline may be less affected |
+| **Hull form** | Some hull shapes are more prone to sweep-down than others |
+
+**Mitigation:**
+
+- Mount the transducer as far forward and as deep as practical to avoid the bubble stream
+- Reduce survey speed if aeration noise is observed
+- On permanent installations, consider a fairing or flow deflector upstream of the transducer
+- Monitor the real-time MBES display for characteristic blank sectors or noisy data in the nadir region
+- For over-the-side pole mounts, ensure the pole is long enough that the transducer sits below the bubble layer
+
+---
+
+### Flat-Face vs Curved Array Transducers
+
+The transducer array geometry affects mounting requirements and beam coverage.
+
+| Array Type | Characteristics | Mounting Considerations |
+|---|---|---|
+| **Flat-face** | Beams emanate from a flat plane; typically narrower maximum swath angle | Must be mounted level (parallel to waterline) for correct beam geometry; any tilt directly affects swath symmetry |
+| **Curved array** | Beams emanate from a curved surface; can achieve wider swath coverage (up to 150 deg+ per side) | Must be mounted with the curve oriented correctly (typically convex downward); the reference point may not be at the geometric centre -- consult manufacturer drawings |
+
+!!! tip "Mounting Verification"
+    After installation, verify the transducer is level using a spirit level or inclinometer. Even a small mounting tilt (1-2 deg) will produce an asymmetric swath that must be accounted for in the patch test calibration.
+
 ---
 
 ## :material-angle-acute: Motion Reference Unit (MRU)
@@ -130,6 +176,22 @@ All MBES system sensors must be synchronised via precise timing.
 - A single, accurate time source with precision of **1 ms or better** (typically GNSS time)
 - Data should be time-stamped at the point of observation
 - In practice this is achieved via **1 Pulse Per Second (1 PPS)** and a corresponding **UTC time message** from a GNSS system
+
+### Verifying 1PPS Reception
+
+Before commencing survey operations, confirm that all sensors are receiving the 1PPS signal:
+
+1. **Check the MBES transceiver status** -- most systems display a PPS indicator (LED or software flag) that shows whether valid 1PPS is being received
+2. **Check the navigation software** -- many packages display PPS status per sensor, including whether the PPS is present and the time offset between PPS and the UTC time string
+3. **Use an oscilloscope** (if available) -- connect to the PPS line at the sensor end of the cable to verify the pulse is present and has the correct amplitude (typically 0-5V TTL)
+4. **Compare timestamps** -- log data from the MBES and navigation system simultaneously; the timestamps should agree to within 1 ms. A consistent offset suggests PPS is not being applied
+5. **Check the ZDA/NMEA time string** -- verify that the UTC time message is arriving from the same GNSS source as the PPS, and that the time in the string matches UTC
+
+!!! warning "Common 1PPS Issues"
+    - PPS cable disconnected or routed to the wrong port
+    - PPS signal attenuated over long cable runs (use a PPS distribution amplifier for runs > 30 m)
+    - PPS and ZDA from different GNSS sources, causing a time offset
+    - PPS present but the sensor is not configured to use it (check sensor setup)
 
 ### Along-Track Errors -- Position Data Latency
 
@@ -226,6 +288,53 @@ Benefits of tightly coupled systems:
     - [x] Manufacturer reference points used for transducer offsets
     - [x] Subsea: DVL or DVL+INS supplementing acoustic positioning
     - [x] Subsea: SVP/CTD data available for pressure-to-depth, beam steering, and acoustic ranging
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Vessel mobilisation** -- follow this guide when installing MBES systems on a new vessel or re-mobilising equipment
+- **Temporary installations** -- particularly relevant for over-the-side pole mount setups
+- **System reconfiguration** -- when changing transducer, MRU, or gyro positions
+- **Troubleshooting installation issues** -- reference for diagnosing problems related to mounting, timing, or offsets
+- **Pre-calibration** -- installation must be correct before MBES calibration (patch test) can be performed
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|---|---|
+| Transducer mounting level | < 1 deg tilt from horizontal (before calibration) |
+| MRU placement | At or near vessel centre of gravity |
+| Time synchronisation (1PPS) | All sensors receiving PPS; timestamps agree within 1 ms |
+| Offset measurement accuracy | < 0.02 m for tightly coupled systems; < 0.05 m for conventional installations |
+| Cable continuity | All connections verified; no signal attenuation on cable runs > 20 m |
+| SV sensor at transducer face | Reading realistic values (typically 1480-1550 m/s for seawater) |
+| Swath symmetry (visual check) | Approximately equal port and starboard coverage on flat seabed |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| Asymmetric swath (one side shorter) | Transducer not level; mounting tilt | Check transducer level with spirit level; adjust mount |
+| Noisy data in nadir region | Bubble sweep-down or aeration | Reduce speed; check transducer depth below waterline; relocate if possible |
+| Blank sectors in swath | Obstruction in beam path; cable fault | Verify no hull structures block the transducer; check all cables |
+| Along-track position shift on slopes | Position data latency (timing error) | Verify 1PPS reception; check that PPS and ZDA come from same source |
+| Across-track ripple pattern | Motion data latency or MRU misalignment | Verify MRU timing; check MRU axis alignment to transducer |
+| Heave artefacts in data | Heave filter not matched to vessel; MRU not at COG | Adjust heave filter per manufacturer guidance; relocate MRU closer to COG |
+| SV probe reading unrealistic values | Probe fouled or misconfigured | Clean probe; verify probe is in water and configured for correct units |
+| Vibration noise on pole mount | Pole too long or unsupported; inadequate guy lines | Add bracing or guy lines; shorten pole if possible; reduce survey speed |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [MBES Operations and Settings](mbes-operations-and-settings.md) -- operational guidance, acquisition settings, and QC
+- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md) -- transducer-to-MRU/gyro calibration procedure
+- [INS Theory and Principles](ins-theory-and-principles.md) -- tightly coupled INS/MBES configurations
 
 ---
 

@@ -5,6 +5,7 @@ tags: [mbes, multibeam, operations, draft, tides, sound velocity, coverage, sett
 equipment: [Multibeam Echosounder, Motion Sensor, Gyrocompass, Sound Velocity Profiler, GNSS, Tide Gauge]
 date_added: 2026-03-01
 source_type: converted_procedure
+last_reviewed: 2026-03-01
 ---
 
 # :material-waves: MBES Operations and Settings
@@ -108,6 +109,31 @@ For surface vessels carrying out large area surveys, an MVP should be considered
 - Measurement frequency must be based on known conditions: SV can vary rapidly in estuaries compared with the open ocean
 - Deep water ROV/AUV surveys may have more stable SV conditions, but large depth changes over steep gradients will affect SV and must be considered
 
+### Practical SVP Frequency
+
+| Environment | Recommended Interval | Rationale |
+|---|---|---|
+| **Open ocean** (stable conditions) | Every **4-6 hours** | SV profile changes slowly in deep, well-mixed water |
+| **Stratified water** (thermocline present) | Every **1-2 hours** | Thermal stratification causes rapid SV changes, especially near the thermocline |
+| **Estuaries and coastal areas** | Every **30 min to 1 hour** | Tidal mixing, freshwater influx, and temperature gradients cause rapid SV variation |
+| **After significant weather change** | Immediately | Wind mixing, rainfall, or solar heating can alter the upper water column rapidly |
+
+!!! tip "SVP Monitoring"
+    Watch the outer beams continuously. If curvature (smile or frown) develops in the swath on flat seabed, the SVP is no longer representative and a new cast is needed.
+
+### SV Smile and Frown Diagnosis
+
+When the applied SVP does not match actual water column conditions, the outer beams will curve up or down on flat seabed:
+
+| Swath Shape | Diagnosis | Corrective Action |
+|---|---|---|
+| **Frown** (outer beams curve downward) | Applied SV is **too fast** (higher than actual) -- the system over-corrects for refraction, bending outer beams too far downward | Take a new SVP cast; the water column is slower than the applied profile |
+| **Smile** (outer beams curve upward) | Applied SV is **too slow** (lower than actual) -- the system under-corrects for refraction, leaving outer beams curving upward | Take a new SVP cast; the water column is faster than the applied profile |
+| **Flat** (no curvature) | SVP correctly represents water column conditions | No action needed; continue monitoring |
+
+!!! info "Memory Aid"
+    **Frown = Fast** (applied SV too fast). **Smile = Slow** (applied SV too slow).
+
 ---
 
 ## :material-map-marker-path: Coverage
@@ -188,6 +214,63 @@ Some MBES systems actively compensate for heave, pitch, and roll (mechanically o
 ### Mounting Angles
 
 Enter the values determined during the patch test calibration. Pay careful attention to the software's sign conventions.
+
+---
+
+## :material-image-filter-hdr: Backscatter and Snippet Acquisition
+
+Backscatter data records the intensity of the acoustic return from the seabed, providing information about seabed type and texture.
+
+### Settings
+
+| Parameter | Guidance |
+|---|---|
+| **Backscatter logging** | Enable in the MBES acquisition software; most modern systems log backscatter by default |
+| **Snippet mode** (if available) | Enable snippet logging to record the full time-series of each beam return, not just the peak intensity. Snippets provide higher-resolution seabed classification data |
+| **Gain normalisation** | Use consistent gain settings during a survey to ensure backscatter data is comparable between lines. Avoid auto-gain if backscatter analysis is a project deliverable |
+| **Power level** | Keep power settings consistent where possible; changes in power affect backscatter intensity and must be accounted for in processing |
+| **Absorption coefficient** | Enter the correct absorption coefficient for the operating frequency and water conditions; this affects the range-dependent backscatter correction |
+
+!!! note "Project Requirements"
+    Check whether backscatter / seabed classification is a project deliverable before configuring these settings. If required, discuss acquisition parameters with the processing team to ensure the data meets their needs.
+
+---
+
+## :material-format-columns: Water Column Data
+
+Water column data captures the full acoustic return through the water column, not just the seabed return. This enables detection of features such as:
+
+- Gas seeps and bubble plumes
+- Fish schools and biological scatterers
+- Suspended sediment layers
+- Mid-water infrastructure or debris
+
+### Acquisition Considerations
+
+| Consideration | Detail |
+|---|---|
+| **Data volume** | Water column data generates very large files (10x or more compared to bathymetry-only logging). Ensure sufficient storage capacity |
+| **Logging format** | Must be enabled in the MBES software; not all output formats support water column data (e.g. .all and .s7k support it; .gsf does not) |
+| **Processing** | Requires specialist software for visualization and analysis (e.g. QPS Qimera, Fledermaus FM Midwater) |
+| **When to enable** | Only when specified by the project scope or when there is a specific need (gas seep survey, pipeline leak detection, environmental baseline) |
+
+!!! warning "Storage Planning"
+    A single day of water column logging in shallow water can produce hundreds of gigabytes. Plan storage capacity and data transfer logistics before enabling water column recording.
+
+---
+
+## :material-file-cog: Data Formats
+
+| Format | Extension | Manufacturer | Notes |
+|---|---|---|---|
+| **Kongsberg ALL** | `.all` | Kongsberg | Native format for Kongsberg EM series; supports bathymetry, backscatter, water column, and runtime parameters. Widely used in offshore survey |
+| **Kongsberg KMALL** | `.kmall` | Kongsberg | Newer format replacing .all for latest EM systems; extended metadata and improved structure |
+| **Reson S7K** | `.s7k` | Teledyne RESON | Native format for Teledyne SeaBat and T-series; supports bathymetry, snippets, water column |
+| **Generic Sensor Format** | `.gsf` | Open standard | Manufacturer-independent format; supports bathymetry and backscatter but **not** water column data. Useful for data exchange between different processing packages |
+| **Norbit** | `.wbf` | Norbit | Native format for Norbit iWBMS systems |
+
+!!! tip "Format Selection"
+    Use the MBES native format (.all, .s7k) as the primary logging format to preserve all data types. Log to GSF as a secondary format if required for compatibility with the client's processing software.
 
 ---
 
@@ -299,6 +382,55 @@ Performance testing evaluates the quality and confidence of multibeam data acros
 | 1. **Reference surface** | Create a high-quality reference surface in the survey area |
 | 2. **Check-line comparison** | Compare multibeam check-lines against the reference surface to quantify accuracy |
 | 3. **Single-beam comparison** | Compare independent single-beam survey lines against the reference surface |
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Survey operations** -- primary reference for MBES acquisition settings and real-time QC
+- **Pre-survey planning** -- determine coverage requirements, SVP frequency, and IHO compliance
+- **Draft management** -- guidance on when and how to measure draft during operations
+- **Data quality issues** -- troubleshoot SV problems, coverage gaps, and noise in acquired data
+- **TPU/uncertainty budgets** -- understand contributing factors to vertical and horizontal uncertainty
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|---|---|
+| Draft measurement frequency | Before and after every survey; after any buoyancy change |
+| SVP cast frequency | Per table above (4-6 h open ocean; 1-2 h stratified; 30-60 min coastal) |
+| Swath curvature (flat seabed) | No visible smile or frown on outer beams |
+| Coverage overlap | >= 20% between adjacent swaths (more in rough terrain) |
+| TVU compliance | Within IHO S-44 limits for the specified survey order |
+| THU compliance | Within IHO S-44 limits for the specified survey order |
+| Real-time SV at transducer face | Reading within expected range (1480-1550 m/s for seawater) |
+| Sensor update rates | All sensors streaming at expected rates (heading, pitch, roll, heave, position) |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| Outer beams smiling (curving up) | Applied SV too slow | Take a new SVP cast; the water is faster than the profile |
+| Outer beams frowning (curving down) | Applied SV too fast | Take a new SVP cast; the water is slower than the profile |
+| Coverage gaps between adjacent lines | Line spacing too wide; vessel off-line | Reduce line spacing; improve line keeping; check range setting |
+| Noisy data across entire swath | Power too high; aeration; multipath | Reduce power level; check for bubble sweep-down; verify transducer is clear |
+| Noisy outer beams only | Range set too large; SV incorrect at depth | Reduce range; update SVP with a cast to full depth |
+| Depth values inconsistent with chart | Incorrect draft; wrong tidal reduction; datum error | Re-measure draft; verify tide source and datum; check geoid/separation model |
+| Along-track striping on slopes | Position timing latency | Verify 1PPS; re-run timing calibration over a suitable slope feature |
+| Across-track ripple on flat seabed | Motion data latency or MRU heave filter mismatch | Verify MRU timing; adjust heave filter for vessel size |
+| Large TPU values exceeding IHO limits | Multiple contributing uncertainties | Review each TPU component; identify the dominant source; address the largest contributor first |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [MBES Installation and Setup](mbes-installation-and-setup.md) -- transducer placement, MRU mounting, time synchronisation, offsets
+- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md) -- resolving transducer-to-MRU/gyro misalignment
+- [INS Theory and Principles](ins-theory-and-principles.md) -- INS integration for subsea MBES operations
 
 ---
 

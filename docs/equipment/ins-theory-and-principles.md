@@ -5,6 +5,7 @@ tags: [ins, imu, inertial navigation, kalman filter, dvl, usbl, lbl, gnss, aidin
 equipment: [INS/IMU, DVL, USBL, LBL, GNSS, Depth Sensor, Sound Velocity Sensor]
 date_added: 2026-03-01
 source_type: converted_procedure
+last_reviewed: 2026-03-01
 ---
 
 # :material-chip: INS Theory and Principles
@@ -190,6 +191,17 @@ The gyroscopes and accelerometers inside the IMU can be of different quality. Th
 
 Very high-quality sensors come under **International Traffic in Arms Regulations (ITAR)** and can be prohibitively problematic to ship and use for offshore operations. INS instruments used offshore have performance that falls within the criteria allowing them to be shipped. **It is these regulations that limit the quality of INS sensors used offshore.**
 
+### Gyroscope Technology Comparison
+
+| Technology | Abbreviation | Typical Bias Stability | Typical Applications | Cost |
+|---|---|---|---|---|
+| **MEMS** (Micro-Electro-Mechanical Systems) | MEMS | 1-10 deg/hr | Low-cost navigation, consumer devices, some survey-grade AHRS | Low |
+| **Fibre Optic Gyroscope** | FOG | 0.001-0.1 deg/hr | Offshore survey INS (e.g. Exail PHINS, ROVINS), high-accuracy navigation | Medium-High |
+| **Ring Laser Gyroscope** | RLG | 0.001-0.01 deg/hr | Military/aerospace, highest-grade INS; rarely used offshore due to ITAR and cost | High |
+
+!!! info "Offshore Survey Context"
+    The majority of INS systems used in offshore survey are FOG-based. These provide the best balance of performance and exportability. MEMS-based systems are increasingly capable but currently do not match FOG performance for subsea survey applications. RLG systems, while superior in raw performance, are generally restricted by ITAR and not commonly deployed offshore.
+
 ### INS Drift Rates
 
 | Condition | Drift Rate | Notes |
@@ -311,7 +323,7 @@ In plain terms:
 - **LV3** is entered **positive up**
 
 !!! danger "Pitch Sign Reversal"
-    With ROVINS or PHINS, the **pitch sign convention is reversed** compared to standard convention. This is critical to account for when integrating with navigation software.
+    With ROVINS or PHINS, the **pitch sign convention is reversed** compared to standard survey convention. In Exail (iXblue) systems, **positive pitch = bow up**. Standard survey convention typically defines positive pitch as bow down. This is critical to account for when integrating with navigation software -- a sign error in pitch will cause depth errors that increase with distance from the transducer nadir.
 
 The primary lever arm is the primary external monitoring point (with respect to the INS centre of measurements) for calculation and output of position and attitude data to the online navigation system. Offset values are entered from the INS measurement point to the reference point using Exail sign convention.
 
@@ -378,10 +390,84 @@ When the INS algorithm is started, there is **no need to perform alignment manoe
 | IMU components | 3 gyroscopes + 3 accelerometers |
 | Unaided drift | ~12 m over 4 minutes (accelerating) |
 | DVL-aided drift | 0.02%-0.06% distance travelled |
-| Free inertial drift (20 min) | ~900 m (extrapolated) |
+| Free inertial drift (20 min) | Highly variable -- drift is non-linear and accelerates; do not extrapolate linearly from short-duration figures |
 | DVL bottom lock (1200 kHz) | 0.3-30 m altitude |
 | DVL bottom lock (low freq.) | Up to 200 m altitude |
 | USBL SD estimate | 0.2%-0.5% of slant range |
 | Pre-cal validity period | Typically 1 year |
 | AHRS settling time (Sonardyne) | 10 minutes |
 | INS time sync | 1PPS + ZDA from same GNSS source |
+
+---
+
+## :material-heart-pulse: Health Monitoring
+
+Continuous monitoring of INS health during operations is essential. The following indicators should be checked regularly:
+
+### Kalman Filter Status
+
+- **Innovation sequence** (the difference between predicted and actual measurements) should remain within expected bounds. Large or growing innovations indicate the filter is struggling to reconcile sensor data
+- **Residuals** should be small and randomly distributed. Systematic patterns in residuals indicate unmodelled errors (e.g. DVL misalignment, incorrect lever arms)
+- **Filter covariance** values indicate the estimated uncertainty of each state. Rapidly growing covariance means the filter is losing confidence -- check that aiding sensors are being accepted
+
+### Aiding Sensor Status
+
+| Check | What to Look For |
+|---|---|
+| **DVL bottom lock** | Verify DVL has continuous bottom lock; loss of bottom lock means loss of velocity aiding |
+| **USBL acceptance rate** | Monitor how many USBL fixes are accepted vs rejected by the INS. High rejection rate suggests USBL accuracy is worse than expected or lever arms are incorrect |
+| **Depth sensor** | Confirm depth readings are stable and consistent with expected values |
+| **GNSS (surface)** | Verify GNSS is being accepted; check that the PPP/DGNSS solution is converged |
+
+### Warning Signs
+
+- INS position diverging from USBL when DVL bottom lock is lost
+- Heading uncertainty growing beyond specification
+- Velocity residuals consistently in one direction (indicates DVL misalignment)
+- Depth residuals drifting (indicates pressure sensor drift or incorrect density parameters)
+
+---
+
+## :material-calendar-check: When to Use
+
+- **INS mobilisation** -- reference for system installation, configuration, and alignment
+- **Calibration planning** -- understand DVL-INS alignment requirements and pre-calibration validity
+- **Operations** -- real-time health monitoring guidance and troubleshooting during survey operations
+- **Training** -- foundational reference for surveyors working with INS systems for the first time
+- **System selection** -- compare gyroscope technologies and understand ITAR implications for equipment procurement
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|---|---|
+| DVL-aided drift | < 0.1% of distance travelled |
+| Heading accuracy (after alignment) | Per instrument specification (typically < 0.1 deg secant latitude for FOG systems) |
+| Pitch and roll accuracy | Per instrument specification (typically < 0.02 deg for FOG systems) |
+| DVL calibration residuals | < 0.05 deg misalignment on all axes |
+| USBL acceptance rate | > 80% of USBL fixes accepted by the INS |
+| Kalman filter innovations | Within 3-sigma bounds for all aiding sensors |
+| Pre-calibration certificate validity | Within 1 year of calibration date |
+| Time synchronisation | 1PPS and ZDA from same GNSS source; latency < 1 ms |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| INS drifting rapidly when subsea | DVL has no bottom lock | Check altitude; verify DVL is functioning; ensure SVS is interfaced |
+| INS rejecting USBL fixes | USBL accuracy worse than expected, or incorrect lever arms | Check USBL calibration; verify lever arms in INS configuration; increase USBL SD weighting |
+| Heading not converging during alignment | Insufficient dynamics or incorrect start position | Perform figure-of-8 or stair pattern; verify start coordinates are correct |
+| Velocity residuals biased in one direction | DVL-to-INS misalignment | Re-run DVL calibration; check that the pre-cal file is loaded correctly |
+| Depth aiding rejected | Incorrect pressure-to-depth parameters | Verify density, atmospheric pressure, and tide settings; re-check depth sensor offset |
+| Position jumps when USBL is re-acquired after gap | INS drifted during USBL outage; large correction applied | This is expected behaviour; longer USBL gaps produce larger jumps. Ensure DVL aiding is continuous to minimise drift |
+| System fails to initialise on deck | No GNSS position provided, or system not stationary | Provide a GNSS position to the INS; ensure the system is completely stationary during coarse alignment |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [GNSS Fundamentals](../positioning/gnss-fundamentals.md) -- GNSS augmentation systems used for surface aiding
+- [MBES Installation and Setup](mbes-installation-and-setup.md) -- tightly coupled INS/MBES configurations

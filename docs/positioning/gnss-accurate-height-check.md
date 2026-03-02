@@ -5,6 +5,7 @@ tags: [gnss, height, vertical, verification, tide-gauge, draft, ellipsoidal-heig
 equipment: [GNSS System, Tide Gauge (3rd Party), RTK GNSS, Weighted Tape, Survey Marker]
 date_added: 2026-03-01
 source_type: converted_procedure
+last_reviewed: 2026-03-01
 ---
 
 # :material-arrow-expand-vertical: GNSS Accurate Height Check
@@ -17,6 +18,34 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Verify the accuracy of GNSS-derived ellipsoidal heights by comparing GNSS water-level profiles against independent 3rd-party tide gauge data over a full tidal cycle. The resulting comparison plot is inserted into the project mobilisation report as evidence of vertical positioning accuracy.
+
+---
+
+## :material-earth: Vertical Datums and Geoid Models
+
+### Common Vertical Datums
+
+| Datum | Abbreviation | Description |
+|---|---|---|
+| **Lowest Astronomical Tide** | LAT | The lowest tide level predicted under average meteorological conditions; commonly used for chart datum in hydrographic surveys |
+| **Mean Sea Level** | MSL | The arithmetic mean of hourly water levels observed over a period (typically 18.6 years); widely used as a land survey datum |
+| **Chart Datum** | CD | The datum to which charted depths are referenced; often coincides with LAT but may differ by region |
+| **Ellipsoid** | WGS84 / GRS80 | The mathematical reference surface used by GNSS; all GNSS heights are initially ellipsoidal |
+
+### Geoid Model Quality
+
+The accuracy of GNSS-derived heights referenced to a tidal or MSL datum depends directly on the **quality of the geoid (or separation) model** used to convert ellipsoidal heights to orthometric or chart datum heights.
+
+- **Global models** (e.g. EGM2008, EGM2020) have typical accuracies of 10-20 cm in open ocean but can be worse in coastal areas with complex gravity fields
+- **Regional models** (e.g. VORF for UK waters, Bathyelli) are refined with local data and provide better accuracy (typically 5-10 cm)
+- **Project-specific models** fitted to local tide gauge data provide the best results
+
+!!! warning "Geoid Model Limitations"
+    A poor geoid model will introduce a **systematic vertical bias** across the survey area. Always verify the geoid model against known benchmarks or tide gauge data before relying on GNSS-derived heights for vertical control.
+
+### PPP Convergence for Height Verification
+
+If using PPP for the height check, the solution must be **fully converged** before data is considered valid. Typical convergence time is **20 to 30 minutes** from initial lock. During convergence, the vertical component is the last to stabilise and may oscillate by several decimetres. Do not include data from the convergence period in the comparison.
 
 ---
 
@@ -141,7 +170,56 @@ Install a quayside vertical reference point with suitable access to the water, c
 
 ---
 
-## :material-link-variant: Related Pages
+## :material-chart-line: Diagnosing Systematic Bias vs Scale Error
+
+When the GNSS water-level profile does not match the tide gauge, the type of disagreement indicates the source of the problem:
+
+| Observation | Diagnosis | Corrective Action |
+|---|---|---|
+| **Constant vertical offset** (profiles are parallel but shifted) | Systematic bias -- incorrect draft, antenna offset, or geoid model error | Re-measure draft; verify antenna-to-waterline offset; check geoid model value at the test location |
+| **Profiles diverge with tidal range** (bigger error at high/low water) | Scale error -- incorrect tidal reduction or separation model | Verify the separation model is correct for the location; check that the datum transformation is applied correctly; re-examine the pressure-to-depth conversion parameters |
+| **Random scatter around the tide gauge profile** | Noise -- vessel motion, multipath, or short convergence period | Extend the observation period; verify vessel is not under bunkering/ballast operations; check for multipath sources |
+| **Phase shift** (GNSS leads or lags the tide gauge) | Timing error or tide gauge data with different time reference | Verify all systems are on UTC; check tide gauge time stamps; confirm GNSS time synchronisation |
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Project mobilisation** -- mandatory vertical accuracy verification before survey operations begin
+- **After GNSS system change** -- whenever a GNSS receiver, antenna, or correction service is changed
+- **After firmware update** -- to confirm vertical performance is unaffected
+- **Periodic re-verification** -- as required by the project procedure or client specification
+- **When vertical accuracy is in doubt** -- following any event that may have affected the GNSS vertical solution (e.g. scintillation event, correction outage)
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|---|---|
+| GNSS vs tide gauge agreement (RMS) | < 0.10 m over a full tidal cycle |
+| Maximum single-point deviation | < 0.20 m |
+| Systematic bias (mean offset) | < 0.05 m after applying all corrections |
+| Data collection duration | Minimum one full tidal cycle (8-9 hours) including one high and one low slack |
+| PPP convergence | Solution must be converged (> 30 min since start) before comparison data is valid |
+| Manual dip vs tide gauge (if performed) | +/- 0.10 m |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| Constant offset between GNSS and tide gauge | Incorrect draft, antenna offset, or geoid model | Re-measure draft; verify offsets; compare geoid model value with published benchmarks |
+| Profiles match in shape but scale differs | Datum or separation model error | Confirm both datasets are on the same vertical datum; verify separation model |
+| Large scatter in GNSS profile | Vessel moving (bunkering, ballast), multipath, or unconverged PPP | Confirm vessel stability; check multipath environment; verify PPP convergence |
+| Phase shift between profiles | Time synchronisation error | Verify GNSS and tide gauge data are both on UTC |
+| Height check fails only on one GNSS system | System-specific fault (cable, antenna, receiver) | Isolate the failing system; inspect cable and antenna; test with known-good equipment |
+| Tide gauge data unavailable for test period | Tide gauge offline or data not yet published | Use alternative tide gauge within 5 km; or delay test until data is available |
+
+---
+
+## :material-link-variant: Related Articles
 
 - [GNSS Fundamentals](gnss-fundamentals.md) -- constellations, augmentation systems, error sources
 - [Alongside DGNSS Integrity Check](dgnss-integrity-check.md) -- horizontal DGNSS verification with total station

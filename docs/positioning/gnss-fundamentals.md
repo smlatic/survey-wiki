@@ -5,6 +5,7 @@ tags: [gnss, gps, glonass, galileo, beidou, positioning, navigation, dgnss, ppp,
 equipment: [GNSS Receiver, GNSS Antenna, L-Band Demodulator, Total Station, Navigation Computer]
 date_added: 2026-03-01
 source_type: converted_procedure
+last_reviewed: 2026-03-01
 ---
 
 # :material-satellite-variant: GNSS Fundamentals
@@ -26,10 +27,10 @@ Modern GNSS receivers can simultaneously use satellites from multiple constellat
 
 | Constellation | Operator | Satellites | Orbit Altitude | Coverage | Frequencies |
 |---|---|---|---|---|---|
-| **GPS** (NAVSTAR) | United States | 31 (24 baseline) | 20,200 km | Global | L1, L2 |
-| **GLONASS** | Russia | 24 (22 operational + 3 spares) | 19,140 km | Global | L1, L2 (dual-frequency) |
-| **BeiDou** | China | 30 (3 GEO + 3 IGSO + 24 MEO) | Various | Global | Multiple |
-| **Galileo** | European Union | 27 operational + 3 active spares | 23,222 km | Global | Multiple |
+| **GPS** (NAVSTAR) | United States | 31 (24+ operational baseline) | 20,200 km | Global | L1 (1575.42 MHz), L2 (1227.60 MHz), L5 (1176.45 MHz) |
+| **GLONASS** | Russia | 24 (22 operational + 3 spares) | 19,140 km | Global | L1, L2 (FDMA); L3 (CDMA on newer satellites) |
+| **BeiDou** | China | 30 (3 GEO + 3 IGSO + 24 MEO) | Various | Global | B1 (1561.098 MHz), B2 (1207.14 MHz), B3 (1268.52 MHz) |
+| **Galileo** | European Union | 27 operational + 3 active spares | 23,222 km | Global | E1 (1575.42 MHz), E5a (1176.45 MHz), E5b (1207.14 MHz), E6 (1278.75 MHz) |
 | **QZSS** | Japan | 4 (expanding to 7) | Various | Regional (Asia-Pacific) |  Multiple |
 | **NavIC** | India | 7 (3 GEO + 4 IGSO) | Geostationary / Geosynchronous | Regional (India + 1,500 km) | Multiple |
 
@@ -68,7 +69,7 @@ Until the receiver clock error is resolved, the measured distances are called **
 - Each range defines a sphere centered on the satellite
 - With one satellite, the receiver lies somewhere on the sphere's surface
 - With two satellites, the position lies on the intersection of two spheres
-- With three satellites, a 2D position is resolved
+- With three satellites, a 2D position is resolved (latitude and longitude only -- this requires **height aiding**, i.e. the height must be constrained or assumed, otherwise the solution is underdetermined)
 - With **four or more satellites**, a full 3D position is computed using **least squares adjustment**
 
 ---
@@ -145,6 +146,21 @@ DGNSS is effective at minimising most of the errors described above, particularl
 
 ---
 
+### Satellite-Based Augmentation Systems (SBAS)
+
+SBAS systems broadcast GNSS corrections and integrity information via geostationary satellites. They provide metre-level accuracy improvement over standalone GNSS without requiring a local base station.
+
+| System | Region |
+|---|---|
+| **WAAS** | North America |
+| **EGNOS** | Europe |
+| **MSAS** | Japan |
+| **GAGAN** | India |
+
+SBAS is primarily designed for aviation safety-of-life applications but is also used in marine navigation and low-accuracy survey tasks. It does not achieve the accuracy of PPP or RTK but provides a freely available improvement over standalone GNSS.
+
+---
+
 ### Precise Point Positioning (PPP)
 
 PPP is the most widely used system in offshore industry due to its accuracy and **global coverage**.
@@ -159,8 +175,10 @@ PPP is the most widely used system in offshore industry due to its accuracy and 
 
 PPP corrections are generated from a global network of reference stations that compute precise satellite clock and orbit data. These are delivered to the end user, and the receiver uses them to achieve decimetre-level or better accuracy from a single receiver with no local base station.
 
-!!! info "Convergence"
+!!! info "Convergence and Reconvergence"
     A PPP solution requires a period of convergence to resolve for the carrier-phase ambiguity and local biases (atmospheric conditions, multipath environment, satellite geometry). Convergence time and final accuracy depend on the quality of corrections and how they are applied in the receiver.
+
+    **Reconvergence** occurs when a converged PPP solution is disrupted (e.g. by signal loss, ionospheric scintillation, or correction data interruption). The receiver must re-estimate the ambiguities and biases. Typical reconvergence takes **20 to 30 minutes**, though modern multi-constellation services with fast reconvergence algorithms can reduce this. During reconvergence, horizontal accuracy degrades to metre level or worse -- plan critical operations around this limitation.
 
 ---
 
@@ -181,6 +199,22 @@ RTK resolves the integer number of carrier wavelengths between the satellite and
 
 !!! warning "Critical Dependency"
     RTK requires a **continuous, reliable communications link** between base and rover. Loss of the data link means loss of RTK solution.
+
+---
+
+### Network RTK
+
+Network RTK extends conventional RTK by using a **network of permanent reference stations** rather than a single base station. The network processor models atmospheric errors across the region and generates a virtual reference station (VRS) or area corrections for the rover's location.
+
+| Characteristic | Detail |
+|---|---|
+| Accuracy | Centimetre level (comparable to conventional RTK) |
+| Base station required | No -- uses a network of permanent stations |
+| Coverage | Regional (depends on network density and extent) |
+| Communications | Mobile data (internet) connection to the network service |
+| Key advantage | Eliminates the need to set up a local base station; corrections remain valid over larger areas |
+
+Network RTK is commonly used for nearshore and port surveys, quayside mobilisation checks, and any application where a local base station is impractical but mobile data coverage is available.
 
 ---
 
@@ -275,6 +309,54 @@ GNSS positions are computed using least squares adjustment. The residuals and co
 
 !!! tip "Monitoring"
     GNSS QC software calculates these statistics in real time and presents them to the online surveyor. Continuous monitoring of w-test, F-test, error ellipse and external reliability is essential during operations.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Project mobilisation** -- verify GNSS system performance before survey operations begin
+- **Equipment selection** -- determine which augmentation system (DGNSS, PPP, RTK, Network RTK, SBAS) is appropriate for the project accuracy requirements
+- **Training and onboarding** -- foundational reference for surveyors new to GNSS-based positioning
+- **Troubleshooting** -- understand error sources and augmentation limitations when diagnosing positioning issues during operations
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|---|---|
+| HDOP | < 2.0 for survey operations; < 1.5 preferred |
+| PDOP | < 3.0 for 3D positioning |
+| Minimum satellites tracked | >= 8 (multi-constellation) |
+| PPP horizontal accuracy (converged) | < 0.15 m (95% CL) |
+| RTK horizontal accuracy | < 0.02 m + 1 ppm of baseline (95% CL) |
+| RTK vertical accuracy | < 0.03 m + 1 ppm of baseline (95% CL) |
+| DGNSS horizontal accuracy | < 1.0 m (95% CL) |
+| PPP convergence time | < 30 minutes to reach specified accuracy |
+| System comparison agreement | Within operating specifications of each system |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---|---|---|
+| High DOP values / poor geometry | Obstructions blocking satellite signals | Check antenna siting; ensure clear sky view in all directions |
+| Position jumps or sudden offset | Multipath from nearby structures | Relocate antenna away from reflective surfaces; check for new obstructions |
+| PPP not converging | Correction data not being received | Verify L-band demodulator lock; check NTRIP connection and credentials |
+| PPP reconvergence taking > 30 min | Ionospheric disturbance or correction interruption | Monitor ionospheric activity; verify correction stream is continuous |
+| Noisy height component | High VDOP; poor satellite geometry in vertical axis | Ensure multi-constellation tracking is enabled; add more constellations |
+| RTK solution dropping to float | Communication link unstable; baseline too long | Check radio/data link; confirm baseline < 20 km |
+| System comparison disagreement | Incorrect offsets or datum mismatch | Re-verify antenna offsets; confirm all systems on same datum |
+| No satellites tracked | Cable fault; antenna connector corroded | Inspect cable run; check all connectors; test with known-good antenna |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [GNSS Jamming and Spoofing](gnss-jamming-and-spoofing.md) -- interference threats, anti-jam antennas, Solar Cycle 25
+- [GNSS Accurate Height Check](gnss-accurate-height-check.md) -- vertical verification using tide gauge comparison
+- [Alongside DGNSS Integrity Check](dgnss-integrity-check.md) -- horizontal DGNSS verification with total station
 
 ---
 
