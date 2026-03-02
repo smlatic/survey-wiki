@@ -4,6 +4,7 @@ category: positioning
 tags: [dgnss, gnss, integrity, antenna health, total station, positioning, verification, ESP]
 equipment: [DGNSS System, Total Station, Reflector Prism, NaviPac/Qinsy]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,41 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Verify the overall health and accuracy of DGNSS positioning systems by comparing logged DGNSS antenna positions against independently measured positions derived from total station observations. Often called an "antenna health check", this procedure uses an External Service Provider (ESP) to measure DGNSS system positions using land survey techniques.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Alongside before every survey** as part of the mobilisation checks
+- When changing correction services or correction service providers
+- After any antenna reinstallation, cable replacement, or receiver swap
+- When DGNSS system firmware is updated
+- After any event that may have affected antenna position (crane operations, structural work near antenna mast)
+
+---
+
+## :material-information-outline: Vessel Motion Limits
+
+For the integrity check results to be meaningful, vessel motion must be minimal during the observation period.
+
+| Parameter | Limit |
+|---|---|
+| Heave during check | < 0.5 m |
+| Vessel displacement | Vessel must remain alongside with minimal surge/sway |
+| Mooring condition | Securely moored with adequate fender arrangement |
+
+!!! warning "High Heave Conditions"
+    If heave exceeds 0.5 m during the observation period, the comparison between total station and DGNSS positions will be contaminated by unresolved vertical motion. Wait for calmer conditions or note the heave conditions in the report and apply wider tolerances.
+
+### Failure Decision Tree
+
+When the DGNSS and total station positions disagree beyond tolerance, follow this decision sequence:
+
+1. **Check correction age** -- if correction age > 10 s, the correction link may be intermittent. Investigate the correction uplink before re-testing.
+2. **Check datum and projection** -- confirm the DGNSS and ESP are using the same geodetic datum and map projection. A datum mismatch can introduce metre-level offsets.
+3. **Check antenna offsets** -- verify the antenna offset values in the navigation software match the physical measurements. A transposed or sign-reversed offset is a common error.
+4. **Check for multipath** -- review PDOP, number of satellites, and signal-to-noise values. If the antenna has a poor sky view (e.g., blocked by crane or mast), multipath may degrade the solution.
+5. **Re-observe** -- if none of the above resolves the disagreement, request the ESP to re-observe. Consider moving the reflector prism to a different known point to rule out ESP setup errors.
 
 ---
 
@@ -94,3 +130,39 @@ Compare the DGNSS positions to those derived from the total station observations
     - [x] PDOP and HDOP values within acceptable limits throughout the logging period
     - [x] Solution status remains stable during observations
     - [x] No crane operations or other interference during the test period
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Pass | Marginal | Fail |
+|---|---|---|---|
+| Horizontal position agreement (DGNSS vs total station) | Within 0.30 m | 0.30 -- 0.50 m | > 0.50 m |
+| Correction age | < 10 s | 10 -- 15 s | > 15 s |
+| PDOP | < 3.0 | 3.0 -- 5.0 | > 5.0 |
+| HDOP | < 2.0 | 2.0 -- 3.0 | > 3.0 |
+| Solution status | Fixed solution maintained throughout | Occasional float, returns to fixed | Persistent float or no solution |
+| Heave during observation | < 0.5 m | 0.5 -- 1.0 m (note in report) | > 1.0 m (re-test required) |
+
+!!! warning "Marginal Results"
+    If results fall in the marginal range, document the conditions and consult the Client Representative. A re-test under better conditions may be required.
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Problem | Possible Causes | Actions |
+|---|---|---|
+| Large horizontal disagreement (> 0.5 m) | Different correction types between systems, wrong datum or projection in navigation software, antenna offset error | Verify correction type is the same, confirm datum/projection settings, re-measure and re-enter antenna offsets |
+| Intermittent position jumps | Correction link dropout, multipath from vessel structures, satellite constellation change | Check correction uplink stability, review antenna sky view, examine satellite count and PDOP time series |
+| Consistent bias in one axis only | Antenna offset sign error or transposition (e.g., Easting/Northing swapped), ESP control point error | Double-check antenna offset entry (signs and axes), request ESP to verify their control point coordinates |
+| Height disagreement | Geoid model mismatch, height aiding enabled or disabled, tide correction applied differently | Confirm geoid model on both systems, check height aiding settings, verify tide correction application |
+| PDOP spikes during observation | Satellite obstruction (mast, crane boom in stowed position), constellation gaps | Review sky plot for obstructions, schedule observation during better constellation geometry |
+| ESP and DGNSS agree but different from chart | Chart datum differs from survey datum, outdated chart coordinates | Confirm the chart datum, apply appropriate transformations |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [Dynamic GNSS Intersystem Check](../positioning/dynamic-gnss-intersystem-check.md) -- dynamic follow-up check to perform after this static integrity check passes
+- [Video Camera and DVR Quality Verification](../equipment/video-camera-dvr-verification.md) -- equipment verification that depends on accurate positioning

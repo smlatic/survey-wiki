@@ -4,6 +4,7 @@ category: calibration
 tags: [gradiometer, gma1000, surrogate item test, SIT, magnetic, detection, ROV, altitude, threshold]
 equipment: [GMA1000 Gradiometer, ROV, MBES, Surrogate Targets]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,41 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Evaluate the operational capabilities of the GMA1000 gradiometer by determining its effective altitude and horizontal range, noise tolerance, and target detection thresholds using a surrogate item test (SIT). A metal object is used as a stand-in for actual objects of interest to evaluate system performance.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Before each magnetometer survey** as an acceptance test for detection capability
+- Every mobilisation when the GMA1000 is part of the equipment spread
+- After sensor reinstallation, cable replacement, or ROV reconfiguration
+- When project requirements change (different target size, different altitude)
+
+---
+
+## :material-information-outline: Surrogate Target Specifications
+
+The surrogate target must be representative of the minimum detectable object specified by the project scope. Typical requirements:
+
+| Parameter | Minimum Specification |
+|---|---|
+| Target mass | 50 kg ferrous material |
+| Target diameter | 0.5 m |
+| Material | Steel or iron (high magnetic permeability) |
+| Separation between targets | Minimum 20 m (to prevent signal overlap) |
+
+### Noise Floor Measurement
+
+Before deploying surrogate targets, run at least two lines over the cleared test area at operational altitude to establish the **ambient noise floor**. This baseline measurement quantifies the magnetic background in the test area. Record the peak-to-peak noise value in nT -- this becomes the reference against which target detections are measured.
+
+### Detection Signature
+
+A valid "hit" on a surrogate target in the gradiometer data appears as a **dipolar anomaly** -- a characteristic positive-then-negative (or negative-then-positive) deflection as the sensor passes over the target. Key characteristics of a valid detection:
+
+- **Shape**: Bipolar (two-lobed) signature, not a single-sided spike
+- **Amplitude**: Clearly above the noise floor (minimum 3x the noise floor amplitude)
+- **Width**: Proportional to the altitude -- wider signatures at higher altitudes
+- **Repeatability**: Appears at the same position on reciprocal lines
 
 ---
 
@@ -93,3 +129,38 @@ Based on the collected data, establish the operable limits of the system:
 
 !!! note "Reporting"
     Present the methodology and results in the MAC report for review and validation.
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Pass | Fail |
+|---|---|---|
+| Surrogate detection at operational altitude | Clear dipolar anomaly visible on all passes | No detection or ambiguous signature |
+| Signal-to-noise ratio (SNR) | > 3:1 (target amplitude vs noise floor) | < 3:1 |
+| Position agreement (reciprocal lines) | Target position consistent within 2 m | > 2 m offset between runs |
+| Noise floor (cleared area) | Stable, no unexplained anomalies | Erratic or excessive background noise |
+| Repeatability | Consistent detection across all altitudes tested up to operational limit | Inconsistent detection at the same altitude |
+
+!!! warning "Failure Actions"
+    If the surrogate item is not detected at the required operational altitude, do not proceed with the survey. Investigate root cause, resolve, and re-test before commencing operations.
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Problem | Possible Causes | Actions |
+|---|---|---|
+| No detection of surrogate target | Altitude too high for the target size, sensor malfunction, target not ferrous enough, incorrect sensor mode | Reduce altitude and re-run, verify sensor diagnostics, confirm target material is ferrous, check GMA1000 configuration |
+| Detection at low altitude but not at operational altitude | Target mass insufficient for the required range, sensor sensitivity degraded | Use a larger surrogate target, check sensor calibration, reduce operational altitude if project allows |
+| False positives (detections where no target exists) | Vessel magnetic noise, cable crosstalk, ROV thruster interference, seabed debris in test area | Increase sensor standoff from ROV, inspect cable routing, re-survey the test area to confirm it is clear |
+| Inconsistent position between reciprocal lines | Navigation offset, ROV positioning error, current pushing ROV off track | Verify USBL/LBL calibration, check ROV navigation solution, account for current drift |
+| High noise floor in test area | Area not magnetically quiet, nearby infrastructure, geological magnetic anomalies | Relocate to a different test area, perform a wider clearance survey, consult Marine Geologist |
+| Asymmetric dipolar signature | Sensor orientation error, one sensor element degraded | Re-check sensor alignment, run diagnostics on individual sensor elements |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [Magnetometer/TVG Acceptance Test](../calibration/magnetometer-tvg-acceptance-test.md) -- towed magnetometer acceptance test with reciprocal line comparison
+- [Dynamic GNSS Intersystem Check](../positioning/dynamic-gnss-intersystem-check.md) -- verify positioning systems supporting the survey
