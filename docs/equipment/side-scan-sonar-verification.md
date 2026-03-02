@@ -4,6 +4,7 @@ category: equipment
 tags: [side scan sonar, sss, positioning, verification, sonarwiz, ROV, ROTV, contact, quality]
 equipment: [Side Scan Sonar, ROV/ROTV, MBES, SonarWiz, INS/USBL]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -73,6 +74,13 @@ Make sure MBES data is available for the SSS verification test area prior to lau
 
 Choose a well-defined contact in the MBES data (e.g., boulder or easily distinguishable feature).
 
+!!! tip "Target Selection Criteria"
+    The verification target should meet **all** of the following:
+
+    - Minimum **0.5 m relief** above the surrounding seabed
+    - **Isolated** -- no nearby features that could cause ambiguity
+    - Clearly **identifiable on MBES data** so positions can be compared unambiguously
+
 !!! warning "Fluxgate Heading"
     Avoid metallic wrecks if using a fluxgate as heading source since these can negatively affect positioning.
 
@@ -93,10 +101,13 @@ Run two lines, each back and forth in opposite directions (four runs total):
 
 ### Step 5: Process in SonarWiz
 
-- Use an SV value at average depth between transducers and seabed surface
+- Use an SV value at the **transducer depth** (not the average water column SV -- the acoustic pulse travels laterally at transducer depth, so the SV at that depth is what governs slant-to-ground range conversion)
 - Apply vessel file
 - Apply pitch correction
 - Verify correct file format, position source, and heading source
+
+!!! info "Ground Range vs Slant Range"
+    SSS data is acquired in **slant range** (the direct distance from the transducer to a target). Processing software converts slant range to **ground range** (the horizontal distance along the seabed). This conversion requires accurate altitude and SV. If slant-to-ground-range correction is wrong, contacts at far range will show the largest position errors. Always verify that the flat-bottom correction is applied correctly in SonarWiz.
 
 ### Step 6: Compare Positions
 
@@ -121,13 +132,51 @@ The Marine Geologist confirms data quality and positioning.
 
 ---
 
-??? tip "Troubleshooting"
-    If position verification fails to meet expected values:
+## :material-calendar-check: When to Use
 
-    1. Check if vehicle movement was smooth and within survey parameters; if not, repeat the test
-    2. If movement was acceptable, check possible sources of error
-    3. If setup is correct (offsets, heading and position sources), run separate patch tests to check:
-        - USBL angular offset
-        - Latency
-        - Pitch bias
-        - Heading bias
+Perform SSS positioning verification:
+
+- At the **start of every project** before production SSS surveys begin
+- After any change to the SSS system, mounting, or vehicle configuration
+- After any change to the positioning system (USBL recalibration, INS swap, heading source change)
+- When moving to a significantly different water depth (re-verify USBL performance)
+- When switching between HF and LF channels if different transducers are used
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Criterion |
+|-----------|-----------|
+| SSS contact position vs MBES reference | Within **project specification** (typically 2-5 m depending on range and water depth) |
+| Reciprocal run scatter | Contact positions from opposite runs within **2 m** of each other (for short-range surveys) |
+| Along-track consistency | No systematic offset between forward and reverse runs exceeding **1 m** |
+| Cross-track consistency | No systematic offset between port and starboard contacts exceeding specification |
+
+!!! note
+    Acceptance criteria are project-specific. Always check the ITP for the applicable tolerances. The values above are typical guidelines.
+
+---
+
+## :material-wrench: Troubleshooting
+
+If position verification fails to meet expected values:
+
+1. **Heading source (most common error):** Incorrect heading source is the single most frequent cause of SSS position errors. Verify which heading is actually being applied -- ROV gyro, fluxgate, USBL-derived, or INS heading. A wrong heading source rotates all contacts around the vehicle position, producing large cross-track errors that increase with range.
+2. Check if vehicle movement was smooth and within survey parameters; if not, repeat the test
+3. If movement was acceptable, check possible sources of error:
+    - Offsets entered incorrectly or in wrong sign convention
+    - Layback not applied or applied incorrectly
+    - Time synchronisation drift between SSS and positioning system
+4. If setup is correct (offsets, heading and position sources), run separate patch tests to check:
+    - USBL angular offset
+    - Latency
+    - Pitch bias
+    - Heading bias
+
+---
+
+## :material-link-variant: Related Articles
+
+- [Pipeline Survey Operations](../rov/pipeline-survey-operations.md)
+- [Pipe Tracker (HydroPACT 440/660) Verification](pipetracker-hydropact-verification.md)

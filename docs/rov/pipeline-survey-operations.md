@@ -4,6 +4,7 @@ category: rov
 tags: [pipeline, umbilical, as-laid, as-built, inspection, touchdown, pre-lay, ROTV, OOS, free span, burial, pipetracker]
 equipment: [MBES, DHSS, Pipetracker, SSS, DVL, INS, USBL, Digiquartz, VisualWorks]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -398,6 +399,166 @@ Each survey type requires:
 - [x] Video with overlay (date, time, ROV position, KP, DCC, depth, altitude, dive number, task)
 - [x] Real-time data transmission to lay vessel (during TD monitoring)
 - [x] Commentary in English using common offshore terminology
+
+---
+
+## :material-magnet: Pipetracker Theory and Operation
+
+The pipetracker (e.g., HydroPACT 440/660, TSS 440/660) detects metallic pipelines and umbilicals using **electromagnetic (EM) induction**.
+
+### Operating Principle
+
+The system transmits a low-frequency EM field from a set of coils mounted on the ROV. When this field encounters a metallic conductor (pipe wall, armour wires), it induces **eddy currents** in the metal. These eddy currents generate a secondary EM field that is detected by the receiver coils. The relative strength and phase of the received signal across multiple coils allows the system to determine:
+
+- **Lateral offset** (cross-track distance to the pipe centreline)
+- **Vertical range to target (VRT)** (distance from the sensor to the pipe)
+
+### Key Factors Affecting Detection
+
+| Factor | Effect |
+|--------|--------|
+| Pipe material | Ferrous metals (steel) produce the strongest response; non-metallic pipes are invisible |
+| Pipe diameter and wall thickness | Larger diameter and thicker walls increase detection range |
+| Burial depth | Detection range decreases with burial depth; signal attenuates through seabed material |
+| Seabed conductivity | Conductive seabeds (clay) attenuate the signal more than resistive seabeds (sand) |
+| Survey altitude | Must be within the VRT for reliable detection |
+| ROV speed | Excessive speed reduces signal-to-noise ratio |
+
+!!! info "Limitation"
+    Pipetracker cannot detect non-metallic products (e.g., plastic-lined flowlines without armour wires, concrete-coated pipes with no metallic component). Verify pipe construction before relying on pipetracker data.
+
+---
+
+## :material-cog-transfer: Processing Workflow Overview
+
+A typical pipeline survey data processing workflow follows these steps:
+
+1. **Import raw data** -- Navigation, depth, altitude, pipetracker, MBES/DHSS cross profiles, events
+2. **QC navigation** -- Check for jumps, gaps, and outlier positions; smooth or interpolate as needed
+3. **Apply tidal corrections** -- Convert depth data to the project vertical datum
+4. **Calculate KP/STA** -- Assign along-line distance to each data point (see KP Calculation below)
+5. **Generate profiles** -- Longitudinal profile (depth/altitude vs KP), cross profiles at regular intervals
+6. **Calculate DOC/DOL/DOT** -- From cross profiles and pipetracker data relative to MSBL
+7. **Event reconciliation** -- Cross-check logged events against processed positions and video
+8. **Generate deliverables** -- Charts, profiles, event tables, statistics, and final report
+
+---
+
+## :material-road: Pipeline Crossings
+
+When the product being surveyed crosses an existing pipeline or cable:
+
+### Pre-Crossing
+
+- Identify all crossing locations from route plans and existing as-built data
+- Confirm crossing protection (mattresses, rock dump, grout bags) has been installed if required
+- Plan approach speed and sensor configuration for the crossing zone
+
+### During Crossing
+
+- **Reduce speed** to ensure accurate data capture at the crossing
+- Record the crossing event with precise position (KP, Easting, Northing, depth)
+- Capture **video evidence** of crossing condition, protection, and separation
+- If multiple products cross, identify each product by type, diameter, and owner
+
+### Post-Crossing
+
+- Verify separation between products meets design requirements
+- Document any anomalies (inadequate protection, contact between products, damage)
+- Include crossing details in the field report with video frame references
+
+---
+
+## :material-crane: Stinger Monitoring
+
+During pipe-lay operations, the **stinger** (the curved ramp extending from the lay vessel stern through which the pipe passes into the water) may require survey monitoring:
+
+- Monitor the pipe departure angle from the stinger tip
+- Confirm the pipe catenary is within design parameters
+- Position the stinger tip relative to the vessel reference point
+- Report any anomalies in pipe curvature or stinger configuration
+
+!!! warning
+    Stinger monitoring is a safety-critical activity. Any departure from the design envelope must be reported immediately to the pipe-lay superintendent.
+
+---
+
+## :material-map-marker-distance: KP Calculation Methods
+
+KP (Kilometre Post) can be calculated in two ways, and it is important to understand which is being used:
+
+| Method | Description | When Used |
+|--------|-------------|-----------|
+| **Along-centreline KP** | Distance measured along the actual pipeline centreline as it curves and bends on the seabed | Standard for as-laid, as-built, inspection surveys |
+| **Straight-line KP** | Distance measured along a straight line between two defined points | Sometimes used in pre-lay planning |
+
+!!! warning "KP Discrepancy"
+    Along-centreline KP will always be **equal to or greater than** straight-line KP because the pipe route is never perfectly straight. The difference increases with lateral displacement and route curvature. Always clarify with the client which KP method is required for reporting. Using the wrong method can cause misalignment between survey KP and pipe tally KP.
+
+---
+
+## :material-speedometer: Speed Effects on Sensor Data Quality
+
+Survey speed directly impacts the quality of all sensor data. Excessive speed degrades results:
+
+| Sensor | Effect of Excessive Speed |
+|--------|--------------------------|
+| **MBES/DHSS** | Increased noise, gaps in coverage, poor cross-profile resolution |
+| **Pipetracker** | Reduced signal-to-noise ratio, potential loss of pipe detection |
+| **Camera/video** | Motion blur, inability to log events accurately |
+| **Digiquartz depth** | Sensor response lag causes smoothing of profile features |
+| **INS** | Generally robust to speed changes, but DVL bottom-lock may degrade at very high speeds or high altitudes |
+
+!!! tip "Recommended Practice"
+    Typical pipeline survey speeds are **0.3 to 0.5 knots** (0.15 to 0.25 m/s) for as-laid and inspection surveys. Higher speeds (up to 1.0 knot) may be acceptable for pre-lay and ROTV surveys where event density is low. If event frequency increases (e.g., approaching a crossing, area of damage, or congested infrastructure), **reduce speed** to ensure all events are captured.
+
+---
+
+## :material-calendar-check: When to Use
+
+This article is a **reference guide** for pipeline and umbilical survey operations. Consult it:
+
+- When planning any pipeline survey (pre-lay, touchdown, as-laid, as-trenched, inspection)
+- When setting up ROV sensors for pipeline tracking
+- When clarifying KP calculation methods or DOC/DOL/DOT definitions
+- When preparing field reports for pipeline survey activities
+- When troubleshooting data quality issues during pipeline surveys
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+Acceptance criteria are project-specific and should be defined in the ITP. Typical values:
+
+| Parameter | Criterion |
+|-----------|-----------|
+| Horizontal position accuracy (ROV) | **< 2 m** (shallow water USBL); **< 5 m** (deep water with INS aiding) |
+| Depth accuracy | **< 0.1 m** (Digiquartz-derived) |
+| DOC accuracy | **< 0.1 m** |
+| KP accuracy | **< 0.5 m** along-centreline |
+| Free span height measurement | **< 0.05 m** |
+| Free span length measurement | **< 0.5 m** |
+| Lateral displacement (OOS) | Per project design curve |
+| Event positioning | Within **2 m** of true position |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---------|-------------|--------|
+| Pipetracker loses pipe detection intermittently | Altitude too high; pipe burial too deep; seabed conductivity high | Reduce altitude; check VRT against survey altitude; check seabed type |
+| KP does not match pipe tally | Wrong KP method (straight-line vs along-centreline); accumulated error | Clarify KP method with client; recalculate using correct method; tie KP to known field joints |
+| Depth profile shows unrealistic spikes | Digiquartz sensor noise; thruster wash; loose mounting | Check sensor mounting; filter spikes in processing; reduce ROV speed |
+| Cross-track offset between reciprocal runs | Heading error; latency; INS misalignment | Check heading source; run latency test; recalibrate INS |
+| Events not aligning with video | Time sync drift between navigation and video | Verify time sync; apply time offset correction in processing |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [Pipe Tracker (HydroPACT 440/660) Verification](../equipment/pipetracker-hydropact-verification.md)
+- [Side Scan Sonar Positioning and Quality Verification](../equipment/side-scan-sonar-verification.md)
 
 ---
 

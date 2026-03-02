@@ -4,6 +4,7 @@ category: rov
 tags: [metrology, LBL, acoustic, spool, jumper, hub, COMPATT, gyro, depth loop, error budget, baseline]
 equipment: [Sonardyne COMPATT, Sonardyne Fusion, Octans, GyroCOMPATT, Valeport SVX2, Digiquartz]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -187,6 +188,8 @@ Metrology is a relative exercise -- vertical datum is not strictly required. How
 !!! danger "Tidal Cycle Timing"
     Depth measurements for metrology must **NOT** be made during the peak or trough of the tidal cycle. Collect observations only during increasing or decreasing tide.
 
+    **Rationale:** At the peak and trough of the tidal cycle, the rate of change of tide is near zero, making it difficult to determine the exact tidal correction to apply. During rising or falling tide, the rate of change is more linear and predictable, allowing more accurate interpolation of tidal corrections between observations. This reduces the uncertainty in the depth loop closures.
+
 ---
 
 ## :material-arrow-down-bold: Pressure to Depth Conversion
@@ -325,6 +328,22 @@ Depth loops establish the vertical relationship between all metrology points.
 | **GyroCOMPATT** | Detached from ROV; no thruster wash interference | Limited battery life |
 | **Octans** | No battery limit (direct interface) | ROV must hold position; cable management; thruster vibration |
 
+!!! warning "COMPATT Battery Management"
+    GyroCOMPATTs have limited battery life (typically 24-72 hours depending on model and interrogation rate). Plan the metrology sequence to minimise time with COMPATTs powered on but not collecting data. Key practices:
+
+    - **Charge fully** before deployment (verify on deck with status check)
+    - **Minimise idle time** -- do not power on COMPATTs until ready to begin observations
+    - **Monitor battery status** via Fusion during collection
+    - **Have spare charged COMPATTs** in the workbasket in case of battery depletion mid-job
+    - If a GyroCOMPATT battery drops below the manufacturer's recommended threshold, **replace it before continuing** -- low battery can affect gyro accuracy
+
+!!! info "Thermal Effects on Gyro Settling"
+    Gyro settling time is affected by **temperature differential**. When a gyro is deployed from a warm deck into cold seawater, the internal temperature takes time to stabilise. Until thermal equilibrium is reached, heading readings may drift.
+
+    - Allow a minimum of **30 minutes** settling time after insertion into the receptacle (longer in deep, cold water)
+    - If the gyro was stored in a heated container on deck and deployed into water below 5C, consider extending settling time to **45-60 minutes**
+    - Monitor heading output during settling -- a stable heading (variation < 0.05 deg over 5 minutes) indicates the gyro has settled
+
 ### Observation Procedure
 
 1. Insert GyroCOMPATT/Octans into receptacle, aligned to structure north
@@ -337,6 +356,14 @@ Depth loops establish the vertical relationship between all metrology points.
 
 !!! info "Data Processing"
     Each data set is entered into the metrology calculator. Data is checked for quality and outliers removed. Average heading, pitch, and roll derived from the first 4 sets. Structure attitude is confirmed by combining observations with receptacle-to-structure-north C-Os.
+
+??? tip "Diagnosing Gyro Drift During Nudge Sets"
+    If the heading values from Set 5 (QC set, same orientation as Set 1) differ from Set 1 by more than the expected slop, **gyro drift** is the likely cause. To diagnose:
+
+    1. **Compare Set 1 vs Set 5** -- these are at the same orientation. Difference should be < 0.1 deg for a healthy, settled gyro.
+    2. **Plot all 5 sets sequentially** -- a linear trend across sets indicates drift rather than slop.
+    3. **Check if drift is consistent in direction** -- true gyro drift tends to be monotonic (always increasing or always decreasing), while slop produces random scatter.
+    4. **If drift is confirmed:** The gyro has not settled or is malfunctioning. Allow additional settling time and repeat all 5 sets. If drift persists, swap the gyro.
 
 ---
 
@@ -372,6 +399,22 @@ Seabed transponders are placed:
 
 !!! danger "Process Before Recovery"
     All baseline data **must** be processed and checked before recovering COMPATTs from the seabed. If data validity is in doubt and cannot be resolved by QC, consult the client and take additional measurements.
+
+!!! warning "Acoustic Multipath from Structures"
+    In congested subsea environments (manifolds, christmas trees, PLETs close together), acoustic signals can reflect off nearby structures before reaching the receiving COMPATT. This **multipath** produces erroneously long travel times and inflated ranges.
+
+    Signs of multipath:
+
+    - Individual baselines that are consistently longer than expected
+    - High residuals on specific transponder pairs in the array adjustment
+    - Baseline scatter that does not improve with additional observations
+
+    Mitigation:
+
+    - Position seabed COMPATTs away from large reflective structures where possible
+    - Use the **reject filter** in Fusion to remove outlier ranges
+    - If a specific transponder pair is badly affected, consider repositioning one of the seabed stands
+    - Collect additional baselines and use statistical filtering to remove multipath-contaminated observations
 
 ---
 
@@ -409,9 +452,75 @@ While acoustic LBL metrology is the standard approach, alternative methods inclu
 
 | Method | Description | Status |
 |--------|-------------|--------|
-| **INS-based metrology** | Uses inertial navigation to measure relative positions between structures | Increasingly common; faster than acoustic |
+| **INS-based metrology (SLAM)** | Uses inertial navigation to measure relative positions between structures by flying the ROV between hubs | Increasingly common; faster than acoustic |
 | **Taut wire** | Physical wire measurement between structures | Legacy method; limited application |
 | **Photogrammetry** | Optical measurement using cameras | Emerging technology; limited by visibility |
+
+### INS-Based Metrology and SLAM
+
+INS-based metrology (sometimes called SLAM -- Simultaneous Localisation and Mapping) uses the ROV's inertial navigation system to measure the relative vector between two structure hubs by **flying the ROV directly from one hub to the other**. The INS integrates accelerometer and gyroscope data to track the relative displacement without requiring an acoustic array.
+
+**Key advantages over acoustic LBL:**
+
+- Significantly faster (no COMPATT deployment, baseline collection, or array adjustment)
+- Fewer subsea assets required
+- No acoustic multipath concerns
+- Works in congested environments where LBL geometry is poor
+
+**Key limitations:**
+
+- Accuracy degrades with distance and time due to INS drift
+- Requires high-grade INS (e.g., iXblue Phins, Sonardyne SPRINT)
+- DVL bottom-lock is critical -- loss of DVL aiding causes rapid position degradation
+- Multiple runs required for statistical confidence
+
+For a detailed treatment of INS-based metrology techniques and SLAM workflows, see the dedicated article: **[INS-Based Metrology](../rov/ins-based-metrology.md)**.
+
+---
+
+## :material-calendar-check: When to Use
+
+This article is a **reference guide** for subsea acoustic metrology. Consult it:
+
+- When planning a metrology campaign (error budgets, equipment lists, procedures)
+- When preparing metrology equipment on deck (checklists, QC procedures)
+- When performing metrology observations offshore (gyro procedures, depth loops, baseline collection)
+- When troubleshooting metrology data quality issues
+- When comparing acoustic LBL metrology against INS-based alternatives
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Criterion |
+|-----------|-----------|
+| Depth loop closure | < **1.5 cm** between repeated loops |
+| Gyro slop (CW vs CCW) | < **0.3 deg** difference between nudge set averages |
+| Gyro drift (Set 1 vs Set 5) | < **0.1 deg** |
+| Minimum reciprocal baselines | **10** good baselines per transponder pair |
+| Array adjustment residuals | Per project specification (typically < **0.02 m** RMS) |
+| Overall hub-to-hub accuracy | Within ±**100 mm** 2D at 95% confidence (2 sigma) |
+| Heading accuracy | Within ±**0.707 deg** overall (2 sigma) |
+| Pitch/Roll accuracy | Within ±**0.5 deg** overall (2 sigma) |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---------|-------------|--------|
+| Depth loops do not close within 1.5 cm | Tidal variation during observations; Digiquartz drift; ROV thruster wash | Repeat loops during linear tidal phase; check Digiquartz zero offset; ensure ROV hydraulics off during observation |
+| Gyro heading drift between Set 1 and Set 5 | Gyro not settled; thermal instability | Allow additional settling time (45-60 min); check ambient temperature differential |
+| Excessive slop (CW vs CCW > 0.3 deg) | Worn stab/receptacle interface; contamination | Clean interface; try alternate stab; measure slop on all available stabs |
+| High residuals on specific baselines | Multipath from nearby structures; SV error | Reposition affected COMPATT; update SV; filter outlier ranges |
+| Array adjustment does not converge | Gross error in one or more baselines or depths | Check individual baselines for outliers; verify COMPATT depths against bathymetry; remove suspect data and re-adjust |
+| Baseline scatter does not reduce with more observations | SV changing during collection (thermocline movement) | Take fresh SV reading; collect baselines in shorter bursts with SV updates |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [INS-Based Metrology](ins-based-metrology.md)
 
 ---
 
