@@ -21,7 +21,7 @@ Start from the beginning or jump to any chapter.
 
 A collection of hydrographic and offshore survey procedures, calibration guides, and reference material.
 
-Built from real-world offshore experience. All content is generic -- no company-specific or client-specific information.
+General guides and procedures. Always refer to the procedures and standards required by your workplace and client.
 
 ---
 
@@ -90,4 +90,4 @@ Built from real-world offshore experience. All content is generic -- no company-
 ---
 
 !!! info "About"
-    This is a personal reference built by a working hydrographic surveyor. Procedures are written to be manufacturer-neutral where possible, with specific equipment references where technically necessary.
+    This is a personal reference wiki with general survey guides and procedures. Always follow the specific procedures and standards required by your company and client. Content is manufacturer-neutral where possible, with specific equipment references where technically necessary.

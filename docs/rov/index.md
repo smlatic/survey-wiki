@@ -7,7 +7,7 @@ hide:
 
 Survey integration with ROV systems.
 
-Covers subsea metrology, INS-based SLAM, pipeline survey operations, construction support, as-built surveys, and ROV-mounted sensor procedures.
+Covers subsea metrology, INS-based SLAM, pipeline survey operations, construction support, as-built surveys, and ROV-mounted sensor procedures. These are general guides -- always follow the specific procedures required by your company and client.
 
 ---
 

@@ -7,7 +7,7 @@ hide:
 
 Equipment-specific theory, setup, operation, and verification guides.
 
-Organized by equipment family. Includes operating principles, configuration guidance, acceptance criteria, and common issues.
+Organized by equipment family. Includes operating principles, configuration guidance, acceptance criteria, and common issues. These are general guides -- always follow the specific procedures required by your company and client.
 
 ---
 

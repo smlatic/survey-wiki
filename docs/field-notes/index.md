@@ -7,7 +7,7 @@ hide:
 
 Mobilisation and demobilisation checklists for offshore survey operations.
 
-Practical, step-by-step checklists built from real-world offshore experience.
+Practical, step-by-step checklists for offshore survey operations. Always refer to your company and client procedures.
 
 ---
 
