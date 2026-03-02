@@ -189,3 +189,33 @@
   background: rgba(33, 150, 243, 0.2);
   color: #64b5f6;
 }
+
+/* Handbook hero banner on homepage */
+.hero-banner {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--md-primary-fg-color), #1a237e);
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.hero-banner h1,
+.hero-banner p,
+.hero-banner em {
+  color: white !important;
+}
+
+.hero-banner h1 {
+  border-bottom: none;
+}
+
+.hero-banner .hero-cta {
+  font-size: 1.1rem;
+  padding: 0.6rem 1.5rem;
+  margin-top: 0.5rem;
+}
+
+[data-md-color-scheme="slate"] .hero-banner {
+  background: linear-gradient(135deg, #303f9f, #1a237e);
+}

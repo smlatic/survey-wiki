@@ -85,6 +85,28 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - The Hitchhiker's Guide:
+    - handbook/index.md
+    - Part I - Setting Sail:
+      - What Is Offshore Surveying?: handbook/what-is-offshore-surveying.md
+      - Life on the Vessel: handbook/life-on-the-vessel.md
+      - Staying Safe, Staying Sane: handbook/staying-safe.md
+    - Part II - The Core Stuff:
+      - Coordinate Systems: handbook/coordinate-systems.md
+      - Positioning Technologies: handbook/positioning-technologies.md
+      - Sensors and Sonars: handbook/sensors-and-sonars.md
+    - Part III - Data:
+      - Survey Techniques & Workflows: handbook/survey-techniques.md
+      - Data Processing: handbook/data-processing.md
+      - Calibration & Verification: handbook/calibration-verification.md
+    - Part IV - Modern Surveying:
+      - Remote Surveying: handbook/remote-surveying.md
+      - IT Basics: handbook/it-basics.md
+      - AI Tools for Surveyors: handbook/ai-tools.md
+    - Part V - Career & Mindset:
+      - Soft Skills & Professional Growth: handbook/soft-skills.md
+      - Mental Health & Well-Being: handbook/mental-health.md
+    - Resources & Further Reading: handbook/resources.md
   - Calibration:
     - calibration/index.md
     - USBL:

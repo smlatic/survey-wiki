@@ -4,6 +4,19 @@ hide:
   - toc
 ---
 
+<div class="hero-banner" markdown>
+
+# :material-compass-rose: A Hitchhiker's Guide to Offshore Surveying
+
+**A friendly, practical guide for surveying newcomers.**
+Start from the beginning or jump to any chapter.
+
+[Start Reading :material-arrow-right:](handbook/index.md){ .md-button .md-button--primary .hero-cta }
+
+*Or browse the technical reference below*
+
+</div>
+
 # :material-anchor: Survey Knowledge Base
 
 A collection of hydrographic and offshore survey procedures, calibration guides, and reference material.
