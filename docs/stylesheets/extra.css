@@ -3,16 +3,69 @@
 /* Page title styling */
 .md-content h1 {
   font-weight: 700;
+  color: var(--md-primary-fg-color) !important;
   border-bottom: 3px solid var(--md-primary-fg-color);
   padding-bottom: 0.4em;
   margin-bottom: 1em;
 }
 
+/* Section headers - indigo tint for clear hierarchy */
+.md-content h2 {
+  color: #283593 !important;
+  font-weight: 600;
+}
+
 /* Step headers get a subtle left accent */
 .md-content h3 {
+  color: #1a237e !important;
   border-left: 4px solid var(--md-accent-fg-color);
   padding-left: 0.8em;
   margin-top: 1.5em;
+}
+
+.md-content h4 {
+  color: #303f9f !important;
+}
+
+/* Dark mode heading colors */
+[data-md-color-scheme="slate"] .md-content h1 {
+  color: #7986cb !important;
+}
+
+[data-md-color-scheme="slate"] .md-content h2 {
+  color: #9fa8da !important;
+}
+
+[data-md-color-scheme="slate"] .md-content h3 {
+  color: #8c9eff !important;
+}
+
+[data-md-color-scheme="slate"] .md-content h4 {
+  color: #9fa8da !important;
+}
+
+/* Sidebar nav - active item highlight */
+.md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600 !important;
+}
+
+/* Sidebar section labels (Part I, Part II, etc.) */
+.md-nav__item--nested > .md-nav__link {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600;
+}
+
+/* TOC - right sidebar links */
+.md-nav--secondary .md-nav__link {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600 !important;
+  border-left: 2px solid var(--md-primary-fg-color);
+  padding-left: 0.6em;
 }
 
 /* Better table styling */
