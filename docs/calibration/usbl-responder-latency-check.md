@@ -4,6 +4,7 @@ category: calibration
 tags: [usbl, transponder, responder, latency, slant range, beacon, ROV, ROTV]
 equipment: [USBL System, Transponder/Responder Beacon, ROV/ROTV/Towfish]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -20,6 +21,16 @@ source_type: converted_procedure
 !!! abstract "Purpose"
 
     Confirm or measure any transmission latency of the triggering pulse in responder mode, ensuring accurate and consistent USBL slant range measurements across both transponder and responder operations.
+
+---
+
+## :material-calendar-check: When to Use
+
+- When commissioning a new transponder/responder beacon
+- When switching a beacon between transponder and responder modes during operations
+- At the start of each project when beacons will be used in responder mode
+- When USBL range measurements appear systematically offset from expected values
+- After any firmware update to the beacon
 
 ---
 
@@ -81,6 +92,57 @@ Apply any identified trigger pulse transmission delay to the HPR system and conf
 
 ---
 
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Pass | Marginal | Fail |
+|:--|:-:|:-:|:-:|
+| Latency value | 2-15 ms | 15-25 ms | > 25 ms |
+| Range agreement (transponder vs responder, after correction) | < 0.2 m | 0.2-0.5 m | > 0.5 m |
+| Slant range stability during test | SD < 0.3 m | 0.3-1.0 m | > 1.0 m |
+
+### Range Error from Latency
+
+The range error caused by an uncompensated latency is:
+
+**Range error (m) = latency (ms) x SV (m/s) / 2000**
+
+Example: a 10 ms latency with SV = 1500 m/s produces a range error of 10 x 1500 / 2000 = **7.5 m**.
+
+| Latency (ms) | Range Error at 1500 m/s |
+|:--|:--|
+| 2 | 1.5 m |
+| 5 | 3.75 m |
+| 10 | 7.5 m |
+| 15 | 11.25 m |
+| 25 | 18.75 m |
+
+!!! danger "Uncompensated Latency"
+    An uncompensated latency produces a systematic range error that directly affects the USBL position. At typical latency values (5-15 ms), the range error is 3-11 m. This manifests as a consistent offset in the USBL position, which may be mistaken for a calibration error. Always perform the latency check before USBL calibration.
+
+---
+
+## :material-wrench: Troubleshooting
+
+### Large Latency Difference Between Modes
+
+**Possible causes**:
+
+1. Firmware version mismatch between beacon and topside. Check both are compatible.
+2. Responder trigger processing delay (manufacturer-specific). Apply the measured delay in the USBL software.
+3. Acoustic interference causing detection delay in responder mode.
+4. Low battery in the beacon (can increase processing time and introduce latency).
+
+### Slant Range Unstable During Test
+
+**Action**:
+
+1. Verify the vehicle (ROV/towfish) is stationary
+2. Check for acoustic interference from other systems
+3. Increase the test duration (minimum 2 minutes per mode)
+4. Verify USBL gate settings are appropriate for the range
+
+---
+
 !!! note "Reporting"
 
     The test results shall be documented in the MAC report or as a distinct test report. The report must include:
@@ -88,3 +150,12 @@ Apply any identified trigger pulse transmission delay to the HPR system and conf
     - Sequence of events
     - Tabular and graphical representations of results
     - Statistical analysis
+
+---
+
+## :material-link-variant: Related Articles
+
+- [HiPAP USBL Calibration](hipap-usbl-calibration.md)
+- [HiPAP Verification (Spin & Transit)](hipap-hpr-verification.md)
+- [USBL Calibration Data Processing](usbl-calibration-data-processing.md)
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md)

@@ -4,6 +4,7 @@ category: calibration
 tags: [usbl, calibration, data processing, QINSy, CASIUS, least squares, spin check, sign convention]
 equipment: [Kongsberg HiPAP, Sonardyne Ranger, QINSy, CASIUS]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,15 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Step-by-step guide for processing USBL calibration data in QINSy (USBL Calibration Utility) and CASIUS. Covers data import, noise cleaning, least squares calibration, spin check verification, Z-check, and the critical sign convention rules for entering results into USBL software.
+
+---
+
+## :material-calendar-check: When to Use
+
+- After completing a USBL calibration data acquisition
+- When reprocessing calibration data with updated SVP or revised lever arms
+- When comparing QINSy and CASIUS processing results
+- When investigating unexpected calibration results or high residuals
 
 ---
 
@@ -186,3 +196,59 @@ graph TD
 | **5. Z-check** | Calibrate > Z-Check with echo sounder comparison | N/A |
 | **6. Apply results** | Invert signs when entering into USBL software | Enter values directly (no sign change) |
 | **7. Verify** | Run spin check and transit lines with corrections applied | Run spin check and transit lines with corrections applied |
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Pass | Marginal | Fail |
+|:--|:-:|:-:|:-:|
+| Heading misalignment | < 2.0 deg | 2.0-5.0 deg | > 5.0 deg |
+| Pitch misalignment | < 2.0 deg | 2.0-5.0 deg | > 5.0 deg |
+| Roll misalignment | < 2.0 deg | 2.0-5.0 deg | > 5.0 deg |
+| Scale factor | 0.95-1.05 | 0.90-0.95 or 1.05-1.10 | < 0.90 or > 1.10 |
+| Spin check SD vs results | SD < results | SD = results | SD > results |
+| Z-check agreement | < 0.5 m | 0.5-1.0 m | > 1.0 m |
+
+!!! warning "Heading Misalignment > 2 deg"
+    A heading misalignment greater than 2 deg is suspicious and warrants investigation. It suggests either the transducer was installed significantly rotated from the vessel axis, or there is an error in the heading sensor offset. Check the physical installation and the DC survey values before accepting a large heading correction.
+
+---
+
+## :material-wrench: Troubleshooting
+
+### SD Larger Than Results (Spin Check Fails)
+
+**Action**:
+
+1. Review individual datasets for outliers or noise
+2. Check if one dataset has significantly more scatter (remove and reprocess)
+3. Verify SVP is correct and representative
+4. Check if vessel motion was excessive during data acquisition
+5. If the problem persists, the calibration data may need to be reacquired
+
+### Scale Factor Outside Normal Range
+
+**Possible causes**:
+
+1. SVP error is the most common cause. A wrong SVP produces a systematic range error that manifests as a scale factor.
+2. Lever arm errors (wrong GNSS-to-USBL offset) also affect scale
+3. Timing error between GNSS and USBL data streams
+
+### Z-Check Shows Large Offset
+
+**Possible causes**:
+
+1. Wrong transponder height entered
+2. Draft or waterline offset error in the USBL or echosounder system
+3. Tide correction applied to one system but not the other
+4. USBL transducer depth offset incorrect in DC survey
+
+---
+
+## :material-link-variant: Related Articles
+
+- [HiPAP USBL Calibration](hipap-usbl-calibration.md)
+- [HiPAP Verification (Spin & Transit)](hipap-hpr-verification.md)
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md)
+- [USBL Responder Latency Check](usbl-responder-latency-check.md)

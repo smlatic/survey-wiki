@@ -4,6 +4,7 @@ category: calibration
 tags: [usbl, hipap, acoustics, calibration, transducer alignment, positioning]
 equipment: [Kongsberg HiPAP, APOS]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -19,6 +20,19 @@ source_type: converted_procedure
     Perform an acoustic alignment of the HiPAP USBL transducer to the vessel's reference frame. The alignment determines the angular offsets between the heading/roll/pitch sensors and the HiPAP transducer, enabling the system to provide accurate subsea transponder positions at any water depth.
 
     After completion, the built-in transducer alignment function in APOS automatically calculates new installation parameters from the logged data. The function is found in Utility -> Transducer Alignment.
+
+---
+
+## :material-calendar-check: When to Use
+
+- Every mobilisation where USBL is part of the survey spread
+- After any change to USBL transducer mounting (removal, re-installation, pole swap)
+- After any change to heading sensor, MRU, or GNSS antenna positions
+- If verification (spin/transit) shows position errors exceeding acceptance criteria
+- If vessel undergoes dry dock or structural modification near the transducer location
+
+!!! tip "Weather Limits"
+    Best results are achieved in sea state < 3 (significant wave height < 1.25 m). Higher sea states increase vessel motion noise in the data, degrading the calibration quality. If you must calibrate in rough weather, increase the number of position pairs per station to compensate.
 
 ---
 
@@ -159,6 +173,70 @@ The recommended pattern is four cardinal points and four headings on top of the 
 
 ---
 
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Pass | Marginal | Fail |
+|:--|:-:|:-:|:-:|
+| SD of residuals (at operational depth) | < 0.5 m | 0.5-1.0 m | > 1.0 m |
+| Heading misalignment | < 2.0 deg | 2.0-5.0 deg | > 5.0 deg |
+| Pitch/Roll misalignment | < 2.0 deg | 2.0-5.0 deg | > 5.0 deg |
+| Scale factor | 0.95-1.05 | 0.90-0.95 or 1.05-1.10 | < 0.90 or > 1.10 |
+| Misalignment values consistent with installation | Expected | Unexpected but within range | Physically unreasonable |
+
+!!! info "Depth-Dependent Accuracy"
+    The SD of residuals scales approximately linearly with depth. A calibration at 500 m depth with SD = 1.0 m corresponds to approximately 0.2% of slant range, which is acceptable. Always assess SD as a percentage of depth, not as an absolute value alone.
+
+---
+
+## :material-wrench: Troubleshooting
+
+### High SD in Calibration Results
+
+**Possible causes**:
+
+1. Weather too rough (excessive vessel motion adds noise). Wait for better conditions.
+2. SVP inaccurate or not representative. Take a fresh SVP at the calibration site.
+3. Transponder not stable on seabed (dragging, shifting). Verify with consistent depth readings.
+4. Insufficient data -- need more position pairs per station.
+5. Multipath in shallow water. Move to deeper water if possible.
+
+### Large Heading Misalignment (> 5 deg)
+
+**Possible causes**:
+
+1. Wrong heading sensor selected in APOS (check sensor assignment)
+2. Heading sensor offset entered incorrectly in DC survey
+3. Transducer rotated from expected orientation during installation
+4. If heading misalignment changes suddenly from previous calibration -- suspect transducer has been disturbed
+
+### Scale Factor Outside 0.95-1.05
+
+**Possible causes**:
+
+1. SVP error (wrong or old SVP applied). Re-take SVP and reprocess.
+2. Incorrect lever arm values in APOS (check DC survey offsets)
+3. Transponder depth uncertain (depth error affects scale solution)
+4. Timing error between GNSS and USBL systems
+
+### Calibration Results Don't Match Between APOS and QINSy
+
+**Action**: check the sign convention. APOS and QINSy use different sign conventions. When transferring results from QINSy to APOS, all signs must be inverted. See [USBL Calibration Data Processing](usbl-calibration-data-processing.md).
+
+---
+
+## :material-link-variant: Related Articles
+
+- [HiPAP Verification (Spin & Transit)](hipap-hpr-verification.md)
+- [USBL Calibration Data Processing](usbl-calibration-data-processing.md)
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md)
+- [USBL Responder Latency Check](usbl-responder-latency-check.md)
+- [AHRS Calibration](ahrs-calibration.md)
+- [Sound Velocity Operations](sound-velocity-operations.md)
+- [Dimensional Control Survey](dimensional-control-survey.md)
+
+---
+
 !!! quote "References"
     - Kongsberg APOS Help files (Utility -> Transducer Alignment)
     - IMCA S 017 -- Guidelines for the use of USBL systems
+    - IMCA S 015 -- Guidelines for Survey Mobilisation and Calibration
