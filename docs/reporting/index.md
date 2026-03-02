@@ -5,11 +5,18 @@ hide:
 
 # :material-file-chart: Reporting
 
-Survey report templates, standards, and guidelines.
+Survey report types, standard structures, and guidelines.
 
-Covers daily progress reports, final survey reports, and deliverable specifications.
+Covers daily progress reports, mobilisation reports, calibration reports, end-of-project reports, and deliverable specifications.
 
 ---
 
-!!! info "Coming Soon"
-    Report templates and standards are being added. Check back for updates on MAC reports, calibration reports, and deliverable specifications.
+<div class="grid cards" markdown>
+
+-   :material-file-document-edit: **Reporting Guides**
+
+    ---
+
+    - [Survey Reporting Fundamentals](survey-reporting-guide.md)
+
+</div>

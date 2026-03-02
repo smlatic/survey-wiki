@@ -20,7 +20,7 @@ Built from real-world offshore experience. All content is generic -- no company-
 
     ---
 
-    Equipment calibration procedures for USBL, MBES, gyro, DVL, INS, and other survey sensors
+    Equipment calibration procedures for USBL, MBES, gyro, DVL, INS, sound velocity, and other survey sensors
 
     [:octicons-arrow-right-24: 20 procedures](calibration/index.md)
 
@@ -28,49 +28,49 @@ Built from real-world offshore experience. All content is generic -- no company-
 
     ---
 
-    GNSS fundamentals, integrity checks, intersystem comparisons, threat awareness, and height verification
+    GNSS fundamentals, acoustic positioning, integrity checks, intersystem comparisons, tidal reduction, and height verification
 
-    [:octicons-arrow-right-24: 6 procedures](positioning/index.md)
+    [:octicons-arrow-right-24: 8 articles](positioning/index.md)
 
 -   :material-robot-industrial:{ .lg .middle } **ROV Operations**
 
     ---
 
-    Subsea metrology, pipeline survey operations, navigation integration, and ROV-mounted sensors
+    Subsea metrology, SLAM, pipeline survey, construction support, as-built surveys, and ROV-mounted sensors
 
-    [:octicons-arrow-right-24: 2 guides](rov/index.md)
+    [:octicons-arrow-right-24: 5 guides](rov/index.md)
 
 -   :material-cog:{ .lg .middle } **Equipment**
 
     ---
 
-    INS, MBES, sonar, video, and pipeline tracking equipment guides
+    INS, MBES, heave/MRU, side scan sonar, sub-bottom profiler, video, and pipeline tracking equipment guides
 
-    [:octicons-arrow-right-24: 7 guides](equipment/index.md)
+    [:octicons-arrow-right-24: 11 guides](equipment/index.md)
 
 -   :material-file-chart:{ .lg .middle } **Reporting**
 
     ---
 
-    Survey report templates, standards, and deliverable specifications
+    Survey report types, standard structures, data presentation, and QC documentation
 
-    [:octicons-arrow-right-24: Coming soon](reporting/index.md)
+    [:octicons-arrow-right-24: 1 guide](reporting/index.md)
 
 -   :material-table:{ .lg .middle } **Reference**
 
     ---
 
-    Offset tables, coordinate systems, calibration worksheets, and standard values
+    Acceptance criteria, industry standards, formulas, coordinate systems, TPU, and calibration worksheets
 
-    [:octicons-arrow-right-24: 1 reference](reference/index.md)
+    [:octicons-arrow-right-24: 6 references](reference/index.md)
 
 -   :material-notebook:{ .lg .middle } **Field Notes**
 
     ---
 
-    Lessons learned, practical tips, and observations from offshore survey work
+    Mobilisation and demobilisation checklists for offshore survey operations
 
-    [:octicons-arrow-right-24: Coming soon](field-notes/index.md)
+    [:octicons-arrow-right-24: 2 checklists](field-notes/index.md)
 
 </div>
 

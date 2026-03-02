@@ -5,11 +5,19 @@ hide:
 
 # :material-notebook: Field Notes
 
-Lessons learned, practical tips, and observations from offshore survey work.
+Mobilisation and demobilisation checklists for offshore survey operations.
 
-Real-world experience that doesn't fit neatly into a formal procedure.
+Practical, step-by-step checklists built from real-world offshore experience.
 
 ---
 
-!!! info "Coming Soon"
-    Field notes are being added. Check back for lessons learned, practical tips, and observations from offshore operations.
+<div class="grid cards" markdown>
+
+-   :material-clipboard-check: **Checklists**
+
+    ---
+
+    - [Mobilisation Checklist](mobilisation-checklist.md)
+    - [Demobilisation Checklist](demobilisation-checklist.md)
+
+</div>

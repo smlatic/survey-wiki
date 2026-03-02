@@ -7,26 +7,30 @@ hide:
 
 Survey integration with ROV systems.
 
-Covers subsea metrology, pipeline survey operations, navigation integration, and ROV-mounted sensor procedures.
+Covers subsea metrology, INS-based SLAM, pipeline survey operations, construction support, as-built surveys, and ROV-mounted sensor procedures.
 
 ---
 
 <div class="grid cards" markdown>
 
--   :material-tape-measure:{ .lg .middle } **Subsea Metrology Overview**
+-   :material-tape-measure: **Metrology**
 
     ---
 
-    Acoustic LBL metrology for spool and jumper fabrication. Tolerances, error budgets, depth loops, baseline collection, and array adjustment.
+    - [Subsea Metrology Overview](metrology-overview.md)
+    - [INS-Based Metrology (SLAM)](ins-based-metrology.md)
 
-    [:octicons-arrow-right-24: Metrology Overview](metrology-overview.md)
-
--   :material-pipe:{ .lg .middle } **Pipeline & Umbilical Survey Operations**
+-   :material-pipe: **Pipeline**
 
     ---
 
-    All pipeline survey types from pre-lay through inspection. Equipment, horizontal/vertical control, eventing, and reporting for each phase.
+    - [Pipeline Survey Operations](pipeline-survey-operations.md)
+    - [As-Built Survey Procedures](as-built-survey.md)
 
-    [:octicons-arrow-right-24: Pipeline Survey Operations](pipeline-survey-operations.md)
+-   :material-crane: **Construction**
+
+    ---
+
+    - [Construction Support Survey](construction-support-survey.md)
 
 </div>
