@@ -4,6 +4,7 @@ category: calibration
 tags: [ins, dvl, rovins, phins, ixblue, inertial navigation, doppler velocity log, ROV, ROTV, calibration]
 equipment: [ROVINS/PHINS INS, Doppler Velocity Log, ROV/ROTV, DelphINS Processing Software]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,16 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Calibrate the Doppler Velocity Log (DVL) to the inertial navigation system (INS) reference frame on an ROV or ROTV. After INS alignment, a DVL calibration is performed according to the manufacturer's routine, and the INS processing software calculates the true misalignments of the DVL.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Every mobilisation** -- DVL calibration is a standard mob activity
+- **After INS or DVL reinstallation** -- any time the INS or DVL is removed and refitted, even on the same vehicle
+- **After mounting changes** -- if the DVL bracket, INS bracket, or vehicle frame has been modified
+
+DVL calibration solves for the angular misalignment between the DVL acoustic axes and the INS body frame (three rotation angles: heading, pitch, and roll offsets) and the DVL scale factor. Without accurate calibration, velocity measurements fed to the INS will introduce systematic position errors that grow with distance travelled.
 
 ---
 
@@ -100,3 +111,37 @@ Verify the calibration performance on a separate part of the data or a different
 
 ??? info "Notes"
     The manufacturer advises that calibration can be run over a long section of data with many turns if there is sufficient displacement between start and finish points. However, always verify on separate data.
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Accept | Marginal | Fail |
+|-----------|--------|----------|------|
+| DVL misalignment (heading, pitch, roll) | < 2 deg | 2 - 5 deg | > 5 deg (indicates mounting problem) |
+| DVL scale factor | 0.95 - 1.05 | -- | Outside 0.95 - 1.05 |
+| DVL beam bottom lock | All 4 beams locked | 3 beams locked (investigate) | < 3 beams locked |
+
+!!! warning "Large Misalignment Values"
+    Misalignment values exceeding 5 degrees almost always indicate a physical mounting problem rather than a genuine calibration offset. Inspect the DVL and INS mounting before accepting the result.
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---------|-------------|--------|
+| Large misalignment values (> 5 deg) | DVL or INS mounting has shifted, incorrect lever arms entered | Inspect the physical mount, verify lever arm measurements, re-run calibration |
+| Scale factor outside 0.95 - 1.05 | Incorrect sound velocity at the DVL head, wrong DVL beam configuration | Check SV at DVL depth, verify beam configuration matches the DVL model, reload correct SV profile |
+| Loss of bottom lock during calibration | Altitude too high, seabed too soft or absorptive, DVL head fouled | Reduce altitude to 20-40 m range, check DVL transducer face for marine growth, try a different seabed area |
+| Calibration values differ significantly from factory | Mounting changed since factory cal, incorrect data section used | Verify on independent data leg, compare with previous field calibrations, revert to factory values if in doubt |
+| Poor repeatability between A-B and B-A legs | INS alignment degraded during run, USBL aiding quality poor | Check INS alignment status remained "Ready" throughout, review USBL residuals |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md) -- equivalent procedure for Sonardyne SPRINT systems
+- [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md) -- post-calibration drift verification
+- [Gyro Types and Calibration](gyro-types-and-calibration.md) -- heading reference systems used alongside INS
+- [SVP Repeatability Test](svp-repeatability-test.md) -- sound velocity validation that affects DVL scale factor

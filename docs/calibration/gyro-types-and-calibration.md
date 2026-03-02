@@ -4,6 +4,7 @@ category: calibration
 tags: [gyrocompass, heading, calibration, spinning mass, fog, rlg, gams, gnss compass, convergence, total station, rov, structure]
 equipment: [Spinning Mass Gyrocompass, Fibre Optic Gyrocompass, Ring Laser Gyrocompass, GNSS Compass, Total Station]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,14 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Detail the types, accuracies, installation requirements, and calibration methods for gyrocompasses used on vessels, ROVs, and structures in offshore survey operations. Covers spinning mass, fibre optic, ring laser, and GNSS-based heading systems.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Every mobilisation** -- gyro calibration (C-O determination) is a standard mob activity
+- **Understanding gyro behaviour during operations** -- use this article as a reference for settling times, speed error, convergence, and troubleshooting heading issues
+- **When heading discrepancies appear** -- consult the troubleshooting section below when multiple heading references disagree
 
 ---
 
@@ -37,6 +46,39 @@ A gyrocompass provides heading relative to True North for vessels, ROVs, and str
 
     **Example**: Spinning mass gyrocompass at 30 deg latitude:
     +/-0.2 x secant(30) = +/-0.23 deg
+
+### Settling Times
+
+After power-up, each gyro type requires a different amount of time to reach its quoted accuracy. Do not begin any calibration or survey operations until the gyro has fully settled.
+
+| Gyro Type | Typical Settling Time |
+|-----------|----------------------|
+| Spinning mass gyrocompass | 4 - 6 hours |
+| Fibre optic gyrocompass (FOG) | 20 - 30 minutes |
+| Ring laser gyrocompass (RLG) | Near-instant (< 5 minutes) |
+| MEMS gyrocompass | 5 - 10 minutes |
+| GNSS compass (GAMS) | Time to resolve integer ambiguities (typically 2 - 10 minutes with clear sky view) |
+
+!!! warning "Spinning Mass Gyros and Power"
+    If a spinning mass gyrocompass loses power for any reason, the full 4-6 hour settling period must start again. This is why UPS protection is mandatory.
+
+### Speed Error (Gyrocompasses)
+
+Gyrocompasses that use the Earth's rotation to find north (spinning mass, FOG, RLG) are affected by vessel speed. The gyrocompass senses the combined effect of Earth rotation and vessel motion. At speed, the north-finding mechanism is biased by the vessel's velocity component along the east-west axis.
+
+- Most modern gyrocompasses accept a speed input (from the vessel's speed log or GNSS) and correct for this automatically
+- If speed input is lost or incorrect, a heading error proportional to vessel speed and heading will appear
+- The error is largest when steaming east or west, and zero when steaming due north or south
+- Always verify that the speed input to the gyrocompass is active and reading correctly
+
+### GAMS Integer Ambiguity Failures
+
+GNSS-based heading systems (GAMS) determine heading by resolving the carrier phase integer ambiguity between two antennas. When this resolution fails or is incorrect:
+
+- **Heading jumps by integer degrees** -- the system locks onto a wrong integer solution, producing a discrete heading offset (not a gradual drift)
+- **Symptoms**: sudden heading change, typically by a whole-number amount (e.g., exactly 1 or 2 degrees), that does not correlate with vessel movement
+- **Causes**: multipath from nearby structures, antenna obstruction, moisture in antenna connectors, baseline distance entered incorrectly
+- **Recovery**: cycle the GAMS system, verify antenna baseline distance, check for antenna obstructions, ensure connectors are dry
 
 ---
 
@@ -68,6 +110,7 @@ A gyrocompass outputs azimuth relative to True North. To convert True North to G
 
 - Convergence varies depending on latitude, longitude, and the map projection in use
 - The navigation software calculates and applies convergence to convert True heading to Grid heading
+- **Sign convention for UTM**: convergence is positive east of the central meridian in the Northern Hemisphere. West of the central meridian, convergence is negative. In the Southern Hemisphere the signs are reversed
 
 !!! warning "Critical During Alongside Calibrations"
     When calibrating alongside, land survey techniques produce a bearing for the vessel's fore/aft axis. It is essential to establish whether this bearing is reported in True or Grid, and to apply convergence where applicable. Ensure the dimensional control team and the vessel surveyors use the same geodetic parameters.
@@ -272,3 +315,38 @@ This method provides a reference heading with precision <0.1 deg.
     - IHO S-44 -- Standards for Hydrographic Surveys
     - IMCA S 017 -- Guidelines for the use of USBL systems
     - Equipment manufacturer calibration and installation guidelines
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Accept | Marginal | Fail |
+|-----------|--------|----------|------|
+| C-O correction (spinning mass) | < 1.0 deg | 1.0 - 2.0 deg | > 2.0 deg (investigate mounting/settling) |
+| C-O correction (FOG/RLG) | < 0.5 deg | 0.5 - 1.0 deg | > 1.0 deg |
+| Bench test stability (24 hr) | Within manufacturer spec | -- | Exceeds manufacturer spec |
+| Heading comparison (multiple gyros) | Within combined quoted accuracy | -- | Difference exceeds combined quoted accuracy |
+| GAMS heading vs gyro | Agreement within 0.5 deg (after C-O) | -- | Disagreement > 0.5 deg |
+| Settling time | Completed per table above | -- | Gyro not settled / still drifting |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Symptom | Likely Cause | Action |
+|---------|-------------|--------|
+| Gyro will not settle (heading keeps drifting after expected settling time) | Power interruption during settling, incorrect latitude entered, unit placed on floating floor, vibration from nearby machinery | Verify uninterrupted power, check latitude input, confirm mounting surface is rigid and connected to vessel structure |
+| Heading jumps by exact integer degrees | GAMS integer ambiguity failure | Cycle GAMS system, check antenna baseline, verify connectors are dry, check for multipath sources |
+| Heading error increases with vessel speed | Speed error not corrected -- speed input missing or incorrect | Verify speed log or GNSS speed feed is active and reading correctly at the gyrocompass |
+| Heading differs between two gyros by more than quoted accuracy | One gyro not settled, C-O not applied, convergence mismatch, one gyro on floating floor | Check settling status of both, verify C-O corrections applied, confirm same geodetic parameters, check mounting surfaces |
+| GAMS heading unstable or drops out | Antenna obstruction, moisture in connectors, insufficient baseline | Check sky view at both antennas, dry and reseat connectors, verify baseline > 3 m |
+| Large C-O correction (> 2 deg on spinning mass) | Mounting shifted, unit knocked, incorrect latitude | Re-level and re-orient the gyro housing, confirm latitude, allow full settling period |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [ROVINS/PHINS DVL Calibration](ixblue-ins-dvl-calibration.md) -- INS/DVL calibration requiring accurate heading
+- [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md) -- INS/DVL calibration for Sonardyne systems
+- [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md) -- post-calibration drift verification
+- [SVP Repeatability Test](svp-repeatability-test.md) -- sound velocity validation for acoustic systems
