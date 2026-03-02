@@ -4,6 +4,7 @@ category: calibration
 tags: [dimensional control, lever arm, offsets, total station, photogrammetry, vessel survey, Spatial Analyzer, USMN, prism, target, structure survey]
 equipment: [Total Station, Calibrated Steel Tape, Photogrammetry System, Spatial Analyzer, Spike Prism, Peanut Prism, Hidden Point Pole]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -20,6 +21,14 @@ source_type: converted_procedure
 
 ---
 
+## :material-calendar-check: When to Use
+
+- **Vessel sensor survey**: At mobilisation onto a new vessel, after any sensor is relocated or replaced, and periodically as required by the client or project specification
+- **Structure metrology**: Before installation of subsea structures, for as-built verification, and when dimensional data is required for tie-in or alignment operations
+- **Re-survey**: When previous survey data is suspected to be invalid due to structural modification, damage, or environmental effects (e.g., significant temperature change affecting vessel dimensions)
+
+---
+
 ## :material-target-account: Survey Accuracies and Tolerances
 
 Achievable accuracy depends on environmental conditions:
@@ -32,6 +41,11 @@ Achievable accuracy depends on environmental conditions:
 
 !!! tip "Always Strive for Millimetre Accuracy"
     Regardless of conditions, the survey crew should always aim for millimetre accuracy. Client-defined tolerances take precedence -- confirm these before mobilisation.
+
+!!! warning "Thermal Expansion of Steel Structures"
+    Steel expands and contracts with temperature. The coefficient of linear thermal expansion for steel is approximately **12 x 10^-6 per degC**, which means a **10 m steel structure expands by approximately 12 mm for every 10 degC temperature increase**.
+
+    For vessel surveys, this is significant when comparing measurements taken in different environmental conditions (e.g., drydock in winter vs offshore in summer). Record ambient temperature at the time of survey and apply thermal corrections when comparing against reference measurements taken at a different temperature. For large vessels (100+ m), the total thermal expansion between a cold yard and a warm offshore environment can exceed **50 mm**.
 
 ---
 
@@ -312,6 +326,15 @@ Rigid metal with engraved crosshair target, attached using magnets. Where the ce
 
 ### USMN (United Spatial Metrology Network)
 
+!!! info "Software-Specific Terminology"
+    USMN is a network adjustment algorithm specific to **Spatial Analyzer (SA)** by New River Kinematics. Other metrology packages have equivalent network adjustment capabilities:
+
+    - **PolyWorks** (InnovMetric) -- uses bundle adjustment within PolyWorks|Inspector
+    - **Leica Cyclone** -- network adjustment / registration tools
+    - **Hexagon PC-DMIS** -- alignment and best-fit tools
+
+    The principles are the same: combining overlapping instrument setups into a single optimised coordinate solution. The specific menu paths and terminology differ by package.
+
 For surveys with 3+ setups, use USMN to check the overall network quality:
 
 **Analysis >> Coordinate Uncertainty >> United Spatial Metrology Network**
@@ -388,6 +411,62 @@ Recommended locations:
     - Overview sketches with axes, CRP, and reference plane
     - Detail photos with positions of all survey items
     - Design drawings as references
+
+---
+
+## :material-alert-circle-outline: Common Mistakes
+
+!!! danger "Mistakes That Will Invalidate Your Survey"
+
+    **1. Wrong prism constant**
+    Every prism type has a specific constant (offset between the optical centre and the physical measurement point). Using the wrong constant introduces a systematic range error on every single observation. Always verify the prism constant is set correctly when changing target types, and record which constant was used.
+
+    **2. Atmospheric corrections not applied**
+    The EDM (Electronic Distance Measurement) calculates range based on the speed of light through air, which varies with temperature and pressure. Failing to enter the current atmospheric conditions introduces a range error that scales with distance. In hot or cold extremes, this error can exceed **1 mm per 10 m**.
+
+    **3. Surveying on a vessel alongside in swell**
+    Even moderate swell causes the vessel to move during observations. If the tilt compensator is left ON during vessel motion, the corrections are applied at an arbitrary point in the pitch/roll cycle, adding random error to every observation. Turn the compensator OFF on dynamic platforms and accept that achievable accuracy will be reduced.
+
+    **4. Insufficient control points between setups**
+    Using fewer than 5 common points between instrument setups results in a weak geometric connection. Errors in any single point have an outsized influence on the transformation, and there is no redundancy for outlier detection.
+
+    **5. Not recording atmospheric conditions**
+    Even if corrections are applied in the instrument, the recorded conditions are needed for QC and for reprocessing if an error is discovered later. Always note temperature and barometric pressure in the field book at the start of each setup and whenever conditions change.
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|-----------|-----------|
+| Control point closure (opening vs closing observation) | < **2 mm** difference |
+| Best-fit between setups | < **2 mm** overall error (after excluding max 1 outlier) |
+| USMN network adjustment (3+ setups) | Point uncertainty < **3 mm** at 95% confidence |
+| Circle fit residual RMS | < **0.5 mm** |
+| Plane fit residual RMS | < **0.5 mm** |
+| Cylinder fit residual RMS | < **1.0 mm** |
+| Prism constant verification | Measured vs known distance agreement < **0.5 mm** |
+| Atmospheric correction validation | Applied corrections consistent with recorded conditions |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Problem | Likely Cause | Action |
+|---------|-------------|--------|
+| Control point closure > 2 mm | Instrument disturbed; target moved; thermal shift | Check instrument level; verify target position; re-observe all points from that setup |
+| Best-fit between setups > 2 mm | Insufficient common points; one point moved; wrong point names | Check for mislabelled points; add more common points; re-observe |
+| USMN shows metre-level errors | Mislabelled point (same name, different physical location) | Review point naming; correct or delete the mislabelled observation |
+| Systematic range bias on all observations | Wrong prism constant; atmospheric corrections not applied | Verify prism constant against target type; check temperature and pressure entries |
+| High residuals on plane or circle fits | Target not on the actual surface; surface is deformed; insufficient points | Add more observation points; check target placement; inspect the physical surface |
+| Inconsistent results between visits | Thermal expansion; structural deformation; different instrument | Record and compare temperatures; apply thermal corrections; use the same instrument if comparing measurements |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md) -- offset measurements feed directly into INS system configuration
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md) -- transceiver offset measurements are a key input to the USBL error budget
 
 ---
 

@@ -4,6 +4,7 @@ category: calibration
 tags: [ins, dvl, calibration, verification, rovins, phins, sprint, sprint-nav, delphinss, janus, inertial navigation, doppler velocity log, ROV, alignment]
 equipment: [INS/IMU, DVL, USBL System, ROV, DelphINS Software, Janus Software]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -20,9 +21,20 @@ source_type: converted_procedure
 
 ---
 
+## :material-calendar-check: When to Use
+
+- **Calibration**: When an INS/DVL system is not pre-calibrated, has been de-coupled, or a verification has shown the existing alignment is invalid
+- **Verification**: After mobilisation, after calibration, at project start, every 8 weeks during operations, or whenever system performance is in doubt
+- **Not needed**: When using a factory-calibrated coupled system that passes verification with existing values
+
+---
+
 ## :material-alert-outline: Why DVL Calibration Matters
 
 Without DVL aiding, a standard offshore INS drifts approximately **12 m in 4 minutes**. Extrapolated, this means roughly **900 m of error in 20 minutes** of free inertial navigation. The DVL is the single most important aiding sensor for subsea INS operations, reducing drift to **0.02%-0.06% of distance travelled**.
+
+!!! note "Drift Extrapolation Is Approximate"
+    The drift figures above are approximate and assume linear extrapolation of inertial error growth. In practice, free inertial drift is non-linear and depends on the grade of the IMU, the quality of the initial alignment, and environmental conditions. The figures are intended to illustrate the order of magnitude of the problem, not to serve as precise predictions.
 
 This makes the DVL-to-INS alignment calibration one of the most critical calibration activities in the survey spread. When dynamic, INS drift is primarily affected by DVL misalignment -- the calibration directly controls the quality of the aided solution.
 
@@ -64,6 +76,9 @@ The calibration is done by moving at constant speed over a predetermined distanc
 !!! warning
     A USBL system is unlikely to achieve accuracy comparable to the combined INS/DVL accuracy. USBL-based calibration should only be attempted in the specific circumstances listed above.
 
+!!! danger "USBL-Based Calibration Inherits USBL Errors"
+    When USBL is used as the reference positioning system for DVL calibration, all USBL error sources (heading, pitch/roll, sound velocity, transducer alignment) propagate directly into the calibration result. Ensure the USBL system is freshly calibrated with a current sound velocity profile loaded before using it as a reference. Any residual USBL calibration errors will be baked into the DVL alignment values and cannot be separated afterwards.
+
 ### Pre-Calibration Checks
 
 Before starting any calibration run:
@@ -103,6 +118,19 @@ The calibration software will start in a short coarse alignment phase and then s
 
 !!! warning "Troubleshooting Non-Convergence"
     If calibration values or their standard deviations do not start to converge, or seem excessive, in the first few hundred metres of the calibration line, this may indicate a setup problem. **Stop the calibration run** and review the setup (such as positioning system offsets).
+
+### DVL Scale Factor
+
+The DVL scale factor compensates for systematic errors in the DVL's velocity measurement and should converge to a value **close to 1.0** (typically between 0.95 and 1.05).
+
+| Scale Factor | Interpretation |
+|---|---|
+| 0.95 - 1.05 | Normal range -- acceptable for operations |
+| > 5% deviation from 1.0 | Investigate -- may indicate a sound velocity error, incorrect DVL configuration, or hardware degradation |
+| > 10% deviation from 1.0 | Likely hardware issue -- check the DVL transducer face for fouling, damage, or air bubbles; verify SVS input to DVL |
+
+!!! warning "Scale Factor vs Sound Velocity"
+    A scale factor that drifts away from 1.0 over time may indicate a degrading SVS sensor or changing water conditions rather than a DVL fault. Always check the SVS reading against a recently calibrated reference before suspecting the DVL hardware.
 
 ---
 
@@ -246,3 +274,11 @@ Any offsets or corrections must be recorded in the logbook and entered in the ap
 | Exail min. distance (0-500 m depth) | 1 km (ROV), 2 km (ROTV) |
 | Sonardyne offshore cal distance | ~500 m at 5 m altitude |
 | Sonardyne total position change | ~800 m |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md) -- understanding the reference positioning system used during calibration
+- [Sound Velocity Operations](sound-velocity-operations.md) -- SVS/SVP requirements for DVL and USBL accuracy
+- [Dimensional Control Survey](dimensional-control-survey.md) -- measuring the offsets and alignments that feed into INS setup

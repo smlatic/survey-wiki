@@ -4,6 +4,7 @@ category: calibration
 tags: [sound velocity, svp, ctd, calibration, deployment, chen millero, del grosso, caspian sea, valeport, seabird, saiv, mbes, usbl, lbl]
 equipment: [Valeport SVX2, Valeport Midas SVP, Valeport Midas CTD, Valeport miniSVS, Seabird SBE25, Seabird SBE19plus, Seabird SBE9plus, SAIV SD204]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,14 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Detail the requirements for calibration, installation, deployment, and processing of sound velocity measurement equipment so that accurate sound velocity profiles are produced for use in acoustic survey operations including MBES, USBL, LBL, and SBES systems.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **Full-column SVP/CTD cast**: Before USBL calibration, at project start, before/after LBL baselines, after significant depth/location/weather change, and at intervals defined by the scope of work
+- **Real-time SVS monitoring**: Continuously during all acoustic operations (MBES, USBL, SBES) to detect water column changes between full casts
+- **Expendable probes (XBT/XCTD)**: In deep water (> 1500 m) where winch-deployed casts are impractical or too time-consuming, or when vessel operations cannot be interrupted for a full cast
 
 ---
 
@@ -73,6 +82,9 @@ Sound velocity sensors require calibration by the manufacturer or a certified te
     - Regularly test against other calibrated units as confirmation
     - If a calibration certificate may expire during a project, arrange a replacement before the expiry date
     - If operational replacement is not feasible, the client may agree to continue use if the instrument tests successfully against a certified sensor
+
+!!! warning "Client-Specific Calibration Requirements"
+    Some clients mandate a **1-year calibration validity for all sound velocity sensors** regardless of sensor type, overriding the manufacturer's 2-year validity for SVP probes. Always check the project-specific calibration requirements before mobilisation and ensure all certificates will remain valid for the planned project duration.
 
 ---
 
@@ -205,6 +217,81 @@ For bodies of water with no documented evidence of salt composition, sound veloc
 
 ---
 
+## :material-thermometer-lines: Thermocline Effects on Acoustic Systems
+
+A thermocline is a layer of rapid temperature change that causes a corresponding change in sound velocity. This gradient refracts acoustic energy, bending the ray path away from the straight-line assumption.
+
+### Impact on MBES Outer Beams
+
+Multibeam echosounders are particularly sensitive to sound velocity errors because outer beams travel at steep angles through the water column and are refracted more than nadir beams.
+
+| Condition | Effect on Outer Beams |
+|-----------|----------------------|
+| SVP too high (warm bias) | Beams refract upward -- outer swath depths appear **too deep** ("frown" shape) |
+| SVP too low (cold bias) | Beams refract downward -- outer swath depths appear **too shallow** ("smile" shape) |
+| Outdated SVP (thermocline has shifted) | Asymmetric distortion or "wobble" in the outer swath |
+
+!!! tip "Practical Check"
+    Compare overlapping swaths from adjacent survey lines. If the outer beams of one line disagree with the nadir of the overlapping line by more than the required specification, a fresh SVP is needed.
+
+### Impact on USBL and LBL
+
+For USBL and LBL, an incorrect sound velocity profile causes **range errors** (the slant range calculated from two-way travel time is wrong) and **angular refraction errors** (the assumed straight-line path deviates from the actual refracted path). These effects worsen with depth and horizontal offset.
+
+---
+
+## :material-test-tube: Expendable Probes (XBT / XCTD)
+
+In deep water where winch-deployed SVP/CTD casts are impractical or would require stopping vessel operations, expendable probes provide a practical alternative.
+
+| Probe | Measures | Typical Use |
+|-------|----------|-------------|
+| **XBT (Expendable Bathythermograph)** | Temperature vs depth (fall-rate equation) | Quick temperature profile; SV must be calculated using assumed salinity |
+| **XCTD (Expendable CTD)** | Conductivity, temperature, depth | Full SV calculation possible; more accurate than XBT |
+
+!!! info "Limitations"
+    - Expendable probes are **single-use** -- factor consumable cost and stock into project planning
+    - XBT accuracy depends on the fall-rate equation, which can drift for older probe batches -- check the manufacturer's current coefficients
+    - XBT-derived SV requires an assumed salinity value, which introduces error in regions with variable salinity
+    - XCTD is preferred over XBT when sound velocity accuracy is critical
+    - Maximum depth rating varies by probe type (commonly 1000 m or 2000 m for XBT; up to 2000 m for XCTD)
+
+---
+
+## :material-chart-line-variant: Handling Incomplete Casts
+
+If a cast does not reach the full working depth (e.g., wire length limitation, instrument malfunction, or time constraints), the profile must be extended to cover the required depth range.
+
+!!! danger "Never Extrapolate Constant Sound Velocity"
+    Extending a profile by repeating the last measured SV value to depth is **incorrect and dangerous**. Sound velocity changes with pressure (depth), and a constant extension ignores this fundamental relationship. In deep water, this error can be significant.
+
+**Correct approach:**
+
+1. **Extrapolate the last known gradient** -- continue the trend of the deepest measured portion of the profile to the required depth
+2. If historical profiles exist for the area, use the deeper portion of a recent nearby profile to extend the cast
+3. Document that the profile was extended and which method was used
+4. If the incomplete portion covers a depth range critical to the operation (e.g., the transponder depth for USBL), prioritise obtaining a full cast as soon as possible
+
+---
+
+## :material-swap-vertical: Real-Time SVS vs Full-Column SVP
+
+These serve different purposes and are not interchangeable.
+
+| | Real-Time SVS | Full-Column SVP |
+|---|---|---|
+| **What it measures** | Sound velocity at a single point (sensor depth) | Sound velocity profile through the entire water column |
+| **Mounted where** | On the hull (for MBES) or on the DVL/INS (subsea) | Lowered through the water column on a cable or ROV |
+| **Updates** | Continuously | Per cast (discrete intervals) |
+| **Used for** | MBES beam steering at the transducer face; DVL velocity correction | USBL/LBL range calculation; MBES ray-tracing through the water column; depth computation |
+
+!!! info "When Each Is Needed"
+    - **Real-time SVS** is needed whenever an MBES is operating (provides the surface SV for beam forming) and whenever a DVL requires sound velocity correction
+    - **Full-column SVP** is needed for any system that calculates range or depth through a significant portion of the water column (USBL, LBL, MBES ray-tracing)
+    - Both are needed simultaneously during MBES operations -- the SVS corrects beam steering at the transducer face while the SVP corrects ray-tracing through the water column
+
+---
+
 ## :material-cog-transfer-outline: Processing Steps
 
 Processing shall be performed in SI units. If non-SI units are required, convert only after processing is complete.
@@ -282,6 +369,40 @@ Typically ASCII text format. Some systems require depths as negative values and 
     - [x] Correct formula selected (Chen & Millero or Del Grosso based on depth)
     - [x] Data saved in correct format for each target system
     - [x] Sensors checked for fouling on recovery
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|-----------|-----------|
+| Down cast vs up cast agreement | Within **0.5 m/s** throughout the profile (larger differences indicate sensor fouling or hysteresis) |
+| Comparison with second instrument | Within **combined instrument accuracy** (typically < 0.1 m/s for direct SV probes) |
+| Pressure tare residual | < **0.5 dbar** after correction |
+| Full water column coverage | Cast must reach within **10 m of the seabed** or the maximum working depth |
+| Calibration certificate validity | Must cover the **entire project duration** (check client-specific requirements) |
+| Surface soak stabilisation | Temperature must stabilise to within **0.02 degC** before beginning the cast |
+| CTD-derived vs directly measured SV | Within **instrument + formula accuracy** for the water type and depth (typically < 0.2 m/s) |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Problem | Likely Cause | Action |
+|---------|-------------|--------|
+| Down and up cast disagree by > 0.5 m/s | Sensor fouling during cast; thermal lag in CTD conductivity cell | Check sensor for fouling on recovery; use only the down cast; reduce descent speed for CTD |
+| SV profile shows spikes or noise | Air bubbles on sensor; electrical interference; damaged transducer path | Re-deploy after checking sensor face is clean and free of bubbles |
+| MBES outer beams show "smile" or "frown" | Outdated or incorrect SVP loaded | Take a fresh cast; verify the correct profile is loaded in the MBES software |
+| Calculated SV disagrees with measured SV (CTD vs SVP) | Wrong formula selected; salinity anomaly (e.g., Caspian Sea); sensor drift | Verify formula selection (Chen & Millero vs Del Grosso); check for non-standard water bodies; compare against reference instrument |
+| Profile does not reach full depth | Wire too short; strong current pulling probe off-vertical; instrument depth limit | Use a heavier clump weight; deploy from a less exposed location; switch to an expendable probe (XBT/XCTD) for deep water |
+| Pressure tare drifts between deployments | Sensor drift or damage | Re-tare before each deployment; if persistent, send sensor for recalibration |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md) -- sound velocity's role in USBL range calculation and error budgets
+- [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md) -- SVS requirements for DVL velocity correction
 
 ---
 

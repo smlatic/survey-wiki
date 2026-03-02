@@ -4,6 +4,7 @@ category: calibration
 tags: [usbl, acoustics, error budget, calibration, transducer alignment, positioning, GUSBL, transponder, verification]
 equipment: [Kongsberg HiPAP, Sonardyne Ranger, Exail GAPS, APOS, CASIUS]
 date_added: 2026-03-01
+last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
@@ -17,6 +18,14 @@ source_type: converted_procedure
 
 !!! abstract "Purpose"
     Comprehensive reference covering USBL operating principles, Gyro-Aided USBL (GUSBL) systems, calibration software scenarios, error budget breakdown, portable installation guidance, MRU interfacing requirements, transponder selection, calibration methods for DP and non-DP vessels, and verification techniques including spin checks, transit lines, and position comparisons.
+
+---
+
+## :material-calendar-check: When to Use
+
+- **USBL calibration**: At mobilisation, after any change to transceiver installation (pole re-deployment, bolt tightening), after sensor swap, or when verification indicates degraded performance
+- **Error budget review**: Before every project to confirm the system can meet the required positioning specification at the working depth
+- **Verification (spin/transit)**: After calibration, at project start, after any equipment change, and periodically during long-duration projects
 
 ---
 
@@ -65,7 +74,7 @@ A GUSBL system requires a positional feed for the transceiver head. There are tw
 
 | Manufacturer | Datagram | Coordinate System |
 |-------------|----------|-------------------|
-| Kongsberg / Sonardyne | $PSIMSSB | WGS84 Lat/Long in Radians |
+| Kongsberg / Sonardyne | $PSIMSSB | dX/dY/dZ in vessel-relative Cartesian metres |
 | Exail (iXblue) GAPS | $PTSAG | UTM Lat/Long in WGS84 (degrees and minutes to 5 decimal places) |
 
 ---
@@ -392,6 +401,99 @@ Key principles:
 - Each vessel in the field is allocated specific acoustic channels -- **only** those channels are to be used
 - No vessel uses frequencies not specifically allocated to it
 - If additional or different requirements arise, contact the FMP issuer for a revision
+
+---
+
+## :material-reflect-horizontal: Multipath Effects
+
+Multipath occurs when the acoustic signal reaches the transceiver via an indirect path (reflected off a surface) in addition to the direct path. The system cannot distinguish between them, resulting in corrupted angle measurements and degraded positioning.
+
+### Common Multipath Sources
+
+| Source | Situation |
+|--------|-----------|
+| **Jacket legs / risers** | Working near fixed structures -- signal reflects off steel members |
+| **Moonpool edges** | Transceiver deployed through moonpool -- signal bounces off internal walls |
+| **Vessel hull** | Shallow water or high beam angles -- signal reflects off the hull |
+| **Seabed** | Very shallow water -- strong seabed reflection arrives close in time to the direct signal |
+| **Thermoclines** | Strong temperature gradients can refract and reflect acoustic energy |
+
+### Mitigation
+
+- Position the vessel so the transponder is as close to directly below the transceiver as operationally feasible
+- When working near structures, keep the transponder clear of structural members in the acoustic path
+- Use wideband signals (correlation-based detection is more resistant to multipath than tone-based)
+- If multipath is suspected, compare USBL positions from different vessel headings -- multipath effects are heading-dependent
+- In moonpool installations, ensure the transceiver is lowered well below the hull to clear the moonpool walls
+
+---
+
+## :material-volume-off: Acoustic Interference Diagnosis
+
+Acoustic interference occurs when other active acoustic systems operate on overlapping or harmonic frequencies, degrading USBL signal detection.
+
+### Symptoms
+
+- Sudden increase in rejected fixes or dropped tracking cycles
+- Fix scatter increases without any change in environmental conditions
+- Intermittent tracking loss that correlates with other system activity (e.g., MBES pinging, vessel DP USBL, nearby vessel operations)
+
+### Common Conflict Sources
+
+| System | Typical Frequency Range |
+|--------|------------------------|
+| MBES (shallow) | 200 - 400 kHz |
+| MBES (deep) | 12 - 30 kHz |
+| SBES / Altimeter | 200 kHz typical |
+| USBL (MF) | 19 - 34 kHz |
+| USBL (HF) | 35 - 55 kHz |
+| LBL transponders | Various, per FMP |
+| Sub-bottom profiler | 2 - 16 kHz |
+
+### Diagnosis Steps
+
+1. **Disable other acoustic systems one at a time** and observe whether USBL tracking improves
+2. **Check the Frequency Management Plan (FMP)** for channel allocations -- confirm no overlap
+3. **Review the USBL signal-to-noise display** for periodic noise spikes that correlate with other system ping rates
+4. **Contact nearby vessels** to check if they have changed acoustic channels or power settings
+5. If the conflict cannot be resolved by channel separation, coordinate transmit timing (time-division) between systems where the USBL software supports it
+
+---
+
+## :material-check-decagram: Acceptance Criteria
+
+| Parameter | Threshold |
+|-----------|-----------|
+| Spin check -- 95% of points | Within **0.3% of slant range** + surface positioning error from known/mean position |
+| Spin check -- mean per heading | Within **0.2% of slant range** from overall mean |
+| Transit check -- 95% of points | Within **0.3% of max slant range** + surface positioning error |
+| Transit check -- mean per dataset | Within **0.2% of slant range** from spin verification mean |
+| Position verification -- reciprocal means | Within **0.25% of slant range** from overall dataset mean |
+| Scale factor | Close to **1.0** (deviation indicates SV or depth offset error) |
+| Overall system accuracy | Better than **0.3% of slant range** + surface positioning accuracy (2-sigma) |
+
+---
+
+## :material-wrench: Troubleshooting
+
+| Problem | Likely Cause | Action |
+|---------|-------------|--------|
+| Circular "doughnut" pattern on spin check | Residual pitch/roll or offset error | Re-calibrate pitch and roll; verify offsets. Test at different depth to distinguish offset from angular error |
+| Transponder depth changes along transit line | Pitch or roll bias | Apply correction in appropriate plane; re-run transit to verify |
+| "Smile" or "frown" in depth profile | Sound velocity error / scale factor issue | Take fresh SVP; check SV profile is loaded correctly |
+| Elongated scatter on position plot | Heading or scale error | Review gyro calibration; check SV profile |
+| Tracking dropouts near structures | Multipath / acoustic shadowing | Reposition vessel; change heading to clear acoustic path |
+| Sudden increase in fix scatter | Acoustic interference | Disable other acoustic systems one by one; check FMP |
+| Large C-Os (> 2 deg) | Gross installation error or sensor misidentification | Re-measure offsets; verify correct gyro/MRU is interfaced |
+| Fixes biased consistently in one direction | Offset error or uncorrected lever arm | Re-verify GNSS-to-transceiver offsets |
+
+---
+
+## :material-link-variant: Related Articles
+
+- [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md) -- DVL calibration using USBL as reference system
+- [Sound Velocity Operations](sound-velocity-operations.md) -- SVP requirements for accurate USBL range calculation
+- [Dimensional Control Survey](dimensional-control-survey.md) -- measuring transceiver offsets and lever arms
 
 ---
 
