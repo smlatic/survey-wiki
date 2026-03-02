@@ -120,6 +120,8 @@ nav:
       - iXblue ROVINS/PHINS DVL Calibration: calibration/ixblue-ins-dvl-calibration.md
       - Sprint-Nav DVL Verification: calibration/sprint-nav-dvl-verification.md
       - Sprint Syrinx DVL Calibration: calibration/sprint-syrinx-dvl-calibration.md
+    - Pipe Tracker:
+      - Cable/Pipetracker Field Verification: calibration/pipetracker-field-verification.md
     - MBES:
       - MBES Calibration (Patch Test): calibration/mbes-calibration.md
     - Attitude & Heading:
@@ -153,6 +155,11 @@ nav:
     - equipment/index.md
     - INS:
       - INS Theory and Principles: equipment/ins-theory-and-principles.md
+      - PHINS/ROVINS Operations: equipment/phins-rovins-operations.md
+      - Sprint INS Operations: equipment/sprint-ins-operations.md
+    - USBL:
+      - HiPAP USBL System Guide: equipment/hipap-usbl-system.md
+      - cNODE miniS Transponder Configuration: equipment/cnode-transponder-configuration.md
     - MBES:
       - MBES Installation and Setup: equipment/mbes-installation-and-setup.md
       - MBES Operations and Settings: equipment/mbes-operations-and-settings.md

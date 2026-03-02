@@ -46,6 +46,12 @@ Covers USBL, MBES, gyro, DVL, INS, sound velocity, and other survey sensors. Eac
     - [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md)
     - [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md)
 
+-   :material-pipe: **Pipe Tracker**
+
+    ---
+
+    - [Cable/Pipetracker Field Verification Tests](pipetracker-field-verification.md)
+
 -   :material-ruler-square-compass: **Dimensional Control**
 
     ---

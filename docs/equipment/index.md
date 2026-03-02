@@ -18,6 +18,15 @@ Organized by equipment family. Includes operating principles, configuration guid
     ---
 
     - [INS Theory & Principles](ins-theory-and-principles.md)
+    - [PHINS/ROVINS Operations Guide](phins-rovins-operations.md)
+    - [Sprint INS Operations Guide](sprint-ins-operations.md)
+
+-   :material-radar: **USBL / Acoustic Positioning**
+
+    ---
+
+    - [HiPAP USBL System Guide](hipap-usbl-system.md)
+    - [cNODE miniS Transponder Configuration](cnode-transponder-configuration.md)
 
 -   :material-waves: **Multibeam**
 
