@@ -44,7 +44,7 @@ source_type: original
 
 ---
 
-## :material-sonar: USBL / Acoustic Positioning
+## :material-sine-wave: USBL / Acoustic Positioning
 
 | Procedure | Parameter | Pass | Marginal | Fail | Standard | Wiki Article |
 |:--|:--|:-:|:-:|:-:|:--|:--|
@@ -117,7 +117,7 @@ source_type: original
 
 ---
 
-## :material-sonar: Geophysical
+## :material-sine-wave: Geophysical
 
 | Procedure | Parameter | Pass | Marginal | Fail | Standard | Wiki Article |
 |:--|:--|:-:|:-:|:-:|:--|:--|

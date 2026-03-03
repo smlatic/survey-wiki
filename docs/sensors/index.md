@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# :material-sonar: Survey Sensors
+# :material-sine-wave: Survey Sensors
 
 Seabed and subsea measurement instruments -- setup, operations, calibration, and verification.
 
@@ -29,7 +29,7 @@ Covers multibeam, sound velocity, side scan sonar, sub-bottom profiler, pipe tra
     - [SVP Repeatability Test](svp-repeatability-test.md)
     - [SV/CTD Comparison Verification](sv-ctd-comparison-verification.md)
 
--   :material-sonar: **Side Scan Sonar**
+-   :material-sine-wave: **Side Scan Sonar**
 
     ---
 

@@ -8,7 +8,7 @@ last_reviewed: 2026-03-01
 source_type: original
 ---
 
-# :material-sonar: Side Scan Sonar Theory and Operations
+# :material-sine-wave: Side Scan Sonar Theory and Operations
 
 <div class="page-meta" markdown>
 <span class="meta-item">:material-tag-outline: <strong>Equipment</strong></span>

@@ -8,7 +8,7 @@ last_reviewed: 2026-03-01
 source_type: converted_procedure
 ---
 
-# :material-sonar: Side Scan Sonar Positioning and Quality Verification
+# :material-sine-wave: Side Scan Sonar Positioning and Quality Verification
 
 <div class="page-meta" markdown>
 <span class="meta-item">:material-tag-outline: <strong>Equipment</strong></span>
