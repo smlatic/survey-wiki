@@ -193,7 +193,7 @@ Disconnect in reverse installation order. Last installed, first removed.
 
 - [Mobilisation Checklist](mobilisation-checklist.md)
 - [Survey Reporting Fundamentals](../reporting/survey-reporting-guide.md)
-- [Dimensional Control Survey](../calibration/dimensional-control-survey.md)
+- [Dimensional Control Survey](dimensional-control-survey.md)
 
 ---
 

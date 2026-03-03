@@ -319,10 +319,10 @@ Typical MRU latency: 10-30 ms. At 1 deg/sec vessel roll rate (moderate sea state
 
 ## :material-link-variant: Related Articles
 
-- [AHRS Calibration](../calibration/ahrs-calibration.md)
-- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md)
-- [MBES Operations and Settings](mbes-operations-and-settings.md)
-- [Dimensional Control Survey](../calibration/dimensional-control-survey.md)
+- [AHRS Calibration](ahrs-calibration.md)
+- [MBES Calibration (Patch Test)](../sensors/mbes-calibration.md)
+- [MBES Operations and Settings](../sensors/mbes-operations-and-settings.md)
+- [Dimensional Control Survey](dimensional-control-survey.md)
 - [Tidal Theory and Reduction Methods](../positioning/tidal-reduction-methods.md)
 - [TPU and Error Budgets](../reference/tpu-error-budgets.md)
 

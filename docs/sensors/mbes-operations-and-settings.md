@@ -429,8 +429,8 @@ Performance testing evaluates the quality and confidence of multibeam data acros
 ## :material-link-variant: Related Articles
 
 - [MBES Installation and Setup](mbes-installation-and-setup.md) -- transducer placement, MRU mounting, time synchronisation, offsets
-- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md) -- resolving transducer-to-MRU/gyro misalignment
-- [INS Theory and Principles](ins-theory-and-principles.md) -- INS integration for subsea MBES operations
+- [MBES Calibration (Patch Test)](mbes-calibration.md) -- resolving transducer-to-MRU/gyro misalignment
+- [INS Theory and Principles](../positioning/ins-theory-and-principles.md) -- INS integration for subsea MBES operations
 
 ---
 

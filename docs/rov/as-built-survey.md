@@ -270,7 +270,7 @@ As-built data is a contractual deliverable. It must be accurate, complete, and a
 - [Construction Support Survey](construction-support-survey.md)
 - [Subsea Metrology Overview](metrology-overview.md)
 - [INS-Based Metrology (SLAM)](ins-based-metrology.md)
-- [Pipe Tracker (HydroPACT) Verification](../equipment/pipetracker-hydropact-verification.md)
+- [Pipe Tracker (HydroPACT) Verification](../sensors/pipetracker-hydropact-verification.md)
 - [Survey Reporting Fundamentals](../reporting/survey-reporting-guide.md)
 
 ---

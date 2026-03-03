@@ -235,8 +235,8 @@ For structures requiring vertical installation (monopiles, caissons, conductors)
 - [Pipeline Survey Operations](pipeline-survey-operations.md)
 - [INS-Based Metrology (SLAM)](ins-based-metrology.md)
 - [Subsea Metrology Overview](metrology-overview.md)
-- [HiPAP USBL Calibration](../calibration/hipap-usbl-calibration.md)
-- [USBL Theory and Error Budgets](../calibration/usbl-theory-and-error-budgets.md)
+- [HiPAP USBL Calibration](../positioning/hipap-usbl-calibration.md)
+- [USBL Theory and Error Budgets](../positioning/usbl-theory-and-error-budgets.md)
 
 ---
 

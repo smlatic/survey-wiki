@@ -492,8 +492,8 @@ Acoustic interference occurs when other active acoustic systems operate on overl
 ## :material-link-variant: Related Articles
 
 - [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md) -- DVL calibration using USBL as reference system
-- [Sound Velocity Operations](sound-velocity-operations.md) -- SVP requirements for accurate USBL range calculation
-- [Dimensional Control Survey](dimensional-control-survey.md) -- measuring transceiver offsets and lever arms
+- [Sound Velocity Operations](../sensors/sound-velocity-operations.md) -- SVP requirements for accurate USBL range calculation
+- [Dimensional Control Survey](../mobilisation/dimensional-control-survey.md) -- measuring transceiver offsets and lever arms
 
 ---
 

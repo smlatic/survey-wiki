@@ -135,7 +135,7 @@ Load both SV casts into a spreadsheet. Clean anomalies if needed (e.g., repeat d
 
 ## :material-link-variant: Related Articles
 
-- [ROVINS/PHINS DVL Calibration](ixblue-ins-dvl-calibration.md) -- DVL calibration affected by sound velocity accuracy
-- [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md) -- DVL calibration requiring current SVP
-- [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md) -- drift verification affected by SV conditions
-- [Gyro Types and Calibration](gyro-types-and-calibration.md) -- heading reference calibration procedures
+- [ROVINS/PHINS DVL Calibration](../positioning/ixblue-ins-dvl-calibration.md) -- DVL calibration affected by sound velocity accuracy
+- [SPRINT (Syrinx) DVL Calibration](../positioning/sprint-syrinx-dvl-calibration.md) -- DVL calibration requiring current SVP
+- [SPRINT-NAV DVL Verification](../positioning/sprint-nav-dvl-verification.md) -- drift verification affected by SV conditions
+- [Gyro Types and Calibration](../mobilisation/gyro-types-and-calibration.md) -- heading reference calibration procedures

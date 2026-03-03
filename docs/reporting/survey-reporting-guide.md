@@ -289,11 +289,11 @@ Example: `PRJ001-VESSEL01-MOB-001` (first mob report for Vessel 01 on project PR
 
 ## :material-link-variant: Related Articles
 
-- [Mobilisation Checklist](../field-notes/mobilisation-checklist.md)
-- [Demobilisation Checklist](../field-notes/demobilisation-checklist.md)
+- [Mobilisation Checklist](../mobilisation/mobilisation-checklist.md)
+- [Demobilisation Checklist](../mobilisation/demobilisation-checklist.md)
 - [Acceptance Criteria Reference](../reference/acceptance-criteria-reference.md)
 - [Industry Standards Reference](../reference/industry-standards-reference.md)
-- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md)
+- [MBES Calibration (Patch Test)](../sensors/mbes-calibration.md)
 
 ---
 

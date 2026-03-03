@@ -279,10 +279,10 @@ If the specification cannot be met with the available equipment and conditions, 
 ## :material-link-variant: Related Articles
 
 - [Acceptance Criteria Reference](acceptance-criteria-reference.md)
-- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md)
-- [Heave, MRU Theory and Verification](../equipment/heave-mru-theory.md)
-- [MBES Operations and Settings](../equipment/mbes-operations-and-settings.md)
-- [Sound Velocity Operations](../calibration/sound-velocity-operations.md)
+- [MBES Calibration (Patch Test)](../sensors/mbes-calibration.md)
+- [Heave, MRU Theory and Verification](../mobilisation/heave-mru-theory.md)
+- [MBES Operations and Settings](../sensors/mbes-operations-and-settings.md)
+- [Sound Velocity Operations](../sensors/sound-velocity-operations.md)
 - [Tidal Theory and Reduction Methods](../positioning/tidal-reduction-methods.md)
 - [Coordinate Systems and Datums](coordinate-systems-datums.md)
 

@@ -146,5 +146,5 @@ After applying the calibration values, a verification run must be performed to c
 
 - [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md) -- full verification procedure to follow after this calibration
 - [ROVINS/PHINS DVL Calibration](ixblue-ins-dvl-calibration.md) -- equivalent procedure for iXblue systems
-- [SVP Repeatability Test](svp-repeatability-test.md) -- sound velocity validation that affects DVL scale factor
-- [Gyro Types and Calibration](gyro-types-and-calibration.md) -- heading reference systems used alongside INS
+- [SVP Repeatability Test](../sensors/svp-repeatability-test.md) -- sound velocity validation that affects DVL scale factor
+- [Gyro Types and Calibration](../mobilisation/gyro-types-and-calibration.md) -- heading reference systems used alongside INS

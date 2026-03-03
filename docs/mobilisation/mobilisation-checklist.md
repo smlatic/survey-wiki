@@ -125,7 +125,7 @@ Install in this order. Positioning must be established before anything that depe
 - [ ] **Offsets entered in navigation software** and double-checked by second person
 - [ ] **DC survey report drafted** (include sketches, photos of each measurement)
 
-**Reference:** [Dimensional Control Survey](../calibration/dimensional-control-survey.md) | [Dimensional Control (Tape Measure)](../calibration/dimensional-control-tape-measure.md)
+**Reference:** [Dimensional Control Survey](dimensional-control-survey.md) | [Dimensional Control (Tape Measure)](dimensional-control-tape-measure.md)
 
 ---
 
@@ -160,13 +160,13 @@ Calibrations must be performed in this order. Each depends on the accuracy of th
 | Order | Calibration | Prerequisite | Article |
 |:--:|:--|:--|:--|
 | 1 | Static GNSS intersystem check | GNSS systems tracking | [Static GNSS Check](../positioning/static-gnss-intersystem-check.md) |
-| 2 | AHRS calibration / intersystem check | GNSS and heading systems settled | [AHRS Calibration](../calibration/ahrs-calibration.md) |
-| 3 | Gyro comparison | Heading systems settled (4+ hours for spinning mass) | [Gyro Types and Calibration](../calibration/gyro-types-and-calibration.md) |
-| 4 | USBL calibration | GNSS and heading calibrated | [HiPAP USBL Calibration](../calibration/hipap-usbl-calibration.md) |
-| 5 | SVP cast | Before any acoustic calibration | [Sound Velocity Operations](../calibration/sound-velocity-operations.md) |
-| 6 | MBES patch test | All positioning and attitude calibrated, fresh SVP | [MBES Calibration](../calibration/mbes-calibration.md) |
-| 7 | INS/DVL calibration (ROV) | USBL calibrated (provides reference) | [INS/DVL Calibration](../calibration/ins-dvl-calibration-guide.md) |
-| 8 | SSS / SBP / Mag acceptance tests | Positioning operational | [SSS Verification](../equipment/side-scan-sonar-verification.md) |
+| 2 | AHRS calibration / intersystem check | GNSS and heading systems settled | [AHRS Calibration](ahrs-calibration.md) |
+| 3 | Gyro comparison | Heading systems settled (4+ hours for spinning mass) | [Gyro Types and Calibration](gyro-types-and-calibration.md) |
+| 4 | USBL calibration | GNSS and heading calibrated | [HiPAP USBL Calibration](../positioning/hipap-usbl-calibration.md) |
+| 5 | SVP cast | Before any acoustic calibration | [Sound Velocity Operations](../sensors/sound-velocity-operations.md) |
+| 6 | MBES patch test | All positioning and attitude calibrated, fresh SVP | [MBES Calibration](../sensors/mbes-calibration.md) |
+| 7 | INS/DVL calibration (ROV) | USBL calibrated (provides reference) | [INS/DVL Calibration](../positioning/ins-dvl-calibration-guide.md) |
+| 8 | SSS / SBP / Mag acceptance tests | Positioning operational | [SSS Verification](../sensors/side-scan-sonar-verification.md) |
 
 - [ ] Static GNSS intersystem check completed and passed
 - [ ] AHRS calibration / static intersystem check completed and passed
@@ -242,10 +242,10 @@ Final verification before starting survey operations.
 ## :material-link-variant: Related Articles
 
 - [Demobilisation Checklist](demobilisation-checklist.md)
-- [Dimensional Control Survey](../calibration/dimensional-control-survey.md)
-- [AHRS Calibration](../calibration/ahrs-calibration.md)
-- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md)
-- [HiPAP USBL Calibration](../calibration/hipap-usbl-calibration.md)
+- [Dimensional Control Survey](dimensional-control-survey.md)
+- [AHRS Calibration](ahrs-calibration.md)
+- [MBES Calibration (Patch Test)](../sensors/mbes-calibration.md)
+- [HiPAP USBL Calibration](../positioning/hipap-usbl-calibration.md)
 - [Survey Reporting Fundamentals](../reporting/survey-reporting-guide.md)
 
 ---

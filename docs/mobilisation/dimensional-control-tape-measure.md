@@ -212,7 +212,7 @@ Photograph:
 ## :material-link-variant: Related Articles
 
 - [Dimensional Control Survey](dimensional-control-survey.md)
-- [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md)
+- [INS/DVL Calibration Guide](../positioning/ins-dvl-calibration-guide.md)
 
 ---
 

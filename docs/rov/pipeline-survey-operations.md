@@ -557,8 +557,8 @@ Acceptance criteria are project-specific and should be defined in the ITP. Typic
 
 ## :material-link-variant: Related Articles
 
-- [Pipe Tracker (HydroPACT 440/660) Verification](../equipment/pipetracker-hydropact-verification.md)
-- [Side Scan Sonar Positioning and Quality Verification](../equipment/side-scan-sonar-verification.md)
+- [Pipe Tracker (HydroPACT 440/660) Verification](../sensors/pipetracker-hydropact-verification.md)
+- [Side Scan Sonar Positioning and Quality Verification](../sensors/side-scan-sonar-verification.md)
 
 ---
 

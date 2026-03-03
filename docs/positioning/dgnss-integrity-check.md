@@ -164,5 +164,5 @@ Compare the DGNSS positions to those derived from the total station observations
 
 ## :material-link-variant: Related Articles
 
-- [Dynamic GNSS Intersystem Check](../positioning/dynamic-gnss-intersystem-check.md) -- dynamic follow-up check to perform after this static integrity check passes
-- [Video Camera and DVR Quality Verification](../equipment/video-camera-dvr-verification.md) -- equipment verification that depends on accurate positioning
+- [Dynamic GNSS Intersystem Check](dynamic-gnss-intersystem-check.md) -- dynamic follow-up check to perform after this static integrity check passes
+- [Video Camera and DVR Quality Verification](../sensors/video-camera-dvr-verification.md) -- equipment verification that depends on accurate positioning

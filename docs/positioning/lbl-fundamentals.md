@@ -350,10 +350,10 @@ In environments with multiple LBL arrays operating simultaneously (e.g., multipl
 
 ## :material-link-variant: Related Articles
 
-- [USBL Theory and Error Budgets](../calibration/usbl-theory-and-error-budgets.md)
+- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md)
 - [Subsea Metrology Overview](../rov/metrology-overview.md)
 - [INS-Based Metrology (SLAM)](../rov/ins-based-metrology.md)
-- [Sound Velocity Operations](../calibration/sound-velocity-operations.md)
+- [Sound Velocity Operations](../sensors/sound-velocity-operations.md)
 - [Coordinate Systems and Datums](../reference/coordinate-systems-datums.md)
 
 ---

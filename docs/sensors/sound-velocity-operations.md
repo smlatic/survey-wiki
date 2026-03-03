@@ -406,8 +406,8 @@ Typically ASCII text format. Some systems require depths as negative values and 
 
 ## :material-link-variant: Related Articles
 
-- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md) -- sound velocity's role in USBL range calculation and error budgets
-- [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md) -- SVS requirements for DVL velocity correction
+- [USBL Theory and Error Budgets](../positioning/usbl-theory-and-error-budgets.md) -- sound velocity's role in USBL range calculation and error budgets
+- [INS/DVL Calibration Guide](../positioning/ins-dvl-calibration-guide.md) -- SVS requirements for DVL velocity correction
 
 ---
 

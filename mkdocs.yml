@@ -107,37 +107,6 @@ nav:
       - Soft Skills & Professional Growth: handbook/soft-skills.md
       - Mental Health & Well-Being: handbook/mental-health.md
     - Resources & Further Reading: handbook/resources.md
-  - Calibration:
-    - calibration/index.md
-    - USBL:
-      - HiPAP USBL Calibration: calibration/hipap-usbl-calibration.md
-      - HiPAP Verification (Spin & Transit): calibration/hipap-hpr-verification.md
-      - USBL Theory and Error Budgets: calibration/usbl-theory-and-error-budgets.md
-      - USBL Calibration Data Processing: calibration/usbl-calibration-data-processing.md
-      - USBL Responder Latency Check: calibration/usbl-responder-latency-check.md
-    - INS/DVL:
-      - INS/DVL Calibration Guide: calibration/ins-dvl-calibration-guide.md
-      - iXblue ROVINS/PHINS DVL Calibration: calibration/ixblue-ins-dvl-calibration.md
-      - Sprint-Nav DVL Verification: calibration/sprint-nav-dvl-verification.md
-      - Sprint Syrinx DVL Calibration: calibration/sprint-syrinx-dvl-calibration.md
-    - Pipe Tracker:
-      - Cable/Pipetracker Field Verification: calibration/pipetracker-field-verification.md
-    - MBES:
-      - MBES Calibration (Patch Test): calibration/mbes-calibration.md
-    - Attitude & Heading:
-      - AHRS Calibration: calibration/ahrs-calibration.md
-      - Static AHRS Intersystem Check: calibration/static-ahrs-intersystem-check.md
-      - Gyro Types and Calibration: calibration/gyro-types-and-calibration.md
-    - Sound Velocity:
-      - Sound Velocity Operations: calibration/sound-velocity-operations.md
-      - SVP Repeatability Test: calibration/svp-repeatability-test.md
-      - SV/CTD Comparison Verification: calibration/sv-ctd-comparison-verification.md
-    - Dimensional Control:
-      - Dimensional Control Survey: calibration/dimensional-control-survey.md
-      - Dimensional Control (Tape Measure): calibration/dimensional-control-tape-measure.md
-    - Geophysical:
-      - Magnetometer/TVG Acceptance Test: calibration/magnetometer-tvg-acceptance-test.md
-      - Surrogate Item Test (GMA1000): calibration/surrogate-item-test-gma1000.md
   - Positioning:
     - positioning/index.md
     - GNSS:
@@ -147,34 +116,50 @@ nav:
       - Static GNSS Intersystem Check: positioning/static-gnss-intersystem-check.md
       - Dynamic GNSS Intersystem Check: positioning/dynamic-gnss-intersystem-check.md
       - DGNSS Integrity Check: positioning/dgnss-integrity-check.md
-    - Acoustic:
+    - USBL:
+      - USBL Theory and Error Budgets: positioning/usbl-theory-and-error-budgets.md
+      - HiPAP USBL System Guide: positioning/hipap-usbl-system.md
+      - HiPAP USBL Calibration: positioning/hipap-usbl-calibration.md
+      - HiPAP Verification (Spin & Transit): positioning/hipap-hpr-verification.md
+      - USBL Calibration Data Processing: positioning/usbl-calibration-data-processing.md
+      - USBL Responder Latency Check: positioning/usbl-responder-latency-check.md
+      - cNODE miniS Transponder Configuration: positioning/cnode-transponder-configuration.md
+    - LBL:
       - LBL Acoustic Positioning Fundamentals: positioning/lbl-fundamentals.md
+    - Inertial Navigation:
+      - INS Theory and Principles: positioning/ins-theory-and-principles.md
+      - PHINS/ROVINS Operations: positioning/phins-rovins-operations.md
+      - Sprint INS Operations: positioning/sprint-ins-operations.md
+      - INS/DVL Calibration Guide: positioning/ins-dvl-calibration-guide.md
+      - iXblue ROVINS/PHINS DVL Calibration: positioning/ixblue-ins-dvl-calibration.md
+      - Sprint-Nav DVL Verification: positioning/sprint-nav-dvl-verification.md
+      - Sprint Syrinx DVL Calibration: positioning/sprint-syrinx-dvl-calibration.md
     - Tides & Datums:
       - Tidal Theory and Reduction Methods: positioning/tidal-reduction-methods.md
-  - Equipment:
-    - equipment/index.md
-    - INS:
-      - INS Theory and Principles: equipment/ins-theory-and-principles.md
-      - PHINS/ROVINS Operations: equipment/phins-rovins-operations.md
-      - Sprint INS Operations: equipment/sprint-ins-operations.md
-    - USBL:
-      - HiPAP USBL System Guide: equipment/hipap-usbl-system.md
-      - cNODE miniS Transponder Configuration: equipment/cnode-transponder-configuration.md
-    - MBES:
-      - MBES Installation and Setup: equipment/mbes-installation-and-setup.md
-      - MBES Operations and Settings: equipment/mbes-operations-and-settings.md
-    - Heave & MRU:
-      - Heave, MRU Theory and Verification: equipment/heave-mru-theory.md
+  - Survey Sensors:
+    - sensors/index.md
+    - Multibeam (MBES):
+      - MBES Installation and Setup: sensors/mbes-installation-and-setup.md
+      - MBES Operations and Settings: sensors/mbes-operations-and-settings.md
+      - MBES Calibration (Patch Test): sensors/mbes-calibration.md
+    - Sound Velocity:
+      - Sound Velocity Operations: sensors/sound-velocity-operations.md
+      - SVP Repeatability Test: sensors/svp-repeatability-test.md
+      - SV/CTD Comparison Verification: sensors/sv-ctd-comparison-verification.md
     - Side Scan Sonar:
-      - SSS Theory and Operations: equipment/side-scan-sonar-operations.md
-      - SSS Positioning Verification: equipment/side-scan-sonar-verification.md
+      - SSS Theory and Operations: sensors/side-scan-sonar-operations.md
+      - SSS Positioning Verification: sensors/side-scan-sonar-verification.md
     - Sub-Bottom Profiler:
-      - Sub-Bottom Profiler Operations: equipment/sub-bottom-profiler-operations.md
+      - Sub-Bottom Profiler Operations: sensors/sub-bottom-profiler-operations.md
     - Pipe Tracker:
-      - Pipe Tracker (HydroPACT) Verification: equipment/pipetracker-hydropact-verification.md
+      - Pipe Tracker (HydroPACT) Verification: sensors/pipetracker-hydropact-verification.md
+      - Cable/Pipetracker Field Verification: sensors/pipetracker-field-verification.md
+    - Magnetometer & Gradiometer:
+      - Magnetometer/TVG Acceptance Test: sensors/magnetometer-tvg-acceptance-test.md
+      - Surrogate Item Test (GMA1000): sensors/surrogate-item-test-gma1000.md
     - Camera Systems:
-      - Video Camera and DVR Verification: equipment/video-camera-dvr-verification.md
-      - Voyis Observer Pro 3 Verification: equipment/voyis-observer-pro3-verification.md
+      - Video Camera and DVR Verification: sensors/video-camera-dvr-verification.md
+      - Voyis Observer Pro 3 Verification: sensors/voyis-observer-pro3-verification.md
   - ROV Operations:
     - rov/index.md
     - Metrology:
@@ -185,6 +170,19 @@ nav:
       - As-Built Survey Procedures: rov/as-built-survey.md
     - Construction:
       - Construction Support Survey: rov/construction-support-survey.md
+  - Mobilisation & Setup:
+    - mobilisation/index.md
+    - Dimensional Control:
+      - Dimensional Control Survey: mobilisation/dimensional-control-survey.md
+      - Dimensional Control (Tape Measure): mobilisation/dimensional-control-tape-measure.md
+    - Attitude & Heading:
+      - AHRS Calibration: mobilisation/ahrs-calibration.md
+      - Static AHRS Intersystem Check: mobilisation/static-ahrs-intersystem-check.md
+      - Gyro Types and Calibration: mobilisation/gyro-types-and-calibration.md
+      - Heave, MRU Theory and Verification: mobilisation/heave-mru-theory.md
+    - Checklists:
+      - Mobilisation Checklist: mobilisation/mobilisation-checklist.md
+      - Demobilisation Checklist: mobilisation/demobilisation-checklist.md
   - Reporting:
     - reporting/index.md
     - Survey Reporting Fundamentals: reporting/survey-reporting-guide.md
@@ -196,10 +194,6 @@ nav:
     - Industry Standards Reference: reference/industry-standards-reference.md
     - Common Formulas and Conversions: reference/formulas-and-conversions.md
     - G882 Depth/Altimeter Calibration: reference/g882-depth-altimeter-calibration.md
-  - Field Notes:
-    - field-notes/index.md
-    - Mobilisation Checklist: field-notes/mobilisation-checklist.md
-    - Demobilisation Checklist: field-notes/demobilisation-checklist.md
 
 extra:
   social: []

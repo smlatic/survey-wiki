@@ -316,7 +316,7 @@ Convergence = (6 - 3) x sin(60) = 3 x 0.866 = **2.6 deg**
 
 - [TPU and Error Budgets](tpu-error-budgets.md)
 - [Coordinate Systems and Datums](coordinate-systems-datums.md)
-- [Sound Velocity Operations](../calibration/sound-velocity-operations.md)
+- [Sound Velocity Operations](../sensors/sound-velocity-operations.md)
 - [Acceptance Criteria Reference](acceptance-criteria-reference.md)
 - [Tidal Theory and Reduction Methods](../positioning/tidal-reduction-methods.md)
 

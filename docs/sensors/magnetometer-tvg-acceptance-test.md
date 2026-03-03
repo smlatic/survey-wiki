@@ -154,5 +154,5 @@ Data quality and position shall be confirmed by a Marine Geologist.
 
 ## :material-link-variant: Related Articles
 
-- [Surrogate Item Test Using GMA1000 Gradiometer](../calibration/surrogate-item-test-gma1000.md) -- ROV-mounted gradiometer acceptance test procedure
+- [Surrogate Item Test Using GMA1000 Gradiometer](surrogate-item-test-gma1000.md) -- ROV-mounted gradiometer acceptance test procedure
 - [Dynamic GNSS Intersystem Check](../positioning/dynamic-gnss-intersystem-check.md) -- verify positioning systems used for magnetometer line navigation

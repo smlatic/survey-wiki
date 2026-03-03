@@ -366,11 +366,11 @@ If time and conditions allow, run the patch test twice and compare results. Valu
 
 ## :material-link-variant: Related Articles
 
-- [MBES Installation and Setup](../equipment/mbes-installation-and-setup.md) - Transducer mounting, offset entry, time synchronisation
-- [MBES Operations and Settings](../equipment/mbes-operations-and-settings.md) - Frequency, pulse length, power, and coverage settings
-- [Heave / MRU Theory](../equipment/heave-mru-theory.md) - Motion sensor principles, heave filtering, lever arm effects
+- [MBES Installation and Setup](mbes-installation-and-setup.md) - Transducer mounting, offset entry, time synchronisation
+- [MBES Operations and Settings](mbes-operations-and-settings.md) - Frequency, pulse length, power, and coverage settings
+- [Heave / MRU Theory](../mobilisation/heave-mru-theory.md) - Motion sensor principles, heave filtering, lever arm effects
 - [Sound Velocity Operations](sound-velocity-operations.md) - SVP deployment, calibration, and application
-- [Dimensional Control Survey](dimensional-control-survey.md) - Measuring and computing sensor offsets
+- [Dimensional Control Survey](../mobilisation/dimensional-control-survey.md) - Measuring and computing sensor offsets
 
 ---
 

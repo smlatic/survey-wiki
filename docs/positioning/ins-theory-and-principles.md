@@ -474,5 +474,5 @@ Continuous monitoring of INS health during operations is essential. The followin
 
 ## :material-link-variant: Related Articles
 
-- [GNSS Fundamentals](../positioning/gnss-fundamentals.md) -- GNSS augmentation systems used for surface aiding
-- [MBES Installation and Setup](mbes-installation-and-setup.md) -- tightly coupled INS/MBES configurations
+- [GNSS Fundamentals](gnss-fundamentals.md) -- GNSS augmentation systems used for surface aiding
+- [MBES Installation and Setup](../sensors/mbes-installation-and-setup.md) -- tightly coupled INS/MBES configurations

@@ -465,8 +465,8 @@ Recommended locations:
 
 ## :material-link-variant: Related Articles
 
-- [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md) -- offset measurements feed directly into INS system configuration
-- [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md) -- transceiver offset measurements are a key input to the USBL error budget
+- [INS/DVL Calibration Guide](../positioning/ins-dvl-calibration-guide.md) -- offset measurements feed directly into INS system configuration
+- [USBL Theory and Error Budgets](../positioning/usbl-theory-and-error-budgets.md) -- transceiver offset measurements are a key input to the USBL error budget
 
 ---
 

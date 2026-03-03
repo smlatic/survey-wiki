@@ -346,7 +346,7 @@ This method provides a reference heading with precision <0.1 deg.
 
 ## :material-link-variant: Related Articles
 
-- [ROVINS/PHINS DVL Calibration](ixblue-ins-dvl-calibration.md) -- INS/DVL calibration requiring accurate heading
-- [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md) -- INS/DVL calibration for Sonardyne systems
-- [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md) -- post-calibration drift verification
-- [SVP Repeatability Test](svp-repeatability-test.md) -- sound velocity validation for acoustic systems
+- [ROVINS/PHINS DVL Calibration](../positioning/ixblue-ins-dvl-calibration.md) -- INS/DVL calibration requiring accurate heading
+- [SPRINT (Syrinx) DVL Calibration](../positioning/sprint-syrinx-dvl-calibration.md) -- INS/DVL calibration for Sonardyne systems
+- [SPRINT-NAV DVL Verification](../positioning/sprint-nav-dvl-verification.md) -- post-calibration drift verification
+- [SVP Repeatability Test](../sensors/svp-repeatability-test.md) -- sound velocity validation for acoustic systems

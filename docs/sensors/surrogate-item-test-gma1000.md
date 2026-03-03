@@ -162,5 +162,5 @@ Based on the collected data, establish the operable limits of the system:
 
 ## :material-link-variant: Related Articles
 
-- [Magnetometer/TVG Acceptance Test](../calibration/magnetometer-tvg-acceptance-test.md) -- towed magnetometer acceptance test with reciprocal line comparison
+- [Magnetometer/TVG Acceptance Test](magnetometer-tvg-acceptance-test.md) -- towed magnetometer acceptance test with reciprocal line comparison
 - [Dynamic GNSS Intersystem Check](../positioning/dynamic-gnss-intersystem-check.md) -- verify positioning systems supporting the survey

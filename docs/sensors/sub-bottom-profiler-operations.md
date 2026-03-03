@@ -270,10 +270,10 @@ For pipeline or cable burial assessment:
 ## :material-link-variant: Related Articles
 
 - [Side Scan Sonar Theory and Operations](side-scan-sonar-operations.md)
-- [Magnetometer/TVG Acceptance Test](../calibration/magnetometer-tvg-acceptance-test.md)
+- [Magnetometer/TVG Acceptance Test](magnetometer-tvg-acceptance-test.md)
 - [Pipeline Survey Operations](../rov/pipeline-survey-operations.md)
 - [MBES Operations and Settings](mbes-operations-and-settings.md)
-- [Sound Velocity Operations](../calibration/sound-velocity-operations.md)
+- [Sound Velocity Operations](sound-velocity-operations.md)
 
 ---
 

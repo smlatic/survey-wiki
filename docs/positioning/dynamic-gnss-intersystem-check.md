@@ -146,5 +146,5 @@ Compare primary and secondary system outputs across all four headings to quantif
 
 ## :material-link-variant: Related Articles
 
-- [Alongside DGNSS Integrity Check](../positioning/dgnss-integrity-check.md) -- static check that should be completed before this dynamic check
-- [Magnetometer/TVG Acceptance Test](../calibration/magnetometer-tvg-acceptance-test.md) -- relies on positioning accuracy verified by this check
+- [Alongside DGNSS Integrity Check](dgnss-integrity-check.md) -- static check that should be completed before this dynamic check
+- [Magnetometer/TVG Acceptance Test](../sensors/magnetometer-tvg-acceptance-test.md) -- relies on positioning accuracy verified by this check

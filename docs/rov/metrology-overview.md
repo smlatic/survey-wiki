@@ -474,7 +474,7 @@ INS-based metrology (sometimes called SLAM -- Simultaneous Localisation and Mapp
 - DVL bottom-lock is critical -- loss of DVL aiding causes rapid position degradation
 - Multiple runs required for statistical confidence
 
-For a detailed treatment of INS-based metrology techniques and SLAM workflows, see the dedicated article: **[INS-Based Metrology](../rov/ins-based-metrology.md)**.
+For a detailed treatment of INS-based metrology techniques and SLAM workflows, see the dedicated article: **[INS-Based Metrology](ins-based-metrology.md)**.
 
 ---
 

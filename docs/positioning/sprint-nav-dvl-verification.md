@@ -144,5 +144,5 @@ Analyse and evaluate the differences in position between the fully aided and DVL
 
 - [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md) -- the calibration procedure that precedes this verification
 - [ROVINS/PHINS DVL Calibration](ixblue-ins-dvl-calibration.md) -- equivalent calibration for iXblue systems
-- [SVP Repeatability Test](svp-repeatability-test.md) -- sound velocity validation that affects DVL accuracy
-- [Gyro Types and Calibration](gyro-types-and-calibration.md) -- heading reference for the INS
+- [SVP Repeatability Test](../sensors/svp-repeatability-test.md) -- sound velocity validation that affects DVL accuracy
+- [Gyro Types and Calibration](../mobilisation/gyro-types-and-calibration.md) -- heading reference for the INS

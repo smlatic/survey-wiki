@@ -324,8 +324,8 @@ Where:
 
 - [SSS Positioning Verification](side-scan-sonar-verification.md)
 - [Sub-Bottom Profiler Operations](sub-bottom-profiler-operations.md)
-- [Magnetometer/TVG Acceptance Test](../calibration/magnetometer-tvg-acceptance-test.md)
-- [Surrogate Item Test (GMA1000)](../calibration/surrogate-item-test-gma1000.md)
+- [Magnetometer/TVG Acceptance Test](magnetometer-tvg-acceptance-test.md)
+- [Surrogate Item Test (GMA1000)](surrogate-item-test-gma1000.md)
 
 ---
 

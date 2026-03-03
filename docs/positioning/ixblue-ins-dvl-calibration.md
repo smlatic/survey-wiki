@@ -143,5 +143,5 @@ Verify the calibration performance on a separate part of the data or a different
 
 - [SPRINT (Syrinx) DVL Calibration](sprint-syrinx-dvl-calibration.md) -- equivalent procedure for Sonardyne SPRINT systems
 - [SPRINT-NAV DVL Verification](sprint-nav-dvl-verification.md) -- post-calibration drift verification
-- [Gyro Types and Calibration](gyro-types-and-calibration.md) -- heading reference systems used alongside INS
-- [SVP Repeatability Test](svp-repeatability-test.md) -- sound velocity validation that affects DVL scale factor
+- [Gyro Types and Calibration](../mobilisation/gyro-types-and-calibration.md) -- heading reference systems used alongside INS
+- [SVP Repeatability Test](../sensors/svp-repeatability-test.md) -- sound velocity validation that affects DVL scale factor

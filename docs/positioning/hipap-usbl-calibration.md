@@ -240,9 +240,9 @@ The recommended pattern is four cardinal points and four headings on top of the 
 - [USBL Calibration Data Processing](usbl-calibration-data-processing.md)
 - [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md)
 - [USBL Responder Latency Check](usbl-responder-latency-check.md)
-- [AHRS Calibration](ahrs-calibration.md)
-- [Sound Velocity Operations](sound-velocity-operations.md)
-- [Dimensional Control Survey](dimensional-control-survey.md)
+- [AHRS Calibration](../mobilisation/ahrs-calibration.md)
+- [Sound Velocity Operations](../sensors/sound-velocity-operations.md)
+- [Dimensional Control Survey](../mobilisation/dimensional-control-survey.md)
 
 ---
 

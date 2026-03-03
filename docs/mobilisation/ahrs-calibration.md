@@ -361,9 +361,9 @@ Apply the following data snooping thresholds before accepting results:
 
 - [Gyro Types and Calibration](gyro-types-and-calibration.md)
 - [Static AHRS Intersystem Check](static-ahrs-intersystem-check.md)
-- [MBES Calibration (Patch Test)](mbes-calibration.md)
+- [MBES Calibration (Patch Test)](../sensors/mbes-calibration.md)
 - [Dimensional Control Survey](dimensional-control-survey.md)
-- [Heave, MRU Theory and Verification](../equipment/heave-mru-theory.md)
+- [Heave, MRU Theory and Verification](heave-mru-theory.md)
 
 ---
 

@@ -333,8 +333,8 @@ Benefits of tightly coupled systems:
 ## :material-link-variant: Related Articles
 
 - [MBES Operations and Settings](mbes-operations-and-settings.md) -- operational guidance, acquisition settings, and QC
-- [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md) -- transducer-to-MRU/gyro calibration procedure
-- [INS Theory and Principles](ins-theory-and-principles.md) -- tightly coupled INS/MBES configurations
+- [MBES Calibration (Patch Test)](mbes-calibration.md) -- transducer-to-MRU/gyro calibration procedure
+- [INS Theory and Principles](../positioning/ins-theory-and-principles.md) -- tightly coupled INS/MBES configurations
 
 ---
 

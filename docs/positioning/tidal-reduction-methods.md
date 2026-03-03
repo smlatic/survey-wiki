@@ -339,8 +339,8 @@ Start
 - [GNSS Accurate Height Check](gnss-accurate-height-check.md)
 - [GNSS Fundamentals](gnss-fundamentals.md)
 - [Coordinate Systems and Datums](../reference/coordinate-systems-datums.md)
-- [MBES Operations and Settings](../equipment/mbes-operations-and-settings.md)
-- [Heave, MRU Theory and Verification](../equipment/heave-mru-theory.md)
+- [MBES Operations and Settings](../sensors/mbes-operations-and-settings.md)
+- [Heave, MRU Theory and Verification](../mobilisation/heave-mru-theory.md)
 - [TPU and Error Budgets](../reference/tpu-error-budgets.md)
 
 ---

@@ -280,5 +280,5 @@ Any offsets or corrections must be recorded in the logbook and entered in the ap
 ## :material-link-variant: Related Articles
 
 - [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md) -- understanding the reference positioning system used during calibration
-- [Sound Velocity Operations](sound-velocity-operations.md) -- SVS/SVP requirements for DVL and USBL accuracy
-- [Dimensional Control Survey](dimensional-control-survey.md) -- measuring the offsets and alignments that feed into INS setup
+- [Sound Velocity Operations](../sensors/sound-velocity-operations.md) -- SVS/SVP requirements for DVL and USBL accuracy
+- [Dimensional Control Survey](../mobilisation/dimensional-control-survey.md) -- measuring the offsets and alignments that feed into INS setup

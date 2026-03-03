@@ -180,7 +180,7 @@ Compile a comparison report including:
 
 - [Sound Velocity Operations](sound-velocity-operations.md)
 - [SVP Repeatability Test](svp-repeatability-test.md)
-- [MBES Operations and Settings](../equipment/mbes-operations-and-settings.md)
+- [MBES Operations and Settings](mbes-operations-and-settings.md)
 
 ---
 

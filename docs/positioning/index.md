@@ -5,9 +5,9 @@ hide:
 
 # :material-satellite-variant: Positioning
 
-GNSS, acoustic positioning, tidal reduction, and integrated positioning setup and operations.
+Surface and subsea positioning systems -- theory, setup, calibration, and operations all in one place.
 
-Covers GNSS fundamentals, integrity checks, intersystem comparisons, LBL acoustics, tidal theory, and height verification procedures.
+Covers GNSS, USBL, LBL, inertial navigation (INS/DVL), and tidal reduction.
 
 ---
 
@@ -24,11 +24,35 @@ Covers GNSS fundamentals, integrity checks, intersystem comparisons, LBL acousti
     - [Dynamic GNSS Intersystem Check](dynamic-gnss-intersystem-check.md)
     - [Alongside DGNSS Integrity Check](dgnss-integrity-check.md)
 
--   :material-access-point: **Acoustic Positioning**
+-   :material-access-point: **USBL**
+
+    ---
+
+    - [USBL Theory and Error Budgets](usbl-theory-and-error-budgets.md)
+    - [HiPAP USBL System Guide](hipap-usbl-system.md)
+    - [HiPAP USBL Calibration](hipap-usbl-calibration.md)
+    - [HiPAP Verification (Spin & Transit)](hipap-hpr-verification.md)
+    - [USBL Calibration Data Processing](usbl-calibration-data-processing.md)
+    - [USBL Responder Latency Check](usbl-responder-latency-check.md)
+    - [cNODE miniS Transponder Configuration](cnode-transponder-configuration.md)
+
+-   :material-access-point-network: **LBL**
 
     ---
 
     - [LBL Acoustic Positioning Fundamentals](lbl-fundamentals.md)
+
+-   :material-chip: **Inertial Navigation**
+
+    ---
+
+    - [INS Theory and Principles](ins-theory-and-principles.md)
+    - [PHINS/ROVINS Operations](phins-rovins-operations.md)
+    - [Sprint INS Operations](sprint-ins-operations.md)
+    - [INS/DVL Calibration Guide](ins-dvl-calibration-guide.md)
+    - [iXblue ROVINS/PHINS DVL Calibration](ixblue-ins-dvl-calibration.md)
+    - [Sprint-Nav DVL Verification](sprint-nav-dvl-verification.md)
+    - [Sprint Syrinx DVL Calibration](sprint-syrinx-dvl-calibration.md)
 
 -   :material-waves: **Tides & Datums**
 

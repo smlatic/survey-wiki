@@ -238,9 +238,9 @@ Aiding sources that constrain INS drift:
 
 - [Subsea Metrology Overview](metrology-overview.md)
 - [LBL Acoustic Positioning Fundamentals](../positioning/lbl-fundamentals.md)
-- [INS/DVL Calibration Guide](../calibration/ins-dvl-calibration-guide.md)
-- [INS Theory and Principles](../equipment/ins-theory-and-principles.md)
-- [USBL Theory and Error Budgets](../calibration/usbl-theory-and-error-budgets.md)
+- [INS/DVL Calibration Guide](../positioning/ins-dvl-calibration-guide.md)
+- [INS Theory and Principles](../positioning/ins-theory-and-principles.md)
+- [USBL Theory and Error Budgets](../positioning/usbl-theory-and-error-budgets.md)
 - [Construction Support Survey](construction-support-survey.md)
 
 ---
