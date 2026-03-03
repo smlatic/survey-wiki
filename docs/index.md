@@ -29,37 +29,37 @@ General guides and procedures. Always refer to the procedures and standards requ
 
 <div class="grid cards" markdown>
 
--   :material-tune:{ .lg .middle } **Calibration**
-
-    ---
-
-    Equipment calibration procedures for USBL, MBES, gyro, DVL, INS, sound velocity, and other survey sensors
-
-    [:octicons-arrow-right-24: 20 procedures](calibration/index.md)
-
 -   :material-satellite-variant:{ .lg .middle } **Positioning**
 
     ---
 
-    GNSS fundamentals, acoustic positioning, integrity checks, intersystem comparisons, tidal reduction, and height verification
+    GNSS, USBL, LBL, inertial navigation, integrity checks, intersystem comparisons, DVL calibration, and tidal reduction
 
-    [:octicons-arrow-right-24: 8 articles](positioning/index.md)
+    [:octicons-arrow-right-24: 22 articles](positioning/index.md)
+
+-   :material-sine-wave:{ .lg .middle } **Survey Sensors**
+
+    ---
+
+    Multibeam, sound velocity, side scan sonar, sub-bottom profiler, pipe tracker, magnetometer, and camera systems
+
+    [:octicons-arrow-right-24: 15 guides](sensors/index.md)
 
 -   :material-robot-industrial:{ .lg .middle } **ROV Operations**
 
     ---
 
-    Subsea metrology, SLAM, pipeline survey, construction support, as-built surveys, and ROV-mounted sensors
+    Subsea metrology, SLAM, pipeline survey, construction support, and as-built surveys
 
     [:octicons-arrow-right-24: 5 guides](rov/index.md)
 
--   :material-cog:{ .lg .middle } **Equipment**
+-   :material-wrench:{ .lg .middle } **Mobilisation & Setup**
 
     ---
 
-    INS, MBES, heave/MRU, side scan sonar, sub-bottom profiler, video, and pipeline tracking equipment guides
+    Dimensional control, AHRS calibration, gyro and heave verification, and mobilisation/demobilisation checklists
 
-    [:octicons-arrow-right-24: 11 guides](equipment/index.md)
+    [:octicons-arrow-right-24: 8 guides](mobilisation/index.md)
 
 -   :material-file-chart:{ .lg .middle } **Reporting**
 
@@ -76,14 +76,6 @@ General guides and procedures. Always refer to the procedures and standards requ
     Acceptance criteria, industry standards, formulas, coordinate systems, TPU, and calibration worksheets
 
     [:octicons-arrow-right-24: 6 references](reference/index.md)
-
--   :material-notebook:{ .lg .middle } **Field Notes**
-
-    ---
-
-    Mobilisation and demobilisation checklists for offshore survey operations
-
-    [:octicons-arrow-right-24: 2 checklists](field-notes/index.md)
 
 </div>
 
