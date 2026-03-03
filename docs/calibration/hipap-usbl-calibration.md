@@ -126,6 +126,16 @@ The recommended pattern is four cardinal points and four headings on top of the 
 2. Adjust heading 180 degrees
 3. Navigate to each cardinal point and record
 
+<figure markdown="span">
+  ![Standard USBL alignment pattern](../assets/images/usbl-calibration/usbl-calibration-standard-alignment-pattern.jpg){ width="400" }
+  <figcaption>Standard alignment pattern: four cardinal points and four headings on top of the transponder.</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Simplified USBL alignment pattern](../assets/images/usbl-calibration/usbl-calibration-simplified-alignment-pattern.jpg){ width="400" }
+  <figcaption>Simplified alignment pattern: top position with 180-degree heading change, then cardinal points.</figcaption>
+</figure>
+
 ### Step 6: Data Acquisition in APOS
 
 | Step | Task |

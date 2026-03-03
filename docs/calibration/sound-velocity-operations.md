@@ -322,6 +322,11 @@ Every velocity profile must be checked against an alternative source:
 
 Profiles should be carried out at the **deepest location** of the work site to avoid the need for interpolation.
 
+<figure markdown="span">
+  ![SVP profile comparison](../assets/images/sound-velocity/sound-velocity-profile-comparison.jpg){ width="500" }
+  <figcaption>Example SVP profile comparison showing two casts overlaid. Profiles should agree within 0.5 m/s throughout the water column.</figcaption>
+</figure>
+
 ---
 
 ## :material-file-export-outline: Output File Formats

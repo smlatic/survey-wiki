@@ -99,6 +99,11 @@ Run two lines, each back and forth in opposite directions (four runs total):
 - Stable altitude (planned survey altitude)
 - Constant run line direction, selected to minimise pitch movement
 
+<figure markdown="span">
+  ![SSS verification run line pattern](../assets/images/sss-verification/sss-verification-runlines.jpg){ width="500" }
+  <figcaption>SSS verification run line pattern: two lines run back and forth in opposite directions, centred on the reference contact.</figcaption>
+</figure>
+
 ### Step 5: Process in SonarWiz
 
 - Use an SV value at the **transducer depth** (not the average water column SV -- the acoustic pulse travels laterally at transducer depth, so the SV at that depth is what governs slant-to-ground range conversion)

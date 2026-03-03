@@ -222,6 +222,11 @@ For dual-head MBES systems (e.g. Kongsberg EM 2040 Dual, R2Sonic 2026 Dual):
     - Line F: Centre line, direction 1, fast speed (for latency)
     - Line G: Centre line, direction 2, slow speed (optional verification)
 
+<figure markdown="span">
+  ![Dual-head MBES calibration run lines](../assets/images/mbes-calibration/mbes-calibration-dual-head-runlines.jpg){ width="500" }
+  <figcaption>Plan view of the 7-line dual-head MBES calibration pattern. Lines A and C are offset to port and starboard; line B runs over the centre feature. Ensure coverage over the centre feature from all lines.</figcaption>
+</figure>
+
 2. **Process each head independently.** Extract data for Head 1 and Head 2 separately. Solve roll, pitch, heading, and latency for each head.
 
 3. **Check inter-head alignment.** After individual corrections are applied, verify that the two heads produce consistent depths in the overlap zone between the swaths. Residual depth differences in the overlap indicate inter-head roll or pitch misalignment. Some processing software (Qimera, CARIS) provides dedicated tools for inter-head alignment.

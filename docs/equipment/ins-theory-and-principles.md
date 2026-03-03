@@ -110,6 +110,11 @@ A USBL system is often used to aid the subsea INS with position information. The
 
     In practice, when the INS is USBL-aided, it is also aided by a DVL and depth sensor. The INS weights the aiding sensors using any user-defined accuracy values. For USBL, the standard deviation is dependent on slant range and environmental factors (noise). A value between **0.2% and 0.5% of slant range** is a realistic starting point.
 
+<figure markdown="span">
+  ![USBL-aided INS with systematic error](../assets/images/ins-theory/ins-usbl-aiding-systematic-error.jpg){ width="600" }
+  <figcaption>USBL-aided INS: the INS smooths out USBL random error (green) to produce a precise solution (blue dashed), but cannot correct the systematic offset from truth (black). Without aiding, the INS drifts entirely (red).</figcaption>
+</figure>
+
 ---
 
 ## :material-vector-polyline: LBL Aiding

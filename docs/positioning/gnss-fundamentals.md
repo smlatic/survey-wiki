@@ -218,6 +218,15 @@ Network RTK is commonly used for nearshore and port surveys, quayside mobilisati
 
 ---
 
+### GNSS Service Providers and Accuracy
+
+<figure markdown="span">
+  ![GNSS services accuracy comparison](../assets/images/gnss/gnss-services-accuracy-comparison.jpg){ width="600" }
+  <figcaption>Comparison of commercial GNSS correction services showing provider, system type, constellations used, and horizontal/vertical accuracy specifications.</figcaption>
+</figure>
+
+---
+
 ## :material-antenna: Antenna Installation
 
 ### Siting Rules
