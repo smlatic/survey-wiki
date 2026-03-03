@@ -1,0 +1,325 @@
+{
+  "title": "Hydrographic Survey Flashcards",
+  "cards": [
+    {
+      "front": "What is the primary goal of offshore surveying?",
+      "back": "To visualize, measure, and understand the seabed and subsea environment using various sensors."
+    },
+    {
+      "front": "Why is a proper offshore survey essential before laying subsea cables?",
+      "back": "To identify hazards like rocky outcrops or wrecks that could cause damage or delays."
+    },
+    {
+      "front": "In offshore surveying, what does the term 'Online' refer to?",
+      "back": "The management and monitoring of real-time operations and data acquisition."
+    },
+    {
+      "front": "In offshore surveying, what does the term 'Offline' refer to?",
+      "back": "The processing, quality control, and preparation of deliverables after data has been acquired."
+    },
+    {
+      "front": "What is the specific role of a Party Chief on a survey vessel?",
+      "back": "To coordinate the entire survey operation, liaise with the client, and lead the offshore survey team."
+    },
+    {
+      "front": "Which professional on the survey team is responsible for cleaning raw data and creating 3D maps?",
+      "back": "The Data Processor."
+    },
+    {
+      "front": "What is the function of a Geophysicist in an offshore survey?",
+      "back": "To interpret sub-bottom profiler and geophysical data and determine the composition and stratigraphy of the seafloor."
+    },
+    {
+      "front": "Vessel Terminology: What is the 'Bow'?",
+      "back": "The front end of the vessel."
+    },
+    {
+      "front": "Vessel Terminology: What is the 'Stern'?",
+      "back": "The rear end of the vessel."
+    },
+    {
+      "front": "Vessel Terminology: What is 'Port'?",
+      "back": "The left side of the vessel when facing forward (toward the bow)."
+    },
+    {
+      "front": "Vessel Terminology: What is 'Starboard'?",
+      "back": "The right side of the vessel when facing forward (toward the bow)."
+    },
+    {
+      "front": "What does the term 'Aft' signify on a ship?",
+      "back": "A direction toward the back or stern of the vessel."
+    },
+    {
+      "front": "What is the 'Bridge' on a survey vessel?",
+      "back": "The command center where navigation and overall control of the ship occur."
+    },
+    {
+      "front": "What is the nautical term for the ship's kitchen or dining area?",
+      "back": "The Galley (kitchen). The dining area is commonly called the Mess."
+    },
+    {
+      "front": "On a ship, what is the 'Head'?",
+      "back": "The bathroom or toilet facilities."
+    },
+    {
+      "front": "What is a 'Bulkhead'?",
+      "back": "A wall or partition within the structure of a ship."
+    },
+    {
+      "front": "What is the purpose of a 'Muster Station'?",
+      "back": "A designated assembly point for the crew during drills or emergencies."
+    },
+    {
+      "front": "Why is 'Call-and-Response' used in offshore radio communication?",
+      "back": "To confirm that the message was received and understood by the correct person."
+    },
+    {
+      "front": "What is the purpose of Steel-Toed Boots in the offshore environment?",
+      "back": "To protect the feet from heavy equipment or gear that might slip and fall."
+    },
+    {
+      "front": "Why are High-Visibility Vests required on deck?",
+      "back": "To ensure crew members are easily seen by equipment operators and crane drivers."
+    },
+    {
+      "front": "What is the first thing a surveyor should do upon boarding a new vessel regarding safety?",
+      "back": "Locate their muster station and learn how to reach it from anywhere on the vessel."
+    },
+    {
+      "front": "What is 'Environmental Stewardship' in the context of offshore surveying?",
+      "back": "Following guidelines to minimize the impact of operations on marine life and ecosystems."
+    },
+    {
+      "front": "What does the acronym IMCA stand for?",
+      "back": "International Marine Contractors Association."
+    },
+    {
+      "front": "What does the acronym IHO stand for?",
+      "back": "International Hydrographic Organization."
+    },
+    {
+      "front": "Concept: Geoid",
+      "back": "Definition: An equipotential surface of the Earth's gravity field that closely approximates mean sea level in the open ocean, with an irregular shape reflecting variations in gravity and mass distribution."
+    },
+    {
+      "front": "Concept: Ellipsoid",
+      "back": "Definition: A mathematical 'best-fit' shape (a smooth, slightly flattened sphere) used to approximate the Earth's surface for geodetic calculations."
+    },
+    {
+      "front": "What is a 'Datum' in geodesy?",
+      "back": "A reference frame that defines the position and orientation of a reference ellipsoid relative to the Earth, providing the basis for coordinate measurements."
+    },
+    {
+      "front": "What is the most common global datum used by GNSS?",
+      "back": "WGS84."
+    },
+    {
+      "front": "What is a 'Projection' in mapping?",
+      "back": "A method for flattening the Earth's curved surface onto a two-dimensional map."
+    },
+    {
+      "front": "What does the acronym UTM stand for in coordinate systems?",
+      "back": "Universal Transverse Mercator."
+    },
+    {
+      "front": "UTM divides the world into _____ zones.",
+      "back": "60."
+    },
+    {
+      "front": "Each UTM zone is _____ wide.",
+      "back": "$6^{\\circ}$."
+    },
+    {
+      "front": "What are the typical metric units used for projected coordinates in survey work?",
+      "back": "Eastings and Northings in meters."
+    },
+    {
+      "front": "Why is it critical to confirm the project's datum before starting work?",
+      "back": "Using the wrong datum can cause positional errors of tens or even hundreds of meters."
+    },
+    {
+      "front": "What does the acronym GNSS stand for?",
+      "back": "Global Navigation Satellite System."
+    },
+    {
+      "front": "How does RTK (Real-Time Kinematic) increase GNSS precision?",
+      "back": "It uses correction data from a base station or network to reduce positional error to centimeter-level accuracy."
+    },
+    {
+      "front": "What is the function of an Inertial Navigation System (INS)?",
+      "back": "To track position and orientation using accelerometers and gyroscopes, providing continuous navigation when GNSS signals are lost, degraded, or unavailable."
+    },
+    {
+      "front": "What does USBL stand for in underwater positioning?",
+      "back": "Ultra-Short Baseline."
+    },
+    {
+      "front": "How does a USBL system calculate a beacon's position?",
+      "back": "By measuring the angle (phase difference across a compact transducer array) and the range (from acoustic travel time) to the target beacon or transponder."
+    },
+    {
+      "front": "What does LBL stand for in underwater positioning?",
+      "back": "Long Baseline."
+    },
+    {
+      "front": "How does LBL positioning differ from USBL?",
+      "back": "LBL uses a network of seabed transponders and calculates position by trilateration (range measurements) rather than relying on a single vessel-mounted transducer array."
+    },
+    {
+      "front": "When is LBL typically preferred over USBL?",
+      "back": "For high-precision, long-term operations such as deepwater construction and permanent seabed installations."
+    },
+    {
+      "front": "What is the primary function of a Doppler Velocity Log (DVL)?",
+      "back": "To measure the speed and direction of a vessel or ROV relative to the seabed (bottom-track mode) or the water column (water-track mode)."
+    },
+    {
+      "front": "What does a Motion Reference Unit (MRU) track?",
+      "back": "The pitch, roll, and heave (rotational and translational motions) of a vessel or ROV."
+    },
+    {
+      "front": "Why is 'Sound Velocity' considered the unsung hero of acoustic positioning?",
+      "back": "Because the speed of sound in water varies with temperature, salinity, and pressure, and errors in the applied sound velocity directly affect all acoustic range and depth calculations."
+    },
+    {
+      "front": "What is an SVP cast?",
+      "back": "Lowering a sound velocity probe through the water column to measure the speed of sound at various depths, producing a sound velocity profile."
+    },
+    {
+      "front": "How does a Multibeam Echo Sounder (MBES) differ from a Single Beam (SBES)?",
+      "back": "MBES emits a fan of multiple beams to map a wide swath of the seabed in a single pass, while SBES measures depth at only a single point directly beneath the transducer."
+    },
+    {
+      "front": "What is the primary output of a Side Scan Sonar (SSS)?",
+      "back": "A high-resolution acoustic image (sonograph) of the seabed showing texture, features, and objects."
+    },
+    {
+      "front": "Which sensor is used to identify layered sediments beneath the seafloor surface?",
+      "back": "Sub-Bottom Profiler (SBP)."
+    },
+    {
+      "front": "What does a Magnetometer detect?",
+      "back": "Variations in the Earth's magnetic field, which can indicate the presence of ferrous (iron-based) objects such as pipelines, cables, anchors, or unexploded ordnance."
+    },
+    {
+      "front": "What is LIDAR typically used for in marine surveying?",
+      "back": "Highly accurate mapping of shorelines, harbor walls, or structures above the waterline. Airborne LIDAR bathymetry can also be used for shallow-water depth measurement in clear water."
+    },
+    {
+      "front": "What defines an ROV (Remotely Operated Vehicle)?",
+      "back": "A submersible robot connected to the surface vessel by a tether (umbilical) that provides power, communications, and control."
+    },
+    {
+      "front": "What defines an AUV (Autonomous Underwater Vehicle)?",
+      "back": "An untethered, pre-programmed underwater vehicle that carries out survey missions independently using onboard batteries and navigation systems."
+    },
+    {
+      "front": "What is an ROTV (Remotely Operated Towed Vehicle)?",
+      "back": "A towed sensor platform with control surfaces (depressor wings or fins) that allow an operator to adjust its depth and attitude while being towed behind the vessel."
+    },
+    {
+      "front": "Why is 'Data Logging' critical for survey quality?",
+      "back": "It ensures the systematic capture, time-stamping, and storage of raw sensor data for later processing and quality control."
+    },
+    {
+      "front": "In a survey plan, what is 'Line Planning'?",
+      "back": "Designing the survey lines (paths the vessel follows) to ensure complete, overlapping coverage of the target area with the required data density."
+    },
+    {
+      "front": "How does vessel motion (pitch, roll, heave) affect sonar data?",
+      "back": "It can warp or misplace the sounding data if not measured by an MRU and compensated for during processing."
+    },
+    {
+      "front": "What is the main objective of a Route Survey?",
+      "back": "To assess and map a safe, technically feasible corridor for subsea infrastructure such as pipelines or cables."
+    },
+    {
+      "front": "What is the purpose of a Geotechnical Survey?",
+      "back": "To sample and analyze the seabed soil to determine its engineering properties and whether it can support planned structures or infrastructure."
+    },
+    {
+      "front": "What does a CPT (Cone Penetration Test) determine?",
+      "back": "The in-situ mechanical properties of the seabed soil, including resistance, friction, and pore pressure, which indicate soil type and bearing capacity."
+    },
+    {
+      "front": "What is 'Calibration' in the context of survey equipment?",
+      "back": "Determining and applying corrections (offsets and biases) to instruments so that the data they produce is accurate and traceable."
+    },
+    {
+      "front": "What is 'Verification' as distinct from calibration?",
+      "back": "Confirming that the calibrated system maintains its accuracy under real-world operational conditions, typically by comparing results against an independent reference."
+    },
+    {
+      "front": "What is the purpose of an MBES 'Patch Test'?",
+      "back": "To determine and correct the angular offsets (roll, pitch, heading) and timing latency between the multibeam sonar head and the motion sensor."
+    },
+    {
+      "front": "In Qinsy software, what is the role of the 'Survey Manager'?",
+      "back": "To define the vessel model, sensors, lever-arm offsets, and coordinate systems before data acquisition begins."
+    },
+    {
+      "front": "What is a Remote Operations Center (ROC)?",
+      "back": "An onshore facility used to monitor vessel positions, sensor data, and survey progress in real time via satellite communications."
+    },
+    {
+      "front": "What technology allows remote surveyors to run demanding software from an onshore office?",
+      "back": "Virtual Machines (VMs) and cloud-based servers accessed over satellite or network links."
+    },
+    {
+      "front": "Why is 'Cybersecurity' vital for offshore survey projects?",
+      "back": "To protect sensitive project data and prevent operational disruptions from threats such as malware, phishing, or unauthorized access."
+    },
+    {
+      "front": "How can AI tools like ChatGPT assist a surveyor?",
+      "back": "By drafting reports, writing automation scripts, explaining technical concepts, or brainstorming solutions -- always subject to human review."
+    },
+    {
+      "front": "What is a major limitation of AI tools in offshore surveying?",
+      "back": "They can produce plausible but incorrect information (hallucinations) and lack the domain-specific judgment of an experienced surveyor."
+    },
+    {
+      "front": "Why should confidential project data never be entered into public AI systems?",
+      "back": "Data entered into public AI tools may be stored, logged, or used for model training, compromising project confidentiality and contractual obligations."
+    },
+    {
+      "front": "In soft skills, what is 'Active Listening'?",
+      "back": "Giving full attention to a speaker, acknowledging their points, and confirming understanding before responding."
+    },
+    {
+      "front": "What is 'Diplomacy' in the context of an offshore crew?",
+      "back": "The ability to manage interpersonal tensions and resolve conflicts professionally in the close quarters of a working vessel."
+    },
+    {
+      "front": "Why is 'Handover Documentation' important at the end of a shift?",
+      "back": "It ensures the incoming surveyor knows exactly what has been done, what issues arose, and what tasks remain."
+    },
+    {
+      "front": "How can an offshore worker combat the physical toll of life at sea?",
+      "back": "By maintaining a consistent sleep schedule, staying hydrated, eating a balanced diet, and exercising when possible."
+    },
+    {
+      "front": "What is 'Continuous Learning' in the survey industry?",
+      "back": "Proactively seeking new certifications, attending training sessions, and staying current with evolving technology and industry standards."
+    },
+    {
+      "front": "What does 'TPU' stand for in survey error budgets?",
+      "back": "Total Propagated Uncertainty."
+    },
+    {
+      "front": "What does a 'Magnetometer' primarily help avoid in cable route planning?",
+      "back": "Complications from hidden ferrous debris, existing buried infrastructure, or unexploded ordnance (UXO) along the planned route."
+    },
+    {
+      "front": "What is the primary advantage of an AUV for large-scale mapping?",
+      "back": "It can methodically collect high-resolution data over wide areas close to the seabed without constant human piloting or tether limitations."
+    },
+    {
+      "front": "Why is Sound Velocity Profile (SVP) data updated periodically?",
+      "back": "To account for spatial and temporal changes in water temperature, salinity, and pressure that alter the speed of sound through the water column."
+    },
+    {
+      "front": "What is the difference between a LAN and a WAN in IT basics?",
+      "back": "A LAN is a Local Area Network (e.g., the onboard vessel network), while a WAN is a Wide Area Network (connecting the vessel to shore-based systems)."
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "title": "Metrology Quiz",
+  "questions": [
+    {
+      "question": "Why is the scale factor set to exactly $1.0$ when performing subsea metrology?",
+      "answerOptions": [
+        {
+          "text": "Acoustic range measurements represent true physical distances that should not be projected onto a grid.",
+          "isCorrect": true,
+          "rationale": "Metrology deals with relative measurements in real-world dimensions, meaning that map projection corrections (grid scale) should not be applied."
+        },
+        {
+          "text": "It eliminates the need to correct for sound velocity variations in the water column.",
+          "isCorrect": false,
+          "rationale": "Sound velocity is an environmental factor affecting travel time and is independent of the mathematical scale factor in geodetic systems."
+        },
+        {
+          "text": "It ensures that vertical depth measurements match the vessel's GNSS height.",
+          "isCorrect": false,
+          "rationale": "GNSS height refers to an ellipsoid or geoid, whereas metrology focuses on relative distances between subsea structures."
+        },
+        {
+          "text": "It is required for the Kalman filter in the INS system to converge at low speeds.",
+          "isCorrect": false,
+          "rationale": "Kalman filter convergence is influenced by sensor noise levels and update rates, not by the selected map scaling."
+        }
+      ],
+      "hint": "Consider the difference between a tape-measure measurement on the seabed and a coordinate on a map."
+    },
+    {
+      "question": "What is the primary reason that navigation-grade INS is required for SLAM metrology instead of simpler tactical-grade systems?",
+      "answerOptions": [
+        {
+          "text": "Tactical-grade systems have a drift rate that is too high to maintain accuracy between measurement points.",
+          "isCorrect": true,
+          "rationale": "Navigation-grade systems have extremely low drift (typically $< 0.02$ m/min), which is necessary when 'bridging' distances between structures without continuous acoustic aiding."
+        },
+        {
+          "text": "Only navigation-grade systems can communicate with a Doppler Velocity Log (DVL).",
+          "isCorrect": false,
+          "rationale": "Most modern INS classes can integrate with DVL, but it is the stability of the gyroscopes that determines the system's grade."
+        },
+        {
+          "text": "Tactical-grade systems cannot handle the high update rate of $1$ Hz that is required.",
+          "isCorrect": false,
+          "rationale": "Update rate is rarely the limitation; it is rather the accumulation of sensor errors over time that is critical."
+        },
+        {
+          "text": "Navigation-grade systems are immune to magnetic interference from subsea structures.",
+          "isCorrect": false,
+          "rationale": "Both types of fibre optic or ring laser gyroscopes are immune to magnetism, but the precision of the sensing elements distinguishes them."
+        }
+      ],
+      "hint": "Consider how quickly a position error grows when external references are unavailable."
+    },
+    {
+      "question": "What is the theoretical difference between 'Mean Seabed Level' (MSBL) and a vertical datum such as LAT in pipeline surveys?",
+      "answerOptions": [
+        {
+          "text": "MSBL is a local reference along the product, while LAT is a regional reference plane based on tidal constituents.",
+          "isCorrect": true,
+          "rationale": "MSBL is used to calculate local measurements such as cover depth relative to the immediate surroundings, not the absolute sea level."
+        },
+        {
+          "text": "LAT is used to calculate 'Depth of Cover', while MSBL is used for 'Depth of Lowering'.",
+          "isCorrect": false,
+          "rationale": "Both DOC and DOL are most commonly calculated relative to the local seabed (MSBL) to understand the pipeline's status in the trench."
+        },
+        {
+          "text": "MSBL accounts for the curvature of the Earth, which LAT does not over short distances.",
+          "isCorrect": false,
+          "rationale": "The difference lies in the nature of the reference surface (physical seabed vs. theoretical water level), not in geodetic projection models."
+        },
+        {
+          "text": "There is no difference; the terms are used synonymously in the offshore industry.",
+          "isCorrect": false,
+          "rationale": "Confusing local seabed references with vertical datums can lead to serious miscalculations of, for example, fill volumes during rock dumping."
+        }
+      ],
+      "hint": "Think about whether the reference moves depending on how the seabed looks locally."
+    },
+    {
+      "question": "Why is it technically inadvisable to perform precise vertical depth measurements (depth loops) precisely at tidal turning points (high or low water)?",
+      "answerOptions": [
+        {
+          "text": "The rate of change is non-linear and near zero, making it difficult to interpolate tidal corrections accurately.",
+          "isCorrect": true,
+          "rationale": "During rising or falling tide the change is more predictable, which reduces uncertainty when closing measurement loops between different points."
+        },
+        {
+          "text": "The water pressure stabilises at the turning point, causing 'hysteresis' in the Digiquartz sensor.",
+          "isCorrect": false,
+          "rationale": "Digiquartz sensors are not affected by constant pressure; the problem lies in the mathematical correction for the time-dependent tidal signal."
+        },
+        {
+          "text": "The speed of sound in water changes drastically when the tide turns.",
+          "isCorrect": false,
+          "rationale": "Sound velocity depends primarily on salinity, temperature and pressure, not directly on the tidal phase."
+        },
+        {
+          "text": "The ROV's thrusters create more turbulence when the current disappears at the turning point.",
+          "isCorrect": false,
+          "rationale": "Although current conditions change, it is the temporal uncertainty in the tidal curve that is the critical factor for measurement quality."
+        }
+      ],
+      "hint": "Consider how easy it is to predict a curve's exact value when its slope is changing most rapidly."
+    },
+    {
+      "question": "In Construction Support, why is precision (repeatability) often valued more highly than absolute accuracy?",
+      "answerOptions": [
+        {
+          "text": "A stable and consistent position allows the construction team to perform relative adjustments safely.",
+          "isCorrect": true,
+          "rationale": "If a position 'jumps' due to noise, it can create uncertainty during heavy lifts, even if the average error is small."
+        },
+        {
+          "text": "Absolute accuracy is impossible to achieve subsea due to limitations in GNSS technology.",
+          "isCorrect": false,
+          "rationale": "High absolute accuracy can be achieved with, for example, LBL, but stability in real-time guidance is usually more important for the operator."
+        },
+        {
+          "text": "Construction drawings are usually based on local coordinate systems with no link to global datums.",
+          "isCorrect": false,
+          "rationale": "Projects nearly always use strict global datums; precision is needed to navigate safely relative to already installed equipment."
+        },
+        {
+          "text": "High precision reduces the time required to calibrate the USBL system.",
+          "isCorrect": false,
+          "rationale": "Calibration aims to increase accuracy; precision is an inherent property of the system's stability and filter settings."
+        }
+      ],
+      "hint": "Think about what a crane operator needs to see on their screen to place a load softly."
+    },
+    {
+      "question": "What effect does acoustic multipath propagation have on range measurements in an LBL array?",
+      "answerOptions": [
+        {
+          "text": "It creates false, longer ranges because the signal reflects off subsea structures before reaching the receiver.",
+          "isCorrect": true,
+          "rationale": "Because sound travels a longer path when reflected, the system interprets the longer travel time as a greater physical distance."
+        },
+        {
+          "text": "It causes the sound velocity to appear to increase locally near metallic objects.",
+          "isCorrect": false,
+          "rationale": "Sound velocity does not change, but the measured travel time is distorted by the geometric detour."
+        },
+        {
+          "text": "It causes the transponder to respond on the wrong frequency, leading to the measurement being rejected.",
+          "isCorrect": false,
+          "rationale": "Multipath affects the travel time of the correct frequency, rather than changing the signal's channel."
+        },
+        {
+          "text": "It reduces the range of the signal by causing sound waves to cancel each other out (destructive interference).",
+          "isCorrect": false,
+          "rationale": "Although interference can occur, the main problem in metrology is the systematic errors in the calculated ranges."
+        }
+      ],
+      "hint": "Imagine that an echo takes longer to arrive than a direct signal."
+    },
+    {
+      "question": "In pipeline surveys, why is the 'along-centreline KP' (Kilometre Point) systematically different from a distance calculated as a straight line?",
+      "answerOptions": [
+        {
+          "text": "The pipeline follows the seabed topography and horizontal curves, making the actual length longer.",
+          "isCorrect": true,
+          "rationale": "Because the pipeline is rarely perfectly straight, every small deviation in the vertical and lateral directions adds to the total length along the centreline."
+        },
+        {
+          "text": "Along-centreline KP uses a different geodetic projection than straight-line distances.",
+          "isCorrect": false,
+          "rationale": "Both use the same projection, but the measurement methods differ (cumulative along a path vs. Euclidean distance)."
+        },
+        {
+          "text": "It is due to the thermal expansion of the pipeline after it has been laid on the seabed.",
+          "isCorrect": false,
+          "rationale": "Expansion affects the pipe, but the KP system is defined by its installed geometry rather than the metal's stress state."
+        },
+        {
+          "text": "Along-centreline KP is always corrected for local tide, unlike straight-line distances.",
+          "isCorrect": false,
+          "rationale": "Tide affects depth measurements but has no direct connection to the calculation of horizontal length measurements (KP)."
+        }
+      ],
+      "hint": "Think about the difference between measuring a winding road and drawing a straight line between start and finish."
+    },
+    {
+      "question": "According to the standard for error budgets in metrology, if the desired total tolerance between two hubs is $\\pm 100$ mm, what is the allowable tolerance for a single hub?",
+      "answerOptions": [
+        {
+          "text": "$\\pm 70.7$ mm",
+          "isCorrect": true,
+          "rationale": "According to RSS (Root Sum of Squares), the total tolerance is calculated as $\\sqrt{Hub1^2 + Hub2^2}$. If both are equal, this gives $100 / \\sqrt{2} \\approx 70.7$."
+        },
+        {
+          "text": "$\\pm 50.0$ mm",
+          "isCorrect": false,
+          "rationale": "This would be a linear addition of errors, which is too conservative as independent errors rarely combine at their maximum in the same direction simultaneously."
+        },
+        {
+          "text": "$\\pm 100.0$ mm",
+          "isCorrect": false,
+          "rationale": "If each hub were allowed an error of $100$ mm, the total error would statistically be up to $141$ mm."
+        },
+        {
+          "text": "$\\pm 141.4$ mm",
+          "isCorrect": false,
+          "rationale": "This would result in a total uncertainty that far exceeds the project requirement of $100$ mm."
+        }
+      ],
+      "hint": "Use the principle of the root sum of squares for independent error sources."
+    },
+    {
+      "question": "Which physical limitation of a pipetracker (e.g. TSS 440) is most critical to verify before surveying a plastic-lined flowline?",
+      "answerOptions": [
+        {
+          "text": "The system requires metallic components to induce eddy currents; completely non-metallic pipes are invisible.",
+          "isCorrect": true,
+          "rationale": "Pipetrackers work through electromagnetic induction in conductive materials, meaning that pipes without steel or reinforcement cannot be detected."
+        },
+        {
+          "text": "The plastic lining creates a magnetic field that counteracts the tracker's transmitter coils.",
+          "isCorrect": false,
+          "rationale": "Plastic is an insulator and generates no magnetic fields; the problem is the lack of conductive material for induction."
+        },
+        {
+          "text": "The system's range is halved upon contact with polymer-based materials.",
+          "isCorrect": false,
+          "rationale": "The material itself does not significantly attenuate the signal, but it does not contribute the secondary signal that the sensor needs for detection."
+        },
+        {
+          "text": "The tracker can only detect pipes with a diameter greater than the lining thickness.",
+          "isCorrect": false,
+          "rationale": "Detection depends on the total amount of conductive material (steel wall or reinforcement), not on the diameter relative to the lining."
+        }
+      ],
+      "hint": "Consider how electromagnetic induction works and which materials are required for it to occur."
+    },
+    {
+      "question": "During real-time monitoring of pipe-laying, how is the USBL system's vertical accuracy typically specified?",
+      "answerOptions": [
+        {
+          "text": "As a percentage (typically $0.5-1\\%$) of the slant range.",
+          "isCorrect": true,
+          "rationale": "The accuracy of USBL positioning is angle-dependent, meaning the error grows linearly with the distance between the vessel's transducer and the subsea target."
+        },
+        {
+          "text": "As a fixed value of $\\pm 0.5$ m regardless of water depth.",
+          "isCorrect": false,
+          "rationale": "Since USBL measures angles, the absolute error in metres increases as the range increases."
+        },
+        {
+          "text": "As a function of the vessel's GNSS horizontal precision.",
+          "isCorrect": false,
+          "rationale": "Although GNSS errors propagate, it is the acoustic angle errors and sound velocity profile that dominate USBL's vertical uncertainty."
+        },
+        {
+          "text": "Solely based on the resolution of the ROV's pressure sensor.",
+          "isCorrect": false,
+          "rationale": "A pressure sensor provides depth, but the USBL calculation of vertical position is an acoustic derivation often used as an independent check."
+        }
+      ],
+      "hint": "Think about how a small angle error at the surface affects the position further down in the water column."
+    },
+    {
+      "question": "How is a GyroCOMPATT's heading stability affected if it is not allowed to reach thermal equilibrium after deployment?",
+      "answerOptions": [
+        {
+          "text": "Internal temperature changes create thermal drift in the gyroscopes, leading to unstable and wandering values.",
+          "isCorrect": true,
+          "rationale": "When the unit is moved from a warm deck to cold water, time is needed for the sensitive optical or mechanical components to stabilise."
+        },
+        {
+          "text": "It causes a permanent 'bias' error that cannot be corrected afterwards.",
+          "isCorrect": false,
+          "rationale": "The error is usually temporary and stabilises when the unit reaches the ambient temperature, but measurements taken before that point are unreliable."
+        },
+        {
+          "text": "The battery voltage drops drastically, reducing the gyro's rotation speed.",
+          "isCorrect": false,
+          "rationale": "Modern gyros (FOG/RLG) have no rotating masses, and the electronics are designed to handle voltage drops."
+        },
+        {
+          "text": "The sound velocity inside the COMPATT housing changes, producing erroneous acoustic ranges.",
+          "isCorrect": false,
+          "rationale": "Temperature affects the gyro in terms of heading stability; acoustic ranges depend on the sound velocity in the external medium (water)."
+        }
+      ],
+      "hint": "Consider what happens to the precision of a measuring instrument when its internal parts are still changing temperature."
+    },
+    {
+      "question": "What is the most important QC parameter to check when processing a SLAM metrology to confirm that INS drift has been constrained?",
+      "answerOptions": [
+        {
+          "text": "Agreement between the 'forward' and 'backward' computed solutions (smoothers).",
+          "isCorrect": true,
+          "rationale": "If the forward and backward computations of the ROV trajectory diverge, it indicates that aiding data (e.g. DVL or USBL) has not been sufficient to constrain the INS drift."
+        },
+        {
+          "text": "The total time taken to fly between the structures.",
+          "isCorrect": false,
+          "rationale": "Time is relevant for the magnitude of drift, but it is the system's ability to correct drift (via QC values) that determines the final quality."
+        },
+        {
+          "text": "The maximum speed of the ROV during transit.",
+          "isCorrect": false,
+          "rationale": "Speed affects DVL quality but is not in itself proof of a successful statistical solution."
+        },
+        {
+          "text": "The number of satellites visible to the surface vessel during the operation.",
+          "isCorrect": false,
+          "rationale": "This is critical for the vessel's position but has limited direct impact on the relative accuracy of a subsea INS metrology."
+        }
+      ],
+      "hint": "Think about how one can statistically compare two computations that run in opposite time directions through the same data."
+    }
+  ]
+}

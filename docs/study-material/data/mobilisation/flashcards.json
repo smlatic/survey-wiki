@@ -1,0 +1,309 @@
+{
+  "title": "Survey Technology Flashcards",
+  "cards": [
+    {
+      "front": "What is the primary purpose of an AHRS calibration (Attitude and Heading Reference System)?",
+      "back": "To verify that the vessel's heading and attitude systems are correctly aligned and that offset values from measurements are correct."
+    },
+    {
+      "front": "How does a multi-antenna GNSS system determine the vessel's attitude?",
+      "back": "By resolving 3D baseline vectors between antennas with known positions in the vessel's local coordinate system."
+    },
+    {
+      "front": "What critical step is required for a GNSS receiver to achieve centimetre-level accuracy in the baseline calculation?",
+      "back": "Integer ambiguity resolution of the carrier phase."
+    },
+    {
+      "front": "What is the theoretical formula for heading accuracy ($deg$) of a GNSS compass based on baseline length $L$ ($m$)?",
+      "back": "Heading accuracy $\\approx 0.229 / L$."
+    },
+    {
+      "front": "Why is pitch and roll accuracy from GNSS systems generally worse than heading accuracy?",
+      "back": "Because GNSS positioning in the vertical is less accurate than horizontal positioning ($VDOP > HDOP$)."
+    },
+    {
+      "front": "What does a sinusoidal pattern in $C-O$ values during a dynamic AHRS calibration indicate?",
+      "back": "A time delay (latency) or incorrect synchronisation between the reference system and the sensor."
+    },
+    {
+      "front": "What is 'lever-arm-induced heave'?",
+      "back": "Vertical motion at a transducer caused by the vessel's pitch and roll combined with the distance to the centre of rotation."
+    },
+    {
+      "front": "What is the formula for induced heave at a transducer based on lever arms $Lx$ and $Ly$?",
+      "back": "Induced heave $= Lx \\times \\sin(\\text{pitch}) + Ly \\times \\sin(\\text{roll})$."
+    },
+    {
+      "front": "Why should an MRU (Motion Reference Unit) be mounted as close to the vessel's centre of rotation as possible?",
+      "back": "To minimise errors in the calculation of lever-arm-induced heave."
+    },
+    {
+      "front": "What is the purpose of a high-pass filter for heave data (heave high-pass filter)?",
+      "back": "To eliminate slow drift that arises from double integration of accelerations."
+    },
+    {
+      "front": "What is the rule of thumb for setting the heave filter period in relation to the swell period?",
+      "back": "The filter period must be at least $20\\%$ longer than the dominant swell period."
+    },
+    {
+      "front": "What happens to survey data if the heave filter period is shorter than the actual swell period?",
+      "back": "The real heave signal is attenuated, leading to systematic depth errors in the measurements."
+    },
+    {
+      "front": "How is 'Settlement' defined for a vessel?",
+      "back": "The vessel's vertical bodily sinkage in the water due to increased water flow under the hull at speed."
+    },
+    {
+      "front": "How is 'Squat' defined for a vessel?",
+      "back": "The change in the vessel's trim (bow-down or stern-down) that occurs due to speed through the water."
+    },
+    {
+      "front": "Why is accurate attitude data more critical for multibeam sounding with wide swath?",
+      "back": "Small angular errors produce significantly larger depth errors in the outer beams compared with beams directly beneath the transducer."
+    },
+    {
+      "front": "What is the formula for depth error at a specific beam caused by an attitude error?",
+      "back": "Depth error $= \\text{slant range} \\times \\sin(\\text{attitude error})$."
+    },
+    {
+      "front": "What accuracy can be expected from a mechanical gyrocompass at a given latitude?",
+      "back": "$0.2^\\circ \\times \\sec(\\text{latitude})$."
+    },
+    {
+      "front": "What is the typical settling time for a mechanical gyrocompass after start-up?",
+      "back": "Between 4 and 6 hours."
+    },
+    {
+      "front": "Why does 'speed error' occur in a mechanical gyrocompass?",
+      "back": "The gyro senses a combination of the Earth's rotation and the vessel's movement, creating a deviation on east-west headings."
+    },
+    {
+      "front": "What does 'convergence' (meridian convergence) mean in navigation calculations?",
+      "back": "The angular difference between True North and Grid North in a given projection."
+    },
+    {
+      "front": "How is Grid Heading calculated from True Heading?",
+      "back": "Grid Heading $=$ True Heading $- (\\pm \\text{Convergence})$."
+    },
+    {
+      "front": "What is the typical coefficient of linear thermal expansion for steel structures?",
+      "back": "Approximately $12 \\times 10^{-6}$ per $^\\circ C$."
+    },
+    {
+      "front": "What accuracy should a survey team always aim for in a Dimensional Control (DimCon) survey?",
+      "back": "Millimetre-level accuracy."
+    },
+    {
+      "front": "What does the '2 mm rule' mean when using a total station in a Dimensional Control survey?",
+      "back": "If the difference between opening and closing observations to a control point is $\\ge 2$ mm, all measurements in that set-up must be repeated."
+    },
+    {
+      "front": "Why is it important to record atmospheric conditions (temperature and pressure) when using EDM?",
+      "back": "The speed of light in air varies with temperature and pressure, which affects the distance measurement accuracy."
+    },
+    {
+      "front": "When should the 'tilt compensator' on a total station be switched off?",
+      "back": "When measuring on a dynamic platform, such as a vessel moving in the water."
+    },
+    {
+      "front": "What is the benefit of using 'United Spatial Metrology Network' (USMN) in Spatial Analyzer?",
+      "back": "It combines overlapping instrument set-ups into an optimised coordinate solution through network adjustment."
+    },
+    {
+      "front": "What method is recommended for vertical measurement (Z) with a tape measure when direct access is not possible?",
+      "back": "The diagonal method, where one measures the hypotenuse and the horizontal distance to calculate the height via Pythagoras' theorem."
+    },
+    {
+      "front": "What is the most common source of error in Dimensional Control measurement with a tape measure?",
+      "back": "Incorrect use of sign conventions (plus/minus) for the coordinate axes."
+    },
+    {
+      "front": "Why should one never measure to the edge of a sensor housing without consulting the datasheet?",
+      "back": "The sensor's reference point (e.g. acoustic centre) is often located inside the housing and requires an offset correction."
+    },
+    {
+      "front": "What is the purpose of a 'Static AHRS Intersystem Check'?",
+      "back": "To quantify the agreement between all of the vessel's heading and attitude systems under static conditions."
+    },
+    {
+      "front": "What is the maximum acceptable heading difference between two systems according to industry standards (e.g. IMCA)?",
+      "back": "Maximum $0.5$ degrees."
+    },
+    {
+      "front": "What is the maximum acceptable pitch and roll difference between two MRU systems?",
+      "back": "Maximum $0.1$ degrees."
+    },
+    {
+      "front": "Which gyro sensor type has the lowest settling time (almost instantaneous)?",
+      "back": "Ring Laser Gyro (RLG)."
+    },
+    {
+      "front": "Why must a fibre optic gyrocompass (FOG) reach a stable operating temperature before calibration?",
+      "back": "To minimise temperature-dependent bias in the electronics and optics."
+    },
+    {
+      "front": "What causes sudden jumps in heading data from a GAMS (GNSS Azimuth Measurement System)?",
+      "back": "Incorrect integer ambiguity resolution, often caused by multipath or signal blockage."
+    },
+    {
+      "front": "What is a 'float solution' in a GNSS context?",
+      "back": "A solution where the integer ambiguities have not been fixed, resulting in lower position accuracy."
+    },
+    {
+      "front": "What is the recommended minimum distance between antennas in a GNSS compass?",
+      "back": "At least 2 to 3 metres (a longer baseline gives better accuracy)."
+    },
+    {
+      "front": "Why is it important to perform 'Time synchronisation' with 1PPS during system integration?",
+      "back": "To ensure that all sensors are logged with a common time reference system (UTC) with microsecond precision."
+    },
+    {
+      "front": "What is the logical installation sequence for systems during mobilisation?",
+      "back": "Positioning systems first, followed by heading/attitude, and finally acoustic systems."
+    },
+    {
+      "front": "What is the purpose of a 'Reciprocal line test' in an MBES context?",
+      "back": "To verify depth agreement and calibration quality by running reciprocal lines over the same area."
+    },
+    {
+      "front": "What is the golden rule during demobilisation?",
+      "back": "Verify that all data is backed up and confirmed before any equipment is disconnected."
+    },
+    {
+      "front": "What is a CRP (Common Reference Point) in a vessel's coordinate system?",
+      "back": "A chosen origin $(0,0,0)$ from which all sensor offsets are measured."
+    },
+    {
+      "front": "Why is 'Desiccant' (moisture-absorbing material) used when packing electronics?",
+      "back": "To prevent condensation and corrosion inside transport cases during shipping."
+    },
+    {
+      "front": "What does the term 'Latency' mean?",
+      "back": "The time from when a value is measured by a sensor until it is registered by the navigation software."
+    },
+    {
+      "front": "How does an incorrect lever arm affect heave measurement in rough seas?",
+      "back": "The error in the induced heave increases proportionally with the vessel's pitch and roll angles."
+    },
+    {
+      "front": "What is the purpose of an 'Atmospheric correction' in a total station?",
+      "back": "To adjust for the air's refractive index so that the laser distance measurement is correct."
+    },
+    {
+      "front": "Why should 'Reflectorless EDM' be avoided for precision measurements?",
+      "back": "It is less accurate than prism-based measurements and may reflect off the wrong surface."
+    },
+    {
+      "front": "What is the statistical method used to calculate $C-O$ values and standard deviations called?",
+      "back": "Least Squares Analysis."
+    },
+    {
+      "front": "What is 'Hybrid Heave'?",
+      "back": "A system that combines MRU accelerations with GNSS height data to provide accurate heave across all wave periods."
+    },
+    {
+      "front": "Which survey operation most often requires the highest accuracy in heading and attitude?",
+      "back": "Multibeam sounding (MBES) and subsea metrology."
+    },
+    {
+      "front": "What is a 'Peanut Prism'?",
+      "back": "A small prism with built-in extensions and a spirit level, used for measuring points with a vertical offset."
+    },
+    {
+      "front": "What is required for USMN to function optimally during network adjustment?",
+      "back": "At least 5 common control points between instrument set-ups."
+    },
+    {
+      "front": "Why are 'floating floors' a problem when installing an MRU or gyro?",
+      "back": "They have no solid connection to the vessel's structure and can move independently, which invalidates the calibration."
+    },
+    {
+      "front": "What is the purpose of an 'SVP (Sound Velocity Profile) cast' before calibration?",
+      "back": "To measure the sound velocity through the water column to correctly calculate ray paths and depth."
+    },
+    {
+      "front": "Which standard is often referenced for hydrographic surveys?",
+      "back": "IHO S-44 (Standards for Hydrographic Surveys)."
+    },
+    {
+      "front": "What is a 'Spike Prism'?",
+      "back": "A miniprism mounted on a pointed tip, used for measuring specific points with high precision."
+    },
+    {
+      "front": "What is meant by 'Standard Deviation' ($SD$) in an AHRS report?",
+      "back": "A measure of the precision or noise in the sensor's measurements over time."
+    },
+    {
+      "front": "Why is AHRS data logged statically in port?",
+      "back": "To isolate the sensors' systematic biases from vessel motions."
+    },
+    {
+      "front": "What are 'Boresight residuals'?",
+      "back": "Small remaining angular errors between a sensor's axes and the vessel's reference frame after calibration."
+    },
+    {
+      "front": "Why is it important to mark the feet of magnetic targets with a pen?",
+      "back": "To quickly detect whether the target has been moved or knocked during the survey."
+    },
+    {
+      "front": "What is 'Multipath'?",
+      "back": "A GNSS error where the satellite signal reflects off nearby surfaces before reaching the antenna."
+    },
+    {
+      "front": "What does 'GNSS-aided heave' mean?",
+      "back": "Using GNSS height to prevent the heave calculation from drifting over long wave periods."
+    },
+    {
+      "front": "How do incorrect draft measurements affect sounding results?",
+      "back": "They produce a constant vertical error (bias) on all depth measurements."
+    },
+    {
+      "front": "What is meant by a 'Coordinate Reference System' (CRS)?",
+      "back": "A framework that defines how positions are represented geographically using origins and axes."
+    },
+    {
+      "front": "Why is a 'Dynamic AHRS check' performed in a box pattern?",
+      "back": "To test the system in all cardinal directions and detect heading-dependent errors."
+    },
+    {
+      "front": "What is the most common reason a gyrocompass fails to settle?",
+      "back": "Vibrations, power interruptions or incorrectly entered latitude."
+    },
+    {
+      "front": "What is 'Slant Range' in acoustic measurements?",
+      "back": "The direct distance along the sound ray from the transducer to the object."
+    },
+    {
+      "front": "What do high 'residuals' in a plane or circle fit in Spatial Analyzer indicate?",
+      "back": "That the measured surface is deformed, that the target was not placed correctly, or that the measurement has high noise."
+    },
+    {
+      "front": "Why is 'Antenna separation' measured during GNSS installation?",
+      "back": "To verify that the entered coordinates match the physical reality."
+    },
+    {
+      "front": "What is the 'Bernoulli effect' in the context of Settlement?",
+      "back": "That increased water velocity under the hull creates an underpressure that pulls the vessel deeper."
+    },
+    {
+      "front": "How does high PDOP affect GNSS-based attitude?",
+      "back": "Poor satellite geometry (high PDOP) makes it harder to fix integer ambiguities and increases noise in the solution."
+    },
+    {
+      "front": "Why is data logged for at least 30-60 minutes during an intersystem check?",
+      "back": "To statistically average out random motions and noise."
+    },
+    {
+      "front": "What is the purpose of 'Lessons Learned' after a demobilisation?",
+      "back": "To document what worked well and what can be improved for the next project or vessel."
+    },
+    {
+      "front": "What is the difference between True North and Magnetic North?",
+      "back": "True North points toward the Earth's geographic north pole, while Magnetic North points toward the magnetic pole (which varies over time and location)."
+    },
+    {
+      "front": "Why is a 'Total Station' used instead of a tape measure on larger vessels?",
+      "back": "To minimise errors caused by tape sag and to reach inaccessible points with higher precision."
+    }
+  ]
+}

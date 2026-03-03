@@ -1,0 +1,265 @@
+{
+  "title": "Hydrographic Survey Quiz",
+  "questions": [
+    {
+      "question": "In geodesy, different models are used to describe the shape of the Earth. Which statement best describes the relationship between a geoid and an ellipsoid?",
+      "answerOptions": [
+        {
+          "text": "The ellipsoid is a mathematical simplification of the Earth's shape, while the geoid represents a surface of constant gravitational potential.",
+          "isCorrect": true,
+          "rationale": "Ellipsoids are used for calculations due to their geometric simplicity, while the geoid reflects real gravitational variations and closely approximates mean sea level."
+        },
+        {
+          "text": "The geoid is a perfect sphere used for global calculations, while the ellipsoid corrects for local topographic height differences.",
+          "isCorrect": false,
+          "rationale": "The Earth is not a perfect sphere, and it is the ellipsoid, not the geoid, that serves as the primary mathematical reference surface."
+        },
+        {
+          "text": "The difference between the geoid and the ellipsoid is always constant across the entire Earth's surface.",
+          "isCorrect": false,
+          "rationale": "The separation between these surfaces, known as geoid undulation, varies globally depending on variations in the Earth's density and mass distribution."
+        },
+        {
+          "text": "Ellipsoids are used exclusively for height determination, while the geoid is used to define horizontal coordinates.",
+          "isCorrect": false,
+          "rationale": "Ellipsoids define both latitude and longitude, while the geoid is primarily relevant for vertical reference systems (height above sea level)."
+        }
+      ],
+      "hint": "Think about the difference between a purely mathematical surface and a surface shaped by physical forces such as gravity."
+    },
+    {
+      "question": "When using Universal Transverse Mercator ($UTM$) as a projection method, distortion occurs. How does the $UTM$ system handle this to maintain high accuracy?",
+      "answerOptions": [
+        {
+          "text": "By dividing the Earth into $60$ zones, each $6^{\\circ}$ wide, to minimize distortion within each area.",
+          "isCorrect": true,
+          "rationale": "By limiting the width of each zone, the inevitable distortion that occurs when flattening a curved surface is kept to an acceptable level for surveying purposes."
+        },
+        {
+          "text": "By using a single global projection that eliminates the need for local corrections.",
+          "isCorrect": false,
+          "rationale": "A single global flat projection would cause massive distortion at the poles or edges; therefore, zone division is required."
+        },
+        {
+          "text": "By exclusively using geographic coordinates (latitude and longitude) instead of metric values.",
+          "isCorrect": false,
+          "rationale": "UTM provides projected (flat) metric coordinates ($Eastings$ and $Northings$) for practical work, not just angles."
+        },
+        {
+          "text": "By dynamically changing the Earth's ellipsoid model depending on the depth at which the measurement is taken.",
+          "isCorrect": false,
+          "rationale": "Projections deal with transforming surfaces to $2D$, which is independent of the measurement's vertical depth in the water column."
+        }
+      ],
+      "hint": "Consider how the system reduces the error that occurs when trying to flatten an orange-peel-like surface."
+    },
+    {
+      "question": "The speed of sound in water is critical for acoustic positioning. What happens to the measurement data if the actual sound velocity is higher than the profile configured in the system?",
+      "answerOptions": [
+        {
+          "text": "Objects will appear to be at a greater distance or depth than they actually are.",
+          "isCorrect": false,
+          "rationale": "If the sound travels faster, it returns sooner, which causes the system to compute a shorter travel time. When that shorter time is multiplied by the lower (configured) velocity, the calculated range is less than the true range."
+        },
+        {
+          "text": "Objects will appear to be closer to the transducer than they actually are.",
+          "isCorrect": true,
+          "rationale": "Because range is calculated as $time \\times velocity$, a shorter travel time (due to the higher actual velocity) combined with the lower configured velocity results in a calculated range that is less than the true range."
+        },
+        {
+          "text": "Sound velocity only affects the measurement's loudness (decibels), not the geometric distance.",
+          "isCorrect": false,
+          "rationale": "In hydrography, the travel time of a sound pulse is the primary method for range determination, making velocity fundamental to the geometry."
+        },
+        {
+          "text": "The system automatically compensates for this by using the Doppler shift in real time without external sensors.",
+          "isCorrect": false,
+          "rationale": "Doppler shift measures relative motion, not the absolute range or the actual propagation velocity through the medium."
+        }
+      ],
+      "hint": "Think about the formula for distance based on time and velocity ($d = v \\times t$)."
+    },
+    {
+      "question": "An Inertial Navigation System ($INS$) is often combined with $GNSS$. What is the primary technical reason for integrating these two systems?",
+      "answerOptions": [
+        {
+          "text": "To counteract the time-dependent drift in the $INS$ sensors by using $GNSS$ as an absolute position reference.",
+          "isCorrect": true,
+          "rationale": "INS is very accurate in the short term but accumulates errors (drift) over time, which GNSS can correct using its absolute satellite-based positions."
+        },
+        {
+          "text": "To extend the range of radio waves below the water surface so that $GNSS$ works at great depths.",
+          "isCorrect": false,
+          "rationale": "GNSS signals do not penetrate water regardless of integration; INS is used to navigate when GNSS is entirely unavailable underwater."
+        },
+        {
+          "text": "To eliminate the need for an $MRU$ (Motion Reference Unit) because $GNSS$ measures all vessel motions in real time.",
+          "isCorrect": false,
+          "rationale": "Standard GNSS does not have a sufficiently high update rate or precision to measure rapid motions such as pitch and roll."
+        },
+        {
+          "text": "To reduce the power consumption of the acoustic transducers on board the vessel.",
+          "isCorrect": false,
+          "rationale": "The integration aims at positional accuracy and redundancy, not at optimizing the power supply for acoustic equipment."
+        }
+      ],
+      "hint": "Consider how a system that measures change (relative) benefits from a system that measures a fixed point (absolute)."
+    },
+    {
+      "question": "What is the main difference between $USBL$ (Ultra-Short Baseline) and $LBL$ (Long Baseline) in underwater positioning?",
+      "answerOptions": [
+        {
+          "text": "In $USBL$, position is determined relative to the vessel via a single transducer array, whereas $LBL$ uses a network of transponders on the seabed.",
+          "isCorrect": true,
+          "rationale": "USBL calculates position by measuring the angle and range from a single transducer array, while LBL uses trilateration between multiple fixed seabed transponders for higher precision."
+        },
+        {
+          "text": "$USBL$ provides higher precision in deep water than $LBL$ due to shorter baselines.",
+          "isCorrect": false,
+          "rationale": "Longer baselines (LBL) generally provide better geometry and higher precision, especially in complex deepwater projects."
+        },
+        {
+          "text": "$LBL$ requires no sound velocity calibration because the distances between transponders are known.",
+          "isCorrect": false,
+          "rationale": "All acoustic systems depend on correct sound velocity to convert travel time into accurate range."
+        },
+        {
+          "text": "$USBL$ works only with optical sensors, while $LBL$ exclusively uses sound waves.",
+          "isCorrect": false,
+          "rationale": "Both systems are acoustic; optical sensors have extremely limited range underwater compared to sonar."
+        }
+      ],
+      "hint": "Consider where the reference points are located in the two different systems."
+    },
+    {
+      "question": "During a multibeam echo sounder ($MBES$) survey, the seabed surface appears to have a 'smile' or 'frown' (false curvature). What is the most likely cause?",
+      "answerOptions": [
+        {
+          "text": "An incorrect sound velocity profile ($SVP$) causing refraction of the acoustic beams.",
+          "isCorrect": true,
+          "rationale": "When the sound velocity varies through the water column, the beams are bent; if the model is incorrect, the outer beam depths are calculated erroneously, creating an artificial curvature."
+        },
+        {
+          "text": "The vessel is traveling too fast, causing the echo sounder to miss data points.",
+          "isCorrect": false,
+          "rationale": "High speed primarily affects data density along the survey line, not the across-track geometry of the beam fan."
+        },
+        {
+          "text": "Magnetic interference from nearby pipelines affecting the echo sounder electronics.",
+          "isCorrect": false,
+          "rationale": "Echo sounders use acoustic waves and are not affected by magnetism in a way that would create geometric curvature in the data."
+        },
+        {
+          "text": "The transducer has been mounted upside down on the vessel's hull.",
+          "isCorrect": false,
+          "rationale": "An incorrectly mounted transducer would result in no usable data or completely erratic values, rather than a systematic geometric artifact."
+        }
+      ],
+      "hint": "This phenomenon is related to how acoustic beams are bent as they pass through different water layers."
+    },
+    {
+      "question": "Side Scan Sonar ($SSS$) is primarily used to visualize seabed features. What do the dark areas (shadows) behind an object in an $SSS$ image represent?",
+      "answerOptions": [
+        {
+          "text": "Areas where the acoustic beams are blocked by the object, indicating the object's height above the seabed.",
+          "isCorrect": true,
+          "rationale": "The length of the shadow relative to the towfish position and the object's range can be used to calculate the height of the object above the seabed."
+        },
+        {
+          "text": "Areas of extremely hard material that absorbs all sound.",
+          "isCorrect": false,
+          "rationale": "Hard materials reflect sound strongly and produce bright areas (high intensity), while shadows are the absence of returned signal."
+        },
+        {
+          "text": "Deep holes in the seabed that are below the sonar beam's range.",
+          "isCorrect": false,
+          "rationale": "Although depressions can produce shadow-like features, the typical 'shadow' behind an object is an effect of geometric acoustic blockage."
+        },
+        {
+          "text": "Electronic noise caused by turbulence from the propellers.",
+          "isCorrect": false,
+          "rationale": "Propeller noise typically appears as 'snow' or lines across the image, not as defined shadows associated with specific objects."
+        }
+      ],
+      "hint": "Think about how a flashlight creates shadows behind objects in a dark room."
+    },
+    {
+      "question": "In offshore surveying, Inertial Navigation Systems ($INS$) are frequently used. Which phenomenon best describes the challenge with $INS$ when it receives no external updates?",
+      "answerOptions": [
+        {
+          "text": "The position drifts over time because small measurement errors in acceleration and rotation are integrated and accumulate.",
+          "isCorrect": true,
+          "rationale": "Since INS calculates position by adding incremental changes to a starting point, every small sensor error accumulates progressively without an absolute reference to correct it."
+        },
+        {
+          "text": "The system loses its ability to measure depth because it depends on air pressure.",
+          "isCorrect": false,
+          "rationale": "INS measures motion and orientation in $3D$; in underwater environments, pressure sensors are typically used for depth, not INS integration alone."
+        },
+        {
+          "text": "The sensors overheat due to the constant calculations in the onboard processor.",
+          "isCorrect": false,
+          "rationale": "While processors generate heat, this is a mechanical/electrical design issue and not a fundamental navigation phenomenon affecting the measurement principle."
+        },
+        {
+          "text": "The signal is blocked by the salinity of the water, making it unusable in a marine environment.",
+          "isCorrect": false,
+          "rationale": "INS is a fully self-contained system that does not transmit or receive external signals (except during updates), so it is unaffected by the properties of the surrounding medium."
+        }
+      ],
+      "hint": "What happens if you try to walk in a straight line blindfolded and each step drifts a millimeter off course?"
+    },
+    {
+      "question": "Why is it important to perform a 'Patch Test' after mobilizing a multibeam echo sounder?",
+      "answerOptions": [
+        {
+          "text": "To quantify and correct for angular errors (roll, pitch, yaw) and timing offsets between the sensors.",
+          "isCorrect": true,
+          "rationale": "Small errors in the mounting angles between the echo sounder and the motion sensor ($MRU$) can cause large positional errors in the data if they are not calibrated out."
+        },
+        {
+          "text": "To check whether the transducer is watertight and can withstand the pressure at depth.",
+          "isCorrect": false,
+          "rationale": "Watertightness is tested during manufacture; a Patch Test is a geometric calibration procedure."
+        },
+        {
+          "text": "To update the software to the latest version from the manufacturer.",
+          "isCorrect": false,
+          "rationale": "Software updates are performed via a computer interface and do not require a specific at-sea measurement procedure."
+        },
+        {
+          "text": "To measure the salinity of the water so that the vessel's buoyancy can be calculated.",
+          "isCorrect": false,
+          "rationale": "Salinity is measured with a $CTD$ probe; the Patch Test focuses on the relative angles and timing between the measurement systems."
+        }
+      ],
+      "hint": "Think about the need to synchronize the 'eyes' (echo sounder) with the 'sense of balance' (motion sensor)."
+    },
+    {
+      "question": "A Sub-Bottom Profiler ($SBP$) is used to image layers beneath the seabed. How does the choice of frequency affect the measurement result?",
+      "answerOptions": [
+        {
+          "text": "Lower frequencies achieve deeper penetration into the sediments but provide poorer vertical resolution.",
+          "isCorrect": true,
+          "rationale": "Low-frequency waves are not absorbed as readily by the seabed material, but their longer wavelength makes it harder to distinguish thin layers."
+        },
+        {
+          "text": "Higher frequencies are required to penetrate through hard rock and clay.",
+          "isCorrect": false,
+          "rationale": "High-frequency acoustic waves are scattered and absorbed quickly; they are best suited for high-resolution images of the very uppermost sediment layers."
+        },
+        {
+          "text": "Frequency has no effect on penetration, only on the loudness of the sound.",
+          "isCorrect": false,
+          "rationale": "The absorption of acoustic energy is directly linked to frequency, which is a fundamental principle of underwater acoustics."
+        },
+        {
+          "text": "The choice of frequency is made solely to avoid disturbing migrating whales.",
+          "isCorrect": false,
+          "rationale": "Although environmental considerations are taken into account, the primary technical reason is to balance the need for detail against the required penetration depth below the seabed."
+        }
+      ],
+      "hint": "There is always a trade-off between how deep you can see and how fine the details are."
+    }
+  ]
+}

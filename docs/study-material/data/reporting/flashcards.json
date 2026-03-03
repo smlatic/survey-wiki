@@ -1,0 +1,329 @@
+{
+  "title": "Survey Reporting Flashcards",
+  "cards": [
+    {
+      "front": "What is the main purpose of survey reports in the offshore sector?",
+      "back": "They serve as a permanent record of work performed, evidence of quality, and a contractual deliverable."
+    },
+    {
+      "front": "What fundamental principle should guide the writing of a survey report with respect to future readers?",
+      "back": "Write the report as if the author will never be available to explain its contents."
+    },
+    {
+      "front": "When should a mobilisation report (Mob Report) typically be completed?",
+      "back": "At the end of mobilisation, but before the actual survey operations begin."
+    },
+    {
+      "front": "What is the typical length of a Daily Progress Report (DPR)?",
+      "back": "$2$ to $5$ pages."
+    },
+    {
+      "front": "Which report type summarises the entire survey campaign and serves as the final deliverable?",
+      "back": "End-of-Project Report (EOP)."
+    },
+    {
+      "front": "What does a mobilisation report aim to demonstrate regarding the equipment?",
+      "back": "That all equipment has been installed, calibrated and tested in accordance with the specification."
+    },
+    {
+      "front": "What should be included in the vessel details section of a mobilisation report?",
+      "back": "Vessel name, flag and dimensions."
+    },
+    {
+      "front": "What information is required for each individual piece of equipment in the equipment list?",
+      "back": "Serial numbers and references to calibration certificates."
+    },
+    {
+      "front": "What is reported in the results table of a 'Dimensional Control Survey'?",
+      "back": "The sensor positions in the vessel's reference frame."
+    },
+    {
+      "front": "What parameters are typically covered under 'System Configuration' in a mobilisation report?",
+      "back": "Geodetic parameters such as datum, projection, geoid and vertical reference."
+    },
+    {
+      "front": "What is meant by 'Time synchronisation method' in the system configuration?",
+      "back": "The method used to synchronise time between all survey systems."
+    },
+    {
+      "front": "Why should the structure of the mobilisation report be prepared before mobilisation starts?",
+      "back": "To avoid last-minute stress and ensure no critical information is forgotten."
+    },
+    {
+      "front": "What is the main purpose of a calibration report?",
+      "back": "To provide sufficient information for an independent reviewer to assess the validity of the calibration."
+    },
+    {
+      "front": "What environmental conditions are relevant to document in a calibration report?",
+      "back": "Sea state, wind, visibility, water depth and current conditions."
+    },
+    {
+      "front": "What should a calibration report contain to show that the results are acceptable?",
+      "back": "A pass/fail assessment against established acceptance criteria."
+    },
+    {
+      "front": "What acceptance criterion applies for Roll, Pitch and Heading offset at an MBES Patch Test?",
+      "back": "$< 1.0^{\\circ}$ for each parameter."
+    },
+    {
+      "front": "What is the acceptance criterion for latency at an MBES Patch Test?",
+      "back": "$0$ to $100$ ms, with a requirement for consistency."
+    },
+    {
+      "front": "What standard deviation (SD) of residuals is required for a USBL calibration according to IMCA S 017?",
+      "back": "$< 0.5$ m at operational depth."
+    },
+    {
+      "front": "Within what range should the scale factor for INS/DVL lie according to manufacturer specifications?",
+      "back": "$0.95$ to $1.05$."
+    },
+    {
+      "front": "What is the maximum allowable Heading C-O value for an AHRS according to IMCA S 017?",
+      "back": "$< 0.5^{\\circ}$."
+    },
+    {
+      "front": "What is the acceptance criterion for horizontal agreement in a static GNSS check for DGNSS?",
+      "back": "$< 1.0$ m."
+    },
+    {
+      "front": "What does a Daily Progress Report (DPR) function as for a project?",
+      "back": "The project's daily diary that records progress, issues and plans."
+    },
+    {
+      "front": "What time period does a DPR typically cover in an offshore context?",
+      "back": "$0600$ to $0600$ UTC."
+    },
+    {
+      "front": "What operational statistics should be included in a DPR?",
+      "back": "Hours for operations, standby, weather downtime, equipment failure and transit."
+    },
+    {
+      "front": "Why is it important to include times for all events in a DPR?",
+      "back": "The DPR is often used as the primary basis for resolving disputes about operational time and downtime."
+    },
+    {
+      "front": "When should a DPR be written according to best practice?",
+      "back": "Continuously during the day as events occur, rather than from memory at the end of the shift."
+    },
+    {
+      "front": "What does an 'Executive Summary' in an End-of-Project (EOP) report contain?",
+      "back": "A one-page overview of the project, key achievements and significant issues."
+    },
+    {
+      "front": "What should the 'Data Processing' section in an EOP report describe?",
+      "back": "Processing workflow, software used, QC procedures and criteria for outlier removal."
+    },
+    {
+      "front": "What coordinate information should appear on every chart and coordinate table?",
+      "back": "The datum and projection used."
+    },
+    {
+      "front": "How should numerical values in tables be formatted to facilitate comparison?",
+      "back": "They should be right-justified."
+    },
+    {
+      "front": "Why is it important to state the vertical exaggeration (VE) on profile drawings?",
+      "back": "To prevent clients or engineers from being misled about how steep the gradients actually are."
+    },
+    {
+      "front": "What effect does a vertical exaggeration of $10$x have on a slope of $1^{\\circ}$?",
+      "back": "It makes the slope appear as $10^{\\circ}$."
+    },
+    {
+      "front": "What type of diagram is best used for displaying USBL residuals?",
+      "back": "Scatter plot with equal axis scales."
+    },
+    {
+      "front": "What should a 'Track chart' always contain for correct orientation and scale?",
+      "back": "North arrow, scale bar, coordinate grid and legend."
+    },
+    {
+      "front": "How often should calibration validity be documented in a QC context?",
+      "back": "At project start (in the mobilisation report)."
+    },
+    {
+      "front": "When should the freshness of SVP data (Sound Velocity Profile) be checked and documented?",
+      "back": "At each individual cast (SVP cast)."
+    },
+    {
+      "front": "Where is the QC check for tidal verification documented?",
+      "back": "In the processing notes on a daily basis."
+    },
+    {
+      "front": "What does a 'Cross-line comparison' mean in the QC process?",
+      "back": "A comparison between crossing survey lines to verify data consistency within an area."
+    },
+    {
+      "front": "What standard format is suggested for document numbering?",
+      "back": "PROJECTCODE-VESSEL-DOCTYPE-SEQUENCE."
+    },
+    {
+      "front": "What does the status 'Rev A' mean in document control?",
+      "back": "Issued for Review (IFR) -- sent to client for comments."
+    },
+    {
+      "front": "What does the status 'Rev 0 (final)' mean?",
+      "back": "Issued for Use (IFU) -- the final approved version."
+    },
+    {
+      "front": "What is the purpose of a 'Client Comment Tracking' document?",
+      "back": "To create a clear revision trail by logging the client's comments and actions taken."
+    },
+    {
+      "front": "What are the five most common reasons for a report being rejected by a client?",
+      "back": "Missing content, undefined acceptance criteria, absence of pass/fail assessment, incomplete diagrams, or inconsistent units."
+    },
+    {
+      "front": "What should be done if data does not agree between a DPR and an EOP report?",
+      "back": "Use a single source of truth (processed data) and explicitly explain any changes (e.g. refined calibration)."
+    },
+    {
+      "front": "What format for coordinates should be used in a report?",
+      "back": "A consistent format throughout the report, either decimal degrees or degrees/minutes/seconds."
+    },
+    {
+      "front": "What should be reported under 'Vessel Position at Report Time' in a DPR?",
+      "back": "The vessel's latitude, longitude and heading at the time of reporting."
+    },
+    {
+      "front": "What information does a 'Time series' provide in data presentation?",
+      "back": "Sensor data over time with event markers and UTC time."
+    },
+    {
+      "front": "What is the purpose of an 'As-Built Report'?",
+      "back": "To document the actual result after a construction survey."
+    },
+    {
+      "front": "What should be included in the 'Personnel On Board' section of a DPR?",
+      "back": "A list of survey team personnel (survey roster)."
+    },
+    {
+      "front": "Why should column headers be repeated on every page in long tables?",
+      "back": "To maintain readability and clarity when scrolling or turning pages."
+    },
+    {
+      "front": "What should appear under 'Conclusions' in a calibration report?",
+      "back": "A pass/fail statement and any caveats for future recalibration."
+    },
+    {
+      "front": "What sources are commonly referenced for acceptance criteria in offshore reports?",
+      "back": "IHO S-44, IMCA S 017, or project-specific requirements."
+    },
+    {
+      "front": "What is meant by 'Data volume acquired' in a DPR?",
+      "back": "The amount of data collected during the reporting period."
+    },
+    {
+      "front": "How should coordinate order be handled in a report when there is uncertainty?",
+      "back": "The order (e.g. Northing/Easting) should be stated explicitly."
+    },
+    {
+      "front": "What is the purpose of including photographs in a DPR?",
+      "back": "They provide a valuable visual representation of the day's operations."
+    },
+    {
+      "front": "What should 'Equipment Status' in a DPR convey?",
+      "back": "Whether all systems are operational or whether there are faults limiting capability."
+    },
+    {
+      "front": "Which section of the EOP report lists all delivered files and their formats?",
+      "back": "Deliverables List."
+    },
+    {
+      "front": "What does a 'Data flow diagram' describe in a mobilisation report?",
+      "back": "How different systems are interconnected and how data is transmitted between them."
+    },
+    {
+      "front": "What is meant by 'Residuals' in a calibration context?",
+      "back": "The difference between observed values and the mathematical model after calibration."
+    },
+    {
+      "front": "Why is it important to log weather conditions in a DPR?",
+      "back": "To document the environment's impact on survey quality and operational decisions."
+    },
+    {
+      "front": "What is the purpose of the 'Planned Activities' section in a DPR?",
+      "back": "To communicate the plan for the coming $24$ hours."
+    },
+    {
+      "front": "What level of precision should be used when reporting numerical values?",
+      "back": "An appropriate rounding rather than using all decimal places from the software output."
+    },
+    {
+      "front": "What is an 'Artefact assessment' in QC documentation?",
+      "back": "An evaluation of any anomalies or disturbances in the survey data per deliverable."
+    },
+    {
+      "front": "What should be stated in the 'Revision History'?",
+      "back": "Version number, date, author and a description of the changes."
+    },
+    {
+      "front": "What information does a 'Coverage plot' provide?",
+      "back": "A visual representation of where survey data has been collected relative to the survey area."
+    },
+    {
+      "front": "What is the purpose of 'Acceptance Testing' at the end of a mobilisation?",
+      "back": "To verify final positioning accuracy and data quality before the survey begins."
+    },
+    {
+      "front": "What is included in 'Geodetic parameters'?",
+      "back": "Definitions of coordinate systems, datums, projections and UTM zones."
+    },
+    {
+      "front": "Why is the 'Daily Progress Report' important for project managers?",
+      "back": "It provides a continuous update on schedule, budget and technical status."
+    },
+    {
+      "front": "Which QC element documents that the survey area has been fully covered?",
+      "back": "Coverage charts."
+    },
+    {
+      "front": "What does 'Update rates' refer to in the system configuration?",
+      "back": "The frequency (in Hz) at which data is updated from different sensors."
+    },
+    {
+      "front": "How is 'Rev 0 (Draft)' defined in the revision process?",
+      "back": "The first edition intended for internal review."
+    },
+    {
+      "front": "What should a 'Diagram showing sensor positions' in the mobilisation report convey?",
+      "back": "A visual overview of where on the vessel all sensors are mounted."
+    },
+    {
+      "front": "What role do 'Appendices' play in an End-of-Project report?",
+      "back": "They contain detailed data tables, calibration reports, DPRs and certificates."
+    },
+    {
+      "front": "What is meant by 'Vertical reference' in survey parameters?",
+      "back": "The zero point for depth measurements, for example Lowest Astronomical Tide (LAT)."
+    },
+    {
+      "front": "Why should a UTC clock be used in time series?",
+      "back": "To ensure a standardised time reference independent of time zones."
+    },
+    {
+      "front": "What should be included in the 'Vessel and Equipment' section of the mobilisation report?",
+      "back": "Vessel details, equipment list with serial numbers and layout drawings."
+    },
+    {
+      "front": "What is the purpose of comparing current calibration values with previous values?",
+      "back": "To identify any large deviations or trends in sensor performance."
+    },
+    {
+      "front": "What information does a 'Cross-section' plot provide?",
+      "back": "A cross-sectional profile of, for example, the seabed or a pipeline."
+    },
+    {
+      "front": "What is the main purpose of QC documentation in a report?",
+      "back": "To prove that quality has been controlled throughout the entire survey."
+    },
+    {
+      "front": "What information should be included in 'Operational Statistics' in a DPR regarding survey lines?",
+      "back": "Number of completed survey lines compared with planned."
+    },
+    {
+      "front": "What does 'Consistent units throughout' mean in data presentation?",
+      "back": "That the same units are used throughout the report and are clearly stated in column headers."
+    }
+  ]
+}

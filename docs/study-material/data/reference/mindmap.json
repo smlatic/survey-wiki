@@ -1,0 +1,149 @@
+{
+  "name": "Offshore Survey Knowledge Base",
+  "children": [
+    {
+      "name": "Positioning and GNSS",
+      "children": [
+        {
+          "name": "GNSS standards (DGNSS / PPP)"
+        },
+        {
+          "name": "Integrity checks"
+        },
+        {
+          "name": "Height checks"
+        },
+        {
+          "name": "DGNSS correction age (< 10 s)"
+        }
+      ]
+    },
+    {
+      "name": "Acoustic Positioning (USBL / LBL)",
+      "children": [
+        {
+          "name": "USBL calibration"
+        },
+        {
+          "name": "HPR verification"
+        },
+        {
+          "name": "Responder latency"
+        },
+        {
+          "name": "Positioning accuracy (< 1% of range)"
+        }
+      ]
+    },
+    {
+      "name": "Sensors and Sonars",
+      "children": [
+        {
+          "name": "MBES (Multibeam)",
+          "children": [
+            {
+              "name": "Patch Test (Roll, Pitch, Heading)"
+            },
+            {
+              "name": "Swath width planning"
+            },
+            {
+              "name": "IHO S-44 accuracy requirements"
+            }
+          ]
+        },
+        {
+          "name": "Magnetometer (G882)",
+          "children": [
+            {
+              "name": "Depth and altimeter calibration"
+            },
+            {
+              "name": "Scale factor (0.95 - 1.05)"
+            },
+            {
+              "name": "Bias (< 0.5 m)"
+            }
+          ]
+        },
+        {
+          "name": "SSS (Sidescan Sonar)"
+        },
+        {
+          "name": "SBP (Sub-bottom Profiler)"
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Systems and Datums",
+      "children": [
+        {
+          "name": "WGS84 and ITRF"
+        },
+        {
+          "name": "UTM projections and zones"
+        },
+        {
+          "name": "Helmert 7-parameter transformation"
+        },
+        {
+          "name": "Vertical datums (Ellipsoid, Geoid, LAT)"
+        },
+        {
+          "name": "Convergence angle and scale factor"
+        }
+      ]
+    },
+    {
+      "name": "Uncertainty and Error Budgets (TPU)",
+      "children": [
+        {
+          "name": "THU (Horizontal uncertainty)"
+        },
+        {
+          "name": "TVU (Vertical uncertainty)"
+        },
+        {
+          "name": "RSS error propagation"
+        },
+        {
+          "name": "IHO Order categories"
+        }
+      ]
+    },
+    {
+      "name": "Formulas and Conversions",
+      "children": [
+        {
+          "name": "Sound velocity (Chen-Millero, Del Grosso)"
+        },
+        {
+          "name": "Unit conversions (Length, Speed, Pressure)"
+        },
+        {
+          "name": "Acoustic geometry (Slant range)"
+        },
+        {
+          "name": "Coordinate order (Lat/Lon vs Lon/Lat)"
+        }
+      ]
+    },
+    {
+      "name": "Industry Standards",
+      "children": [
+        {
+          "name": "IMCA (S 015, S 017, S 019, S 024)"
+        },
+        {
+          "name": "IHO (S-44, S-57, S-100)"
+        },
+        {
+          "name": "DNV (ST-N001, ST-F101)"
+        },
+        {
+          "name": "EPSG Registry"
+        }
+      ]
+    }
+  ]
+}

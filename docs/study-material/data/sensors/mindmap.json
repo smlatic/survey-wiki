@@ -1,0 +1,214 @@
+{
+  "name": "Field Verification Tests for Marine Survey Equipment",
+  "children": [
+    {
+      "name": "Pipe and Cable Tracker (HydroPACT)",
+      "children": [
+        {
+          "name": "Vertical Range to Target (VRT)",
+          "children": [
+            {
+              "name": "Determine maximum detection distance"
+            },
+            {
+              "name": "Static measurement at various altitudes"
+            }
+          ]
+        },
+        {
+          "name": "Lateral Offset Test",
+          "children": [
+            {
+              "name": "Measure effect of horizontal offset"
+            },
+            {
+              "name": "Comparison between ROV track and pipe position"
+            }
+          ]
+        },
+        {
+          "name": "Mobile Pipe/Cable Test",
+          "children": [
+            {
+              "name": "Verify tracking while underway (minimum 50 m)"
+            },
+            {
+              "name": "Comparison of reciprocal headings (180°)"
+            }
+          ]
+        },
+        {
+          "name": "HydroPACT 440 vs 660",
+          "children": [
+            {
+              "name": "440: Higher resolution, shallow pipes"
+            },
+            {
+              "name": "660: Greater penetration depth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multibeam Echosounder (MBES)",
+      "children": [
+        {
+          "name": "Patch Test (Calibration)",
+          "children": [
+            {
+              "name": "Latency (Timing Offset)"
+            },
+            {
+              "name": "Roll (Roll Angle)"
+            },
+            {
+              "name": "Pitch (Pitch Angle)"
+            },
+            {
+              "name": "Heading (Yaw)"
+            }
+          ]
+        },
+        {
+          "name": "Installation and Setup",
+          "children": [
+            {
+              "name": "Transducer placement at centreline"
+            },
+            {
+              "name": "Time synchronisation (1PPS + ZDA)"
+            },
+            {
+              "name": "Motion sensor (MRU) at centre of gravity"
+            }
+          ]
+        },
+        {
+          "name": "Operational Parameters",
+          "children": [
+            {
+              "name": "Draft (Static and Dynamic)"
+            },
+            {
+              "name": "Tidal Correction"
+            },
+            {
+              "name": "IHO S-44 Standards (TVU/THU)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sound Velocity (SV)",
+      "children": [
+        {
+          "name": "Measurement Methods",
+          "children": [
+            {
+              "name": "SVP: Direct measurement"
+            },
+            {
+              "name": "CTD: Calculated via salinity/temperature/pressure"
+            }
+          ]
+        },
+        {
+          "name": "Verification Tests",
+          "children": [
+            {
+              "name": "Repeatability Test"
+            },
+            {
+              "name": "SV/CTD Comparison"
+            }
+          ]
+        },
+        {
+          "name": "Artefacts",
+          "children": [
+            {
+              "name": "Smile: Applied SV too low"
+            },
+            {
+              "name": "Frown: Applied SV too high"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Side Scan Sonar (SSS)",
+      "children": [
+        {
+          "name": "Position Verification",
+          "children": [
+            {
+              "name": "Comparison against MBES reference"
+            },
+            {
+              "name": "Reciprocal lines over an isolated target"
+            }
+          ]
+        },
+        {
+          "name": "Theory and Operations",
+          "children": [
+            {
+              "name": "Frequency selection (Range vs Resolution)"
+            },
+            {
+              "name": "Altitude management (10-15% of range)"
+            },
+            {
+              "name": "Layback calculation for towfish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Magnetometer and Gradiometer",
+      "children": [
+        {
+          "name": "Acceptance and SIT Testing"
+        },
+        {
+          "name": "Dipolar signature (valid detection)"
+        },
+        {
+          "name": "Ambient noise floor measurement"
+        }
+      ]
+    },
+    {
+      "name": "Sub-Bottom Profiler (SBP)",
+      "children": [
+        {
+          "name": "Chirp, Pinger, and Parametric systems"
+        },
+        {
+          "name": "Penetration vs Resolution"
+        },
+        {
+          "name": "Identification of pipe hyperbolae"
+        }
+      ]
+    },
+    {
+      "name": "Video and Camera",
+      "children": [
+        {
+          "name": "DVR and Overlay verification"
+        },
+        {
+          "name": "Voyis FDI 3-camera system"
+        },
+        {
+          "name": "Forward Overlap (60-80%)"
+        }
+      ]
+    }
+  ]
+}

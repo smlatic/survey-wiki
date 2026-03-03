@@ -1,0 +1,325 @@
+{
+  "title": "Hydrographic Survey Flashcards",
+  "cards": [
+    {
+      "front": "What does the abbreviation TPU stand for in hydrographic surveying?",
+      "back": "Total Propagated Uncertainty."
+    },
+    {
+      "front": "What are the two main components of TPU in positioning?",
+      "back": "THU (Total Horizontal Uncertainty) and TVU (Total Vertical Uncertainty)."
+    },
+    {
+      "front": "What statistical method is used to combine independent error sources when calculating the total error?",
+      "back": "Root Sum of Squares (RSS)."
+    },
+    {
+      "front": "Formula: Calculation of total uncertainty using the RSS method.",
+      "back": "$Total = \\sqrt{e1^2 + e2^2 + e3^2 + ...}$"
+    },
+    {
+      "front": "According to IHO S-44, at what confidence level should uncertainty (THU/TVU) be expressed?",
+      "back": "95%."
+    },
+    {
+      "front": "In the IHO formula for TVU, $TVU = \\sqrt{a^2 + (b \\times d)^2}$, what does the variable $d$ represent?",
+      "back": "The water depth in metres."
+    },
+    {
+      "front": "In the IHO formula for TVU, what does the constant $a$ represent?",
+      "back": "The depth-independent vertical error (constant uncertainty)."
+    },
+    {
+      "front": "In the IHO formula for TVU, what does the coefficient $b$ represent?",
+      "back": "The depth-dependent uncertainty value."
+    },
+    {
+      "front": "What principle applies for RSS calculations when one error source is significantly larger than the others?",
+      "back": "The total error is dominated almost entirely by the single largest component."
+    },
+    {
+      "front": "What is the primary purpose of an 'Acceptance Criteria Reference' during a mobilisation?",
+      "back": "To quickly verify approved threshold values for calibrations without reading individual manuals."
+    },
+    {
+      "front": "Which datum is used as the standard for GPS-based positioning?",
+      "back": "WGS84."
+    },
+    {
+      "front": "How does WGS84 differ from the latest ITRF realisations in practical offshore work?",
+      "back": "They are considered interchangeable as the difference is below the measurement noise level (< 2 cm)."
+    },
+    {
+      "front": "How many longitudinal zones is the Earth divided into within the UTM system?",
+      "back": "60 zones."
+    },
+    {
+      "front": "How wide is each UTM zone in degrees?",
+      "back": "6 degrees."
+    },
+    {
+      "front": "Formula: Calculation of UTM zone based on longitude.",
+      "back": "$Zone = floor((longitude + 180) / 6) + 1$"
+    },
+    {
+      "front": "What is the angular difference between Grid North and True North called?",
+      "back": "Convergence angle (meridian convergence)."
+    },
+    {
+      "front": "Where in a UTM zone is the convergence angle always zero degrees?",
+      "back": "Along the zone's central meridian."
+    },
+    {
+      "front": "What scale factor is applied at the central meridian in a UTM projection?",
+      "back": "0.9996."
+    },
+    {
+      "front": "How does the UTM scale factor at the central meridian affect a measured distance of 1000 metres?",
+      "back": "The projected grid distance becomes 0.4 metres shorter than the actual ground distance."
+    },
+    {
+      "front": "What type of transformation is most commonly used to convert between WGS84 and local geodetic datums?",
+      "back": "Helmert 7-parameter transformation."
+    },
+    {
+      "front": "What seven parameters are included in a Helmert transformation?",
+      "back": "3 translations ($dX, dY, dZ$), 3 rotations ($Rx, Ry, Rz$) and 1 scale factor ($dS$)."
+    },
+    {
+      "front": "Geoid: Definition.",
+      "back": "The equipotential surface of the Earth's gravity field that approximately corresponds to mean sea level."
+    },
+    {
+      "front": "What is the vertical separation between the ellipsoid (WGS84) and the geoid called?",
+      "back": "Geoid undulation (often denoted as $N$)."
+    },
+    {
+      "front": "Formula: The relationship between ellipsoidal height ($h$), orthometric height ($H$) and geoid undulation ($N$).",
+      "back": "$h = H + N$"
+    },
+    {
+      "front": "Which vertical reference plane is normally used for nautical charts and navigational safety?",
+      "back": "Lowest Astronomical Tide (LAT) / Chart Datum."
+    },
+    {
+      "front": "Which global geoid model is currently the standard for offshore operations?",
+      "back": "EGM2008."
+    },
+    {
+      "front": "Why is it important to distinguish between ellipsoidal height and height above sea level in GNSS surveying?",
+      "back": "The ellipsoid is a mathematical surface that can lie up to 100 metres from the actual sea surface (geoid)."
+    },
+    {
+      "front": "Which order according to IHO S-44 sets the strictest accuracy requirements?",
+      "back": "Exclusive Order."
+    },
+    {
+      "front": "What is the maximum THU value for 'Exclusive Order' according to IHO S-44?",
+      "back": "1 metre."
+    },
+    {
+      "front": "Which sound velocity formula (SV) is considered most suitable for deep water (> 1000 m)?",
+      "back": "Del Grosso (1974)."
+    },
+    {
+      "front": "Which parameter in sound velocity formulae has the greatest impact on the result in surface water?",
+      "back": "Temperature."
+    },
+    {
+      "front": "Approximate speed of sound in fresh water at $20^{\\circ}C$?",
+      "back": "1482 m/s."
+    },
+    {
+      "front": "Formula: Calculation of depth based on hydrostatic pressure ($P$), density ($\\rho$) and gravitational acceleration ($g$).",
+      "back": "$Depth = P / (\\rho \\times g)$"
+    },
+    {
+      "front": "How is 'Slant Range' defined in acoustic positioning?",
+      "back": "The direct distance along the sound ray between transmitter and receiver."
+    },
+    {
+      "front": "Formula: Calculation of horizontal distance (Ground Range) from Slant Range ($R$) and angle from vertical ($\\theta$).",
+      "back": "$Ground\\ range = R \\times \\sin(\\theta)$"
+    },
+    {
+      "front": "What is meant by 'Layback' when using towed sensor systems?",
+      "back": "The horizontal distance between the vessel's reference point and the sensor (towfish)."
+    },
+    {
+      "front": "Which IMCA standard provides guidelines for mobilisation and calibration of survey equipment?",
+      "back": "IMCA S 015."
+    },
+    {
+      "front": "Which standard specifically covers the use of inertial navigation systems (INS) subsea?",
+      "back": "IMCA M 244."
+    },
+    {
+      "front": "What is the purpose of the IHO standard S-57?",
+      "back": "To define the format for digital hydrographic data and electronic navigational charts (ENC)."
+    },
+    {
+      "front": "Acceptance criterion: Maximum allowable correction age for GNSS according to IMCA S 017.",
+      "back": "< 10 seconds."
+    },
+    {
+      "front": "Acceptance criterion: Maximum HDOP value for approved GNSS positioning according to IHO S-44.",
+      "back": "< 3.0."
+    },
+    {
+      "front": "Acceptance criterion: Standard deviation (SD) of residuals for an approved USBL calibration.",
+      "back": "< 0.5 metres."
+    },
+    {
+      "front": "In an MBES Patch Test, which three main angular offsets are calibrated?",
+      "back": "Roll, Pitch and Heading."
+    },
+    {
+      "front": "What is the typical acceptance criterion for angular offsets after an MBES Patch Test?",
+      "back": "< 1.0 degree."
+    },
+    {
+      "front": "How often should an SVP measurement (Sound Velocity Profile) be taken in areas with strong stratification according to IHO S-44?",
+      "back": "At least every two hours (< 2 h)."
+    },
+    {
+      "front": "In sidescan sonar (SSS) operations, what is the minimum allowable overlap between lines according to IMCA S 024?",
+      "back": "> 10%."
+    },
+    {
+      "front": "What is the recommended altitude above the seabed for a sidescan sonar relative to the selected range?",
+      "back": "10-15% of the range."
+    },
+    {
+      "front": "Why does the total vertical uncertainty (TVU) increase sharply with increasing beam angle in an MBES system?",
+      "back": "Due to a longer sound path and increased sensitivity to attitude errors (roll/pitch)."
+    },
+    {
+      "front": "Which sensor uncertainty typically dominates the total horizontal uncertainty (THU) at nadir?",
+      "back": "The vessel's GNSS positioning."
+    },
+    {
+      "front": "Which calibration residual has the greatest negative impact on TVU for the outermost beams in a multibeam system?",
+      "back": "The roll residual."
+    },
+    {
+      "front": "How does an incorrect surface sound velocity at the transducer affect a multibeam system?",
+      "back": "It causes incorrect calculation of the beams' departure angles (beam steering error)."
+    },
+    {
+      "front": "What is the purpose of performing a 'Dimensional Control' (DC) survey during mobilisation?",
+      "back": "To precisely measure distances and angles (offsets) between all sensors in the vessel's coordinate system."
+    },
+    {
+      "front": "What accuracy is typically required for a DC survey performed with a total station for distances under 5 metres?",
+      "back": "< 0.005 metres (5 mm)."
+    },
+    {
+      "front": "In a USBL system, how does water depth affect the horizontal position uncertainty?",
+      "back": "Uncertainty increases linearly with depth (often stated as a percentage of slant range)."
+    },
+    {
+      "front": "What is a Heave sensor (MRU) task in bathymetry?",
+      "back": "To measure the vessel's vertical motions so they can be corrected in the depth measurement."
+    },
+    {
+      "front": "Why is it critical to verify time-stamping (latency) between GNSS and multibeam?",
+      "back": "Timing errors cause position offsets of soundings that correlate with vessel speed and motion."
+    },
+    {
+      "front": "Which standard defines the requirements for pipeline as-built surveys?",
+      "back": "DNV-ST-F101."
+    },
+    {
+      "front": "What is meant by the term 'Convergence' in the context of gyrocompasses and the UTM grid?",
+      "back": "The difference between the true north direction that the gyro measures and Grid North on the chart."
+    },
+    {
+      "front": "How is the calculated pipeline length (KP) affected if UTM coordinates are used without correcting for scale factor?",
+      "back": "The calculated length will be incorrect (at the central meridian approximately 4 metres error per 10 km)."
+    },
+    {
+      "front": "What is the main purpose of a 'Static GNSS Intersystem Check'?",
+      "back": "To verify that two independent GNSS systems give the same position within given tolerances."
+    },
+    {
+      "front": "What error source in a magnetometer (G882) is calibrated using a 'marked wire' at known depths?",
+      "back": "The depth sensor's scale factor and bias."
+    },
+    {
+      "front": "How many metres does approximately 1 dBar of pressure correspond to in seawater?",
+      "back": "Approximately 1 metre (Rule of thumb: Depth = Pressure / 1.006)."
+    },
+    {
+      "front": "What happens if Latitude and Longitude are swapped during data export?",
+      "back": "Positions are mirrored across the equator or end up in a completely different hemisphere/ocean."
+    },
+    {
+      "front": "Which IHO order requires 100% coverage of the seabed (full bottom search)?",
+      "back": "Exclusive Order and Special Order."
+    },
+    {
+      "front": "What is the typical sign that an incorrect datum transformation (e.g. WGS84 to ED50) has been applied?",
+      "back": "A constant offset of between 100 and 200 metres in position."
+    },
+    {
+      "front": "In TPU analysis, what is meant by 'correlated errors'?",
+      "back": "Error sources that affect each other, for example how roll error affects depth measurement more at large beam angles."
+    },
+    {
+      "front": "What is the practical difference between 'DGNSS' and 'PPP' regarding horizontal accuracy?",
+      "back": "DGNSS typically has < 1 m accuracy while PPP achieves < 0.1 m."
+    },
+    {
+      "front": "Which IMCA standard is used as a reference for survey report content?",
+      "back": "IMCA D 045."
+    },
+    {
+      "front": "What does the abbreviation EPSG stand for in a geodetic context?",
+      "back": "European Petroleum Survey Group (now under IOGP)."
+    },
+    {
+      "front": "Why are EPSG codes used?",
+      "back": "To unambiguously identify coordinate systems, projections and datums globally."
+    },
+    {
+      "front": "What is the 'Target Height from SSS Shadow' formula based on?",
+      "back": "Similar triangles formed by the sonar's altitude, the shadow length and the distance to the object."
+    },
+    {
+      "front": "When should a G882 magnetometer be recalibrated?",
+      "back": "Annually, after mechanical shock, when changing the sensor, or if QC shows systematic errors."
+    },
+    {
+      "front": "What is an acceptable residual error for a single point when calibrating a depth sensor?",
+      "back": "< 0.1 metres."
+    },
+    {
+      "front": "What phenomenon causes sound rays to bend in the water column?",
+      "back": "Refraction (caused by variations in sound velocity)."
+    },
+    {
+      "front": "What does 'Squat' mean for a survey vessel?",
+      "back": "The combined dynamic sinkage and trim change of the vessel when moving forward, which affects depth measurement."
+    },
+    {
+      "front": "What is the purpose of an 'Intersystem Check' for attitude sensors (AHRS)?",
+      "back": "To verify that two independent sensors measure the same roll, pitch and heading."
+    },
+    {
+      "front": "How is the TPU budget affected if the MBES system's swath width is reduced?",
+      "back": "The total uncertainty for the dataset decreases because the most uncertain outer beams are removed."
+    },
+    {
+      "front": "What is a 'Surrogate Item Test' in geophysical surveying?",
+      "back": "A test where a known object is lowered to verify that the system can detect it at operational altitude."
+    },
+    {
+      "front": "What is the primary advantage of 'GNSS-tides' compared with traditional tide gauges?",
+      "back": "One gets a direct measurement of the water level at the vessel and avoids uncertainty from interpolation from remote stations."
+    },
+    {
+      "front": "Formula: Conversion from Degrees ($Deg$) to Radians ($Rad$).",
+      "back": "$Rad = Deg \\times (\\pi / 180)$"
+    }
+  ]
+}

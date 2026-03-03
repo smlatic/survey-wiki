@@ -1,0 +1,176 @@
+{
+  "name": "Fundamental Principles of Survey Reporting",
+  "children": [
+    {
+      "name": "Overall Purpose",
+      "children": [
+        {
+          "name": "Permanent record"
+        },
+        {
+          "name": "Quality evidence"
+        },
+        {
+          "name": "Contractual deliverable"
+        },
+        {
+          "name": "Traceability"
+        }
+      ]
+    },
+    {
+      "name": "Report Types",
+      "children": [
+        {
+          "name": "Mobilisation Report",
+          "children": [
+            {
+              "name": "Vessel details"
+            },
+            {
+              "name": "Equipment list"
+            },
+            {
+              "name": "Dimensional Control"
+            },
+            {
+              "name": "System configuration"
+            }
+          ]
+        },
+        {
+          "name": "Calibration Report",
+          "children": [
+            {
+              "name": "Environmental conditions"
+            },
+            {
+              "name": "Procedure description"
+            },
+            {
+              "name": "Results and residuals"
+            },
+            {
+              "name": "Acceptance criteria"
+            }
+          ]
+        },
+        {
+          "name": "Daily Progress Report (DPR)",
+          "children": [
+            {
+              "name": "Operational statistics"
+            },
+            {
+              "name": "Equipment status"
+            },
+            {
+              "name": "Weather conditions"
+            },
+            {
+              "name": "Planned activities"
+            }
+          ]
+        },
+        {
+          "name": "End-of-Project Report (EOP)",
+          "children": [
+            {
+              "name": "Executive Summary"
+            },
+            {
+              "name": "Processing workflow"
+            },
+            {
+              "name": "Results overview"
+            },
+            {
+              "name": "Deliverables list"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Data Presentation",
+      "children": [
+        {
+          "name": "Tables and Diagrams",
+          "children": [
+            {
+              "name": "Consistent units"
+            },
+            {
+              "name": "Vertical exaggeration"
+            },
+            {
+              "name": "Time series and track charts"
+            }
+          ]
+        },
+        {
+          "name": "Coordinates",
+          "children": [
+            {
+              "name": "Datum and projection"
+            },
+            {
+              "name": "Consistent format"
+            },
+            {
+              "name": "Explicit ordering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Quality Control (QC)",
+      "children": [
+        {
+          "name": "SVP verification"
+        },
+        {
+          "name": "Position verification"
+        },
+        {
+          "name": "Coverage charts"
+        },
+        {
+          "name": "Artefact assessment"
+        }
+      ]
+    },
+    {
+      "name": "Document Control",
+      "children": [
+        {
+          "name": "Version numbers"
+        },
+        {
+          "name": "Revision history"
+        },
+        {
+          "name": "Numbering convention"
+        },
+        {
+          "name": "Client comment handling"
+        }
+      ]
+    },
+    {
+      "name": "Troubleshooting",
+      "children": [
+        {
+          "name": "Incomplete content"
+        },
+        {
+          "name": "Missing acceptance criteria"
+        },
+        {
+          "name": "Inconsistent data"
+        }
+      ]
+    }
+  ]
+}

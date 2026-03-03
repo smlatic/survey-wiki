@@ -1,0 +1,199 @@
+{
+  "name": "Offshore Survey Methods and Procedures",
+  "children": [
+    {
+      "name": "As-Built Survey",
+      "children": [
+        {
+          "name": "Purpose",
+          "children": [
+            {
+              "name": "Permanent record of installed infrastructure"
+            },
+            {
+              "name": "Verification against design and tolerances"
+            },
+            {
+              "name": "Baseline for future inspections"
+            }
+          ]
+        },
+        {
+          "name": "Objects and Measurements",
+          "children": [
+            {
+              "name": "Pipelines (As-laid / As-trenched)"
+            },
+            {
+              "name": "Subsea structures (E, N, Z, Heading, Tilt)"
+            },
+            {
+              "name": "Spools and Jumpers (End coordinates, profile)"
+            },
+            {
+              "name": "Protection (Mattresses, rock, grout bags)"
+            }
+          ]
+        },
+        {
+          "name": "Primary Methods",
+          "children": [
+            {
+              "name": "ROV with INS/USBL"
+            },
+            {
+              "name": "MBES (Profiling)"
+            },
+            {
+              "name": "Pipetracker (Depth of Cover)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Construction Support Survey",
+      "children": [
+        {
+          "name": "Real-time Guidance",
+          "children": [
+            {
+              "name": "Pipelay monitoring (TDP, KP, DCC)"
+            },
+            {
+              "name": "Structure installation (Position, Heading, Elevation)"
+            },
+            {
+              "name": "Touchdown monitoring"
+            }
+          ]
+        },
+        {
+          "name": "Critical Factors",
+          "children": [
+            {
+              "name": "Positioning stability and precision"
+            },
+            {
+              "name": "Coordinate system and datum control"
+            },
+            {
+              "name": "Communication protocols"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Subsea Metrology",
+      "children": [
+        {
+          "name": "Traditional LBL Metrology",
+          "children": [
+            {
+              "name": "Acoustic baselines (Braced quadrilateral)"
+            },
+            {
+              "name": "Gyro observations (Heading, Pitch, Roll)"
+            },
+            {
+              "name": "Depth loops (Digiquartz)"
+            },
+            {
+              "name": "Sound velocity (Critical for accuracy)"
+            }
+          ]
+        },
+        {
+          "name": "INS-based Metrology (SLAM)",
+          "children": [
+            {
+              "name": "Simultaneous Localisation and Mapping"
+            },
+            {
+              "name": "Requires Navigation-grade INS"
+            },
+            {
+              "name": "Faster than LBL (No transponder array)"
+            },
+            {
+              "name": "DVL bottom-lock is essential"
+            }
+          ]
+        },
+        {
+          "name": "Mechanical Interfaces",
+          "children": [
+            {
+              "name": "Stab and Receptacle"
+            },
+            {
+              "name": "QC check of 'slop' and alignment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pipeline and Umbilical Operations",
+      "children": [
+        {
+          "name": "Survey Types",
+          "children": [
+            {
+              "name": "Pre-Lay (Route clearance)"
+            },
+            {
+              "name": "As-Laid (Position and profile)"
+            },
+            {
+              "name": "As-Trenched (DOC, DOL, DOT)"
+            },
+            {
+              "name": "Inspection (Anodes, free spans, damage)"
+            }
+          ]
+        },
+        {
+          "name": "Sensor Technology",
+          "children": [
+            {
+              "name": "Pipetracker (Electromagnetic induction)"
+            },
+            {
+              "name": "VisualWorks (Digital video and event logging)"
+            },
+            {
+              "name": "MBES/DHSS (Cross profiles)"
+            }
+          ]
+        },
+        {
+          "name": "Calculations",
+          "children": [
+            {
+              "name": "KP (Along-centreline vs Straight-line)"
+            },
+            {
+              "name": "Tidal corrections"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Quality Control and Deliverables",
+      "children": [
+        {
+          "name": "Acceptance criteria (Tolerances per project specification)"
+        },
+        {
+          "name": "Standard deliverables (Tables, charts, profiles, reports)"
+        },
+        {
+          "name": "Data QC (Continuous monitoring of sensor health)"
+        }
+      ]
+    }
+  ]
+}

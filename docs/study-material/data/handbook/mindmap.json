@@ -1,0 +1,147 @@
+{
+  "name": "Offshore Surveying: Trainee Handbook",
+  "children": [
+    {
+      "name": "Introduction to the Profession",
+      "children": [
+        {
+          "name": "Purpose: Visualize and understand the seabed"
+        },
+        {
+          "name": "Importance of surveying: Avoiding costly errors"
+        },
+        {
+          "name": "The team: Surveyors, Party Chief, ROV pilots, Data Processors"
+        },
+        {
+          "name": "Career paths: From trainee to specialist or leader"
+        }
+      ]
+    },
+    {
+      "name": "Life on the Vessel",
+      "children": [
+        {
+          "name": "Terminology: Bow, stern, starboard, port, galley"
+        },
+        {
+          "name": "Communication: Clear protocols and radio etiquette"
+        },
+        {
+          "name": "Teamwork: Trust and cross-disciplinary collaboration"
+        },
+        {
+          "name": "Routines: Shift work (12/12) and health"
+        },
+        {
+          "name": "Online vs Offline: Real-time acquisition vs post-processing"
+        }
+      ]
+    },
+    {
+      "name": "Safety and Environment",
+      "children": [
+        {
+          "name": "PPE: Hard hat, safety boots, high-visibility clothing"
+        },
+        {
+          "name": "Emergencies: Muster stations and alarms"
+        },
+        {
+          "name": "Environmental responsibility: Waste management and marine life"
+        },
+        {
+          "name": "Regulations: IMCA, IHO, MARPOL"
+        }
+      ]
+    },
+    {
+      "name": "Positioning Technology",
+      "children": [
+        {
+          "name": "Surface: GNSS, RTK, and INS (backup and bridging)"
+        },
+        {
+          "name": "Underwater: USBL (ultra-short baseline) and LBL (long baseline)"
+        },
+        {
+          "name": "Motion: DVL (velocity) and MRU (pitch, roll, heave)"
+        },
+        {
+          "name": "Sound velocity: SVP measurements for acoustic correction"
+        }
+      ]
+    },
+    {
+      "name": "Sensors and Sonars",
+      "children": [
+        {
+          "name": "Echo sounders: Single Beam (SBES) and Multibeam (MBES)"
+        },
+        {
+          "name": "Seabed imaging: Side Scan Sonar (SSS)"
+        },
+        {
+          "name": "Sub-Bottom Profiler: Sub-surface geology"
+        },
+        {
+          "name": "Magnetometers: Detecting ferrous objects and UXO"
+        },
+        {
+          "name": "Subsea platforms: ROV (remotely operated) and AUV (autonomous)"
+        }
+      ]
+    },
+    {
+      "name": "Workflows and Processes",
+      "children": [
+        {
+          "name": "Planning: Scope, equipment, and weather windows"
+        },
+        {
+          "name": "Calibration: Patch test (MBES) and box-in (USBL)"
+        },
+        {
+          "name": "Verification: Confirming data integrity"
+        },
+        {
+          "name": "Data processing: Noise cleaning and 3D modeling"
+        },
+        {
+          "name": "Reporting: Documentation of biases and results"
+        }
+      ]
+    },
+    {
+      "name": "Modern Technology and Development",
+      "children": [
+        {
+          "name": "AI tools: Code automation, brainstorming, and report drafting"
+        },
+        {
+          "name": "Remote surveying: Shore-based control (ROC) and satellite links"
+        },
+        {
+          "name": "IT fundamentals: Networking, cybersecurity, and troubleshooting"
+        }
+      ]
+    },
+    {
+      "name": "Soft Skills",
+      "children": [
+        {
+          "name": "Communication: Active listening and diplomacy"
+        },
+        {
+          "name": "Organization: Time management and data housekeeping"
+        },
+        {
+          "name": "Mental health: Managing stress and isolation"
+        },
+        {
+          "name": "Networking: Mentorship and continuous learning"
+        }
+      ]
+    }
+  ]
+}

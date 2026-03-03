@@ -1,0 +1,265 @@
+{
+  "title": "Hydrographic Survey Quiz",
+  "questions": [
+    {
+      "question": "How is the theoretical heading accuracy of a GNSS compass affected if the baseline length ($L$) between the primary antennas is doubled?",
+      "answerOptions": [
+        {
+          "text": "The accuracy improves by halving the angular error.",
+          "isCorrect": true,
+          "rationale": "Since the accuracy is calculated as $\\sigma / L$ in radians, doubling the denominator $L$ means the resulting angular error is halved."
+        },
+        {
+          "text": "The accuracy degrades because the noise level in the carrier phase increases.",
+          "isCorrect": false,
+          "rationale": "The noise level in the carrier phase measurement is largely independent of the baseline length over short distances."
+        },
+        {
+          "text": "The accuracy improves quadratically in relation to the length.",
+          "isCorrect": false,
+          "rationale": "The relationship between baseline length and heading accuracy is linear, not quadratic, according to the formula $\\arctan(\\sigma / L)$."
+        },
+        {
+          "text": "It has no effect because the accuracy depends solely on the number of satellites.",
+          "isCorrect": false,
+          "rationale": "Although satellite geometry plays a role, the baseline length is the fundamental geometric limitation for heading determination via GNSS."
+        }
+      ],
+      "hint": "Consider the mathematical relationship between arc length and radius in a circular sector."
+    },
+    {
+      "question": "When configuring a Motion Reference Unit (MRU), why is it critical that the high-pass filter period setting exceeds the dominant swell period by at least $20\\%$?",
+      "answerOptions": [
+        {
+          "text": "To prevent the filter from attenuating the actual heave signal and creating systematic depth errors.",
+          "isCorrect": true,
+          "rationale": "A filter period that is too short clips the real motion, leading to measured data showing too-shallow crests and too-deep troughs."
+        },
+        {
+          "text": "To eliminate high-frequency vibrations from the vessel's machinery.",
+          "isCorrect": false,
+          "rationale": "High-frequency vibrations are handled by low-pass filters or mechanical isolation, while the high-pass filter handles slow drift."
+        },
+        {
+          "text": "To compensate for the latency in the GNSS receiver's height data.",
+          "isCorrect": false,
+          "rationale": "The high-pass filter in an MRU is used to handle integration drift in the accelerometers, not to synchronise external sensors."
+        },
+        {
+          "text": "To ensure that the vessel's pitch and roll are not confused with heave.",
+          "isCorrect": false,
+          "rationale": "The separation of motion axes is handled by the MRU unit's internal algorithms and orientation, not by high-pass filtering of the heave axis."
+        }
+      ],
+      "hint": "Consider what happens to a signal if its frequency is below the filter's cut-off."
+    },
+    {
+      "question": "What effect does 'lever-arm-induced heave' have on an echo sounder system if the MRU is not co-located with the transducer?",
+      "answerOptions": [
+        {
+          "text": "Pitch and roll create a vertical motion at the transducer that is not directly measured at the MRU's position.",
+          "isCorrect": true,
+          "rationale": "The vertical displacement at the transducer is a combination of the vessel's heave at the centre of rotation and the vertical component of the rotation multiplied by the lever arm."
+        },
+        {
+          "text": "It causes a time delay between the attitude measurement and the depth measurement.",
+          "isCorrect": false,
+          "rationale": "This phenomenon is a geometric effect of the vessel's rotation, while time delay (latency) is an electronic process."
+        },
+        {
+          "text": "It creates a systematic error in the sound velocity profile at the transducer surface.",
+          "isCorrect": false,
+          "rationale": "Sound velocity is affected by water properties, not by the vessel's physical lever arms or rotational motions."
+        },
+        {
+          "text": "It causes the vessel's heading to be affected by swell motions.",
+          "isCorrect": false,
+          "rationale": "Induced heave exclusively affects the vertical component (Z) of the positioning, not the horizontal heading."
+        }
+      ],
+      "hint": "Think about how a seesaw moves vertically at the ends even though the centre is fixed."
+    },
+    {
+      "question": "During a dimensional control (DC) survey of a steel vessel, how does thermal expansion affect the result if the measurement is performed at a temperature difference of $20^{\\circ}C$ compared with a previous measurement?",
+      "answerOptions": [
+        {
+          "text": "A $100$ metre long vessel can expand or contract by approximately $24\\text{ mm}$.",
+          "isCorrect": true,
+          "rationale": "Steel has an expansion coefficient of approximately $12 \\times 10^{-6}$ per $^{\\circ}C$, giving $100 \\times 20 \\times 0.000012 = 0.024\\text{ m}$."
+        },
+        {
+          "text": "The expansion is negligible and falls below the measurement uncertainty of $2\\text{ mm}$.",
+          "isCorrect": false,
+          "rationale": "Even though the measurement uncertainty is low, the thermal effect on large steel structures is significantly greater than millimetre level at large temperature changes."
+        },
+        {
+          "text": "The expansion only affects the vessel's beam, not its length between the antennas.",
+          "isCorrect": false,
+          "rationale": "Thermal expansion is a linear process that occurs in all dimensions proportionally to the object's original size."
+        },
+        {
+          "text": "It causes a rotational error in the MRU's alignment rather than a positional error.",
+          "isCorrect": false,
+          "rationale": "The main effect is a change in the linear distances (offsets) between the sensors due to the material's expansion."
+        }
+      ],
+      "hint": "Use the coefficient of linear thermal expansion for steel, which is approximately $12$ micrometres per metre per degree."
+    },
+    {
+      "question": "Why does the heading accuracy of mechanical gyrocompasses, FOG and RLG degrade at higher latitudes?",
+      "answerOptions": [
+        {
+          "text": "The horizontal component of the Earth's rotation vector decreases, making it harder to detect true north.",
+          "isCorrect": true,
+          "rationale": "Gyrocompasses that seek north rely on the Earth's rotation; at the poles the horizontal component is zero, making the heading indeterminate."
+        },
+        {
+          "text": "The magnetic field inclination becomes too steep for the gyro to stabilise.",
+          "isCorrect": false,
+          "rationale": "These types of gyros are independent of the Earth's magnetic field and are instead affected by the Earth's rotation."
+        },
+        {
+          "text": "The satellites' geometry (PDOP) is worse at the poles than at the equator.",
+          "isCorrect": false,
+          "rationale": "This can affect GNSS compasses, but the question specifically concerns gyroscopic systems that use inertial navigation or Earth rotation."
+        },
+        {
+          "text": "The Coriolis force reverses direction at the Arctic Circle, which destabilises the gyro.",
+          "isCorrect": false,
+          "rationale": "The Coriolis force changes sign at the equator, not the Arctic Circle, and is not the primary cause of latitude-dependent heading errors."
+        }
+      ],
+      "hint": "Think about the $\\sec(\\text{latitude})$ factor and how the Earth's rotation axis is oriented relative to the horizontal plane."
+    },
+    {
+      "question": "Which phenomenon explains why a vessel sinks deeper into the water ('settlement') when moving forward at high speed?",
+      "answerOptions": [
+        {
+          "text": "The Bernoulli principle, where increased water velocity under the hull creates a reduced pressure.",
+          "isCorrect": true,
+          "rationale": "When water flows faster under the hull, the static pressure drops, causing the vessel to sink vertically to maintain equilibrium."
+        },
+        {
+          "text": "Archimedes' principle, where the vessel's displacement increases linearly with speed.",
+          "isCorrect": false,
+          "rationale": "Archimedes' principle explains static buoyancy based on displaced volume, not dynamic pressure changes during motion."
+        },
+        {
+          "text": "The water's viscosity increases at the vessel's bow, pushing the hull downward.",
+          "isCorrect": false,
+          "rationale": "Viscosity causes resistance (friction), but the vertical sinking is primarily a pressure effect related to flow velocity."
+        },
+        {
+          "text": "The centrifugal force from the vessel's propeller pulls the hull downward.",
+          "isCorrect": false,
+          "rationale": "The propeller's force action is primarily horizontal (propulsion) and does not explain the general sinking of the entire hull."
+        }
+      ],
+      "hint": "Reflect on the relationship between fluid velocity and pressure in a flowing medium."
+    },
+    {
+      "question": "When analysing the outer beams of a multibeam echo sounder, how does an attitude error of $0.1^{\\circ}$ affect the depth measurement at a beam angle of $60^{\\circ}$ compared with nadir ($0^{\\circ}$)?",
+      "answerOptions": [
+        {
+          "text": "The error increases significantly because the depth error is proportional to the sine of the attitude error multiplied by the slant range.",
+          "isCorrect": true,
+          "rationale": "At nadir the effect of roll on depth is minimal, but at large angles the same angular error causes a large vertical displacement of the beam's footprint."
+        },
+        {
+          "text": "The error is identical for all beams because the attitude error is applied to the entire vessel.",
+          "isCorrect": false,
+          "rationale": "Even though the angular error is constant, it is transformed into different vertical errors depending on the beam geometry and range."
+        },
+        {
+          "text": "The outer beams are less sensitive due to the higher sound velocity in deep water.",
+          "isCorrect": false,
+          "rationale": "Geometric angular errors are independent of local sound velocity variations and become worse with increasing range (slant range)."
+        },
+        {
+          "text": "The error is automatically eliminated by high-pass filtering in the MRU.",
+          "isCorrect": false,
+          "rationale": "High-pass filtering handles sensor drift in heave but cannot correct for static or dynamic angular errors in roll and pitch."
+        }
+      ],
+      "hint": "Think about how a small angle change at the base of a long triangle affects the height at the apex."
+    },
+    {
+      "question": "What is the primary reason for performing a 'Static AHRS Intersystem Check' during a mobilisation?",
+      "answerOptions": [
+        {
+          "text": "To verify that all sensors are correctly configured and that offsets from the DC survey have been applied correctly in the software.",
+          "isCorrect": true,
+          "rationale": "By comparing the systems while stationary, one can identify systematic differences and verify that all refer to the same zero and sign convention."
+        },
+        {
+          "text": "To calculate latency differences between the GNSS receiver and the gyrocompass.",
+          "isCorrect": false,
+          "rationale": "Latency can only be measured effectively under dynamic conditions when values are changing over time."
+        },
+        {
+          "text": "To calibrate the MRU's accelerometers against the local gravity field.",
+          "isCorrect": false,
+          "rationale": "Accelerometer calibration is usually done by the manufacturer or through specific laboratory tests, not through an intersystem comparison."
+        },
+        {
+          "text": "To measure the vessel's magnetic deviation at various headings.",
+          "isCorrect": false,
+          "rationale": "A static check at quayside measures only one heading and therefore cannot map a complete deviation curve."
+        }
+      ],
+      "hint": "Focus on verifying software settings and the consistency of physical measurements."
+    },
+    {
+      "question": "According to standard procedures, why must one wait $4$-$6$ hours before calibrating a mechanical (spinning mass) gyrocompass?",
+      "answerOptions": [
+        {
+          "text": "It requires a long time to stabilise and 'seek' true north through the Earth's rotation and precession.",
+          "isCorrect": true,
+          "rationale": "Mechanical gyros have a slow start-up process where the spinning mass must reach the correct speed and the system must oscillate to settle on north."
+        },
+        {
+          "text": "To allow the internal GNSS receivers to resolve integer ambiguities in a cold start.",
+          "isCorrect": false,
+          "rationale": "Mechanical gyros operate independently of GNSS; long wait times are due to mechanical inertia and thermal stability."
+        },
+        {
+          "text": "To ensure the vessel's UPS system has fully charged after power-on.",
+          "isCorrect": false,
+          "rationale": "The wait time is specific to the sensor's internal physics, not the vessel's power supply system."
+        },
+        {
+          "text": "It is the time required for the software to download the latest geoid models.",
+          "isCorrect": false,
+          "rationale": "Gyro calibration time is about physical stabilisation of the sensor, not data transfer or model updates."
+        }
+      ],
+      "hint": "Think about the difference in physical principle between a spinning mass and light pulses in fibre optics."
+    },
+    {
+      "question": "In hydrographic surveying, what does the concept of 'Grid Convergence' mean when calibrating a heading sensor?",
+      "answerOptions": [
+        {
+          "text": "The angular difference between True North and Grid North due to the distortion of the map projection.",
+          "isCorrect": true,
+          "rationale": "Because meridians in a projection (such as UTM) are not parallel except at the central meridian, an angle arises that must be corrected when comparing with a gyro."
+        },
+        {
+          "text": "The point where the magnetic north pole coincides with the geographic north pole.",
+          "isCorrect": false,
+          "rationale": "This describes magnetic declination, which is a different type of angular correction that is rarely used in professional offshore survey."
+        },
+        {
+          "text": "The convergence of GNSS signals at the antenna to achieve an RTK fix.",
+          "isCorrect": false,
+          "rationale": "Signal convergence in GNSS concerns resolving position uncertainties, not angular differences in a coordinate system."
+        },
+        {
+          "text": "The difference in distance between two GNSS antennas measured at different temperatures.",
+          "isCorrect": false,
+          "rationale": "This concerns thermal expansion and does not affect the geodetic definition of north directions."
+        }
+      ],
+      "hint": "Relate the concept to how a flat map represents the curved surface of the Earth."
+    }
+  ]
+}

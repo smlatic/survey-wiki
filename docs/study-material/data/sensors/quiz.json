@@ -1,0 +1,265 @@
+{
+  "title": "Hydrographic Survey Sensors Quiz",
+  "questions": [
+    {
+      "question": "Why must timing latency be resolved as the first step in an MBES calibration (patch test)?",
+      "answerOptions": [
+        {
+          "text": "Uncorrected latency introduces along-track position errors that contaminate the calculations for pitch and heading.",
+          "isCorrect": true,
+          "rationale": "Because latency shifts the position in the vessel's direction of travel, all measurements over sloping terrain or distinct features will be misplaced, making it impossible to correctly isolate angular errors."
+        },
+        {
+          "text": "Latency affects the echosounder's ability to perform electronic beam steering in real time.",
+          "isCorrect": false,
+          "rationale": "Electronic beam steering is driven by real-time data from the motion sensor and the sound velocity at the transducer face, not by the system's overall timing latency."
+        },
+        {
+          "text": "It is the only error that is independent of water depth and seabed morphology.",
+          "isCorrect": false,
+          "rationale": "The latency error is actually proportional to the vessel's speed and affects how terrain features are presented in the data."
+        },
+        {
+          "text": "The latency correction modifies the transducer's physical Z-offset relative to the vessel's centre of gravity (COG).",
+          "isCorrect": false,
+          "rationale": "Timing latency is a temporal parameter and does not affect the physical measurements in the vessel's reference frame."
+        }
+      ],
+      "hint": "Consider how an incorrect timestamp affects the geographic placement of an object when the vessel is in motion."
+    },
+    {
+      "question": "If a cross-section of an MBES swath over a flat seabed shows a curvature resembling a 'smile', what is the most likely cause?",
+      "answerOptions": [
+        {
+          "text": "The applied sound velocity is too low (lower than the actual velocity in the water column).",
+          "isCorrect": true,
+          "rationale": "A 'smile' occurs when the system under-corrects for refraction. The outer beams in reality travel straighter (bend less) than the system's ray-tracing model predicts, causing the computed depths at the swath edges to appear too shallow."
+        },
+        {
+          "text": "The applied sound velocity is too high (higher than the actual velocity in the water column).",
+          "isCorrect": false,
+          "rationale": "A sound velocity that is too high results in a 'frown', where the outer beams are over-corrected and the computed depths at the swath edges appear too deep."
+        },
+        {
+          "text": "The transducer is mounted with a physical roll offset of more than $2.0^{\\circ}$.",
+          "isCorrect": false,
+          "rationale": "A roll offset produces a linear tilt of the entire swath, not a symmetrical curvature from nadir."
+        },
+        {
+          "text": "The motion reference unit (MRU) has not stabilised after power-on.",
+          "isCorrect": false,
+          "rationale": "MRU instability typically produces noise or oscillating errors, not a consistent refraction artefact."
+        }
+      ],
+      "hint": "This phenomenon is related to how sound waves are refracted as they pass through water layers with different sound velocities."
+    },
+    {
+      "question": "When calculating target height from Side Scan Sonar (SSS) data, shadow length is used. What principle underlies the formula $H_t = \\frac{L_s \\times H_a}{R_s}$?",
+      "answerOptions": [
+        {
+          "text": "Similar triangles, where the ratio between the target height and shadow length is proportional to the sonar altitude and range to the target.",
+          "isCorrect": true,
+          "rationale": "The geometry is created by the sonar beam's angle, where the acoustic shadow on the seabed is directly proportional to the target's height above the bottom."
+        },
+        {
+          "text": "Pythagoras' theorem applied to the hypotenuse between the transducer and the shadow endpoint.",
+          "isCorrect": false,
+          "rationale": "Pythagoras' theorem is primarily used to convert slant range to ground range, not to calculate vertical height from shadows."
+        },
+        {
+          "text": "The refractive index of sound waves passing through the target's acoustic surface.",
+          "isCorrect": false,
+          "rationale": "Height calculation from shadow geometry assumes straight-line propagation and does not account for refraction at the target."
+        },
+        {
+          "text": "Doppler shift in the reflected signal from the top of the target.",
+          "isCorrect": false,
+          "rationale": "Doppler shift is used for velocity measurements, whereas shadow geometry is a purely spatial analysis of the sonar image."
+        }
+      ],
+      "hint": "Think about how light (or sound) creates shadows based on the source position and the target's height."
+    },
+    {
+      "question": "In sub-bottom profiling (SBP), what is the primary factor that determines the strength of a reflection from a sub-surface layer?",
+      "answerOptions": [
+        {
+          "text": "The contrast in acoustic impedance (the product of density and sound velocity) between two sediment layers.",
+          "isCorrect": true,
+          "rationale": "When sound waves encounter a boundary where the material's density or velocity changes, a portion of the energy is reflected back. The greater the impedance contrast, the stronger the reflection."
+        },
+        {
+          "text": "The total thickness of the overlying sediment layer.",
+          "isCorrect": false,
+          "rationale": "Thickness affects attenuation and how deep the signal can penetrate, but does not determine the reflection strength at a specific boundary."
+        },
+        {
+          "text": "The frequency of the transmitted chirp signal relative to the water depth.",
+          "isCorrect": false,
+          "rationale": "Frequency determines resolution and penetration capability, but the reflection coefficient is an intrinsic property of the material boundary."
+        },
+        {
+          "text": "The vessel's pitch angle at the moment of transmission.",
+          "isCorrect": false,
+          "rationale": "Pitch can affect data quality by directing the beam away from vertical, but it does not change the physics of the reflection at the boundary."
+        }
+      ],
+      "hint": "It relates to the physical properties of the materials at the boundary between layers."
+    },
+    {
+      "question": "Why is downcast data preferred over upcast data when measuring with a CTD probe for sound velocity profiling?",
+      "answerOptions": [
+        {
+          "text": "The probe descends into undisturbed water, which minimises the effects of thermal lag (hysteresis) and turbulence from the frame.",
+          "isCorrect": true,
+          "rationale": "During the upcast, the probe is pulled through water that has already been mixed by the frame and cable, and the sensors may not respond quickly enough to temperature changes, particularly across thermoclines."
+        },
+        {
+          "text": "The pressure sensor is only calibrated for increasing pressure values.",
+          "isCorrect": false,
+          "rationale": "Modern pressure sensors are linear and measure both increasing and decreasing pressure with high accuracy."
+        },
+        {
+          "text": "The Chen & Millero sound velocity equation requires depth to increase sequentially in the raw data.",
+          "isCorrect": false,
+          "rationale": "The equation can be applied to any data point; the limitation is physical measurement quality, not mathematical structure."
+        },
+        {
+          "text": "Battery life on the probe is optimised by only logging data during descent.",
+          "isCorrect": false,
+          "rationale": "Most probes log continuously; the preference for downcast data is about data integrity across thermoclines."
+        }
+      ],
+      "hint": "Consider how the instrument frame's movement affects the water that the sensors are about to measure."
+    },
+    {
+      "question": "According to IHO S-44, Total Vertical Uncertainty (TVU) is defined by the formula $\\pm \\sqrt{a^2 + (b \\times d)^2}$. What does the parameter '$b$' represent in this equation?",
+      "answerOptions": [
+        {
+          "text": "The component of uncertainty that varies with depth ($d$).",
+          "isCorrect": true,
+          "rationale": "The parameter '$b$' captures systematic errors that scale with depth, such as errors in sound velocity or measurement angles."
+        },
+        {
+          "text": "The constant uncertainty that is independent of depth.",
+          "isCorrect": false,
+          "rationale": "This is represented by the parameter '$a$', which includes fixed errors such as timing measurements and static offset measurements."
+        },
+        {
+          "text": "The vessel's beam (width) used to calculate induced heave.",
+          "isCorrect": false,
+          "rationale": "The formula is a statistical uncertainty model and does not directly include the vessel's physical dimensions."
+        },
+        {
+          "text": "The conversion factor between ellipsoidal depth and chart datum depth.",
+          "isCorrect": false,
+          "rationale": "This is part of the reduction process, but '$b$' is a specific coefficient for depth-dependent error sources."
+        }
+      ],
+      "hint": "Look at how the parameter is placed in the formula and what it is multiplied by."
+    },
+    {
+      "question": "When using an electronically beam-formed MBES system, continuous sound velocity measurement at the transducer face is required. What happens if this measurement is incorrect?",
+      "answerOptions": [
+        {
+          "text": "The transmit and receive angles become incorrect, leading to geometric distortions in the swath despite a correct SVP for the water column.",
+          "isCorrect": true,
+          "rationale": "Beam steering depends on the acoustic wavelength at the transducer face; an incorrect velocity here causes the beams to point in the wrong direction from the outset."
+        },
+        {
+          "text": "The echosounder's ping rate (update rate) decreases drastically due to processing demands.",
+          "isCorrect": false,
+          "rationale": "Ping rate is limited by water depth (two-way travel time), not by the surface sound velocity sensor's update rate."
+        },
+        {
+          "text": "The system can no longer compensate for vessel heave.",
+          "isCorrect": false,
+          "rationale": "Heave compensation is based on data from the MRU and is not directly affected by the local sound velocity at the transducer."
+        },
+        {
+          "text": "It causes a timing latency between GNSS and echosounder.",
+          "isCorrect": false,
+          "rationale": "Latency is a synchronisation or communication issue, not a result of acoustic measurement errors."
+        }
+      ],
+      "hint": "Think about how the echosounder calculates the exact angles for the individual beams in the swath."
+    },
+    {
+      "question": "What type of terrain is essential for resolving pitch error during a patch test?",
+      "answerOptions": [
+        {
+          "text": "A uniform slope where lines are run in opposite directions over the same track.",
+          "isCorrect": true,
+          "rationale": "Without a slope or a distinct seabed feature, there is no measurable depth offset along the track that can be isolated as a pitch error."
+        },
+        {
+          "text": "A completely flat seabed to avoid refraction interference.",
+          "isCorrect": false,
+          "rationale": "A flat seabed is used to resolve roll errors, since pitch errors are not visible against a horizontal surface."
+        },
+        {
+          "text": "A vertical wreck or pipeline in deep water.",
+          "isCorrect": false,
+          "rationale": "Distinct features can be used, but a uniform slope provides a cleaner data signature for pitch analysis."
+        },
+        {
+          "text": "An area with strong tidal variations.",
+          "isCorrect": false,
+          "rationale": "Tides are a confounding factor that must be corrected for and do not help isolate angular errors."
+        }
+      ],
+      "hint": "Consider why pitch (fore/aft tilt) would not be detectable if the seabed beneath you is perfectly horizontal."
+    },
+    {
+      "question": "In magnetometry, what is the primary difference between using a transverse gradiometer (TVG) and a total field magnetometer?",
+      "answerOptions": [
+        {
+          "text": "The TVG measures the difference between two sensors to eliminate regional variations and diurnal drift, which increases sensitivity to small, shallow objects.",
+          "isCorrect": true,
+          "rationale": "By measuring the gradient, the background noise from the Earth's magnetic field is removed, which highlights local anomalies from, for example, UXO or wreck debris."
+        },
+        {
+          "text": "The total field magnetometer measures only vertical magnetic vectors while the TVG measures horizontal vectors.",
+          "isCorrect": false,
+          "rationale": "Both systems measure field intensity, but the TVG focuses on the spatial change (gradient) rather than the absolute value."
+        },
+        {
+          "text": "The TVG does not require navigation data because it measures relative values.",
+          "isCorrect": false,
+          "rationale": "All magnetometry requires accurate positioning to determine where the anomalies are located geographically."
+        },
+        {
+          "text": "The total field magnetometer is immune to electrical interference from the ROV.",
+          "isCorrect": false,
+          "rationale": "Both systems are extremely sensitive to electromagnetic interference from the host vehicle."
+        }
+      ],
+      "hint": "Think about the advantage of comparing two measurements taken simultaneously at a short distance from each other."
+    },
+    {
+      "question": "When processing sound velocity profiles, why is the harmonic mean used instead of the arithmetic mean?",
+      "answerOptions": [
+        {
+          "text": "The harmonic mean correctly represents the average velocity based on the time sound spends in each layer.",
+          "isCorrect": true,
+          "rationale": "Since we measure travel time through layers of varying thickness, the harmonic mean provides the most physically correct range calculation."
+        },
+        {
+          "text": "The arithmetic mean is invalid when the water depth exceeds $1000\\text{ m}$.",
+          "isCorrect": false,
+          "rationale": "The arithmetic mean can always be calculated, but it introduces a systematic error in acoustic range calculations."
+        },
+        {
+          "text": "Harmonic means eliminate the need to account for salinity.",
+          "isCorrect": false,
+          "rationale": "Salinity must still be known to calculate the velocity in each individual layer."
+        },
+        {
+          "text": "The harmonic mean yields a higher value that compensates for system latency.",
+          "isCorrect": false,
+          "rationale": "The harmonic mean is in fact always less than or equal to the arithmetic mean, and it has nothing to do with latency."
+        }
+      ],
+      "hint": "Sound velocity is distance divided by time. Consider which variable (time or distance) is constant when measuring through water layers."
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "title": "Subsea Survey Flashcards",
+  "cards": [
+    {
+      "front": "What is the primary purpose of an as-built survey of subsea infrastructure?",
+      "back": "To create a permanent record of the assets' exact position and condition as a baseline for future inspections."
+    },
+    {
+      "front": "In pipeline surveying, what does the term 'Product' define?",
+      "back": "It is a collective term for pipelines, umbilicals or cables."
+    },
+    {
+      "front": "What is the formula for Depth of Cover (DOC)?",
+      "back": "DOC = Seabed level directly above the product - TOP (Top of Pipe) depth."
+    },
+    {
+      "front": "What is the difference between DOC (Depth of Cover) and DOL (Depth of Lowering)?",
+      "back": "DOC measures the cover above the product, while DOL measures the distance from the top of the product down to the surrounding Mean Seabed Level (MSBL)."
+    },
+    {
+      "front": "What does the abbreviation MSBL stand for in the context of profile surveying?",
+      "back": "Mean Seabed Level (the average seabed level along the product)."
+    },
+    {
+      "front": "Why is MSBL a local reference rather than a vertical datum reference?",
+      "back": "Because it refers to the natural seabed along the product rather than a fixed level such as LAT or MSL."
+    },
+    {
+      "front": "In an as-built survey, why is KP (Kilometre Point) along the centreline usually longer than a straight-line distance?",
+      "back": "Because the pipeline in reality follows curves and bends on the seabed, which increases the actual length."
+    },
+    {
+      "front": "What is the typical horizontal accuracy requirement for an as-built survey of a pipeline?",
+      "back": "$2-5\\text{ m}$ horizontally."
+    },
+    {
+      "front": "What vertical accuracy is normally required for an as-built survey of a subsea structure?",
+      "back": "$0.3\\text{ m}$ vertically."
+    },
+    {
+      "front": "What is the purpose of a 'Pre-Lay Survey'?",
+      "back": "To verify that the planned route is free from obstructions and to confirm the position of existing infrastructure."
+    },
+    {
+      "front": "What is 'Touchdown Monitoring' during pipe-laying?",
+      "back": "Continuous monitoring of the point where the product meets the seabed to ensure it lands within the permitted corridor."
+    },
+    {
+      "front": "Why is precision (repeatability) often more important than absolute accuracy in construction support?",
+      "back": "Stable and predictable position data allows the installation team to carry out work safely, even if there is a small constant offset."
+    },
+    {
+      "front": "What happens if the survey team and the engineering team use different geodetic datums?",
+      "back": "Every reported position will be incorrect, which can lead to structures being placed in the wrong location."
+    },
+    {
+      "front": "What is the purpose of an 'Inclinometer' when installing a subsea structure?",
+      "back": "To measure and monitor the structure's verticality (tilt) to ensure it remains within the design limits, typically $< 0.5-1.0^\\circ$."
+    },
+    {
+      "front": "What is the operating principle of a Pipetracker (e.g. TSS 440)?",
+      "back": "It uses electromagnetic induction to detect eddy currents in metallic pipelines."
+    },
+    {
+      "front": "What type of pipelines can a Pipetracker *not* detect?",
+      "back": "Non-metallic pipes, such as plastic lines without reinforcement or concrete-coated pipes without metallic components."
+    },
+    {
+      "front": "How does ROV speed affect data quality from a Pipetracker?",
+      "back": "High speed reduces the signal-to-noise ratio and can cause loss of pipe detection."
+    },
+    {
+      "front": "What is the definition of subsea metrology?",
+      "back": "A precision measurement of the relative distance and orientation between two reference points on subsea structures."
+    },
+    {
+      "front": "Why are metrology measurements performed?",
+      "back": "To obtain exact dimensions for the fabrication of spools or jumpers that will connect the structures."
+    },
+    {
+      "front": "What are the three primary translation values required from a metrology?",
+      "back": "$DX$, $DY$ and $DZ$ (relative position in three axes)."
+    },
+    {
+      "front": "What statistical confidence level is normally used for metrology tolerances?",
+      "back": "$2 \\sigma$ ($95\\%$ confidence)."
+    },
+    {
+      "front": "What is a typical total tolerance for horizontal translation ($Dx$ and $Dy$) in acoustic metrology?",
+      "back": "$\\pm 100\\text{ mm}$."
+    },
+    {
+      "front": "Why must the scale factor be set to $1$ for metrology?",
+      "back": "Because acoustic measurements give actual distances that should not be scaled to a geodetic grid."
+    },
+    {
+      "front": "What is 'Convergence' (meridian convergence) in the context of gyro measurements?",
+      "back": "The difference between True North and Grid North at a specific position."
+    },
+    {
+      "front": "Why should depth measurements for metrology not be performed at tidal high or low water?",
+      "back": "Because the rate of change is non-linear at those points, making it difficult to interpolate correct tidal adjustments between observations."
+    },
+    {
+      "front": "What is the purpose of a 'Depth Loop' in metrology?",
+      "back": "To establish the vertical relationship between all measurement points and to check instrument stability."
+    },
+    {
+      "front": "How does Sound Velocity affect LBL metrology?",
+      "back": "It is critical for converting acoustic travel times into accurate distances in metres."
+    },
+    {
+      "front": "What does 'Multipath' mean in acoustic positioning near subsea structures?",
+      "back": "Acoustic signals reflecting off steel structures, creating erroneously long travel times and ranges."
+    },
+    {
+      "front": "What is the principle of INS-based metrology (SLAM)?",
+      "back": "Using a high-grade inertial navigation system on an ROV to measure the relative vector by flying between the structures."
+    },
+    {
+      "front": "What is the main advantage of SLAM metrology compared with traditional LBL?",
+      "back": "It is significantly faster because no deployment or calibration of transponder arrays is required."
+    },
+    {
+      "front": "What type of inertial navigation system (INS) is required for SLAM metrology?",
+      "back": "Navigation-grade INS (with very low drift rate, e.g. $< 0.02\\text{ m/min}$)."
+    },
+    {
+      "front": "Why is DVL 'bottom lock' critical for INS measurements?",
+      "back": "Without velocity data from the DVL, the INS system's position drift increases extremely rapidly."
+    },
+    {
+      "front": "What does a 'clover-leaf' or 'figure-of-eight' pattern mean in SLAM metrology?",
+      "back": "Survey routes that cross the baseline repeatedly to provide geometric strength and minimise drift in the solution."
+    },
+    {
+      "front": "What is the purpose of 'Dwell time' at each target during a SLAM measurement?",
+      "back": "To allow the system to collect acoustic observations to stabilise and constrain INS drift."
+    },
+    {
+      "front": "What is 'Slop' in the context of a metrology stab and receptacle?",
+      "back": "The mechanical play or clearance in the interface that can cause measurement errors in angle and position."
+    },
+    {
+      "front": "How is 'Slop' tested in a mechanical interface before mobilisation?",
+      "back": "By rotating the instrument clockwise and anticlockwise (nudge test) and comparing the difference in gyro readings."
+    },
+    {
+      "front": "Why do gyros require 'settling time' after being lowered into cold water?",
+      "back": "Temperature differences affect the instrument's internal mechanics/optics; it needs to reach thermal equilibrium to provide stable values."
+    },
+    {
+      "front": "What is a 'Braced Quadrilateral' in an LBL array?",
+      "back": "An array consisting of four transponders where all inter-distances are measured to create a geometrically strong figure."
+    },
+    {
+      "front": "Why is a $2D$ adjustment often used instead of $3D$ for the final LBL array in metrology?",
+      "back": "Depth measurements from Digiquartz sensors are usually much more accurate than vertical data from acoustics."
+    },
+    {
+      "front": "What is 'VRT' (Vertical Range to Target) in the context of pipetracking?",
+      "back": "The vertical distance from the sensor to the pipeline."
+    },
+    {
+      "front": "How does high salinity or conductivity in the seabed affect a Pipetracker?",
+      "back": "It attenuates the electromagnetic signals, reducing the detection range."
+    },
+    {
+      "front": "What is the purpose of 'Online Eventing' during a pipeline inspection?",
+      "back": "To log events such as field joints, anodes, free spans or debris in real time with exact coordinates."
+    },
+    {
+      "front": "What defines a 'Free Span'?",
+      "back": "A section of the pipeline that is not supported by the seabed."
+    },
+    {
+      "front": "Why should video overlay with data be avoided during digital recording?",
+      "back": "Because raw data on the screen cannot be corrected afterwards and may obscure important visual information."
+    },
+    {
+      "front": "What is 'Catenary layback' in CTL (Cut-to-Length) calculations?",
+      "back": "The horizontal difference between the vessel's position and the pipeline's touchdown point on the seabed due to the pipe's catenary curve in the water."
+    },
+    {
+      "front": "What is the purpose of a 'Stinger' on a lay vessel?",
+      "back": "A ramp that extends from the vessel to support and control the bending of the pipeline as it leaves the vessel."
+    },
+    {
+      "front": "Why is 'Forward-Backward agreement' an important QC parameter in SLAM?",
+      "back": "It shows whether the computed trajectory is consistent when data is processed both forward and backward in time."
+    },
+    {
+      "front": "What are 'Residuals' in a least squares adjustment of an acoustic array?",
+      "back": "The difference between the actually measured ranges and the ranges that fit into the computed mathematical model."
+    },
+    {
+      "front": "How does thruster wash (water flow from propellers) affect depth measurements?",
+      "back": "It creates local pressure changes that can produce noise or erroneous spikes in Digiquartz data."
+    },
+    {
+      "front": "What is the advantage of 'Sparse LBL' compared with full LBL?",
+      "back": "It requires fewer transponders (1-3 units) but can still effectively constrain INS drift within a work area."
+    },
+    {
+      "front": "What does 'TDP' mean in the context of pipelay?",
+      "back": "Touchdown Point -- the point where the pipeline first touches the seabed."
+    },
+    {
+      "front": "What role does a 'Party Chief' play when data quality issues arise?",
+      "back": "To decide whether the survey should be stopped or continued after consultation with the client if quality falls below acceptable levels."
+    },
+    {
+      "front": "Why is 'Verticality' critical for, for example, a wellhead installation?",
+      "back": "To ensure that future drilling or intervention equipment can be lowered without mechanical obstructions."
+    },
+    {
+      "front": "What does a 'Pitch and Roll' sensor measure?",
+      "back": "Rotation about the X-axis (tilt fore/aft) and the Y-axis (tilt port/starboard) respectively."
+    },
+    {
+      "front": "What is 'DCC' in pipeline navigation?",
+      "back": "Distance Cross Course -- the perpendicular distance from the planned route."
+    },
+    {
+      "front": "What is the 'Along-track' position during pipelay?",
+      "back": "The position measured along the planned route, often expressed as KP."
+    },
+    {
+      "front": "What is the purpose of 'A&R' (Abandonment and Recovery) in offshore construction?",
+      "back": "Procedures for safely lowering or recovering a pipeline from the seabed, for example during bad weather."
+    },
+    {
+      "front": "How does pipeline diameter affect pipetracking accuracy?",
+      "back": "A larger diameter generally gives a stronger signal and therefore a better detection range."
+    },
+    {
+      "front": "What is an 'Anode' event during inspection?",
+      "back": "The positioning of sacrificial anodes used for cathodic protection of the pipeline."
+    },
+    {
+      "front": "Why are accurate offset measurements between ROV sensors critical?",
+      "back": "So that correct corrections for pitch, roll and heading can be applied to the data being collected (e.g. MBES or Pipetracker)."
+    },
+    {
+      "front": "What is a 'Digiquartz' known for in the subsea industry?",
+      "back": "Being an extremely accurate pressure sensor for precision depth measurement."
+    },
+    {
+      "front": "What is 'USBL' (Ultra-Short Baseline)?",
+      "back": "An acoustic positioning system that uses a transducer on the vessel to measure range and angle to a transponder on the seabed or ROV."
+    },
+    {
+      "front": "What is 'LBL' (Long Baseline)?",
+      "back": "A system that uses an array of fixed transponders on the seabed to provide the highest possible relative positioning accuracy."
+    },
+    {
+      "front": "In metrology, what is a 'Seabed tripod'?",
+      "back": "A frame placed on the seabed to hold a transponder stable during the measurement."
+    },
+    {
+      "front": "What is 'Heading tolerance' in a vertical metrology connection?",
+      "back": "The tolerance for rotation about the Z-axis, which is often more generous for vertical connections than for horizontal ones."
+    },
+    {
+      "front": "What is meant by 'Gooseneck clearance'?",
+      "back": "The vertical distance between the seabed and the curved section of a spool to avoid contact."
+    },
+    {
+      "front": "What is the purpose of the 'Box-in' technique for LBL orientation?",
+      "back": "To determine the absolute coordinates of a transponder by having the vessel sail in a pattern around it and taking USBL fixes."
+    },
+    {
+      "front": "How often should Sound Velocity (SV) be updated during an acoustic measurement?",
+      "back": "Continuously, or whenever there are significant changes in water temperature or salinity, to avoid scaling errors in ranges."
+    },
+    {
+      "front": "What is 'Cross-track offset' in as-built reporting?",
+      "back": "The horizontal deviation between the actually installed position and the theoretical design line."
+    },
+    {
+      "front": "Which document governs accuracy requirements if the project specification and industry standard differ?",
+      "back": "The project specification (Client specification) always takes precedence."
+    },
+    {
+      "front": "What does 'Deviation analysis' mean in an as-built report?",
+      "back": "A review of all objects that have fallen outside the predefined design tolerances."
+    },
+    {
+      "front": "What is the purpose of a 'Tidal Correction'?",
+      "back": "To adjust measured depth values to compensate for tidal variations so that all data refers to the same vertical level."
+    },
+    {
+      "front": "What is a 'Field Joint'?",
+      "back": "The joint between two pipe sections that is welded together and coated on board the lay vessel."
+    },
+    {
+      "front": "What is 'DOT' (Depth of Trench)?",
+      "back": "The depth of the trench measured from the surrounding seabed down to the trench bottom."
+    },
+    {
+      "front": "How can 'Acoustic interference' affect USBL positioning during construction?",
+      "back": "Noise from thrusters or construction machinery can drown out acoustic signals and cause position jumps."
+    },
+    {
+      "front": "Why is 'Verticality monitoring' important during installation of monopiles?",
+      "back": "To ensure that the pile is sufficiently straight for the upper structures to be assembled correctly."
+    },
+    {
+      "front": "What is 'DVL' (Doppler Velocity Log)?",
+      "back": "An acoustic sensor that measures the vehicle's velocity relative to the seabed."
+    },
+    {
+      "front": "Why is an 'Alignment check' of gyros important before offshore use?",
+      "back": "To ensure that the sensor's internal zero point corresponds with the external mechanical reference marks on the instrument housing."
+    },
+    {
+      "front": "What is 'GVI' (General Visual Inspection)?",
+      "back": "A visual check of the equipment's general condition on the seabed using ROV cameras."
+    },
+    {
+      "front": "What is the purpose of 'KP markers' on the seabed?",
+      "back": "Physical reference points placed to facilitate navigation and verification along a pipeline route."
+    },
+    {
+      "front": "What is 'Bathymetry'?",
+      "back": "Measurement of water depth and seabed topography."
+    },
+    {
+      "front": "How does 'Thermal equilibrium' affect an INS system?",
+      "back": "Temperature changes can cause small mechanical stresses leading to increased drift if the system has not been stabilised."
+    },
+    {
+      "front": "What is meant by 'Braced' in an array adjustment?",
+      "back": "That there are redundant measurements that lock the geometry and make it possible to detect errors."
+    },
+    {
+      "front": "What is a 'Kalman Filter' in a navigation context?",
+      "back": "An algorithm that combines measurement data from different sensors (e.g. INS, DVL, USBL) to give the most probable estimate of position and velocity."
+    },
+    {
+      "front": "What is the difference between 'Heading' and 'Bearing'?",
+      "back": "Heading is the direction the vehicle is pointing, while Bearing is the direction to a specific target."
+    },
+    {
+      "front": "What is a 'Sacrificial Anode'?",
+      "back": "A metal block (often zinc or aluminium alloy) that corrodes instead of the pipeline to protect the steel through cathodic protection."
+    },
+    {
+      "front": "What is 'MBES' (Multi-Beam Echo Sounder)?",
+      "back": "An echo sounder that transmits a fan of sound beams to create a detailed $3D$ map of the seabed."
+    },
+    {
+      "front": "Why are 'Check shots' used in USBL positioning?",
+      "back": "To verify the system's accuracy by measuring against a known point on the seabed."
+    },
+    {
+      "front": "What is 'Slant Range'?",
+      "back": "The direct line-of-sight distance between an acoustic transmitter and receiver."
+    },
+    {
+      "front": "What is a 'CTD'?",
+      "back": "An instrument that measures Conductivity (salinity), Temperature and Depth (pressure)."
+    },
+    {
+      "front": "How is the water column density profile determined?",
+      "back": "By using measurement data from a CTD profile cast from the surface to the seabed."
+    },
+    {
+      "front": "What is a 'Jumper'?",
+      "back": "A short connecting pipe that links two subsea structures."
+    },
+    {
+      "front": "What is a 'PLET' (Pipeline End Termination)?",
+      "back": "The structure at the end of a pipeline where connections to other systems are made."
+    },
+    {
+      "front": "Why is 'Transducer height' important to measure during metrology?",
+      "back": "To be able to relate the acoustic centre to the physical reference point on the structure."
+    },
+    {
+      "front": "What is the purpose of 'Smoothing' navigation data?",
+      "back": "To remove noise and sudden jumps in position to create a realistic trajectory."
+    },
+    {
+      "front": "What is 'Multipath rejection'?",
+      "back": "A software function that filters out acoustic signals believed to be reflections rather than direct paths."
+    },
+    {
+      "front": "What is 'ROVNAV'?",
+      "back": "An acoustic instrument mounted on the ROV that can function as both a USBL transponder and an LBL interrogator."
+    },
+    {
+      "front": "What is a 'G882' in a subsea context?",
+      "back": "A marine magnetometer (Geometrics G-882) commonly used for pipeline and UXO detection surveys."
+    },
+    {
+      "front": "Why is a 'Spool As-Built' performed?",
+      "back": "To document the spool's exact profile and position after the connections have been locked."
+    }
+  ]
+}

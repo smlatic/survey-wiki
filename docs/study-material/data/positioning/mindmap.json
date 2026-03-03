@@ -1,0 +1,163 @@
+{
+  "name": "Offshore Survey Knowledge Base",
+  "children": [
+    {
+      "name": "Positioning Systems (GNSS)",
+      "children": [
+        {
+          "name": "DGNSS Integrity Check",
+          "children": [
+            {
+              "name": "Purpose: Verify health and accuracy"
+            },
+            {
+              "name": "Method: Comparison with Total Station"
+            },
+            {
+              "name": "Criteria: Horizontal deviation < 0.30 m"
+            }
+          ]
+        },
+        {
+          "name": "GNSS Intersystem Check",
+          "children": [
+            {
+              "name": "Static: Compare primary/secondary at quayside"
+            },
+            {
+              "name": "Dynamic: Box pattern (N, E, S, W)"
+            },
+            {
+              "name": "Purpose: Identify antenna offset errors"
+            }
+          ]
+        },
+        {
+          "name": "GNSS Height Check",
+          "children": [
+            {
+              "name": "Method: Compare with 3rd-party tide gauge"
+            },
+            {
+              "name": "Duration: One full tidal cycle (~12-13 h for semi-diurnal)"
+            },
+            {
+              "name": "Acceptance: RMS < 0.10 m"
+            }
+          ]
+        },
+        {
+          "name": "Interference (Jamming/Spoofing)",
+          "children": [
+            {
+              "name": "Detection: Monitor AGC (Automatic Gain Control)"
+            },
+            {
+              "name": "Mitigation: Anti-jam antennas (CRPA/LEANA)"
+            },
+            {
+              "name": "Environment: Solar Cycle 25 and Scintillation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Acoustic Positioning (USBL & LBL)",
+      "children": [
+        {
+          "name": "HiPAP USBL",
+          "children": [
+            {
+              "name": "Calibration: Transducer alignment (APOS)"
+            },
+            {
+              "name": "Verification: Spin test and transit lines"
+            },
+            {
+              "name": "Equipment: cNODE and MST transponders"
+            },
+            {
+              "name": "Latency: Responder delay check"
+            }
+          ]
+        },
+        {
+          "name": "LBL (Long Baseline)",
+          "children": [
+            {
+              "name": "Principle: Range measurement to a fixed array"
+            },
+            {
+              "name": "Calibration: Surface (circle) or subsea method"
+            },
+            {
+              "name": "Application: Metrology and construction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inertial Navigation Systems (INS)",
+      "children": [
+        {
+          "name": "Principles & Aiding",
+          "children": [
+            {
+              "name": "Sensors: 3 gyroscopes and 3 accelerometers"
+            },
+            {
+              "name": "DVL aiding: Reduces drift to 0.02-0.06% of distance"
+            },
+            {
+              "name": "Kalman filter: Estimates states and uncertainty"
+            }
+          ]
+        },
+        {
+          "name": "Systems & Drift",
+          "children": [
+            {
+              "name": "Exail (PHINS/ROVINS): FOG-based, DelphINS software"
+            },
+            {
+              "name": "Sonardyne (SPRINT): RLG-based, Janus/Lodestar"
+            },
+            {
+              "name": "Start-up: Coarse and fine alignment"
+            }
+          ]
+        },
+        {
+          "name": "INS/DVL Calibration",
+          "children": [
+            {
+              "name": "Method: Straight line (>1000 m), constant speed"
+            },
+            {
+              "name": "Parameters: Alignment angles and scale factor"
+            },
+            {
+              "name": "Verification: Independent dataset (return leg)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tides & Vertical Datums",
+      "children": [
+        {
+          "name": "Reduction Methods: Gauge, Predicted, GNSS tide"
+        },
+        {
+          "name": "Datums: LAT (Chart), MSL (Engineering), Ellipsoid"
+        },
+        {
+          "name": "IHO S-44: Requirements for vertical uncertainty (TVU)"
+        }
+      ]
+    }
+  ]
+}

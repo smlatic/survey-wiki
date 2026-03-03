@@ -77,6 +77,14 @@ General guides and procedures. Always refer to the procedures and standards requ
 
     [:octicons-arrow-right-24: 6 references](reference/index.md)
 
+-   :material-book-open-page-variant:{ .lg .middle } **Study Material**
+
+    ---
+
+    Interactive quizzes, flashcards, and mind maps to test your knowledge across all survey topics
+
+    [:octicons-arrow-right-24: Start studying](study-material/index.md)
+
 </div>
 
 ---
