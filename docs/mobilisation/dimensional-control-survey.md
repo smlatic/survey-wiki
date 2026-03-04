@@ -372,10 +372,9 @@ For surveys with 3+ setups, use USMN to check the overall network quality:
 
 From a best-fit circle or plane, with the working frame set to the structure frame:
 
-```
-pitch = -arctan(dY / dZ)
-roll  =  arctan(dX / dZ)
-```
+$$\text{pitch} = -\arctan\left(\frac{dY}{dZ}\right)$$
+
+$$\text{roll} = \arctan\left(\frac{dX}{dZ}\right)$$
 
 Where dX, dY, dZ are the offset components between the feature centre point and its point on the normal vector.
 

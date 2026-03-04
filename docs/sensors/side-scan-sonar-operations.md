@@ -118,7 +118,7 @@ The raw sonar image is plotted in slant range (the direct distance from the tran
 
 The correction is:
 
-**Ground range = sqrt(slant_range^2 - altitude^2)**
+$$\text{Ground Range} = \sqrt{\text{slant\_range}^2 - \text{altitude}^2}$$
 
 At long range where the beam is nearly horizontal, slant range and ground range are nearly equal. Near the nadir, the distortion is severe. Most sonar processing software applies this correction automatically (called "slant range correction" or "ground range projection"), but the operator must verify it is applied and that the altitude input is correct.
 
@@ -136,7 +136,7 @@ For towed systems, the position of the towfish must be calculated from the vesse
 
 **Simple layback estimate:**
 
-**Layback = sqrt(cable_out^2 - towfish_depth^2)**
+$$\text{Layback} = \sqrt{\text{cable\_out}^2 - \text{towfish\_depth}^2}$$
 
 This assumes a straight cable with no catenary, which is a reasonable approximation when the cable is taut and the towfish is deep. For more accurate layback, use a cable angle sensor at the stern sheave or an acoustic tracking system (USBL on the towfish).
 
@@ -154,7 +154,7 @@ Targets appear in the sonar image as a combination of a bright return (from the 
 
 **Target height estimation from shadow length:**
 
-**Target height = (shadow_length x altitude) / (slant_range_to_shadow_end - slant_range_to_target)**
+$$\text{Target Height} = \frac{\text{shadow\_length} \times \text{altitude}}{\text{slant\_range\_to\_shadow\_end} - \text{slant\_range\_to\_target}}$$
 
 Where:
 

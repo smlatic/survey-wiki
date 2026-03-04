@@ -207,17 +207,17 @@ Always use **wideband transponders** in preference over legacy tone-based transp
 When using a directional transponder, ensure the vessel's transceiver remains within the optimal part of the beam. The maximum horizontal offset can be calculated:
 
 !!! example "Beam Width Formula"
-    **Tan(0.5 x BeamWidth) x WD = Maximum Horizontal Offset**
+    $$\tan(0.5 \times \text{BeamWidth}) \times \text{WD} = \text{Maximum Horizontal Offset}$$
 
     Example with 30 deg transponder in 850 m WD:
 
-    `Tan(0.5 x 30) x 850 = 228 m`
+    \(\tan(0.5 \times 30) \times 850 = 228\) m
 
     In this case, limit cardinal points to ~200 m offset. However, 200 m offset in 850 m depth provides poor geometry -- an omni-directional transponder allowing 500 m offset would be more effective.
 
     In 1865 m WD with the same 30 deg transponder:
 
-    `Tan(0.5 x 30) x 1865 = 500 m`
+    \(\tan(0.5 \times 30) \times 1865 = 500\) m
 
     This is why directional transponders are only recommended for calibration in water depths greater than 1800 m -- it is only at these depths that a 500 m horizontal offset fits within the beam.
 

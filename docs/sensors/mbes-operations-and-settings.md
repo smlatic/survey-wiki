@@ -310,7 +310,7 @@ TVU is a one-dimensional quantity encompassing all contributing vertical measure
 
 The maximum allowable TVU at depth *d* is:
 
-**TVU_max(d) = sqrt( a^2 + (b x d)^2 )**
+$$\text{TVU}_{\max}(d) = \sqrt{a^2 + (b \times d)^2}$$
 
 Where *a* is the depth-independent coefficient and *b* is the depth-dependent coefficient (values per survey order from the table above).
 
@@ -328,7 +328,7 @@ Where *a* is the depth-independent coefficient and *b* is the depth-dependent co
 
 The root-sum-square of all contributing factors yields the reduced depth error at 68% confidence. TVU is reported at the **95% confidence level** as recommended by IHO S-44:
 
-**TVU = 1.96 x sigma_d**
+$$\text{TVU} = 1.96 \times \sigma_d$$
 
 ---
 
@@ -349,7 +349,7 @@ THU is a two-dimensional quantity encompassing all contributing horizontal measu
 
 The root-sum-square of all contributing factors yields the position error at 39.4% confidence. THU is reported at the **95% confidence level**:
 
-**THU = 2.45 x sigma_P**
+$$\text{THU} = 2.45 \times \sigma_P$$
 
 ---
 

@@ -58,7 +58,7 @@ Universal Transverse Mercator (UTM) projects the ellipsoid onto a flat surface f
 
 #### Zone Selection
 
-**Zone number = floor((longitude + 180) / 6) + 1**
+$$\text{Zone number} = \left\lfloor \frac{\text{longitude} + 180}{6} \right\rfloor + 1$$
 
 Example: A survey at longitude 2.5 degrees East: floor((2.5 + 180) / 6) + 1 = floor(30.42) + 1 = 30 + 1 = **Zone 31N**
 
@@ -73,7 +73,7 @@ Grid north in UTM does not equal true north except on the central meridian. The 
 
 - **At the central meridian**: convergence = 0 degrees
 - **At the zone edges (3 degrees from CM)**: convergence reaches its maximum, typically 1 to 3 degrees depending on latitude
-- **Formula (approximate)**: convergence = delta_longitude x sin(latitude)
+- **Formula (approximate)**: \(\text{convergence} = \Delta\text{longitude} \times \sin(\text{latitude})\)
 
 This matters for heading-dependent operations. If the navigation system outputs grid bearings and the client expects true bearings (or vice versa), the convergence angle must be applied.
 

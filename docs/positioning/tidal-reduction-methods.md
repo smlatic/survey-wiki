@@ -255,7 +255,7 @@ IHO S-44 Edition 6.1.0 specifies the maximum allowable uncertainty for tidal red
 
 The tidal reduction component must not dominate the TVU budget. For a typical IHO Order 1a survey in 30 m water depth, the TVU allowance is:
 
-**TVU = sqrt(0.50^2 + (0.013 x 30)^2) = sqrt(0.25 + 0.152) = 0.63 m at 95% confidence**
+$$TVU = \sqrt{0.50^2 + (0.013 \times 30)^2} = \sqrt{0.25 + 0.152} = 0.63 \text{ m at 95% confidence}$$
 
 If the tidal reduction uncertainty alone consumes 0.30 m of this budget, it leaves very little margin for heave, sound velocity, and other error sources.
 

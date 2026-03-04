@@ -108,7 +108,7 @@ If the MRU is not at the transducer location, the vessel's pitch and roll create
 
 The formula:
 
-**Induced heave = Lx * sin(pitch) + Ly * sin(roll)**
+$$Induced\ heave = L_x \times \sin(pitch) + L_y \times \sin(roll)$$
 
 Where:
 
@@ -129,13 +129,13 @@ Where:
 
 The navigation software computes total heave at the transducer as:
 
-**Heave_transducer = Heave_MRU + Lx * sin(pitch) + Ly * sin(roll)**
+$$Heave_{transducer} = Heave_{MRU} + L_x \times \sin(pitch) + L_y \times \sin(roll)$$
 
 ### Pitch and Roll Effect on Outer Beam Bathymetry
 
 Even small attitude errors cause significant depth errors at the outer beams of a multibeam swath. The depth error from an attitude error is:
 
-**Depth error = slant_range * sin(attitude_error)**
+$$Depth\ error = slant\_range \times \sin(attitude\_error)$$
 
 | Beam Angle | Water Depth | Slant Range | Depth Error at 0.1 deg Attitude Error |
 |:-:|:-:|:-:|:-:|

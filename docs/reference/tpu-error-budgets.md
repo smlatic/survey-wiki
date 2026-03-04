@@ -45,9 +45,11 @@ Every measurement has uncertainty. In a multibeam bathymetric survey, the final 
 
 When individual error sources are independent (uncorrelated), they combine using the Root Sum of Squares (RSS) method:
 
-**Total = sqrt(a^2 + b^2 + c^2 + ...)**
+$$
+\sigma_{total} = \sqrt{a^2 + b^2 + c^2 + \cdots}
+$$
 
-Where a, b, c, etc. are the individual 1-sigma (68%) uncertainty values for each error source.
+Where \(a, b, c\), etc. are the individual 1-sigma (68%) uncertainty values for each error source.
 
 The key property of RSS: the total is always dominated by the largest individual component. A single large error source matters far more than several small ones.
 
@@ -58,7 +60,7 @@ The key property of RSS: the total is always dominated by the largest individual
     - Tidal reduction: 0.10 m
     - Sound velocity (depth-dependent): 0.08 m
 
-    RSS total (1-sigma) = sqrt(0.05^2 + 0.10^2 + 0.08^2) = sqrt(0.0025 + 0.0100 + 0.0064) = sqrt(0.0189) = **0.137 m**
+    RSS total (1-sigma) = \(\sqrt{0.05^2 + 0.10^2 + 0.08^2} = \sqrt{0.0025 + 0.0100 + 0.0064} = \sqrt{0.0189} =\) **0.137 m**
 
     At 95% confidence (multiply by 1.96): **0.269 m**
 
@@ -102,13 +104,15 @@ IHO S-44 Edition 6.1.0 defines the maximum allowable THU and TVU for each survey
 
 TVU is computed using the formula:
 
-**TVU = sqrt(a^2 + (b x d)^2)**
+$$
+TVU = \sqrt{a^2 + (b \times d)^2}
+$$
 
 Where:
 
-- **a** = constant depth-independent uncertainty (metres)
-- **b** = coefficient of depth-dependent uncertainty (dimensionless)
-- **d** = depth (metres)
+- \(a\) = constant depth-independent uncertainty (metres)
+- \(b\) = coefficient of depth-dependent uncertainty (dimensionless)
+- \(d\) = depth (metres)
 
 | Order | a (metres) | b | TVU at 10 m | TVU at 30 m | TVU at 50 m | TVU at 100 m |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -119,7 +123,7 @@ Where:
 | **2** | 1.00 | 0.023 | 1.00 m | 1.16 m | 1.49 m | 2.47 m |
 
 !!! warning "Depth Dependence"
-    At shallow depths (< 20 m), the constant term **a** dominates the TVU budget. At deeper depths (> 50 m), the depth-dependent term **b x d** becomes increasingly significant. This means that the relative difficulty of meeting the specification changes with depth. Exclusive Order at 100 m depth requires TVU < 0.76 m, which is challenging for any system.
+    At shallow depths (< 20 m), the constant term \(a\) dominates the TVU budget. At deeper depths (> 50 m), the depth-dependent term \(b \times d\) becomes increasingly significant. This means that the relative difficulty of meeting the specification changes with depth. Exclusive Order at 100 m depth requires TVU < 0.76 m, which is challenging for any system.
 
 ---
 
@@ -173,9 +177,9 @@ The uncertainty of outer beam soundings is significantly larger than nadir sound
 
 **Scenario**: Vessel MBES survey, 50 m water depth, IHO Order 1a required.
 
-**IHO 1a TVU allowance at 50 m**: sqrt(0.50^2 + (0.013 x 50)^2) = sqrt(0.25 + 0.4225) = sqrt(0.6725) = **0.82 m (95%)**
+**IHO 1a TVU allowance at 50 m**: \(\sqrt{0.50^2 + (0.013 \times 50)^2} = \sqrt{0.25 + 0.4225} = \sqrt{0.6725} =\) **0.82 m (95%)**
 
-**IHO 1a THU allowance at 50 m**: 5 + 0.05 x 50 = **7.5 m (95%)**
+**IHO 1a THU allowance at 50 m**: \(5 + 0.05 \times 50 =\) **7.5 m (95%)**
 
 ### TVU Budget (Nadir, 1-sigma values)
 
@@ -292,11 +296,11 @@ If the specification cannot be met with the available equipment and conditions, 
 
 | Parameter | Value |
 |:--|:-:|
-| RSS formula | sqrt(a^2 + b^2 + c^2 + ...) |
+| RSS formula | \(\sqrt{a^2 + b^2 + c^2 + \cdots}\) |
 | 1-sigma to 95% confidence | Multiply by 1.96 |
 | IHO Exclusive Order THU | 1 m |
 | IHO Special Order THU | 2 m |
-| IHO 1a TVU formula | sqrt(0.50^2 + (0.013 x d)^2) |
+| IHO 1a TVU formula | \(\sqrt{0.50^2 + (0.013 \times d)^2}\) |
 | IHO 1a TVU at 30 m | 0.60 m |
 | IHO 1a TVU at 50 m | 0.82 m |
 | IHO 1a TVU at 100 m | 1.40 m |
@@ -304,7 +308,7 @@ If the specification cannot be met with the available equipment and conditions, 
 | Typical 60 deg beam TVU multiplier | ~2.5x nadir |
 | PPP horizontal uncertainty (1-sigma) | 0.05-0.15 m |
 | MRU heave uncertainty | 0.05 m or 5% |
-| Heading effect on THU | heading_error x depth x sin(beam_angle) |
+| Heading effect on THU | \(\varepsilon_{hdg} \times d \times \sin(\theta)\) |
 
 ---
 

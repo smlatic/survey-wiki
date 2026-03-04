@@ -71,13 +71,13 @@ Tolerances are at **2 sigma (95% confidence, 2D error circle)**:
 ??? example "Calculating Per-Hub Tolerance"
     The overall tolerance is the RSS (Root Sum of Squares) of the tolerance at each hub:
 
-    ```
-    Overall = sqrt(Hub1² + Hub2²)
+    $$\text{Overall} = \sqrt{\text{Hub1}^2 + \text{Hub2}^2}$$
 
     Where Hub1 = Hub2:
-    100 mm = sqrt(Dx1² + Dx2²)
-    Dx = sqrt(100² / 2) = 70.711 mm
-    ```
+
+    $$100\,\text{mm} = \sqrt{Dx_1^2 + Dx_2^2}$$
+
+    $$Dx = \sqrt{\frac{100^2}{2}} = 70.711\,\text{mm}$$
 
     This formula applies to all translation and rotation values.
 
@@ -107,7 +107,7 @@ When precision machined:
 
 | Error Source | Typical Value |
 |-------------|---------------|
-| Alignment error (stab/receptacle) | sin⁻¹(0.074 / 65.1) = **0.065°** |
+| Alignment error (stab/receptacle) | \(\sin^{-1}(0.074 / 65.1) = 0.065°\) |
 | Total alignment with propagation | **0.09°** |
 | Surface flatness tolerance | 0.00254 mm (concave) |
 | Pitch/Roll error from flatness | **Negligible** |

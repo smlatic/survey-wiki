@@ -56,7 +56,7 @@ The receiver runs two processes in parallel:
 
 Heading accuracy from a GNSS compass is fundamentally limited by the ratio of carrier phase measurement noise to baseline length. The theoretical relationship is:
 
-**Heading accuracy (deg) = arctan(sigma / L) ≈ sigma / L (in radians) ≈ 0.229 / L (in degrees)**
+$$\text{Heading accuracy (deg)} = \arctan\left(\frac{\sigma}{L}\right) \approx \frac{\sigma}{L} \text{ (in radians)} \approx \frac{0.229}{L} \text{ (in degrees)}$$
 
 Where:
 
@@ -78,7 +78,7 @@ Where:
 
 Roll and pitch accuracy follows the same principle but uses the vertical component of the baseline vectors. The formula is:
 
-**Pitch/Roll accuracy (deg) ≈ 0.372 / L**
+$$\text{Pitch/Roll accuracy (deg)} \approx \frac{0.372}{L}$$
 
 This is inherently worse than heading because GNSS vertical positioning is less precise than horizontal (VDOP is typically 1.5-2x HDOP). To get good pitch and roll from GNSS, you need either a long baseline in the relevant axis or, more commonly, an antenna mounted at a significantly different height (e.g. on the superstructure versus the helideck).
 

@@ -146,11 +146,11 @@ When direct vertical measurement is not possible:
 
 1. Measure the straight-line diagonal distance (D) from origin to sensor reference point.
 2. Measure the horizontal distance (H) along the X-Y plane between the two points.
-3. Compute the vertical offset: **Z = sqrt(D^2 - H^2)**
+3. Compute the vertical offset: \(Z = \sqrt{D^2 - H^2}\)
 
 !!! tip "Diagonal Worked Example"
     Measured diagonal from INS to DVL: D = 0.42 m. Measured horizontal distance: H = 0.37 m.
-    Z = sqrt(0.42^2 - 0.37^2) = sqrt(0.1764 - 0.1369) = sqrt(0.0395) = 0.199 m, round to **0.20 m**.
+    \(Z = \sqrt{0.42^2 - 0.37^2} = \sqrt{0.1764 - 0.1369} = \sqrt{0.0395} = 0.199\) m, round to **0.20 m**.
 
 ### Step 5: Record All Measurements
 

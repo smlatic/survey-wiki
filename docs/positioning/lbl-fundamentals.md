@@ -60,9 +60,9 @@ The fundamental measurement is acoustic range. The mobile unit (ROV, vessel hull
 
 **Range from travel time:**
 
-**Range = (Travel time x Sound velocity) / 2** (for two-way ranging)
+$$Range = \frac{Travel\ time \times Sound\ velocity}{2}$$ (for two-way ranging)
 
-**Range = Travel time x Sound velocity** (for one-way ranging with synchronised clocks)
+$$Range = Travel\ time \times Sound\ velocity$$ (for one-way ranging with synchronised clocks)
 
 The accuracy of the position depends on:
 
@@ -106,7 +106,7 @@ The geometry of the transponder array directly determines the achievable positio
 
 The mobile unit sends an acoustic pulse (interrogation). The transponder detects it and replies after a fixed turn-around delay. The range is:
 
-**Range = ((TWTT - Turn_around_delay) x SV) / 2**
+$$Range = \frac{(TWTT - Turn\_around\_delay) \times SV}{2}$$
 
 Advantages: simple, no clock synchronisation needed.
 Limitations: slower (must wait for reply), turn-around delay uncertainty adds range error.
@@ -115,7 +115,7 @@ Limitations: slower (must wait for reply), turn-around delay uncertainty adds ra
 
 Transponders transmit at precisely known times, synchronised to a common clock (typically acoustic clock sync from a master unit or internal atomic clock). The mobile unit measures the one-way travel time.
 
-**Range = Travel_time x SV**
+$$Range = Travel\_time \times SV$$
 
 Advantages: faster update rate (all transponders transmit simultaneously or in rapid sequence), no turn-around delay error.
 Limitations: requires precise clock synchronisation (typically better than 10 microseconds for centimetre accuracy). Clock drift must be monitored and corrected.

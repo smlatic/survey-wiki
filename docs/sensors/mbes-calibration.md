@@ -290,7 +290,7 @@ IHO S-44 does not prescribe specific patch test acceptance criteria in degrees o
 | 1b | 5 m + 5% depth | a = 0.50 m, b = 0.013 |
 | 2 | 20 m + 10% depth | a = 1.00 m, b = 0.023 |
 
-TVU formula: +/- sqrt(a^2 + (b * d)^2) where d = depth in metres.
+TVU formula: \(\pm \sqrt{a^2 + (b \times d)^2}\) where *d* = depth in metres.
 
 !!! note "Client Specifications May Be Tighter"
     Many offshore clients (particularly pipeline and construction support surveys) specify tighter tolerances than IHO S-44. Always check the project-specific scope of work for calibration acceptance criteria before starting.
