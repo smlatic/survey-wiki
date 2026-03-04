@@ -43,7 +43,7 @@ Achievable accuracy depends on environmental conditions:
     Regardless of conditions, the survey crew should always aim for millimetre accuracy. Client-defined tolerances take precedence -- confirm these before mobilisation.
 
 !!! warning "Thermal Expansion of Steel Structures"
-    Steel expands and contracts with temperature. The coefficient of linear thermal expansion for steel is approximately **12 x 10^-6 per degC**, which means a **10 m steel structure expands by approximately 12 mm for every 10 degC temperature increase**.
+    Steel expands and contracts with temperature. The coefficient of linear thermal expansion for steel is approximately \(12 \times 10^{-6}\) per °C, which means a **10 m steel structure expands by approximately 12 mm for every 10 degC temperature increase**.
 
     For vessel surveys, this is significant when comparing measurements taken in different environmental conditions (e.g., drydock in winter vs offshore in summer). Record ambient temperature at the time of survey and apply thermal corrections when comparing against reference measurements taken at a different temperature. For large vessels (100+ m), the total thermal expansion between a cold yard and a warm offshore environment can exceed **50 mm**.
 

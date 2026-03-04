@@ -96,7 +96,7 @@ The usable swath width on each side extends from just beyond the nadir gap to th
 
 For 100% coverage (every point on the seabed is ensonified at least once):
 
-**Line spacing = 2 x (Range - Nadir gap)**
+$$\text{Line spacing} = 2 \times (\text{Range} - \text{Nadir gap})$$
 
 For 200% coverage (every point ensonified from two different directions, required for reliable target detection):
 
@@ -336,13 +336,13 @@ Where:
 | Altitude | 10-15% of range setting |
 | Survey speed (towed) | 3-5 knots |
 | Survey speed (ROV) | 0.5-2 knots |
-| Line spacing (100% coverage) | 2 x (range - nadir gap) |
-| Line spacing (200% coverage) | range - nadir gap |
+| Line spacing (100% coverage) | \(2 \times (R - \text{nadir gap})\) |
+| Line spacing (200% coverage) | \(R - \text{nadir gap}\) |
 | Nadir gap width | Approximately equal to altitude |
-| Ground range correction | sqrt(slant^2 - alt^2) |
-| Target height from shadow | (shadow x alt) / (range_shadow - range_target) |
+| Ground range correction | \(\sqrt{\text{slant}^2 - \text{alt}^2}\) |
+| Target height from shadow | \(\frac{\text{shadow} \times \text{alt}}{R_{shadow} - R_{target}}\) |
 | Minimum run-in distance (towed) | 2-3 x layback |
-| Layback estimate | sqrt(cable_out^2 - depth^2) |
+| Layback estimate | \(\sqrt{\text{cable}^2 - \text{depth}^2}\) |
 
 ---
 
