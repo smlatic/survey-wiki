@@ -243,6 +243,40 @@
   color: #64b5f6;
 }
 
+/* Draft content highlight -- strong yellow background */
+.draft-content {
+  border-left: 6px solid #f9a825;
+  background: #fff9c4 !important;
+  padding: 1.2em 1.5em;
+  margin: 1em 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(249, 168, 37, 0.2);
+}
+
+[data-md-color-scheme="slate"] .draft-content {
+  background: rgba(255, 249, 196, 0.15) !important;
+  border-left-color: #fdd835;
+}
+
+/* Draft page banner -- full-width yellow bar at top */
+.draft-banner {
+  background: #fff176;
+  border: 2px solid #f9a825;
+  border-radius: 8px;
+  padding: 0.8em 1.2em;
+  margin-bottom: 1.5em;
+  font-weight: 600;
+  color: #e65100;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+[data-md-color-scheme="slate"] .draft-banner {
+  background: rgba(255, 241, 118, 0.15);
+  border-color: #fdd835;
+  color: #ffb74d;
+}
+
 /* Handbook hero banner on homepage */
 .hero-banner {
   text-align: center;

@@ -60,4 +60,10 @@ Covers GNSS, USBL, LBL, inertial navigation (INS/DVL), and tidal reduction.
 
     - [Tidal Theory and Reduction Methods](tidal-reduction-methods.md)
 
+-   :material-clock-check-outline: **Timing**
+
+    ---
+
+    - [Time Synchronisation in Survey Systems](time-synchronisation.md)
+
 </div>

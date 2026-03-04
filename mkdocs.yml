@@ -91,6 +91,7 @@ nav:
     - Part I - Setting Sail:
       - What Is Offshore Surveying?: handbook/what-is-offshore-surveying.md
       - Life on the Vessel: handbook/life-on-the-vessel.md
+      - Vessel Types and Systems: handbook/vessel-types-and-systems.md
       - Staying Safe, Staying Sane: handbook/staying-safe.md
     - Part II - The Core Stuff:
       - Coordinate Systems: handbook/coordinate-systems.md
@@ -136,6 +137,8 @@ nav:
       - iXblue ROVINS/PHINS DVL Calibration: positioning/ixblue-ins-dvl-calibration.md
       - Sprint-Nav DVL Verification: positioning/sprint-nav-dvl-verification.md
       - Sprint Syrinx DVL Calibration: positioning/sprint-syrinx-dvl-calibration.md
+    - Timing:
+      - Time Synchronisation: positioning/time-synchronisation.md
     - Tides & Datums:
       - Tidal Theory and Reduction Methods: positioning/tidal-reduction-methods.md
     - 🎓 Study Material: positioning/study-material.md
@@ -201,6 +204,10 @@ nav:
     - Industry Standards Reference: reference/industry-standards-reference.md
     - Common Formulas and Conversions: reference/formulas-and-conversions.md
     - G882 Depth/Altimeter Calibration: reference/g882-depth-altimeter-calibration.md
+    - Underwater Acoustics Fundamentals: reference/underwater-acoustics.md
+    - Survey Line Planning and Design: reference/survey-line-planning.md
+    - Vessel Motion Effects on Survey Data: reference/vessel-motion-effects.md
+    - Marine Environment Effects: reference/marine-environment-effects.md
     - 🎓 Study Material: reference/study-material.md
   - Study Material:
     - study-material/index.md

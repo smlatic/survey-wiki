@@ -67,6 +67,66 @@ Both CTD and SVP systems may be:
 
 ---
 
+## :material-alert-circle-outline: Why Sound Velocity Matters
+
+Every acoustic measurement in the water column -- MBES depths, USBL ranges, LBL baselines -- depends on knowing the speed of sound. Get the sound velocity wrong and every distance derived from acoustic travel time is wrong by the same proportion.
+
+### The Physics
+
+Sound travels through seawater at approximately 1,500 m/s, but the actual value varies from roughly 1,450 to 1,570 m/s depending on three factors:
+
+| Factor | Sensitivity | Dominant Where |
+|--------|------------|----------------|
+| **Temperature** | ~4.6 m/s per 1 degC increase | Upper water column (0-1000 m), where temperature gradients are strongest |
+| **Salinity** | ~1.3 m/s per 1 PSU increase | Coastal waters, estuaries, river plumes, enclosed seas |
+| **Pressure (depth)** | ~1.7 m/s per 100 m depth increase | Deep water (below the thermocline), where temperature is stable and pressure dominates |
+
+Temperature is the dominant variable in most survey situations. A 5 degC change in water temperature shifts sound velocity by approximately 23 m/s -- enough to cause measurable errors in both depth and range calculations.
+
+### How MBES Uses Sound Velocity
+
+Multibeam echosounders use sound velocity in two distinct ways:
+
+1. **Beam steering at the transducer face.** The surface sound velocity (from a hull-mounted SVS) determines how the transmitted fan of beams is formed and how received echoes are assigned to beam angles. An incorrect surface SV distorts the beam geometry, producing roll-like artifacts across the swath (Type III error).
+
+2. **Ray-tracing through the water column.** The full-column SVP is used to compute the curved path each beam follows from the transducer to the seabed. Snell's Law governs the refraction at each layer boundary. An incorrect SVP means the ray-tracing places the sounding at the wrong depth and the wrong horizontal position.
+
+### The Smiles and Frowns
+
+The classic diagnostic for SVP errors in MBES data is the shape of the across-track depth profile when surveying a flat seabed:
+
+| SVP Error | What Happens | Swath Shape |
+|-----------|-------------|-------------|
+| SVP too fast (velocities higher than reality) | Ray-tracing under-refracts the outer beams, placing them too deep at the edges | **Frown** -- edges curve downward relative to nadir |
+| SVP too slow (velocities lower than reality) | Ray-tracing over-refracts the outer beams, placing them too shallow at the edges | **Smile** -- edges curve upward relative to nadir |
+| SVP outdated (thermocline has shifted) | Asymmetric refraction errors | Lopsided distortion or "wobble" in the outer swath |
+
+These artifacts are most visible in the outer beams (beyond 45 deg) because those beams travel at steep angles through the water column and accumulate more refraction error. Nadir beams travel nearly vertically and are largely unaffected.
+
+!!! tip "Overlap Check"
+    The fastest way to spot SVP errors is to compare overlapping swaths from adjacent survey lines. If the outer beams of one line disagree with the nadir of the overlapping line, the SVP needs updating. This disagreement will show the smile/frown pattern.
+
+### Quantifying the Error: The 0.25% Threshold
+
+Research published through the International Hydrographic Review established a depth bias threshold of **0.25% of water depth** as the point at which SVP-induced errors become incompatible with MBES uncertainty budgets and risk failing IHO S-44 requirements.
+
+In practical terms:
+
+| Water Depth | 0.25% Threshold | What This Means |
+|-------------|-----------------|-----------------|
+| 20 m | 0.05 m | Very tight -- SVP must be accurate and current |
+| 50 m | 0.125 m | Manageable with regular casts |
+| 200 m | 0.50 m | More forgiving, but outer beams still sensitive |
+| 1000 m | 2.50 m | Absolute threshold is larger, but errors at outer beams can still exceed this |
+
+Errors above 0.25% of water depth indicate the SVP is not representative of the actual water column. The fix is a fresh SVP cast. In variable coastal waters, this may mean multiple casts per day. Spatiotemporal interpolation of SVP data (using casts from different times and locations) has been shown to reduce depth bias by a factor of three compared to using a single static profile.
+
+### Related Reading
+
+- [Underwater Acoustics Fundamentals](../reference/underwater-acoustics.md) -- the physics of sound propagation, absorption, and refraction that underpin all acoustic survey operations
+
+---
+
 ## :material-certificate-outline: Calibration Validity Periods
 
 Sound velocity sensors require calibration by the manufacturer or a certified test laboratory against a traceable standard.

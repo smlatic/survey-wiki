@@ -1,5 +1,5 @@
 ---
-title: "Staying Safe, Staying Sane"
+title: "Staying Safe"
 tags:
   - handbook
   - beginner
@@ -8,53 +8,54 @@ tags:
   - regulations
 ---
 
-# Chapter 3: Staying Safe, Staying Sane
+# Chapter 3: Staying Safe
 
-## PPE: Hard Hats, Steel-Toed Boots, and Their Surprising Fashion Value
+## Personal Protective Equipment
 
-Let's be real. No one becomes an offshore surveyor to walk the runway. But out here, your "fashion choices" are dictated by the safety gear you wear. Personal Protective Equipment (PPE) isn't just a company rule; it's your personal superhero suit that stands between you and a world of hurt.
+PPE is mandatory on deck and in any work area where hazards exist. This isn't bureaucracy -- it's the barrier between you and an injury.
 
-- **Hard Hats:** Protect that valuable noggin. Between swinging crane hooks, heavy equipment, and low-hanging pipes, head protection is non-negotiable.
-- **Steel-Toed Boots:** Stylish? Maybe not. But when a piece of gear slips off a deck cart and heads for your toes, you'll be grateful for every millimeter of steel.
-- **High-Visibility Vests and Overalls:** Sure, you might look like a traffic cone, but that's the point. Visibility keeps you from turning into a human speed bump.
-- **Gloves and Safety Glasses:** Your hands and eyes are essential tools in this job. Don't let a simple slip or stray particle ruin your day or career.
+- **Hard Hat:** Crane hooks swing, equipment shifts, pipes hang low. Head protection is non-negotiable.
+- **Steel-Toed Boots:** When a piece of gear slides off a deck cart, your feet are the first thing in its path. The steel cap earns its keep.
+- **High-Visibility Vest/Overalls:** You need to be seen. On a busy deck with moving equipment and vehicles, visibility keeps you from being in someone's blind spot.
+- **Gloves:** Your hands are constantly in contact with equipment, rigging, and hardware. Protect them.
+- **Safety Glasses:** One stray particle or splash is all it takes. Eye protection is standard for a reason.
 
-The lesson? Embrace the PPE. In time, you won't notice it, just like you don't notice wearing shoes on land. Safety first is more than a slogan; it's how you get home in one piece.
+PPE becomes second nature quickly. After a few days, you won't think about it -- you'll just put it on. That's the goal.
 
-## Emergency Procedures: Muster Stations, Alarms, and Not Panicking
+## Emergency Procedures
 
-In a perfect world, everything runs smoothly. But we don't live in a perfect world, which is why offshore vessels have a full set of emergency procedures. Here's what you need to know:
+Things go wrong offshore. Vessels have comprehensive emergency procedures for exactly that reason.
 
-- **Know Your Muster Station:** The moment you board, find out where your muster station is and know how to get there from anywhere on the vessel. In an emergency, you need to reach it quickly.
-- **Learn the Alarms:** Whether it's a fire alarm, a "man overboard" signal, or a general emergency siren, learn what they sound like and what each one means.
-- **Don't Panic:** Sounds obvious, but when adrenaline kicks in, rational thinking can fly out the porthole. Calm breathing and following the established procedures will help you and everyone else stay safe.
+- **Know Your Muster Station:** Find it the moment you board. Know how to get there from anywhere on the vessel. In an emergency, you need to reach it fast.
+- **Learn the Alarms:** Fire alarm, man overboard signal, general emergency siren -- learn what each sounds like and what it means.
+- **Stay Calm:** When adrenaline kicks in, training takes over -- but only if you've paid attention during the briefings and drills. Controlled breathing and following established procedures keeps everyone safer.
 
-### Remember Your Gear
+### Missing Gear
 
-If you forget your PPE or any essential items, or if your luggage doesn't arrive on time, talk to the crew or your supervisor about borrowing spares. Don't risk working without proper gear; it's not only unsafe but also against vessel and industry regulations.
+If your PPE doesn't arrive or you're missing something, talk to the crew or your supervisor about spares immediately. Working without proper gear isn't just unsafe -- it's against vessel and industry regulations.
 
-Most vessels run drills. Don't treat them like a chore. Drills are the dress rehearsals that can save lives during the main event.
+Drills happen regularly. Take them seriously. They're the rehearsal for the situations where it actually matters.
 
-## Environmental Stewardship: Protecting Nemo While You Do Your Job
+## Environmental Responsibility
 
-A big part of offshore surveying is understanding what lies below the surface. But remember, we're guests in the ocean's domain. From sensitive coral reefs to migrating whales, the marine environment deserves respect. By following environmental guidelines, using low-impact equipment, and avoiding activities that harm marine life, you're not only following the rules, you're doing the right thing.
+Offshore surveyors work in the marine environment every day. Respecting it isn't just regulatory compliance -- it's professional responsibility.
 
-- **Avoid Unnecessary Disturbances:** Keep noise levels down when possible. Acoustic surveys can be disruptive if not managed properly.
-- **Waste Management:** Don't toss trash overboard. Dispose of it according to vessel protocols. Marine life doesn't need your empty soda can.
-- **Reporting Sightings:** If you spot something unusual, a whale pod, a seabird colony, let the environmental officer or relevant team member know. Data on marine life can help future projects minimize their footprint.
+- **Minimize Disturbance:** Manage noise levels where possible. Acoustic surveys can be disruptive to marine life if not handled properly.
+- **Waste Management:** Nothing goes overboard. Dispose of waste according to vessel protocols.
+- **Report Wildlife Sightings:** If you spot whales, unusual marine activity, or seabird colonies, report it to the environmental officer or relevant crew member. This data helps future projects minimize their impact.
 
-We rely on the ocean for work, resources, and sometimes just to remind us that nature is awe-inspiring. The least we can do is give it the care it deserves.
+The ocean is our workplace. Treating it with care is part of doing the job properly.
 
-## Guidelines and Regulations: The Alphabet Soup That Keeps You Safe
+## Key Standards and Regulations
 
-The offshore industry is governed by a patchwork of standards, guidelines, and regulations. Here are some you'll encounter:
+The offshore industry operates under a framework of international standards and regulations. You'll encounter these regularly:
 
-- **IMCA (International Marine Contractors Association):** Provides guidance on marine contracting, including survey and positioning practices.
-- **IHO (International Hydrographic Organization):** Sets standards for hydrographic surveying and nautical charting.
-- **OSHA (Occupational Safety and Health Administration):** Governs workplace safety standards, particularly relevant in US waters.
+- **IMCA (International Marine Contractors Association):** Guidance on marine contracting, including survey and positioning practices.
+- **IHO (International Hydrographic Organization):** Standards for hydrographic surveying and nautical charting.
+- **OSHA (Occupational Safety and Health Administration):** Workplace safety standards, particularly relevant in US waters.
 - **MARPOL (Marine Pollution Convention):** International rules to prevent pollution from ships.
 
-At first, these acronyms and rules might feel like homework. But as you gain experience, you'll understand that they form a safety net. They ensure projects meet global standards, keep workers safe, and preserve the environment.
+These standards exist to keep projects consistent, workers safe, and the environment protected. You'll become familiar with the relevant ones as you work on different projects and in different regions.
 
 !!! tip "Go Deeper"
     For a comprehensive list of industry standards and regulatory bodies:
@@ -63,4 +64,4 @@ At first, these acronyms and rules might feel like homework. But as you gain exp
 
 ---
 
-*Next up: [Coordinate Systems](coordinate-systems.md) - time to get into the core technical stuff, starting with how we describe positions on a not-quite-round planet.*
+*Next up: [Coordinate Systems](coordinate-systems.md) -- how we describe positions on a not-quite-round planet.*

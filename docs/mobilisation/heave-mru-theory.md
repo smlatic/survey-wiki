@@ -79,6 +79,22 @@ Modern systems (Applanix TrueHeave, Kongsberg Seapath) combine MRU accelerations
 
 This is the best approach when available, as it preserves accuracy across all wave periods.
 
+### Delayed Heave (True Heave)
+
+Real-time heave is a causal filter -- it can only use measurements up to the current moment. This limits its accuracy, particularly for the low-frequency component of heave where the high-pass filter must make compromises between drift removal and signal preservation.
+
+Delayed heave solves this by buffering measurements and processing them in both forward and reverse directions. A typical buffer length is **150 seconds** -- the sensor stores 150 seconds of acceleration data and reprocesses the heave using measurements from both before and after each time step. This eliminates the phase errors and amplitude attenuation inherent in real-time causal filtering.
+
+| Heave Method | Processing | Typical Accuracy | Use Case |
+|-------------|-----------|:--:|---------|
+| Real-time heave | Causal filter (current data only) | 5 cm or 5% of amplitude | Online display, DP input, real-time QC |
+| Delayed heave (150s buffer) | Non-causal filter (forward + reverse) | Significantly better than real-time, especially for long-period swell | Post-processing of final deliverable data |
+
+!!! info "When to Use Delayed Heave"
+    Delayed heave should be applied in post-processing for all bathymetric deliverables. The improvement over real-time heave is most pronounced in long-period swell environments (Southern Ocean, West Africa, exposed Atlantic) where the real-time filter struggles with swell periods approaching or exceeding the filter cutoff. Systems like Applanix TrueHeave and Kongsberg delayed heave automatically compute and store the delayed heave data for later application.
+
+**The 150-second buffer:** This value represents a practical compromise. Longer buffers give better results for very long-period swell but increase the processing delay and memory requirements. For most offshore survey conditions, 150 seconds captures enough context to resolve swell periods up to approximately 25 seconds with minimal amplitude distortion.
+
 ### The Heave Filter Period
 
 !!! danger "This Is the Most Common Heave Configuration Error"
@@ -172,6 +188,27 @@ Settlement and squat must be measured or modelled for each vessel at the survey 
 | SMC IMU-007/108 | MEMS MRU | 0.05 deg | 10 cm or 10% | Lower cost, lower accuracy |
 | Applanix POS MV | GNSS/INS | 0.01 deg | 5 cm or 5% | TrueHeave post-processing |
 
+### Real-World Sensor Performance
+
+Manufacturer specifications tell one story. Independent testing tells another. A comparative study published in Hydro International tested multiple motion sensors simultaneously on the same vessel and found significant differences in heave performance:
+
+| Sensor | Heave Variation | Behaviour During Turns | Stabilisation Time |
+|--------|:-:|---|:-:|
+| Applanix POS MV 320 | 1-2 cm | Minimal disturbance | Immediate |
+| CodaOctopus F180 | 10-20 cm deviation | Significant heave excursion during turns | ~30 seconds |
+| Kongsberg Seapath 200 | Up to 40 cm deviation | Large heave error during vessel turns | 1.5-2 minutes |
+| TSS Marinus | 10-20 cm deviation | Moderate disturbance during turns | ~1 minute |
+| iXblue Octans III | Good in steady state | Limited by GNSS dependency | Variable |
+
+!!! warning "Marketing vs Reality"
+    All of these sensors claim similar accuracy on their specification sheets. The differences only became apparent through controlled side-by-side testing. The key takeaway: do not assume equivalent performance based on published specs alone. If your project has tight vertical tolerances, validate the specific sensor you have on board.
+
+**Practical implications:**
+
+- Allow **1-2 minutes post-turn stabilisation** before resuming survey data acquisition, regardless of which sensor is in use. Sensors with worse turn performance may need longer.
+- If using a sensor with known turn sensitivity (Seapath 200 or similar), flag data acquired during and immediately after turns for review in post-processing.
+- Roll and pitch accuracy also degrades under high motion rates. At roll rates exceeding 8 deg/s, none of the tested sensors met their published specifications, with deviations exceeding 0.08 degrees.
+
 ### MRU Installation Requirements
 
 - **Centre of rotation**: Mount the MRU as close as possible to the vessel's centre of gravity / centre of rotation. This minimises the lever-arm-induced heave computation and its associated errors.
@@ -180,11 +217,23 @@ Settlement and squat must be measured or modelled for each vessel at the survey 
 - **Vibration isolation**: Mount away from engines, generators, and thrusters. High-frequency vibration aliases into the acceleration measurements and degrades heave quality.
 - **Cable routing**: Secure cables to prevent mechanical strain and water ingress. Label connectors clearly for demobilisation.
 
-### Latency Effects
+### Latency and Interface Effects
 
-MRU attitude data has a time delay between measurement and output. If this latency is not correctly entered in the navigation software, dynamic attitude corrections are applied with a timing offset, causing motion-correlated depth errors.
+MRU attitude data has a time delay between measurement and output. If this latency is not correctly accounted for in the navigation software, dynamic attitude corrections are applied with a timing offset, causing motion-correlated depth errors.
 
 Typical MRU latency: 10-30 ms. At 1 deg/sec vessel roll rate (moderate sea state), a 20 ms latency error produces approximately 0.02 deg of roll error, which at 60 deg beam angle in 50 m depth gives approximately 0.03 m depth error.
+
+**The interface matters.** Comparative testing has shown that the data interface between the MRU and the logging system introduces its own latency, and the choice of interface has a measurable effect on data quality:
+
+| Interface | Typical Added Latency | Effect |
+|-----------|:--:|--------|
+| Serial (RS-232/422) | ~24 ms | Measurable roll errors at high motion rates. Serial transmission is sequential, and at standard baud rates the time to transmit a full attitude telegram adds significant delay. |
+| Ethernet (UDP) | < 1 ms | Negligible added latency. Combined with source-level timestamping (the sensor stamps each measurement with its own synchronised clock), this removes the interface latency problem entirely. |
+
+At a roll rate of 8 deg/s, a 24 ms serial latency produces approximately 0.19 deg of effective roll error -- nearly 10 times the sensor's published accuracy. This error is systematic and correlates with motion, making it difficult to separate from real attitude in post-processing.
+
+!!! tip "Best Practice"
+    Use Ethernet interfaces with source-level timestamping whenever the sensor supports it. If serial is the only option, measure the actual interface latency and enter it in the navigation software as part of the total sensor latency. Do not assume the manufacturer's default latency value accounts for the interface delay.
 
 ---
 
@@ -325,6 +374,7 @@ Typical MRU latency: 10-30 ms. At 1 deg/sec vessel roll rate (moderate sea state
 - [Dimensional Control Survey](dimensional-control-survey.md)
 - [Tidal Theory and Reduction Methods](../positioning/tidal-reduction-methods.md)
 - [TPU and Error Budgets](../reference/tpu-error-budgets.md)
+- [Vessel Motion Effects on Survey Data](../reference/vessel-motion-effects.md) -- six degrees of freedom, real-world sensor comparison results, and practical recommendations for motion compensation
 
 ---
 

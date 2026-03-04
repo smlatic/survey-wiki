@@ -8,27 +8,33 @@ tags:
   - work-life-balance
 ---
 
-# Chapter 14: Mental Health & Well-Being Offshore and Onshore
+# Chapter 14: Mental Health and Well-Being
 
-## Dealing with Stress & Anxiety: Real Talk
+## Dealing with Stress & Anxiety
 
-The offshore environment can be intense. Long hours, isolation from family, and the pressure to meet deadlines can weigh on you. It's important to acknowledge these challenges and develop coping strategies. Maybe that's going for a quick walk on deck during your break, practicing deep breathing exercises, or talking to a friend back home after your shift.
+The offshore environment can be intense. Long hours, isolation from family, and the pressure to meet deadlines -- these things add up. It's worth acknowledging that rather than pretending everything's fine.
 
-If it gets overwhelming, don't hesitate to reach out to a supervisor, a medical officer onboard, or use company-provided support lines. Recognizing when you need help is a sign of strength, not weakness.
+Coping strategies are personal, but some basics help: getting out on deck during a break, keeping in touch with people back home, having a routine outside of work hours. Small things, but they make a difference when you're weeks into a rotation.
 
-## Fitness & Nutrition: Balancing Donuts and Dumbbells
+If it gets overwhelming, reach out. Talk to a supervisor, the medical officer onboard, or use company-provided support lines. Recognizing when you need help is not a weakness -- it's just practical. Ignoring problems doesn't make them go away, and the people around you have likely dealt with similar things.
 
-Vessel galleys can be a double-edged sword: plenty of hearty meals, but also the temptation to overindulge. Maintaining a balanced diet helps keep your energy steady, and even simple onboard exercises (like push-ups, yoga, or using resistance bands) can help you stay fit. Keeping your body in good shape positively affects your mood, mental clarity, and overall job performance.
+## Fitness & Nutrition
 
-## Remote Work Challenges: Drawing the Line Between Work & Netflix
+Vessel galleys serve plenty of food -- sometimes too much of the wrong kind. Maintaining a reasonable diet helps keep your energy steady through long shifts. You don't need to be extreme about it, just pay attention to what you're eating.
 
-If you're in a remote role, the line between "on duty" and "off duty" can blur. It's easy to answer one more email or check one more dataset when your workstation is in your living room. Set clear boundaries. Decide when your workday ends and stick to it. Communicate with your team about your availability. A healthy work-life balance ensures that you can sustain productivity and enthusiasm over the long haul, whether you're offshore or onshore.
+Exercise is similar. Even simple onboard routines -- push-ups, resistance bands, yoga, whatever works for you -- make a noticeable difference to your mood, mental clarity, and how well you sleep. Most vessels have a gym of some sort. Use it.
 
-## Finding Fulfillment: It's Not Just a Job, It's an Adventure
+## Remote Work Boundaries
 
-Offshore surveying can take you to places most people only dream of. You'll witness breathtaking sunrises over the open ocean, encounter marine life up close, and work with cutting-edge technology that pushes the boundaries of what we know about the underwater world.
+If you're in a shore-based or remote role, the line between "on duty" and "off duty" can blur fast. It's easy to check one more dataset or answer one more email when your workstation is in your living room. Set clear boundaries. Decide when your workday ends and stick to it. Communicate your availability to the team.
 
-Finding meaning in your work helps you stay motivated during the tough days. Celebrate your victories, learn from your mistakes, and remember that every challenge is shaping you into a more capable professional.
+This isn't about being lazy -- it's about sustainability. Burning out doesn't help anyone, least of all you.
+
+## Finding Fulfillment
+
+Offshore surveying takes you to places most people never see. You'll work with technology that pushes the boundaries of what we know about the underwater world. Some mornings the sunrise over open ocean genuinely stops you in your tracks.
+
+That said, not every day feels meaningful. Some days are just long shifts and repetitive tasks. Finding satisfaction in your work means taking the good with the ordinary -- celebrating the wins, learning from mistakes, and recognizing that every project is building your capability as a professional. The tough days are part of it. They shape you as much as the good ones.
 
 ---
 

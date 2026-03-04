@@ -8,7 +8,7 @@ tags:
 
 # Resources & Further Reading
 
-Now that you've made it through the guide, here's where to go next. The wiki itself is packed with detailed technical content, and the links below will point you to the right places.
+Here's where to go next. The wiki has detailed technical content throughout, and the links below point you to the right places.
 
 ## Reference Tables & Formulas
 
@@ -25,7 +25,7 @@ The wiki's Reference section has detailed tables and formulas you'll use on the 
 
 ## Calibration Procedures
 
-When you're ready to learn the step-by-step procedures, the Calibration section covers everything:
+When you're ready for step-by-step procedures, the Calibration section covers everything:
 
 - [All Calibration Procedures](../calibration/index.md) - USBL, MBES, INS/DVL, sound velocity, attitude, gyro, dimensional control, and geophysical calibrations
 
