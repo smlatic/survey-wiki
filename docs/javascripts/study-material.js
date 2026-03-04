@@ -184,31 +184,10 @@
     });
     h += '</div>';
 
-    if (section === 'all') {
-      // Section jump nav for mind map tab
-      if (type === 'mindmap') {
-        h += '<div class="sm-section-nav">';
-        SECTIONS.forEach(function (s) {
-          h += '<button class="sm-section-nav-card" onclick="document.getElementById(\'sm-sec-' + s.key + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' + s.label + '</button>';
-        });
-        h += '</div>';
-      }
-
-      SECTIONS.forEach(function (s) {
-        h += '<div class="sm-section-block" id="sm-sec-' + s.key + '">';
-        h += '<div class="sm-section-header">' + s.label + '</div>';
-        var d = data[s.key] || {};
-        if (type === 'quiz') h += renderQuiz(d.quiz, s.key);
-        else if (type === 'flashcards') h += renderFlashcards(d.flashcards, s.key);
-        else h += renderMindMap(d.mindmap);
-        h += '</div>';
-      });
-    } else {
-      var d = data[section] || {};
-      if (type === 'quiz') h += renderQuiz(d.quiz, section);
-      else if (type === 'flashcards') h += renderFlashcards(d.flashcards, section);
-      else h += renderMindMap(d.mindmap);
-    }
+    var d = data[section] || {};
+    if (type === 'quiz') h += renderQuiz(d.quiz, section);
+    else if (type === 'flashcards') h += renderFlashcards(d.flashcards, section);
+    else h += renderMindMap(d.mindmap);
     container.innerHTML = h;
   }
 
@@ -240,16 +219,16 @@
     });
 
     // Determine what to load
-    var needAll = false;
     var needed = {};
     containers.forEach(function (c) {
       var s = c.dataset.section;
-      if (s === 'all') needAll = true;
-      else needed[s] = true;
+      if (s && s !== 'all') needed[s] = true;
     });
 
-    var promise = needAll ? loadAll() : (function () {
-      var keys = Object.keys(needed);
+    var keys = Object.keys(needed);
+    if (keys.length === 0) return;
+
+    var promise = (function () {
       var promises = keys.map(function (k) {
         return loadSection(k).then(function (d) { return { key: k, data: d }; });
       });
@@ -264,7 +243,9 @@
       window.__smData = data;
       containers.forEach(function (c) {
         var section = c.dataset.section;
-        renderContent(c, data, section, 'quiz');
+        if (section && section !== 'all') {
+          renderContent(c, data, section, 'quiz');
+        }
       });
     });
   }
