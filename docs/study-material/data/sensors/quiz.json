@@ -1,265 +1,175 @@
 {
-  "title": "Hydrographic Survey Sensors Quiz",
+  "title": "Survey Sensors Quiz",
   "questions": [
     {
-      "question": "Why must timing latency be resolved as the first step in an MBES calibration (patch test)?",
+      "question": "During an MBES patch test, why must latency be solved before the angular offsets (roll, pitch, heading)?",
       "answerOptions": [
-        {
-          "text": "Uncorrected latency introduces along-track position errors that contaminate the calculations for pitch and heading.",
-          "isCorrect": true,
-          "rationale": "Because latency shifts the position in the vessel's direction of travel, all measurements over sloping terrain or distinct features will be misplaced, making it impossible to correctly isolate angular errors."
-        },
-        {
-          "text": "Latency affects the echosounder's ability to perform electronic beam steering in real time.",
-          "isCorrect": false,
-          "rationale": "Electronic beam steering is driven by real-time data from the motion sensor and the sound velocity at the transducer face, not by the system's overall timing latency."
-        },
-        {
-          "text": "It is the only error that is independent of water depth and seabed morphology.",
-          "isCorrect": false,
-          "rationale": "The latency error is actually proportional to the vessel's speed and affects how terrain features are presented in the data."
-        },
-        {
-          "text": "The latency correction modifies the transducer's physical Z-offset relative to the vessel's centre of gravity (COG).",
-          "isCorrect": false,
-          "rationale": "Timing latency is a temporal parameter and does not affect the physical measurements in the vessel's reference frame."
-        }
+        {"text": "Uncorrected latency introduces along-track position errors that contaminate the pitch and heading solutions", "isCorrect": true, "rationale": "Latency causes position displacement proportional to speed, which directly affects the determination of pitch (along-track on slopes) and heading offsets. Solving it first removes this contamination."},
+        {"text": "Latency is the largest offset and must be removed first for safety", "isCorrect": false, "rationale": "Latency is not necessarily the largest offset. The reason is that uncorrected latency propagates errors into subsequent angular solutions."},
+        {"text": "The processing software requires latency input before it can calculate angular values", "isCorrect": false, "rationale": "This is a software limitation argument, not the fundamental reason. The real issue is error propagation in the data signatures."},
+        {"text": "Angular offsets cannot be measured until the vessel speed is known", "isCorrect": false, "rationale": "Vessel speed is known independently from navigation. The issue is that uncorrected timing errors contaminate the angular offset data signatures."}
       ],
-      "hint": "Consider how an incorrect timestamp affects the geographic placement of an object when the vessel is in motion."
+      "hint": "Think about what happens to sounding positions along-track when there is a timing error, and how that affects slope-based measurements."
     },
     {
-      "question": "If a cross-section of an MBES swath over a flat seabed shows a curvature resembling a 'smile', what is the most likely cause?",
+      "question": "What does a 'frown' pattern in MBES outer beams on a flat seabed indicate?",
       "answerOptions": [
-        {
-          "text": "The applied sound velocity is too low (lower than the actual velocity in the water column).",
-          "isCorrect": true,
-          "rationale": "A 'smile' occurs when the system under-corrects for refraction. The outer beams in reality travel straighter (bend less) than the system's ray-tracing model predicts, causing the computed depths at the swath edges to appear too shallow."
-        },
-        {
-          "text": "The applied sound velocity is too high (higher than the actual velocity in the water column).",
-          "isCorrect": false,
-          "rationale": "A sound velocity that is too high results in a 'frown', where the outer beams are over-corrected and the computed depths at the swath edges appear too deep."
-        },
-        {
-          "text": "The transducer is mounted with a physical roll offset of more than $2.0^{\\circ}$.",
-          "isCorrect": false,
-          "rationale": "A roll offset produces a linear tilt of the entire swath, not a symmetrical curvature from nadir."
-        },
-        {
-          "text": "The motion reference unit (MRU) has not stabilised after power-on.",
-          "isCorrect": false,
-          "rationale": "MRU instability typically produces noise or oscillating errors, not a consistent refraction artefact."
-        }
+        {"text": "The applied sound velocity profile is too fast (higher than actual water column conditions)", "isCorrect": true, "rationale": "When the applied SVP is faster than reality, the system under-corrects for refraction, bending outer beams too far downward, producing a frown. Memory aid: Frown = Fast."},
+        {"text": "The applied sound velocity profile is too slow (lower than actual water column conditions)", "isCorrect": false, "rationale": "An SVP that is too slow causes a 'smile' pattern where outer beams curve upward. Smile = Slow."},
+        {"text": "There is a residual roll offset in the transducer mounting", "isCorrect": false, "rationale": "A roll offset produces a symmetric divergence (bowtie/butterfly pattern) between reciprocal lines, not a consistent curvature on all lines."},
+        {"text": "The heave filter is incorrectly configured for the vessel size", "isCorrect": false, "rationale": "Heave filter issues produce oscillating depth differences correlated with sea state, not a consistent smile or frown curvature pattern."}
       ],
-      "hint": "This phenomenon is related to how sound waves are refracted as they pass through water layers with different sound velocities."
+      "hint": "Remember the memory aid for SVP-induced swath curvature patterns."
     },
     {
-      "question": "When calculating target height from Side Scan Sonar (SSS) data, shadow length is used. What principle underlies the formula $H_t = \\frac{L_s \\times H_a}{R_s}$?",
+      "question": "For side scan sonar operations, what is the recommended towfish altitude as a percentage of the range setting?",
       "answerOptions": [
-        {
-          "text": "Similar triangles, where the ratio between the target height and shadow length is proportional to the sonar altitude and range to the target.",
-          "isCorrect": true,
-          "rationale": "The geometry is created by the sonar beam's angle, where the acoustic shadow on the seabed is directly proportional to the target's height above the bottom."
-        },
-        {
-          "text": "Pythagoras' theorem applied to the hypotenuse between the transducer and the shadow endpoint.",
-          "isCorrect": false,
-          "rationale": "Pythagoras' theorem is primarily used to convert slant range to ground range, not to calculate vertical height from shadows."
-        },
-        {
-          "text": "The refractive index of sound waves passing through the target's acoustic surface.",
-          "isCorrect": false,
-          "rationale": "Height calculation from shadow geometry assumes straight-line propagation and does not account for refraction at the target."
-        },
-        {
-          "text": "Doppler shift in the reflected signal from the top of the target.",
-          "isCorrect": false,
-          "rationale": "Doppler shift is used for velocity measurements, whereas shadow geometry is a purely spatial analysis of the sonar image."
-        }
+        {"text": "10-15% of the range setting", "isCorrect": true, "rationale": "Operating at 10-15% of the range setting balances coverage width, nadir gap size, and image quality. For a 100 m range, this means 10-15 m altitude."},
+        {"text": "25-30% of the range setting", "isCorrect": false, "rationale": "25-30% would be too high, resulting in a very wide nadir gap and weak returns at long range."},
+        {"text": "5% of the range setting", "isCorrect": false, "rationale": "5% would be dangerously close to the seabed, risking mechanical damage and providing minimal shadow contrast for target detection."},
+        {"text": "50% of the range setting", "isCorrect": false, "rationale": "50% is far too high. At this altitude, the nadir gap would dominate the swath and image quality would be severely degraded."}
       ],
-      "hint": "Think about how light (or sound) creates shadows based on the source position and the target's height."
+      "hint": "Think about the balance between coverage width, nadir gap, and image quality."
     },
     {
-      "question": "In sub-bottom profiling (SBP), what is the primary factor that determines the strength of a reflection from a sub-surface layer?",
+      "question": "What is the correct formula for converting slant range to ground range in side scan sonar data?",
       "answerOptions": [
-        {
-          "text": "The contrast in acoustic impedance (the product of density and sound velocity) between two sediment layers.",
-          "isCorrect": true,
-          "rationale": "When sound waves encounter a boundary where the material's density or velocity changes, a portion of the energy is reflected back. The greater the impedance contrast, the stronger the reflection."
-        },
-        {
-          "text": "The total thickness of the overlying sediment layer.",
-          "isCorrect": false,
-          "rationale": "Thickness affects attenuation and how deep the signal can penetrate, but does not determine the reflection strength at a specific boundary."
-        },
-        {
-          "text": "The frequency of the transmitted chirp signal relative to the water depth.",
-          "isCorrect": false,
-          "rationale": "Frequency determines resolution and penetration capability, but the reflection coefficient is an intrinsic property of the material boundary."
-        },
-        {
-          "text": "The vessel's pitch angle at the moment of transmission.",
-          "isCorrect": false,
-          "rationale": "Pitch can affect data quality by directing the beam away from vertical, but it does not change the physics of the reflection at the boundary."
-        }
+        {"text": "$\\text{Ground Range} = \\sqrt{\\text{slant range}^2 - \\text{altitude}^2}$", "isCorrect": true, "rationale": "This Pythagorean relationship removes the vertical component (altitude) from the direct distance (slant range) to give the horizontal distance along the seabed."},
+        {"text": "$\\text{Ground Range} = \\text{slant range} - \\text{altitude}$", "isCorrect": false, "rationale": "Simple subtraction does not account for the geometric relationship. The correction involves trigonometry, not linear subtraction."},
+        {"text": "$\\text{Ground Range} = \\text{slant range} \\times \\cos(\\text{altitude})$", "isCorrect": false, "rationale": "Altitude is a distance, not an angle. This formula structure does not apply here."},
+        {"text": "$\\text{Ground Range} = \\sqrt{\\text{slant range}^2 + \\text{altitude}^2}$", "isCorrect": false, "rationale": "Adding the squares would give a longer distance, not a shorter one. Ground range must be shorter than slant range."}
       ],
-      "hint": "It relates to the physical properties of the materials at the boundary between layers."
+      "hint": "Consider the right triangle formed by the transducer, the seabed point directly below, and the target on the seabed."
     },
     {
-      "question": "Why is downcast data preferred over upcast data when measuring with a CTD probe for sound velocity profiling?",
+      "question": "During a HydroPACT pipetracker verification, background compensation measurements must not deviate by more than what threshold?",
       "answerOptions": [
-        {
-          "text": "The probe descends into undisturbed water, which minimises the effects of thermal lag (hysteresis) and turbulence from the frame.",
-          "isCorrect": true,
-          "rationale": "During the upcast, the probe is pulled through water that has already been mixed by the frame and cable, and the sensors may not respond quickly enough to temperature changes, particularly across thermoclines."
-        },
-        {
-          "text": "The pressure sensor is only calibrated for increasing pressure values.",
-          "isCorrect": false,
-          "rationale": "Modern pressure sensors are linear and measure both increasing and decreasing pressure with high accuracy."
-        },
-        {
-          "text": "The Chen & Millero sound velocity equation requires depth to increase sequentially in the raw data.",
-          "isCorrect": false,
-          "rationale": "The equation can be applied to any data point; the limitation is physical measurement quality, not mathematical structure."
-        },
-        {
-          "text": "Battery life on the probe is optimised by only logging data during descent.",
-          "isCorrect": false,
-          "rationale": "Most probes log continuously; the preference for downcast data is about data integrity across thermoclines."
-        }
+        {"text": "+/-10 uV per individual measurement", "isCorrect": true, "rationale": "The background compensation establishes the signal level when no target is nearby. Individual measurements deviating beyond +/-10 uV indicate interference or unsuitable conditions."},
+        {"text": "+/-20 uV per individual measurement", "isCorrect": false, "rationale": "+/-20 uV is the threshold for post-compensation coil values after departing from the background compensation location, not for the compensation measurements themselves."},
+        {"text": "+/-5 uV per individual measurement", "isCorrect": false, "rationale": "This is tighter than the actual specification. The acceptance criterion for background compensation is +/-10 uV."},
+        {"text": "+/-50 uV per individual measurement", "isCorrect": false, "rationale": "This is far too loose. At +/-50 uV deviation, the background compensation would be unreliable."}
       ],
-      "hint": "Consider how the instrument frame's movement affects the water that the sensors are about to measure."
+      "hint": "There are two different uV thresholds in the pipetracker verification -- one for background compensation measurements and one for post-compensation values."
     },
     {
-      "question": "According to IHO S-44, Total Vertical Uncertainty (TVU) is defined by the formula $\\pm \\sqrt{a^2 + (b \\times d)^2}$. What does the parameter '$b$' represent in this equation?",
+      "question": "Which sound velocity formula is recommended for depths greater than 1000 m?",
       "answerOptions": [
-        {
-          "text": "The component of uncertainty that varies with depth ($d$).",
-          "isCorrect": true,
-          "rationale": "The parameter '$b$' captures systematic errors that scale with depth, such as errors in sound velocity or measurement angles."
-        },
-        {
-          "text": "The constant uncertainty that is independent of depth.",
-          "isCorrect": false,
-          "rationale": "This is represented by the parameter '$a$', which includes fixed errors such as timing measurements and static offset measurements."
-        },
-        {
-          "text": "The vessel's beam (width) used to calculate induced heave.",
-          "isCorrect": false,
-          "rationale": "The formula is a statistical uncertainty model and does not directly include the vessel's physical dimensions."
-        },
-        {
-          "text": "The conversion factor between ellipsoidal depth and chart datum depth.",
-          "isCorrect": false,
-          "rationale": "This is part of the reduction process, but '$b$' is a specific coefficient for depth-dependent error sources."
-        }
+        {"text": "Del Grosso (1974)", "isCorrect": true, "rationale": "Del Grosso (1974) is recommended for depths greater than 1000 m because it performs better at high pressures than Chen & Millero."},
+        {"text": "Chen & Millero (1977)", "isCorrect": false, "rationale": "Chen & Millero is recommended for depths less than 1000 m. At greater depths, Del Grosso is preferred."},
+        {"text": "Wilson (1960)", "isCorrect": false, "rationale": "The Wilson equation is not among the recommended formulas in the standard SV operations guidance."},
+        {"text": "Mackenzie (1981)", "isCorrect": false, "rationale": "The Mackenzie equation is not referenced in the standard SV operations guidance. Del Grosso is the recommended formula for deep water."}
       ],
-      "hint": "Look at how the parameter is placed in the formula and what it is multiplied by."
+      "hint": "Think about which formula handles high pressure (deep water) conditions better."
     },
     {
-      "question": "When using an electronically beam-formed MBES system, continuous sound velocity measurement at the transducer face is required. What happens if this measurement is incorrect?",
+      "question": "In a chirp sub-bottom profiler, what primarily determines the vertical resolution of the system?",
       "answerOptions": [
-        {
-          "text": "The transmit and receive angles become incorrect, leading to geometric distortions in the swath despite a correct SVP for the water column.",
-          "isCorrect": true,
-          "rationale": "Beam steering depends on the acoustic wavelength at the transducer face; an incorrect velocity here causes the beams to point in the wrong direction from the outset."
-        },
-        {
-          "text": "The echosounder's ping rate (update rate) decreases drastically due to processing demands.",
-          "isCorrect": false,
-          "rationale": "Ping rate is limited by water depth (two-way travel time), not by the surface sound velocity sensor's update rate."
-        },
-        {
-          "text": "The system can no longer compensate for vessel heave.",
-          "isCorrect": false,
-          "rationale": "Heave compensation is based on data from the MRU and is not directly affected by the local sound velocity at the transducer."
-        },
-        {
-          "text": "It causes a timing latency between GNSS and echosounder.",
-          "isCorrect": false,
-          "rationale": "Latency is a synchronisation or communication issue, not a result of acoustic measurement errors."
-        }
+        {"text": "The bandwidth of the frequency sweep (wider bandwidth = better resolution)", "isCorrect": true, "rationale": "Chirp systems use matched filtering to compress a long swept pulse into a short pulse. The bandwidth determines the compressed pulse length. A 2-8 kHz sweep gives better resolution than a 2-6 kHz sweep."},
+        {"text": "The maximum frequency of the sweep only", "isCorrect": false, "rationale": "Resolution depends on the bandwidth (difference between start and end frequency), not just the maximum frequency."},
+        {"text": "The transmit power level", "isCorrect": false, "rationale": "Power affects penetration depth and signal-to-noise ratio, not vertical resolution."},
+        {"text": "The ping rate", "isCorrect": false, "rationale": "Ping rate affects spatial sampling along-track, not the vertical resolution of individual returns."}
       ],
-      "hint": "Think about how the echosounder calculates the exact angles for the individual beams in the swath."
+      "hint": "Consider what happens during the matched filtering process and how the sweep range relates to the compressed pulse."
     },
     {
-      "question": "What type of terrain is essential for resolving pitch error during a patch test?",
+      "question": "What is the minimum required signal-to-noise ratio (SNR) for a valid surrogate item detection using the GMA1000 gradiometer?",
       "answerOptions": [
-        {
-          "text": "A uniform slope where lines are run in opposite directions over the same track.",
-          "isCorrect": true,
-          "rationale": "Without a slope or a distinct seabed feature, there is no measurable depth offset along the track that can be isolated as a pitch error."
-        },
-        {
-          "text": "A completely flat seabed to avoid refraction interference.",
-          "isCorrect": false,
-          "rationale": "A flat seabed is used to resolve roll errors, since pitch errors are not visible against a horizontal surface."
-        },
-        {
-          "text": "A vertical wreck or pipeline in deep water.",
-          "isCorrect": false,
-          "rationale": "Distinct features can be used, but a uniform slope provides a cleaner data signature for pitch analysis."
-        },
-        {
-          "text": "An area with strong tidal variations.",
-          "isCorrect": false,
-          "rationale": "Tides are a confounding factor that must be corrected for and do not help isolate angular errors."
-        }
+        {"text": "Greater than 3:1 (target amplitude vs noise floor)", "isCorrect": true, "rationale": "A valid detection requires the target dipolar anomaly amplitude to be at least 3 times the ambient noise floor. Below this, detection is considered ambiguous."},
+        {"text": "Greater than 2:1", "isCorrect": false, "rationale": "2:1 is insufficient. The acceptance criterion requires a minimum SNR of 3:1 for reliable target detection."},
+        {"text": "Greater than 5:1", "isCorrect": false, "rationale": "While 5:1 would be excellent, the minimum acceptance criterion is 3:1."},
+        {"text": "Greater than 10:1", "isCorrect": false, "rationale": "10:1 is well above the minimum requirement. The pass criterion is SNR > 3:1."}
       ],
-      "hint": "Consider why pitch (fore/aft tilt) would not be detectable if the seabed beneath you is perfectly horizontal."
+      "hint": "The acceptance criteria specify a minimum ratio between target amplitude and the noise floor baseline."
     },
     {
-      "question": "In magnetometry, what is the primary difference between using a transverse gradiometer (TVG) and a total field magnetometer?",
+      "question": "When measuring draft for MBES operations, what two vessel dynamics must be considered in addition to the static draft measurement?",
       "answerOptions": [
-        {
-          "text": "The TVG measures the difference between two sensors to eliminate regional variations and diurnal drift, which increases sensitivity to small, shallow objects.",
-          "isCorrect": true,
-          "rationale": "By measuring the gradient, the background noise from the Earth's magnetic field is removed, which highlights local anomalies from, for example, UXO or wreck debris."
-        },
-        {
-          "text": "The total field magnetometer measures only vertical magnetic vectors while the TVG measures horizontal vectors.",
-          "isCorrect": false,
-          "rationale": "Both systems measure field intensity, but the TVG focuses on the spatial change (gradient) rather than the absolute value."
-        },
-        {
-          "text": "The TVG does not require navigation data because it measures relative values.",
-          "isCorrect": false,
-          "rationale": "All magnetometry requires accurate positioning to determine where the anomalies are located geographically."
-        },
-        {
-          "text": "The total field magnetometer is immune to electrical interference from the ROV.",
-          "isCorrect": false,
-          "rationale": "Both systems are extremely sensitive to electromagnetic interference from the host vehicle."
-        }
+        {"text": "Squat (trim change between at-rest and underway) and settlement (elevation change between at-rest and underway)", "isCorrect": true, "rationale": "Squat is the change in vessel trim (stern lowers, bow rises) when underway. Settlement is the overall lowering of the hull when moving. Both change the effective transducer depth."},
+        {"text": "Heave and roll", "isCorrect": false, "rationale": "Heave and roll are vessel motions compensated by the MRU in real-time. Draft dynamics are squat and settlement."},
+        {"text": "Pitch and yaw", "isCorrect": false, "rationale": "Pitch and yaw are compensated by the motion sensor and gyro. The draft-related dynamics are squat and settlement."},
+        {"text": "Tide and swell", "isCorrect": false, "rationale": "Tidal reduction is a separate correction applied to depth measurements. Draft dynamics are squat and settlement."}
       ],
-      "hint": "Think about the advantage of comparing two measurements taken simultaneously at a short distance from each other."
+      "hint": "These are changes in the vessel's waterplane relationship that occur when it transitions from stationary to underway."
     },
     {
-      "question": "When processing sound velocity profiles, why is the harmonic mean used instead of the arithmetic mean?",
+      "question": "For the Voyis Observer Pro 3 camera array, what is the maximum acceptable clock drift between cameras and the INS over the duration of a dive?",
       "answerOptions": [
-        {
-          "text": "The harmonic mean correctly represents the average velocity based on the time sound spends in each layer.",
-          "isCorrect": true,
-          "rationale": "Since we measure travel time through layers of varying thickness, the harmonic mean provides the most physically correct range calculation."
-        },
-        {
-          "text": "The arithmetic mean is invalid when the water depth exceeds $1000\\text{ m}$.",
-          "isCorrect": false,
-          "rationale": "The arithmetic mean can always be calculated, but it introduces a systematic error in acoustic range calculations."
-        },
-        {
-          "text": "Harmonic means eliminate the need to account for salinity.",
-          "isCorrect": false,
-          "rationale": "Salinity must still be known to calculate the velocity in each individual layer."
-        },
-        {
-          "text": "The harmonic mean yields a higher value that compensates for system latency.",
-          "isCorrect": false,
-          "rationale": "The harmonic mean is in fact always less than or equal to the arithmetic mean, and it has nothing to do with latency."
-        }
+        {"text": "Less than 500 ms total drift over the dive duration", "isCorrect": true, "rationale": "Camera clocks can drift several hundred milliseconds over long dives (8+ hours). Less than 500 ms total drift is the acceptance criterion. Pre-dive sync must be within 20 ms."},
+        {"text": "Less than 20 ms total drift over the dive duration", "isCorrect": false, "rationale": "20 ms is the pre-dive synchronisation requirement, not the post-dive drift tolerance."},
+        {"text": "Less than 1 second total drift over the dive duration", "isCorrect": false, "rationale": "1 second of drift could produce significant position errors at survey speed. The acceptance criterion is 500 ms."},
+        {"text": "Less than 100 ms total drift over the dive duration", "isCorrect": false, "rationale": "While 100 ms would be excellent, the acceptance criterion allows up to 500 ms of drift over a dive."}
       ],
-      "hint": "Sound velocity is distance divided by time. Consider which variable (time or distance) is constant when measuring through water layers."
+      "hint": "Think about how drift accumulates over an 8+ hour dive and what position error it produces at typical survey speed."
+    },
+    {
+      "question": "During an SVP repeatability test, what is the maximum acceptable disagreement between two consecutive casts at equivalent depths?",
+      "answerOptions": [
+        {"text": "Within 0.5 m/s", "isCorrect": true, "rationale": "Two consecutive SVP casts at the same location should agree within 0.5 m/s. Values between 0.5 and 1.0 m/s are marginal and require investigation. Greater than 1.0 m/s is a fail."},
+        {"text": "Within 0.1 m/s", "isCorrect": false, "rationale": "0.1 m/s is tighter than the acceptance criterion. The pass threshold is 0.5 m/s."},
+        {"text": "Within 1.0 m/s", "isCorrect": false, "rationale": "1.0 m/s is the fail threshold. Values between 0.5 and 1.0 m/s are marginal."},
+        {"text": "Within 2.0 m/s", "isCorrect": false, "rationale": "2.0 m/s far exceeds the acceptable range. The pass criterion is 0.5 m/s."}
+      ],
+      "hint": "The test has three categories: accept, marginal, and fail."
+    },
+    {
+      "question": "What is the TVU formula used in IHO S-44 Edition 6.1.0?",
+      "answerOptions": [
+        {"text": "$\\text{TVU}_{\\max}(d) = \\sqrt{a^2 + (b \\times d)^2}$", "isCorrect": true, "rationale": "This formula combines a depth-independent coefficient (a) and a depth-dependent coefficient (b x d) in a root-sum-square, giving the maximum allowable TVU at the 95% confidence level."},
+        {"text": "$\\text{TVU}_{\\max}(d) = a + b \\times d$", "isCorrect": false, "rationale": "The TVU formula is not a simple linear sum. It uses a root-sum-square combination of the two terms."},
+        {"text": "$\\text{TVU}_{\\max}(d) = a^2 + (b \\times d)^2$", "isCorrect": false, "rationale": "This gives the squared value. The actual TVU is the square root of this expression."},
+        {"text": "$\\text{TVU}_{\\max}(d) = a \\times \\sqrt{b \\times d}$", "isCorrect": false, "rationale": "This is not the correct IHO S-44 formula. The correct formula is the root-sum-square of a and (b x d)."}
+      ],
+      "hint": "It combines a constant term and a depth-proportional term using root-sum-square."
+    },
+    {
+      "question": "In a magnetometer acceptance test, what is the purpose of running reciprocal (opposite direction) lines over the same target?",
+      "answerOptions": [
+        {"text": "To expose any heading-dependent bias in the data and verify position consistency", "isCorrect": true, "rationale": "Magnetometer sensors are sensitive to tow platform heading. Reciprocal lines reveal heading-dependent offsets and confirm target position consistency regardless of approach direction."},
+        {"text": "To double the amount of data collected for statistical significance", "isCorrect": false, "rationale": "The primary purpose is to detect heading-dependent systematic errors, not simply increase sample size."},
+        {"text": "To cancel out the effects of ocean current on the tow cable", "isCorrect": false, "rationale": "Current effects are a practical concern, but the main purpose is detecting heading-dependent bias."},
+        {"text": "To measure the Earth's diurnal magnetic variation", "isCorrect": false, "rationale": "Diurnal variation is monitored separately. Reciprocal lines detect heading-dependent bias."}
+      ],
+      "hint": "Think about what systematic errors become visible only when comparing data from opposite approach directions."
+    },
+    {
+      "question": "When deploying an SVP probe, how long should the instrument be held near the surface before beginning the cast?",
+      "answerOptions": [
+        {"text": "10 minutes to acquire ambient water temperature", "isCorrect": true, "rationale": "The probe needs time to thermally equilibrate with the water, which may differ significantly from air temperature on deck. A 10-minute surface soak prevents false SV readings."},
+        {"text": "2 minutes to verify the probe is working", "isCorrect": false, "rationale": "2 minutes is insufficient for thermal equilibration. The standard procedure requires 10 minutes."},
+        {"text": "30 seconds to clear any air bubbles", "isCorrect": false, "rationale": "While air bubbles are a concern, the 10-minute soak is primarily for thermal equilibration."},
+        {"text": "No wait time is needed; begin the cast immediately", "isCorrect": false, "rationale": "Casting immediately produces false readings because the sensor starts at air temperature rather than water temperature."}
+      ],
+      "hint": "The sensor needs to transition from air temperature to water temperature."
+    },
+    {
+      "question": "For the SSS positioning verification test, what is identified as the single most frequent cause of position errors?",
+      "answerOptions": [
+        {"text": "Incorrect heading source", "isCorrect": true, "rationale": "A wrong heading source rotates all contacts around the vehicle position, producing large cross-track errors that increase with range."},
+        {"text": "Incorrect transducer offsets", "isCorrect": false, "rationale": "Offset errors cause position displacement, but heading source error is identified as the most frequent cause."},
+        {"text": "Sound velocity at transducer depth", "isCorrect": false, "rationale": "Incorrect SV affects slant-to-ground range conversion, but heading source error is the most common cause."},
+        {"text": "Time synchronisation drift", "isCorrect": false, "rationale": "Time sync is important, but heading source error is explicitly identified as the single most frequent cause."}
+      ],
+      "hint": "Think about which error rotates all contacts around the vehicle position."
+    },
+    {
+      "question": "What is the key advantage of parametric sub-bottom profilers over conventional chirp systems?",
+      "answerOptions": [
+        {"text": "They produce a very narrow beam width (3-5 deg) from a low-frequency pulse, giving high resolution with a small footprint", "isCorrect": true, "rationale": "Parametric systems use non-linear interaction of two high-frequency beams to generate a low-frequency difference pulse with the narrow beam width of the primaries (3-5 deg vs 15-40 deg for conventional), making them ideal for ROV operations."},
+        {"text": "They achieve much greater penetration depth in all sediment types", "isCorrect": false, "rationale": "Penetration is similar. The advantage is the narrow beam width achieved through non-linear acoustic interaction."},
+        {"text": "They require less power than chirp systems", "isCorrect": false, "rationale": "Power requirements are not the distinguishing feature. The key advantage is the narrow beam width."},
+        {"text": "They can operate at higher survey speeds", "isCorrect": false, "rationale": "Survey speed is not the primary advantage. The narrow beam width and small footprint are the key benefits."}
+      ],
+      "hint": "Consider how the beam width is achieved and why that matters for ROV-mounted operations."
+    },
+    {
+      "question": "In the SV/CTD comparison verification, what is the maximum acceptable difference between CTD-derived sound velocity and directly measured SVP sound velocity?",
+      "answerOptions": [
+        {"text": "Less than or equal to 1.0 m/s at all depths", "isCorrect": true, "rationale": "The CTD-derived SV vs direct SVP tolerance is 1.0 m/s, which accounts for the uncertainty introduced by the empirical equation used to calculate SV from conductivity, temperature, and pressure."},
+        {"text": "Less than or equal to 0.5 m/s at all depths", "isCorrect": false, "rationale": "0.5 m/s is the tolerance for comparing two direct SVP units against each other, not for CTD-derived vs direct SVP."},
+        {"text": "Less than or equal to 0.1 m/s at all depths", "isCorrect": false, "rationale": "0.1 m/s is tighter than the acceptance criterion. The CTD-derived vs direct SVP tolerance accounts for formula uncertainty."},
+        {"text": "Less than or equal to 2.0 m/s at all depths", "isCorrect": false, "rationale": "2.0 m/s is too loose. The acceptance criterion is 1.0 m/s for CTD-derived vs direct SVP comparison."}
+      ],
+      "hint": "The tolerance for derived vs direct measurement is wider than for two direct measurements, because of the equation uncertainty."
     }
   ]
 }

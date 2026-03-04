@@ -1,52 +1,45 @@
 {
-  "name": "Offshore Survey Methods and Procedures",
+  "name": "ROV Operations Overview",
   "children": [
     {
       "name": "As-Built Survey",
       "children": [
         {
-          "name": "Purpose",
+          "name": "Asset Types",
           "children": [
-            {
-              "name": "Permanent record of installed infrastructure"
-            },
-            {
-              "name": "Verification against design and tolerances"
-            },
-            {
-              "name": "Baseline for future inspections"
-            }
+            {"name": "Pipeline (as-laid / as-trenched)"},
+            {"name": "Subsea Structures"},
+            {"name": "Spools and Jumpers"},
+            {"name": "Umbilicals and Cables"},
+            {"name": "Protection (mattress, rock dump)"}
           ]
         },
         {
-          "name": "Objects and Measurements",
+          "name": "Survey Methods",
           "children": [
-            {
-              "name": "Pipelines (As-laid / As-trenched)"
-            },
-            {
-              "name": "Subsea structures (E, N, Z, Heading, Tilt)"
-            },
-            {
-              "name": "Spools and Jumpers (End coordinates, profile)"
-            },
-            {
-              "name": "Protection (Mattresses, rock, grout bags)"
-            }
+            {"name": "ROV + INS/USBL"},
+            {"name": "MBES"},
+            {"name": "Pipe Tracker"},
+            {"name": "SSS / SBP"},
+            {"name": "Visual (video/photo)"}
           ]
         },
         {
-          "name": "Primary Methods",
+          "name": "Design Comparison",
           "children": [
-            {
-              "name": "ROV with INS/USBL"
-            },
-            {
-              "name": "MBES (Profiling)"
-            },
-            {
-              "name": "Pipetracker (Depth of Cover)"
-            }
+            {"name": "Horizontal and Vertical Offsets"},
+            {"name": "Tolerance Assessment (pass/fail)"},
+            {"name": "Immediate Deviation Reporting"}
+          ]
+        },
+        {
+          "name": "Deliverables",
+          "children": [
+            {"name": "Position Tables (Excel/CSV)"},
+            {"name": "As-Built Charts (DWG/PDF)"},
+            {"name": "Cross-Sections and Profiles"},
+            {"name": "Video and Photographs"},
+            {"name": "As-Built Report"}
           ]
         }
       ]
@@ -55,143 +48,195 @@
       "name": "Construction Support Survey",
       "children": [
         {
-          "name": "Real-time Guidance",
+          "name": "Operation Types",
           "children": [
-            {
-              "name": "Pipelay monitoring (TDP, KP, DCC)"
-            },
-            {
-              "name": "Structure installation (Position, Heading, Elevation)"
-            },
-            {
-              "name": "Touchdown monitoring"
-            }
+            {"name": "Pipelay Monitoring (2-5 m accuracy)"},
+            {"name": "Structure Placement (0.5-2.0 m accuracy)"},
+            {"name": "Spool Installation (0.5-1.0 m accuracy)"},
+            {"name": "Touchdown Monitoring (1-3 m accuracy)"},
+            {"name": "Verticality Monitoring (0.1-0.5 deg)"}
           ]
         },
         {
-          "name": "Critical Factors",
+          "name": "Pre-Operation",
           "children": [
-            {
-              "name": "Positioning stability and precision"
-            },
-            {
-              "name": "Coordinate system and datum control"
-            },
-            {
-              "name": "Communication protocols"
-            }
+            {"name": "Verify Design Data and Datum"},
+            {"name": "Configure Guidance Displays"},
+            {"name": "Test Communication Channels"},
+            {"name": "Pre-Lay Survey (200-500 m corridor)"}
+          ]
+        },
+        {
+          "name": "Real-Time Guidance",
+          "children": [
+            {"name": "Along-Track and Cross-Track Position"},
+            {"name": "Bearing, Distance, Depth to Target"},
+            {"name": "Height Above Seabed (10-15 sec intervals)"},
+            {"name": "1 Hz Minimum Update Rate"}
           ]
         }
       ]
     },
     {
-      "name": "Subsea Metrology",
+      "name": "Subsea Metrology (LBL)",
       "children": [
         {
-          "name": "Traditional LBL Metrology",
+          "name": "Measurements and Tolerances",
           "children": [
-            {
-              "name": "Acoustic baselines (Braced quadrilateral)"
-            },
-            {
-              "name": "Gyro observations (Heading, Pitch, Roll)"
-            },
-            {
-              "name": "Depth loops (Digiquartz)"
-            },
-            {
-              "name": "Sound velocity (Critical for accuracy)"
-            }
+            {"name": "Hub-to-Hub DX, DY, DZ (100 mm overall)"},
+            {"name": "Heading (0.707 deg overall)"},
+            {"name": "Pitch and Roll (0.5 deg overall)"},
+            {"name": "RSS Per-Hub Calculation"}
           ]
         },
         {
-          "name": "INS-based Metrology (SLAM)",
+          "name": "Equipment",
           "children": [
-            {
-              "name": "Simultaneous Localisation and Mapping"
-            },
-            {
-              "name": "Requires Navigation-grade INS"
-            },
-            {
-              "name": "Faster than LBL (No transponder array)"
-            },
-            {
-              "name": "DVL bottom-lock is essential"
-            }
+            {"name": "COMPATTs and GyroCOMPATTs"},
+            {"name": "Octans Gyros"},
+            {"name": "Digiquartz Depth Sensors"},
+            {"name": "Valeport SVX2 (SV Probe)"},
+            {"name": "Stabs and Receptacles"}
           ]
         },
         {
-          "name": "Mechanical Interfaces",
+          "name": "Depth Loops",
           "children": [
-            {
-              "name": "Stab and Receptacle"
-            },
-            {
-              "name": "QC check of 'slop' and alignment"
-            }
+            {"name": "Loop 01/02: Hub-to-Hub DZ"},
+            {"name": "Loop 03: COMPATT Depths"},
+            {"name": "Loop 04: Seabed Profile"},
+            {"name": "Closure Tolerance < 1.5 cm"}
+          ]
+        },
+        {
+          "name": "Heading Observations",
+          "children": [
+            {"name": "5 Sets at 90-deg Increments"},
+            {"name": "CW/CCW Slop Check (< 0.3 deg)"},
+            {"name": "Set 5 QC (drift < 0.1 deg)"},
+            {"name": "30 min Minimum Settling Time"}
+          ]
+        },
+        {
+          "name": "LBL Array",
+          "children": [
+            {"name": "Braced Quadrilateral (2 hub + 2 seabed)"},
+            {"name": "10 Good Reciprocal Baselines per Pair"},
+            {"name": "3D then 2D Adjustment"},
+            {"name": "Array Orientation to Grid North"}
           ]
         }
       ]
     },
     {
-      "name": "Pipeline and Umbilical Operations",
+      "name": "INS-Based Metrology (SLAM)",
       "children": [
         {
-          "name": "Survey Types",
+          "name": "Principle",
           "children": [
-            {
-              "name": "Pre-Lay (Route clearance)"
-            },
-            {
-              "name": "As-Laid (Position and profile)"
-            },
-            {
-              "name": "As-Trenched (DOC, DOL, DOT)"
-            },
-            {
-              "name": "Inspection (Anodes, free spans, damage)"
-            }
+            {"name": "INS Trajectory Between Targets"},
+            {"name": "Kalman Filter Solves Trajectory + Targets"},
+            {"name": "No Seabed Array Required"}
           ]
         },
         {
-          "name": "Sensor Technology",
+          "name": "INS Grades and Drift",
           "children": [
-            {
-              "name": "Pipetracker (Electromagnetic induction)"
-            },
-            {
-              "name": "VisualWorks (Digital video and event logging)"
-            },
-            {
-              "name": "MBES/DHSS (Cross profiles)"
-            }
+            {"name": "Navigation Grade: 0.005-0.02 m/min"},
+            {"name": "Tactical Grade: 0.1-1.0 m/min"},
+            {"name": "MEMS: > 1.0 m/min (not suitable)"}
           ]
         },
         {
-          "name": "Calculations",
+          "name": "Aiding Sources",
           "children": [
-            {
-              "name": "KP (Along-centreline vs Straight-line)"
-            },
-            {
-              "name": "Tidal corrections"
-            }
+            {"name": "DVL (velocity, < 0.1% error)"},
+            {"name": "USBL (absolute position)"},
+            {"name": "Sparse LBL (1-3 transponders)"},
+            {"name": "Pressure Sensor (vertical)"}
+          ]
+        },
+        {
+          "name": "Survey Pattern and QC",
+          "children": [
+            {"name": "Figure-8 or Clover-Leaf Pattern"},
+            {"name": "3+ Revisits, 3+ Headings per Target"},
+            {"name": "Forward-Backward Agreement < 0.03 m"},
+            {"name": "Achievable Accuracy: 0.02-0.05 m"}
           ]
         }
       ]
     },
     {
-      "name": "Quality Control and Deliverables",
+      "name": "Pipeline Survey Operations",
       "children": [
         {
-          "name": "Acceptance criteria (Tolerances per project specification)"
+          "name": "Survey Phases",
+          "children": [
+            {"name": "ROTV / Tow-Fish Route Survey"},
+            {"name": "Pre-Lay Survey"},
+            {"name": "Touchdown Monitoring"},
+            {"name": "As-Laid / Pre-Trench"},
+            {"name": "As-Trenched"},
+            {"name": "OOS (Out of Straightness)"},
+            {"name": "Inspection"}
+          ]
         },
         {
-          "name": "Standard deliverables (Tables, charts, profiles, reports)"
+          "name": "Pipetracker (EM Induction)",
+          "children": [
+            {"name": "Eddy Currents in Metallic Pipe"},
+            {"name": "Lateral Offset and VRT Output"},
+            {"name": "Cannot Detect Non-Metallic Products"},
+            {"name": "Affected by Seabed Conductivity"}
+          ]
         },
         {
-          "name": "Data QC (Continuous monitoring of sensor health)"
+          "name": "Online Eventing",
+          "children": [
+            {"name": "Field Joints and Anodes"},
+            {"name": "Free Spans (length, height)"},
+            {"name": "Burial Status"},
+            {"name": "Crossings and Debris"}
+          ]
+        },
+        {
+          "name": "Data Processing",
+          "children": [
+            {"name": "QC Navigation and Tidal Correction"},
+            {"name": "KP/STA Calculation"},
+            {"name": "DOC/DOL/DOT from Cross Profiles"},
+            {"name": "Event Reconciliation"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sound Velocity and Vertical Control",
+      "children": [
+        {
+          "name": "SV for Baselines",
+          "children": [
+            {"name": "COMPATT-Mounted SV Sensors (primary)"},
+            {"name": "ROV-Mounted Direct-Read SV (monitor)"},
+            {"name": "Impact: 0.25 m/s = 0.008 m at 50 m range"}
+          ]
+        },
+        {
+          "name": "SV for Water Column (USBL)",
+          "children": [
+            {"name": "Full Water Column SVP Required"},
+            {"name": "Chen & Millero (< 1000 m depth)"},
+            {"name": "Del Grosso (> 1000 m depth)"}
+          ]
+        },
+        {
+          "name": "Vertical Sensors",
+          "children": [
+            {"name": "Digiquartz Depth Sensor (0.005 m)"},
+            {"name": "Pressure to Depth via Mean Seawater Density"},
+            {"name": "DHSS/MBES for Cross Profiles"}
+          ]
         }
       ]
     }

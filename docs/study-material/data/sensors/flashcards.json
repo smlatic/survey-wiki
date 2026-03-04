@@ -1,349 +1,401 @@
 {
-  "title": "Hydrographic Survey Sensors Flashcards",
+  "title": "Survey Sensors Flashcards",
   "cards": [
     {
       "front": "What is the primary purpose of an MBES patch test?",
-      "back": "To determine and correct residual angular offsets (roll, pitch, heading) and timing latency between the sensors."
+      "back": "To resolve residual angular misalignment between the multibeam transducer, motion sensor, and gyrocompass, plus any timing offset between the positioning system and the echosounder."
     },
     {
-      "front": "In what order should the parameters in an MBES patch test be calibrated?",
-      "back": "Latency first, followed by Roll, then Pitch, and finally Heading (Yaw)."
+      "front": "In what order must MBES patch test offsets be solved?",
+      "back": "Latency first, then Roll, then Pitch, then Heading. Each solved offset must be applied before determining the next one."
     },
     {
-      "front": "Why must latency (timing offset) be resolved before the angular parameters in a patch test?",
-      "back": "Uncorrected latency introduces along-track position errors that contaminate the calculation of pitch and heading offsets."
+      "front": "What terrain is required for resolving MBES roll offset?",
+      "back": "Flat, featureless seabed with slope less than 0.5 degrees and uniform sediment."
     },
     {
-      "front": "What type of terrain is required to isolate and calibrate 'roll' during MBES surveying?",
-      "back": "A completely flat and featureless seabed."
+      "front": "What terrain is required for resolving MBES pitch offset?",
+      "back": "A uniform slope of 5 to 20 degrees, running perpendicular to the line direction."
     },
     {
-      "front": "What does the data pattern look like when there is a roll error on reciprocal lines over a flat seabed?",
-      "back": "A symmetrical butterfly or bowtie pattern is formed where the outer beams diverge between the two passes."
+      "front": "What is the data signature of an MBES roll offset?",
+      "back": "Two reciprocal lines over flat seabed show data that matches at nadir but diverges symmetrically with increasing beam angle, forming a characteristic 'butterfly' or 'bowtie' pattern."
     },
     {
-      "front": "What type of terrain is required to correctly calibrate 'pitch' in a patch test?",
-      "back": "A uniform slope (ideally $5-20$ degrees) or a distinct seabed feature."
+      "front": "What is the data signature of an MBES latency offset?",
+      "back": "Two passes over the same feature in the same direction at different speeds show the feature displaced along-track. Displacement is proportional to the speed difference."
     },
     {
-      "front": "What characterises a heading error (yaw) when comparing two parallel MBES lines run in the same direction?",
-      "back": "A seabed feature appears with a cross-track (athwartships) positional offset between the two lines."
+      "front": "Formula for MBES position latency?",
+      "back": "$\\text{Latency (seconds)} = \\frac{\\text{Along-track displacement}}{\\text{Speed}_{fast} - \\text{Speed}_{slow}}$"
     },
     {
-      "front": "What is the formula for calculating latency ($L$) in seconds?",
-      "back": "$L = \\frac{\\text{along-track offset}}{V_{\\text{fast}} - V_{\\text{slow}}}$"
+      "front": "What line configuration is used to resolve MBES heading (yaw) offset?",
+      "back": "Two parallel lines run in the same direction, offset so the target feature falls at different across-track positions in each swath."
     },
     {
-      "front": "How are MBES data affected by a sound velocity profile that is too fast (warm bias)?",
-      "back": "The swath develops a 'frown' shape where the outer beams are over-corrected, making the seabed appear deeper at the edges."
+      "front": "How many lines minimum are needed for a standard single-head MBES patch test?",
+      "back": "8 lines minimum: 2 latency + 2 roll + 2 pitch + 2 heading."
     },
     {
-      "front": "What does a 'smile' shape in MBES data indicate about the applied sound velocity?",
-      "back": "The applied sound velocity is lower than the actual velocity in the water column (under-correction for refraction)."
+      "front": "What typical MBES calibration values indicate a likely mounting problem?",
+      "back": "Angular offsets > 2.0 degrees for roll, pitch, or heading, or latency > 500 ms indicate a physical problem that should not be calibrated away."
     },
     {
-      "front": "Why is a real-time sound velocity sensor required at the MBES transducer head?",
-      "back": "To enable correct electronic beam steering when compensating for vessel motion."
+      "front": "What does 'Frown = Fast' mean in MBES operations?",
+      "back": "When the applied SVP has velocities higher than reality (too fast), outer beams curve downward in a frown pattern. Memory aid: Frown = Fast."
     },
     {
-      "front": "What is the principal difference between an SVP sensor and a CTD sensor?",
-      "back": "An SVP measures sound travel time directly, whereas a CTD measures conductivity, temperature, and pressure (depth) and calculates sound velocity using empirical formulae (e.g., Chen-Millero or UNESCO)."
+      "front": "What does 'Smile = Slow' mean in MBES operations?",
+      "back": "When the applied SVP has velocities lower than reality (too slow), outer beams curve upward in a smile pattern. Memory aid: Smile = Slow."
     },
     {
-      "front": "What is the name of the vertical layer in the water column where temperature and sound velocity drop sharply?",
-      "back": "Thermocline."
+      "front": "What is the IHO S-44 TVU formula?",
+      "back": "$\\text{TVU}_{\\max}(d) = \\sqrt{a^2 + (b \\times d)^2}$ where a is the depth-independent coefficient and b is the depth-dependent coefficient."
     },
     {
-      "front": "What does the term 'squat' mean in relation to a vessel's draft?",
-      "back": "The change in a vessel's dynamic draft (typically the stern sinking) that occurs when it moves through the water due to hydrodynamic effects."
+      "front": "What confidence level is TVU reported at per IHO S-44?",
+      "back": "95% confidence level. $\\text{TVU} = 1.96 \\times \\sigma_d$"
     },
     {
-      "front": "What is the definition of TVU according to IHO S-44?",
-      "back": "Total Vertical Uncertainty; the total accumulated uncertainty in the vertical dimension at a $95\\%$ confidence level."
+      "front": "What confidence level is THU reported at per IHO S-44?",
+      "back": "95% confidence level. $\\text{THU} = 2.45 \\times \\sigma_P$"
     },
     {
-      "front": "What formula is used to calculate maximum allowable TVU at depth $d$?",
-      "back": "$\\pm \\sqrt{a^2 + (b \\cdot d)^2}$"
+      "front": "How many factors contribute to TVU in the MBES uncertainty budget?",
+      "back": "7 factors: MBES contribution, angular motion sensor, vessel/sensor misalignment, sound velocity sensors, heave and induced heave, depth reduction, and underwater vehicle depth."
     },
     {
-      "front": "What does the variable $a$ represent in the IHO TVU formula?",
-      "back": "The depth-independent component of uncertainty (e.g., fixed system errors that do not vary with depth)."
+      "front": "How many factors contribute to THU in the MBES uncertainty budget?",
+      "back": "6 factors: positioning system, latency, dimensional control, MBES contribution, heading, and vessel/sensor misalignment."
     },
     {
-      "front": "What does THU (Total Horizontal Uncertainty) measure in hydrography?",
-      "back": "The positional uncertainty for each individual sounding on the seabed in the horizontal plane."
+      "front": "What is squat in the context of MBES draft measurement?",
+      "back": "The change in vessel trim between at-rest and underway. Typically the stern lowers and the bow rises."
     },
     {
-      "front": "Which IHO survey order has the most stringent requirements for object detection and coverage?",
-      "back": "Exclusive Order."
+      "front": "What is settlement in the context of MBES draft measurement?",
+      "back": "The difference in vessel elevation between at-rest and underway. Once the vessel is moving, the hull settles lower in the water."
     },
     {
-      "front": "What does 'layback' mean when using towed equipment such as a side scan sonar?",
-      "back": "The horizontal distance astern from the vessel's common reference point (CRP) to the towed sensor's position."
+      "front": "What is the optimal position for mounting an MRU on a vessel?",
+      "back": "At the vessel's centre of gravity (COG), the point of least vertical movement where rotational accelerations are minimal."
     },
     {
-      "front": "How is a simple layback ($L$) calculated when USBL positioning is not available?",
-      "back": "$L = \\sqrt{\\text{cable out}^2 - \\text{sensor depth}^2}$"
+      "front": "What is the ideal horizontal placement for an MBES transducer on a vessel?",
+      "back": "On the vessel centreline, slightly forward of midships. This minimises pitch and roll effects and keeps the transducer in laminar flow."
     },
     {
-      "front": "What is 'slant range' in the context of side scan sonar imagery?",
-      "back": "The direct, diagonal distance from the sonar transducer to a target on the seabed."
+      "front": "What is bubble sweep-down in MBES operations?",
+      "back": "Air entrained by the vessel's bow wave is swept along the hull and passes under the transducer, introducing aeration noise that degrades or blanks the MBES data."
     },
     {
-      "front": "How are the range and resolution of a sonar affected when frequency increases?",
-      "back": "Resolution improves, but range decreases due to higher acoustic absorption in the water."
+      "front": "What precision is required for time synchronisation across all MBES sensors?",
+      "back": "1 ms or better, typically achieved via 1 Pulse Per Second (1 PPS) and a UTC time message from a GNSS system."
     },
     {
-      "front": "What is the 'nadir gap' in a side scan sonar image?",
-      "back": "The blind zone directly beneath the sonar transducer where no usable seabed imagery is produced."
+      "front": "Can MBES across-track errors from motion data latency be quantified by calibration?",
+      "back": "No. Motion data latency cannot be quantified by calibration, highlighting the importance of accurate time synchronisation."
     },
     {
-      "front": "What is the recommended tow altitude for a side scan sonar?",
-      "back": "$10-15\\%$ of the set range."
+      "front": "What does electronic beam steering require in an MBES system?",
+      "back": "A continuous real-time sound velocity measurement at the transducer face. Without it, beam steering cannot correctly compensate for vessel pitch and roll."
     },
     {
-      "front": "How is the height of a target ($H$) calculated from its shadow length in sonar data?",
-      "back": "$H = \\frac{\\text{shadow length} \\times \\text{transducer altitude}}{\\text{slant range to the target}}$"
+      "front": "What three purposes does SVP/CTD data serve for subsea vehicle MBES?",
+      "back": "1) MBES beam steering and refraction correction. 2) Pressure-to-depth conversion for the vehicle depth sensor. 3) Acoustic ranging for USBL/LBL positioning."
     },
     {
-      "front": "What is the purpose of 200% coverage during a sonar seabed survey?",
-      "back": "To ensure that nadir gaps are covered and that all targets are ensonified from two different directions for confident identification."
+      "front": "What is the minimum recommended swath overlap between adjacent MBES lines?",
+      "back": "20% overlap for flat seabed in good weather. Rough topography or poor weather may require larger overlap."
     },
     {
-      "front": "Term: Acoustic impedance.",
-      "back": "The product of a material's density and its sound velocity; the difference in impedance between two layers determines how much acoustic energy is reflected at the boundary."
+      "front": "What is the danger of double-correcting for motion in MBES?",
+      "back": "If the MBES system compensates for a motion component (e.g., pitch stabilisation) and the same correction is applied again during processing, the correction is doubled, introducing errors."
     },
     {
-      "front": "Why does a chirp profiler generally achieve better resolution than a conventional pinger?",
-      "back": "A chirp transmits a frequency-modulated (FM) sweep pulse that is digitally compressed on receive (matched filtering), which produces a very short and sharp return signal with improved signal-to-noise ratio."
+      "front": "What is the CUBE algorithm used for?",
+      "back": "Combined Uncertainty and Bathymetry Estimator -- an a posteriori TPU calculation algorithm that estimates uncertainty from gathered bathymetric data."
     },
     {
-      "front": "What type of seabed material gives the poorest penetration for a sub-bottom profiler (SBP)?",
-      "back": "Coarse sand, gravel, or rock, due to high attenuation and scattering of the acoustic energy."
+      "front": "What is the difference between TVG (transverse gradiometer) mode and total field magnetometer mode?",
+      "back": "TVG measures the magnetic gradient between two closely spaced sensors (for small ferrous target detection). Total field measures absolute magnetic field intensity (for large-scale anomaly detection and background mapping)."
     },
     {
-      "front": "What does a hyperbolic reflection in an SBP profile indicate?",
-      "back": "A point-source target beneath the seabed surface, such as a buried pipeline or cable."
+      "front": "Why is TVG mode more sensitive to small localised ferrous objects than total field mode?",
+      "back": "TVG mode cancels out regional field variations and diurnal drift, isolating the local magnetic gradient from small nearby targets."
     },
     {
-      "front": "What is the purpose of a Vertical Range to Target (VRT) test for a pipetracker?",
-      "back": "To establish the maximum vertical distance at which the system can reliably detect the target."
+      "front": "What is the recommended line spacing for operational magnetometer survey work?",
+      "back": "Approximately 3x the sensor altitude to achieve adequate lateral coverage with overlapping detection envelopes."
     },
     {
-      "front": "What correction is required for sound velocity calculations in the Caspian Sea compared with standard ocean water?",
-      "back": "A salinity adjustment of $+1.4$ ppt due to the differing ionic composition of the Caspian Sea compared with standard seawater."
+      "front": "What is the noise floor acceptance criterion for a magnetometer in TVG mode?",
+      "back": "Pass: < 1 nT. Marginal: 1-3 nT. Fail: > 3 nT."
     },
     {
-      "front": "What is the main advantage of a magnetic gradiometer (TVG) over a total field magnetometer?",
-      "back": "The gradiometer filters out regional variations and the Earth's background magnetic field, making it more sensitive to small, localised ferrous objects."
+      "front": "What is the position agreement criterion for reciprocal magnetometer lines?",
+      "back": "Pass: target position consistent within 2 m. Marginal: 2-5 m offset. Fail: > 5 m offset."
     },
     {
-      "front": "What is the bipolar pattern that a local magnetic anomaly creates in gradiometer data called?",
-      "back": "Dipolar signature."
+      "front": "What surrogate target specifications are required for the GMA1000 gradiometer SIT?",
+      "back": "Minimum 50 kg ferrous material, 0.5 m diameter, steel or iron (high magnetic permeability), with minimum 20 m separation between targets."
     },
     {
-      "front": "What is the purpose of 'background compensation' for a HydroPACT system?",
-      "back": "To zero the system against the magnetic environment from the ROV and the seabed before commencing the survey."
+      "front": "What does a valid magnetic detection look like in GMA1000 gradiometer data?",
+      "back": "A dipolar anomaly: a characteristic positive-then-negative (or negative-then-positive) deflection. It must be bipolar, clearly above the noise floor (minimum 3x), and repeatable on reciprocal lines."
     },
     {
-      "front": "How does pipeline diameter affect the detection range of a pipetracker?",
-      "back": "A larger diameter produces a stronger electromagnetic response, which increases the detection range."
+      "front": "At what altitudes is the GMA1000 surrogate item test performed?",
+      "back": "At 1 m, 2 m, 3 m, and 4 m altitude, running two opposing lines at each altitude."
     },
     {
-      "front": "What is the purpose of a Surrogate Item Test (SIT) before a magnetometer survey?",
-      "back": "To confirm that the system can detect an object of a specified size at the required operational stand-off distance."
+      "front": "What is the minimum SNR for a valid GMA1000 gradiometer detection?",
+      "back": "Greater than 3:1 (target amplitude vs noise floor)."
     },
     {
-      "front": "What does '1PPS' mean and what is it used for?",
-      "back": "One Pulse Per Second; a precise timing signal from GNSS used to synchronise the clocks of all connected survey sensors."
+      "front": "What is the fundamental trade-off in side scan sonar frequency selection?",
+      "back": "Range versus resolution. Higher frequency gives better resolution but attenuates faster, limiting range. Lower frequency covers more area but with lower resolution."
     },
     {
-      "front": "What two components are required for complete time synchronisation of sensors?",
-      "back": "A 1PPS pulse for microsecond-level precision and a UTC time message (e.g., NMEA ZDA string) for correct date and second tagging."
+      "front": "What frequency is typical for SSS pipeline route survey and debris clearance?",
+      "back": "300/500 kHz dual-frequency. The lower frequency provides coverage width; the higher frequency provides resolution for target classification."
     },
     {
-      "front": "Why is an MRU (Motion Reference Unit) ideally placed at the vessel's centre of gravity?",
-      "back": "To minimise measurement errors caused by lever-arm-induced vertical accelerations (induced heave) during roll and pitch."
+      "front": "What causes the nadir gap in side scan sonar imagery?",
+      "back": "The area directly below the transducer where the beam hits the seabed at near-vertical incidence, producing a strong but non-diagnostic return with no useful imagery."
     },
     {
-      "front": "What is 'bubble sweep-down' and how does it affect MBES data?",
-      "back": "Air bubbles swept under the hull at speed that attenuate or block the acoustic signals, causing noise or data dropouts in the swath."
+      "front": "Formula for SSS line spacing for 100% coverage?",
+      "back": "$\\text{Line spacing} = 2 \\times (\\text{Range} - \\text{Nadir gap})$"
     },
     {
-      "front": "Term: Beam steering.",
-      "back": "Electronic control of the MBES beam directions to compensate for vessel motion and maintain consistent seabed coverage."
+      "front": "Formula for SSS line spacing for 200% coverage?",
+      "back": "$\\text{Line spacing} = \\text{Range} - \\text{Nadir gap}$"
     },
     {
-      "front": "What is 'crosstalk' in the context of side scan sonar?",
-      "back": "Acoustic leakage between the port and starboard channels that creates ghost images in the opposite channel."
+      "front": "Formula for SSS towfish layback (simple estimate)?",
+      "back": "$\\text{Layback} = \\sqrt{\\text{cable out}^2 - \\text{towfish depth}^2}$"
     },
     {
-      "front": "Why is the harmonic mean more correct than the arithmetic mean when calculating mean sound velocity?",
-      "back": "Because travel time through each layer is proportional to thickness divided by velocity, computing the mean velocity for vertical propagation requires the harmonic mean to give a physically accurate result."
+      "front": "What is the best method to reduce SSS layback uncertainty?",
+      "back": "Use a USBL transponder on the towfish, which eliminates the layback calculation entirely."
     },
     {
-      "front": "How does an incorrect sound velocity profile affect a USBL position?",
-      "back": "It causes errors in the range calculation and angular errors due to ray bending (refraction) along the acoustic path."
+      "front": "Formula for estimating target height from SSS shadow?",
+      "back": "$\\text{Target Height} = \\frac{\\text{shadow length} \\times \\text{altitude}}{\\text{slant range to shadow end} - \\text{slant range to target}}$"
     },
     {
-      "front": "What is the purpose of a 'lateral offset test' when verifying a pipetracker?",
-      "back": "To investigate how a horizontal offset between the sensor and the pipe affects the accuracy of the computed position."
+      "front": "What is the difference between SSS detection, classification, and identification?",
+      "back": "Detection: knowing something is there. Classification: determining what category it falls into (rock vs man-made). Identification: determining exactly what it is (specific type of anchor). SSS can detect and classify; identification usually requires ROV or 900+ kHz sonar."
     },
     {
-      "front": "Term: Acoustic refraction.",
-      "back": "The bending of sound rays as they pass between water layers of different sound velocity, governed by Snell's law."
+      "front": "What is the minimum run-in distance for a towed SSS before the start of a survey corridor?",
+      "back": "2-3 times the layback, to allow the towfish to stabilise before recording the survey line."
     },
     {
-      "front": "What is 'hysteresis' in the context of sound velocity measurements (downcast vs. upcast)?",
-      "back": "A depth-dependent discrepancy between downcast and upcast readings caused by the sensor's thermal lag (response time)."
+      "front": "What is the SSS verification target selection criteria?",
+      "back": "Minimum 0.5 m relief above surrounding seabed, isolated (no nearby features causing ambiguity), and clearly identifiable on MBES data."
     },
     {
-      "front": "Why should salinity be carefully verified when calculating depth from pressure sensors?",
-      "back": "Water density, which depends on salinity and temperature, is required to correctly convert measured pressure to depth in metres."
+      "front": "What is the most common cause of SSS position errors?",
+      "back": "Incorrect heading source. A wrong heading source rotates all contacts around the vehicle position, producing large cross-track errors that increase with range."
     },
     {
-      "front": "What is the purpose of performing a 'surface soak' on an SVP probe before a cast?",
-      "back": "To allow the sensor to equilibrate to the water temperature and stabilise, which prevents erroneous readings at the start of the profile."
+      "front": "What SV value should be used when processing SSS data in SonarWiz?",
+      "back": "The SV at the transducer depth, not the average water column SV. The acoustic pulse travels laterally at transducer depth."
     },
     {
-      "front": "How does increasing pressure (depth) affect sound velocity in the ocean?",
-      "back": "Sound velocity increases approximately linearly with increasing pressure/depth."
+      "front": "What does an SVP (Sound Velocity Profiler) measure?",
+      "back": "Direct sound velocity via digital time-of-flight measurement over a known acoustic path length."
     },
     {
-      "front": "What happens to the MBES swath shape if the sound velocity at the transducer head is incorrect?",
-      "back": "The entire swath acquires incorrect beam geometry (beam steering errors), producing systematic errors across the full bottom profile."
+      "front": "What does a CTD measure, and how is SV derived?",
+      "back": "CTD measures conductivity, temperature, and pressure (depth). Sound velocity is calculated from these using empirical formulae (Chen-Millero or Del Grosso)."
     },
     {
-      "front": "What is 'layover' in a sonar image?",
-      "back": "A distortion where the top of a tall target appears closer to nadir than its base, because the acoustic return from the top arrives before the return from the base."
+      "front": "What advantage does a CTD have over an SVP?",
+      "back": "CTD can calculate density (from salinity, temperature, depth, and local gravity) for pressure-to-depth conversion, in addition to sound velocity."
     },
     {
-      "front": "What is the purpose of EXIF metadata in images from a camera system such as Voyis FDI?",
-      "back": "To store exact position and timestamp directly in each image file, facilitating photogrammetry and mosaic construction."
+      "front": "What three factors affect sound velocity in seawater?",
+      "back": "Temperature (~4.6 m/s per 1 degC), salinity (~1.3 m/s per 1 PSU), and pressure/depth (~1.7 m/s per 100 m depth). Temperature is dominant in most survey situations."
     },
     {
-      "front": "What minimum forward overlap is recommended for subsea photo mosaics?",
-      "back": "At least $60\\%$, with $60-80\\%$ recommended to ensure reliable image stitching."
+      "front": "How does MBES use sound velocity in two distinct ways?",
+      "back": "1) Beam steering at the transducer face (using surface SV from hull-mounted SVS). 2) Ray-tracing through the water column (using full-column SVP for refraction correction via Snell's Law)."
     },
     {
-      "front": "What is the risk of flying a side scan sonar too close to the seabed (too low altitude)?",
-      "back": "Narrow coverage swath and a high risk of mechanical damage to the towfish from seabed obstructions."
+      "front": "What is the 0.25% threshold for SVP-induced depth errors?",
+      "back": "A depth bias exceeding 0.25% of water depth indicates the SVP is not representative of actual water column conditions and risks failing IHO S-44 requirements. A fresh SVP cast is needed."
     },
     {
-      "front": "What effect does acoustic absorption have on the choice of sonar frequency for deep water?",
-      "back": "Absorption necessitates the use of lower frequencies, because high-frequency sound is attenuated too rapidly to reach the seabed and return."
+      "front": "What is the calibration validity period for SV probes (SVP)?",
+      "back": "2 years (though some clients mandate 1 year regardless of sensor type)."
     },
     {
-      "front": "What does a 'smile' shape on a flat seabed indicate in MBES data?",
-      "back": "The actual sound velocity in the water column is higher than the value applied in the processing software (i.e., the applied SV is too low)."
+      "front": "What is the calibration validity period for CTD probes?",
+      "back": "1 year."
     },
     {
-      "front": "Why is it important to measure static draft before and after each MBES survey?",
-      "back": "The vessel's draft changes as fuel and water are consumed, which affects the reference height for all depth measurements."
+      "front": "How long must an SVP probe soak near the surface before a cast?",
+      "back": "10 minutes to acquire ambient water temperature. For an SVP repeatability test, 10-20 minutes."
     },
     {
-      "front": "What is the most important criterion for selecting a reference target for side scan sonar position verification?",
-      "back": "The target must have at least $0.5$ m of relief and be clearly identifiable in the MBES data."
+      "front": "What is the recommended descent rate for SVP/CTD casts?",
+      "back": "Less than 1 m/s to allow the sensor to respond to temperature and salinity changes."
     },
     {
-      "front": "Why should steel structures in the vicinity be avoided during a magnetometer acceptance test?",
-      "back": "Large ferrous objects create strong magnetic interference that masks the test target's signature."
+      "front": "What SVP formula is recommended for depths greater than 1000 m?",
+      "back": "Del Grosso (1974)."
     },
     {
-      "front": "What is the purpose of a 'coil mapping check' on deck for a pipetracker?",
-      "back": "To confirm that the display shows the target's movement in the correct direction relative to the physical coil arrangement."
+      "front": "What correction is needed for salinity calculations in the Caspian Sea?",
+      "back": "Add 1.4 ppt to the calculated salinity value before computing density and sound velocity, because the Caspian Sea has a different salt composition than standard seawater."
     },
     {
-      "front": "How does seawater temperature affect sound velocity?",
-      "back": "Higher temperature leads to a significant increase in sound velocity."
+      "front": "Why should you never extrapolate a constant sound velocity to extend an incomplete SVP cast?",
+      "back": "Sound velocity changes with pressure (depth). A constant extension ignores this fundamental relationship and produces significant errors in deep water. Instead, extrapolate the last known gradient or use a historical profile."
     },
     {
-      "front": "What is 'slant-to-ground range' correction?",
-      "back": "A trigonometric calculation that converts diagonal (slant) sonar measurements to true horizontal distances along the seabed."
+      "front": "What type of mean should be reported for sound velocity: arithmetic or harmonic?",
+      "back": "Harmonic mean, not arithmetic mean."
     },
     {
-      "front": "What does '200% search' mean in side scan sonar surveying?",
-      "back": "Every part of the seabed is imaged from two different survey lines, ensuring that targets in nadir gaps are detected."
+      "front": "What is the difference between a real-time SVS and a full-column SVP?",
+      "back": "Real-time SVS: measures SV at a single point (hull or DVL) continuously, used for MBES beam steering. Full-column SVP: measures SV through the entire water column per cast, used for ray-tracing, USBL/LBL ranges, and depth computation."
     },
     {
-      "front": "Which SBP type is best suited for high-resolution detection of buried pipes near the seabed surface?",
-      "back": "A parametric profiler, due to its extremely narrow beam and high vertical resolution."
+      "front": "What SVP cast frequency is recommended for open ocean conditions?",
+      "back": "Every 4-6 hours. SV profile changes slowly in deep, well-mixed water."
     },
     {
-      "front": "What does a transverse gradiometer (TVG) specifically measure?",
-      "back": "The magnetic field difference between two sensors mounted horizontally, transverse to the direction of travel."
+      "front": "What SVP cast frequency is recommended for estuaries and coastal areas?",
+      "back": "Every 30 minutes to 1 hour. Tidal mixing, freshwater influx, and temperature gradients cause rapid SV variation."
     },
     {
-      "front": "What is 'gas blanking' in the context of sub-bottom profiling?",
-      "back": "Gas in the sediment absorbs and/or reflects all acoustic energy, making it impossible to image layers below the gas-charged zone."
+      "front": "What is the acceptance criterion for down cast vs up cast SVP agreement?",
+      "back": "Within 0.5 m/s throughout the profile. Larger differences indicate sensor fouling or hysteresis."
     },
     {
-      "front": "Term: Multipath interference.",
-      "back": "When sound travels via multiple paths (e.g., reflecting off the sea surface) and produces false echoes or noise in the data."
+      "front": "What is the SVP repeatability test pass criterion?",
+      "back": "SV agreement between two consecutive casts within 0.5 m/s at equivalent depths. 0.5-1.0 m/s is marginal. > 1.0 m/s is a fail."
     },
     {
-      "front": "Why is a marine geophysicist often required to approve magnetometer data?",
-      "back": "To distinguish between man-made objects, geological anomalies, and background noise in the magnetic data."
+      "front": "What is the acceptance criterion for SV/CTD comparison: direct SVP vs CTD-derived SV?",
+      "back": "Less than or equal to 1.0 m/s at all depths (accounts for formula uncertainty)."
     },
     {
-      "front": "What is the advantage of using an ROV-mounted sound velocity sensor during a survey?",
-      "back": "It provides continuous real-time monitoring of local sound velocity changes at the sensor depth."
+      "front": "What is thermal lag (hysteresis) in CTD sensors?",
+      "back": "The temperature sensor responds faster than the conductivity cell, causing a difference between downcast and upcast profiles, particularly at thermoclines. Downcast is preferred for comparison."
     },
     {
-      "front": "How is sediment sound velocity estimated if no borehole data are available for SBP interpretation?",
-      "back": "Through historical data or estimation based on sediment type (e.g., approximately $1500-1600$ m/s for clay)."
+      "front": "What is an XBT and when is it used?",
+      "back": "Expendable Bathythermograph: measures temperature vs depth using a fall-rate equation. Used in deep water (> 1500 m) where winch-deployed casts are impractical. SV must be calculated using assumed salinity."
     },
     {
-      "front": "What is the definition of 'Exclusive Order' according to IHO S-44?",
-      "back": "A survey order for areas with very small under-keel clearance where $100\\%$ seabed coverage and the highest accuracy are required."
+      "front": "What are the five types of sub-bottom profiler?",
+      "back": "Pinger (single frequency, 2-12 kHz), Chirp (swept, 1-12 kHz), Parametric (generated, 2-15 kHz), Boomer (broadband, 0.5-5 kHz), Sparker (electrical discharge, 0.1-2 kHz)."
     },
     {
-      "front": "What does it mean if a side scan sonar image has too high 'gain'?",
-      "back": "The image becomes over-saturated (too bright), making it difficult to distinguish features and textures in the seabed."
+      "front": "What determines reflection strength in sub-bottom profiling?",
+      "back": "Acoustic impedance contrast (density x velocity) at layer boundaries. Sand-clay = moderate reflection, sediment-rock = strong, sediment-gas = very strong."
     },
     {
-      "front": "How does vessel roll affect MBES coverage if beam steering is not used?",
-      "back": "The coverage area shifts from side to side, creating gaps in the seabed mapping."
+      "front": "What does gas in sediment look like in SBP data?",
+      "back": "A very strong near-surface reflector with complete acoustic blanking (no data) beneath it. No SBP system can penetrate through gas."
     },
     {
-      "front": "What is the purpose of separating upcast and downcast data during SVP processing?",
-      "back": "To identify and correct for hysteresis/thermal lag in the sensors."
+      "front": "What does a buried pipeline look like in SBP data?",
+      "back": "A hyperbolic diffraction pattern below the seabed surface. Burial depth is measured from seabed to the top of the hyperbola apex."
     },
     {
-      "front": "How does catenary (cable curve) affect the layback calculation for a towed fish?",
-      "back": "The cable follows a curved path, meaning the towfish is closer to the vessel than a straight-line calculation would indicate."
+      "front": "Formula for converting SBP two-way travel time to burial depth?",
+      "back": "$\\text{Depth} = \\frac{\\text{TWTT} \\times V_{sed}}{2}$ where $V_{sed}$ is the sediment sound velocity."
     },
     {
-      "front": "What is the primary source of uncertainty when positioning a towed side scan sonar without USBL?",
-      "back": "The layback calculation, due to unknown cable geometry and the effects of currents."
+      "front": "What are typical sediment sound velocities?",
+      "back": "Soft clay: 1480-1550 m/s. Sand: 1600-1800 m/s. Gravel: 1800-2200 m/s."
     },
     {
-      "front": "Term: Doppler Velocity Log (DVL).",
-      "back": "A sensor that measures speed over the seabed using the Doppler effect, used for subsea navigation."
+      "front": "What is a 'multiple' artifact in SBP data?",
+      "back": "A ghost image of the seabed appearing at exactly 2x the seabed depth (and potentially 3x, 4x). Caused by the echo bouncing between the sea surface and seabed."
     },
     {
-      "front": "What is 'along-track resolution' in a side scan sonar?",
-      "back": "The resolution in the direction of travel, which depends on the horizontal beam width (and therefore range) and the ping rate."
+      "front": "What is the key advantage of parametric SBP systems?",
+      "back": "Very narrow beam width (3-5 deg vs 15-40 deg for conventional) from non-linear interaction of two high-frequency primary beams, making them excellent for ROV-mounted operations."
     },
     {
-      "front": "Why is Time-Varied Gain (TVG) used in acoustic measurements?",
-      "back": "To amplify later (distant) echoes more than early (near) echoes, compensating for acoustic signal loss due to spreading and absorption with range."
+      "front": "What is chirp bandwidth for general SBP survey?",
+      "back": "2-8 kHz. For deep penetration: 0.5-6 kHz. For high resolution: 4-12 kHz."
     },
     {
-      "front": "How does salinity affect water density?",
-      "back": "Higher salinity increases water density."
+      "front": "What three tests make up the cable/pipetracker field verification?",
+      "back": "1) Vertical Range to Target (VRT) test. 2) Lateral Offset test. 3) Mobile Pipe/Cable test."
     },
     {
-      "front": "What does a 'bowtie' pattern in MBES patch test data indicate?",
-      "back": "It is the classic signature of a roll error."
+      "front": "What is the purpose of the pipetracker VRT test?",
+      "back": "To determine how much impact an increase in vertical distance from the ROV to the pipe/cable has on the depth reading generated by the tracker."
     },
     {
-      "front": "Why is it important to synchronise all camera system clocks to the INS time?",
-      "back": "To ensure that each image receives a correct geographic position based on an accurate timestamp."
+      "front": "What is the minimum distance for the Mobile Pipe/Cable test?",
+      "back": "At least 50 m of cable/pipe surveyed at standard speed and altitude, performed twice at opposite headings."
     },
     {
-      "front": "What is the risk of excessive speed during sub-bottom profiling?",
-      "back": "It reduces the number of pings per metre of seabed, resulting in lower horizontal resolution of the stratigraphic section."
+      "front": "What is background compensation in HydroPACT pipetracker verification?",
+      "back": "A measurement taken at least 25 m from any target to establish the signal level from the ROV, seawater, and soil. Signals above this level are treated as originating from a valid target."
+    },
+    {
+      "front": "What are the HydroPACT background compensation thresholds?",
+      "back": "Individual measurements: within +/-10 uV. Post-compensation coil values after departing: within +/-20 uV."
+    },
+    {
+      "front": "What is the Go/No-Go decision matrix for pipetracker VRT?",
+      "back": "GO: VRT > survey altitude + 1 m margin. CAUTION: VRT approximately equals survey altitude (within 1 m). NO-GO: VRT < survey altitude."
+    },
+    {
+      "front": "What pipe properties increase pipetracker detection range?",
+      "back": "Larger diameter and thicker wall produce stronger electromagnetic response and increased detection range."
+    },
+    {
+      "front": "What is the difference between HydroPACT 440 and 660?",
+      "back": "440: higher frequency, better resolution at short range, suited for surface-laid or shallowly buried pipes. 660: lower frequency, greater penetration, suited for deeper buried pipes and larger standoff distances."
+    },
+    {
+      "front": "How does seabed type affect pipetracker detection?",
+      "back": "Sand (low conductivity) is favourable with longer detection range. Clay (high conductivity) is unfavourable with reduced detection range due to higher signal attenuation."
+    },
+    {
+      "front": "What is the minimum video resolution for the DVR verification test?",
+      "back": "Minimum 1080p (1920x1080)."
+    },
+    {
+      "front": "What is the position consistency criterion for video verification reciprocal heading runs?",
+      "back": "Feature positions must agree within 1 m between reciprocal heading runs."
+    },
+    {
+      "front": "What is the Voyis Observer Pro 3 camera array configuration?",
+      "back": "Three cameras: centre (nadir, pointing straight down), port (angled 15-30 deg outward), and starboard (angled 15-30 deg outward). Together they provide a wide overlapping swath."
+    },
+    {
+      "front": "What is the required forward overlap for Voyis FDI images?",
+      "back": "Minimum 60%, recommended 60-80%. Controlled by frame rate, ROV speed, and altitude."
+    },
+    {
+      "front": "What is the maximum acceptable exposure time for Voyis FDI at survey speed?",
+      "back": "Below 4.5 ms to minimise motion blur. At speeds above 0.3 m/s, consider reducing to 1-2 ms."
+    },
+    {
+      "front": "What is the pre-dive clock sync requirement for Voyis cameras?",
+      "back": "All cameras must agree with INS time to within 20 ms."
+    },
+    {
+      "front": "What is the post-dive clock drift acceptance for Voyis cameras?",
+      "back": "Less than 500 ms total drift over the dive duration."
+    },
+    {
+      "front": "What EXIF metadata must be verified in Voyis FDI images?",
+      "back": "Timestamp, GPS coordinates, camera serial number/identifier, and exposure settings (time, ISO, aperture)."
     }
   ]
 }

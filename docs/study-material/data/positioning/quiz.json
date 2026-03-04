@@ -1,395 +1,205 @@
 {
-  "title": "Hydrography Quiz",
+  "title": "Positioning Quiz",
   "questions": [
     {
-      "question": "In GNSS theory, why must a receiver solve for at least four unknown variables to determine a three-dimensional position?",
+      "question": "A minimum of how many satellite observations are required for a full 3D GNSS position fix?",
       "answerOptions": [
-        {
-          "text": "To correct for the receiver's clock error relative to the satellites' synchronised time.",
-          "isCorrect": true,
-          "rationale": "In addition to latitude, longitude, and height, the time difference between the receiver's simple clock and the satellites' atomic clocks must be calculated for the range measurement to be accurate."
-        },
-        {
-          "text": "To simultaneously calculate both ionospheric and tropospheric refraction.",
-          "isCorrect": false,
-          "rationale": "Atmospheric delays are primarily handled through models or dual-frequency measurements, not by adding a fundamental geometric unknown."
-        },
-        {
-          "text": "Because the fourth variable is needed to eliminate the effect of multipath errors.",
-          "isCorrect": false,
-          "rationale": "Multipath is an environment-dependent noise error that cannot be resolved as a fixed variable in the fundamental position equation."
-        },
-        {
-          "text": "To determine the bearing to the centre of gravity of the satellite constellation.",
-          "isCorrect": false,
-          "rationale": "GNSS is based on range measurement (trilateration), not on angular measurement to a central point of the constellation."
-        }
+        {"text": "3 satellites", "isCorrect": false, "rationale": "Three satellites only resolve a 2D position (latitude and longitude) and require height aiding."},
+        {"text": "4 satellites", "isCorrect": true, "rationale": "Four unknowns must be solved: latitude, longitude, height, and receiver clock error, requiring a minimum of four observations."},
+        {"text": "6 satellites", "isCorrect": false, "rationale": "Six or more satellites improve geometry and redundancy but are not the minimum required."},
+        {"text": "2 satellites", "isCorrect": false, "rationale": "Two satellites only define the intersection of two spheres, which is insufficient for positioning."}
       ],
-      "hint": "Consider that the satellites have atomic clocks while your receiver has a significantly simpler oscillator."
+      "hint": "Think about the four unknowns that must be solved in every GNSS position fix."
     },
     {
-      "question": "Which principle explains why the uncertainty in a USBL position increases linearly with water depth?",
+      "question": "What is the primary advantage of PPP over RTK for offshore survey positioning?",
       "answerOptions": [
-        {
-          "text": "Angular errors in the transducer are projected over a longer slant range, which increases the horizontal position error.",
-          "isCorrect": true,
-          "rationale": "Since USBL measures angles, a small angular error ($\\\\alpha$) will result in a linearly increasing position error ($d = s \\\\cdot \\\\sin \\\\alpha$) as the slant range $s$ increases."
-        },
-        {
-          "text": "The speed of sound decreases with depth, making the phase comparison in the transducer less reliable.",
-          "isCorrect": false,
-          "rationale": "Although the speed of sound varies, it is the geometric projection of angular errors that is the dominant factor for depth-dependent uncertainty."
-        },
-        {
-          "text": "Acoustic signals are attenuated at higher pressures, creating a systematic bias in the time measurement.",
-          "isCorrect": false,
-          "rationale": "Attenuation affects the signal-to-noise ratio (precision) but does not explain the direct geometric correlation between depth and position uncertainty."
-        },
-        {
-          "text": "The vessel's motions (heave and roll) become more pronounced when the transducer is at greater depth.",
-          "isCorrect": false,
-          "rationale": "Vessel motion is independent of water depth, although its effect on the calculation requires accurate MRU compensation."
-        }
+        {"text": "PPP provides centimetre-level accuracy without convergence time", "isCorrect": false, "rationale": "PPP requires a convergence period of 20-30 minutes and typically achieves decimetre-level accuracy, not centimetre-level."},
+        {"text": "PPP provides global coverage without requiring a local base station", "isCorrect": true, "rationale": "PPP uses a global network of reference stations and corrections delivered via satellite L-band, making it ideal for offshore use without local infrastructure."},
+        {"text": "PPP has faster update rates than RTK", "isCorrect": false, "rationale": "Update rates are comparable; the advantage is coverage, not update rate."},
+        {"text": "PPP is immune to ionospheric scintillation", "isCorrect": false, "rationale": "PPP is also affected by ionospheric scintillation, which can cause loss of L-band corrections and degraded positioning."}
       ],
-      "hint": "Consider how a small angular deviation at the surface propagates as the acoustic ray travels further through the water column."
+      "hint": "Consider what infrastructure is needed for each system and where offshore surveys operate."
     },
     {
-      "question": "What is the primary conceptual difference between 'loosely coupled' and 'tightly coupled' integration in an inertial navigation system (INS)?",
+      "question": "During a dynamic GNSS intersystem check, why is a box pattern covering all four cardinal headings required?",
       "answerOptions": [
-        {
-          "text": "Tightly coupled integration uses raw measurement data from aiding sensors, such as pseudoranges or individual DVL beams, directly in the Kalman filter.",
-          "isCorrect": true,
-          "rationale": "By using raw data, the INS filter can exploit information even when there is insufficient data for a complete position solution from the aiding sensor."
-        },
-        {
-          "text": "Loosely coupled integration means the INS unit is physically bolted to the aiding sensor to minimise vibrations.",
-          "isCorrect": false,
-          "rationale": "The terms describe the mathematical software integration of data, not the physical mounting of the hardware."
-        },
-        {
-          "text": "Tightly coupled integration requires a higher update rate from the GNSS receiver to function.",
-          "isCorrect": false,
-          "rationale": "Update rate is important for both methods, but the difference lies in what type of information (computed position vs raw observations) is processed."
-        },
-        {
-          "text": "Loosely coupled integration is more accurate because it relies on the aiding sensor's internal optimisation.",
-          "isCorrect": false,
-          "rationale": "On the contrary, tightly coupled is considered more robust and accurate as it provides the Kalman filter with more raw information to work with."
-        }
+        {"text": "To test the GNSS receivers at different satellite geometries", "isCorrect": false, "rationale": "Satellite geometry changes with time, not vessel heading. The box pattern serves a different purpose."},
+        {"text": "To expose heading-dependent offset errors such as antenna position offset errors", "isCorrect": true, "rationale": "A wrong antenna offset produces position errors that reverse with heading changes. Sailing all four cardinal headings makes these biases visible as systematic patterns in the residuals."},
+        {"text": "To calibrate the vessel's gyrocompass", "isCorrect": false, "rationale": "The gyrocompass is not calibrated during this check; it is a supporting sensor."},
+        {"text": "To verify the correction service works in all directions", "isCorrect": false, "rationale": "Correction services are not directional; they work regardless of vessel heading."}
       ],
-      "hint": "Focus on whether the system receives a pre-computed position or raw observation data from the sensors."
+      "hint": "Think about what happens to computed CRP position when the vessel turns 180 degrees if there is an antenna offset error."
     },
     {
-      "question": "Why is an LBL system generally more sensitive to errors in the sound velocity profile (SVP) than a USBL system?",
+      "question": "Without DVL aiding, approximately how far does a standard offshore INS drift in 4 minutes?",
       "answerOptions": [
-        {
-          "text": "LBL utilises more horizontal acoustic paths that travel longer distances through water layers with varying sound velocity.",
-          "isCorrect": true,
-          "rationale": "Horizontal paths are more exposed to refraction and spend more time in gradient zones, making the range calculation extremely dependent on an accurate SVP."
-        },
-        {
-          "text": "USBL systems use higher frequencies that are not affected by temperature changes in the water.",
-          "isCorrect": false,
-          "rationale": "Sound velocity affects all acoustic systems regardless of frequency; the difference lies in the geometry of the signal path."
-        },
-        {
-          "text": "LBL requires synchronised clocks that are driven by the speed of sound waves.",
-          "isCorrect": false,
-          "rationale": "Clock synchronisation in LBL is a technical challenge, but sound velocity is used to convert time to range, not to drive the clocks."
-        },
-        {
-          "text": "The USBL transducer is mounted on the vessel and can therefore measure the local sound velocity with higher precision.",
-          "isCorrect": false,
-          "rationale": "The local sound velocity at the transducer is important for USBL, but LBL's sensitivity is due to the accumulated effect along the long horizontal paths."
-        }
+        {"text": "Approximately 1 metre", "isCorrect": false, "rationale": "This is far too optimistic for unaided inertial navigation."},
+        {"text": "Approximately 12 metres", "isCorrect": true, "rationale": "A standard offshore FOG-based INS drifts approximately 12 m in 4 minutes when unaided, and the drift rate accelerates over time."},
+        {"text": "Approximately 100 metres", "isCorrect": false, "rationale": "This overstates the drift for 4 minutes, though drift does grow non-linearly over longer periods."},
+        {"text": "Approximately 0.1 metres", "isCorrect": false, "rationale": "This would only be achievable with DVL aiding over a very short distance."}
       ],
-      "hint": "Think about the angle at which the signal passes through the different temperature layers in the water."
+      "hint": "This figure illustrates why the DVL is the single most important aiding sensor for subsea INS operations."
     },
     {
-      "question": "In tidal theory, what does the form factor $F = \\\\frac{K_1 + O_1}{M_2 + S_2}$ define?",
+      "question": "What is the fundamental difference between how an INS handles random errors versus systematic errors from aiding sensors?",
       "answerOptions": [
-        {
-          "text": "The ratio between the diurnal and semi-diurnal tidal constituents, used to classify the tidal regime.",
-          "isCorrect": true,
-          "rationale": "The form factor is used to determine whether an area has predominantly one or two high waters per day by comparing the strength of the principal constituents."
-        },
-        {
-          "text": "The total vertical uncertainty when using GNSS tides compared to a fixed tide gauge.",
-          "isCorrect": false,
-          "rationale": "This relates to error budgets ($TPU$), not to the harmonic analysis of tidal forces."
-        },
-        {
-          "text": "The difference in amplitude between spring tides and neap tides based on the phase of the moon.",
-          "isCorrect": false,
-          "rationale": "Although $M_2$ and $S_2$ affect the spring/neap cycle, the primary purpose of the form factor is to define the daily type (diurnal vs semi-diurnal)."
-        },
-        {
-          "text": "The offset between the astronomical tidal prediction and the actual water level during a storm.",
-          "isCorrect": false,
-          "rationale": "This is called a tidal residual or surge, and depends on meteorological factors rather than the harmonic constants."
-        }
+        {"text": "The INS can correct both random and systematic errors through the Kalman filter", "isCorrect": false, "rationale": "The Kalman filter can smooth random errors but has no mechanism to identify or correct systematic errors."},
+        {"text": "The INS smooths random errors effectively but cannot correct systematic errors", "isCorrect": true, "rationale": "The INS improves precision by smoothing random noise, but it cannot identify where truth is. Systematic errors (constant offsets) pass through the filter unchanged."},
+        {"text": "The INS rejects both random and systematic errors from aiding sensors", "isCorrect": false, "rationale": "The INS does not reject systematic errors; it absorbs them into its solution."},
+        {"text": "The INS only handles random errors; systematic errors are corrected by the DVL", "isCorrect": false, "rationale": "The DVL provides velocity aiding but does not correct systematic errors in other aiding sensors like USBL."}
       ],
-      "hint": "It is about determining whether a location has one or two tidal cycles per day."
+      "hint": "Consider what the Kalman filter can and cannot do with data that is consistently offset from truth."
     },
     {
-      "question": "What is the primary reason an unaided inertial navigation system (INS) exhibits an accelerating (non-linear) drift over time?",
+      "question": "When transferring USBL calibration results from a QINSy report into the USBL software, what critical step must be taken?",
       "answerOptions": [
-        {
-          "text": "The position calculation involves double numerical integration of acceleration data, causing small measurement errors to accumulate quadratically over time.",
-          "isCorrect": true,
-          "rationale": "A constant acceleration error leads to a linear error in velocity and consequently a quadratically increasing error in position over time ($s = \\\\frac{1}{2}at^2$)."
-        },
-        {
-          "text": "The gyroscopes in the IMU lose their calibration due to the Earth's rotation rate.",
-          "isCorrect": false,
-          "rationale": "Modern INS actively compensates for Earth rotation; the drift is rather due to the mathematical integration effects of residual errors."
-        },
-        {
-          "text": "The Kalman filter shuts down automatically when external references are missing to save computing power.",
-          "isCorrect": false,
-          "rationale": "The Kalman filter continues to run in a 'predict' mode, but without 'update' steps it cannot correct for the accumulated errors."
-        },
-        {
-          "text": "Magnetic disturbances from the vessel's hull affect the accelerometers' ability to find the vertical.",
-          "isCorrect": false,
-          "rationale": "Most survey-grade INS systems use gyroscopes that are independent of magnetism; the drift is an inherent property of the integration process."
-        }
+        {"text": "Multiply all values by the scale factor", "isCorrect": false, "rationale": "The scale factor is applied separately; this is about the sign convention."},
+        {"text": "Invert the sign of every misalignment value", "isCorrect": true, "rationale": "QINSy and USBL software use different sign conventions. Failure to invert signs doubles the misalignment error instead of correcting it."},
+        {"text": "Enter the values exactly as reported", "isCorrect": false, "rationale": "This is correct for CASIUS reports, but NOT for QINSy reports where signs must be inverted."},
+        {"text": "Add 180 degrees to the heading misalignment only", "isCorrect": false, "rationale": "The correction applies to all axes (heading, pitch, roll) and involves sign inversion, not adding 180 degrees."}
       ],
-      "hint": "Think about the mathematical process of going from acceleration to velocity and finally to position."
+      "hint": "CASIUS reports can be entered directly, but QINSy reports require a specific conversion."
     },
     {
-      "question": "Why does Precise Point Positioning (PPP) require a longer convergence period than traditional DGNSS?",
+      "question": "What is the achievable positional accuracy target for a modern USBL system?",
       "answerOptions": [
-        {
-          "text": "The receiver must resolve the carrier-phase ambiguity and estimate local atmospheric biases without the aid of a local base station.",
-          "isCorrect": true,
-          "rationale": "PPP uses carrier-phase measurements for high precision, which requires time for the filter to 'lock on' to the correct number of wavelengths and separate them from other error sources."
-        },
-        {
-          "text": "It takes time for the receiver to download global geoid models via L-band satellites.",
-          "isCorrect": false,
-          "rationale": "Geoid models are typically pre-installed; convergence is about real-time estimation of satellite orbit and clock corrections."
-        },
-        {
-          "text": "The receiver must wait for at least eight satellites from the same constellation to become visible simultaneously.",
-          "isCorrect": false,
-          "rationale": "Modern PPP systems are multi-constellation and can function with fewer satellites, but the accuracy requires time for the statistical models to stabilise."
-        },
-        {
-          "text": "PPP signals are transmitted on a lower frequency that penetrates the atmosphere more slowly.",
-          "isCorrect": false,
-          "rationale": "Radio waves travel at the speed of light regardless of correction type; the delay is purely computational."
-        }
+        {"text": "Better than 0.01% of slant range", "isCorrect": false, "rationale": "This is more typical of LBL systems in good conditions, not USBL."},
+        {"text": "Better than 0.3% of slant range plus surface positioning error at 95% confidence", "isCorrect": true, "rationale": "Modern USBL systems should achieve accuracy better than 0.3% of slant range plus the absolute accuracy of the vessel surface positioning system at 2-sigma/95%."},
+        {"text": "Better than 1% of slant range", "isCorrect": false, "rationale": "This is too pessimistic for modern systems; 0.3% is the target for well-calibrated USBL."},
+        {"text": "Better than 5 metres regardless of depth", "isCorrect": false, "rationale": "USBL accuracy is depth-dependent, expressed as a percentage of slant range, not a fixed value."}
       ],
-      "hint": "It is about counting the number of 'waves' in the signal and separating noise from data."
+      "hint": "The answer is expressed as a percentage of slant range plus a surface component."
     },
     {
-      "question": "What does the term 'Geoid Undulation' ($N$) mean in the context of vertical datums?",
+      "question": "During an LBL array calibration, what is the maximum acceptable RMS of position residuals?",
       "answerOptions": [
-        {
-          "text": "The vertical difference between the mathematical ellipsoid (e.g. WGS84) and the physical geoid (the equipotential surface of the Earth's gravity field).",
-          "isCorrect": true,
-          "rationale": "The ellipsoid is a simplified model, while the geoid follows the Earth's actual mass distribution. The difference $N$ is needed to convert GNSS ellipsoidal heights to orthometric heights."
-        },
-        {
-          "text": "Water level variations caused by changes in atmospheric air pressure.",
-          "isCorrect": false,
-          "rationale": "This is often called the inverse barometer effect, not geoid undulation."
-        },
-        {
-          "text": "The total uncertainty in an echo sounding after heave has been applied.",
-          "isCorrect": false,
-          "rationale": "This is part of the error budget ($TVU$) and is a measurement uncertainty, not a geometric separation between reference surfaces."
-        },
-        {
-          "text": "The difference between Mean Sea Level (MSL) and Lowest Astronomical Tide (LAT) at a specific tide gauge.",
-          "isCorrect": false,
-          "rationale": "This separation is often called $Z_0$ and describes the relationship between two tidal datums, not between the ellipsoid and the geoid."
-        }
+        {"text": "< 0.50 m", "isCorrect": false, "rationale": "This is too loose; 0.50 m is the horizontal position standard deviation threshold for surface calibration."},
+        {"text": "< 0.10 m", "isCorrect": true, "rationale": "Calibration range residuals (observed minus computed ranges) should be less than 0.10 m RMS for each transponder."},
+        {"text": "< 1.00 m", "isCorrect": false, "rationale": "This is far too large for LBL calibration residuals and would indicate a significant problem."},
+        {"text": "< 0.01 m", "isCorrect": false, "rationale": "While LBL can achieve centimetre precision in operations, calibration residuals of < 0.01 m are unrealistically tight."}
       ],
-      "hint": "Think about the difference between a perfect geometric shape and a surface governed by the Earth's gravity."
+      "hint": "This is the threshold for the difference between observed and computed ranges during calibration."
     },
     {
-      "question": "During a dynamic GNSS check (box pattern), why is it critical to sail in all four cardinal directions (N, E, S, W)?",
+      "question": "Why is LBL more sensitive to sound velocity errors than USBL?",
       "answerOptions": [
-        {
-          "text": "To expose heading-dependent systematic errors in antenna offset calculations and sensor misalignments.",
-          "isCorrect": true,
-          "rationale": "An error in the antenna's position within the vessel frame will manifest differently depending on heading; for example, a longitudinal error becomes a northing error on a northerly heading and a southing error on a southerly heading."
-        },
-        {
-          "text": "To ensure that satellite geometry (DOP) remains constant throughout the test.",
-          "isCorrect": false,
-          "rationale": "The satellites' movement across the sky is independent of the vessel's heading; the purpose is to check the vessel's internal configuration."
-        },
-        {
-          "text": "To minimise the effect of tidal changes during data collection.",
-          "isCorrect": false,
-          "rationale": "Tides affect height regardless of direction. The cardinal directions are used to check the horizontal offset values."
-        },
-        {
-          "text": "Because inertial sensors (INS) require heading changes of exactly $90^{\\circ}$ to calibrate their gyroscopes.",
-          "isCorrect": false,
-          "rationale": "Although heading changes aid INS alignment, the main purpose of cardinal directions in a GNSS context is to isolate static offset errors in the vessel model."
-        }
+        {"text": "LBL uses higher acoustic frequencies that are more affected by SV changes", "isCorrect": false, "rationale": "Frequency does not determine SV sensitivity; it is the acoustic path geometry that matters."},
+        {"text": "LBL acoustic paths are longer and more horizontal, crossing thermoclines at shallow angles", "isCorrect": true, "rationale": "Horizontal paths spend more distance in the SV gradient zone. A 1 m/s SV error over a 500 m path produces approximately 0.33 m of range error."},
+        {"text": "LBL transponders do not have sound velocity sensors", "isCorrect": false, "rationale": "SVPs are used for both LBL and USBL; the difference is in path geometry, not sensor availability."},
+        {"text": "USBL systems automatically compensate for sound velocity errors", "isCorrect": false, "rationale": "Both systems need SVP input; USBL simply has shorter, more vertical paths that are less affected."}
       ],
-      "hint": "Think about how a mis-measured distance between the CRP and the antenna reverses direction (e.g. from north to south) when the vessel turns."
+      "hint": "Consider the direction of acoustic paths in LBL (horizontal) versus USBL (primarily vertical)."
     },
     {
-      "question": "What role does Dilution of Precision (DOP) play in the evaluation of a GNSS position?",
+      "question": "What does the HiPAP USBL spin test verify, and what is the acceptance criterion for 95% of position fixes?",
       "answerOptions": [
-        {
-          "text": "It is a multiplier that describes how the geometric arrangement of satellites in the sky amplifies the underlying measurement errors.",
-          "isCorrect": true,
-          "rationale": "Good geometry (satellites spread out) gives a low DOP, while poor geometry (satellites clustered together) gives a high DOP, which directly increases the uncertainty of the position."
-        },
-        {
-          "text": "It indicates the exact number of centimetres by which a position deviates from the truth.",
-          "isCorrect": false,
-          "rationale": "DOP is a dimensionless number, not an absolute measure of error in metres or centimetres."
-        },
-        {
-          "text": "It measures the atmospheric attenuation of signal strength from individual satellites.",
-          "isCorrect": false,
-          "rationale": "Signal strength is often measured as $C/N_0$ (carrier-to-noise ratio), while DOP focuses solely on geometry."
-        },
-        {
-          "text": "It is a time indicator for how long a receiver has been locked to a specific constellation.",
-          "isCorrect": false,
-          "rationale": "This would more likely be called 'age of solution' or similar; DOP changes continuously with the satellites' orbits."
-        }
+        {"text": "It verifies heading accuracy; 95% of points within 0.1% of slant range", "isCorrect": false, "rationale": "The spin test primarily verifies pitch/roll corrections and overall system accuracy, not just heading."},
+        {"text": "It verifies system accuracy after calibration; 95% of points within 0.3% of slant range plus surface positioning error", "isCorrect": true, "rationale": "The spin test rotates the vessel 360 degrees to verify that USBL positions are consistent across all headings after calibration corrections are applied."},
+        {"text": "It verifies DVL calibration; 95% of points within 1% of distance travelled", "isCorrect": false, "rationale": "The spin test is for USBL verification, not DVL calibration."},
+        {"text": "It verifies GNSS accuracy; 95% of points within 0.5 metres", "isCorrect": false, "rationale": "The spin test verifies USBL acoustic positioning, not GNSS."}
       ],
-      "hint": "Consider whether it is easier to trilaterate a position if the reference points are close together or far apart."
+      "hint": "The vessel rotates through 360 degrees above a transponder during this test."
     },
     {
-      "question": "Why is it recommended to perform a 'Static GNSS Intersystem Check' before a dynamic check is carried out?",
+      "question": "What is the recommended minimum calibration depth for a HiPAP USBL system to produce results valid for all operating depths?",
       "answerOptions": [
-        {
-          "text": "To isolate pure GNSS performance from error sources related to vessel dynamics, lever arms, and heading management.",
-          "isCorrect": true,
-          "rationale": "By remaining stationary, uncertainties in MRU, gyro, and vessel models are eliminated, making it possible to determine whether the two GNSS systems themselves are in agreement."
-        },
-        {
-          "text": "To allow the GNSS receivers to download the latest ephemeris files without being affected by Doppler shift.",
-          "isCorrect": false,
-          "rationale": "Receivers can download data while in motion; the purpose is rather methodological to enable systematic troubleshooting."
-        },
-        {
-          "text": "Because PPP convergence can only occur when the antenna is completely stationary.",
-          "isCorrect": false,
-          "rationale": "PPP can converge while in motion, although it is often faster and more stable when stationary, even though this is not an absolute requirement."
-        },
-        {
-          "text": "To calibrate the echosounder's vertical offset against the waterline at the quayside.",
-          "isCorrect": false,
-          "rationale": "The GNSS check aims to verify positioning, not the echosounder installation, even though both may be done concurrently at the quayside."
-        }
+        {"text": "50 m", "isCorrect": false, "rationale": "50 m is too shallow; acoustic position errors would not be dominant over GNSS errors."},
+        {"text": "200 m or deeper", "isCorrect": true, "rationale": "A calibration at 200 m or deeper is valid for all operating depths. The optimum range is 400-1000 m. At shallower depths, the calibration is only valid for operating depth up to twice the calibration depth."},
+        {"text": "1000 m minimum", "isCorrect": false, "rationale": "1000 m is within the optimum range but is not the minimum; 200 m is sufficient for universal validity."},
+        {"text": "100 m", "isCorrect": false, "rationale": "At 100 m, the calibration is only valid for depths up to 200 m, not for all operating depths."}
       ],
-      "hint": "If the systems do not agree when stationary, they will certainly not agree when in motion."
+      "hint": "The calibration depth must ensure that acoustic errors dominate over surface positioning errors."
     },
     {
-      "question": "How does multipath affect the quality of a GNSS position in theoretical terms?",
+      "question": "What is the primary purpose of a GNSS Accurate Height Check, and what is the minimum data collection duration?",
       "answerOptions": [
-        {
-          "text": "Reflected signals travel a longer path than the direct signal, causing the receiver to overestimate the range to the satellite.",
-          "isCorrect": true,
-          "rationale": "GNSS is based on timing; a reflection takes longer to arrive, which is interpreted as a greater range and thereby shifts the position."
-        },
-        {
-          "text": "Reflections cause the signal to change frequency, deceiving the receiver into thinking the satellite is moving in the wrong direction.",
-          "isCorrect": false,
-          "rationale": "Multipath primarily affects travel time and phase, not the carrier's fundamental frequency through the Doppler effect in that manner."
-        },
-        {
-          "text": "Multipath blocks the reception of correction data from L-band satellites.",
-          "isCorrect": false,
-          "rationale": "Multipath can interfere with reception, but its primary effect is position error in the calculation of satellite ranges."
-        },
-        {
-          "text": "It increases the PDOP value by making the satellites appear to be clustered in the sky.",
-          "isCorrect": false,
-          "rationale": "DOP depends on the satellites' actual positions in their orbits, while multipath is a local measurement error at the antenna."
-        }
+        {"text": "Verify horizontal accuracy; minimum 2 hours of data", "isCorrect": false, "rationale": "This check is specifically for vertical (height) accuracy, not horizontal."},
+        {"text": "Verify GNSS-derived ellipsoidal heights against tide gauge data over one full tidal cycle (8-9 hours)", "isCorrect": true, "rationale": "The check compares GNSS-derived water levels against independent 3rd-party tide gauge data over at least one full tidal cycle including one high and one low slack water."},
+        {"text": "Calibrate the GNSS antenna height; minimum 30 minutes", "isCorrect": false, "rationale": "This is a verification, not a calibration, and 30 minutes is far too short to capture tidal variation."},
+        {"text": "Verify geoid model accuracy; minimum 24 hours", "isCorrect": false, "rationale": "While geoid model quality does affect the result, 24 hours exceeds the minimum requirement of one full tidal cycle."}
       ],
-      "hint": "Focus on what happens to the travel time of the signal to the antenna if it bounces off a wall first."
+      "hint": "Think about what period is needed to capture the full range of tidal variation at a location."
     },
     {
-      "question": "Which vertical datum is generally recommended by the IHO for nautical chart production and why?",
+      "question": "A CRPA (Controlled Reception Pattern Antenna) mitigates GNSS jamming by what mechanism?",
       "answerOptions": [
-        {
-          "text": "Lowest Astronomical Tide (LAT), because it provides a safety margin for navigation by showing the minimum expected depth.",
-          "isCorrect": true,
-          "rationale": "LAT ensures that the actual depth is almost always equal to or greater than that shown on the chart, which is crucial for safe navigation."
-        },
-        {
-          "text": "Mean Sea Level (MSL), as it is the most stable surface for engineering work and pipeline routing.",
-          "isCorrect": false,
-          "rationale": "MSL is suitable for engineering projects, but for nautical charts, safety against grounding is the priority, which requires a low-water datum."
-        },
-        {
-          "text": "The WGS84 ellipsoid, because it eliminates the need for complex tidal corrections.",
-          "isCorrect": false,
-          "rationale": "The ellipsoid is a mathematical abstraction and does not reflect the water surface; it cannot be used directly for navigation without accounting for the geoid."
-        },
-        {
-          "text": "Highest Astronomical Tide (HAT), to show the clearance under bridges with maximum safety.",
-          "isCorrect": false,
-          "rationale": "HAT is used for vertical clearances (bridges, masts), but not as a reference for depths on nautical charts."
-        }
+        {"text": "Increasing signal transmission power to overpower the jammer", "isCorrect": false, "rationale": "GNSS antennas are receive-only; they do not transmit."},
+        {"text": "Creating nulls in the antenna gain pattern in the direction of jammers using adaptive beam forming", "isCorrect": true, "rationale": "CRPA uses adaptive beam forming to steer reception away from interference sources by creating directional nulls toward the jammer."},
+        {"text": "Encrypting the GNSS signal to prevent interception", "isCorrect": false, "rationale": "Encryption is a feature of the satellite signal itself, not the antenna."},
+        {"text": "Switching to a backup frequency band not affected by jamming", "isCorrect": false, "rationale": "CRPA works by spatial filtering (beam steering), not frequency hopping."}
       ],
-      "hint": "Think about what the master of a deep-draught vessel would most want to know about the depth at low water."
+      "hint": "The antenna dynamically adjusts its reception pattern based on the direction of interference."
     },
     {
-      "question": "Why is it recommended to have a sound velocity sensor (SVS) directly coupled to a DVL?",
+      "question": "In the context of tidal reduction, what does the form factor $F = (K1 + O1) / (M2 + S2)$ classify?",
       "answerOptions": [
-        {
-          "text": "To optimise the acoustic range measurements in real time, since the DVL calculation is directly dependent on the local sound velocity at the transducer head.",
-          "isCorrect": true,
-          "rationale": "The DVL measures the Doppler shift in the reflected pings, and the conversion from frequency shift to velocity requires knowledge of the speed of sound in the medium."
-        },
-        {
-          "text": "So the INS filter can calculate the water's density and thereby correct for the vessel's draught.",
-          "isCorrect": false,
-          "rationale": "Density is relevant for pressure-to-depth conversion, but the SVS is primarily used for acoustic scaling of velocity data."
-        },
-        {
-          "text": "To prevent the DVL beams from bending excessively in the thermal boundary layer near the seabed.",
-          "isCorrect": false,
-          "rationale": "Beam bending (refraction) is handled through profiling (SVP); the SVS at the transducer head corrects the initial scale factor for the measurement."
-        },
-        {
-          "text": "Because sound velocity is used to synchronise timestamps between INS and DVL via Ethernet.",
-          "isCorrect": false,
-          "rationale": "Time synchronisation is done via PPS or NTP, not through acoustic measurements."
-        }
+        {"text": "The accuracy of the tide gauge installation", "isCorrect": false, "rationale": "The form factor classifies the tidal regime type, not gauge accuracy."},
+        {"text": "The tidal regime at a location (semi-diurnal, mixed, or diurnal)", "isCorrect": true, "rationale": "$F < 0.25$ is semi-diurnal, $0.25 < F < 1.5$ is mixed (mainly semi-diurnal), $1.5 < F < 3.0$ is mixed (mainly diurnal), and $F > 3.0$ is diurnal."},
+        {"text": "The maximum tidal range at the survey location", "isCorrect": false, "rationale": "The form factor classifies the type of tide, not its range."},
+        {"text": "The error margin in tidal predictions", "isCorrect": false, "rationale": "The form factor describes the ratio of diurnal to semi-diurnal constituents, not prediction error."}
       ],
-      "hint": "Consider how to convert a frequency change (Doppler effect) into a velocity in metres per second."
+      "hint": "The numerator contains diurnal constituents and the denominator contains semi-diurnal constituents."
     },
     {
-      "question": "Within the framework of an inertial navigation system (INS), what is the purpose of a 'ZUPT' (Zero Velocity Update)?",
+      "question": "What is the key difference between Sonardyne SPRINT INS alignment and Exail (iXblue) PHINS/ROVINS alignment?",
       "answerOptions": [
-        {
-          "text": "To reset the system's accumulated velocity errors by keeping the vehicle completely stationary.",
-          "isCorrect": true,
-          "rationale": "When the system knows that the velocity is exactly zero, the Kalman filter can identify and correct the internal sensor drifts that would otherwise be interpreted as motion."
-        },
-        {
-          "text": "To rapidly recalibrate the gyroscopes after a sharp heading change.",
-          "isCorrect": false,
-          "rationale": "Heading changes (dynamics) help with alignment, but ZUPT requires total stillness to function."
-        },
-        {
-          "text": "To synchronise the INS clock with the GNSS system's atomic clocks at start-up.",
-          "isCorrect": false,
-          "rationale": "Time synchronisation is done via ZDA/PPS signals; ZUPT focuses on the mechanical drifts in the inertial sensors."
-        },
-        {
-          "text": "To force the INS unit to ignore poor USBL data for a limited time.",
-          "isCorrect": false,
-          "rationale": "ZUPT is about providing a velocity reference, not about filtering out position aiding."
-        }
+        {"text": "SPRINT requires a longer alignment time than PHINS", "isCorrect": false, "rationale": "SPRINT has a simpler alignment process with no required dynamic manoeuvres."},
+        {"text": "SPRINT runs INS and AHRS concurrently without requiring alignment manoeuvres, while PHINS/ROVINS requires heading changes for fine alignment", "isCorrect": true, "rationale": "SPRINT uses its AHRS (10-minute settle) to provide starting values to the INS, eliminating dynamic alignment manoeuvres. Exail systems need heading changes (figure-of-8 or stair pattern) to converge the Kalman filter."},
+        {"text": "PHINS systems do not require coarse alignment", "isCorrect": false, "rationale": "PHINS requires a 5-minute coarse alignment phase where the system must remain stationary."},
+        {"text": "SPRINT cannot use DVL aiding during alignment", "isCorrect": false, "rationale": "SPRINT uses all available aiding sensors; the difference is in the alignment methodology."}
       ],
-      "hint": "What happens to a calculation error when the system knows that the true velocity is precisely zero?"
+      "hint": "One system uses a concurrent AHRS to bootstrap the INS; the other uses dynamic manoeuvres to converge heading."
+    },
+    {
+      "question": "A 10 ms timing error at a vessel speed of 4 knots (~2.1 m/s) produces what along-track position error?",
+      "answerOptions": [
+        {"text": "Approximately 0.021 m", "isCorrect": true, "rationale": "Position error = timing error x speed = 0.010 s x 2.1 m/s = 0.021 m."},
+        {"text": "Approximately 0.21 m", "isCorrect": false, "rationale": "This would correspond to a 100 ms timing offset at 4 knots, not 10 ms."},
+        {"text": "Approximately 2.1 m", "isCorrect": false, "rationale": "This overstates the error by a factor of 100."},
+        {"text": "Approximately 0.002 m", "isCorrect": false, "rationale": "This understates the error by a factor of 10."}
+      ],
+      "hint": "Multiply the timing error in seconds by the vessel speed in metres per second."
+    },
+    {
+      "question": "What is the range error caused by an uncompensated 10 ms transponder latency with a sound velocity of 1500 m/s?",
+      "answerOptions": [
+        {"text": "0.75 m", "isCorrect": false, "rationale": "This is the one-way range for 0.5 ms, not the correct formula result."},
+        {"text": "7.5 m", "isCorrect": true, "rationale": "Range error = latency (ms) x SV (m/s) / 2000 = 10 x 1500 / 2000 = 7.5 m. This systematic error directly affects USBL position."},
+        {"text": "15.0 m", "isCorrect": false, "rationale": "This neglects the division by 2 for two-way travel time."},
+        {"text": "1.5 m", "isCorrect": false, "rationale": "This would correspond to only 2 ms of latency, not 10 ms."}
+      ],
+      "hint": "Use the formula: Range error (m) = latency (ms) $\\times$ SV (m/s) / 2000"
+    },
+    {
+      "question": "When using GNSS tides for bathymetric reduction, what is the correct height relationship to derive height above chart datum?",
+      "answerOptions": [
+        {"text": "Chart Datum Height = Ellipsoid Height + Geoid Undulation", "isCorrect": false, "rationale": "The geoid undulation must be subtracted, not added, and the MSL-to-chart-datum separation must also be applied."},
+        {"text": "Height above CD = Ellipsoid Height - Geoid Undulation - MSL to Chart Datum Separation", "isCorrect": true, "rationale": "Starting from the ellipsoidal height, subtract the geoid undulation to get MSL height, then subtract the MSL to chart datum separation to get height above chart datum."},
+        {"text": "Chart Datum Height = MSL Height multiplied by tidal range ratio", "isCorrect": false, "rationale": "GNSS tides do not use tidal range ratios; they use the ellipsoid-geoid-datum separation chain."},
+        {"text": "Height above CD = Ellipsoid Height - Draft", "isCorrect": false, "rationale": "Draft converts from antenna to waterline but does not account for the geoid and datum separations."}
+      ],
+      "hint": "The conversion goes from ellipsoid to geoid to chart datum through two separation values."
+    },
+    {
+      "question": "In USBL verification, what does a circular 'doughnut' pattern in the spin check indicate, and how can you distinguish an offset error from an angular error?",
+      "answerOptions": [
+        {"text": "Sound velocity error; re-take the SVP to distinguish", "isCorrect": false, "rationale": "SV errors typically manifest as scale issues and smile/frown shapes in transit lines, not doughnut patterns."},
+        {"text": "Residual pitch/roll/offset error; test at a different water depth to see if the doughnut size changes", "isCorrect": true, "rationale": "An offset error produces a doughnut that does not change with depth, while an angular error produces a larger doughnut in deeper water and a smaller one in shallower water."},
+        {"text": "Heading sensor drift; compare with a second gyrocompass", "isCorrect": false, "rationale": "Heading errors manifest as lateral displacement rather than a doughnut pattern."},
+        {"text": "GNSS multipath; relocate the antenna to fix it", "isCorrect": false, "rationale": "GNSS multipath would affect surface positioning, not create a systematic subsea doughnut pattern."}
+      ],
+      "hint": "The key diagnostic is to repeat the spin check at a different water depth and compare the doughnut size."
+    },
+    {
+      "question": "What is the DVL-aided drift rate for a calibrated INS system, and what is the minimum verification interval during operations?",
+      "answerOptions": [
+        {"text": "0.5-1.0% of distance travelled; verify every 4 weeks", "isCorrect": false, "rationale": "The drift rate is much better than 0.5%, and the interval is 8 weeks."},
+        {"text": "0.02-0.06% of distance travelled; verify every 8 weeks", "isCorrect": true, "rationale": "DVL-aided drift is typically 0.02-0.06% of distance travelled (0.2-0.6 m per km). Verification should be performed at minimum every 8 weeks while the system is in operation."},
+        {"text": "0.1-0.5% of distance travelled; verify every 12 weeks", "isCorrect": false, "rationale": "The drift rate is better than 0.1%, and the verification interval should be shorter than 12 weeks."},
+        {"text": "1-2% of distance travelled; verify at project start only", "isCorrect": false, "rationale": "This drift rate is far too pessimistic and verification must be repeated regularly during operations."}
+      ],
+      "hint": "These figures represent typical DVL-aided performance and the recommended verification schedule."
     }
   ]
 }

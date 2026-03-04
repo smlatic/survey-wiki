@@ -1,265 +1,125 @@
 {
-  "title": "Survey Reporting Quiz",
+  "title": "Reporting Quiz",
   "questions": [
     {
-      "question": "What is the fundamental principle for writing a survey report to ensure future traceability?",
+      "question": "What is the key principle of survey report writing mentioned in the guide?",
       "answerOptions": [
-        {
-          "text": "The report should be written as if the author will never be available to explain it.",
-          "isCorrect": true,
-          "rationale": "This ensures that all information is complete, clear and can be verified by an independent party without external help."
-        },
-        {
-          "text": "The report should focus on summarising raw data rather than explaining methodology.",
-          "isCorrect": false,
-          "rationale": "Methodology and processes are crucial for understanding how the results were obtained, not just what the final results were."
-        },
-        {
-          "text": "The report should only contain information requested in the specific contract.",
-          "isCorrect": false,
-          "rationale": "Even though the contract sets the framework, professional standards often require additional context for technical integrity."
-        },
-        {
-          "text": "The report should primarily serve as an internal working document for the survey team's next shift.",
-          "isCorrect": false,
-          "rationale": "Reports are permanent records for clients and asset owners, not just short-term internal logs."
-        }
+        {"text": "Write the report as if you will never be available to explain it", "isCorrect": true, "rationale": "The guide explicitly states this principle: in two years, you probably won't be available to explain it."},
+        {"text": "Write the report as quickly as possible to meet deadlines", "isCorrect": false, "rationale": "Speed is not the guiding principle; clarity, completeness, and traceability are."},
+        {"text": "Write the report using as much technical jargon as possible", "isCorrect": false, "rationale": "The goal is that anyone should be able to understand what was done, not to impress with jargon."},
+        {"text": "Write the report only for the client's project manager", "isCorrect": false, "rationale": "Reports serve multiple audiences and purposes including quality evidence, future reference, and contractual deliverables."}
       ],
-      "hint": "Think about the report's lifespan and the need for independent verification after several years."
+      "hint": "Think about the long-term purpose of a survey report and who might need it years later."
     },
     {
-      "question": "Why is it critical to state the vertical exaggeration ($VE$) on cross-sections and profile plots?",
+      "question": "When should you begin drafting the mobilisation report?",
       "answerOptions": [
-        {
-          "text": "Without a stated $VE$, a small gradient of $1^{\\circ}$ can incorrectly appear to be a significantly steeper slope.",
-          "isCorrect": true,
-          "rationale": "Vertical exaggeration is used to visualise small changes but can be deeply misleading for engineers if not declared."
-        },
-        {
-          "text": "It is required to correct for the influence of tides in real-time presentations.",
-          "isCorrect": false,
-          "rationale": "Tidal correction is a data processing step, not a presentation factor related to axis scaling."
-        },
-        {
-          "text": "It ensures that the horizontal scale always matches the vertical scale in a $1:1$ ratio.",
-          "isCorrect": false,
-          "rationale": "Vertical exaggeration by definition means the scales do not match each other."
-        },
-        {
-          "text": "It is a necessary parameter for calculating the measurement uncertainty ($TPU$).",
-          "isCorrect": false,
-          "rationale": "$TPU$ is calculated based on sensor errors and environmental factors, not on how data is presented visually in a plot."
-        }
+        {"text": "After the first survey line is completed", "isCorrect": false, "rationale": "The mob report should be substantially complete before the first survey line."},
+        {"text": "Before the mobilisation starts, filling in sections as each phase completes", "isCorrect": true, "rationale": "The guide recommends drafting the structure before mob starts and filling sections progressively to avoid last-minute rush."},
+        {"text": "After demobilisation, when all data is available", "isCorrect": false, "rationale": "The mob report is needed before survey operations begin, not after demob."},
+        {"text": "Only when the client requests it", "isCorrect": false, "rationale": "The mob report is a standard deliverable prepared proactively, not on request."}
       ],
-      "hint": "Consider how visual scaling affects the human perception of topography."
+      "hint": "The guide gives specific timing advice to avoid a last-minute rush."
     },
     {
-      "question": "Which document serves as the primary evidence for resolving disputes regarding operational time and downtime?",
+      "question": "What is the standard document numbering format described in the guide?",
       "answerOptions": [
-        {
-          "text": "Daily Progress Report (DPR).",
-          "isCorrect": true,
-          "rationale": "The DPR functions as the project's diary and logs events, weather and equipment status in chronological order."
-        },
-        {
-          "text": "Mobilisation Report.",
-          "isCorrect": false,
-          "rationale": "The mobilisation report focuses on installation and verification before operations begin, not on daily operations."
-        },
-        {
-          "text": "End-of-Project Report (EOP).",
-          "isCorrect": false,
-          "rationale": "The EOP is a summary of the entire campaign and often lacks the detailed time log required for specific contractual disputes."
-        },
-        {
-          "text": "Calibration Report.",
-          "isCorrect": false,
-          "rationale": "Calibration reports prove measurement accuracy but do not document commercial aspects such as weather standby time."
-        }
+        {"text": "DATE-AUTHOR-DOCTYPE-VERSION", "isCorrect": false, "rationale": "The convention does not use date or author in the numbering."},
+        {"text": "PROJECTCODE-VESSEL-DOCTYPE-SEQUENCE", "isCorrect": true, "rationale": "The example given is PRJ001-VESSEL01-MOB-001."},
+        {"text": "CLIENT-PROJECT-REPORTTYPE-NUMBER", "isCorrect": false, "rationale": "Client name is not part of the standard numbering convention described."},
+        {"text": "VESSEL-DATE-DOCTYPE-REVISION", "isCorrect": false, "rationale": "The convention uses project code first, not vessel, and sequence number, not revision."}
       ],
-      "hint": "Look for the document that is updated continuously during ongoing fieldwork."
+      "hint": "Look at the example: PRJ001-VESSEL01-MOB-001."
     },
     {
-      "question": "In hydrographic surveying, what is the main purpose of a 'cross-line comparison' in QC documentation?",
+      "question": "What revision status does 'Rev A' indicate?",
       "answerOptions": [
-        {
-          "text": "To verify data repeatability and identify systematic errors by comparing independent survey lines.",
-          "isCorrect": true,
-          "rationale": "By crossing survey lines, one can statistically assess how well the system is performing and whether there are residual offset errors."
-        },
-        {
-          "text": "To calibrate sound velocity profiles ($SVP$) in real time during the survey.",
-          "isCorrect": false,
-          "rationale": "$SVP$ is calibrated through direct measurements in the water column, not by comparing lines."
-        },
-        {
-          "text": "To determine the exact latency between GNSS and MBES.",
-          "isCorrect": false,
-          "rationale": "Latency is usually determined during a patch test, which is a specific calibration procedure, rather than a general QC check."
-        },
-        {
-          "text": "To ensure the vessel stays within the planned corridor.",
-          "isCorrect": false,
-          "rationale": "This concerns navigation control (line keeping), while cross-line comparison concerns data quality review after acquisition."
-        }
+        {"text": "Draft for internal review", "isCorrect": false, "rationale": "Rev 0 is the draft for internal review."},
+        {"text": "Issued for Use (final approved version)", "isCorrect": false, "rationale": "Issued for Use is the final Rev 0 after all comments are resolved."},
+        {"text": "Issued for Review (IFR) to the client", "isCorrect": true, "rationale": "Rev A is the first issue sent to the client for comment."},
+        {"text": "Incorporating client comments", "isCorrect": false, "rationale": "Rev B incorporates client comments; Rev A is the initial client issue."}
       ],
-      "hint": "Think about how best to verify that a measurement value is consistent over time and space."
+      "hint": "The revision control table maps letter revisions to specific statuses."
     },
     {
-      "question": "Why is it important to explicitly state the coordinate order (e.g. Easting before Northing) in a report?",
+      "question": "What must always be stated on cross-section and profile plots?",
       "answerOptions": [
-        {
-          "text": "To eliminate ambiguity since different software and regions can have different standards for the order.",
-          "isCorrect": true,
-          "rationale": "Incorrect interpretation of coordinate order can lead to fundamental positioning errors during data export/import."
-        },
-        {
-          "text": "To ensure that the geoid and ellipsoid reference the same vertical zero point.",
-          "isCorrect": false,
-          "rationale": "Vertical reference systems are handled separately from the horizontal ordering of $XY$ coordinates."
-        },
-        {
-          "text": "Because UTM coordinates always require Northing to be stated first according to international law.",
-          "isCorrect": false,
-          "rationale": "There is no universal law that enforces an order; practice varies, which is precisely why clarity is required."
-        },
-        {
-          "text": "To enable correct calculation of magnetic declination.",
-          "isCorrect": false,
-          "rationale": "Magnetic declination depends on the position itself, not on the order in which the numbers are written in a report."
-        }
+        {"text": "The software version used to generate the plot", "isCorrect": false, "rationale": "While useful metadata, the guide specifically warns about a different requirement."},
+        {"text": "The vertical exaggeration", "isCorrect": true, "rationale": "The guide warns that unstated VE can mislead clients -- a 10x VE makes a 1 deg slope look like 10 deg."},
+        {"text": "The name of the surveyor who processed the data", "isCorrect": false, "rationale": "Author attribution is for the report cover page, not individual plots."},
+        {"text": "The water temperature at the time of survey", "isCorrect": false, "rationale": "Environmental data is recorded elsewhere; VE is the critical plot requirement highlighted."}
       ],
-      "hint": "Consider the risks of how data is interpreted when it is moved between different technical systems."
+      "hint": "The guide gives a specific warning about how this can mislead engineers and clients."
     },
     {
-      "question": "According to industry standards (e.g. IMCA S 017), what is a typical acceptance criterion for the standard deviation ($SD$) of residuals at a USBL calibration?",
+      "question": "Which of the following is NOT listed as a standard section in the Daily Progress Report?",
       "answerOptions": [
-        {
-          "text": "$< 0.5$ m at operational depth.",
-          "isCorrect": true,
-          "rationale": "This value represents an established balance between system capability and requirements for subsea positioning accuracy."
-        },
-        {
-          "text": "$< 1.0^{\\circ}$ in all rotational axes.",
-          "isCorrect": false,
-          "rationale": "Angular deviations are measured in degrees, but USBL residuals for position are usually measured as a linear distance metric."
-        },
-        {
-          "text": "Between $0.95$ and $1.05$ in scale factor.",
-          "isCorrect": false,
-          "rationale": "Scale factors are critical for INS/DVL systems, but USBL quality is primarily assessed by the precision of the residuals."
-        },
-        {
-          "text": "$100$ ms consistent latency.",
-          "isCorrect": false,
-          "rationale": "Latency should be minimised or corrected; a fixed latency of $100$ ms is not a quality metric for USBL precision."
-        }
+        {"text": "Equipment Status", "isCorrect": false, "rationale": "Equipment Status is listed as a standard DPR section."},
+        {"text": "Planned Activities for the next 24 hours", "isCorrect": false, "rationale": "Planned Activities is a standard DPR section."},
+        {"text": "Calibration procedure details and offsets", "isCorrect": true, "rationale": "Calibration details belong in the calibration report or mob report, not the DPR."},
+        {"text": "Environmental Conditions", "isCorrect": false, "rationale": "Environmental Conditions is a standard DPR section."}
       ],
-      "hint": "Focus on the statistical measure of position spread for acoustic systems."
+      "hint": "Think about what level of detail is appropriate for a daily report versus a calibration report."
     },
     {
-      "question": "What is the purpose of including a 'Comment Response Sheet' when revising reports?",
+      "question": "What is the recommended best practice for writing the DPR?",
       "answerOptions": [
-        {
-          "text": "To create a clear audit trail and prevent the same questions from being discussed repeatedly.",
-          "isCorrect": true,
-          "rationale": "It logs how each client comment has been addressed, which streamlines the approval process."
-        },
-        {
-          "text": "To hide technical errors from the end client by rephrasing answers.",
-          "isCorrect": false,
-          "rationale": "The purpose of professional reporting is transparency, not to conceal errors."
-        },
-        {
-          "text": "To serve as a legal disclaimer for the survey party chief.",
-          "isCorrect": false,
-          "rationale": "The document is a quality assurance communication tool, not a liability disclaimer."
-        },
-        {
-          "text": "To automatically update the version number in the document header.",
-          "isCorrect": false,
-          "rationale": "Version management is an administrative process; the response sheet handles content-related feedback."
-        }
+        {"text": "Write it from memory at the end of the shift to save time during operations", "isCorrect": false, "rationale": "The guide explicitly warns against writing from memory at end of shift."},
+        {"text": "Write it as events happen, keeping a running log with times for all events", "isCorrect": true, "rationale": "The guide says the DPR is often the primary record for resolving disputes about operational time and downtime."},
+        {"text": "Have the vessel master write it since they have the best overview", "isCorrect": false, "rationale": "The DPR is the surveyor's responsibility, not the vessel master's."},
+        {"text": "Copy the previous day's DPR and update only the statistics", "isCorrect": false, "rationale": "Each DPR should accurately record that specific day's events chronologically."}
       ],
-      "hint": "Think about the interaction between contractor and client during the review phase."
+      "hint": "The DPR is often used to resolve disputes about operational time."
     },
     {
-      "question": "What information is most critical to include in a calibration report for an independent reviewer to assess the results?",
+      "question": "What information must a calibration report contain to allow independent review?",
       "answerOptions": [
-        {
-          "text": "Both residuals (e.g. RMS/SD) and visualisations of 'before and after' comparisons.",
-          "isCorrect": true,
-          "rationale": "Statistics provide the quantitative evidence while plots (such as cross-line profiles) give a qualitative confirmation that the correction works."
-        },
-        {
-          "text": "Only the final offset values entered into the navigation software.",
-          "isCorrect": false,
-          "rationale": "Without raw data or residuals, there is no way to know whether the entered values are actually correct or reliable."
-        },
-        {
-          "text": "A detailed list of all personnel on board at the time of calibration.",
-          "isCorrect": false,
-          "rationale": "The personnel list is important for the DPR but irrelevant for the technical validation of the instrument's accuracy."
-        },
-        {
-          "text": "The name of the software licence used for data processing.",
-          "isCorrect": false,
-          "rationale": "Software name and version are required for traceability, but they do not in themselves prove that the calibration result is acceptable."
-        }
+        {"text": "Only the final determined offsets and a pass/fail statement", "isCorrect": false, "rationale": "Offsets alone are insufficient; the full context of how they were determined is needed."},
+        {"text": "Environmental conditions, equipment details, procedure, results with residuals, and pass/fail assessment against stated acceptance criteria", "isCorrect": true, "rationale": "The guide requires all these elements so an independent reviewer can assess calibration validity."},
+        {"text": "The software screenshots showing the calibration was run", "isCorrect": false, "rationale": "Screenshots alone don't provide the structured information needed for independent assessment."},
+        {"text": "A signed statement from the senior surveyor confirming the calibration passed", "isCorrect": false, "rationale": "A signature without supporting data doesn't allow independent verification."}
       ],
-      "hint": "Consider what is needed to prove that a correction has actually improved data quality."
+      "hint": "An independent reviewer needs enough information to assess validity without contacting the author."
     },
     {
-      "question": "When should work on the structure of a mobilisation report begin?",
+      "question": "What is one of the most common reasons a report is rejected by a client?",
       "answerOptions": [
-        {
-          "text": "Before the mobilisation actually starts.",
-          "isCorrect": true,
-          "rationale": "By preparing the structure in advance, sections can be filled in as work progresses, minimising the risk of forgotten data and stress at project start."
-        },
-        {
-          "text": "When the first survey data has been collected and processed.",
-          "isCorrect": false,
-          "rationale": "By then the mobilisation is already completed; the report should prove the system was ready *before* data acquisition began."
-        },
-        {
-          "text": "Just before the vessel leaves quayside after completed installation.",
-          "isCorrect": false,
-          "rationale": "This often leads to rush and omitted information; the structure should exist well in advance."
-        },
-        {
-          "text": "After the client has approved the preliminary calibration values.",
-          "isCorrect": false,
-          "rationale": "The client's approval is often based on drafts from this very report, so it must be started earlier."
-        }
+        {"text": "The report is too long and detailed", "isCorrect": false, "rationale": "Being too detailed is not listed as a common rejection cause."},
+        {"text": "Charts missing north arrows, scale bars, or coordinate information", "isCorrect": true, "rationale": "This is explicitly listed as one of the common causes for client rejection."},
+        {"text": "Using too many appendices", "isCorrect": false, "rationale": "Appendices are expected and useful; too many is not listed as a rejection cause."},
+        {"text": "Submitting the report too early", "isCorrect": false, "rationale": "Early submission is not a common rejection cause."}
       ],
-      "hint": "Proactive planning is the key to avoiding bottlenecks at the transition to the operational phase."
+      "hint": "Think about what makes a chart usable and interpretable."
     },
     {
-      "question": "If data in an End-of-Project (EOP) report differs from values in the original mobilisation report (e.g. due to post-processing), how should this be handled?",
+      "question": "When data values differ between the mobilisation report and the end-of-project report, what should you do?",
       "answerOptions": [
-        {
-          "text": "The difference must be stated explicitly in the report with a clear technical justification.",
-          "isCorrect": true,
-          "rationale": "Transparency about why data has been refined is essential for maintaining confidence in the survey's integrity."
-        },
-        {
-          "text": "The mobilisation report should be deleted and replaced retroactively with the new values.",
-          "isCorrect": false,
-          "rationale": "This violates document control principles and erases the project's historical traceability."
-        },
-        {
-          "text": "The original values should be retained in the EOP to ensure consistency between reports.",
-          "isCorrect": false,
-          "rationale": "Deliberately using less accurate values just for consistency degrades the quality of the final product."
-        },
-        {
-          "text": "No action is required, as the EOP is always considered the single source of truth.",
-          "isCorrect": false,
-          "rationale": "Without explanation, discrepancies between reports can lead to the client rejecting the deliverable due to lack of reliability."
-        }
+        {"text": "Use the mob report values since they were written first", "isCorrect": false, "rationale": "The mob report values may have been refined during operations."},
+        {"text": "Average the two values and report the mean", "isCorrect": false, "rationale": "Averaging without justification is not a valid approach."},
+        {"text": "State the change explicitly with justification for why the value was refined", "isCorrect": true, "rationale": "The guide says if a value changed (e.g., refined calibration), state this explicitly with justification."},
+        {"text": "Remove the conflicting value from the mob report to avoid confusion", "isCorrect": false, "rationale": "Altering previously issued reports is not appropriate; transparency about changes is required."}
       ],
-      "hint": "Consider how changes in technical conclusions are handled over the course of a project."
+      "hint": "Traceability and transparency are core reporting principles."
+    },
+    {
+      "question": "What is the typical length range for an End-of-Project report?",
+      "answerOptions": [
+        {"text": "5-15 pages", "isCorrect": false, "rationale": "5-15 pages is the typical range for a calibration report."},
+        {"text": "15-30 pages", "isCorrect": false, "rationale": "15-30 pages is the typical range for a mobilisation report."},
+        {"text": "30-80 pages", "isCorrect": true, "rationale": "The overview table states 30-80 pages for the End-of-Project report."},
+        {"text": "100-200 pages", "isCorrect": false, "rationale": "This exceeds the typical range given in the guide."}
+      ],
+      "hint": "Check the report types overview table."
+    },
+    {
+      "question": "How should coordinate information be handled across charts and tables in a report?",
+      "answerOptions": [
+        {"text": "Use whatever format the software exports by default", "isCorrect": false, "rationale": "Software defaults may be inconsistent; the guide requires deliberate consistency."},
+        {"text": "State datum and projection on every chart and coordinate table, use a consistent format throughout", "isCorrect": true, "rationale": "The guide requires datum/projection on every chart, consistent format (DD.DDDDDD or DD MM SS.SSS), explicit coordinate order, and UTM zone numbers."},
+        {"text": "Only state the datum once in the introduction section", "isCorrect": false, "rationale": "Datum and projection must be stated on every chart and coordinate table, not just once."},
+        {"text": "Convert all coordinates to decimal degrees for simplicity", "isCorrect": false, "rationale": "The format choice depends on the project; the key requirement is consistency and clear labelling."}
+      ],
+      "hint": "Think about what someone needs to correctly interpret a coordinate without flipping back to the introduction."
     }
   ]
 }

@@ -1,148 +1,282 @@
 {
-  "name": "Offshore Survey Knowledge Base",
+  "name": "Reference Overview",
   "children": [
     {
-      "name": "Positioning and GNSS",
+      "name": "Coordinate Systems & Datums",
       "children": [
         {
-          "name": "GNSS standards (DGNSS / PPP)"
-        },
-        {
-          "name": "Integrity checks"
-        },
-        {
-          "name": "Height checks"
-        },
-        {
-          "name": "DGNSS correction age (< 10 s)"
-        }
-      ]
-    },
-    {
-      "name": "Acoustic Positioning (USBL / LBL)",
-      "children": [
-        {
-          "name": "USBL calibration"
-        },
-        {
-          "name": "HPR verification"
-        },
-        {
-          "name": "Responder latency"
-        },
-        {
-          "name": "Positioning accuracy (< 1% of range)"
-        }
-      ]
-    },
-    {
-      "name": "Sensors and Sonars",
-      "children": [
-        {
-          "name": "MBES (Multibeam)",
+          "name": "WGS84 / ITRF",
           "children": [
-            {
-              "name": "Patch Test (Roll, Pitch, Heading)"
-            },
-            {
-              "name": "Swath width planning"
-            },
-            {
-              "name": "IHO S-44 accuracy requirements"
-            }
+            {"name": "Semi-major axis: 6,378,137 m"},
+            {"name": "WGS84 and ITRF differ by < 2 cm"},
+            {"name": "EPSG:4326 (WGS84 geographic)"}
           ]
         },
         {
-          "name": "Magnetometer (G882)",
+          "name": "UTM Projections",
           "children": [
-            {
-              "name": "Depth and altimeter calibration"
-            },
-            {
-              "name": "Scale factor (0.95 - 1.05)"
-            },
-            {
-              "name": "Bias (< 0.5 m)"
-            }
+            {"name": "60 zones, each 6 degrees wide"},
+            {"name": "Scale factor 0.9996 at CM"},
+            {"name": "Convergence angle: grid north vs true north"}
           ]
         },
         {
-          "name": "SSS (Sidescan Sonar)"
+          "name": "Vertical Datums",
+          "children": [
+            {"name": "h = H + N (ellipsoidal = orthometric + undulation)"},
+            {"name": "EGM2008: global geoid model (~0.10-0.15 m RMS)"},
+            {"name": "Chart Datum (LAT) for nautical charting"}
+          ]
         },
         {
-          "name": "SBP (Sub-bottom Profiler)"
-        }
+          "name": "Helmert 7-Parameter Transformation",
+          "children": [
+            {"name": "3 translations, 3 rotations, 1 scale"},
+            {"name": "Watch transformation direction"},
+            {"name": "Verify with known control points"}
+          ]
+        },
+        {"name": "Coordinate Order (Lat/Lon vs Lon/Lat)"}
       ]
     },
     {
-      "name": "Coordinate Systems and Datums",
+      "name": "Underwater Acoustics",
       "children": [
         {
-          "name": "WGS84 and ITRF"
+          "name": "Sound Speed (1,450-1,570 m/s)",
+          "children": [
+            {"name": "Temperature: ~4.5 m/s per degC"},
+            {"name": "Salinity: ~1.3 m/s per PSU"},
+            {"name": "Pressure: ~1.7 m/s per 100 m depth"}
+          ]
         },
         {
-          "name": "UTM projections and zones"
+          "name": "Refraction (Snell's Law)",
+          "children": [
+            {"name": "Sound bends toward lower speed"},
+            {"name": "Shadow zones from thermocline"},
+            {"name": "Ray tracing for MBES beam geometry"}
+          ]
         },
         {
-          "name": "Helmert 7-parameter transformation"
+          "name": "Absorption (frequency-dependent)",
+          "children": [
+            {"name": "12 kHz: ~1.2 dB/km (deep MBES)"},
+            {"name": "200 kHz: ~50 dB/km (shallow MBES)"},
+            {"name": "Range vs resolution tradeoff"}
+          ]
         },
-        {
-          "name": "Vertical datums (Ellipsoid, Geoid, LAT)"
-        },
-        {
-          "name": "Convergence angle and scale factor"
-        }
+        {"name": "SOFAR Channel (700-1,200 m depth)"},
+        {"name": "Multipath (worst in shallow water)"},
+        {"name": "Smiles/Frowns from incorrect SVP"}
       ]
     },
     {
-      "name": "Uncertainty and Error Budgets (TPU)",
+      "name": "TPU & Error Budgets",
       "children": [
         {
-          "name": "THU (Horizontal uncertainty)"
+          "name": "RSS Error Propagation",
+          "children": [
+            {"name": "Dominated by largest contributor"},
+            {"name": "1-sigma to 95%: multiply by 1.96"}
+          ]
         },
         {
-          "name": "TVU (Vertical uncertainty)"
+          "name": "THU Components",
+          "children": [
+            {"name": "GNSS positioning (PPP: 0.05-0.15 m)"},
+            {"name": "Heading error at outer beams"},
+            {"name": "Timing/latency"}
+          ]
         },
         {
-          "name": "RSS error propagation"
+          "name": "TVU Components",
+          "children": [
+            {"name": "Heave (0.05 m or 5%)"},
+            {"name": "Tidal reduction"},
+            {"name": "Sound velocity (dominant at outer beams)"},
+            {"name": "Draft, pitch, timing, DC offsets"}
+          ]
         },
         {
-          "name": "IHO Order categories"
-        }
+          "name": "Beam Angle Effects",
+          "children": [
+            {"name": "60-deg beam: ~2.5x nadir TVU"},
+            {"name": "Reduce swath to meet spec"}
+          ]
+        },
+        {"name": "Calibration quality feeds directly into TPU"}
       ]
     },
     {
-      "name": "Formulas and Conversions",
+      "name": "Marine Environment Effects",
       "children": [
         {
-          "name": "Sound velocity (Chen-Millero, Del Grosso)"
+          "name": "Water Column Structure",
+          "children": [
+            {"name": "Mixed layer, thermocline, deep isothermal"},
+            {"name": "Halocline and pycnocline"},
+            {"name": "SVP cast frequency by environment"}
+          ]
         },
         {
-          "name": "Unit conversions (Length, Speed, Pressure)"
+          "name": "Sea State & Weather",
+          "children": [
+            {"name": "Douglas Sea Scale (0-9)"},
+            {"name": "Operational limits by activity"},
+            {"name": "Summer: better windows, worse acoustics"},
+            {"name": "Winter: fewer windows, better SVP"}
+          ]
         },
         {
-          "name": "Acoustic geometry (Slant range)"
+          "name": "Seabed Types & Backscatter",
+          "children": [
+            {"name": "Rock/gravel: high backscatter"},
+            {"name": "Mud/clay: low backscatter, SBP penetration"},
+            {"name": "Azimuth effects on rippled seabeds"}
+          ]
         },
-        {
-          "name": "Coordinate order (Lat/Lon vs Lon/Lat)"
-        }
+        {"name": "Ocean currents (ROV limit: < 1.5-2.0 kn)"},
+        {"name": "Aeration: bubbles degrade hull-mounted sonar"},
+        {"name": "When to stop surveying"}
       ]
     },
     {
-      "name": "Industry Standards",
+      "name": "Vessel Motion Effects",
       "children": [
         {
-          "name": "IMCA (S 015, S 017, S 019, S 024)"
+          "name": "Six Degrees of Freedom",
+          "children": [
+            {"name": "Heave: 1 m = 1 m depth error"},
+            {"name": "Roll: dominant rotational effect on MBES"},
+            {"name": "Pitch: along-track depth bias"},
+            {"name": "Yaw: beam azimuth rotation"},
+            {"name": "Surge/Sway: position offsets"}
+          ]
         },
         {
-          "name": "IHO (S-44, S-57, S-100)"
+          "name": "Motion Sensor Performance",
+          "children": [
+            {"name": "POS MV 320: 1-2 cm during turns"},
+            {"name": "Seapath 200: up to 40 cm during turns"},
+            {"name": "All sensors degrade above 8 deg/s roll rate"}
+          ]
         },
         {
-          "name": "DNV (ST-N001, ST-F101)"
+          "name": "Real-Time vs Delayed Heave",
+          "children": [
+            {"name": "Delayed heave: 150 s buffer recommended"},
+            {"name": "Always log raw sensor data"}
+          ]
+        },
+        {"name": "Serial latency (~24 ms) vs Ethernet"},
+        {"name": "When to stop: nadir scatter exceeds tolerance"}
+      ]
+    },
+    {
+      "name": "Survey Line Planning",
+      "children": [
+        {
+          "name": "MBES Lines",
+          "children": [
+            {"name": "Swath: W = 2d tan(theta/2)"},
+            {"name": "20-25% overlap between lines"},
+            {"name": "Run parallel to depth contours"},
+            {"name": "Plan spacing for shallowest depth"}
+          ]
         },
         {
-          "name": "EPSG Registry"
-        }
+          "name": "SSS Lines",
+          "children": [
+            {"name": "10-33% overlap (110-133% coverage)"},
+            {"name": "Tow height: 10-15% of range"},
+            {"name": "Max speed: 3-3.5 knots"}
+          ]
+        },
+        {
+          "name": "Cross Lines",
+          "children": [
+            {"name": "Perpendicular to main lines (45-90 deg)"},
+            {"name": "Max spacing: 15x main line spacing"},
+            {"name": "Run early to catch systematic errors"}
+          ]
+        },
+        {
+          "name": "Corridor Surveys",
+          "children": [
+            {"name": "Recon: 500-5,000 m"},
+            {"name": "Pre-engineering: 200-1,000 m"},
+            {"name": "Mag UXO: 2-5 m line spacing"}
+          ]
+        },
+        {"name": "Run-in: 2-3 ship lengths (hull) or >= cable length (towed)"}
+      ]
+    },
+    {
+      "name": "Acceptance Criteria & Standards",
+      "children": [
+        {
+          "name": "IHO S-44 Survey Orders",
+          "children": [
+            {"name": "Exclusive: 1 m THU, 200% coverage"},
+            {"name": "Special: 2 m THU, 100% coverage"},
+            {"name": "Order 1a: 5 m + 5% depth THU"},
+            {"name": "Order 2: 20 m + 10% depth THU"}
+          ]
+        },
+        {
+          "name": "IMCA Standards",
+          "children": [
+            {"name": "S 015: Mobilisation & Calibration"},
+            {"name": "S 017: Position Reference Systems"},
+            {"name": "S 024: Side Scan Sonar Operations"},
+            {"name": "M 244: INS/DVL Operations"}
+          ]
+        },
+        {
+          "name": "Key Thresholds",
+          "children": [
+            {"name": "USBL cal SD: < 0.5 m at operational depth"},
+            {"name": "Heading C-O: < 0.5 deg"},
+            {"name": "Patch test offsets: < 1.0 deg"},
+            {"name": "SV agreement: < 0.5 m/s"}
+          ]
+        },
+        {"name": "DNV: pipeline & marine operations"},
+        {"name": "Client specification always prevails"}
+      ]
+    },
+    {
+      "name": "Formulas & Calibration",
+      "children": [
+        {
+          "name": "Sound Velocity Formulas",
+          "children": [
+            {"name": "Chen-Millero (UNESCO): general use"},
+            {"name": "Del Grosso: deep water (> 1000 m)"},
+            {"name": "Mackenzie (1981): 9-term equation"}
+          ]
+        },
+        {
+          "name": "Geometric Formulas",
+          "children": [
+            {"name": "Ground range = R sin(theta)"},
+            {"name": "Depth = R cos(theta)"},
+            {"name": "USBL error = R sin(sigma)"},
+            {"name": "Layback = sqrt(L_cable^2 - d^2)"}
+          ]
+        },
+        {
+          "name": "G882 Calibration",
+          "children": [
+            {"name": "Corrected = (RAW x SF) + Bias"},
+            {"name": "Scale factor: 0.95-1.05 acceptable"},
+            {"name": "Bias: < 0.5 m acceptable"},
+            {"name": "Min 5 depth points required"}
+          ]
+        },
+        {"name": "Depth from pressure: D = P / (rho x g)"},
+        {"name": "Unit conversions (length, speed, pressure, angle)"}
       ]
     }
   ]

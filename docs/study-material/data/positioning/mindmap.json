@@ -1,99 +1,170 @@
 {
-  "name": "Offshore Survey Knowledge Base",
+  "name": "Positioning Overview",
   "children": [
     {
-      "name": "Positioning Systems (GNSS)",
+      "name": "GNSS Positioning",
       "children": [
         {
-          "name": "DGNSS Integrity Check",
+          "name": "Constellations",
           "children": [
-            {
-              "name": "Purpose: Verify health and accuracy"
-            },
-            {
-              "name": "Method: Comparison with Total Station"
-            },
-            {
-              "name": "Criteria: Horizontal deviation < 0.30 m"
-            }
+            {"name": "GPS (NAVSTAR) - 31 satellites, 20,200 km"},
+            {"name": "GLONASS - 24 satellites, 19,140 km"},
+            {"name": "BeiDou - 30 satellites, various orbits"},
+            {"name": "Galileo - 27 operational, 23,222 km"},
+            {"name": "QZSS and NavIC (regional)"}
           ]
         },
         {
-          "name": "GNSS Intersystem Check",
+          "name": "Augmentation Systems",
           "children": [
-            {
-              "name": "Static: Compare primary/secondary at quayside"
-            },
-            {
-              "name": "Dynamic: Box pattern (N, E, S, W)"
-            },
-            {
-              "name": "Purpose: Identify antenna offset errors"
-            }
+            {"name": "DGNSS - Reference station corrections, ~1.0 m accuracy"},
+            {"name": "PPP - Global coverage, decimetre accuracy, 20-30 min convergence"},
+            {"name": "RTK - Centimetre accuracy, base station < 20 km"},
+            {"name": "Network RTK - Permanent station network, no local base"},
+            {"name": "SBAS (WAAS, EGNOS, MSAS, GAGAN)"}
           ]
         },
         {
-          "name": "GNSS Height Check",
+          "name": "Error Sources",
           "children": [
-            {
-              "name": "Method: Compare with 3rd-party tide gauge"
-            },
-            {
-              "name": "Duration: One full tidal cycle (~12-13 h for semi-diurnal)"
-            },
-            {
-              "name": "Acceptance: RMS < 0.10 m"
-            }
+            {"name": "Satellite clocks (10 ns = 3 m error)"},
+            {"name": "Orbit errors"},
+            {"name": "Ionospheric delay (dual-freq mitigates)"},
+            {"name": "Tropospheric delay"},
+            {"name": "Multipath"},
+            {"name": "Receiver noise"}
           ]
         },
         {
-          "name": "Interference (Jamming/Spoofing)",
+          "name": "QC and DOP",
           "children": [
-            {
-              "name": "Detection: Monitor AGC (Automatic Gain Control)"
-            },
-            {
-              "name": "Mitigation: Anti-jam antennas (CRPA/LEANA)"
-            },
-            {
-              "name": "Environment: Solar Cycle 25 and Scintillation"
-            }
+            {"name": "HDOP, VDOP, PDOP, GDOP"},
+            {"name": "w-test (outlier detection)"},
+            {"name": "F-test (model verification)"},
+            {"name": "Error ellipse and external reliability"}
           ]
         }
       ]
     },
     {
-      "name": "Acoustic Positioning (USBL & LBL)",
+      "name": "GNSS Verification Checks",
       "children": [
         {
-          "name": "HiPAP USBL",
+          "name": "DGNSS Integrity Check",
           "children": [
-            {
-              "name": "Calibration: Transducer alignment (APOS)"
-            },
-            {
-              "name": "Verification: Spin test and transit lines"
-            },
-            {
-              "name": "Equipment: cNODE and MST transponders"
-            },
-            {
-              "name": "Latency: Responder delay check"
-            }
+            {"name": "Total station vs DGNSS comparison"},
+            {"name": "Alongside, heave < 0.5 m"},
+            {"name": "Pass: horizontal agreement < 0.30 m"}
           ]
         },
         {
-          "name": "LBL (Long Baseline)",
+          "name": "Static Intersystem Check",
           "children": [
-            {
-              "name": "Principle: Range measurement to a fixed array"
-            },
-            {
-              "name": "Calibration: Surface (circle) or subsea method"
-            },
-            {
-              "name": "Application: Metrology and construction"
-            }
+            {"name": "Compare primary vs secondary GNSS at CRP"},
+            {"name": "Minimum 30 min logging, 1 Hz"},
+            {"name": "Tolerances by service type (DGNSS/PPP/RTK)"}
+          ]
+        },
+        {
+          "name": "Dynamic Intersystem Check",
+          "children": [
+            {"name": "Box pattern on four cardinal headings"},
+            {"name": "Detects heading-dependent offset errors"},
+            {"name": "DGNSS: 1.5 m tolerance; PPP: 0.5 m"}
+          ]
+        },
+        {
+          "name": "GNSS Height Check",
+          "children": [
+            {"name": "GNSS water-level vs tide gauge"},
+            {"name": "Full tidal cycle (8-9 hours)"},
+            {"name": "RMS < 0.10 m, bias < 0.05 m"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GNSS Threats and Resilience",
+      "children": [
+        {
+          "name": "Jamming",
+          "children": [
+            {"name": "RF energy overpowering GNSS signals"},
+            {"name": "Detection via AGC monitoring"}
+          ]
+        },
+        {
+          "name": "Spoofing",
+          "children": [
+            {"name": "Non-overlapped vs overlapped types"},
+            {"name": "Two-step process: jam then transmit false signals"}
+          ]
+        },
+        {
+          "name": "Mitigation",
+          "children": [
+            {"name": "GRIT (resilience and integrity technology)"},
+            {"name": "CRPA antenna (adaptive beam forming)"},
+            {"name": "LEANA antenna (low-elevation nulling)"},
+            {"name": "Multi-constellation resilient PPP"}
+          ]
+        },
+        {
+          "name": "Solar Cycle 25 Effects",
+          "children": [
+            {"name": "Ionospheric bias (up to 15 m on single-freq)"},
+            {"name": "Ionospheric scintillation (6 hrs after sundown)"},
+            {"name": "Loss of satellite lock and L-band corrections"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "USBL Acoustic Positioning",
+      "children": [
+        {
+          "name": "Theory",
+          "children": [
+            {"name": "Phase difference measurement on transducer elements"},
+            {"name": "TWTT converted to slant range via SVP"},
+            {"name": "Requires heading, pitch/roll, transceiver position"},
+            {"name": "Target accuracy: 0.3% of slant range + surface error"}
+          ]
+        },
+        {
+          "name": "HiPAP System",
+          "children": [
+            {"name": "Spherical transducer with hundreds of elements"},
+            {"name": "APOS software for control and tracking"},
+            {"name": "MST and cNODE transponders (FSK/Cymbal modes)"},
+            {"name": "Inverted right-handed coordinate system"}
+          ]
+        },
+        {
+          "name": "Calibration",
+          "children": [
+            {"name": "Cardinal point method (DP) or 6-line box (non-DP)"},
+            {"name": "Optimum depth 400-1000 m; 200+ m for universal validity"},
+            {"name": "QINSy processing (signs must be inverted)"},
+            {"name": "CASIUS processing (enter values directly)"}
+          ]
+        },
+        {
+          "name": "Verification",
+          "children": [
+            {"name": "Spin check (360 deg rotation, 400+ fixes)"},
+            {"name": "Transit check (orthogonal lines over transponder)"},
+            {"name": "Position verification at known structure"},
+            {"name": "Doughnut pattern diagnosis (offset vs angular)"}
+          ]
+        },
+        {
+          "name": "Error Budget",
+          "children": [
+            {"name": "Depth-dependent: pitch/roll, SV, transceiver angles"},
+            {"name": "Constant: DGNSS, offset measurements"},
+            {"name": "Heading errors increase with horizontal distance"},
+            {"name": "Multipath and acoustic interference"}
           ]
         }
       ]
@@ -102,60 +173,161 @@
       "name": "Inertial Navigation Systems (INS)",
       "children": [
         {
-          "name": "Principles & Aiding",
+          "name": "Theory",
           "children": [
-            {
-              "name": "Sensors: 3 gyroscopes and 3 accelerometers"
-            },
-            {
-              "name": "DVL aiding: Reduces drift to 0.02-0.06% of distance"
-            },
-            {
-              "name": "Kalman filter: Estimates states and uncertainty"
-            }
+            {"name": "IMU: 3 gyroscopes + 3 accelerometers"},
+            {"name": "Kalman filter combines IMU and aiding data"},
+            {"name": "Smooths random errors, cannot fix systematic errors"},
+            {"name": "Unaided drift: ~12 m in 4 min (accelerating)"}
           ]
         },
         {
-          "name": "Systems & Drift",
+          "name": "Aiding Methods",
           "children": [
-            {
-              "name": "Exail (PHINS/ROVINS): FOG-based, DelphINS software"
-            },
-            {
-              "name": "Sonardyne (SPRINT): RLG-based, Janus/Lodestar"
-            },
-            {
-              "name": "Start-up: Coarse and fine alignment"
-            }
+            {"name": "DVL (primary subsea aiding, 0.02-0.06% drift)"},
+            {"name": "USBL (independent position, 0.2-0.5% SR weighting)"},
+            {"name": "LBL (ranges, tightly coupled preferred)"},
+            {"name": "Depth sensor (vertical dimension)"},
+            {"name": "GNSS (surface only)"},
+            {"name": "ZUPT (zero velocity update when stationary)"}
           ]
         },
         {
-          "name": "INS/DVL Calibration",
+          "name": "DVL Calibration",
           "children": [
-            {
-              "name": "Method: Straight line (>1000 m), constant speed"
-            },
-            {
-              "name": "Parameters: Alignment angles and scale factor"
-            },
-            {
-              "name": "Verification: Independent dataset (return leg)"
-            }
+            {"name": "Minimum distance: 1000x reference system error"},
+            {"name": "Scale factor should be 0.95-1.05"},
+            {"name": "Verify on independent data (never on calibration set)"},
+            {"name": "Factory values take precedence unless proven wrong"}
+          ]
+        },
+        {
+          "name": "Platforms",
+          "children": [
+            {"name": "Exail PHINS/ROVINS (FOG, DelphINS, iXRepeater)"},
+            {"name": "Sonardyne SPRINT (RLG, Janus, Lodestar)"},
+            {"name": "Different sign conventions and alignment procedures"},
+            {"name": "Pre-calibrated coupled systems always preferred"}
           ]
         }
       ]
     },
     {
-      "name": "Tides & Vertical Datums",
+      "name": "LBL Acoustic Positioning",
       "children": [
         {
-          "name": "Reduction Methods: Gauge, Predicted, GNSS tide"
+          "name": "Principles",
+          "children": [
+            {"name": "Range-range intersection (trilateration)"},
+            {"name": "Highest subsea accuracy: 0.01-0.10 m"},
+            {"name": "More SV-sensitive than USBL (horizontal paths)"},
+            {"name": "1 m/s SV error over 500 m = 0.33 m range error"}
+          ]
         },
         {
-          "name": "Datums: LAT (Chart), MSL (Engineering), Ellipsoid"
+          "name": "Array Design",
+          "children": [
+            {"name": "Minimum 3 transponders (2D), 4-6 typical"},
+            {"name": "Baseline length comparable to water depth"},
+            {"name": "Regular geometry for uniform accuracy"},
+            {"name": "DOP analysis before deployment"}
+          ]
         },
         {
-          "name": "IHO S-44: Requirements for vertical uncertainty (TVU)"
+          "name": "Calibration Methods",
+          "children": [
+            {"name": "Surface calibration (vessel circle with GNSS)"},
+            {"name": "Subsea calibration (direct baseline via ROV)"},
+            {"name": "INS-aided calibration (SLAM approach)"},
+            {"name": "Residuals < 0.10 m RMS, baselines within 0.05 m"}
+          ]
+        },
+        {
+          "name": "Sparse LBL and INS-Aided LBL",
+          "children": [
+            {"name": "1-3 transponders with INS aiding"},
+            {"name": "INS fills gaps between LBL updates"},
+            {"name": "Trades infrastructure for system complexity"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tidal Reduction and Vertical Datums",
+      "children": [
+        {
+          "name": "Tidal Theory",
+          "children": [
+            {"name": "M2 dominant constituent (12.42 hr period)"},
+            {"name": "Spring/neap cycle (~14.8 days)"},
+            {"name": "Form factor classifies regime type"},
+            {"name": "Non-tidal effects: storm surge, wind setup"}
+          ]
+        },
+        {
+          "name": "Reduction Methods",
+          "children": [
+            {"name": "Observed tide gauge (best nearshore)"},
+            {"name": "Predicted tides (no gauge needed, no met effects)"},
+            {"name": "GNSS tides (offshore, global, needs geoid model)"}
+          ]
+        },
+        {
+          "name": "Vertical Datums",
+          "children": [
+            {"name": "Ellipsoid (WGS84) - GNSS reference"},
+            {"name": "Geoid (approx MSL) - gravity surface"},
+            {"name": "LAT - nautical charting"},
+            {"name": "MSL - engineering work"}
+          ]
+        },
+        {
+          "name": "Co-Tidal Corrections",
+          "children": [
+            {"name": "Time correction (HW offset)"},
+            {"name": "Range correction (amplitude ratio)"},
+            {"name": "Needed > 10 km from gauge (coastal)"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Time Synchronisation",
+      "children": [
+        {
+          "name": "Timing Hierarchy",
+          "children": [
+            {"name": "EIVA ATTU: < 50 microseconds"},
+            {"name": "PPS/1PPS: 1-5 ms"},
+            {"name": "NTP (local GPS server): ~1 ms"},
+            {"name": "NMEA ZDA: 20-30 ms (insufficient for MBES)"}
+          ]
+        },
+        {
+          "name": "GPS Time vs UTC",
+          "children": [
+            {"name": "GPS time continuous since 1980"},
+            {"name": "UTC adjusted with leap seconds"},
+            {"name": "Current offset: 18 seconds (as of 2025)"}
+          ]
+        },
+        {
+          "name": "Error Manifestation",
+          "children": [
+            {"name": "Along-track position shift (mimics pitch)"},
+            {"name": "Attitude-correlated depth ripple"},
+            {"name": "Across-track offset (mimics heading bias)"},
+            {"name": "Errors scale with vessel speed"}
+          ]
+        },
+        {
+          "name": "cNODE Transponder Configuration",
+          "children": [
+            {"name": "Software configuration via serial cable"},
+            {"name": "FSK and Cymbal channel selection"},
+            {"name": "Red dummy plug for transponder mode"},
+            {"name": "Responder cable connection for responder mode"}
+          ]
         }
       ]
     }

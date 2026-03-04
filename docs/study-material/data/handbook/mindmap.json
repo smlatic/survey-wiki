@@ -1,145 +1,227 @@
 {
-  "name": "Offshore Surveying: Trainee Handbook",
+  "name": "Handbook Overview",
   "children": [
     {
-      "name": "Introduction to the Profession",
+      "name": "The Profession",
       "children": [
+        {"name": "What Is Offshore Surveying"},
+        {"name": "Key Roles (Party Chief, Surveyor, Data Processor, ROV Pilot)"},
+        {"name": "Career Progression (Entry-Level to Leadership)"},
+        {"name": "Industry Standards (IMCA, IHO, OSHA, MARPOL)"},
         {
-          "name": "Purpose: Visualize and understand the seabed"
-        },
-        {
-          "name": "Importance of surveying: Avoiding costly errors"
-        },
-        {
-          "name": "The team: Surveyors, Party Chief, ROV pilots, Data Processors"
-        },
-        {
-          "name": "Career paths: From trainee to specialist or leader"
+          "name": "Training & Certifications",
+          "children": [
+            {"name": "IMCA Competence Scheme"},
+            {"name": "Cat A / Cat B (FIG/IHO)"},
+            {"name": "Manufacturer Training (Kongsberg, Sonardyne, Exail)"},
+            {"name": "HSE (BOSIET, HUET)"}
+          ]
         }
       ]
     },
     {
-      "name": "Life on the Vessel",
+      "name": "Vessels & Equipment",
       "children": [
         {
-          "name": "Terminology: Bow, stern, starboard, port, galley"
+          "name": "Vessel Types",
+          "children": [
+            {"name": "DSV (Diving Support Vessel)"},
+            {"name": "IMR (Inspection, Maintenance & Repair)"},
+            {"name": "CSV (Construction Support Vessel)"},
+            {"name": "MPSV, ROSV, PSV, AHTS"},
+            {"name": "Seismic Survey Vessel"}
+          ]
         },
         {
-          "name": "Communication: Clear protocols and radio etiquette"
+          "name": "Dynamic Positioning",
+          "children": [
+            {"name": "DP1 -- No Redundancy"},
+            {"name": "DP2 -- Active Component Redundancy"},
+            {"name": "DP3 -- Full Physical Separation"}
+          ]
         },
         {
-          "name": "Teamwork: Trust and cross-disciplinary collaboration"
+          "name": "Deck Equipment",
+          "children": [
+            {"name": "Moonpool"},
+            {"name": "A-Frame & Cranes"},
+            {"name": "LARS (Launch & Recovery System)"},
+            {"name": "Pole Mounts & Winches"}
+          ]
         },
         {
-          "name": "Routines: Shift work (12/12) and health"
-        },
-        {
-          "name": "Online vs Offline: Real-time acquisition vs post-processing"
+          "name": "Communications",
+          "children": [
+            {"name": "VSAT (Ku-Band, C-Band, Ka-Band)"},
+            {"name": "Inmarsat Fleet Broadband (L-Band)"},
+            {"name": "Iridium (LEO, Global Coverage)"},
+            {"name": "Starlink (LEO, High Speed)"}
+          ]
         }
       ]
     },
     {
-      "name": "Safety and Environment",
+      "name": "Positioning Technologies",
       "children": [
         {
-          "name": "PPE: Hard hat, safety boots, high-visibility clothing"
+          "name": "Surface Positioning",
+          "children": [
+            {"name": "GNSS (GPS, GLONASS, Galileo, BeiDou)"},
+            {"name": "RTK (Centimeter-Level Accuracy)"},
+            {"name": "INS (Inertial Navigation, Bridges Outages)"}
+          ]
         },
         {
-          "name": "Emergencies: Muster stations and alarms"
+          "name": "Subsea Positioning",
+          "children": [
+            {"name": "USBL (Angle + Range, Quick Deploy)"},
+            {"name": "LBL (Seabed Transponder Array, High Precision)"}
+          ]
         },
         {
-          "name": "Environmental responsibility: Waste management and marine life"
+          "name": "Supporting Sensors",
+          "children": [
+            {"name": "DVL (Doppler Velocity Log)"},
+            {"name": "MRU (Motion Reference Unit)"},
+            {"name": "Sound Velocity Profiling"}
+          ]
         },
+        {"name": "Coordinate Systems (Datums, Projections, WGS84, UTM)"}
+      ]
+    },
+    {
+      "name": "Sensors, Sonars & Platforms",
+      "children": [
         {
-          "name": "Regulations: IMCA, IHO, MARPOL"
+          "name": "Echo Sounders",
+          "children": [
+            {"name": "SBES (Single Beam)"},
+            {"name": "MBES (Multibeam, Swath Coverage)"}
+          ]
+        },
+        {"name": "Side Scan Sonar (Seabed Imagery)"},
+        {"name": "Sub-Bottom Profiler (Subsurface Layers)"},
+        {"name": "Magnetometer / Gradiometer (Ferrous Detection)"},
+        {"name": "LIDAR (Coastal & Shallow Water)"},
+        {
+          "name": "Subsea Vehicles",
+          "children": [
+            {"name": "ROV (Tethered, Inspection & Construction)"},
+            {"name": "AUV (Autonomous, Large-Scale Mapping)"},
+            {"name": "ROTV (Towed, Controlled Depth)"}
+          ]
         }
       ]
     },
     {
-      "name": "Positioning Technology",
+      "name": "Survey Operations",
       "children": [
         {
-          "name": "Surface: GNSS, RTK, and INS (backup and bridging)"
+          "name": "Planning",
+          "children": [
+            {"name": "Scope & Objectives"},
+            {"name": "Equipment Selection"},
+            {"name": "Line Planning & Coverage"},
+            {"name": "Weather Windows & Vessel Motion"}
+          ]
         },
         {
-          "name": "Underwater: USBL (ultra-short baseline) and LBL (long baseline)"
+          "name": "Survey Types",
+          "children": [
+            {"name": "Route Surveys (Pipeline & Cable)"},
+            {"name": "Environmental Baseline Studies"},
+            {"name": "Geotechnical Investigations (CPT, Vibrocore)"},
+            {"name": "Dredging & Coastal Works"}
+          ]
         },
         {
-          "name": "Motion: DVL (velocity) and MRU (pitch, roll, heave)"
+          "name": "Calibration & Verification",
+          "children": [
+            {"name": "MBES Patch Test"},
+            {"name": "USBL Box-In Test"},
+            {"name": "INS/DVL Calibration"},
+            {"name": "Sound Velocity Checks"},
+            {"name": "Documentation & Reporting"}
+          ]
         },
         {
-          "name": "Sound velocity: SVP measurements for acoustic correction"
+          "name": "Data Processing",
+          "children": [
+            {"name": "Software (Qinsy, Qimera, SIS, GIS)"},
+            {"name": "Online vs Offline QC"},
+            {"name": "Charts & 3D Visualizations"},
+            {"name": "CAD & Spatial Analysis"}
+          ]
         }
       ]
     },
     {
-      "name": "Sensors and Sonars",
+      "name": "Technology & IT",
       "children": [
         {
-          "name": "Echo sounders: Single Beam (SBES) and Multibeam (MBES)"
+          "name": "Remote Surveying",
+          "children": [
+            {"name": "Remote Operations Centers (ROC)"},
+            {"name": "Virtual Machines & Cloud Storage"},
+            {"name": "Starlink & High-Speed Satellite Links"},
+            {"name": "24/7 Onshore-Offshore Collaboration"}
+          ]
         },
         {
-          "name": "Seabed imaging: Side Scan Sonar (SSS)"
+          "name": "IT Basics",
+          "children": [
+            {"name": "Networks (LAN, WAN, IP Addresses)"},
+            {"name": "Software Updates & Version Tracking"},
+            {"name": "Troubleshooting (Restart, Cables, Resources)"},
+            {"name": "Cybersecurity (Phishing, Passwords, Reporting)"}
+          ]
         },
         {
-          "name": "Sub-Bottom Profiler: Sub-surface geology"
-        },
-        {
-          "name": "Magnetometers: Detecting ferrous objects and UXO"
-        },
-        {
-          "name": "Subsea platforms: ROV (remotely operated) and AUV (autonomous)"
+          "name": "AI Tools",
+          "children": [
+            {"name": "Script Automation (Python, Batch Processing)"},
+            {"name": "Report Drafting & Brainstorming"},
+            {"name": "Verification & Ethics"},
+            {"name": "Domain Knowledge Over Programming"}
+          ]
         }
       ]
     },
     {
-      "name": "Workflows and Processes",
+      "name": "Life Offshore & Professional Growth",
       "children": [
         {
-          "name": "Planning: Scope, equipment, and weather windows"
+          "name": "Life on the Vessel",
+          "children": [
+            {"name": "Vessel Terminology"},
+            {"name": "12-Hour Shifts & Routine"},
+            {"name": "Diet, Hydration & Downtime"}
+          ]
         },
         {
-          "name": "Calibration: Patch test (MBES) and box-in (USBL)"
+          "name": "Safety",
+          "children": [
+            {"name": "PPE (Hard Hat, Boots, Hi-Vis, Gloves, Glasses)"},
+            {"name": "Emergency Procedures & Muster Stations"},
+            {"name": "Environmental Responsibility"}
+          ]
         },
         {
-          "name": "Verification: Confirming data integrity"
+          "name": "Soft Skills",
+          "children": [
+            {"name": "Communication & Active Listening"},
+            {"name": "Leadership & Diplomacy"},
+            {"name": "Time Management & Organization"},
+            {"name": "Networking & Mentorship"}
+          ]
         },
         {
-          "name": "Data processing: Noise cleaning and 3D modeling"
-        },
-        {
-          "name": "Reporting: Documentation of biases and results"
-        }
-      ]
-    },
-    {
-      "name": "Modern Technology and Development",
-      "children": [
-        {
-          "name": "AI tools: Code automation, brainstorming, and report drafting"
-        },
-        {
-          "name": "Remote surveying: Shore-based control (ROC) and satellite links"
-        },
-        {
-          "name": "IT fundamentals: Networking, cybersecurity, and troubleshooting"
-        }
-      ]
-    },
-    {
-      "name": "Soft Skills",
-      "children": [
-        {
-          "name": "Communication: Active listening and diplomacy"
-        },
-        {
-          "name": "Organization: Time management and data housekeeping"
-        },
-        {
-          "name": "Mental health: Managing stress and isolation"
-        },
-        {
-          "name": "Networking: Mentorship and continuous learning"
+          "name": "Mental Health & Well-Being",
+          "children": [
+            {"name": "Stress Management & Reaching Out"},
+            {"name": "Fitness & Nutrition Offshore"},
+            {"name": "Remote Work Boundaries"}
+          ]
         }
       ]
     }

@@ -1,395 +1,205 @@
 {
-  "title": "Hydrographic Survey Quiz",
+  "title": "Reference Quiz",
   "questions": [
     {
-      "question": "Which sound velocity formula is generally recommended for use at great depths ($> 1000$ m) due to its more accurate handling of high pressures?",
+      "question": "What is the UTM scale factor at the central meridian of a zone?",
       "answerOptions": [
-        {
-          "text": "Del Grosso (1974)",
-          "isCorrect": true,
-          "rationale": "Del Grosso is often considered more accurate than Chen-Millero at pressures above $1000$ dBar, which corresponds to deep water."
-        },
-        {
-          "text": "Chen-Millero (UNESCO, 1983)",
-          "isCorrect": false,
-          "rationale": "Although this is the most commonly used formula for general purposes, it diverges from Del Grosso at high pressures in the deep ocean."
-        },
-        {
-          "text": "Medwin (Simplified)",
-          "isCorrect": false,
-          "rationale": "Medwin is used primarily for quick field estimates and lacks the precision required for scientific deep-water work."
-        },
-        {
-          "text": "Wilson (1960)",
-          "isCorrect": false,
-          "rationale": "This is an older formula that has essentially been superseded by Chen-Millero in modern navigation systems."
-        }
+        {"text": "1.0000", "isCorrect": false, "rationale": "1.0000 occurs at approximately 180 km from the central meridian, not at the CM itself."},
+        {"text": "0.9996", "isCorrect": true, "rationale": "UTM applies a scale factor of 0.9996 at the central meridian, meaning grid distances are 0.04% shorter than ground distances there."},
+        {"text": "0.9999", "isCorrect": false, "rationale": "This is not the standard UTM scale factor at the central meridian."},
+        {"text": "1.0004", "isCorrect": false, "rationale": "This is approximately the scale factor at the zone edges (~330 km from CM), not at the central meridian."}
       ],
-      "hint": "Consider which formula is specifically mentioned as an alternative when the pressure becomes extremely high."
+      "hint": "Think about whether UTM grid distances are shorter or longer than ground distances at the CM."
     },
     {
-      "question": "When calculating distances in a UTM projection at the central meridian, how does the grid distance relate to the actual ground distance?",
+      "question": "The IHO S-44 TVU formula is $TVU = \\sqrt{a^2 + (b \\times d)^2}$. For Special Order at 30 m depth, what is the maximum allowable TVU (95%)?",
       "answerOptions": [
-        {
-          "text": "The grid distance is $0.04\\%$ shorter than the ground distance.",
-          "isCorrect": true,
-          "rationale": "The scale factor $k_0$ at the central meridian is $0.9996$, meaning the projection systematically reduces the distance."
-        },
-        {
-          "text": "The grid distance is $0.04\\%$ longer than the ground distance.",
-          "isCorrect": false,
-          "rationale": "This scenario occurs at the zone edges where the scale factor rises to approximately $1.0004$."
-        },
-        {
-          "text": "They are identical since the projection is conformal (angle-preserving).",
-          "isCorrect": false,
-          "rationale": "Conformality means that shapes are preserved, but the scale always varies in a Transverse Mercator projection away from the central meridian."
-        },
-        {
-          "text": "The difference depends solely on latitude and is negligible at the equator.",
-          "isCorrect": false,
-          "rationale": "The scale factor distortion is a built-in property of the UTM cylinder and affects distances regardless of latitude, although the degree varies."
-        }
+        {"text": "0.25 m", "isCorrect": false, "rationale": "0.25 m is only the constant term 'a' for Special Order. The depth-dependent term must also be included."},
+        {"text": "0.336 m", "isCorrect": true, "rationale": "$TVU = \\sqrt{0.25^2 + (0.0075 \\times 30)^2} = \\sqrt{0.0625 + 0.0506} = \\sqrt{0.1131} = 0.336$ m."},
+        {"text": "0.475 m", "isCorrect": false, "rationale": "This would imply different coefficients than those specified for Special Order (a = 0.25, b = 0.0075)."},
+        {"text": "0.50 m", "isCorrect": false, "rationale": "0.50 m is the 'a' value for IHO Order 1a, not Special Order."}
       ],
-      "hint": "Think about the specific value of the scale factor at the central meridian ($k_0$)."
+      "hint": "Special Order uses a = 0.25 m and b = 0.0075."
     },
     {
-      "question": "Which mathematical relationship best defines the connection between ellipsoidal height ($h$), orthometric height ($H$) and geoid undulation ($N$)?",
+      "question": "What is the most common cause of the 'smiles' artifact in multibeam bathymetry data?",
       "answerOptions": [
-        {
-          "text": "$h = H + N$",
-          "isCorrect": true,
-          "rationale": "The total height from the ellipsoid ($h$) is the sum of the height above the geoid (MSL) and the separation between the two surfaces ($N$)."
-        },
-        {
-          "text": "$H = h + N$",
-          "isCorrect": false,
-          "rationale": "This would imply that the height above sea level is greater than the GNSS height even when the geoid lies below the ellipsoid, which is physically incorrect."
-        },
-        {
-          "text": "$N = H - h$",
-          "isCorrect": false,
-          "rationale": "This is an incorrect rearrangement of the fundamental geodetic formula where the sign of the undulation becomes wrong."
-        },
-        {
-          "text": "$h = \\sqrt{H^2 + N^2}$",
-          "isCorrect": false,
-          "rationale": "The RSS method is used for error propagation, not for defining static geometric relationships between vertical reference surfaces."
-        }
+        {"text": "The SVP loaded in the software has sound speeds that are too high compared to reality", "isCorrect": true, "rationale": "When the SVP is too fast, ray tracing over-corrects and pushes outer beams too shallow, creating an upward curve (smiles) at the swath edges."},
+        {"text": "The SVP loaded in the software has sound speeds that are too low compared to reality", "isCorrect": false, "rationale": "Sound speeds that are too low cause 'frowns' (outer beams curve downward), not smiles."},
+        {"text": "Incorrect roll offset from the patch test", "isCorrect": false, "rationale": "Roll offsets cause depth disagreement between port and starboard, not the systematic smile/frown curvature pattern."},
+        {"text": "Excessive vessel heave during acquisition", "isCorrect": false, "rationale": "Heave affects all beams equally (uniform depth shift), not just the outer beams in a curved pattern."}
       ],
-      "hint": "GNSS measures the raw height to the ellipsoid; think about how one adds the separation to reach sea level."
+      "hint": "Consider what happens to outer beam ray tracing when the assumed sound speed is faster than reality."
     },
     {
-      "question": "According to IHO S-44, what does the variable $a$ represent in the formula for maximum allowable vertical uncertainty $TVU = \\sqrt{a^2 + (b \\times d)^2}$?",
+      "question": "In the simplified Chen-Millero equation $SV = 1449.2 + 4.6T - 0.055T^2 + 0.00029T^3 + (1.34 - 0.01T)(S - 35) + 0.016P$, which factor has the greatest effect on sound velocity per unit change?",
       "answerOptions": [
-        {
-          "text": "The constant, depth-independent uncertainty.",
-          "isCorrect": true,
-          "rationale": "The variable $a$ represents the error sources that do not change with water depth, such as uncertainty in tides or draft measurement."
-        },
-        {
-          "text": "The depth-dependent error coefficient.",
-          "isCorrect": false,
-          "rationale": "This is described by the variable $b$, which is multiplied by the depth $d$ to scale the uncertainty."
-        },
-        {
-          "text": "The total horizontal uncertainty at nadir.",
-          "isCorrect": false,
-          "rationale": "The formula concerns $TVU$ (vertical uncertainty), while horizontal uncertainty ($THU$) is calculated separately."
-        },
-        {
-          "text": "The standard deviation of the sound velocity profile.",
-          "isCorrect": false,
-          "rationale": "Sound velocity errors are typically depth-dependent and would therefore more likely contribute to the $b$-component in a full error budget."
-        }
+        {"text": "Temperature (~4.5 m/s per 1 degC)", "isCorrect": true, "rationale": "Temperature has the highest sensitivity at approximately 4.5 m/s per degree Celsius, dominating in the upper water column."},
+        {"text": "Salinity (~1.3 m/s per 1 PSU)", "isCorrect": false, "rationale": "Salinity sensitivity is about 1.3 m/s per PSU, roughly a third of the temperature effect."},
+        {"text": "Pressure (~1.7 m/s per 100 m depth)", "isCorrect": false, "rationale": "Pressure adds about 1.7 m/s per 100 m, which is a much smaller per-unit effect than temperature. It only dominates in deep water where temperature is stable."},
+        {"text": "All three factors contribute equally", "isCorrect": false, "rationale": "The three factors have very different sensitivities. Temperature dominates in shallow and mid-water depths."}
       ],
-      "hint": "Think about what happens to the formula when the depth $d$ is zero."
+      "hint": "Look at the coefficient in front of each variable in the equation."
     },
     {
-      "question": "Why does $TVU$ (Total Vertical Uncertainty) increase drastically for the outer beams of a multibeam echo sounder compared with the beams at nadir?",
+      "question": "What is the relationship between ellipsoidal height (h), orthometric height (H), and geoid undulation (N)?",
       "answerOptions": [
-        {
-          "text": "Attitude errors and sound velocity errors are amplified geometrically by the beam angle and the longer ray path.",
-          "isCorrect": true,
-          "rationale": "Errors in roll and sound velocity create larger vertical deviations when the beam has a shallow angle compared with a vertical beam."
-        },
-        {
-          "text": "GNSS positioning accuracy decreases linearly with distance from the vessel's centreline.",
-          "isCorrect": false,
-          "rationale": "GNSS error primarily affects the horizontal position ($THU$) and is essentially constant for the entire vessel regardless of beam angle."
-        },
-        {
-          "text": "Heave compensation only works optimally for vertical measurements.",
-          "isCorrect": false,
-          "rationale": "Modern MRU technology compensates for motion in all dimensions, but it is the angle-dependent errors that dominate in the outer beams."
-        },
-        {
-          "text": "The tidal error increases as a function of the horizontal distance from the transducer.",
-          "isCorrect": false,
-          "rationale": "Tide is a static addition for the entire survey area and affects all beams equally in the vertical."
-        }
+        {"text": "$h = H + N$", "isCorrect": true, "rationale": "Ellipsoidal height equals orthometric height plus geoid undulation. GNSS measures h, and N must be subtracted to get H (height above the geoid/MSL)."},
+        {"text": "$h = H - N$", "isCorrect": false, "rationale": "This reverses the sign convention. If the geoid is above the ellipsoid (positive N), ellipsoidal height must be greater than orthometric height."},
+        {"text": "$H = h + N$", "isCorrect": false, "rationale": "This would mean orthometric height is greater than ellipsoidal height by the geoid undulation, which is backwards."},
+        {"text": "$N = h + H$", "isCorrect": false, "rationale": "Geoid undulation is the difference between ellipsoidal and orthometric height, not their sum."}
       ],
-      "hint": "Consider how a small angular error (e.g. roll) affects depth more the further the beam must travel obliquely through the water."
+      "hint": "GNSS measures ellipsoidal height directly. The geoid undulation connects it to height above mean sea level."
     },
     {
-      "question": "What is the consequence of applying a Helmert 7-parameter transformation in the wrong direction (e.g. using parameters for 'WGS84 to ED50' when converting data from ED50 to WGS84)?",
+      "question": "When combining independent error sources using Root Sum of Squares (RSS), what is the most effective way to reduce the total uncertainty?",
       "answerOptions": [
-        {
-          "text": "The entire dataset is shifted by approximately double the transformation amount.",
-          "isCorrect": true,
-          "rationale": "Instead of eliminating the difference between the datums, the offset is added twice by using the wrong sign on the parameters."
-        },
-        {
-          "text": "The projection is mirrored about the central meridian.",
-          "isCorrect": false,
-          "rationale": "Mirroring is usually caused by swapped east/north coordinates or incorrect hemisphere signs, not datum transformations."
-        },
-        {
-          "text": "Only the vertical component (height) is affected, while latitude and longitude remain correct.",
-          "isCorrect": false,
-          "rationale": "A Helmert transformation includes three translations ($dX, dY, dZ$) that affect position in all three dimensions."
-        },
-        {
-          "text": "No noticeable effect occurs as the parameters are reciprocal.",
-          "isCorrect": false,
-          "rationale": "The parameters are only reciprocal if one reverses the sign on all seven values; otherwise, large systematic errors are introduced."
-        }
+        {"text": "Reduce all error sources by a small equal amount", "isCorrect": false, "rationale": "Due to the squaring in RSS, reducing the largest source has a far greater impact than spreading the same effort across all sources."},
+        {"text": "Target the largest individual error contributor first", "isCorrect": true, "rationale": "RSS is dominated by the largest component. Reducing the biggest contributor yields the greatest reduction in total uncertainty."},
+        {"text": "Eliminate the smallest error sources to simplify the budget", "isCorrect": false, "rationale": "Small sources contribute negligibly to the RSS total. Removing them has almost no effect on the combined uncertainty."},
+        {"text": "Double the number of measurements for each source", "isCorrect": false, "rationale": "While more measurements can reduce random error, this does not address the principle that the largest contributor dominates the RSS total."}
       ],
-      "hint": "Think about what happens mathematically if you add a value instead of subtracting it."
+      "hint": "Think about what happens when you square values of different magnitudes and then sum them."
     },
     {
-      "question": "What is the primary purpose of performing a 'Static GNSS Intersystem Check' during a mobilisation?",
+      "question": "What is the standard overlap requirement between adjacent MBES survey lines?",
       "answerOptions": [
-        {
-          "text": "To verify the horizontal and vertical agreement between independent positioning systems.",
-          "isCorrect": true,
-          "rationale": "By comparing two independent systems against a known point, one ensures that the configuration and geodetic parameters are correct."
-        },
-        {
-          "text": "To calibrate the time delay (latency) between the GNSS receiver and the echo sounder.",
-          "isCorrect": false,
-          "rationale": "Latency checks are usually performed dynamically through a patch test, not through static measurements on a fixed point."
-        },
-        {
-          "text": "To measure the exact angle between the GNSS antenna and the vessel's gyro.",
-          "isCorrect": false,
-          "rationale": "This is part of the dimensional control (DC survey) and usually requires a total station, not a GNSS comparison."
-        },
-        {
-          "text": "To determine the local tidal coefficients for the project.",
-          "isCorrect": false,
-          "rationale": "Tidal analysis requires long-duration observations with pressure sensors or tide gauges, not short GNSS checks."
-        }
+        {"text": "5-10%", "isCorrect": false, "rationale": "5-10% overlap is too small for MBES. It does not provide sufficient buffer for track deviations, depth changes, or QC comparison."},
+        {"text": "20-25%", "isCorrect": true, "rationale": "20-25% overlap is standard practice. It compensates for helmsman deviation, depth variation (swath narrowing), and provides overlap data for QC."},
+        {"text": "50%", "isCorrect": false, "rationale": "50% overlap is excessive for standard operations and would roughly double the survey time."},
+        {"text": "10-15%", "isCorrect": false, "rationale": "While 10% is the minimum for SSS, MBES requires more overlap (20-25%) due to its sensitivity to depth variation and attitude errors."}
       ],
-      "hint": "Focus on the need for redundancy and verification of geodetic settings."
+      "hint": "The overlap must accommodate helmsman tolerance, depth variation, and quality control."
     },
     {
-      "question": "When using Root Sum of Squares (RSS) for error propagation, which statement best describes how individual error sources contribute to the total error?",
+      "question": "A Helmert 7-parameter transformation uses which set of parameters?",
       "answerOptions": [
-        {
-          "text": "The total uncertainty is strongly dominated by the single largest error source.",
-          "isCorrect": true,
-          "rationale": "Since the terms are squared, large values have a disproportionately large impact on the final result compared with small values."
-        },
-        {
-          "text": "All error sources contribute linearly to the sum, giving a conservative estimate.",
-          "isCorrect": false,
-          "rationale": "Linear summation is used only for correlated errors; RSS is non-linear and assumes independent error sources."
-        },
-        {
-          "text": "Small error sources can be ignored entirely as they cancel each other out in the squaring.",
-          "isCorrect": false,
-          "rationale": "Squaring makes all values positive, so they can never cancel each other out; they always add to the total uncertainty."
-        },
-        {
-          "text": "The total error is always the average of the individual 1-sigma values.",
-          "isCorrect": false,
-          "rationale": "RSS produces a value that is always greater than the largest individual component, never an average."
-        }
+        {"text": "3 translations, 3 rotations, 1 scale factor", "isCorrect": true, "rationale": "The 7 parameters are: dX, dY, dZ (translations in metres), Rx, Ry, Rz (rotations in arc-seconds), and dS (scale in ppm)."},
+        {"text": "3 translations, 3 scale factors, 1 rotation", "isCorrect": false, "rationale": "A Helmert transformation uses only one scale factor, not three. It has three rotations, not one."},
+        {"text": "7 translation parameters along different axes", "isCorrect": false, "rationale": "The 7 parameters are a mix of translations, rotations, and scale, not all translations."},
+        {"text": "2 translations, 2 rotations, 2 scale factors, 1 projection", "isCorrect": false, "rationale": "This does not describe a Helmert transformation. It uses 3+3+1 parameters."}
       ],
-      "hint": "Think about the mathematical effect of squaring numbers before adding them."
+      "hint": "The parameters transform between 3D coordinate systems."
     },
     {
-      "question": "What does the convergence angle (grid convergence) measure in a UTM projection?",
+      "question": "What is the maximum survey speed for quality side scan sonar (SSS) data?",
       "answerOptions": [
-        {
-          "text": "The angle between True North and Grid North at a specific point.",
-          "isCorrect": true,
-          "rationale": "Because meridians converge toward the poles while the UTM grid is rectangular, an angular difference arises everywhere except on the central meridian."
-        },
-        {
-          "text": "The angular difference between Magnetic North and Geographic North.",
-          "isCorrect": false,
-          "rationale": "This is called magnetic declination and depends on the Earth's magnetic field, not on map projections."
-        },
-        {
-          "text": "The angle by which an echo sounder beam bends due to refraction in the water column.",
-          "isCorrect": false,
-          "rationale": "This is an acoustic effect caused by sound velocity changes and is called 'ray bending'."
-        },
-        {
-          "text": "The heading difference between the vessel's two independent gyros.",
-          "isCorrect": false,
-          "rationale": "This is an instrumental comparison (gyro comparison) and has nothing to do with projection geometry."
-        }
+        {"text": "1.5-2.0 knots", "isCorrect": false, "rationale": "This is too slow. While slower speeds improve resolution, 3-3.5 knots is the accepted maximum for quality data."},
+        {"text": "3-3.5 knots", "isCorrect": true, "rationale": "Maximum survey speed for SSS is 3-3.5 knots. Faster speeds degrade along-track resolution and cause the towfish to plane up."},
+        {"text": "5-6 knots", "isCorrect": false, "rationale": "This is too fast for towed SSS. Along-track resolution degrades and towfish altitude control is lost."},
+        {"text": "8-10 knots", "isCorrect": false, "rationale": "This is far too fast. The towfish cannot maintain altitude or produce usable imagery at this speed."}
       ],
-      "hint": "Think about how a rectangular map tries to represent meridians that meet at the poles."
+      "hint": "Consider the effect of speed on along-track resolution and towfish stability."
     },
     {
-      "question": "If a G882 magnetometer shows a calculated depth scale factor of $1.08$ after a calibration, what action is recommended according to the source material?",
+      "question": "In a G882 magnetometer depth/altimeter calibration, what corrective formula is applied to raw sensor values?",
       "answerOptions": [
-        {
-          "text": "Investigate the sensor for hardware faults or unit errors, as the value lies outside the acceptable range of $0.95-1.05$.",
-          "isCorrect": true,
-          "rationale": "A scale factor deviating more than $5\\%$ from $1.0$ indicates fundamental problems that should not be hidden by a correction."
-        },
-        {
-          "text": "Apply the correction immediately to minimise the residual error in collected data.",
-          "isCorrect": false,
-          "rationale": "The source material explicitly warns against simply 'applying and continuing' if the coefficients are outside expected ranges."
-        },
-        {
-          "text": "Increase the number of calibration points to at least 20 to statistically force the scale factor toward $1.0$.",
-          "isCorrect": false,
-          "rationale": "More points improve the confidence of the measurement but do not change an underlying physical or hardware-based bias."
-        },
-        {
-          "text": "Ignore the deviation as long as the average error is close to zero.",
-          "isCorrect": false,
-          "rationale": "A low average error can mask a large slope in the error (scaling) that becomes very problematic at greater depths."
-        }
+        {"text": "Corrected = (RAW x Scale Factor) + Bias", "isCorrect": true, "rationale": "The linear correction uses a scale factor (multiplier) and a bias (offset), determined by linear regression of raw values vs known true values."},
+        {"text": "Corrected = RAW + Scale Factor x Bias", "isCorrect": false, "rationale": "Scale factor and bias are applied to the raw value, not multiplied with each other."},
+        {"text": "Corrected = (RAW - Bias) / Scale Factor", "isCorrect": false, "rationale": "This inverts the correction. The formula is multiplication then addition, not subtraction then division."},
+        {"text": "Corrected = RAW^2 x Scale Factor", "isCorrect": false, "rationale": "The correction is linear, not quadratic. It uses a simple scale and offset model."}
       ],
-      "hint": "Check the specific threshold values for 'Acceptance Criteria' regarding scale factors."
+      "hint": "Think of a simple linear calibration with two coefficients."
     },
     {
-      "question": "What role do 'Common Era' ITRF realisations (e.g. ITRF2014) play in relation to WGS84 in modern offshore surveys?",
+      "question": "What causes sound to bend toward regions of lower sound speed in the ocean?",
       "answerOptions": [
-        {
-          "text": "They are in practice identical and interchangeable for most operational purposes.",
-          "isCorrect": true,
-          "rationale": "The difference between modern ITRF frames and WGS84 is only a few centimetres, which is well below the noise of a GNSS system."
-        },
-        {
-          "text": "ITRF is required for horizontal positioning while WGS84 is only used for vertical references.",
-          "isCorrect": false,
-          "rationale": "Both systems are three-dimensional geodetic reference frames that define both horizontal and vertical positions."
-        },
-        {
-          "text": "A Helmert 7-parameter transformation must always be applied between them to avoid metre-level errors.",
-          "isCorrect": false,
-          "rationale": "Since they are almost perfectly aligned to each other, a transformation could introduce noise rather than improve accuracy."
-        },
-        {
-          "text": "WGS84 is only used by Russian GLONASS while ITRF is used by American GPS.",
-          "isCorrect": false,
-          "rationale": "GPS uses WGS84 as its internal datum, while GLONASS uses PZ-90. ITRF is an independent global scientific standard."
-        }
+        {"text": "Absorption", "isCorrect": false, "rationale": "Absorption reduces signal amplitude but does not change the direction of propagation."},
+        {"text": "Refraction, governed by Snell's Law", "isCorrect": true, "rationale": "Snell's Law ($\\sin\\theta_1 / c_1 = \\sin\\theta_2 / c_2$) governs how sound bends at boundaries between layers of different sound speed. Sound curves toward the slower region."},
+        {"text": "Multipath interference", "isCorrect": false, "rationale": "Multipath involves reflected signals arriving via different paths, not the bending of the primary ray."},
+        {"text": "The SOFAR channel effect", "isCorrect": false, "rationale": "The SOFAR channel is a consequence of refraction, not its cause. Refraction itself is governed by Snell's Law."}
       ],
-      "hint": "Consider whether the tiny difference between these systems actually affects a vessel at sea."
+      "hint": "This fundamental law relates the angle of incidence to the ratio of sound speeds between layers."
     },
     {
-      "question": "What assumption is made in the simplified formula for Layback: $Layback = \\sqrt{cable\\_out^2 - towfish\\_depth^2}$?",
+      "question": "Which IHO S-44 survey order requires 200% bathymetric coverage (dual independent systems)?",
       "answerOptions": [
-        {
-          "text": "That the cable is a straight line without curvature (catenary).",
-          "isCorrect": true,
-          "rationale": "The formula is based on Pythagoras' theorem for a right-angled triangle, which assumes a fully taut and straight cable."
-        },
-        {
-          "text": "That the towfish moves at exactly the same speed as the vessel.",
-          "isCorrect": false,
-          "rationale": "Speed does not affect the geometric triangle calculation itself, although in reality it affects the cable's shape."
-        },
-        {
-          "text": "That the water density is constant along the entire length of the cable.",
-          "isCorrect": false,
-          "rationale": "Density affects the depth measurement via pressure but is not part of the geometric assumption in the layback formula."
-        },
-        {
-          "text": "That the transducer is mounted directly at the vessel's centre of rotation.",
-          "isCorrect": false,
-          "rationale": "Offsets from the centre of rotation are handled separately and do not affect the fundamental relationship between cable and depth."
-        }
+        {"text": "Special Order", "isCorrect": false, "rationale": "Special Order requires 100% coverage, not 200%."},
+        {"text": "Order 1a", "isCorrect": false, "rationale": "Order 1a requires 100% coverage with feature detection to 50 m depth."},
+        {"text": "Exclusive Order", "isCorrect": true, "rationale": "Exclusive Order requires 200% coverage using dual independent systems or two passes. It is for the most critical areas like harbours and berths."},
+        {"text": "Order 2", "isCorrect": false, "rationale": "Order 2 does not even require full bottom coverage. Line-spaced surveys are acceptable."}
       ],
-      "hint": "Think about the shape a cable actually has in water compared with a mathematical triangle."
+      "hint": "This is the most stringent IHO survey order, used for critical underkeel clearance areas."
     },
     {
-      "question": "According to the source material, what is the primary risk of using the wrong 'Coordinate Order' (e.g. Lon/Lat instead of Lat/Lon)?",
+      "question": "What is the typical sound speed range in seawater?",
       "answerOptions": [
-        {
-          "text": "The error is invisible in raw data but causes positions to be plotted in the wrong hemisphere or ocean.",
-          "isCorrect": true,
-          "rationale": "Since both values are numerical, the software cannot automatically detect that they have been swapped, leading to enormous positioning errors."
-        },
-        {
-          "text": "It causes a systematic clock drift in the navigation computer.",
-          "isCorrect": false,
-          "rationale": "Coordinate order is a spatial convention and has no connection to the system's temporal synchronisation."
-        },
-        {
-          "text": "It causes the UTM scale factor to be calculated with the wrong sign.",
-          "isCorrect": false,
-          "rationale": "The scale factor depends on the distance from the central meridian; if coordinates are swapped, one ends up in a completely wrong location, making the scale factor irrelevant."
-        },
-        {
-          "text": "It only affects the vertical resolution in MBES data.",
-          "isCorrect": false,
-          "rationale": "Coordinate order concerns the horizontal axes ($X, Y$) and does not affect how depth values ($Z$) are recorded."
-        }
+        {"text": "340-400 m/s", "isCorrect": false, "rationale": "This is the range for sound in air (~343 m/s), not seawater."},
+        {"text": "1,000-1,200 m/s", "isCorrect": false, "rationale": "This is below the range for seawater. Sound in seawater is faster than this."},
+        {"text": "1,450-1,570 m/s", "isCorrect": true, "rationale": "Sound speed in seawater typically ranges from 1,450 to 1,570 m/s, depending on temperature, salinity, and pressure."},
+        {"text": "2,000-2,500 m/s", "isCorrect": false, "rationale": "This is faster than sound in seawater. Speeds above ~1,570 m/s are outside normal ocean conditions."}
       ],
-      "hint": "Think about what happens if you swap X and Y in a coordinate system."
+      "hint": "Sound travels about 4.4 times faster in seawater than in air."
     },
     {
-      "question": "How does an increased 'Vessel Speed' affect the total uncertainty according to the TPU model?",
+      "question": "For cross-lines (check lines) in a bathymetric survey, what is the maximum recommended spacing relative to main line spacing?",
       "answerOptions": [
-        {
-          "text": "It increases the impact of timing errors (latency) on both horizontal and vertical position.",
-          "isCorrect": true,
-          "rationale": "A small error in time synchronisation results in a larger position error the faster the vessel is moving ($error = speed \\times time$)."
-        },
-        {
-          "text": "It improves GNSS reception by reducing the effect of multipath.",
-          "isCorrect": false,
-          "rationale": "Speed can reduce certain types of multipath interference, but it is not a parameter that lowers the uncertainty in the TPU budget."
-        },
-        {
-          "text": "It reduces refraction errors because the sound beam travels a shorter distance per second.",
-          "isCorrect": false,
-          "rationale": "Sound velocity in water is independent of vessel speed; refraction depends on the water column's properties."
-        },
-        {
-          "text": "It has no effect since TPU is based only on static sensor uncertainties.",
-          "isCorrect": false,
-          "rationale": "TPU is a dynamic model that includes motion-related error sources, including timing and attitude variations."
-        }
+        {"text": "5x main line spacing", "isCorrect": false, "rationale": "This is tighter than the IHO C-13 requirement. While more cross lines improve QC, 5x is not the specified maximum."},
+        {"text": "10x main line spacing", "isCorrect": false, "rationale": "This is tighter than the IHO C-13 maximum of 15x."},
+        {"text": "15x main line spacing", "isCorrect": true, "rationale": "IHO C-13 specifies cross-line spacing should not exceed 15 times the main line spacing."},
+        {"text": "20x main line spacing", "isCorrect": false, "rationale": "This exceeds the IHO C-13 maximum of 15x and would provide insufficient QC coverage."}
       ],
-      "hint": "Consider the relationship between distance, speed and time."
+      "hint": "This value comes from IHO C-13, Chapter 7."
     },
     {
-      "question": "What is the recommended procedure if a computed TPU value exceeds the client's specification at the swath's outer beams?",
+      "question": "Which IMCA standard is the primary reference for offshore positioning systems including GNSS, USBL, and LBL?",
       "answerOptions": [
-        {
-          "text": "Reduce the accepted swath width (e.g. from $60^{\\circ}$ to $45^{\\circ}$ sectors).",
-          "isCorrect": true,
-          "rationale": "By excluding the outermost beams, which have the highest uncertainty, the remaining dataset can meet the accuracy requirements."
-        },
-        {
-          "text": "Adjust the uncertainty values in the software until the total falls below the limit.",
-          "isCorrect": false,
-          "rationale": "Falsifying the numbers is a breach of professional ethics and gives a false picture of the data quality."
-        },
-        {
-          "text": "Increase the vessel speed to cover the area faster before the tide changes.",
-          "isCorrect": false,
-          "rationale": "Higher speed usually increases uncertainty due to timing errors and more noise in acoustic data."
-        },
-        {
-          "text": "Switch the geoid model to one with lower resolution to smooth out the deviations.",
-          "isCorrect": false,
-          "rationale": "Lower resolution in the geoid model increases the uncertainty in vertical measurements rather than reducing it."
-        }
+        {"text": "IMCA S 015", "isCorrect": false, "rationale": "IMCA S 015 covers survey mobilisation and calibration, not positioning systems specifically."},
+        {"text": "IMCA S 017", "isCorrect": true, "rationale": "IMCA S 017 (Guidelines for Position Reference Systems) is the primary standard for offshore positioning including GNSS, USBL, LBL, INS/DVL, calibration requirements, and accuracy standards."},
+        {"text": "IMCA S 024", "isCorrect": false, "rationale": "IMCA S 024 covers side scan sonar operations, not positioning systems."},
+        {"text": "IMCA D 045", "isCorrect": false, "rationale": "IMCA D 045 covers survey report content guidelines, not positioning."}
       ],
-      "hint": "Consider which part of the echo sounder's swath has the worst accuracy and how one can avoid it."
+      "hint": "This standard defines what 'good enough' means for position accuracy offshore."
+    },
+    {
+      "question": "During a vessel turn, which motion sensor showed up to 40 cm heave deviation and required nearly 2 minutes to stabilise?",
+      "answerOptions": [
+        {"text": "Applanix POS MV 320", "isCorrect": false, "rationale": "The POS MV 320 showed minimal degradation during turns with only 1-2 cm variation and immediate stabilisation."},
+        {"text": "CodaOctopus F180", "isCorrect": false, "rationale": "The F180 showed 10-20 cm deviation during turns with about 30 seconds stabilisation time."},
+        {"text": "Kongsberg Seapath 200", "isCorrect": true, "rationale": "The Seapath 200 showed up to 40 cm deviation during turns and required 1.5-2 minutes to stabilise, the worst performance in the comparative test."},
+        {"text": "iXblue Octans III", "isCorrect": false, "rationale": "The Octans III showed good roll/pitch performance but was limited by GNSS dependency."}
+      ],
+      "hint": "This finding was from an independent Hydro International comparative sensor test."
+    },
+    {
+      "question": "What is the recommended minimum buffer length for delayed heave post-processing?",
+      "answerOptions": [
+        {"text": "30 seconds", "isCorrect": false, "rationale": "30 seconds is too short to adequately correct phase errors, especially in long-period swell."},
+        {"text": "60 seconds", "isCorrect": false, "rationale": "60 seconds provides insufficient look-ahead for accurate delayed heave computation."},
+        {"text": "150 seconds", "isCorrect": true, "rationale": "A 150-second buffer (75 seconds before and after each measurement point) is the recommended minimum for delayed heave post-processing."},
+        {"text": "300 seconds", "isCorrect": false, "rationale": "While longer buffers can improve accuracy in long-period swell, 150 seconds is the recommended minimum, not 300."}
+      ],
+      "hint": "The buffer uses data from before and after each measurement point."
+    },
+    {
+      "question": "In the Douglas Sea Scale, what wave height range defines Sea State 3 (Slight)?",
+      "answerOptions": [
+        {"text": "0.1 - 0.5 m", "isCorrect": false, "rationale": "This is Sea State 2 (Smooth)."},
+        {"text": "0.5 - 1.25 m", "isCorrect": true, "rationale": "Douglas Sea State 3 (Slight) covers wave heights from 0.5 to 1.25 m. Hs < 1.25 m is commonly used as the 'good weather' threshold in offshore contracts."},
+        {"text": "1.25 - 2.5 m", "isCorrect": false, "rationale": "This is Sea State 4 (Moderate)."},
+        {"text": "2.5 - 4.0 m", "isCorrect": false, "rationale": "This is Sea State 5 (Rough)."}
+      ],
+      "hint": "This sea state is commonly referenced as the 'good weather' threshold in offshore contracts."
+    },
+    {
+      "question": "What is the typical serial interface (RS-232/RS-422) latency for motion sensor data, and what roll error does it produce at 8 deg/s roll rate?",
+      "answerOptions": [
+        {"text": "~5 ms latency, ~0.04 deg roll error", "isCorrect": false, "rationale": "5 ms is too low for typical serial interfaces. The actual latency is approximately 24 ms."},
+        {"text": "~10 ms latency, ~0.08 deg roll error", "isCorrect": false, "rationale": "10 ms is below the typical serial interface latency of approximately 24 ms."},
+        {"text": "~24 ms latency, ~0.24 deg roll error", "isCorrect": true, "rationale": "Serial interfaces introduce approximately 24 ms of latency. At 8 deg/s roll rate, this produces approximately 0.24 degrees of uncompensated roll error."},
+        {"text": "~50 ms latency, ~0.40 deg roll error", "isCorrect": false, "rationale": "50 ms exceeds the typical serial interface latency for motion sensors."}
+      ],
+      "hint": "Consider the product of latency (in seconds) and roll rate (in deg/s)."
+    },
+    {
+      "question": "What is the SOFAR channel, and where does it occur?",
+      "answerOptions": [
+        {"text": "A zone of maximum sound speed near the sea surface, at 0-100 m depth", "isCorrect": false, "rationale": "The SOFAR channel occurs at the depth of minimum sound speed, not maximum, and is much deeper than 100 m."},
+        {"text": "A natural sound duct centred on the depth of minimum sound speed, typically 700-1,200 m", "isCorrect": true, "rationale": "The SOFAR (Sound Fixing and Ranging) channel is centred at the sound speed minimum (700-1,200 m in mid-latitudes). Sound is trapped there by upward refraction from below and downward refraction from above."},
+        {"text": "An absorption maximum at the thermocline, typically 200-400 m depth", "isCorrect": false, "rationale": "The SOFAR channel is about sound trapping through refraction, not absorption. It occurs deeper than the main thermocline."},
+        {"text": "A reflection boundary at the seabed that channels sound along the bottom", "isCorrect": false, "rationale": "The SOFAR channel is a mid-water phenomenon caused by the sound speed profile, not a seabed reflection effect."}
+      ],
+      "hint": "Sound is trapped between layers where speed increases in both directions (up and down) from the minimum."
     }
   ]
 }
