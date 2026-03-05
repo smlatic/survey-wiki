@@ -325,12 +325,15 @@ a.sm-card:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 .sm-card-icon {
-  font-size: 1.8rem;
   flex-shrink: 0;
   display: flex;
   align-items: flex-start;
   padding-top: 0.2rem;
   color: var(--md-primary-fg-color);
+}
+.sm-card-icon svg {
+  width: 28px;
+  height: 28px;
 }
 .sm-card-body h3 {
   margin: 0 0 0.3rem;

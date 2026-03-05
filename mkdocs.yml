@@ -109,7 +109,7 @@ nav:
       - Soft Skills & Professional Growth: handbook/soft-skills.md
       - Mental Health & Well-Being: handbook/mental-health.md
     - Resources & Further Reading: handbook/resources.md
-    - 🎓 Study Material: handbook/study-material.md
+    - Study Material: handbook/study-material.md
   - Positioning:
     - positioning/index.md
     - GNSS:
@@ -141,7 +141,7 @@ nav:
       - Time Synchronisation: positioning/time-synchronisation.md
     - Tides & Datums:
       - Tidal Theory and Reduction Methods: positioning/tidal-reduction-methods.md
-    - 🎓 Study Material: positioning/study-material.md
+    - Study Material: positioning/study-material.md
   - Survey Sensors:
     - sensors/index.md
     - Multibeam (MBES):
@@ -166,7 +166,7 @@ nav:
     - Camera Systems:
       - Video Camera and DVR Verification: sensors/video-camera-dvr-verification.md
       - Voyis Observer Pro 3 Verification: sensors/voyis-observer-pro3-verification.md
-    - 🎓 Study Material: sensors/study-material.md
+    - Study Material: sensors/study-material.md
   - ROV Operations:
     - rov/index.md
     - Metrology:
@@ -177,7 +177,7 @@ nav:
       - As-Built Survey Procedures: rov/as-built-survey.md
     - Construction:
       - Construction Support Survey: rov/construction-support-survey.md
-    - 🎓 Study Material: rov/study-material.md
+    - Study Material: rov/study-material.md
   - Mobilisation & Setup:
     - mobilisation/index.md
     - Dimensional Control:
@@ -191,11 +191,11 @@ nav:
     - Checklists:
       - Mobilisation Checklist: mobilisation/mobilisation-checklist.md
       - Demobilisation Checklist: mobilisation/demobilisation-checklist.md
-    - 🎓 Study Material: mobilisation/study-material.md
+    - Study Material: mobilisation/study-material.md
   - Reporting:
     - reporting/index.md
     - Survey Reporting Fundamentals: reporting/survey-reporting-guide.md
-    - 🎓 Study Material: reporting/study-material.md
+    - Study Material: reporting/study-material.md
   - Reference:
     - reference/index.md
     - Coordinate Systems and Datums: reference/coordinate-systems-datums.md
@@ -208,7 +208,7 @@ nav:
     - Survey Line Planning and Design: reference/survey-line-planning.md
     - Vessel Motion Effects on Survey Data: reference/vessel-motion-effects.md
     - Marine Environment Effects: reference/marine-environment-effects.md
-    - 🎓 Study Material: reference/study-material.md
+    - Study Material: reference/study-material.md
   - Study Material:
     - study-material/index.md
 
