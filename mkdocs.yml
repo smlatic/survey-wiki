@@ -6,6 +6,7 @@ repo_name: smlatic/survey-wiki
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - scheme: default
       primary: indigo
@@ -223,3 +224,4 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/study-material.js
+  - javascripts/feedback.js
