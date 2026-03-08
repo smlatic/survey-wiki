@@ -7,7 +7,7 @@ hide:
 
 Seabed and subsea measurement instruments -- setup, operations, calibration, and verification.
 
-Covers multibeam, sound velocity, side scan sonar, sub-bottom profiler, pipe tracker, magnetometer/gradiometer, and camera systems.
+Covers multibeam, sound velocity, depth sensors, side scan sonar, sub-bottom profiler, pipe tracker, magnetometer/gradiometer, and camera systems.
 
 ---
 
@@ -28,6 +28,12 @@ Covers multibeam, sound velocity, side scan sonar, sub-bottom profiler, pipe tra
     - [Sound Velocity Operations](sound-velocity-operations.md)
     - [SVP Repeatability Test](svp-repeatability-test.md)
     - [SV/CTD Comparison Verification](sv-ctd-comparison-verification.md)
+
+-   :material-arrow-collapse-down: **Depth Sensors**
+
+    ---
+
+    - [Depth Measurement Operations](depth-measurement-operations.md)
 
 -   :material-sine-wave: **Side Scan Sonar**
 

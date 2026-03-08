@@ -13,7 +13,7 @@ Interactive quizzes, flashcards, and mind maps to test your knowledge of hydrogr
 <div class="sm-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m7 17 3.2-6.8L17 7l-3.2 6.8zm5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></div>
 <div class="sm-card-body">
 <h3>Handbook</h3>
-<p>A Hitchhiker's Guide to Offshore Surveying -- life at sea, survey ops, career fundamentals</p>
+<p>Beginners Guide to Offshore Surveying -- life at sea, survey ops, career fundamentals</p>
 <div class="sm-card-stats">
 <span>15 questions</span>
 <span>93 flashcards</span>

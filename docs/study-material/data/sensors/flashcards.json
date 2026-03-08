@@ -396,6 +396,78 @@
     {
       "front": "What EXIF metadata must be verified in Voyis FDI images?",
       "back": "Timestamp, GPS coordinates, camera serial number/identifier, and exposure settings (time, ISO, aperture)."
+    },
+    {
+      "front": "What five observations are needed before converting pressure to depth?",
+      "back": "Latitude (for gravity), atmospheric pressure, sensor (hydrostatic) pressure, salinity, and temperature."
+    },
+    {
+      "front": "What is standard atmospheric pressure at sea level?",
+      "back": "1013.25 mbar, equivalent to approximately 10 m of seawater or 14.7 PSI."
+    },
+    {
+      "front": "What are the two types of pressure sensor used for depth measurement?",
+      "back": "Strain gauge (resistance varies with pressure) and Digiquartz (quartz crystal resonant frequency changes with pressure)."
+    },
+    {
+      "front": "What is Full Scale Deflection (FSD) and why does it matter?",
+      "back": "FSD is the maximum pressure a sensor is calibrated to. Absolute accuracy is a percentage of FSD, so choosing a sensor with appropriate FSD for your working depth is critical for accuracy."
+    },
+    {
+      "front": "What is the absolute accuracy of a Paroscientific 8000 series depth sensor?",
+      "back": "0.01% of Full Scale Deflection. For a 0-700 m range sensor, that is +/-0.07 m."
+    },
+    {
+      "front": "What is 'rescaling' a depth sensor?",
+      "back": "Calibrating a sensor over a lesser range than its FSD to improve accuracy for a specific project requirement. Must be done by a certified company."
+    },
+    {
+      "front": "What is the minimum calibration certificate validity for sending a depth sensor offshore?",
+      "back": "6 months remaining validity for shorter-term projects. Certificates are generally valid for 1 year."
+    },
+    {
+      "front": "Where should a depth sensor be mounted on an ROV?",
+      "back": "Clear of thruster wash, as near to the centre of the ROV as possible (or close to altimeter/MBES), in the vertical position, away from sand and silt, with pressure port unobstructed."
+    },
+    {
+      "front": "What PSI range on deck confirms a depth sensor is working correctly?",
+      "back": "Between 13.78 and 15.23 PSI (atmospheric pressure at sea level)."
+    },
+    {
+      "front": "What output rate is recommended for depth sensors?",
+      "back": "4 Hz. Higher rates tend to be noisier; lower rates may not provide sufficient update speed."
+    },
+    {
+      "front": "What is the Saunders and Fofonoff Simple formula for pressure to depth?",
+      "back": "Depth = (Observed Pressure - Atmospheric Pressure) / (1000 x Gravity x Water Density). Simplified method, only for non-critical depth work."
+    },
+    {
+      "front": "What formula is used to calculate gravity at a given latitude?",
+      "back": "$g(\\theta) = 9.780318(1.0 + 5.2788 \\times 10^{-3} \\sin^2\\theta + 2.36 \\times 10^{-5} \\sin^4\\theta)$ m/s^2"
+    },
+    {
+      "front": "What is the difference between benchmark referenced loops and closed loops?",
+      "back": "Benchmark: uses two instruments simultaneously (mobile + stationary at benchmark), independent of tide/time. Closed loop: uses one instrument, starts and ends at same point, corrects linearly for tide over time."
+    },
+    {
+      "front": "What is the closed loop misclosure correction formula?",
+      "back": "Correction = -1 x (time difference / total time) x total misclosure. The misclosure is distributed linearly over time because it is primarily caused by tidal variation."
+    },
+    {
+      "front": "What are the requirements for closed loop depth observations?",
+      "back": "Not within 30 min of high/low tide, revisit start point every 30 min, log 30-60 seconds of data at 4 Hz per location, data in PSI, minimum two loops or until <1.5 cm correlation between loops."
+    },
+    {
+      "front": "What is the 4DNAV 'Dynamic' pressure-to-depth conversion?",
+      "back": "The most accurate option in 4DNAV. Uses density from the water column profile integrated to the input pressure, implementing IOGP Report 649 dynamic depth equations."
+    },
+    {
+      "front": "How does density vary with pressure, salinity, and temperature?",
+      "back": "Pressure up = density up (smallest effect). Salinity up = density up. Temperature up = density down (largest effect). Ocean density ranges from 1020 kg/m^3 at surface to 1050 kg/m^3 at extreme depth."
+    },
+    {
+      "front": "How should depth values be reported?",
+      "back": "Increasing positive down, with the point of measurement defined unambiguously, ideally with video stills or sketches. Calibration certificates must be included in field and final reports."
     }
   ]
 }

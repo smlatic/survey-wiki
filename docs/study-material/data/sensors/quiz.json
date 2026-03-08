@@ -170,6 +170,66 @@
         {"text": "Less than or equal to 2.0 m/s at all depths", "isCorrect": false, "rationale": "2.0 m/s is too loose. The acceptance criterion is 1.0 m/s for CTD-derived vs direct SVP comparison."}
       ],
       "hint": "The tolerance for derived vs direct measurement is wider than for two direct measurements, because of the equation uncertainty."
+    },
+    {
+      "question": "A project requires depth measurement in 500 m of water. You select a Paroscientific Digiquartz sensor with a 0-700 m FSD range. What is the absolute accuracy of this sensor?",
+      "answerOptions": [
+        {"text": "+/-0.07 m (0.01% of 700 m FSD)", "isCorrect": true, "rationale": "Absolute accuracy is quoted as a percentage of the Full Scale Deflection. For the Paroscientific 8000 series, this is 0.01% of FSD. 0.01% x 700 m = 0.07 m."},
+        {"text": "+/-0.05 m (0.01% of 500 m working depth)", "isCorrect": false, "rationale": "Absolute accuracy is based on the FSD (700 m), not the actual working depth (500 m). The sensor is calibrated over its full range."},
+        {"text": "+/-0.70 m (0.1% of 700 m FSD)", "isCorrect": false, "rationale": "The Paroscientific 8000 series has 0.01% accuracy, not 0.1%. That would be an order of magnitude worse."},
+        {"text": "+/-0.007 m (0.001% of 700 m FSD)", "isCorrect": false, "rationale": "0.001% is the resolution specification, not the absolute accuracy. Absolute accuracy is 0.01% of FSD."}
+      ],
+      "hint": "Absolute accuracy is a percentage of FSD, not working depth. What percentage does the Paroscientific 8000 series specify?"
+    },
+    {
+      "question": "When configuring a depth sensor for ROV deployment, what atmospheric pressure range in PSI should you expect to see on deck as a healthy sanity check?",
+      "answerOptions": [
+        {"text": "13.78 to 15.23 PSI", "isCorrect": true, "rationale": "Standard atmospheric pressure at sea level is approximately 14.7 PSI (1013.25 mbar). The range of 13.78 to 15.23 PSI covers normal atmospheric variation. If the sensor reads in this range on deck, it is functioning correctly."},
+        {"text": "0 to 1.0 PSI", "isCorrect": false, "rationale": "0-1 PSI would indicate the sensor is reading near zero, suggesting it is already atmospherically compensated or malfunctioning. On deck, it should read atmospheric pressure."},
+        {"text": "100 to 150 PSI", "isCorrect": false, "rationale": "100-150 PSI would correspond to approximately 70-100 m of water depth. This would indicate a faulty sensor or incorrect configuration."},
+        {"text": "29.0 to 31.0 PSI", "isCorrect": false, "rationale": "29-31 is the atmospheric pressure range in inches of mercury (inHg), not PSI. In PSI the range is approximately 13.78 to 15.23."}
+      ],
+      "hint": "Standard atmospheric pressure is about 1013.25 mbar. What is that in PSI?"
+    },
+    {
+      "question": "In a closed loop depth measurement, the misclosure between start and end readings at the benchmark is +0.30 m over 15 minutes. What correction should be applied to a reading taken 5 minutes into the loop?",
+      "answerOptions": [
+        {"text": "-0.10 m", "isCorrect": true, "rationale": "The correction formula is: -1 x (time difference / total time) x total misclosure. So: -1 x (5/15) x 0.30 = -0.10 m. The misclosure is distributed linearly over time."},
+        {"text": "-0.30 m", "isCorrect": false, "rationale": "This would apply the full misclosure to every reading, rather than distributing it proportionally over time."},
+        {"text": "-0.15 m", "isCorrect": false, "rationale": "This would be -1 x (5/15) x 0.45, not the correct calculation. The time ratio of 5/15 applied to 0.30 m gives 0.10 m."},
+        {"text": "-0.06 m", "isCorrect": false, "rationale": "This uses the wrong time ratio. The correct calculation is -1 x (5/15) x 0.30 = -0.10 m."}
+      ],
+      "hint": "The correction formula distributes the misclosure linearly over time: -1 x (time difference / total time) x total misclosure."
+    },
+    {
+      "question": "Why must depth sensor closed loops NOT be conducted within 30 minutes of high or low tide?",
+      "answerOptions": [
+        {"text": "The tide changes direction near high/low water, making linear interpolation of the tidal correction unreliable", "isCorrect": true, "rationale": "Closed loops assume a linear tidal change over the loop duration. Near the tidal stand (high or low water), the rate of change is non-linear, which invalidates the linear correction model."},
+        {"text": "The water is too rough near high and low tide to take accurate readings", "isCorrect": false, "rationale": "Sea state is not directly related to tidal state. The issue is the non-linear tidal rate near the stand."},
+        {"text": "Atmospheric pressure fluctuates more near tidal extremes", "isCorrect": false, "rationale": "Atmospheric pressure is independent of tidal state. The issue is the non-linear tidal rate."},
+        {"text": "The density of the water column changes dramatically at tidal extremes", "isCorrect": false, "rationale": "While density can vary with tidal mixing, the reason for avoiding tidal extremes is the non-linear rate of tidal change."}
+      ],
+      "hint": "Think about what assumption the closed loop correction makes about how tide changes over time."
+    },
+    {
+      "question": "Which of the three 4DNAV NavView pressure-to-depth conversion methods provides the most accurate result?",
+      "answerOptions": [
+        {"text": "Dynamic -- integrates density from the water column profile to the input pressure", "isCorrect": true, "rationale": "The Dynamic method uses density integrated from the full water column profile, implementing IOGP Report 649 dynamic depth equations. This accounts for actual density variations through the water column rather than using a single mean value."},
+        {"text": "Simple UNESCO -- uses standard world ocean density with pressure and latitude", "isCorrect": false, "rationale": "Simple UNESCO uses a standard world ocean density (S=35, T=0 C) and does not account for local water column conditions."},
+        {"text": "Density -- uses mean density from CTD profile", "isCorrect": false, "rationale": "The Density method uses a single mean density value for the entire water column, which is less accurate than integrating the full density profile."},
+        {"text": "All three methods give identical results when properly configured", "isCorrect": false, "rationale": "The methods differ significantly. Dynamic is the most accurate as it uses integrated density rather than a single value or standard ocean assumption."}
+      ],
+      "hint": "Consider which method uses the most complete representation of the water column properties."
+    },
+    {
+      "question": "What is the correlation threshold that must exist between repeated closed loop depth measurements before the loops are considered acceptable?",
+      "answerOptions": [
+        {"text": "Less than 1.5 cm between loops", "isCorrect": true, "rationale": "Depth loops must be conducted a minimum of twice, or until a correlation of less than 1.5 cm exists between loops. This ensures measurement repeatability for metrology applications."},
+        {"text": "Less than 5 cm between loops", "isCorrect": false, "rationale": "5 cm is too loose for metrology depth loops. The acceptance criterion is 1.5 cm."},
+        {"text": "Less than 0.5 cm between loops", "isCorrect": false, "rationale": "0.5 cm would be extremely tight and difficult to achieve in practice. The criterion is 1.5 cm."},
+        {"text": "Less than 10 cm between loops", "isCorrect": false, "rationale": "10 cm far exceeds the acceptance criterion. The threshold is 1.5 cm between loops."}
+      ],
+      "hint": "This threshold relates to metrology depth loop repeatability."
     }
   ]
 }

@@ -211,6 +211,62 @@
       ]
     },
     {
+      "name": "Depth Sensors",
+      "children": [
+        {
+          "name": "Sensor Types",
+          "children": [
+            {"name": "Strain gauge: resistance varies with pressure"},
+            {"name": "Digiquartz: quartz crystal frequency changes with pressure"},
+            {"name": "Stand-alone or integrated (transponder, COMPATT, SVP)"},
+            {"name": "Always temperature-compensated"}
+          ]
+        },
+        {
+          "name": "Accuracy & Calibration",
+          "children": [
+            {"name": "Absolute accuracy: % of FSD (0.01% for Paroscientific)"},
+            {"name": "Relative accuracy: order of magnitude better than absolute"},
+            {"name": "FSD ranges: 10 m to 7000 m (Paroscientific 8000)"},
+            {"name": "Calibration cert: 1 year validity, 6 months min for offshore"},
+            {"name": "Rescaling: calibrate over lesser range for improved accuracy"}
+          ]
+        },
+        {
+          "name": "ROV Installation",
+          "children": [
+            {"name": "Clear of thruster wash"},
+            {"name": "Near centre of ROV or close to altimeter/MBES"},
+            {"name": "Vertical position for best absolute accuracy"},
+            {"name": "Manipulator bracket with elasticised cord"},
+            {"name": "Record all offsets in logbook"}
+          ]
+        },
+        {
+          "name": "Pressure-to-Depth Conversion",
+          "children": [
+            {"name": "Inputs: latitude, atmospheric pressure, hydrostatic pressure, salinity, temperature"},
+            {"name": "Navipac: Saunders & Fofonoff Simple (non-critical work)"},
+            {"name": "Navipac: UNESCO formula (requires CTD profile)"},
+            {"name": "4DNAV: Simple UNESCO, Density, Dynamic"},
+            {"name": "Dynamic method: most accurate (IOGP Report 649)"},
+            {"name": "Gravity formula from latitude"}
+          ]
+        },
+        {
+          "name": "Processing & Reporting",
+          "children": [
+            {"name": "Benchmark referenced loops: 2 instruments, tide-independent"},
+            {"name": "Closed loops: 1 instrument, linear tidal correction"},
+            {"name": "Misclosure: -1 x (time diff / total time) x misclosure"},
+            {"name": "Not within 30 min of high/low tide"},
+            {"name": "Min 2 loops or < 1.5 cm correlation"},
+            {"name": "Report: positive down, include cal certs"}
+          ]
+        }
+      ]
+    },
+    {
       "name": "Video & Imaging Systems",
       "children": [
         {

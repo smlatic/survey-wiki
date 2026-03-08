@@ -1,11 +1,11 @@
 ---
-title: A Hitchhiker's Guide to Offshore Surveying
+title: Beginners Guide to Offshore Surveying
 tags:
   - handbook
   - beginner
 ---
 
-# :material-compass-rose: A Hitchhiker's Guide to Offshore Surveying
+# :material-compass-rose: Beginners Guide to Offshore Surveying
 
 ## Welcome Aboard
 

@@ -1,4 +1,4 @@
-site_name: Survey Knowledge Base
+site_name: Survey Wiki
 site_url: https://smlatic.github.io/survey-wiki/
 site_description: Hydrographic and offshore survey procedures, calibration guides, and field reference material
 repo_url: https://github.com/smlatic/survey-wiki
@@ -87,7 +87,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - The Hitchhiker's Guide:
+  - Beginners Guide:
     - handbook/index.md
     - Part I - Setting Sail:
       - What Is Offshore Surveying?: handbook/what-is-offshore-surveying.md
@@ -156,6 +156,8 @@ nav:
     - Side Scan Sonar:
       - SSS Theory and Operations: sensors/side-scan-sonar-operations.md
       - SSS Positioning Verification: sensors/side-scan-sonar-verification.md
+    - Depth Sensors:
+      - Depth Measurement Operations: sensors/depth-measurement-operations.md
     - Sub-Bottom Profiler:
       - Sub-Bottom Profiler Operations: sensors/sub-bottom-profiler-operations.md
     - Pipe Tracker:
