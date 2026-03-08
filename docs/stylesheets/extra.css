@@ -56,8 +56,16 @@
 
 /* Sidebar nav - active item highlight */
 .md-nav__link--active {
-  color: var(--md-primary-fg-color) !important;
-  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  font-style: italic;
+  font-weight: 400 !important;
+}
+
+.md-nav__link--active::before {
+  content: "\203A\00a0";
+  font-style: normal;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
 }
 
 /* Sidebar section labels (Part I, Part II, etc.) */
@@ -68,7 +76,7 @@
 
 /* Dark mode sidebar - lighten section headers and active links */
 [data-md-color-scheme="slate"] .md-nav__link--active {
-  color: #9fa8da !important;
+  color: var(--md-default-fg-color) !important;
 }
 
 [data-md-color-scheme="slate"] .md-nav__item--nested > .md-nav__link {
@@ -81,24 +89,16 @@
 }
 
 .md-nav--secondary .md-nav__link--active {
-  color: var(--md-primary-fg-color) !important;
-  font-weight: 600 !important;
-  border-left: 2px solid var(--md-primary-fg-color);
-  padding-left: 0.6em;
+  color: var(--md-default-fg-color) !important;
+  font-style: italic;
+  font-weight: 400 !important;
 }
 
-[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
-  color: #9fa8da !important;
-  border-left-color: #9fa8da;
-}
-
-/* Vertical dividers between sidebar / content / TOC */
-.md-sidebar--primary {
-  border-right: 1px solid var(--md-default-fg-color--lightest);
-}
-
-.md-sidebar--secondary {
-  border-left: 1px solid var(--md-default-fg-color--lightest);
+.md-nav--secondary .md-nav__link--active::before {
+  content: "\203A\00a0";
+  font-style: normal;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
 }
 
 /* ===== Tables ===== */
@@ -364,7 +364,7 @@
 .feedback-header-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.6em;
   padding: 0.35em 0.9em;
   margin: 0 0.4em;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
@@ -387,9 +387,10 @@
 }
 
 .feedback-header-btn__icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
+  margin-left: 4px;
 }
 
 .feedback-header-btn__label {
