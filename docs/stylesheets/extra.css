@@ -1,10 +1,17 @@
-/* Survey Wiki -- Custom Styles */
+/* Survey Wiki -- Custom Styles (Polished) */
+
+/* ===== Typography ===== */
+
+.md-typeset {
+  line-height: 1.7;
+}
 
 /* Page title styling */
 .md-content h1 {
   font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--md-primary-fg-color) !important;
-  border-bottom: 3px solid var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--md-primary-fg-color);
   padding-bottom: 0.4em;
   margin-bottom: 1em;
 }
@@ -12,7 +19,8 @@
 /* Section headers - indigo tint for clear hierarchy */
 .md-content h2 {
   color: #283593 !important;
-  font-weight: 600;
+  font-weight: 650;
+  letter-spacing: -0.01em;
 }
 
 /* Step headers get a subtle left accent */
@@ -44,6 +52,8 @@
   color: #9fa8da !important;
 }
 
+/* ===== Navigation ===== */
+
 /* Sidebar nav - active item highlight */
 .md-nav__link--active {
   color: var(--md-primary-fg-color) !important;
@@ -54,6 +64,15 @@
 .md-nav__item--nested > .md-nav__link {
   color: var(--md-primary-fg-color) !important;
   font-weight: 600;
+}
+
+/* Dark mode sidebar - lighten section headers and active links */
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #9fa8da !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__item--nested > .md-nav__link {
+  color: #9fa8da !important;
 }
 
 /* TOC - right sidebar links */
@@ -68,7 +87,22 @@
   padding-left: 0.6em;
 }
 
-/* Better table styling */
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
+  color: #9fa8da !important;
+  border-left-color: #9fa8da;
+}
+
+/* Vertical dividers between sidebar / content / TOC */
+.md-sidebar--primary {
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-sidebar--secondary {
+  border-left: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* ===== Tables ===== */
+
 .md-typeset table:not([class]) {
   border-radius: 8px;
   overflow: hidden;
@@ -96,7 +130,8 @@
   background: rgba(var(--md-accent-fg-color--rgb, 0, 150, 136), 0.08);
 }
 
-/* Procedure step numbering visual polish */
+/* ===== Procedure Steps ===== */
+
 .md-typeset .procedure-steps ol {
   counter-reset: step-counter;
   list-style: none;
@@ -127,7 +162,8 @@
   font-size: 0.85em;
 }
 
-/* Equipment tag pills in frontmatter area */
+/* ===== Equipment Tags ===== */
+
 .md-typeset .equipment-tags {
   display: flex;
   flex-wrap: wrap;
@@ -153,7 +189,8 @@
   color: var(--md-accent-fg-color);
 }
 
-/* Admonition tweaks for cleaner look */
+/* ===== Admonitions ===== */
+
 .md-typeset .admonition,
 .md-typeset details {
   border-radius: 8px;
@@ -166,7 +203,8 @@
   border-radius: 4px;
 }
 
-/* Cards for index pages */
+/* ===== Cards ===== */
+
 .md-typeset .grid.cards > ul > li,
 .md-typeset .grid.cards > ol > li {
   border-radius: 8px;
@@ -179,7 +217,8 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Page header meta section */
+/* ===== Page Meta ===== */
+
 .page-meta {
   display: flex;
   flex-wrap: wrap;
@@ -203,14 +242,16 @@
   color: var(--md-default-fg-color);
 }
 
-/* Horizontal rule as section divider */
+/* ===== Section Divider ===== */
+
 .md-typeset hr {
   border: none;
   border-top: 2px solid var(--md-default-fg-color--lightest);
   margin: 2em 0;
 }
 
-/* Status badge styling */
+/* ===== Status Badges ===== */
+
 .md-typeset .status-badge {
   display: inline-flex;
   align-items: center;
@@ -243,7 +284,8 @@
   color: #64b5f6;
 }
 
-/* Draft content highlight -- strong yellow background */
+/* ===== Draft Content ===== */
+
 .draft-content {
   border-left: 6px solid #f9a825;
   background: #fff9c4 !important;
@@ -258,7 +300,6 @@
   border-left-color: #fdd835;
 }
 
-/* Draft page banner -- full-width yellow bar at top */
 .draft-banner {
   background: #fff176;
   border: 2px solid #f9a825;
@@ -277,7 +318,8 @@
   color: #ffb74d;
 }
 
-/* Handbook hero banner on homepage */
+/* ===== Hero Banner ===== */
+
 .hero-banner {
   text-align: center;
   padding: 2rem 1rem 1.5rem;
@@ -307,7 +349,8 @@
   background: linear-gradient(135deg, #303f9f, #1a237e);
 }
 
-/* Study Material sidebar link -- subtle highlight */
+/* ===== Study Material Link ===== */
+
 .md-nav__link[href*="study-material"] {
   font-weight: 600 !important;
   color: var(--md-primary-fg-color) !important;
@@ -318,7 +361,6 @@
 
 /* ===== Feedback Button & Modal ===== */
 
-/* Header button */
 .feedback-header-btn {
   display: inline-flex;
   align-items: center;
@@ -354,7 +396,6 @@
   display: inline;
 }
 
-/* Hide label text on small screens, keep icon */
 @media screen and (max-width: 76.25em) {
   .feedback-header-btn__label {
     display: none;
@@ -371,7 +412,6 @@
   }
 }
 
-/* Modal overlay */
 .feedback-modal {
   position: fixed;
   top: 0;
@@ -403,7 +443,6 @@
   backdrop-filter: blur(2px);
 }
 
-/* Modal container */
 .feedback-modal__container {
   position: relative;
   width: 90%;
