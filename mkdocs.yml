@@ -25,7 +25,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
+    - navigation.prune
     - navigation.top
     - navigation.indexes
     - navigation.instant
@@ -212,6 +212,7 @@ nav:
     - Study Material: reference/study-material.md
   - Study Material:
     - study-material/index.md
+  - What's New: changelog.md
 
 extra:
   social: []

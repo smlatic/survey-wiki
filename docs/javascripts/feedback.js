@@ -69,9 +69,23 @@
     }
   }
 
+  function makeHeaderTitleClickable() {
+    var topic = document.querySelector(".md-header__topic");
+    if (!topic || topic.dataset.homeLinked) return;
+    topic.dataset.homeLinked = "true";
+    topic.style.cursor = "pointer";
+    topic.addEventListener("click", function () {
+      var logo = document.querySelector(".md-header .md-logo");
+      if (logo && logo.href) {
+        window.location.href = logo.href;
+      }
+    });
+  }
+
   function init() {
     createFeedbackButton();
     initModal();
+    makeHeaderTitleClickable();
   }
 
   // MkDocs Material instant loading support
