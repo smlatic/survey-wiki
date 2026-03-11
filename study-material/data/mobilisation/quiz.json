@@ -1,0 +1,155 @@
+{
+  "title": "Mobilisation & Setup Quiz",
+  "questions": [
+    {
+      "question": "What is the theoretical heading accuracy of a GNSS compass with a 4 m baseline between antennas?",
+      "answerOptions": [
+        {"text": "0.06 deg", "isCorrect": true, "rationale": "Using the formula $\\text{Heading accuracy} \\approx \\frac{0.229}{L}$, with L = 4 m: 0.229 / 4 = 0.057 deg, approximately 0.06 deg."},
+        {"text": "0.23 deg", "isCorrect": false, "rationale": "0.23 deg corresponds to a 1 m baseline, not 4 m."},
+        {"text": "0.02 deg", "isCorrect": false, "rationale": "0.02 deg corresponds to a 10 m baseline."},
+        {"text": "0.11 deg", "isCorrect": false, "rationale": "0.11 deg corresponds to a 2 m baseline."}
+      ],
+      "hint": "The formula relates carrier phase noise to baseline length: $\\approx \\frac{0.229}{L}$ degrees."
+    },
+    {
+      "question": "During a static AHRS calibration alongside, C-O values are stable. However, during dynamic logging they show a sinusoidal heading-dependent pattern. What is the most likely cause?",
+      "answerOptions": [
+        {"text": "A latency mismatch between the GNSS reference and the vessel sensor", "isCorrect": true, "rationale": "A heading-dependent sinusoidal C-O pattern during dynamic conditions, absent in static conditions, is the classic signature of a latency mismatch between two heading systems."},
+        {"text": "Incorrect latitude entered in the gyrocompass", "isCorrect": false, "rationale": "An incorrect latitude would produce a constant heading bias, not a sinusoidal heading-dependent pattern."},
+        {"text": "Multipath at the GNSS antennas", "isCorrect": false, "rationale": "Multipath causes noise and occasional integer ambiguity failures, not a systematic sinusoidal pattern correlated with heading."},
+        {"text": "The MRU mounting has shifted", "isCorrect": false, "rationale": "MRU mounting issues affect pitch and roll, not the heading-dependent sinusoidal pattern described."}
+      ],
+      "hint": "Think about what changes between static and dynamic conditions that could cause a heading-correlated error."
+    },
+    {
+      "question": "What is the minimum number of common control points required between each total station setup during a dimensional control survey?",
+      "answerOptions": [
+        {"text": "5", "isCorrect": true, "rationale": "A minimum of 5 common control points must be visible from each setup to provide sufficient redundancy for transformation and outlier detection."},
+        {"text": "3", "isCorrect": false, "rationale": "3 points define a transformation but provide no redundancy for outlier detection."},
+        {"text": "7", "isCorrect": false, "rationale": "7 is more than the minimum requirement, though more points are always beneficial."},
+        {"text": "4", "isCorrect": false, "rationale": "4 points provide minimal redundancy. The procedure requires a minimum of 5."}
+      ],
+      "hint": "Redundancy is needed for both transformation accuracy and outlier detection."
+    },
+    {
+      "question": "The heave high-pass filter period on your MRU is set to 10 seconds, but the dominant swell period is 12 seconds. What will happen to the bathymetric data?",
+      "answerOptions": [
+        {"text": "Soundings will be systematically too deep in troughs and too shallow on crests", "isCorrect": true, "rationale": "When the filter period is shorter than the swell period, the MRU attenuates real heave signal. The under-compensated heave causes depth errors that are too deep in troughs and too shallow on crests."},
+        {"text": "Soundings will have random noise added uniformly", "isCorrect": false, "rationale": "This is a systematic error correlated with swell, not random noise."},
+        {"text": "No effect, as the 2-second difference is within tolerance", "isCorrect": false, "rationale": "The rule requires the filter period to exceed the swell period by at least 20%. A 10 s filter for 12 s swell attenuates the signal."},
+        {"text": "The heave signal will be amplified, causing exaggerated depths", "isCorrect": false, "rationale": "A high-pass filter attenuates signals below its cutoff; it does not amplify them."}
+      ],
+      "hint": "The filter period rule states it must exceed the dominant swell period by at least 20%."
+    },
+    {
+      "question": "What is the correct order for the first three calibrations in the mobilisation calibration sequence?",
+      "answerOptions": [
+        {"text": "Static GNSS intersystem check, AHRS calibration, Gyro comparison", "isCorrect": true, "rationale": "Positioning must be established first (GNSS check), then heading/attitude verified (AHRS), then individual gyro comparison. Each step depends on the accuracy of the previous one."},
+        {"text": "MBES patch test, USBL calibration, AHRS calibration", "isCorrect": false, "rationale": "MBES patch test comes last (step 6) because it depends on all positioning and attitude being calibrated first."},
+        {"text": "Gyro comparison, AHRS calibration, Static GNSS check", "isCorrect": false, "rationale": "This is the reverse order. GNSS positioning must be verified before heading systems can be calibrated against it."},
+        {"text": "USBL calibration, SVP cast, MBES patch test", "isCorrect": false, "rationale": "These are steps 4-6. The GNSS, AHRS, and gyro checks must come first."}
+      ],
+      "hint": "Each calibration step depends on the accuracy of the previous one. What must be established first?"
+    },
+    {
+      "question": "A spinning mass gyrocompass has accuracy $\\pm 0.2^\\circ \\times \\sec(\\text{latitude})$. What is its accuracy at 60 degrees latitude?",
+      "answerOptions": [
+        {"text": "$\\pm 0.4$ deg", "isCorrect": true, "rationale": "$\\sec(60^\\circ) = \\frac{1}{\\cos(60^\\circ)} = \\frac{1}{0.5} = 2.0$, so accuracy = $\\pm 0.2 \\times 2.0 = \\pm 0.4$ deg."},
+        {"text": "$\\pm 0.2$ deg", "isCorrect": false, "rationale": "This is the accuracy only at the equator where sec(0) = 1."},
+        {"text": "$\\pm 0.12$ deg", "isCorrect": false, "rationale": "This would require cos(latitude) rather than sec(latitude) in the formula."},
+        {"text": "$\\pm 0.35$ deg", "isCorrect": false, "rationale": "This does not correspond to the correct calculation of $0.2 \\times \\sec(60^\\circ)$."}
+      ],
+      "hint": "Secant is the reciprocal of cosine. What is $\\cos(60^\\circ)$?"
+    },
+    {
+      "question": "During demobilisation, what must be completed before disconnecting any equipment?",
+      "answerOptions": [
+        {"text": "All data must be backed up to at least two independent locations and verified", "isCorrect": true, "rationale": "The cardinal rule of demob is to verify all data is backed up and confirmed before disconnecting anything. Once a system is powered down, recovery of incomplete backups may be impossible."},
+        {"text": "All calibration reports must be finalised", "isCorrect": false, "rationale": "Reports are important but come in Phase 2. Data backup in Phase 1 is non-negotiable before any disconnection."},
+        {"text": "Equipment condition reports must be written for each sensor", "isCorrect": false, "rationale": "Condition reports are part of documentation (Phase 2), not the first priority before disconnection."},
+        {"text": "The bridge must be informed", "isCorrect": false, "rationale": "Informing the bridge is important but not the cardinal rule. Data protection comes first."}
+      ],
+      "hint": "Data loss during demob is irreversible."
+    },
+    {
+      "question": "An MRU is mounted 10 m forward of the MBES transducer. In 3 degrees of pitch, what is the approximate lever-arm-induced heave?",
+      "answerOptions": [
+        {"text": "0.52 m", "isCorrect": true, "rationale": "Using $\\text{Induced heave} = L_x \\times \\sin(\\text{pitch})$: $10 \\times \\sin(3^\\circ) = 10 \\times 0.0523 = 0.52$ m."},
+        {"text": "0.17 m", "isCorrect": false, "rationale": "0.17 m corresponds to a 10 m lever arm at only 1 degree of pitch."},
+        {"text": "0.26 m", "isCorrect": false, "rationale": "0.26 m corresponds to a 5 m lever arm at 3 degrees of pitch."},
+        {"text": "1.05 m", "isCorrect": false, "rationale": "1.05 m corresponds to a 20 m lever arm at 3 degrees of pitch."}
+      ],
+      "hint": "The formula is $\\text{Induced heave} = L_x \\times \\sin(\\text{pitch})$."
+    },
+    {
+      "question": "What settling time must be allowed for a spinning mass gyrocompass before beginning calibration?",
+      "answerOptions": [
+        {"text": "4 to 6 hours", "isCorrect": true, "rationale": "Spinning mass gyrocompasses require 4 to 6 hours from a cold start to reach their quoted accuracy."},
+        {"text": "20 to 30 minutes", "isCorrect": false, "rationale": "20-30 minutes is the settling time for a fibre optic gyrocompass (FOG), not a spinning mass type."},
+        {"text": "Less than 5 minutes", "isCorrect": false, "rationale": "Less than 5 minutes applies to ring laser gyrocompasses (RLG)."},
+        {"text": "1 to 2 hours", "isCorrect": false, "rationale": "1-2 hours is insufficient. Spinning mass gyros need 4-6 hours."}
+      ],
+      "hint": "Spinning mass gyros use a mechanical rotor that must physically settle, taking much longer than electronic gyros."
+    },
+    {
+      "question": "During a dimensional control survey, if the opening and closing observations to a control point differ by what threshold, must all observations from that setup be re-observed?",
+      "answerOptions": [
+        {"text": "2 mm", "isCorrect": true, "rationale": "The 2 mm rule: if the difference between opening and closing observation to a control point is 2 mm or more, all observations from that setup must be re-observed."},
+        {"text": "5 mm", "isCorrect": false, "rationale": "5 mm is too lenient. The threshold is 2 mm."},
+        {"text": "1 mm", "isCorrect": false, "rationale": "1 mm is tighter than the specified threshold of 2 mm."},
+        {"text": "0.5 mm", "isCorrect": false, "rationale": "0.5 mm is the RMS threshold for plane and circle fit residuals, not for control point closure."}
+      ],
+      "hint": "This is a critical quality check performed before and after each total station setup."
+    },
+    {
+      "question": "When using the tape measure DC method, what is the maximum recommended distance for reliable offset measurements?",
+      "answerOptions": [
+        {"text": "5 m", "isCorrect": true, "rationale": "Beyond 5 m, tape sag and path errors make measurements unreliable. A total station should be used instead."},
+        {"text": "3 m", "isCorrect": false, "rationale": "3 m is within the reliable range but is not the upper limit. Tape is valid up to 5 m."},
+        {"text": "10 m", "isCorrect": false, "rationale": "10 m far exceeds the reliable range for tape measure dimensional control."},
+        {"text": "1 m", "isCorrect": false, "rationale": "1 m is well within the reliable range. The actual limit is 5 m."}
+      ],
+      "hint": "Consider the effects of tape sag and path errors on longer measurements."
+    },
+    {
+      "question": "In the vessel coordinate reference system for a dimensional control survey, what is the standard positive Z-axis direction?",
+      "answerOptions": [
+        {"text": "Upwards", "isCorrect": true, "rationale": "In the vessel DC survey coordinate system, the CRP is at X=0, Y=0, Z=0 with positive Z pointing upwards, based on the vessel baseline."},
+        {"text": "Downwards", "isCorrect": false, "rationale": "Downwards is the positive Z convention used for some ROV body frames (X-forward, Y-starboard, Z-down), but the vessel DC survey uses positive-up."},
+        {"text": "Forward", "isCorrect": false, "rationale": "Forward is the Y-axis direction in the vessel DC survey reference frame."},
+        {"text": "Starboard", "isCorrect": false, "rationale": "Starboard is the positive X-axis direction in the vessel DC survey reference frame."}
+      ],
+      "hint": "The vessel DC survey uses the baseline as the Z reference, with CRP at the aft perpendicular on the centreline."
+    },
+    {
+      "question": "What is the primary advantage of delayed heave (True Heave) over real-time heave for bathymetric deliverables?",
+      "answerOptions": [
+        {"text": "It processes data in both forward and reverse directions, eliminating phase errors and amplitude attenuation", "isCorrect": true, "rationale": "Delayed heave buffers approximately 150 seconds of data and processes using a non-causal filter. This removes the phase and amplitude errors inherent in real-time causal filtering, especially for long-period swell."},
+        {"text": "It uses a different type of accelerometer with higher accuracy", "isCorrect": false, "rationale": "Delayed heave uses the same sensor data as real-time heave. The improvement comes from the processing method, not the hardware."},
+        {"text": "It removes the need for lever arm corrections", "isCorrect": false, "rationale": "Lever arm corrections are still needed regardless of whether real-time or delayed heave is used."},
+        {"text": "It replaces MRU heave entirely with GNSS height", "isCorrect": false, "rationale": "Delayed heave still uses MRU acceleration data. GNSS-aided heave is a separate method."}
+      ],
+      "hint": "Think about the difference between causal (real-time) and non-causal (post-processed) filtering."
+    },
+    {
+      "question": "During the static AHRS intersystem check, what is the maximum acceptable heading difference between any two systems per IMCA S 017?",
+      "answerOptions": [
+        {"text": "0.5 deg", "isCorrect": true, "rationale": "Per IMCA S 017, the heading tolerance between any two systems during a static intersystem check is 0.5 deg or less."},
+        {"text": "1.0 deg", "isCorrect": false, "rationale": "1.0 deg exceeds the acceptance criterion. If the difference is this large, investigation is required."},
+        {"text": "0.1 deg", "isCorrect": false, "rationale": "0.1 deg is the tolerance for pitch and roll differences, not heading."},
+        {"text": "0.3 deg", "isCorrect": false, "rationale": "0.3 deg is the AHRS calibration tolerance for GNSS reference vs GNSS/INS heading, not the intersystem check threshold."}
+      ],
+      "hint": "This criterion comes from IMCA S 017 guidelines for position reference systems."
+    },
+    {
+      "question": "Why must the total station tilt compensator be switched OFF when performing a dimensional control survey on a vessel deck?",
+      "answerOptions": [
+        {"text": "Corrections depend on where in the pitch/roll cycle the observation is made, introducing random error", "isCorrect": true, "rationale": "On a dynamic platform, the tilt compensator applies corrections at arbitrary points in the pitch/roll cycle. This introduces random error rather than correcting for instrument levelling."},
+        {"text": "The compensator cannot handle angles greater than 1 degree", "isCorrect": false, "rationale": "Modern tilt compensators can handle several degrees of tilt. The issue is the dynamic nature of the motion, not the magnitude."},
+        {"text": "It slows down the measurement rate", "isCorrect": false, "rationale": "The compensator operates in real-time and does not significantly affect measurement speed."},
+        {"text": "It consumes too much battery power", "isCorrect": false, "rationale": "Power consumption is not the reason. The issue is accuracy degradation on a moving platform."}
+      ],
+      "hint": "Consider what happens when the vessel is constantly moving through its pitch and roll cycle during each observation."
+    }
+  ]
+}

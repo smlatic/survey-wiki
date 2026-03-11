@@ -1,0 +1,405 @@
+{
+  "title": "Positioning Flashcards",
+  "cards": [
+    {
+      "front": "What four unknowns must every GNSS position fix solve for?",
+      "back": "Latitude, longitude, height, and receiver clock error. This is why a minimum of four satellite observations are required."
+    },
+    {
+      "front": "What are pseudoranges in GNSS?",
+      "back": "The measured distances from satellites to the receiver before the receiver clock error is resolved. They are derived by comparing the time shift between the received PRN code and the receiver's internal replica."
+    },
+    {
+      "front": "What does DOP (Dilution of Precision) measure?",
+      "back": "How satellite geometry amplifies ranging errors. Poor geometry (satellites clustered together) produces high DOP; good geometry (satellites well spread) produces low DOP."
+    },
+    {
+      "front": "What are the four main DOP types?",
+      "back": "HDOP (horizontal accuracy), VDOP (vertical accuracy), PDOP (3D position accuracy combining HDOP and VDOP), and GDOP (overall geometric quality including time dilution)."
+    },
+    {
+      "front": "A GNSS satellite clock error of 10 nanoseconds produces what range error?",
+      "back": "3 metres of range error."
+    },
+    {
+      "front": "How do dual-frequency GNSS receivers mitigate ionospheric delay?",
+      "back": "They measure the ionospheric delay directly using L1 and L2 carriers and remove it from the computed position. However, they cannot remove ionospheric scintillation effects."
+    },
+    {
+      "front": "What is GNSS multipath and how is it mitigated?",
+      "back": "Multipath occurs when signals reflect off nearby surfaces before reaching the antenna. Mitigation: careful antenna placement away from reflective surfaces, and high-specification receivers/antennas with built-in multipath rejection."
+    },
+    {
+      "front": "How does DGNSS (Differential GNSS) work?",
+      "back": "A reference station at a known position compares its known position to the computed position from satellite ranges, calculates per-satellite range corrections, and broadcasts them to the remote receiver."
+    },
+    {
+      "front": "What is the typical accuracy and convergence time for PPP?",
+      "back": "Decimetre-level accuracy (< 0.15 m at 95% CL when converged). Convergence typically takes 20-30 minutes. Reconvergence after disruption also takes 20-30 minutes."
+    },
+    {
+      "front": "What is RTK and what is its typical accuracy?",
+      "back": "Real Time Kinematic: uses carrier-phase measurements for centimetre-level accuracy. Requires a base station within 20 km and a continuous communications link. Horizontal accuracy: < 0.02 m + 1 ppm of baseline."
+    },
+    {
+      "front": "What is Network RTK?",
+      "back": "Extends conventional RTK using a network of permanent reference stations instead of a single base station. The network models atmospheric errors and generates virtual reference station corrections. No local base station needed."
+    },
+    {
+      "front": "Name four SBAS (Satellite-Based Augmentation Systems) and their regions.",
+      "back": "WAAS (North America), EGNOS (Europe), MSAS (Japan), GAGAN (India). They broadcast corrections via geostationary satellites for metre-level accuracy improvement."
+    },
+    {
+      "front": "List the GNSS antenna siting rules for vessel installations.",
+      "back": "Sited at the highest point, with clear horizon in all directions, minimum 1 metre clear of other GNSS/radio antennas, and sited outside the transmission beam of radar antennas."
+    },
+    {
+      "front": "What are the maximum GNSS antenna cable run specifications?",
+      "back": "Use low-loss cable for runs > 20 m. Maximum cable run approximately 100 m. For runs > 100 m, install inline signal boosters. Minimise joints and connectors."
+    },
+    {
+      "front": "What are the w-test and F-test in GNSS QC?",
+      "back": "The w-test detects outlier observations in the position solution. The F-test (unit variance test) verifies the mathematical model used to account for errors is correct."
+    },
+    {
+      "front": "What is the purpose of an Alongside DGNSS Integrity Check?",
+      "back": "Verify the overall health and accuracy of DGNSS systems by comparing logged DGNSS antenna positions against independently measured positions from total station observations (ESP). Often called an antenna health check."
+    },
+    {
+      "front": "What is the maximum heave limit during a DGNSS integrity check?",
+      "back": "Heave must be < 0.5 m during the observation period. If it exceeds 0.5 m, the comparison will be contaminated by unresolved vertical motion."
+    },
+    {
+      "front": "What are the DGNSS integrity check acceptance criteria for horizontal position agreement?",
+      "back": "Pass: within 0.30 m. Marginal: 0.30-0.50 m. Fail: > 0.50 m."
+    },
+    {
+      "front": "What acceptance criteria apply to a dynamic GNSS intersystem check for DGNSS systems?",
+      "back": "Horizontal position agreement within 1.5 m (DGNSS) or 0.5 m (PPP). Height agreement within 2.0 m (DGNSS) or 1.0 m (PPP). No heading-dependent bias pattern."
+    },
+    {
+      "front": "What is the GNSS Accurate Height Check?",
+      "back": "Verification of GNSS-derived ellipsoidal heights by comparing GNSS water-level profiles against independent 3rd-party tide gauge data over a full tidal cycle (8-9 hours, including one high and one low slack)."
+    },
+    {
+      "front": "What are the GNSS height check acceptance criteria?",
+      "back": "GNSS vs tide gauge RMS: < 0.10 m. Maximum single-point deviation: < 0.20 m. Systematic bias: < 0.05 m after corrections. Manual dip vs gauge: +/- 0.10 m."
+    },
+    {
+      "front": "What does a constant vertical offset between GNSS and tide gauge profiles indicate?",
+      "back": "Systematic bias from incorrect draft, antenna offset, or geoid model error. Profiles are parallel but shifted."
+    },
+    {
+      "front": "What does it mean when GNSS and tide gauge profiles diverge with tidal range?",
+      "back": "Scale error from incorrect tidal reduction or separation model. The error gets bigger at high and low water."
+    },
+    {
+      "front": "What two characteristics make GNSS signals vulnerable to interference?",
+      "back": "1. Fixed, known frequencies (predictable targets). 2. Extremely weak power at reception (easy to overpower with stronger signals)."
+    },
+    {
+      "front": "What is the difference between GNSS jamming and spoofing?",
+      "back": "Jamming overwhelms authentic signals with stronger RF energy, causing total signal loss. Spoofing tricks the receiver into reporting an incorrect position by transmitting false signals."
+    },
+    {
+      "front": "What is AGC monitoring and why is it important for GNSS interference detection?",
+      "back": "Automatic Gain Control monitors signal levels. Elevated AGC indicates jamming (receiver reducing gain due to abnormally strong signal). AGC changes can appear before position degradation, making it an early warning indicator."
+    },
+    {
+      "front": "What is GRIT in the context of GNSS?",
+      "back": "GNSS Resilience and Integrity Technology. Provides built-in resilience against jamming and spoofing when used with compatible receivers and QC software."
+    },
+    {
+      "front": "What is CRPA and how does it work?",
+      "back": "Controlled Reception Pattern Antenna. Mitigates jamming by creating nulls in the antenna gain pattern in the direction of jammers using adaptive beam forming."
+    },
+    {
+      "front": "What is LEANA and what suppression does it provide?",
+      "back": "Low Elevation Angle Nulling Antenna. Provides wideband suppression of ground-level interference, typically 20 dB for all GNSS band signals from 0 to approximately 15 degrees elevation."
+    },
+    {
+      "front": "When did Solar Cycle 25 start and when did it peak?",
+      "back": "Started December 2019, peaked in late 2024/early 2025. Activity exceeded initial predictions and GNSS disruption risk continues through the declining phase (approximately to 2030)."
+    },
+    {
+      "front": "What is ionospheric scintillation and when does it typically occur?",
+      "back": "Rapid fluctuation in amplitude and phase of GNSS signals through a disturbed ionosphere. Effects include loss of satellite lock and reduced positioning. Normally seen in a window of approximately 6 hours after sundown, mainly along the geomagnetic equator."
+    },
+    {
+      "front": "List 6 mitigation strategies for ionospheric scintillation.",
+      "back": "1. Multi-constellation, multi-frequency GNSS. 2. Multi-beam L-band reception. 3. Diverse hardware and services. 4. GNSS + INS integration. 5. Non-GNSS positioning references (acoustic, optical, radar). 6. Increased vigilance, especially after sunset."
+    },
+    {
+      "front": "What are the static GNSS intersystem check horizontal tolerances by correction service?",
+      "back": "DGNSS: 1.0 m (2D RMS). PPP (converged): 0.30 m (2D RMS). RTK (fixed): 0.10 m (2D RMS)."
+    },
+    {
+      "front": "Why should you expect higher scatter alongside in port during a static GNSS check?",
+      "back": "Port environments cause multipath from cranes, container stacks, vessel superstructure, and buildings. Compare the pattern of scatter between systems rather than absolute accuracy."
+    },
+    {
+      "front": "What is a USBL system and what measurements does it require?",
+      "back": "Ultra-Short Baseline acoustic positioning. Requires: Two-Way Travel Time (converted to slant range via SVP), two acoustic angles (horizontal and vertical), vessel heading, pitch and roll, and transceiver position (from GNSS and offsets)."
+    },
+    {
+      "front": "What is a GUSBL system?",
+      "back": "Gyro-Aided USBL. Incorporates an AHRS directly into the transceiver head, making the system effectively pre-calibrated by the manufacturer in a controlled environment."
+    },
+    {
+      "front": "What is the recommended USBL calibration depth range?",
+      "back": "200-2000 m, with approximately 500 m being ideal for a good balance of geometry and signal-to-noise ratio. A calibration at 200+ m is valid for all operating depths."
+    },
+    {
+      "front": "What errors increase with water depth in USBL positioning?",
+      "back": "Pitch and roll sensor errors, USBL transceiver angular measurement errors, and speed of sound errors all produce larger horizontal position errors with increasing depth."
+    },
+    {
+      "front": "What errors remain constant regardless of water depth in USBL positioning?",
+      "back": "DGNSS surface position errors and offset measurement accuracy are constant and not affected by water depth."
+    },
+    {
+      "front": "What does the USBL spin check verify?",
+      "back": "Residual pitch, roll, and offset errors by rotating the vessel through 360 degrees above a transponder. A static spin at four headings separated by 90 degrees, with minimum 400 total observations."
+    },
+    {
+      "front": "What does the USBL transit check reveal?",
+      "back": "Longitudinal transit reveals residual pitch errors (and heading/SV errors). Lateral transit reveals residual roll errors. 'Smile' or 'frown' depth profiles indicate SV/scale issues."
+    },
+    {
+      "front": "Why should you never average positions collected at reciprocal vessel headings during USBL position verification?",
+      "back": "It defeats the purpose of the exercise, which is to highlight the achievable accuracy of a USBL fix on any particular heading. Averaging masks heading-dependent errors."
+    },
+    {
+      "front": "What are wideband transponders and why are they preferred?",
+      "back": "Wideband transponders use coded acoustic pulses for simultaneous interrogation, faster updates, and better multipath rejection. Preferred over legacy narrowband/tone-based transponders with modern systems."
+    },
+    {
+      "front": "When should you use an omni-directional (180 deg) vs directional (30 deg) transponder?",
+      "back": "Omni-directional: water depths < 1800 m. Directional: water depths > 1800 m (only at these depths does a 500 m horizontal offset fit within the 30 deg beam)."
+    },
+    {
+      "front": "What is the maximum horizontal offset formula for a directional transponder?",
+      "back": "$\\tan(0.5 \\times \\text{BeamWidth}) \\times \\text{WD} = \\text{Max Horizontal Offset}$"
+    },
+    {
+      "front": "What is the USBL calibration sign convention rule for QINSy vs CASIUS?",
+      "back": "QINSy: invert the sign of every value when entering into USBL software. CASIUS: enter values directly with no sign change. Failing to invert QINSy signs doubles the error."
+    },
+    {
+      "front": "What does a scale factor significantly different from 1.0 in USBL calibration indicate?",
+      "back": "Most commonly a sound velocity error. Can also indicate incorrect lever arm values (especially depth offsets) or timing errors between GNSS and USBL."
+    },
+    {
+      "front": "What is the USBL calibration SD vs results rule for the spin check?",
+      "back": "If the standard deviation values are bigger than the results, the calibration needs deeper assessment. This indicates the results may not be reliable."
+    },
+    {
+      "front": "What is the Z-Check in USBL calibration processing?",
+      "back": "Confirms the Z offset of the USBL transducer by comparing USBL-derived Z values with echo sounder depth readings, using data from the spin check manoeuvre."
+    },
+    {
+      "front": "What is the purpose of a transponder/responder latency check?",
+      "back": "Confirm or measure any transmission latency of the triggering pulse in responder mode, ensuring accurate and consistent USBL slant range measurements across both modes."
+    },
+    {
+      "front": "What is the formula for range error from uncompensated transponder latency?",
+      "back": "Range error (m) = latency (ms) $\\times$ SV (m/s) / 2000. Example: 10 ms latency at 1500 m/s = 7.5 m range error."
+    },
+    {
+      "front": "What are acceptable latency values for a transponder/responder?",
+      "back": "Pass: 2-15 ms. Marginal: 15-25 ms. Fail: > 25 ms."
+    },
+    {
+      "front": "What is an IMU and what does it contain?",
+      "back": "Inertial Measurement Unit: a block of three gyroscopes and three accelerometers that measure 3D acceleration at very high rates (hundreds of observations per second)."
+    },
+    {
+      "front": "What does the Kalman filter do in an INS?",
+      "back": "Combines IMU and aiding sensor observations by: 1. Estimating the current state from previous observations. 2. Updating with a weighted average of new measurements. 3. Using outlier detection and sensor quality metrics to handle poor data."
+    },
+    {
+      "front": "What is the INS unaided drift rate vs DVL-aided drift rate?",
+      "back": "Unaided: approximately 12 m in 4 minutes (accelerating). DVL-aided: 0.02-0.06% of distance travelled (0.2-0.6 m per km)."
+    },
+    {
+      "front": "What is a ZUPT (Zero Velocity Update)?",
+      "back": "Resetting the velocity to zero when the vehicle is held completely stationary. Used to correct residual velocity errors in the INS when the vehicle is not moving."
+    },
+    {
+      "front": "What is the difference between loosely coupled and tightly coupled aiding?",
+      "back": "Loosely coupled uses processed outputs (positions, velocities). Tightly coupled uses raw measurements (pseudoranges, individual beam velocities, individual ranges). Tightly coupled generally provides better performance."
+    },
+    {
+      "front": "What is the DVL bottom lock altitude range for a 1200 kHz system?",
+      "back": "0.3 to 30 m altitude. Lower frequency DVLs can extend range up to 200 m."
+    },
+    {
+      "front": "Why can an INS improve USBL precision but not accuracy?",
+      "back": "The INS smooths random errors (noise) from USBL effectively, but cannot identify or correct systematic errors (constant offset from truth). There is no mechanism for the INS to identify where truth is."
+    },
+    {
+      "front": "What are the three main INS gyroscope technologies and their typical bias stability?",
+      "back": "MEMS: 1-10 deg/hr (low cost). FOG (Fibre Optic Gyroscope): 0.001-0.1 deg/hr (most common offshore). RLG (Ring Laser Gyroscope): 0.001-0.01 deg/hr (military/aerospace, restricted by ITAR)."
+    },
+    {
+      "front": "What limits the quality of INS sensors used offshore?",
+      "back": "ITAR (International Traffic in Arms Regulations). Very high-quality sensors fall under export restrictions. The majority of offshore INS systems use FOG-based sensors as the best balance of performance and exportability."
+    },
+    {
+      "front": "How does INS drift behave when dynamic vs static?",
+      "back": "When dynamic: drift is primarily affected by DVL misalignment (calibration quality). When static: drift is primarily affected by DVL performance. Drift rate increases over time (non-linear)."
+    },
+    {
+      "front": "What timing synchronisation does an INS require?",
+      "back": "1PPS and ZDA string from the same GNSS source. This allows time-stamped aiding data to be correctly applied and resulting outputs to be merged with external sensors."
+    },
+    {
+      "front": "Why should an INS/DVL system always be supplied as a mechanically coupled and pre-calibrated system?",
+      "back": "Suppliers calibrate near-shore using RTK GNSS on a pole-mounted deployment in shallow water, achieving significantly better results than offshore calibration. Factory values take precedence unless proven otherwise."
+    },
+    {
+      "front": "What is the Exail (iXblue) lever arm sign convention?",
+      "back": "LV1: positive forward. LV2: positive port (opposite of normal survey convention). LV3: positive up. Pitch sign is also reversed: positive pitch = bow up."
+    },
+    {
+      "front": "What is the Sonardyne SPRINT lever arm sign convention?",
+      "back": "X: positive forward. Y: positive starboard. Z: positive down."
+    },
+    {
+      "front": "What is coarse alignment for Exail INS systems?",
+      "back": "First 5 minutes after power-on. System must be stationary on deck. Inertial sensor data is computed to estimate heading, roll, and pitch by detecting the earth rotation axis."
+    },
+    {
+      "front": "What is fine alignment for Exail INS systems?",
+      "back": "After coarse alignment, the Kalman filter is activated. Dynamic manoeuvres (figure-of-8, stair pattern) with 90-degree heading changes are recommended. Ends when heading covariance is below 0.1 degree."
+    },
+    {
+      "front": "How does Sonardyne SPRINT alignment differ from Exail?",
+      "back": "No requirement for on-deck position before going subsea. AHRS settles in 10 minutes and provides starting values to the INS. No alignment manoeuvres required."
+    },
+    {
+      "front": "What is the minimum DVL calibration distance and why?",
+      "back": "At least 1000 times the expected positioning error of the reference system. This ensures the calibration trajectory is long enough to resolve the misalignment angles and scale factor."
+    },
+    {
+      "front": "What is the DVL scale factor and what is the normal range?",
+      "back": "Compensates for systematic errors in DVL velocity measurement. Normal range: 0.95-1.05 (close to 1.0). Deviation > 5% suggests SV error or hardware issues. > 10% likely hardware problem."
+    },
+    {
+      "front": "Why must DVL calibration never be verified on the calibration dataset?",
+      "back": "Calibration performance must always be verified on separate data (e.g., the return leg). Using the same data would not reveal whether the calibration values actually work on independent observations."
+    },
+    {
+      "front": "What are the SPRINT-NAV DVL verification acceptance criteria?",
+      "back": "Position drift < 0.1% of distance travelled (pass). 0.1-0.2% (marginal). > 0.2% (fail). DVL bottom lock must be maintained throughout."
+    },
+    {
+      "front": "What is a cNODE miniS transponder and what modes does it support?",
+      "back": "Kongsberg acoustic transponder for HiPAP USBL systems. Supports FSK and Cymbal modes. Cymbal mode identified by one chirp on power-up; FSK by three chirps."
+    },
+    {
+      "front": "How do you enable transponder mode on a cNODE?",
+      "back": "Place the red dummy plug into the cNODE bulkhead receptacle."
+    },
+    {
+      "front": "How do you switch a cNODE to responder mode?",
+      "back": "Remove the red dummy plug, connect the responder cable to the ROV POD, and blank the dummy plug receptacle with an MCIL8M dummy plug to prevent water ingress."
+    },
+    {
+      "front": "What is LBL (Long Baseline) positioning?",
+      "back": "Determines subsea position by measuring ranges from the vehicle to multiple fixed seabed transponders. Position computed by trilateration. Achieves centimetre-level accuracy (0.01-0.10 m)."
+    },
+    {
+      "front": "What is the LBL range formula for two-way ranging?",
+      "back": "$Range = \\frac{(TWTT - Turn\\_around\\_delay) \\times SV}{2}$"
+    },
+    {
+      "front": "What is the minimum number of transponders needed for a 2D LBL position vs 3D with redundancy?",
+      "back": "3 for 2D (horizontal only). 4 for 3D with redundancy. In practice, 4-6 transponders are typical."
+    },
+    {
+      "front": "What is the LBL range error for a 1 m/s SV error over a 500 m path?",
+      "back": "Approximately 0.33 m (500 / 1500 = 0.33 m per m/s error)."
+    },
+    {
+      "front": "What is Sparse LBL?",
+      "back": "Uses 1-3 transponders with INS aiding instead of a traditional dense array. The INS provides short-term accuracy while periodic LBL ranges correct drift. Should be considered a very different positioning system from traditional LBL."
+    },
+    {
+      "front": "What are the three methods of LBL array calibration?",
+      "back": "1. Surface calibration (vessel circle method with GNSS). 2. Subsea calibration (direct baseline measurement between transponder pairs via ROV). 3. INS-aided calibration (SLAM approach using INS-equipped ROV)."
+    },
+    {
+      "front": "How often should SVPs be refreshed during LBL operations?",
+      "back": "Every 6-12 hours, or more frequently if conditions change. SVP age > 12 hours warrants investigation."
+    },
+    {
+      "front": "What is the M2 tidal constituent and what is its period?",
+      "back": "The dominant semi-diurnal (lunar) tidal constituent with a period of 12.42 hours. It produces the familiar two-high, two-low tide pattern per day."
+    },
+    {
+      "front": "What creates the spring/neap tidal cycle?",
+      "back": "The interaction between M2 and S2 constituents. Spring tides (M2 and S2 in phase) produce the largest range. Neap tides (out of phase) produce the smallest. Period: approximately 14.8 days."
+    },
+    {
+      "front": "What is the inverted barometer effect?",
+      "back": "Low atmospheric pressure raises water level by approximately 1 cm per 1 hPa below standard (1013.25 hPa). A 980 hPa storm raises the water level by approximately 0.33 m from pressure alone."
+    },
+    {
+      "front": "What are the three primary tidal reduction methods?",
+      "back": "1. Observed tide gauge (physical gauge recording actual water level). 2. Predicted tides (computed from harmonic constituents). 3. GNSS tides (using ellipsoidal height minus geoid/separation model)."
+    },
+    {
+      "front": "When are co-tidal corrections needed?",
+      "back": "When the survey area is > 10 km from the gauge (coastal), > 5 km in complex tidal areas, or when tidal range > 2 m and time difference > 10 minutes."
+    },
+    {
+      "front": "What is the IHO S-44 tidal reduction accuracy target for a Special Order survey?",
+      "back": "< 0.10 m at 95% confidence."
+    },
+    {
+      "front": "What vertical datums are commonly used in survey?",
+      "back": "Ellipsoid (WGS84/GRS80) for GNSS. Geoid (approximately MSL) for land survey. LAT (Lowest Astronomical Tide) for nautical charting. MSL for engineering work."
+    },
+    {
+      "front": "What is the typical pressure sensor drift for a tide gauge?",
+      "back": "0.01-0.03 m per month. Schedule regular datum checks for long deployments."
+    },
+    {
+      "front": "What is GPS time vs UTC?",
+      "back": "GPS time was set equal to UTC on 6 January 1980 and runs continuously without leap seconds. UTC is adjusted by inserting leap seconds. As of 2025, GPS time = UTC + 18 seconds."
+    },
+    {
+      "front": "What is the typical latency of a GNSS position fix?",
+      "back": "200-400 ms. At 4 knots, 400 ms of latency means the position is from 0.8 m behind the vessel's current location."
+    },
+    {
+      "front": "What are the four tiers of time synchronisation methods (best to worst)?",
+      "back": "Tier 1: Dedicated hardware time-tagger (EIVA ATTU, < 50 microseconds). Tier 2: PPS/1PPS (1-5 ms). Tier 3: NTP/PTP (millisecond level). Tier 4: NMEA ZDA telegrams (20-30 ms)."
+    },
+    {
+      "front": "Why is NMEA ZDA not sufficient for multibeam bathymetry?",
+      "back": "20-30 ms timing uncertainty is too large. Swath geometry amplifies timing errors at outer beams. Use PPS or NTP as primary timing and treat ZDA as backup only."
+    },
+    {
+      "front": "How can you distinguish a timing error from a true pitch offset in MBES data?",
+      "back": "Run patch test lines at two different speeds. A true pitch offset produces a constant angular error regardless of speed. A timing error produces an error that scales linearly with vessel speed."
+    },
+    {
+      "front": "What is the position error from a 10 ms timing error at 4 knots?",
+      "back": "Approximately 0.021 m (0.010 s x 2.1 m/s)."
+    },
+    {
+      "front": "What is the EIVA ATTU and why is it the best timing option?",
+      "back": "A 1U rack-mounted hardware time-tagger with 24 RS-232 inputs. Timestamps data using a GPS-disciplined clock with accuracy better than 50 microseconds. Removes the OS from the timing chain. Can serve as NTP server for the survey network."
+    },
+    {
+      "front": "What post-processing software is used for Exail INS vs Sonardyne INS?",
+      "back": "Exail (PHINS/ROVINS): DelphINS. Sonardyne (SPRINT): Janus."
+    },
+    {
+      "front": "What is the typical USBL SD weighting for INS aiding?",
+      "back": "A value between 0.2% and 0.5% of slant range is a realistic starting point for the standard deviation of USBL position input to the INS."
+    }
+  ]
+}

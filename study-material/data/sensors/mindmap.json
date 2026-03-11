@@ -1,0 +1,297 @@
+{
+  "name": "Survey Sensors Overview",
+  "children": [
+    {
+      "name": "Multibeam Echosounder (MBES)",
+      "children": [
+        {
+          "name": "Installation & Setup",
+          "children": [
+            {"name": "Transducer placement (centreline, forward of midships)"},
+            {"name": "Over-the-side pole mounts & cable management"},
+            {"name": "Flat-face vs curved array transducers"},
+            {"name": "Bubble sweep-down mitigation"},
+            {"name": "MRU at vessel centre of gravity"},
+            {"name": "Gyro requirements (FOG, GNSS-based)"}
+          ]
+        },
+        {
+          "name": "Calibration (Patch Test)",
+          "children": [
+            {"name": "Solve order: Latency, Roll, Pitch, Heading"},
+            {"name": "Latency: same direction, different speeds"},
+            {"name": "Roll: reciprocal lines, flat seabed"},
+            {"name": "Pitch: reciprocal lines, 5-20 deg slope"},
+            {"name": "Heading: parallel same-direction lines"},
+            {"name": "Dual-head calibration (7 lines)"}
+          ]
+        },
+        {
+          "name": "Operations & Settings",
+          "children": [
+            {"name": "Draft, squat, and settlement"},
+            {"name": "Tidal reduction methods (GNSS, observed, predicted)"},
+            {"name": "Power, pulse, gain, range, and filtering"},
+            {"name": "Backscatter and snippet acquisition"},
+            {"name": "Water column data logging"},
+            {"name": "Online QC checklist"}
+          ]
+        },
+        {
+          "name": "IHO S-44 Standards & Uncertainty",
+          "children": [
+            {"name": "TVU formula: sqrt(a^2 + (b*d)^2)"},
+            {"name": "THU: 6 contributing components"},
+            {"name": "TVU: 7 contributing components"},
+            {"name": "Survey orders (Exclusive through Order 2)"},
+            {"name": "A priori vs a posteriori TPU (CUBE, CHRT)"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sound Velocity",
+      "children": [
+        {
+          "name": "Measurement Methods",
+          "children": [
+            {"name": "SVP: direct time-of-flight measurement"},
+            {"name": "CTD: derived from conductivity, temperature, pressure"},
+            {"name": "Real-time SVS vs full-column SVP"},
+            {"name": "Expendable probes (XBT, XCTD)"}
+          ]
+        },
+        {
+          "name": "Physics & Impact",
+          "children": [
+            {"name": "Temperature (~4.6 m/s per degC), salinity, pressure"},
+            {"name": "Smile = Slow, Frown = Fast (MBES diagnostics)"},
+            {"name": "0.25% depth threshold for SVP errors"},
+            {"name": "Thermocline effects on MBES, USBL, LBL"}
+          ]
+        },
+        {
+          "name": "Deployment & Processing",
+          "children": [
+            {"name": "10-minute surface soak before cast"},
+            {"name": "Descent rate < 1 m/s"},
+            {"name": "Chen & Millero (< 1000 m) vs Del Grosso (> 1000 m)"},
+            {"name": "Harmonic mean (not arithmetic)"},
+            {"name": "Caspian Sea: add 1.4 ppt to salinity"}
+          ]
+        },
+        {
+          "name": "Verification Tests",
+          "children": [
+            {"name": "SVP repeatability: two casts, agree within 0.5 m/s"},
+            {"name": "SV/CTD comparison: agree within 1.0 m/s"},
+            {"name": "Downcast vs upcast hysteresis check"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Side Scan Sonar (SSS)",
+      "children": [
+        {
+          "name": "Theory & Operations",
+          "children": [
+            {"name": "Frequency trade-off: range vs resolution"},
+            {"name": "100-900 kHz range; dual-frequency common"},
+            {"name": "Altitude: 10-15% of range setting"},
+            {"name": "Line planning for 100% and 200% coverage"}
+          ]
+        },
+        {
+          "name": "Positioning & Geometry",
+          "children": [
+            {"name": "Slant range to ground range correction"},
+            {"name": "Towfish layback calculation"},
+            {"name": "USBL on towfish (best positioning method)"},
+            {"name": "Nadir gap width approx equals altitude"}
+          ]
+        },
+        {
+          "name": "Targets & Artifacts",
+          "children": [
+            {"name": "Target height from shadow length formula"},
+            {"name": "Detection vs classification vs identification"},
+            {"name": "Artifacts: nadir gap, layover, surface return, crosstalk"}
+          ]
+        },
+        {
+          "name": "Verification",
+          "children": [
+            {"name": "Compare SSS contacts vs MBES reference"},
+            {"name": "Heading source: most common error"},
+            {"name": "11-point setup checklist"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sub-Bottom Profiler (SBP)",
+      "children": [
+        {
+          "name": "System Types",
+          "children": [
+            {"name": "Pinger: single frequency, simple"},
+            {"name": "Chirp: swept frequency, matched filtering"},
+            {"name": "Parametric: narrow beam (3-5 deg), ROV-suited"},
+            {"name": "Boomer & Sparker: deep geological penetration"}
+          ]
+        },
+        {
+          "name": "Data Interpretation",
+          "children": [
+            {"name": "Continuous reflectors: normal sediment layers"},
+            {"name": "Hyperbolic diffraction: buried pipes/cables"},
+            {"name": "Gas blanking: total acoustic block"},
+            {"name": "Multiple artifact at 2x seabed depth"}
+          ]
+        },
+        {
+          "name": "Operations",
+          "children": [
+            {"name": "Burial depth: TWTT x V_sed / 2"},
+            {"name": "Cross-lines for tie-in and QC"},
+            {"name": "Sediment type controls penetration depth"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Magnetometer & Gradiometer",
+      "children": [
+        {
+          "name": "Magnetometer/TVG Acceptance Test",
+          "children": [
+            {"name": "TVG mode: magnetic gradient (small targets)"},
+            {"name": "Total field mode: absolute intensity (large anomalies)"},
+            {"name": "Reciprocal lines to detect heading bias"},
+            {"name": "Noise floor: < 1 nT (pass), 1-3 nT (marginal)"},
+            {"name": "Heading compensation and diurnal variation"}
+          ]
+        },
+        {
+          "name": "GMA1000 Surrogate Item Test",
+          "children": [
+            {"name": "50 kg ferrous target, 0.5 m diameter minimum"},
+            {"name": "Test at 1-4 m altitudes, reciprocal lines"},
+            {"name": "Dipolar anomaly = valid detection"},
+            {"name": "SNR > 3:1 required"},
+            {"name": "Marine Geologist confirms data quality"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pipe/Cable Tracker",
+      "children": [
+        {
+          "name": "HydroPACT 440/660 Verification",
+          "children": [
+            {"name": "Coil mapping check on deck"},
+            {"name": "Background compensation (within +/-10 uV)"},
+            {"name": "VRT test: determine max detection altitude"},
+            {"name": "Go/No-Go: VRT must exceed survey altitude + 1 m"},
+            {"name": "440 (high freq, shallow) vs 660 (low freq, deep)"}
+          ]
+        },
+        {
+          "name": "Field Verification Tests",
+          "children": [
+            {"name": "VRT test: altitude impact on depth reading"},
+            {"name": "Lateral offset test: position impact"},
+            {"name": "Mobile pipe/cable test: 50 m minimum, reciprocal headings"},
+            {"name": "NaviEdit data extraction and Excel analysis"},
+            {"name": "Pipe properties: diameter and wall thickness affect range"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Depth Sensors",
+      "children": [
+        {
+          "name": "Sensor Types",
+          "children": [
+            {"name": "Strain gauge: resistance varies with pressure"},
+            {"name": "Digiquartz: quartz crystal frequency changes with pressure"},
+            {"name": "Stand-alone or integrated (transponder, COMPATT, SVP)"},
+            {"name": "Always temperature-compensated"}
+          ]
+        },
+        {
+          "name": "Accuracy & Calibration",
+          "children": [
+            {"name": "Absolute accuracy: % of FSD (0.01% for Paroscientific)"},
+            {"name": "Relative accuracy: order of magnitude better than absolute"},
+            {"name": "FSD ranges: 10 m to 7000 m (Paroscientific 8000)"},
+            {"name": "Calibration cert: 1 year validity, 6 months min for offshore"},
+            {"name": "Rescaling: calibrate over lesser range for improved accuracy"}
+          ]
+        },
+        {
+          "name": "ROV Installation",
+          "children": [
+            {"name": "Clear of thruster wash"},
+            {"name": "Near centre of ROV or close to altimeter/MBES"},
+            {"name": "Vertical position for best absolute accuracy"},
+            {"name": "Manipulator bracket with elasticised cord"},
+            {"name": "Record all offsets in logbook"}
+          ]
+        },
+        {
+          "name": "Pressure-to-Depth Conversion",
+          "children": [
+            {"name": "Inputs: latitude, atmospheric pressure, hydrostatic pressure, salinity, temperature"},
+            {"name": "Navipac: Saunders & Fofonoff Simple (non-critical work)"},
+            {"name": "Navipac: UNESCO formula (requires CTD profile)"},
+            {"name": "4DNAV: Simple UNESCO, Density, Dynamic"},
+            {"name": "Dynamic method: most accurate (IOGP Report 649)"},
+            {"name": "Gravity formula from latitude"}
+          ]
+        },
+        {
+          "name": "Processing & Reporting",
+          "children": [
+            {"name": "Benchmark referenced loops: 2 instruments, tide-independent"},
+            {"name": "Closed loops: 1 instrument, linear tidal correction"},
+            {"name": "Misclosure: -1 x (time diff / total time) x misclosure"},
+            {"name": "Not within 30 min of high/low tide"},
+            {"name": "Min 2 loops or < 1.5 cm correlation"},
+            {"name": "Report: positive down, include cal certs"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Video & Imaging Systems",
+      "children": [
+        {
+          "name": "Video Camera & DVR Verification",
+          "children": [
+            {"name": "Image quality: min 1080p resolution"},
+            {"name": "DVR recording on topside and onshore"},
+            {"name": "Overlay information: correct and readable"},
+            {"name": "Timestamp within 1 second of UTC"},
+            {"name": "Line laser offset in Qinsy"},
+            {"name": "Position consistency within 1 m (reciprocal runs)"}
+          ]
+        },
+        {
+          "name": "Voyis Observer Pro 3 FDI",
+          "children": [
+            {"name": "Three-camera array: centre, port, starboard"},
+            {"name": "Forward overlap: 60-80%"},
+            {"name": "Clock sync: < 20 ms pre-dive, < 500 ms drift post-dive"},
+            {"name": "Exposure < 4.5 ms, LED at 100%"},
+            {"name": "EXIF metadata verification"},
+            {"name": "Position consistency: 0.5 m between cameras, 1.0 m between runs"}
+          ]
+        }
+      ]
+    }
+  ]
+}

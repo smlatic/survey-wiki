@@ -1,0 +1,4294 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/sensors/depth-measurement-operations/">
+      
+      
+        <link rel="prev" href="../side-scan-sonar-verification/">
+      
+      
+        <link rel="next" href="../sub-bottom-profiler-operations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Depth Measurement Operations - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#depth-measurement-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Depth Measurement Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../positioning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../positioning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Survey Sensors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multibeam (MBES)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multibeam (MBES)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mbes-installation-and-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MBES Installation and Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mbes-operations-and-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MBES Operations and Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mbes-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MBES Calibration (Patch Test)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Velocity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound Velocity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-velocity-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Velocity Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svp-repeatability-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SVP Repeatability Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sv-ctd-comparison-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SV/CTD Comparison Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Side Scan Sonar
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Side Scan Sonar
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../side-scan-sonar-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSS Theory and Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../side-scan-sonar-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSS Positioning Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depth Sensors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Depth Sensors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depth Measurement Operations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depth Measurement Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atmospheric-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atmospheric Pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctd-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CTD Profiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-and-relative-accuracies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absolute and Relative Accuracies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute and Relative Accuracies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absolute-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absolute Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Calibration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth Sensor Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-installation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Installation Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulator-held-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulator-Held Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth Sensor Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifying-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-measurement-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Measurement Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth Measurement Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-deployment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Deployment Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-leaving-deck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before Leaving Deck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#during-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        During Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pressure-to-depth-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pressure to Depth Conversion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pressure to Depth Conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navipac-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navipac Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navipac Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saunders-and-fofonoff-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saunders and Fofonoff (Simple)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unesco-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UNESCO Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4dnav-navview-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4DNAV NavView Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4DNAV NavView Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-unesco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple UNESCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing and Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing and Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-survey-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Survey Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-point-data-metrology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Point Data (Metrology)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-referenced-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmark Referenced Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closed Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sub-Bottom Profiler
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sub-Bottom Profiler
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sub-bottom-profiler-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sub-Bottom Profiler Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipe Tracker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipe Tracker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipetracker-hydropact-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipe Tracker (HydroPACT) Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipetracker-field-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable/Pipetracker Field Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magnetometer & Gradiometer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Magnetometer & Gradiometer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../magnetometer-tvg-acceptance-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magnetometer/TVG Acceptance Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../surrogate-item-test-gma1000/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surrogate Item Test (GMA1000)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Camera Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-camera-dvr-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Camera and DVR Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voyis-observer-pro3-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voyis Observer Pro 3 Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atmospheric-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atmospheric Pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctd-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CTD Profiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-and-relative-accuracies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absolute and Relative Accuracies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute and Relative Accuracies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absolute-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absolute Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Calibration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth Sensor Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-installation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Installation Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulator-held-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulator-Held Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-sensor-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Sensor Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth Sensor Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifying-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-measurement-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Measurement Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth Measurement Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-deployment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Deployment Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-leaving-deck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before Leaving Deck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#during-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        During Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pressure-to-depth-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pressure to Depth Conversion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pressure to Depth Conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navipac-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navipac Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navipac Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saunders-and-fofonoff-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saunders and Fofonoff (Simple)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unesco-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UNESCO Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4dnav-navview-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4DNAV NavView Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4DNAV NavView Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-unesco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple UNESCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing and Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing and Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-survey-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Survey Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-point-data-metrology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Point Data (Metrology)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-referenced-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmark Referenced Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closed Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Survey Sensors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Depth Sensors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">CTD</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">FSD</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">UNESCO</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">barometer</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">bathymetry</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">benchmark</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">closed loop</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">density</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">depth</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">digiquartz</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">level loop</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">metrology</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">miniips</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">paroscientific</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">pressure sensor</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">pressure to depth</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">valeport</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="depth-measurement-operations"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.92 12.08 12 20l-7.92-7.92 1.42-1.41 5.5 5.5V2h2v14.17l5.5-5.51zM12 20H2v2h20v-2z"/></svg></span> Depth Measurement Operations<a class="headerlink" href="#depth-measurement-operations" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Calibration</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-2 12c-.25 0-.46-.18-.5-.42l-.37-2.65c-.63-.25-1.17-.59-1.69-.99l-2.49 1.01c-.22.08-.49 0-.61-.22l-2-3.46a.493.493 0 0 1 .12-.64l2.11-1.66L4.5 12l.07-1-2.11-1.63a.493.493 0 0 1-.12-.64l2-3.46c.12-.22.39-.31.61-.22l2.49 1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46.18.5.42l.37 2.65c.63.25 1.17.59 1.69.98l2.49-1c.22-.09.49 0 .61.22l2 3.46c.13.22.07.49-.12.64L19.43 11l.07 1-.07 1 2.11 1.63c.19.15.25.42.12.64l-2 3.46c-.12.22-.39.31-.61.22l-2.49-1c-.52.39-1.06.73-1.69.98l-.37 2.65c-.04.24-.25.42-.5.42zm1.25-18-.37 2.61c-1.2.25-2.26.89-3.03 1.78L5.44 7.35l-.75 1.3L6.8 10.2a5.55 5.55 0 0 0 0 3.6l-2.12 1.56.75 1.3 2.43-1.04c.77.88 1.82 1.52 3.01 1.76l.37 2.62h1.52l.37-2.61c1.19-.25 2.24-.89 3.01-1.77l2.43 1.04.75-1.3-2.12-1.55c.4-1.17.4-2.44 0-3.61l2.11-1.55-.75-1.3-2.41 1.04a5.42 5.42 0 0 0-3.03-1.77L12.75 4z"/></svg></span> <strong>Operations Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-08</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Detail the processes to ensure that pressure-based depth sensors are installed, calibrated, deployed, and operated as per manufacturer's instructions. Covers sensor types, accuracies, installation on ROV, pressure-to-depth conversion formulae (Navipac and 4DNAV), and processing/reporting requirements including benchmark and closed loop methods.</p>
+</div>
+<hr />
+<h2 id="overview"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Depth measurement is a key aspect of hydrographic survey. While many methods exist (e.g. vessel-mounted echosounders), this article focuses on <strong>pressure sensors</strong> used to derive depth.</p>
+<p>Pressure sensors measure <strong>hydrostatic pressure</strong> -- the weight of the water column above the sensor pressing down on it due to gravity. Before converting pressure to depth, several observations are required:</p>
+<ul>
+<li><strong>Latitude</strong> (to calculate gravity)</li>
+<li><strong>Atmospheric pressure</strong></li>
+<li><strong>Sensor (hydrostatic) pressure</strong></li>
+<li><strong>Salinity</strong></li>
+<li><strong>Temperature</strong></li>
+</ul>
+<p>Salinity, temperature, and gravity are combined with hydrostatic pressure to calculate seawater density, which is used in the conversion equations.</p>
+<div class="admonition info">
+<p class="admonition-title">SBES and MBES</p>
+<p>Echo sounder depth measurement is covered separately -- see <a href="../mbes-operations-and-settings/">MBES Operations and Settings</a> for multibeam.</p>
+</div>
+<hr />
+<h2 id="atmospheric-pressure"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8c0 2.4-1 4.5-2.7 6-1.4-1.3-3.3-2-5.3-2s-3.8.7-5.3 2C5 16.5 4 14.4 4 12a8 8 0 0 1 8-8m2 1.89c-.38.01-.74.26-.9.65l-1.29 3.23-.1.23c-.71.13-1.3.6-1.57 1.26-.41 1.03.09 2.19 1.12 2.6s2.19-.09 2.6-1.12c.26-.66.14-1.42-.29-1.98l.1-.26 1.29-3.21.01-.03c.2-.51-.05-1.09-.56-1.3-.13-.05-.26-.07-.41-.07M10 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1M7 9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m10 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> Atmospheric Pressure<a class="headerlink" href="#atmospheric-pressure" title="Permanent link">&para;</a></h2>
+<p>Standard atmospheric pressure at sea level is <strong>1013.25 mbar</strong>, equivalent to ~10 m of seawater. This must be subtracted from the raw pressure reading to get the true hydrostatic pressure.</p>
+<p>Atmospheric pressure varies, so a <strong>barometer</strong> is used to log it throughout the survey. The barometer data is applied as an offset to derive hydrostatic pressure.</p>
+<div class="admonition tip">
+<p class="admonition-title">No Barometer Available</p>
+<p>Where accuracy is not critical and no barometer is supplied, measure atmospheric pressure by logging the depth sensor <strong>before</strong> and <strong>after</strong> the survey on deck. Average these readings and use as the atmospheric offset.</p>
+</div>
+<hr />
+<h2 id="density"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6"/></svg></span> Density<a class="headerlink" href="#density" title="Permanent link">&para;</a></h2>
+<p>Density is mass per unit volume. Key values:</p>
+<table>
+<thead>
+<tr>
+<th>Medium</th>
+<th>Density</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fresh water</td>
+<td>1000 kg/m^3^</td>
+<td>at 4 C</td>
+</tr>
+<tr>
+<td>Seawater (average)</td>
+<td>1025 kg/m^3^</td>
+<td>at 4 C, sea level</td>
+</tr>
+<tr>
+<td>Ocean range</td>
+<td>1020 -- 1050 kg/m^3^</td>
+<td>surface to extreme depth</td>
+</tr>
+</tbody>
+</table>
+<p>The relationship between density and its components:</p>
+<ul>
+<li><strong>Pressure increases</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> density increases (smallest effect -- water is nearly incompressible)</li>
+<li><strong>Salinity increases</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> density increases</li>
+<li><strong>Temperature increases</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> density decreases (largest effect)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Density = Sound Velocity</p>
+<p>The same three components (pressure, temperature, salinity) are also used to calculate sound velocity. See <a href="../sound-velocity-operations/">Sound Velocity Operations</a>.</p>
+</div>
+<h3 id="ctd-profiling">CTD Profiling<a class="headerlink" href="#ctd-profiling" title="Permanent link">&para;</a></h3>
+<p>To calculate density for the full water column, a <strong>CTD (Conductivity, Temperature, Depth)</strong> instrument is deployed from surface to seabed and back (a "down and up cast"). The CTD measures pressure, conductivity, and temperature at regular intervals, producing a profile of the water column.</p>
+<p>Casts must be conducted <strong>frequently</strong>, especially where there are large variations in depth, water temperature, or salinity (e.g. areas where rivers mix fresh water with seawater).</p>
+<p>The water column profile data, combined with the atmospheric offset, is used to convert hydrostatic pressure to depth in metres or feet.</p>
+<hr />
+<h2 id="depth-sensor-types"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg></span> Depth Sensor Types<a class="headerlink" href="#depth-sensor-types" title="Permanent link">&para;</a></h2>
+<p>Depth sensors measure pressure, from which depth is calculated. There are two main types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Principle</th>
+<th>How It Works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strain gauge</strong></td>
+<td>Resistance varies with pressure</td>
+<td>Converts pressure into a change in electrical resistance</td>
+</tr>
+<tr>
+<td><strong>Digiquartz</strong></td>
+<td>Frequency changes with pressure</td>
+<td>Pressure applied to a quartz crystal changes its resonant frequency proportionally</td>
+</tr>
+</tbody>
+</table>
+<p>These sensors may be <strong>stand-alone</strong> or <strong>integrated</strong> into equipment such as a transponder, COMPATT, or sound velocity profiler.</p>
+<p>Both types must be <strong>temperature-compensated</strong> -- a temperature sensor is always part of the device.</p>
+<hr />
+<h2 id="absolute-and-relative-accuracies"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07V2m-2 4.08V8h2V6.09c2.5.41 4.5 2.41 4.92 4.91H16v2h1.91c-.41 2.5-2.41 4.5-4.91 4.92V16h-2v1.91C8.5 17.5 6.5 15.5 6.08 13H8v-2H6.09C6.5 8.5 8.5 6.5 11 6.08M12 11a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> Absolute and Relative Accuracies<a class="headerlink" href="#absolute-and-relative-accuracies" title="Permanent link">&para;</a></h2>
+<h3 id="absolute-accuracy">Absolute Accuracy<a class="headerlink" href="#absolute-accuracy" title="Permanent link">&para;</a></h3>
+<p>Important for surveys where actual seabed depth matters (e.g. cable route or pipeline surveys).</p>
+<p>Absolute accuracy depends on the sensor's <strong>Full-Scale Deflection (FSD)</strong> -- the maximum pressure the sensor is calibrated for. Accuracy is quoted as a <strong>percentage of FSD</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Accuracy Calculation</p>
+<p>For a project requirement of 500 m depth:</p>
+<ul>
+<li>Choose the <strong>0--700 m</strong> range sensor</li>
+<li>Absolute accuracy = 0.01% of 700 m = <strong>+/-0.07 m</strong></li>
+</ul>
+<p>This is only the pressure sensor accuracy. Overall absolute accuracy combines errors from offset measurements and other sensors (altimeter, MBES, etc.).</p>
+</div>
+<p><strong>Paroscientific 8000 Series Absolute Ranges:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th>Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0--10 mH~2~O</td>
+<td>30 psia, 0.21 MPa</td>
+</tr>
+<tr>
+<td>0--20 mH~2~O</td>
+<td>45 psia, 0.31 MPa</td>
+</tr>
+<tr>
+<td>0--60 mH~2~O</td>
+<td>100 psia, 0.69 MPa</td>
+</tr>
+<tr>
+<td>0--130 mH~2~O</td>
+<td>200 psia, 1.38 MPa</td>
+</tr>
+<tr>
+<td>0--200 mH~2~O</td>
+<td>300 psia, 2.07 MPa</td>
+</tr>
+<tr>
+<td>0--270 mH~2~O</td>
+<td>400 psia, 2.76 MPa</td>
+</tr>
+<tr>
+<td>0--700 mH~2~O</td>
+<td>1000 psia, 6.89 MPa</td>
+</tr>
+<tr>
+<td>0--1400 mH~2~O</td>
+<td>2000 psia, 13.8 MPa</td>
+</tr>
+<tr>
+<td>0--2000 mH~2~O</td>
+<td>3000 psia, 20.7 MPa</td>
+</tr>
+<tr>
+<td>0--3000 mH~2~O</td>
+<td>4400 psia, 30.3 MPa</td>
+</tr>
+<tr>
+<td>0--4000 mH~2~O</td>
+<td>6000 psia, 41.4 MPa</td>
+</tr>
+<tr>
+<td>0--7000 mH~2~O</td>
+<td>10000 psia, 68.9 MPa</td>
+</tr>
+</tbody>
+</table>
+<p>Choose the correct sensor for the depth of water you will be working in.</p>
+<h3 id="relative-accuracy">Relative Accuracy<a class="headerlink" href="#relative-accuracy" title="Permanent link">&para;</a></h3>
+<p>An order of magnitude better than absolute accuracy. Most relevant for <strong>level loop surveys</strong> during metrologies and structure inclinations.</p>
+<p>In ideal conditions, relative accuracy is defined by the sensor <strong>resolution</strong> (also a percentage of FSD), provided:</p>
+<ul>
+<li>The relative depth over which it is measured is small (e.g. 10 m)</li>
+<li>The time duration of the loop is short (e.g. 30 minutes)</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Digiquartz Level Loop Accuracy</p>
+<table>
+<thead>
+<tr>
+<th>Resolution</th>
+<th>FSD</th>
+<th>Resolution (m)</th>
+<th>Level Loop Placement</th>
+<th>Depth Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0000000001%</td>
+<td>700 m</td>
+<td>0.0000000007 m</td>
+<td>0.010 m</td>
+<td>0.005 m</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<h2 id="depth-sensor-calibration"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 21 2-1 2 1v-7h-4m4-5V7l-2 1-2-1v2l-2 1 2 1v2l2-1 2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z"/></svg></span> Depth Sensor Calibration<a class="headerlink" href="#depth-sensor-calibration" title="Permanent link">&para;</a></h2>
+<p>Requirements:</p>
+<ul>
+<li>Sensor must be <strong>labelled with the FSD</strong> and have a <strong>valid calibration certificate</strong></li>
+<li>Certificate must show the unit was tested over the full FSD and is within manufacturer's specification</li>
+<li>Certificate is generally valid for <strong>1 year</strong>; for shorter projects, sensors may be sent offshore with a minimum of <strong>6 months</strong> validity remaining</li>
+<li><strong>Rescaling</strong>: A sensor can be calibrated over a lesser range for improved accuracy on specific projects (must be done by a certified company)</li>
+<li><strong>Out-of-date certificates</strong>: Do not use the instrument; return for recalibration</li>
+<li>A copy of the certificate must be kept in the <strong>vessel/project folder</strong></li>
+</ul>
+<hr />
+<h2 id="depth-sensor-installation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Depth Sensor Installation<a class="headerlink" href="#depth-sensor-installation" title="Permanent link">&para;</a></h2>
+<p>When mounting a depth sensor on the ROV:</p>
+<div class="admonition warning">
+<p class="admonition-title">Mounting Considerations</p>
+<ul>
+<li>Mount <strong>clear of thruster wash</strong> -- pressure varies in the wash, giving spurious readings</li>
+<li>Mount <strong>as near as possible to the centre of the ROV</strong> (or close to the altimeter/MBES) to minimise pitch and roll effects</li>
+<li>Mount in the <strong>vertical position</strong> for best absolute depth results</li>
+<li>Mount <strong>as far away from sand and silt</strong> as practical</li>
+<li>Ensure the <strong>pressure port is not blocked</strong>, obstructed, or covered with tape</li>
+</ul>
+</div>
+<h3 id="pre-installation-checks">Pre-Installation Checks<a class="headerlink" href="#pre-installation-checks" title="Permanent link">&para;</a></h3>
+<p><strong>Sensor unit inspection:</strong></p>
+<ul>
+<li>Visually check the housing for damage or corrosion</li>
+<li>Check the connector and pins are clean, not tarnished, discoloured, or corroded</li>
+<li>Ensure the connector is tight against the bulkhead with nothing trapped on the sealing face</li>
+</ul>
+<p><strong>Interface checks:</strong></p>
+<ul>
+<li>Verify sensor supply voltage is within the specified range</li>
+<li>Confirm the unit communicates properly with the control software once connected</li>
+</ul>
+<h3 id="manipulator-held-sensors">Manipulator-Held Sensors<a class="headerlink" href="#manipulator-held-sensors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use an <strong>elasticised cord</strong> to prevent the cable from being extended beyond its length and damaged</li>
+<li>Attach sensors to a <strong>manipulator bracket</strong> for ease of use</li>
+<li><strong>Record any offsets</strong> between the point of measurement and the sensor in the logbook</li>
+</ul>
+<hr />
+<h2 id="depth-sensor-configuration"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"/></svg></span> Depth Sensor Configuration<a class="headerlink" href="#depth-sensor-configuration" title="Permanent link">&para;</a></h2>
+<p>Configure sensors using the test cable provided, <strong>before</strong> mounting on the ROV.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Paroscientific Digiquartz</label><label for="__tabbed_1_2">Valeport MiniIPS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*9900EW*9900BL=0</code></td>
+<td>Baud rate Unlock</td>
+</tr>
+<tr>
+<td><code>*9900BR=19200</code></td>
+<td>Set baud rate to 19200. Reconfigure terminal to match.</td>
+</tr>
+<tr>
+<td><code>*9900EW*9900BL=1</code></td>
+<td>Baud rate Lock</td>
+</tr>
+<tr>
+<td><code>*0100EW*0100UN=1</code></td>
+<td>Set pressure output to PSI</td>
+</tr>
+<tr>
+<td><code>*0100EW*0100ZV=0</code></td>
+<td>Set Tare function to off (zero)</td>
+</tr>
+<tr>
+<td><code>*0100EW*0100TH=4, P4</code></td>
+<td>Set output to continuous at 4 Hz</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#</code></td>
+<td>Interrupt instrument, ready for commands</td>
+</tr>
+<tr>
+<td><code>#059;19200</code></td>
+<td>Set baud rate to 19200 (hit Enter). Reconfigure terminal to match.</td>
+</tr>
+<tr>
+<td><code>#020; P</code></td>
+<td>Output data in PSI (hit Enter)</td>
+</tr>
+<tr>
+<td><code>#009;0</code></td>
+<td>Set pressure output to PSI</td>
+</tr>
+<tr>
+<td><code>#003; CONT;4;1;1; NONE;1</code></td>
+<td>Set Tare function to off (zero)</td>
+</tr>
+<tr>
+<td><code>*0100EW*0100TH=4, P4</code></td>
+<td>Set output to continuous at 4 Hz</td>
+</tr>
+<tr>
+<td><code>#028</code></td>
+<td>Exit config mode and start running (hit Enter)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id="verifying-output">Verifying Output<a class="headerlink" href="#verifying-output" title="Permanent link">&para;</a></h3>
+<p>Once configured, the sensor should output a telegram on deck, for example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>*000114.6959494
+</code></pre></div>
+<p>This contains the unit address (<code>*0001</code>) and pressure reading in PSI (<code>14.6959494</code>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Deck Check</p>
+<p>Atmospheric pressure at sea level varies between <strong>13.78 PSI</strong> and <strong>15.23 PSI</strong>. If the reading is in this range on deck, the sensor is working correctly.</p>
+</div>
+<p>After configuration, <strong>cycle the power</strong> a few times to confirm the sensor starts up in the correct mode each time.</p>
+<hr />
+<h2 id="depth-measurement-procedure"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 5a7 7 0 0 1 7 7h1v3h-1v4H9a7 7 0 0 1-7-7 7 7 0 0 1 7-7m0 3a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m8 9h5v4h-2v-2h-3z"/></svg></span> Depth Measurement Procedure<a class="headerlink" href="#depth-measurement-procedure" title="Permanent link">&para;</a></h2>
+<h3 id="pre-deployment-setup">Pre-Deployment Setup<a class="headerlink" href="#pre-deployment-setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Check calibration coefficients where applicable</li>
+<li>Set output formats (see configuration above)</li>
+<li>Set any offsets if applicable</li>
+<li>Verify data is being correctly read and logged by the acquisition software</li>
+</ul>
+<h3 id="before-leaving-deck">Before Leaving Deck<a class="headerlink" href="#before-leaving-deck" title="Permanent link">&para;</a></h3>
+<p>Record in the logbook and enter into software:</p>
+<ul>
+<li>Barometric pressure (including units)</li>
+<li>Average density of the water column</li>
+<li>Surface reading of the instrument</li>
+</ul>
+<h3 id="during-deployment">During Deployment<a class="headerlink" href="#during-deployment" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Monitor sensor data for <strong>consistency</strong></li>
+<li>Where possible, use a <strong>second depth source</strong> simultaneously for comparison</li>
+<li>Always log <strong>raw data</strong> along with calculated depth</li>
+</ul>
+<h3 id="on-recovery">On Recovery<a class="headerlink" href="#on-recovery" title="Permanent link">&para;</a></h3>
+<p>Record in the logbook:</p>
+<ul>
+<li>Barometric pressure (including units)</li>
+<li>Surface reading of the instrument</li>
+</ul>
+<h3 id="measurement-methods">Measurement Methods<a class="headerlink" href="#measurement-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discrete points (e.g. metrology)</td>
+<td>Benchmark Referenced Loops or Closed Loops (see below)</td>
+</tr>
+<tr>
+<td>General survey (pipeline/cable route)</td>
+<td>Continuous logging with cross lines at 90 degrees for QC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pressure-to-depth-conversion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 2v4h10V4zm0 6v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2z"/></svg></span> Pressure to Depth Conversion<a class="headerlink" href="#pressure-to-depth-conversion" title="Permanent link">&para;</a></h2>
+<p>Multiple equations exist for converting pressure to depth. The equation used is generally <strong>directed by the client</strong> and defined in the project procedures. A detailed description is given in <strong>IOGP Report 649</strong> (Seawater Pressure to Depth Conversion).</p>
+<h3 id="navipac-conversions">Navipac Conversions<a class="headerlink" href="#navipac-conversions" title="Permanent link">&para;</a></h3>
+<p>Accessed through the NaviPac Online program: <strong>Options &gt; Depth Calculation Parameters</strong>.</p>
+<h4 id="saunders-and-fofonoff-simple">Saunders and Fofonoff (Simple)<a class="headerlink" href="#saunders-and-fofonoff-simple" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\text{Depth} = \frac{P_{\text{obs}} - P_{\text{atm}}}{1000 \times g \times \rho}
+\]</div>
+<p>Where gravity at latitude <span class="arithmatex">\(\theta\)</span> is:</p>
+<div class="arithmatex">\[
+g(\theta) = 9.780318 \left(1.0 + 5.2788 \times 10^{-3} \sin^2\theta + 2.36 \times 10^{-5} \sin^4\theta \right)
+\]</div>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><strong>Water density</strong>: Mean density from CTD cast (units in kg/dm^3^; convert from kg/m^3^ by dividing by 1000)</li>
+<li><strong>Pressure at surface</strong>: Barometric pressure. If no barometer available, use logged average surface pressure at the start of the survey</li>
+<li><strong>Gravity</strong>: Calculated from latitude using the equation above</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Simplified Method</p>
+<p>This method should only be used where depth is <strong>not a critical</strong> part of the work scope.</p>
+</div>
+<h4 id="unesco-formula">UNESCO Formula<a class="headerlink" href="#unesco-formula" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+z = \frac{C_1 p + C_2 p^2 + C_3 p^3 + C_4 p^4}{g(\phi) + \frac{1}{2} \gamma' p} + \frac{\Delta D}{9.8}
+\]</div>
+<p>Where:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(z_{\text{std}}\)</span></td>
+<td></td>
+<td>Calculated depth in metres (standard sea water)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p\)</span></td>
+<td></td>
+<td>Pressure in decibars</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\gamma'\)</span></td>
+<td>2.184 x 10^-6^</td>
+<td>m/s^2^/decibar</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(g(\phi)\)</span></td>
+<td>See gravity formula</td>
+<td>Gravity at ocean surface at latitude <span class="arithmatex">\(\phi\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_1\)</span></td>
+<td>9.72659</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_2\)</span></td>
+<td>-2.2512 x 10^-5^</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_3\)</span></td>
+<td>2.279 x 10^-10^</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_4\)</span></td>
+<td>1.82 x 10^-15^</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This method requires a <strong>CTD profile</strong> to be loaded in NaviPac.</p>
+<div class="admonition success">
+<p class="admonition-title">Recommended</p>
+<p>This method is more accurate and can be used for all jobs, provided the CTD profile is updated regularly -- especially where there are large depth changes over the work area.</p>
+</div>
+<h3 id="4dnav-navview-conversions">4DNAV NavView Conversions<a class="headerlink" href="#4dnav-navview-conversions" title="Permanent link">&para;</a></h3>
+<p>Three options available in 4DNAV NavView:</p>
+<h4 id="simple-unesco">Simple UNESCO<a class="headerlink" href="#simple-unesco" title="Permanent link">&para;</a></h4>
+<p>Uses the 1980 Equations of State of Seawater (UNESCO Technical Paper 44, referenced as UNESCO 1983). Takes input of <strong>pressure and latitude</strong>, using a standard world ocean density.</p>
+<p>Same formula as the NaviPac UNESCO method above.</p>
+<h4 id="density_1">Density<a class="headerlink" href="#density_1" title="Permanent link">&para;</a></h4>
+<p>Requires a <strong>mean density</strong> of the water column from a CTD profile.</p>
+<div class="arithmatex">\[
+\text{Depth} = \frac{P \times 0.70307}{d} \times \frac{G_{\text{std}}}{G_{\text{local}}}
+\]</div>
+<p>Where:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.70307</td>
+<td></td>
+<td>PSI to metres conversion for standard density water</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P\)</span></td>
+<td></td>
+<td>Pressure in PSI</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(d\)</span></td>
+<td></td>
+<td>Mean density of the water column</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(G_{\text{std}}\)</span></td>
+<td>9.80665 m/s^2^</td>
+<td>Standard gravity</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(G_{\text{local}}\)</span></td>
+<td>See formula</td>
+<td>Local gravity from IAG (1970)</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+G_{\text{local}} = G_e \times (1 + 0.0053024 \sin^2\phi - 0.000059 \sin^2(2\phi))
+\]</div>
+<p>Where <span class="arithmatex">\(G_e\)</span> = 9.7803184 m/s^2^.</p>
+<h4 id="dynamic">Dynamic<a class="headerlink" href="#dynamic" title="Permanent link">&para;</a></h4>
+<p>Calculates depth using density from water column profile <strong>integrated to the input pressure</strong>. Provides the <strong>most accurate result</strong> of the three options.</p>
+<div class="admonition info">
+<p class="admonition-title">IOGP Report 649</p>
+<p>The dynamic calculation implements the dynamic depth equations described in IOGP Report 649. A combination of geopotential method and gravity settings must be chosen. Configuration includes:</p>
+<ul>
+<li>Gravity Equation: UNESCO 1983</li>
+<li>Geopotential method: EOS-80 dynamic depth (2) (B6)</li>
+<li>Gravity Gradient: 2.184e-6 (Fofonoff and Millard Jr, 1983)</li>
+</ul>
+</div>
+<hr />
+<h2 id="processing-and-reporting"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span> Processing and Reporting<a class="headerlink" href="#processing-and-reporting" title="Permanent link">&para;</a></h2>
+<h3 id="general-survey-data">General Survey Data<a class="headerlink" href="#general-survey-data" title="Permanent link">&para;</a></h3>
+<p>Processing of depths for general surveys (pipeline, cable route, etc.) follows standard data processing procedures. Cross lines at 90 degrees to the main survey direction provide QC.</p>
+<h3 id="discrete-point-data-metrology">Discrete Point Data (Metrology)<a class="headerlink" href="#discrete-point-data-metrology" title="Permanent link">&para;</a></h3>
+<p>Depth readings at discrete points should follow metrology procedures and data delivery standards.</p>
+<h3 id="benchmark-referenced-loops">Benchmark Referenced Loops<a class="headerlink" href="#benchmark-referenced-loops" title="Permanent link">&para;</a></h3>
+<p>Depth observations are taken <strong>simultaneously</strong> at the target location and at a stationary benchmark sensor. The target depths are adjusted for tide by the change in the benchmark depth.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Independent of tidal state</li>
+<li>Not limited by time constraints</li>
+<li>Requires <strong>two instruments</strong></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Sample Benchmark Reading Reduction</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Mobile Reading</th>
+<th>BM Reading</th>
+<th>Correction</th>
+<th>Corrected Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BM</td>
+<td>102.89</td>
+<td>102.89</td>
+<td>0.00</td>
+<td>102.89</td>
+</tr>
+<tr>
+<td>A</td>
+<td>98.63</td>
+<td>103.01</td>
+<td>-0.12</td>
+<td>98.51</td>
+</tr>
+<tr>
+<td>B</td>
+<td>103.28</td>
+<td>103.07</td>
+<td>-0.18</td>
+<td>103.10</td>
+</tr>
+<tr>
+<td>BM</td>
+<td>103.13</td>
+<td>103.13</td>
+<td>-0.24</td>
+<td>102.89</td>
+</tr>
+</tbody>
+</table>
+<p>Good practice: always start and end on the same point.</p>
+</div>
+<h3 id="closed-loops">Closed Loops<a class="headerlink" href="#closed-loops" title="Permanent link">&para;</a></h3>
+<p>First and last readings are at the <strong>same location</strong>. Readings are adjusted for tide <strong>linearly over time</strong>.</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Do not take readings within <strong>30 minutes</strong> either side of high or low water</li>
+<li>Revisit the starting point at least every <strong>30 minutes</strong></li>
+<li>Uses a <strong>single instrument</strong></li>
+<li>Log a minimum of <strong>30 seconds</strong> but no more than <strong>1 minute</strong> of data at 4 Hz at each location</li>
+<li>Data logged in <strong>PSI</strong> and converted to metres using the mean density formula</li>
+<li>Loops must be conducted a minimum of <strong>twice</strong> or until a correlation of <strong>&lt; 1.5 cm</strong> exists between loops</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Sample Closed Loop Reduction</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Time</th>
+<th>Reading</th>
+<th>Time Diff (min)</th>
+<th>Correction</th>
+<th>Corrected Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BM</td>
+<td>15:25</td>
+<td>102.89</td>
+<td>0</td>
+<td>0.00</td>
+<td>102.89</td>
+</tr>
+<tr>
+<td>A</td>
+<td>15:31</td>
+<td>98.63</td>
+<td>6</td>
+<td>-0.12</td>
+<td>98.51</td>
+</tr>
+<tr>
+<td>B</td>
+<td>15:34</td>
+<td>103.28</td>
+<td>9</td>
+<td>-0.18</td>
+<td>103.10</td>
+</tr>
+<tr>
+<td>BM</td>
+<td>15:37</td>
+<td>103.13</td>
+<td>12</td>
+<td>-0.24</td>
+<td>102.89</td>
+</tr>
+<tr>
+<td></td>
+<td>Misclosure</td>
+<td>+0.24</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Correction formula:</strong></p>
+<div class="arithmatex">\[
+\text{Correction} = -1 \times \frac{\text{time difference}}{\text{total time}} \times \text{total misclosure}
+\]</div>
+<p>Misclosure is predominantly due to tidal variation between start and end of the depth loop, which is why it is apportioned based on time.</p>
+</div>
+<h3 id="reporting">Reporting<a class="headerlink" href="#reporting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Include a copy of the <strong>calibration certificate</strong> for each pressure sensor in field and final reports</li>
+<li>Depth values are reported as <strong>increasing positive down</strong></li>
+<li>The point of measurement must be defined unambiguously, ideally with <strong>video stills or sketches</strong></li>
+</ul>
+<hr />
+<h2 id="check-values"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> Check Values<a class="headerlink" href="#check-values" title="Permanent link">&para;</a></h2>
+<p>Pressure-to-depth check values for the standard ocean formula (S = 35, T = 0 C):</p>
+<table>
+<thead>
+<tr>
+<th>Pressure</th>
+<th>Lat 0 deg</th>
+<th>Lat 30 deg</th>
+<th>Lat 45 deg</th>
+<th>Lat 60 deg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500 dbar</td>
+<td>496.65 m</td>
+<td>496.00 m</td>
+<td>495.34 m</td>
+<td>494.69 m</td>
+</tr>
+<tr>
+<td>1000 dbar</td>
+<td>992.12 m</td>
+<td>990.81 m</td>
+<td>989.50 m</td>
+<td>988.19 m</td>
+</tr>
+<tr>
+<td>2000 dbar</td>
+<td>1979.55 m</td>
+<td>1976.94 m</td>
+<td>1974.33 m</td>
+<td>1971.72 m</td>
+</tr>
+<tr>
+<td>5000 dbar</td>
+<td>4915.04 m</td>
+<td>4908.56 m</td>
+<td>4902.08 m</td>
+<td>4895.60 m</td>
+</tr>
+<tr>
+<td>10000 dbar</td>
+<td>9725.47 m</td>
+<td>9712.65 m</td>
+<td>9699.84 m</td>
+<td>9687.03 m</td>
+</tr>
+</tbody>
+</table>
+<p>Gravity check values:</p>
+<table>
+<thead>
+<tr>
+<th>Latitude</th>
+<th>0 deg</th>
+<th>30 deg</th>
+<th>45 deg</th>
+<th>60 deg</th>
+<th>90 deg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gravity (m/s^2^)</td>
+<td>9.780318</td>
+<td>9.793240</td>
+<td>9.806190</td>
+<td>9.819169</td>
+<td>9.832177</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Gravity Gradient</p>
+<p>Gravity decreases towards the centre of the earth, but ocean/crustal densities are low enough that it initially increases by <span class="arithmatex">\(\gamma\)</span> = 2.226 x 10^-6^ m/s^2^ per metre of depth. The gradient correction amounts to ~2.8 m at 5000 m depth.</p>
+</div>
+<hr />
+<h2 id="references"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p><strong>External:</strong></p>
+<ul>
+<li>Leroy C. C. and Parthiot F. (1998), <em>Depth-pressure relationship in the oceans and seas</em>. J. Acoust. Soc. Am. 103(3) pp 1346-1352</li>
+<li>Fofonoff N. P. and Millard R. C. Jr. (1983), <em>Algorithms for computation of fundamental properties of seawater</em>. UNESCO Technical Papers in Marine Science No. 44</li>
+<li>IOGP Report 649, <em>Seawater Pressure to Depth Conversion</em></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../side-scan-sonar-verification/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SSS Positioning Verification">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SSS Positioning Verification
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sub-bottom-profiler-operations/" class="md-footer__link md-footer__link--next" aria-label="Next: Sub-Bottom Profiler Operations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Sub-Bottom Profiler Operations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

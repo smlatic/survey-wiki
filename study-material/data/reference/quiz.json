@@ -1,0 +1,205 @@
+{
+  "title": "Reference Quiz",
+  "questions": [
+    {
+      "question": "What is the UTM scale factor at the central meridian of a zone?",
+      "answerOptions": [
+        {"text": "1.0000", "isCorrect": false, "rationale": "1.0000 occurs at approximately 180 km from the central meridian, not at the CM itself."},
+        {"text": "0.9996", "isCorrect": true, "rationale": "UTM applies a scale factor of 0.9996 at the central meridian, meaning grid distances are 0.04% shorter than ground distances there."},
+        {"text": "0.9999", "isCorrect": false, "rationale": "This is not the standard UTM scale factor at the central meridian."},
+        {"text": "1.0004", "isCorrect": false, "rationale": "This is approximately the scale factor at the zone edges (~330 km from CM), not at the central meridian."}
+      ],
+      "hint": "Think about whether UTM grid distances are shorter or longer than ground distances at the CM."
+    },
+    {
+      "question": "The IHO S-44 TVU formula is $TVU = \\sqrt{a^2 + (b \\times d)^2}$. For Special Order at 30 m depth, what is the maximum allowable TVU (95%)?",
+      "answerOptions": [
+        {"text": "0.25 m", "isCorrect": false, "rationale": "0.25 m is only the constant term 'a' for Special Order. The depth-dependent term must also be included."},
+        {"text": "0.336 m", "isCorrect": true, "rationale": "$TVU = \\sqrt{0.25^2 + (0.0075 \\times 30)^2} = \\sqrt{0.0625 + 0.0506} = \\sqrt{0.1131} = 0.336$ m."},
+        {"text": "0.475 m", "isCorrect": false, "rationale": "This would imply different coefficients than those specified for Special Order (a = 0.25, b = 0.0075)."},
+        {"text": "0.50 m", "isCorrect": false, "rationale": "0.50 m is the 'a' value for IHO Order 1a, not Special Order."}
+      ],
+      "hint": "Special Order uses a = 0.25 m and b = 0.0075."
+    },
+    {
+      "question": "What is the most common cause of the 'smiles' artifact in multibeam bathymetry data?",
+      "answerOptions": [
+        {"text": "The SVP loaded in the software has sound speeds that are too high compared to reality", "isCorrect": true, "rationale": "When the SVP is too fast, ray tracing over-corrects and pushes outer beams too shallow, creating an upward curve (smiles) at the swath edges."},
+        {"text": "The SVP loaded in the software has sound speeds that are too low compared to reality", "isCorrect": false, "rationale": "Sound speeds that are too low cause 'frowns' (outer beams curve downward), not smiles."},
+        {"text": "Incorrect roll offset from the patch test", "isCorrect": false, "rationale": "Roll offsets cause depth disagreement between port and starboard, not the systematic smile/frown curvature pattern."},
+        {"text": "Excessive vessel heave during acquisition", "isCorrect": false, "rationale": "Heave affects all beams equally (uniform depth shift), not just the outer beams in a curved pattern."}
+      ],
+      "hint": "Consider what happens to outer beam ray tracing when the assumed sound speed is faster than reality."
+    },
+    {
+      "question": "In the simplified Chen-Millero equation $SV = 1449.2 + 4.6T - 0.055T^2 + 0.00029T^3 + (1.34 - 0.01T)(S - 35) + 0.016P$, which factor has the greatest effect on sound velocity per unit change?",
+      "answerOptions": [
+        {"text": "Temperature (~4.5 m/s per 1 degC)", "isCorrect": true, "rationale": "Temperature has the highest sensitivity at approximately 4.5 m/s per degree Celsius, dominating in the upper water column."},
+        {"text": "Salinity (~1.3 m/s per 1 PSU)", "isCorrect": false, "rationale": "Salinity sensitivity is about 1.3 m/s per PSU, roughly a third of the temperature effect."},
+        {"text": "Pressure (~1.7 m/s per 100 m depth)", "isCorrect": false, "rationale": "Pressure adds about 1.7 m/s per 100 m, which is a much smaller per-unit effect than temperature. It only dominates in deep water where temperature is stable."},
+        {"text": "All three factors contribute equally", "isCorrect": false, "rationale": "The three factors have very different sensitivities. Temperature dominates in shallow and mid-water depths."}
+      ],
+      "hint": "Look at the coefficient in front of each variable in the equation."
+    },
+    {
+      "question": "What is the relationship between ellipsoidal height (h), orthometric height (H), and geoid undulation (N)?",
+      "answerOptions": [
+        {"text": "$h = H + N$", "isCorrect": true, "rationale": "Ellipsoidal height equals orthometric height plus geoid undulation. GNSS measures h, and N must be subtracted to get H (height above the geoid/MSL)."},
+        {"text": "$h = H - N$", "isCorrect": false, "rationale": "This reverses the sign convention. If the geoid is above the ellipsoid (positive N), ellipsoidal height must be greater than orthometric height."},
+        {"text": "$H = h + N$", "isCorrect": false, "rationale": "This would mean orthometric height is greater than ellipsoidal height by the geoid undulation, which is backwards."},
+        {"text": "$N = h + H$", "isCorrect": false, "rationale": "Geoid undulation is the difference between ellipsoidal and orthometric height, not their sum."}
+      ],
+      "hint": "GNSS measures ellipsoidal height directly. The geoid undulation connects it to height above mean sea level."
+    },
+    {
+      "question": "When combining independent error sources using Root Sum of Squares (RSS), what is the most effective way to reduce the total uncertainty?",
+      "answerOptions": [
+        {"text": "Reduce all error sources by a small equal amount", "isCorrect": false, "rationale": "Due to the squaring in RSS, reducing the largest source has a far greater impact than spreading the same effort across all sources."},
+        {"text": "Target the largest individual error contributor first", "isCorrect": true, "rationale": "RSS is dominated by the largest component. Reducing the biggest contributor yields the greatest reduction in total uncertainty."},
+        {"text": "Eliminate the smallest error sources to simplify the budget", "isCorrect": false, "rationale": "Small sources contribute negligibly to the RSS total. Removing them has almost no effect on the combined uncertainty."},
+        {"text": "Double the number of measurements for each source", "isCorrect": false, "rationale": "While more measurements can reduce random error, this does not address the principle that the largest contributor dominates the RSS total."}
+      ],
+      "hint": "Think about what happens when you square values of different magnitudes and then sum them."
+    },
+    {
+      "question": "What is the standard overlap requirement between adjacent MBES survey lines?",
+      "answerOptions": [
+        {"text": "5-10%", "isCorrect": false, "rationale": "5-10% overlap is too small for MBES. It does not provide sufficient buffer for track deviations, depth changes, or QC comparison."},
+        {"text": "20-25%", "isCorrect": true, "rationale": "20-25% overlap is standard practice. It compensates for helmsman deviation, depth variation (swath narrowing), and provides overlap data for QC."},
+        {"text": "50%", "isCorrect": false, "rationale": "50% overlap is excessive for standard operations and would roughly double the survey time."},
+        {"text": "10-15%", "isCorrect": false, "rationale": "While 10% is the minimum for SSS, MBES requires more overlap (20-25%) due to its sensitivity to depth variation and attitude errors."}
+      ],
+      "hint": "The overlap must accommodate helmsman tolerance, depth variation, and quality control."
+    },
+    {
+      "question": "A Helmert 7-parameter transformation uses which set of parameters?",
+      "answerOptions": [
+        {"text": "3 translations, 3 rotations, 1 scale factor", "isCorrect": true, "rationale": "The 7 parameters are: dX, dY, dZ (translations in metres), Rx, Ry, Rz (rotations in arc-seconds), and dS (scale in ppm)."},
+        {"text": "3 translations, 3 scale factors, 1 rotation", "isCorrect": false, "rationale": "A Helmert transformation uses only one scale factor, not three. It has three rotations, not one."},
+        {"text": "7 translation parameters along different axes", "isCorrect": false, "rationale": "The 7 parameters are a mix of translations, rotations, and scale, not all translations."},
+        {"text": "2 translations, 2 rotations, 2 scale factors, 1 projection", "isCorrect": false, "rationale": "This does not describe a Helmert transformation. It uses 3+3+1 parameters."}
+      ],
+      "hint": "The parameters transform between 3D coordinate systems."
+    },
+    {
+      "question": "What is the maximum survey speed for quality side scan sonar (SSS) data?",
+      "answerOptions": [
+        {"text": "1.5-2.0 knots", "isCorrect": false, "rationale": "This is too slow. While slower speeds improve resolution, 3-3.5 knots is the accepted maximum for quality data."},
+        {"text": "3-3.5 knots", "isCorrect": true, "rationale": "Maximum survey speed for SSS is 3-3.5 knots. Faster speeds degrade along-track resolution and cause the towfish to plane up."},
+        {"text": "5-6 knots", "isCorrect": false, "rationale": "This is too fast for towed SSS. Along-track resolution degrades and towfish altitude control is lost."},
+        {"text": "8-10 knots", "isCorrect": false, "rationale": "This is far too fast. The towfish cannot maintain altitude or produce usable imagery at this speed."}
+      ],
+      "hint": "Consider the effect of speed on along-track resolution and towfish stability."
+    },
+    {
+      "question": "In a G882 magnetometer depth/altimeter calibration, what corrective formula is applied to raw sensor values?",
+      "answerOptions": [
+        {"text": "Corrected = (RAW x Scale Factor) + Bias", "isCorrect": true, "rationale": "The linear correction uses a scale factor (multiplier) and a bias (offset), determined by linear regression of raw values vs known true values."},
+        {"text": "Corrected = RAW + Scale Factor x Bias", "isCorrect": false, "rationale": "Scale factor and bias are applied to the raw value, not multiplied with each other."},
+        {"text": "Corrected = (RAW - Bias) / Scale Factor", "isCorrect": false, "rationale": "This inverts the correction. The formula is multiplication then addition, not subtraction then division."},
+        {"text": "Corrected = RAW^2 x Scale Factor", "isCorrect": false, "rationale": "The correction is linear, not quadratic. It uses a simple scale and offset model."}
+      ],
+      "hint": "Think of a simple linear calibration with two coefficients."
+    },
+    {
+      "question": "What causes sound to bend toward regions of lower sound speed in the ocean?",
+      "answerOptions": [
+        {"text": "Absorption", "isCorrect": false, "rationale": "Absorption reduces signal amplitude but does not change the direction of propagation."},
+        {"text": "Refraction, governed by Snell's Law", "isCorrect": true, "rationale": "Snell's Law ($\\sin\\theta_1 / c_1 = \\sin\\theta_2 / c_2$) governs how sound bends at boundaries between layers of different sound speed. Sound curves toward the slower region."},
+        {"text": "Multipath interference", "isCorrect": false, "rationale": "Multipath involves reflected signals arriving via different paths, not the bending of the primary ray."},
+        {"text": "The SOFAR channel effect", "isCorrect": false, "rationale": "The SOFAR channel is a consequence of refraction, not its cause. Refraction itself is governed by Snell's Law."}
+      ],
+      "hint": "This fundamental law relates the angle of incidence to the ratio of sound speeds between layers."
+    },
+    {
+      "question": "Which IHO S-44 survey order requires 200% bathymetric coverage (dual independent systems)?",
+      "answerOptions": [
+        {"text": "Special Order", "isCorrect": false, "rationale": "Special Order requires 100% coverage, not 200%."},
+        {"text": "Order 1a", "isCorrect": false, "rationale": "Order 1a requires 100% coverage with feature detection to 50 m depth."},
+        {"text": "Exclusive Order", "isCorrect": true, "rationale": "Exclusive Order requires 200% coverage using dual independent systems or two passes. It is for the most critical areas like harbours and berths."},
+        {"text": "Order 2", "isCorrect": false, "rationale": "Order 2 does not even require full bottom coverage. Line-spaced surveys are acceptable."}
+      ],
+      "hint": "This is the most stringent IHO survey order, used for critical underkeel clearance areas."
+    },
+    {
+      "question": "What is the typical sound speed range in seawater?",
+      "answerOptions": [
+        {"text": "340-400 m/s", "isCorrect": false, "rationale": "This is the range for sound in air (~343 m/s), not seawater."},
+        {"text": "1,000-1,200 m/s", "isCorrect": false, "rationale": "This is below the range for seawater. Sound in seawater is faster than this."},
+        {"text": "1,450-1,570 m/s", "isCorrect": true, "rationale": "Sound speed in seawater typically ranges from 1,450 to 1,570 m/s, depending on temperature, salinity, and pressure."},
+        {"text": "2,000-2,500 m/s", "isCorrect": false, "rationale": "This is faster than sound in seawater. Speeds above ~1,570 m/s are outside normal ocean conditions."}
+      ],
+      "hint": "Sound travels about 4.4 times faster in seawater than in air."
+    },
+    {
+      "question": "For cross-lines (check lines) in a bathymetric survey, what is the maximum recommended spacing relative to main line spacing?",
+      "answerOptions": [
+        {"text": "5x main line spacing", "isCorrect": false, "rationale": "This is tighter than the IHO C-13 requirement. While more cross lines improve QC, 5x is not the specified maximum."},
+        {"text": "10x main line spacing", "isCorrect": false, "rationale": "This is tighter than the IHO C-13 maximum of 15x."},
+        {"text": "15x main line spacing", "isCorrect": true, "rationale": "IHO C-13 specifies cross-line spacing should not exceed 15 times the main line spacing."},
+        {"text": "20x main line spacing", "isCorrect": false, "rationale": "This exceeds the IHO C-13 maximum of 15x and would provide insufficient QC coverage."}
+      ],
+      "hint": "This value comes from IHO C-13, Chapter 7."
+    },
+    {
+      "question": "Which IMCA standard is the primary reference for offshore positioning systems including GNSS, USBL, and LBL?",
+      "answerOptions": [
+        {"text": "IMCA S 015", "isCorrect": false, "rationale": "IMCA S 015 covers survey mobilisation and calibration, not positioning systems specifically."},
+        {"text": "IMCA S 017", "isCorrect": true, "rationale": "IMCA S 017 (Guidelines for Position Reference Systems) is the primary standard for offshore positioning including GNSS, USBL, LBL, INS/DVL, calibration requirements, and accuracy standards."},
+        {"text": "IMCA S 024", "isCorrect": false, "rationale": "IMCA S 024 covers side scan sonar operations, not positioning systems."},
+        {"text": "IMCA D 045", "isCorrect": false, "rationale": "IMCA D 045 covers survey report content guidelines, not positioning."}
+      ],
+      "hint": "This standard defines what 'good enough' means for position accuracy offshore."
+    },
+    {
+      "question": "During a vessel turn, which motion sensor showed up to 40 cm heave deviation and required nearly 2 minutes to stabilise?",
+      "answerOptions": [
+        {"text": "Applanix POS MV 320", "isCorrect": false, "rationale": "The POS MV 320 showed minimal degradation during turns with only 1-2 cm variation and immediate stabilisation."},
+        {"text": "CodaOctopus F180", "isCorrect": false, "rationale": "The F180 showed 10-20 cm deviation during turns with about 30 seconds stabilisation time."},
+        {"text": "Kongsberg Seapath 200", "isCorrect": true, "rationale": "The Seapath 200 showed up to 40 cm deviation during turns and required 1.5-2 minutes to stabilise, the worst performance in the comparative test."},
+        {"text": "iXblue Octans III", "isCorrect": false, "rationale": "The Octans III showed good roll/pitch performance but was limited by GNSS dependency."}
+      ],
+      "hint": "This finding was from an independent Hydro International comparative sensor test."
+    },
+    {
+      "question": "What is the recommended minimum buffer length for delayed heave post-processing?",
+      "answerOptions": [
+        {"text": "30 seconds", "isCorrect": false, "rationale": "30 seconds is too short to adequately correct phase errors, especially in long-period swell."},
+        {"text": "60 seconds", "isCorrect": false, "rationale": "60 seconds provides insufficient look-ahead for accurate delayed heave computation."},
+        {"text": "150 seconds", "isCorrect": true, "rationale": "A 150-second buffer (75 seconds before and after each measurement point) is the recommended minimum for delayed heave post-processing."},
+        {"text": "300 seconds", "isCorrect": false, "rationale": "While longer buffers can improve accuracy in long-period swell, 150 seconds is the recommended minimum, not 300."}
+      ],
+      "hint": "The buffer uses data from before and after each measurement point."
+    },
+    {
+      "question": "In the Douglas Sea Scale, what wave height range defines Sea State 3 (Slight)?",
+      "answerOptions": [
+        {"text": "0.1 - 0.5 m", "isCorrect": false, "rationale": "This is Sea State 2 (Smooth)."},
+        {"text": "0.5 - 1.25 m", "isCorrect": true, "rationale": "Douglas Sea State 3 (Slight) covers wave heights from 0.5 to 1.25 m. Hs < 1.25 m is commonly used as the 'good weather' threshold in offshore contracts."},
+        {"text": "1.25 - 2.5 m", "isCorrect": false, "rationale": "This is Sea State 4 (Moderate)."},
+        {"text": "2.5 - 4.0 m", "isCorrect": false, "rationale": "This is Sea State 5 (Rough)."}
+      ],
+      "hint": "This sea state is commonly referenced as the 'good weather' threshold in offshore contracts."
+    },
+    {
+      "question": "What is the typical serial interface (RS-232/RS-422) latency for motion sensor data, and what roll error does it produce at 8 deg/s roll rate?",
+      "answerOptions": [
+        {"text": "~5 ms latency, ~0.04 deg roll error", "isCorrect": false, "rationale": "5 ms is too low for typical serial interfaces. The actual latency is approximately 24 ms."},
+        {"text": "~10 ms latency, ~0.08 deg roll error", "isCorrect": false, "rationale": "10 ms is below the typical serial interface latency of approximately 24 ms."},
+        {"text": "~24 ms latency, ~0.24 deg roll error", "isCorrect": true, "rationale": "Serial interfaces introduce approximately 24 ms of latency. At 8 deg/s roll rate, this produces approximately 0.24 degrees of uncompensated roll error."},
+        {"text": "~50 ms latency, ~0.40 deg roll error", "isCorrect": false, "rationale": "50 ms exceeds the typical serial interface latency for motion sensors."}
+      ],
+      "hint": "Consider the product of latency (in seconds) and roll rate (in deg/s)."
+    },
+    {
+      "question": "What is the SOFAR channel, and where does it occur?",
+      "answerOptions": [
+        {"text": "A zone of maximum sound speed near the sea surface, at 0-100 m depth", "isCorrect": false, "rationale": "The SOFAR channel occurs at the depth of minimum sound speed, not maximum, and is much deeper than 100 m."},
+        {"text": "A natural sound duct centred on the depth of minimum sound speed, typically 700-1,200 m", "isCorrect": true, "rationale": "The SOFAR (Sound Fixing and Ranging) channel is centred at the sound speed minimum (700-1,200 m in mid-latitudes). Sound is trapped there by upward refraction from below and downward refraction from above."},
+        {"text": "An absorption maximum at the thermocline, typically 200-400 m depth", "isCorrect": false, "rationale": "The SOFAR channel is about sound trapping through refraction, not absorption. It occurs deeper than the main thermocline."},
+        {"text": "A reflection boundary at the seabed that channels sound along the bottom", "isCorrect": false, "rationale": "The SOFAR channel is a mid-water phenomenon caused by the sound speed profile, not a seabed reflection effect."}
+      ],
+      "hint": "Sound is trapped between layers where speed increases in both directions (up and down) from the minimum."
+    }
+  ]
+}

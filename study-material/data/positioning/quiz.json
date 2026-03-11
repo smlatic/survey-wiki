@@ -1,0 +1,205 @@
+{
+  "title": "Positioning Quiz",
+  "questions": [
+    {
+      "question": "A minimum of how many satellite observations are required for a full 3D GNSS position fix?",
+      "answerOptions": [
+        {"text": "3 satellites", "isCorrect": false, "rationale": "Three satellites only resolve a 2D position (latitude and longitude) and require height aiding."},
+        {"text": "4 satellites", "isCorrect": true, "rationale": "Four unknowns must be solved: latitude, longitude, height, and receiver clock error, requiring a minimum of four observations."},
+        {"text": "6 satellites", "isCorrect": false, "rationale": "Six or more satellites improve geometry and redundancy but are not the minimum required."},
+        {"text": "2 satellites", "isCorrect": false, "rationale": "Two satellites only define the intersection of two spheres, which is insufficient for positioning."}
+      ],
+      "hint": "Think about the four unknowns that must be solved in every GNSS position fix."
+    },
+    {
+      "question": "What is the primary advantage of PPP over RTK for offshore survey positioning?",
+      "answerOptions": [
+        {"text": "PPP provides centimetre-level accuracy without convergence time", "isCorrect": false, "rationale": "PPP requires a convergence period of 20-30 minutes and typically achieves decimetre-level accuracy, not centimetre-level."},
+        {"text": "PPP provides global coverage without requiring a local base station", "isCorrect": true, "rationale": "PPP uses a global network of reference stations and corrections delivered via satellite L-band, making it ideal for offshore use without local infrastructure."},
+        {"text": "PPP has faster update rates than RTK", "isCorrect": false, "rationale": "Update rates are comparable; the advantage is coverage, not update rate."},
+        {"text": "PPP is immune to ionospheric scintillation", "isCorrect": false, "rationale": "PPP is also affected by ionospheric scintillation, which can cause loss of L-band corrections and degraded positioning."}
+      ],
+      "hint": "Consider what infrastructure is needed for each system and where offshore surveys operate."
+    },
+    {
+      "question": "During a dynamic GNSS intersystem check, why is a box pattern covering all four cardinal headings required?",
+      "answerOptions": [
+        {"text": "To test the GNSS receivers at different satellite geometries", "isCorrect": false, "rationale": "Satellite geometry changes with time, not vessel heading. The box pattern serves a different purpose."},
+        {"text": "To expose heading-dependent offset errors such as antenna position offset errors", "isCorrect": true, "rationale": "A wrong antenna offset produces position errors that reverse with heading changes. Sailing all four cardinal headings makes these biases visible as systematic patterns in the residuals."},
+        {"text": "To calibrate the vessel's gyrocompass", "isCorrect": false, "rationale": "The gyrocompass is not calibrated during this check; it is a supporting sensor."},
+        {"text": "To verify the correction service works in all directions", "isCorrect": false, "rationale": "Correction services are not directional; they work regardless of vessel heading."}
+      ],
+      "hint": "Think about what happens to computed CRP position when the vessel turns 180 degrees if there is an antenna offset error."
+    },
+    {
+      "question": "Without DVL aiding, approximately how far does a standard offshore INS drift in 4 minutes?",
+      "answerOptions": [
+        {"text": "Approximately 1 metre", "isCorrect": false, "rationale": "This is far too optimistic for unaided inertial navigation."},
+        {"text": "Approximately 12 metres", "isCorrect": true, "rationale": "A standard offshore FOG-based INS drifts approximately 12 m in 4 minutes when unaided, and the drift rate accelerates over time."},
+        {"text": "Approximately 100 metres", "isCorrect": false, "rationale": "This overstates the drift for 4 minutes, though drift does grow non-linearly over longer periods."},
+        {"text": "Approximately 0.1 metres", "isCorrect": false, "rationale": "This would only be achievable with DVL aiding over a very short distance."}
+      ],
+      "hint": "This figure illustrates why the DVL is the single most important aiding sensor for subsea INS operations."
+    },
+    {
+      "question": "What is the fundamental difference between how an INS handles random errors versus systematic errors from aiding sensors?",
+      "answerOptions": [
+        {"text": "The INS can correct both random and systematic errors through the Kalman filter", "isCorrect": false, "rationale": "The Kalman filter can smooth random errors but has no mechanism to identify or correct systematic errors."},
+        {"text": "The INS smooths random errors effectively but cannot correct systematic errors", "isCorrect": true, "rationale": "The INS improves precision by smoothing random noise, but it cannot identify where truth is. Systematic errors (constant offsets) pass through the filter unchanged."},
+        {"text": "The INS rejects both random and systematic errors from aiding sensors", "isCorrect": false, "rationale": "The INS does not reject systematic errors; it absorbs them into its solution."},
+        {"text": "The INS only handles random errors; systematic errors are corrected by the DVL", "isCorrect": false, "rationale": "The DVL provides velocity aiding but does not correct systematic errors in other aiding sensors like USBL."}
+      ],
+      "hint": "Consider what the Kalman filter can and cannot do with data that is consistently offset from truth."
+    },
+    {
+      "question": "When transferring USBL calibration results from a QINSy report into the USBL software, what critical step must be taken?",
+      "answerOptions": [
+        {"text": "Multiply all values by the scale factor", "isCorrect": false, "rationale": "The scale factor is applied separately; this is about the sign convention."},
+        {"text": "Invert the sign of every misalignment value", "isCorrect": true, "rationale": "QINSy and USBL software use different sign conventions. Failure to invert signs doubles the misalignment error instead of correcting it."},
+        {"text": "Enter the values exactly as reported", "isCorrect": false, "rationale": "This is correct for CASIUS reports, but NOT for QINSy reports where signs must be inverted."},
+        {"text": "Add 180 degrees to the heading misalignment only", "isCorrect": false, "rationale": "The correction applies to all axes (heading, pitch, roll) and involves sign inversion, not adding 180 degrees."}
+      ],
+      "hint": "CASIUS reports can be entered directly, but QINSy reports require a specific conversion."
+    },
+    {
+      "question": "What is the achievable positional accuracy target for a modern USBL system?",
+      "answerOptions": [
+        {"text": "Better than 0.01% of slant range", "isCorrect": false, "rationale": "This is more typical of LBL systems in good conditions, not USBL."},
+        {"text": "Better than 0.3% of slant range plus surface positioning error at 95% confidence", "isCorrect": true, "rationale": "Modern USBL systems should achieve accuracy better than 0.3% of slant range plus the absolute accuracy of the vessel surface positioning system at 2-sigma/95%."},
+        {"text": "Better than 1% of slant range", "isCorrect": false, "rationale": "This is too pessimistic for modern systems; 0.3% is the target for well-calibrated USBL."},
+        {"text": "Better than 5 metres regardless of depth", "isCorrect": false, "rationale": "USBL accuracy is depth-dependent, expressed as a percentage of slant range, not a fixed value."}
+      ],
+      "hint": "The answer is expressed as a percentage of slant range plus a surface component."
+    },
+    {
+      "question": "During an LBL array calibration, what is the maximum acceptable RMS of position residuals?",
+      "answerOptions": [
+        {"text": "< 0.50 m", "isCorrect": false, "rationale": "This is too loose; 0.50 m is the horizontal position standard deviation threshold for surface calibration."},
+        {"text": "< 0.10 m", "isCorrect": true, "rationale": "Calibration range residuals (observed minus computed ranges) should be less than 0.10 m RMS for each transponder."},
+        {"text": "< 1.00 m", "isCorrect": false, "rationale": "This is far too large for LBL calibration residuals and would indicate a significant problem."},
+        {"text": "< 0.01 m", "isCorrect": false, "rationale": "While LBL can achieve centimetre precision in operations, calibration residuals of < 0.01 m are unrealistically tight."}
+      ],
+      "hint": "This is the threshold for the difference between observed and computed ranges during calibration."
+    },
+    {
+      "question": "Why is LBL more sensitive to sound velocity errors than USBL?",
+      "answerOptions": [
+        {"text": "LBL uses higher acoustic frequencies that are more affected by SV changes", "isCorrect": false, "rationale": "Frequency does not determine SV sensitivity; it is the acoustic path geometry that matters."},
+        {"text": "LBL acoustic paths are longer and more horizontal, crossing thermoclines at shallow angles", "isCorrect": true, "rationale": "Horizontal paths spend more distance in the SV gradient zone. A 1 m/s SV error over a 500 m path produces approximately 0.33 m of range error."},
+        {"text": "LBL transponders do not have sound velocity sensors", "isCorrect": false, "rationale": "SVPs are used for both LBL and USBL; the difference is in path geometry, not sensor availability."},
+        {"text": "USBL systems automatically compensate for sound velocity errors", "isCorrect": false, "rationale": "Both systems need SVP input; USBL simply has shorter, more vertical paths that are less affected."}
+      ],
+      "hint": "Consider the direction of acoustic paths in LBL (horizontal) versus USBL (primarily vertical)."
+    },
+    {
+      "question": "What does the HiPAP USBL spin test verify, and what is the acceptance criterion for 95% of position fixes?",
+      "answerOptions": [
+        {"text": "It verifies heading accuracy; 95% of points within 0.1% of slant range", "isCorrect": false, "rationale": "The spin test primarily verifies pitch/roll corrections and overall system accuracy, not just heading."},
+        {"text": "It verifies system accuracy after calibration; 95% of points within 0.3% of slant range plus surface positioning error", "isCorrect": true, "rationale": "The spin test rotates the vessel 360 degrees to verify that USBL positions are consistent across all headings after calibration corrections are applied."},
+        {"text": "It verifies DVL calibration; 95% of points within 1% of distance travelled", "isCorrect": false, "rationale": "The spin test is for USBL verification, not DVL calibration."},
+        {"text": "It verifies GNSS accuracy; 95% of points within 0.5 metres", "isCorrect": false, "rationale": "The spin test verifies USBL acoustic positioning, not GNSS."}
+      ],
+      "hint": "The vessel rotates through 360 degrees above a transponder during this test."
+    },
+    {
+      "question": "What is the recommended minimum calibration depth for a HiPAP USBL system to produce results valid for all operating depths?",
+      "answerOptions": [
+        {"text": "50 m", "isCorrect": false, "rationale": "50 m is too shallow; acoustic position errors would not be dominant over GNSS errors."},
+        {"text": "200 m or deeper", "isCorrect": true, "rationale": "A calibration at 200 m or deeper is valid for all operating depths. The optimum range is 400-1000 m. At shallower depths, the calibration is only valid for operating depth up to twice the calibration depth."},
+        {"text": "1000 m minimum", "isCorrect": false, "rationale": "1000 m is within the optimum range but is not the minimum; 200 m is sufficient for universal validity."},
+        {"text": "100 m", "isCorrect": false, "rationale": "At 100 m, the calibration is only valid for depths up to 200 m, not for all operating depths."}
+      ],
+      "hint": "The calibration depth must ensure that acoustic errors dominate over surface positioning errors."
+    },
+    {
+      "question": "What is the primary purpose of a GNSS Accurate Height Check, and what is the minimum data collection duration?",
+      "answerOptions": [
+        {"text": "Verify horizontal accuracy; minimum 2 hours of data", "isCorrect": false, "rationale": "This check is specifically for vertical (height) accuracy, not horizontal."},
+        {"text": "Verify GNSS-derived ellipsoidal heights against tide gauge data over one full tidal cycle (8-9 hours)", "isCorrect": true, "rationale": "The check compares GNSS-derived water levels against independent 3rd-party tide gauge data over at least one full tidal cycle including one high and one low slack water."},
+        {"text": "Calibrate the GNSS antenna height; minimum 30 minutes", "isCorrect": false, "rationale": "This is a verification, not a calibration, and 30 minutes is far too short to capture tidal variation."},
+        {"text": "Verify geoid model accuracy; minimum 24 hours", "isCorrect": false, "rationale": "While geoid model quality does affect the result, 24 hours exceeds the minimum requirement of one full tidal cycle."}
+      ],
+      "hint": "Think about what period is needed to capture the full range of tidal variation at a location."
+    },
+    {
+      "question": "A CRPA (Controlled Reception Pattern Antenna) mitigates GNSS jamming by what mechanism?",
+      "answerOptions": [
+        {"text": "Increasing signal transmission power to overpower the jammer", "isCorrect": false, "rationale": "GNSS antennas are receive-only; they do not transmit."},
+        {"text": "Creating nulls in the antenna gain pattern in the direction of jammers using adaptive beam forming", "isCorrect": true, "rationale": "CRPA uses adaptive beam forming to steer reception away from interference sources by creating directional nulls toward the jammer."},
+        {"text": "Encrypting the GNSS signal to prevent interception", "isCorrect": false, "rationale": "Encryption is a feature of the satellite signal itself, not the antenna."},
+        {"text": "Switching to a backup frequency band not affected by jamming", "isCorrect": false, "rationale": "CRPA works by spatial filtering (beam steering), not frequency hopping."}
+      ],
+      "hint": "The antenna dynamically adjusts its reception pattern based on the direction of interference."
+    },
+    {
+      "question": "In the context of tidal reduction, what does the form factor $F = (K1 + O1) / (M2 + S2)$ classify?",
+      "answerOptions": [
+        {"text": "The accuracy of the tide gauge installation", "isCorrect": false, "rationale": "The form factor classifies the tidal regime type, not gauge accuracy."},
+        {"text": "The tidal regime at a location (semi-diurnal, mixed, or diurnal)", "isCorrect": true, "rationale": "$F < 0.25$ is semi-diurnal, $0.25 < F < 1.5$ is mixed (mainly semi-diurnal), $1.5 < F < 3.0$ is mixed (mainly diurnal), and $F > 3.0$ is diurnal."},
+        {"text": "The maximum tidal range at the survey location", "isCorrect": false, "rationale": "The form factor classifies the type of tide, not its range."},
+        {"text": "The error margin in tidal predictions", "isCorrect": false, "rationale": "The form factor describes the ratio of diurnal to semi-diurnal constituents, not prediction error."}
+      ],
+      "hint": "The numerator contains diurnal constituents and the denominator contains semi-diurnal constituents."
+    },
+    {
+      "question": "What is the key difference between Sonardyne SPRINT INS alignment and Exail (iXblue) PHINS/ROVINS alignment?",
+      "answerOptions": [
+        {"text": "SPRINT requires a longer alignment time than PHINS", "isCorrect": false, "rationale": "SPRINT has a simpler alignment process with no required dynamic manoeuvres."},
+        {"text": "SPRINT runs INS and AHRS concurrently without requiring alignment manoeuvres, while PHINS/ROVINS requires heading changes for fine alignment", "isCorrect": true, "rationale": "SPRINT uses its AHRS (10-minute settle) to provide starting values to the INS, eliminating dynamic alignment manoeuvres. Exail systems need heading changes (figure-of-8 or stair pattern) to converge the Kalman filter."},
+        {"text": "PHINS systems do not require coarse alignment", "isCorrect": false, "rationale": "PHINS requires a 5-minute coarse alignment phase where the system must remain stationary."},
+        {"text": "SPRINT cannot use DVL aiding during alignment", "isCorrect": false, "rationale": "SPRINT uses all available aiding sensors; the difference is in the alignment methodology."}
+      ],
+      "hint": "One system uses a concurrent AHRS to bootstrap the INS; the other uses dynamic manoeuvres to converge heading."
+    },
+    {
+      "question": "A 10 ms timing error at a vessel speed of 4 knots (~2.1 m/s) produces what along-track position error?",
+      "answerOptions": [
+        {"text": "Approximately 0.021 m", "isCorrect": true, "rationale": "Position error = timing error x speed = 0.010 s x 2.1 m/s = 0.021 m."},
+        {"text": "Approximately 0.21 m", "isCorrect": false, "rationale": "This would correspond to a 100 ms timing offset at 4 knots, not 10 ms."},
+        {"text": "Approximately 2.1 m", "isCorrect": false, "rationale": "This overstates the error by a factor of 100."},
+        {"text": "Approximately 0.002 m", "isCorrect": false, "rationale": "This understates the error by a factor of 10."}
+      ],
+      "hint": "Multiply the timing error in seconds by the vessel speed in metres per second."
+    },
+    {
+      "question": "What is the range error caused by an uncompensated 10 ms transponder latency with a sound velocity of 1500 m/s?",
+      "answerOptions": [
+        {"text": "0.75 m", "isCorrect": false, "rationale": "This is the one-way range for 0.5 ms, not the correct formula result."},
+        {"text": "7.5 m", "isCorrect": true, "rationale": "Range error = latency (ms) x SV (m/s) / 2000 = 10 x 1500 / 2000 = 7.5 m. This systematic error directly affects USBL position."},
+        {"text": "15.0 m", "isCorrect": false, "rationale": "This neglects the division by 2 for two-way travel time."},
+        {"text": "1.5 m", "isCorrect": false, "rationale": "This would correspond to only 2 ms of latency, not 10 ms."}
+      ],
+      "hint": "Use the formula: Range error (m) = latency (ms) $\\times$ SV (m/s) / 2000"
+    },
+    {
+      "question": "When using GNSS tides for bathymetric reduction, what is the correct height relationship to derive height above chart datum?",
+      "answerOptions": [
+        {"text": "Chart Datum Height = Ellipsoid Height + Geoid Undulation", "isCorrect": false, "rationale": "The geoid undulation must be subtracted, not added, and the MSL-to-chart-datum separation must also be applied."},
+        {"text": "Height above CD = Ellipsoid Height - Geoid Undulation - MSL to Chart Datum Separation", "isCorrect": true, "rationale": "Starting from the ellipsoidal height, subtract the geoid undulation to get MSL height, then subtract the MSL to chart datum separation to get height above chart datum."},
+        {"text": "Chart Datum Height = MSL Height multiplied by tidal range ratio", "isCorrect": false, "rationale": "GNSS tides do not use tidal range ratios; they use the ellipsoid-geoid-datum separation chain."},
+        {"text": "Height above CD = Ellipsoid Height - Draft", "isCorrect": false, "rationale": "Draft converts from antenna to waterline but does not account for the geoid and datum separations."}
+      ],
+      "hint": "The conversion goes from ellipsoid to geoid to chart datum through two separation values."
+    },
+    {
+      "question": "In USBL verification, what does a circular 'doughnut' pattern in the spin check indicate, and how can you distinguish an offset error from an angular error?",
+      "answerOptions": [
+        {"text": "Sound velocity error; re-take the SVP to distinguish", "isCorrect": false, "rationale": "SV errors typically manifest as scale issues and smile/frown shapes in transit lines, not doughnut patterns."},
+        {"text": "Residual pitch/roll/offset error; test at a different water depth to see if the doughnut size changes", "isCorrect": true, "rationale": "An offset error produces a doughnut that does not change with depth, while an angular error produces a larger doughnut in deeper water and a smaller one in shallower water."},
+        {"text": "Heading sensor drift; compare with a second gyrocompass", "isCorrect": false, "rationale": "Heading errors manifest as lateral displacement rather than a doughnut pattern."},
+        {"text": "GNSS multipath; relocate the antenna to fix it", "isCorrect": false, "rationale": "GNSS multipath would affect surface positioning, not create a systematic subsea doughnut pattern."}
+      ],
+      "hint": "The key diagnostic is to repeat the spin check at a different water depth and compare the doughnut size."
+    },
+    {
+      "question": "What is the DVL-aided drift rate for a calibrated INS system, and what is the minimum verification interval during operations?",
+      "answerOptions": [
+        {"text": "0.5-1.0% of distance travelled; verify every 4 weeks", "isCorrect": false, "rationale": "The drift rate is much better than 0.5%, and the interval is 8 weeks."},
+        {"text": "0.02-0.06% of distance travelled; verify every 8 weeks", "isCorrect": true, "rationale": "DVL-aided drift is typically 0.02-0.06% of distance travelled (0.2-0.6 m per km). Verification should be performed at minimum every 8 weeks while the system is in operation."},
+        {"text": "0.1-0.5% of distance travelled; verify every 12 weeks", "isCorrect": false, "rationale": "The drift rate is better than 0.1%, and the verification interval should be shorter than 12 weeks."},
+        {"text": "1-2% of distance travelled; verify at project start only", "isCorrect": false, "rationale": "This drift rate is far too pessimistic and verification must be repeated regularly during operations."}
+      ],
+      "hint": "These figures represent typical DVL-aided performance and the recommended verification schedule."
+    }
+  ]
+}

@@ -1,0 +1,4373 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/positioning/ins-theory-and-principles/">
+      
+      
+        <link rel="prev" href="../lbl-fundamentals/">
+      
+      
+        <link rel="next" href="../phins-rovins-operations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>INS Theory and Principles - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ins-theory-and-principles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              INS Theory and Principles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Positioning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GNSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-jamming-and-spoofing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Jamming and Spoofing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-accurate-height-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Accurate Height Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-gnss-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static GNSS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-gnss-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic GNSS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dgnss-integrity-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGNSS Integrity Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    USBL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-theory-and-error-budgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Theory and Error Budgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-usbl-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL System Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-usbl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-hpr-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP Verification (Spin & Transit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-calibration-data-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Calibration Data Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-responder-latency-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Responder Latency Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cnode-transponder-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cNODE miniS Transponder Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LBL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LBL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lbl-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LBL Acoustic Positioning Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inertial Navigation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inertial Navigation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS Theory and Principles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS Theory and Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ins-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kalman-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalman Filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aiding-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aiding Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dvl-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DVL Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usbl-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lbl-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LBL Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systematic-vs-random-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic vs Random Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ins-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="INS Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seabed-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seabed Positioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mid-water-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mid-Water Positioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drill-string-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drill String Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ins-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="INS Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#itar-restrictions-and-sensor-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ITAR Restrictions and Sensor Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gyroscope-technology-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gyroscope Technology Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ins-drift-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Drift Rates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usbl-aided-ins-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL-Aided INS Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-aided-ins-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range-Aided INS Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timing Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Synchronisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvl-triggering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DVL Triggering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lbl-range-timestamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LBL Range Timestamping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-mobilisation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Mobilisation Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ins-with-dvl-pre-mobilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS with DVL Pre-Mobilisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-calibrated-coupled-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Calibrated Coupled Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sign Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exail-rovins-phins-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exail (ROVINS / PHINS) Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonardyne-sprint-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonardyne (SPRINT) Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coarse-alignment-exail-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coarse Alignment (Exail Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-alignment-exail-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine Alignment (Exail Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonardyne-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonardyne Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kalman-filter-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalman Filter Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aiding-sensor-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aiding Sensor Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warning Signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phins-rovins-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHINS/ROVINS Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-ins-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint INS Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ins-dvl-calibration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS/DVL Calibration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ixblue-ins-dvl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iXblue ROVINS/PHINS DVL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-nav-dvl-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint-Nav DVL Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-syrinx-dvl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Syrinx DVL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Timing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Synchronisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tides & Datums
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tides & Datums
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tidal-reduction-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tidal Theory and Reduction Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ins-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kalman-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalman Filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aiding-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aiding Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dvl-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DVL Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usbl-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lbl-aiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LBL Aiding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systematic-vs-random-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic vs Random Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ins-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="INS Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seabed-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seabed Positioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mid-water-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mid-Water Positioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drill-string-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drill String Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ins-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="INS Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#itar-restrictions-and-sensor-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ITAR Restrictions and Sensor Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gyroscope-technology-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gyroscope Technology Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ins-drift-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS Drift Rates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usbl-aided-ins-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL-Aided INS Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-aided-ins-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range-Aided INS Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timing Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Synchronisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvl-triggering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DVL Triggering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lbl-range-timestamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LBL Range Timestamping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-mobilisation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Mobilisation Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ins-with-dvl-pre-mobilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS with DVL Pre-Mobilisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-calibrated-coupled-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Calibrated Coupled Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sign Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exail-rovins-phins-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exail (ROVINS / PHINS) Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonardyne-sprint-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonardyne (SPRINT) Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coarse-alignment-exail-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coarse Alignment (Exail Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-alignment-exail-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine Alignment (Exail Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonardyne-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonardyne Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kalman-filter-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalman Filter Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aiding-sensor-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aiding Sensor Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warning Signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Positioning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Inertial Navigation
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">ROV</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">aiding</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">alignment</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">drift</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">dvl</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">gnss</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">imu</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">inertial navigation</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">ins</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kalman filter</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">lbl</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">positioning</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">usbl</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="ins-theory-and-principles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg></span> INS Theory and Principles<a class="headerlink" href="#ins-theory-and-principles" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Equipment</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> <strong>Reference Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-01</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Comprehensive reference covering the principles of Inertial Navigation Systems (INS) used in offshore survey operations. Covers the IMU, Kalman filtering, aiding methods, error characteristics, drift behaviour, timing requirements, installation considerations, sign conventions, and alignment procedures.</p>
+</div>
+<hr />
+<h2 id="ins-principles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg></span> INS Principles<a class="headerlink" href="#ins-principles" title="Permanent link">&para;</a></h2>
+<p>An Inertial Navigation System (INS) uses an Inertial Measurement Unit (IMU) consisting of a block of <strong>three gyroscopes</strong> and <strong>three accelerometers</strong> to measure its 3D acceleration vector at a very high rate (in the order of hundreds of observations per second). If the position and speed of the body are known at time zero, its position can be obtained onward by <strong>numerical integration</strong>.</p>
+<p>The accelerometers and gyroscopes are extremely precise but have high drift rates and a scale bias. The drift must be mitigated by using <strong>external aiding methods</strong> or by frequently resetting the velocity to zero (called a <strong>ZUPT</strong> -- Zero Velocity Update).</p>
+<hr />
+<h2 id="kalman-filter"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 19.88c.04.3-.06.62-.29.83a.996.996 0 0 1-1.41 0L9.29 16.7a.99.99 0 0 1-.29-.83v-5.12L4.21 4.62a1 1 0 0 1 .17-1.4c.19-.14.4-.22.62-.22h14c.22 0 .43.08.62.22a1 1 0 0 1 .17 1.4L15 10.75zM7.04 5 11 10.06v5.52l2 2v-7.53L16.96 5z"/></svg></span> Kalman Filter<a class="headerlink" href="#kalman-filter" title="Permanent link">&para;</a></h2>
+<p>The observations from the IMU and aiding sensors are combined in a <strong>Kalman Filter</strong>. The Kalman Filter:</p>
+<ol>
+<li><strong>Estimates</strong> the current state from previous observations</li>
+<li><strong>Updates</strong> this estimate with a <strong>weighted average</strong> of new measurements</li>
+<li>Uses sensor modelling algorithms, <strong>outlier detection</strong> algorithms, and rejection of data by sensor quality metrics to handle poor data</li>
+</ol>
+<p>To initialise the INS, it needs a position input to start the algorithm (compared to an AHRS which only needs latitude). As a minimum, this could be a single start coordinate. Once initialised, the INS utilises the various aiding sources to determine its position and velocity.</p>
+<p>The weighting applied to aiding sensors is typically an estimated error at a stated confidence level, such as 1 standard deviation or 95% CL.</p>
+<div class="admonition warning">
+<p class="admonition-title">Critical Concept: The INS Only Wants Good Data</p>
+<p>The INS is the principal sensor in the Aided INS (AINS) algorithm. If an aiding sensor deviates too far from where the INS thinks it should be, the INS will <strong>reject it</strong>. The INS only accepts data that comes with acceptable quality flags from the instrument.</p>
+</div>
+<hr />
+<h2 id="aiding-methods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 4.93A9.97 9.97 0 0 0 2 12c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.94 7.94 0 0 1 4 12c0-2.21.89-4.22 2.34-5.66zm14.14 0-1.41 1.41A7.96 7.96 0 0 1 20 12c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.97 9.97 0 0 0 22 12c0-2.76-1.12-5.26-2.93-7.07M7.76 7.76A5.98 5.98 0 0 0 6 12c0 1.65.67 3.15 1.76 4.24l1.41-1.41A4 4 0 0 1 8 12c0-1.11.45-2.11 1.17-2.83zm8.48 0-1.41 1.41A4 4 0 0 1 16 12c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 12c0-1.65-.67-3.15-1.76-4.24M12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2"/></svg></span> Aiding Methods<a class="headerlink" href="#aiding-methods" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aiding</th>
+<th>Use</th>
+<th>Details</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GNSS</strong></td>
+<td>Surface</td>
+<td>Loosely coupled: position and velocity. Tightly coupled: pseudoranges and Doppler</td>
+<td>Surface only</td>
+</tr>
+<tr>
+<td><strong>DVL</strong></td>
+<td>Subsea</td>
+<td>Loosely coupled: 3D speed over the seabed. Tightly coupled: individual beam velocities</td>
+<td>Limited distance to seabed; ideally use SV sensor interfaced into DVL</td>
+</tr>
+<tr>
+<td><strong>USBL</strong></td>
+<td>Subsea</td>
+<td>Independent position</td>
+<td>Dependent on various sources of error which may affect accuracy</td>
+</tr>
+<tr>
+<td><strong>LBL</strong></td>
+<td>Subsea</td>
+<td>Loosely coupled: position from LBL system. Tightly coupled: individual range measurements</td>
+<td>Expensive to deploy; depends on SV and depth error mitigation</td>
+</tr>
+<tr>
+<td><strong>Depth</strong></td>
+<td>Subsea</td>
+<td>Independent distance</td>
+<td>Depends on tides, density, pressure-to-depth conversion</td>
+</tr>
+<tr>
+<td><strong>Altitude</strong></td>
+<td>Subsea</td>
+<td>Independent distance</td>
+<td>Depends on seabed characteristics</td>
+</tr>
+<tr>
+<td><strong>ZUPT</strong></td>
+<td>Surface or Subsea</td>
+<td>Residual velocity correction when held stationary</td>
+<td>Requires vehicle to be fully stationary; ZUPTs needed frequently</td>
+</tr>
+</tbody>
+</table>
+<details class="info">
+<summary>Loosely vs Tightly Coupled Explained</summary>
+<p>Sources of aiding can be <strong>loosely coupled</strong> or <strong>tightly coupled</strong>:</p>
+<ul>
+<li><strong>Loosely coupled GNSS</strong> uses the position and velocity estimates calculated by the GNSS receiver; <strong>tightly coupled</strong> uses satellite pseudoranges and Doppler observables</li>
+<li><strong>Loosely coupled LBL</strong> uses the latitude and longitude computed by the LBL software; <strong>tightly coupled</strong> uses individual range measurements</li>
+<li><strong>Loosely coupled DVL</strong> uses the computed XYZ velocities; <strong>tightly coupled</strong> uses individual beam velocities</li>
+</ul>
+<p>Tightly coupled integration generally provides better performance as it gives the Kalman filter more raw information to work with.</p>
+</details>
+<hr />
+<h2 id="dvl-aiding"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16a3 3 0 0 1-3-3c0-1.12.61-2.1 1.5-2.61l9.71-5.62-5.53 9.58c-.5.98-1.51 1.65-2.68 1.65m0-13c1.81 0 3.5.5 4.97 1.32l-2.1 1.21C14 5.19 13 5 12 5a8 8 0 0 0-8 8c0 2.21.89 4.21 2.34 5.65h.01c.39.39.39 1.02 0 1.41s-1.03.39-1.42.01A9.97 9.97 0 0 1 2 13 10 10 0 0 1 12 3m10 10c0 2.76-1.12 5.26-2.93 7.07-.39.38-1.02.38-1.41-.01a.996.996 0 0 1 0-1.41A7.95 7.95 0 0 0 20 13c0-1-.19-2-.54-2.9L20.67 8C21.5 9.5 22 11.18 22 13"/></svg></span> DVL Aiding<a class="headerlink" href="#dvl-aiding" title="Permanent link">&para;</a></h2>
+<p>For subsea applications, the INS is typically always aided by a DVL. The velocity information provided by the DVL significantly reduces INS drift. This is why it is critical to have a good <strong>DVL-to-INS alignment calibration</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sound Velocity Sensor</p>
+<p>It is recommended to have a <strong>sound velocity sensor (SVS) interfaced into the DVL</strong> to optimise its acoustic measurements. DVL data is improved by sound velocity correction, and the INS system handles this provided an SVS is interfaced into the system.</p>
+</div>
+<p>For a 1200 kHz DVL system, bottom lock is maintained between <strong>0.3 and 30 m</strong> altitude. Lower frequency DVLs can extend the altitude range up to <strong>200 m</strong>.</p>
+<hr />
+<h2 id="depth-aiding"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12h16v2H4zm0-3h16v2H4zm12-5-4 4-4-4h3V1h2v3zM8 19l4-4 4 4h-3v3h-2v-3z"/></svg></span> Depth Aiding<a class="headerlink" href="#depth-aiding" title="Permanent link">&para;</a></h2>
+<p>Depth (or altitude) aiding stabilises the <strong>vertical dimension</strong> of the INS. The INS operates in three dimensions, all of which need to be aided.</p>
+<p>Sources of error in depth can come from:</p>
+<ul>
+<li>Not adequately accounting for <strong>tides</strong></li>
+<li>Wrong parameters for <strong>gravity</strong>, <strong>density</strong>, or <strong>atmospheric pressure</strong> in the pressure-to-depth conversion equation</li>
+<li><strong>Dynamic variability</strong> -- depth sensors are designed to be static and will show some variability in readings when dynamic (reduced when sensors are mounted vertically)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Pressure-to-Depth Conversion</p>
+<p>INS systems typically offer multiple methods for pressure-to-depth conversion:</p>
+<ul>
+<li><strong>Salt water</strong>: Uses the UNESCO formula from "Technical Papers in Marine Science No. 44"</li>
+<li><strong>Fresh water / density formula</strong>: Can also be used for salt water by entering the mean density calculated from a CTD cast</li>
+<li><strong>Atmospheric pressure compensation</strong>: Either enter a depth offset manually or use the current depth reading when the sensor is at the waterline before submersion. As a cross-check, the unit should read approximately 10 m depth before applying the atmospheric offset.</li>
+</ul>
+</div>
+<hr />
+<h2 id="usbl-aiding"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m-8.95 5H1v-2h2.05C3.5 6.83 6.83 3.5 11 3.05V1h2v2.05c4.17.45 7.5 3.78 7.95 7.95H23v2h-2.05c-.45 4.17-3.78 7.5-7.95 7.95V23h-2v-2.05C6.83 20.5 3.5 17.17 3.05 13M12 5a7 7 0 0 0-7 7 7 7 0 0 0 7 7 7 7 0 0 0 7-7 7 7 0 0 0-7-7"/></svg></span> USBL Aiding<a class="headerlink" href="#usbl-aiding" title="Permanent link">&para;</a></h2>
+<p>A USBL system is often used to aid the subsea INS with position information. The absolute positions are used by the INS to determine its errors, which are fed back into the algorithm to refine its position.</p>
+<div class="admonition warning">
+<p class="admonition-title">Critical Concept: USBL Aiding and Systematic Errors</p>
+<p>Although an INS <strong>improves USBL system precision</strong> and short-term accuracy, it <strong>will not resolve any inherent systematic errors</strong> that are present.</p>
+<p>Consider a subsea vehicle flying over a pipeline. The black line represents "truth" (where the pipeline actually is). The raw USBL has both random error (the spread of positions) and systematic error (the offset from truth). If the INS has only a starting position but then continues with no USBL aiding, it drifts. With USBL aiding, the INS will <strong>improve the precision</strong> of the USBL but <strong>cannot improve the absolute accuracy</strong>. It will smooth out the USBL positioning but cannot get the position any closer to truth.</p>
+<p>In practice, when the INS is USBL-aided, it is also aided by a DVL and depth sensor. The INS weights the aiding sensors using any user-defined accuracy values. For USBL, the standard deviation is dependent on slant range and environmental factors (noise). A value between <strong>0.2% and 0.5% of slant range</strong> is a realistic starting point.</p>
+</div>
+<figure>
+  <img alt="USBL-aided INS with systematic error" src="../../assets/images/ins-theory/ins-usbl-aiding-systematic-error.jpg" width="600" />
+<br />
+<figcaption>USBL-aided INS: the INS smooths out USBL random error (green) to produce a precise solution (blue dashed), but cannot correct the systematic offset from truth (black). Without aiding, the INS drifts entirely (red).</figcaption>
+</figure>
+<hr />
+<h2 id="lbl-aiding"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3v6h2.95l2 6H6v6h6v-4.59L17.41 11H22V5h-6v4.57L10.59 15H9.06l-2-6H8V3M4 5h2v2H4m14 0h2v2h-2M8 17h2v2H8Z"/></svg></span> LBL Aiding<a class="headerlink" href="#lbl-aiding" title="Permanent link">&para;</a></h2>
+<p>Instead of USBL aiding, it is possible to aid the INS from Long Baseline (LBL) subsea transponders.</p>
+<p><strong>Loosely coupled LBL</strong> (using latitude/longitude output from LBL software) is rarely done offshore due to latency -- not just processing time, but also determining when ranges were sent and received for each position update.</p>
+<p><strong>Tightly coupled range-aided INS</strong> is the standard approach. The acoustic signals are accurately synchronised with INS time for both interrogation and reply. The INS accounts for the trajectory between interrogations and replies, providing tighter integration.</p>
+<p>Range-aided INS can be used in:</p>
+<ul>
+<li>A traditional LBL array with 4+ ranges</li>
+<li><strong>Sparse LBL</strong> with as few as 1 range</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Sparse LBL</p>
+<p>Sparse LBL is often described as "just like LBL but with fewer transponders." This is misleading -- it should be considered a <strong>very different type of positioning system</strong>. Personnel involved in planning and operation of range-aided INS should understand what factors are important for successful operation and, perhaps more importantly, what factors can negatively impact its performance.</p>
+</div>
+<hr />
+<h2 id="systematic-vs-random-errors"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.96 11.31C10.82 8.1 11.5 6 13 6s2.18 2.1 3.04 5.31C17 14.92 18.1 19 22 19v-2c-2.2 0-3-2.46-4.03-6.2C17.08 7.46 16.15 4 13 4s-4.08 3.46-4.97 6.8C7.03 14.54 6.2 17 4 17V2H2v20h20v-2H4v-1c3.9 0 5-4.08 5.96-7.69"/></svg></span> Systematic vs Random Errors<a class="headerlink" href="#systematic-vs-random-errors" title="Permanent link">&para;</a></h2>
+<p>This is one of the most important concepts for understanding INS performance.</p>
+<ul>
+<li><strong>Random errors</strong> follow a normal distribution and affect <strong>precision</strong></li>
+<li><strong>Systematic errors</strong> shift the mean of the distribution and affect <strong>accuracy</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Error Type</th>
+<th>INS Behaviour</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Random errors</strong></td>
+<td>INS is very good at accounting for these. The Kalman filter constantly refines its state by analysing the difference between an aiding measurement and its expected value. The INS has the effect of <strong>smoothing</strong> the aiding sensors.</td>
+<td>INS effectively improves the precision of aided position/depth input</td>
+</tr>
+<tr>
+<td><strong>Systematic errors</strong></td>
+<td><strong>It is not possible for the INS to identify systematic errors.</strong> There is no mechanism whereby the INS can identify where truth is.</td>
+<td>INS <strong>cannot</strong> improve the absolute accuracy of aided position/depth input</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Key Takeaway</p>
+<p>Users must:</p>
+<ol>
+<li>Apply the <strong>correct weighting</strong> to aiding sensors</li>
+<li><strong>Mitigate systematic errors</strong> as far as possible through calibration of aiding sensors such as USBL and DVL</li>
+</ol>
+<p>The INS will smooth imprecise data effectively, but it cannot fix data that is consistently offset from truth.</p>
+</div>
+<hr />
+<h2 id="ins-applications"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 15a3 3 0 0 1 3 3 3 3 0 0 1-3 3 2.99 2.99 0 0 1-2.83-2H14v-2h1.17c.41-1.17 1.52-2 2.83-2m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m0-9a1.43 1.43 0 0 0 1.43-1.43 1.43 1.43 0 1 0-2.86 0A1.43 1.43 0 0 0 18 8m0-5.43a4 4 0 0 1 4 4C22 9.56 18 14 18 14s-4-4.44-4-7.43a4 4 0 0 1 4-4M8.83 17H10v2H8.83A2.99 2.99 0 0 1 6 21a3 3 0 0 1-3-3c0-1.31.83-2.42 2-2.83V14h2v1.17c.85.3 1.53.98 1.83 1.83M6 17a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1M6 3a3 3 0 0 1 3 3c0 1.31-.83 2.42-2 2.83V10H5V8.83A2.99 2.99 0 0 1 3 6a3 3 0 0 1 3-3m0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m5 14v-2h2v2zm-4-6H5v-2h2z"/></svg></span> INS Applications<a class="headerlink" href="#ins-applications" title="Permanent link">&para;</a></h2>
+<h3 id="seabed-positioning">Seabed Positioning<a class="headerlink" href="#seabed-positioning" title="Permanent link">&para;</a></h3>
+<p>The INS is aided by USBL position or LBL ranges, DVL, and depth information. The ROV needs to be at an altitude where the DVL has bottom lock. Applications include:</p>
+<ul>
+<li>Pipeline and umbilical surveys</li>
+<li>Structure installation</li>
+<li>Out of Straightness (OOS) surveys</li>
+<li>Spoolpiece metrology (using Simultaneous Localisation and Mapping)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">OOS Surveys</p>
+<p>OOS surveys address a specific problem: determining the relative position along a segment of pipeline (e.g. 100 metres). A combination of INS and DVL is particularly suited for this as the combination is very precise, although not absolutely accurate. For applications requiring absolute positioning, USBL or LBL aiding is introduced.</p>
+</div>
+<h3 id="mid-water-positioning">Mid-Water Positioning<a class="headerlink" href="#mid-water-positioning" title="Permanent link">&para;</a></h3>
+<p>The INS is aided by USBL and depth information (e.g. from high-accuracy Digiquartz or MiniIPS depth sensors). Applications include:</p>
+<ul>
+<li>Jacket inspection</li>
+<li>Catenary checks of anchor wires, flowlines, or umbilicals</li>
+<li>Structure monitoring during deployment through the water column</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Without the DVL, the INS will be more likely to drift and will require regular position aiding updates.</p>
+</div>
+<h3 id="drill-string-monitoring">Drill String Monitoring<a class="headerlink" href="#drill-string-monitoring" title="Permanent link">&para;</a></h3>
+<p>The INS unit is mounted on a tool designed to run down the outside of a drill string. The procedure starts with the tool docked on the vessel (aided by DGNSS, possibly vessel gyro and motion sensors), then run down the drill string, held stationary at the bottom for ZUPT, and returned to the surface. This is repeated 3-10 times to provide an accurate position of the well head.</p>
+<hr />
+<h2 id="ins-performance"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8c0 2.4-1 4.5-2.7 6-1.4-1.3-3.3-2-5.3-2s-3.8.7-5.3 2C5 16.5 4 14.4 4 12a8 8 0 0 1 8-8m2 1.89c-.38.01-.74.26-.9.65l-1.29 3.23-.1.23c-.71.13-1.3.6-1.57 1.26-.41 1.03.09 2.19 1.12 2.6s2.19-.09 2.6-1.12c.26-.66.14-1.42-.29-1.98l.1-.26 1.29-3.21.01-.03c.2-.51-.05-1.09-.56-1.3-.13-.05-.26-.07-.41-.07M10 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1M7 9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m10 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> INS Performance<a class="headerlink" href="#ins-performance" title="Permanent link">&para;</a></h2>
+<h3 id="itar-restrictions-and-sensor-quality">ITAR Restrictions and Sensor Quality<a class="headerlink" href="#itar-restrictions-and-sensor-quality" title="Permanent link">&para;</a></h3>
+<p>The gyroscopes and accelerometers inside the IMU can be of different quality. The higher the quality, the better the INS performance.</p>
+<p>Very high-quality sensors come under <strong>International Traffic in Arms Regulations (ITAR)</strong> and can be prohibitively problematic to ship and use for offshore operations. INS instruments used offshore have performance that falls within the criteria allowing them to be shipped. <strong>It is these regulations that limit the quality of INS sensors used offshore.</strong></p>
+<h3 id="gyroscope-technology-comparison">Gyroscope Technology Comparison<a class="headerlink" href="#gyroscope-technology-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Abbreviation</th>
+<th>Typical Bias Stability</th>
+<th>Typical Applications</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MEMS</strong> (Micro-Electro-Mechanical Systems)</td>
+<td>MEMS</td>
+<td>1-10 deg/hr</td>
+<td>Low-cost navigation, consumer devices, some survey-grade AHRS</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Fibre Optic Gyroscope</strong></td>
+<td>FOG</td>
+<td>0.001-0.1 deg/hr</td>
+<td>Offshore survey INS (e.g. Exail PHINS, ROVINS), high-accuracy navigation</td>
+<td>Medium-High</td>
+</tr>
+<tr>
+<td><strong>Ring Laser Gyroscope</strong></td>
+<td>RLG</td>
+<td>0.001-0.01 deg/hr</td>
+<td>Military/aerospace, highest-grade INS; rarely used offshore due to ITAR and cost</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Offshore Survey Context</p>
+<p>The majority of INS systems used in offshore survey are FOG-based. These provide the best balance of performance and exportability. MEMS-based systems are increasingly capable but currently do not match FOG performance for subsea survey applications. RLG systems, while superior in raw performance, are generally restricted by ITAR and not commonly deployed offshore.</p>
+</div>
+<h3 id="ins-drift-rates">INS Drift Rates<a class="headerlink" href="#ins-drift-rates" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Drift Rate</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unaided</strong></td>
+<td>~12 m over 4 minutes</td>
+<td>Drift rate <strong>increases</strong> over time (accelerating divergence)</td>
+</tr>
+<tr>
+<td><strong>DVL-aided</strong></td>
+<td>0.02%-0.06% distance travelled</td>
+<td>Equivalent to 0.2-0.6 m per 1 km travelled. These figures are typically empirical from trial data and represent best-case scenarios</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Drift Behaviour</p>
+<p>If aiding sensors are not coming into the INS, or the INS is rejecting them for any length of time, the INS can be observed to run off, <strong>rapidly increasing</strong> its velocity and distance from the initial position. The rate of drift increases over time -- this is not linear.</p>
+<p>INS drift is a function of both <strong>distance travelled</strong> and <strong>time</strong>:</p>
+<ul>
+<li>When <strong>dynamic</strong>: drift is primarily affected by DVL misalignment to the INS (the DVL calibration)</li>
+<li>When <strong>static</strong>: drift is primarily affected by DVL performance</li>
+</ul>
+</div>
+<h3 id="usbl-aided-ins-performance">USBL-Aided INS Performance<a class="headerlink" href="#usbl-aided-ins-performance" title="Permanent link">&para;</a></h3>
+<p>For USBL-aided INS, the performance affects how well the precision of the raw USBL is improved. The INS cannot improve the absolute accuracy of the USBL.</p>
+<h3 id="range-aided-ins-performance">Range-Aided INS Performance<a class="headerlink" href="#range-aided-ins-performance" title="Permanent link">&para;</a></h3>
+<p>Range-aided INS has several considerations. It is often termed "sparse LBL" and the impression given is that it is just like LBL but with fewer transponders. This is misleading -- it should be considered a very different type of positioning system.</p>
+<hr />
+<h2 id="timing-requirements"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg></span> Timing Requirements<a class="headerlink" href="#timing-requirements" title="Permanent link">&para;</a></h2>
+<p>INS systems are more suited to being dynamic, compared to AHRS systems that are more suited to being static. It is <strong>imperative</strong> that the timing of aiding sensors is synchronised with INS time.</p>
+<h3 id="time-synchronisation">Time Synchronisation<a class="headerlink" href="#time-synchronisation" title="Permanent link">&para;</a></h3>
+<p>The INS will typically be synchronised to GNSS time using a <strong>1PPS and ZDA string</strong>. This allows:</p>
+<ul>
+<li>Time-stamped aiding data to be correctly applied to the INS</li>
+<li>Resulting position, velocity, and orientations to be merged with external sensors such as multibeam echosounders and laser systems</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Latent Data</p>
+<p>The INS can deal with latent data (up to a few seconds in real time) <strong>if there are correct timestamps</strong> in the data. Both the ZDA string and PPS should come from the same GNSS system and source as other survey instruments, typically distributed via an RTS PPS panel or serial splitter.</p>
+</div>
+<h3 id="dvl-triggering">DVL Triggering<a class="headerlink" href="#dvl-triggering" title="Permanent link">&para;</a></h3>
+<p>The DVL is set to free-running by default -- it sends a set of pings and when it receives the replies sends the next set. To improve timing, <strong>the INS can trigger the DVL</strong>. This option is configured in the topside software and relies on a direct connection between the INS and DVL.</p>
+<h3 id="lbl-range-timestamping">LBL Range Timestamping<a class="headerlink" href="#lbl-range-timestamping" title="Permanent link">&para;</a></h3>
+<p>For range-aided INS (e.g. Sonardyne systems), the acoustic transceiver is interfaced directly into the INS. The range measurement interrogation and receive times are <strong>timestamped by the INS</strong>, allowing very accurate timing of this data.</p>
+<hr />
+<h2 id="installation-checklist"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.71 20.29-1.42 1.42a1 1 0 0 1-1.41 0L7 9.85A3.8 3.8 0 0 1 6 10a4 4 0 0 1-3.78-5.3l2.54 2.54.53-.53 1.42-1.42.53-.53L4.7 2.22A4 4 0 0 1 10 6a3.8 3.8 0 0 1-.15 1l11.86 11.88a1 1 0 0 1 0 1.41M2.29 18.88a1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41 0l5.47-5.46-2.83-2.83M20 2l-4 2v2l-2.17 2.17 2 2L18 8h2l2-4Z"/></svg></span> Installation Checklist<a class="headerlink" href="#installation-checklist" title="Permanent link">&para;</a></h2>
+<p>The general installation sequence:</p>
+<div class="admonition success">
+<p class="admonition-title">Installation Steps</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pre-mobilisation checks</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pre-installation checks</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Physical installation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Offset measurements</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Hardware system configurations</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Communications checks</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Navigation software configuration</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Acquisition software configuration</li>
+</ul>
+</div>
+<h3 id="pre-mobilisation-checks">Pre-Mobilisation Checks<a class="headerlink" href="#pre-mobilisation-checks" title="Permanent link">&para;</a></h3>
+<p>Before committing equipment to a project, maintenance and factory pre-calibration certification should be checked against the recommended validity period (typically <strong>1 year</strong>).</p>
+<p>Workshop checks before mobilisation:</p>
+<ul>
+<li>All cables supplied, including a deck-test cable</li>
+<li>All connectors checked for corrosion; all interface cables verified</li>
+<li>Visual check of units for possible water ingress</li>
+<li>Connect systems and check power and communication lines</li>
+<li>Check firmware on all systems; update to latest version if advised by manufacturer</li>
+</ul>
+<h3 id="ins-with-dvl-pre-mobilisation">INS with DVL Pre-Mobilisation<a class="headerlink" href="#ins-with-dvl-pre-mobilisation" title="Permanent link">&para;</a></h3>
+<p>Check equipment against manifest. Take pictures of the state of all equipment received. Minimum checks:</p>
+<ul>
+<li>INS and DVL are <strong>firmly connected together</strong> and will remain so throughout deployment</li>
+<li>DVL transducers are <strong>clean and undamaged</strong></li>
+</ul>
+<h3 id="mounting-considerations">Mounting Considerations<a class="headerlink" href="#mounting-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DVL transducers must have an <strong>unobstructed view downwards</strong> meeting the manufacturer's recommended clearance requirements</li>
+<li>System must not obstruct other sensors (cameras, sonar, pipe-tracker)</li>
+<li>Must not cause interference with other sensors (e.g. existing DVL on the same frequency)</li>
+<li>INS system forward axis should be aligned <strong>as closely as possible</strong> to one of the ROV vehicle axes, preferably forward</li>
+<li>DVL should be <strong>directly interfaced into the INS</strong> to avoid uncontrollable latencies through a network or other devices</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Dedicated Network</p>
+<p>Due to bandwidth and latency considerations, the INS system should operate on a <strong>dedicated ethernet network</strong> separate from the main survey network.</p>
+</div>
+<h3 id="pre-calibrated-coupled-systems">Pre-Calibrated Coupled Systems<a class="headerlink" href="#pre-calibrated-coupled-systems" title="Permanent link">&para;</a></h3>
+<p>Unless unavailable in the market, an INS/DVL system should <strong>always be supplied as mechanically coupled and pre-calibrated</strong> because calibration offshore is inevitably going to be less accurate than what a supplier can achieve near shore.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>DVL offsets are predefined on coupled units and <strong>must not be changed</strong>. Any pre-calibrated INS/DVL will come supplied with a calibration file that can be transferred to the INS if settings are reset.</p>
+</div>
+<hr />
+<h2 id="sign-conventions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 12 4 4-4 4v-3.1c-4.56-.46-8-2.48-8-4.9s3.44-4.44 8-4.9v1.99C6.55 9.43 4 10.6 4 12s2.55 2.57 6 2.91zm10 0c0-1.4-2.55-2.57-6-2.91V7.1c4.56.46 8 2.48 8 4.9 0 2.16-2.74 4-6.58 4.7l.7-.7-1.2-1.21C17.89 14.36 20 13.27 20 12M11 2h2v11l-2-2zm0 20v-1l2-2v3z"/></svg></span> Sign Conventions<a class="headerlink" href="#sign-conventions" title="Permanent link">&para;</a></h2>
+<p>Care should be taken when entering lever arms into INS systems as the sign and naming conventions may differ from that of the navigation system.</p>
+<h3 id="exail-rovins-phins-convention">Exail (ROVINS / PHINS) Convention<a class="headerlink" href="#exail-rovins-phins-convention" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Standard Convention</th>
+<th>Exail Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starboard</td>
+<td>Negative XV2 = LV2</td>
+</tr>
+<tr>
+<td>Forward</td>
+<td>XV1 = LV1</td>
+</tr>
+<tr>
+<td>Up</td>
+<td>XV3 = LV3</td>
+</tr>
+</tbody>
+</table>
+<p>In plain terms:</p>
+<ul>
+<li><strong>LV1</strong> is entered <strong>positive forward</strong></li>
+<li><strong>LV2</strong> is entered <strong>positive port</strong> (opposite of normal survey convention)</li>
+<li><strong>LV3</strong> is entered <strong>positive up</strong></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Pitch Sign Reversal</p>
+<p>With ROVINS or PHINS, the <strong>pitch sign convention is reversed</strong> compared to standard survey convention. In Exail (iXblue) systems, <strong>positive pitch = bow up</strong>. Standard survey convention typically defines positive pitch as bow down. This is critical to account for when integrating with navigation software -- a sign error in pitch will cause depth errors that increase with distance from the transducer nadir.</p>
+</div>
+<p>The primary lever arm is the primary external monitoring point (with respect to the INS centre of measurements) for calculation and output of position and attitude data to the online navigation system. Offset values are entered from the INS measurement point to the reference point using Exail sign convention.</p>
+<h3 id="sonardyne-sprint-convention">Sonardyne (SPRINT) Convention<a class="headerlink" href="#sonardyne-sprint-convention" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Standard Convention</th>
+<th>Sonardyne Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X (+Starboard)</td>
+<td>Y (+Starboard)</td>
+</tr>
+<tr>
+<td>Y (+Forward)</td>
+<td>X (+Forward)</td>
+</tr>
+<tr>
+<td>Z (+Up)</td>
+<td>Z (+Down)</td>
+</tr>
+</tbody>
+</table>
+<p>In plain terms:</p>
+<ul>
+<li><strong>Y</strong> is entered <strong>positive starboard</strong></li>
+<li><strong>X</strong> is entered <strong>positive forward</strong></li>
+<li><strong>Z</strong> is entered <strong>positive down</strong></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Coordinate Reference Frames</p>
+<p>Sonardyne SPRINT systems use multiple coordinate reference frames. For the typical user, INS and aiding sensor offsets are entered using the <strong>vehicle coordinate reference frame</strong> (based on the ROV CRP). Internally, the IMU coordinate reference frame is used for DVL-to-IMU misalignment during pre-calibration. The topside software reads the internal offsets and displays them in the vehicle coordinate reference frame.</p>
+</div>
+<hr />
+<h2 id="alignment"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8zm5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> Alignment<a class="headerlink" href="#alignment" title="Permanent link">&para;</a></h2>
+<h3 id="coarse-alignment-exail-systems">Coarse Alignment (Exail Systems)<a class="headerlink" href="#coarse-alignment-exail-systems" title="Permanent link">&para;</a></h3>
+<p>On power-up, the INS system needs to be <strong>stationary on deck</strong>. Offsets from the deck location to the vessel CRP are measured and entered into the navigation system.</p>
+<p>The system will:</p>
+<ol>
+<li>Run through a self-check</li>
+<li>Perform coarse alignment to settle and <strong>detect the earth rotation axis</strong> to align its coordinate frame with true north</li>
+<li>During coarse alignment, the online navigation system provides GNSS position of the deck location</li>
+</ol>
+<h3 id="fine-alignment-exail-systems">Fine Alignment (Exail Systems)<a class="headerlink" href="#fine-alignment-exail-systems" title="Permanent link">&para;</a></h3>
+<p>During fine alignment, the INS continues to self-tweak settings of internal sensors and aiding inputs into the Kalman filter to optimise performance. Aiding sensors should be available, so for subsea applications this is done <strong>in the water</strong>.</p>
+<p>Fine alignment takes a few tens of minutes but can be improved by making a series of <strong>heading changes in different directions</strong>:</p>
+<ul>
+<li>A <strong>figure-of-8 pattern</strong> is highly recommended</li>
+<li>A <strong>stair pattern</strong> is a practical alternative on an ROV</li>
+<li>Other patterns such as a clover-leaf can also be used</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Alignment Completion</p>
+<p>With Exail systems, the INS software will inform when fine alignment is completed by displaying when the predicted heading accuracy matches the instrument specification.</p>
+</div>
+<h3 id="sonardyne-systems">Sonardyne Systems<a class="headerlink" href="#sonardyne-systems" title="Permanent link">&para;</a></h3>
+<p>A major difference with Sonardyne INS systems is that there is <strong>no requirement to provide an on-deck position</strong> prior to going subsea. This is because SPRINT systems run <strong>INS and AHRS algorithms concurrently</strong>:</p>
+<ul>
+<li>The AHRS does not need dynamics to compute heading, pitch, and roll</li>
+<li>The AHRS takes <strong>10 minutes</strong> to settle upon start-up</li>
+<li>Once the INS algorithm is started, it takes the accurate AHRS data as starting values</li>
+</ul>
+<p>When the INS algorithm is started, there is <strong>no need to perform alignment manoeuvres</strong>. The SPRINT statistics window in the software can be used to monitor the quality of the INS solution.</p>
+<hr />
+<h2 id="quick-reference-summary"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> Quick Reference Summary<a class="headerlink" href="#quick-reference-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Key Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU components</td>
+<td>3 gyroscopes + 3 accelerometers</td>
+</tr>
+<tr>
+<td>Unaided drift</td>
+<td>~12 m over 4 minutes (accelerating)</td>
+</tr>
+<tr>
+<td>DVL-aided drift</td>
+<td>0.02%-0.06% distance travelled</td>
+</tr>
+<tr>
+<td>Free inertial drift (20 min)</td>
+<td>Highly variable -- drift is non-linear and accelerates; do not extrapolate linearly from short-duration figures</td>
+</tr>
+<tr>
+<td>DVL bottom lock (1200 kHz)</td>
+<td>0.3-30 m altitude</td>
+</tr>
+<tr>
+<td>DVL bottom lock (low freq.)</td>
+<td>Up to 200 m altitude</td>
+</tr>
+<tr>
+<td>USBL SD estimate</td>
+<td>0.2%-0.5% of slant range</td>
+</tr>
+<tr>
+<td>Pre-cal validity period</td>
+<td>Typically 1 year</td>
+</tr>
+<tr>
+<td>AHRS settling time (Sonardyne)</td>
+<td>10 minutes</td>
+</tr>
+<tr>
+<td>INS time sync</td>
+<td>1PPS + ZDA from same GNSS source</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="health-monitoring"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 0 0 2 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0 0 16.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 0 0-1 1 1 1 0 0 0 1 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67z"/></svg></span> Health Monitoring<a class="headerlink" href="#health-monitoring" title="Permanent link">&para;</a></h2>
+<p>Continuous monitoring of INS health during operations is essential. The following indicators should be checked regularly:</p>
+<h3 id="kalman-filter-status">Kalman Filter Status<a class="headerlink" href="#kalman-filter-status" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Innovation sequence</strong> (the difference between predicted and actual measurements) should remain within expected bounds. Large or growing innovations indicate the filter is struggling to reconcile sensor data</li>
+<li><strong>Residuals</strong> should be small and randomly distributed. Systematic patterns in residuals indicate unmodelled errors (e.g. DVL misalignment, incorrect lever arms)</li>
+<li><strong>Filter covariance</strong> values indicate the estimated uncertainty of each state. Rapidly growing covariance means the filter is losing confidence -- check that aiding sensors are being accepted</li>
+</ul>
+<h3 id="aiding-sensor-status">Aiding Sensor Status<a class="headerlink" href="#aiding-sensor-status" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What to Look For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DVL bottom lock</strong></td>
+<td>Verify DVL has continuous bottom lock; loss of bottom lock means loss of velocity aiding</td>
+</tr>
+<tr>
+<td><strong>USBL acceptance rate</strong></td>
+<td>Monitor how many USBL fixes are accepted vs rejected by the INS. High rejection rate suggests USBL accuracy is worse than expected or lever arms are incorrect</td>
+</tr>
+<tr>
+<td><strong>Depth sensor</strong></td>
+<td>Confirm depth readings are stable and consistent with expected values</td>
+</tr>
+<tr>
+<td><strong>GNSS (surface)</strong></td>
+<td>Verify GNSS is being accepted; check that the PPP/DGNSS solution is converged</td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning-signs">Warning Signs<a class="headerlink" href="#warning-signs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>INS position diverging from USBL when DVL bottom lock is lost</li>
+<li>Heading uncertainty growing beyond specification</li>
+<li>Velocity residuals consistently in one direction (indicates DVL misalignment)</li>
+<li>Depth residuals drifting (indicates pressure sensor drift or incorrect density parameters)</li>
+</ul>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>INS mobilisation</strong> -- reference for system installation, configuration, and alignment</li>
+<li><strong>Calibration planning</strong> -- understand DVL-INS alignment requirements and pre-calibration validity</li>
+<li><strong>Operations</strong> -- real-time health monitoring guidance and troubleshooting during survey operations</li>
+<li><strong>Training</strong> -- foundational reference for surveyors working with INS systems for the first time</li>
+<li><strong>System selection</strong> -- compare gyroscope technologies and understand ITAR implications for equipment procurement</li>
+</ul>
+<hr />
+<h2 id="acceptance-criteria"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DVL-aided drift</td>
+<td>&lt; 0.1% of distance travelled</td>
+</tr>
+<tr>
+<td>Heading accuracy (after alignment)</td>
+<td>Per instrument specification (typically &lt; 0.1 deg secant latitude for FOG systems)</td>
+</tr>
+<tr>
+<td>Pitch and roll accuracy</td>
+<td>Per instrument specification (typically &lt; 0.02 deg for FOG systems)</td>
+</tr>
+<tr>
+<td>DVL calibration residuals</td>
+<td>&lt; 0.05 deg misalignment on all axes</td>
+</tr>
+<tr>
+<td>USBL acceptance rate</td>
+<td>&gt; 80% of USBL fixes accepted by the INS</td>
+</tr>
+<tr>
+<td>Kalman filter innovations</td>
+<td>Within 3-sigma bounds for all aiding sensors</td>
+</tr>
+<tr>
+<td>Pre-calibration certificate validity</td>
+<td>Within 1 year of calibration date</td>
+</tr>
+<tr>
+<td>Time synchronisation</td>
+<td>1PPS and ZDA from same GNSS source; latency &lt; 1 ms</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely Cause</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INS drifting rapidly when subsea</td>
+<td>DVL has no bottom lock</td>
+<td>Check altitude; verify DVL is functioning; ensure SVS is interfaced</td>
+</tr>
+<tr>
+<td>INS rejecting USBL fixes</td>
+<td>USBL accuracy worse than expected, or incorrect lever arms</td>
+<td>Check USBL calibration; verify lever arms in INS configuration; increase USBL SD weighting</td>
+</tr>
+<tr>
+<td>Heading not converging during alignment</td>
+<td>Insufficient dynamics or incorrect start position</td>
+<td>Perform figure-of-8 or stair pattern; verify start coordinates are correct</td>
+</tr>
+<tr>
+<td>Velocity residuals biased in one direction</td>
+<td>DVL-to-INS misalignment</td>
+<td>Re-run DVL calibration; check that the pre-cal file is loaded correctly</td>
+</tr>
+<tr>
+<td>Depth aiding rejected</td>
+<td>Incorrect pressure-to-depth parameters</td>
+<td>Verify density, atmospheric pressure, and tide settings; re-check depth sensor offset</td>
+</tr>
+<tr>
+<td>Position jumps when USBL is re-acquired after gap</td>
+<td>INS drifted during USBL outage; large correction applied</td>
+<td>This is expected behaviour; longer USBL gaps produce larger jumps. Ensure DVL aiding is continuous to minimise drift</td>
+</tr>
+<tr>
+<td>System fails to initialise on deck</td>
+<td>No GNSS position provided, or system not stationary</td>
+<td>Provide a GNSS position to the INS; ensure the system is completely stationary during coarse alignment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../gnss-fundamentals/">GNSS Fundamentals</a> -- GNSS augmentation systems used for surface aiding</li>
+<li><a href="../../sensors/mbes-installation-and-setup/">MBES Installation and Setup</a> -- tightly coupled INS/MBES configurations</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lbl-fundamentals/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LBL Acoustic Positioning Fundamentals">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                LBL Acoustic Positioning Fundamentals
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../phins-rovins-operations/" class="md-footer__link md-footer__link--next" aria-label="Next: PHINS/ROVINS Operations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                PHINS/ROVINS Operations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

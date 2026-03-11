@@ -1,0 +1,2914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/reference/underwater-acoustics/">
+      
+      
+        <link rel="prev" href="../g882-depth-altimeter-calibration/">
+      
+      
+        <link rel="next" href="../survey-line-planning/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Underwater Acoustics Fundamentals - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#underwater-acoustics-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Underwater Acoustics Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../positioning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../positioning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordinate-systems-datums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coordinate Systems and Datums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpu-error-budgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TPU and Error Budgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acceptance-criteria-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acceptance Criteria Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../industry-standards-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industry Standards Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formulas-and-conversions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Formulas and Conversions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../g882-depth-altimeter-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G882 Depth/Altimeter Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Underwater Acoustics Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Underwater Acoustics Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-in-water-the-medium-we-work-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound in Water -- The Medium We Work In
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speed-of-sound-in-seawater" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed of Sound in Seawater
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Speed of Sound in Seawater">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mackenzie-equation-1981" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mackenzie Equation (1981)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-equations-youll-encounter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Equations You'll Encounter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-velocity-profiles-svps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Velocity Profiles (SVPs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Velocity Profiles (SVPs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-deep-ocean-profile-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Deep-Ocean Profile Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-changes-a-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changes a Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-halocline-and-pycnocline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Halocline and Pycnocline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refraction-why-sound-bends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refraction -- Why Sound Bends
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Refraction -- Why Sound Bends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means in Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ray-tracing-how-survey-software-handles-refraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ray Tracing -- How Survey Software Handles Refraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absorption-why-frequency-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absorption -- Why Frequency Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absorption -- Why Frequency Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absorption-vs-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absorption vs. Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-absorption-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Absorption Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-range-vs-resolution-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Range vs. Resolution Tradeoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sofar-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SOFAR Channel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The SOFAR Channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#survey-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Survey Relevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multipath-and-reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multipath and Reflections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multipath and Reflections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multipath-effects-on-survey-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multipath Effects on Survey Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-implications-for-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Implications for Survey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Implications for Survey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svp-casts-why-they-matter-so-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVP Casts -- Why They Matter So Much
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mbes-smilefrown-artefacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MBES Smile/Frown Artefacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usbl-positioning-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL Positioning Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survey-line-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Line Planning and Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vessel-motion-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vessel Motion Effects on Survey Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marine-environment-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marine Environment Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-in-water-the-medium-we-work-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound in Water -- The Medium We Work In
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speed-of-sound-in-seawater" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed of Sound in Seawater
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Speed of Sound in Seawater">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mackenzie-equation-1981" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mackenzie Equation (1981)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-equations-youll-encounter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Equations You'll Encounter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-velocity-profiles-svps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Velocity Profiles (SVPs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Velocity Profiles (SVPs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-deep-ocean-profile-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Deep-Ocean Profile Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-changes-a-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changes a Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-halocline-and-pycnocline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Halocline and Pycnocline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refraction-why-sound-bends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refraction -- Why Sound Bends
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Refraction -- Why Sound Bends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means in Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ray-tracing-how-survey-software-handles-refraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ray Tracing -- How Survey Software Handles Refraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absorption-why-frequency-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absorption -- Why Frequency Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Absorption -- Why Frequency Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absorption-vs-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Absorption vs. Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-absorption-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Absorption Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-range-vs-resolution-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Range vs. Resolution Tradeoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sofar-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SOFAR Channel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The SOFAR Channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#survey-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Survey Relevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multipath-and-reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multipath and Reflections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multipath and Reflections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multipath-effects-on-survey-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multipath Effects on Survey Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-implications-for-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Implications for Survey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Implications for Survey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svp-casts-why-they-matter-so-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVP Casts -- Why They Matter So Much
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mbes-smilefrown-artefacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MBES Smile/Frown Artefacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usbl-positioning-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL Positioning Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Reference
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">SOFAR</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">absorption</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">acoustics</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">mbes</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">ray-tracing</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">refraction</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sonar</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sound-velocity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">svp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">thermocline</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">usbl</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="underwater-acoustics-fundamentals"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 21c-3 0-4.19-4.24-5.45-8.72C10.14 9.04 9 5 7.5 5 4.11 5 4 11.93 4 12H2c0-.37.06-9 5.5-9 3 0 4.21 4.25 5.47 8.74C13.83 14.8 15 19 16.5 19c3.44 0 3.53-6.93 3.53-7h2c0 .37-.06 9-5.53 9"/></svg></span> Underwater Acoustics Fundamentals<a class="headerlink" href="#underwater-acoustics-fundamentals" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Reference</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> <strong>Theory Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-04</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Cover the physical principles of how sound behaves in seawater and why they matter for every acoustic system on a survey spread. This article connects the physics (speed of sound, refraction, absorption) to the practical decisions surveyors make daily: when to cast an SVP, which sonar frequency to use, why outer beams drift, and where USBL positioning errors come from.</p>
+</div>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When you need to understand <strong>why</strong> SVP casts, beam steering corrections, and frequency selection work the way they do</li>
+<li>As background for troubleshooting MBES artefacts (smile/frown patterns) or USBL scatter</li>
+<li>When explaining acoustic survey principles to new team members</li>
+<li>As a companion to the operational procedures in this wiki</li>
+</ul>
+<hr />
+<h2 id="sound-in-water-the-medium-we-work-in"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6"/></svg></span> Sound in Water -- The Medium We Work In<a class="headerlink" href="#sound-in-water-the-medium-we-work-in" title="Permanent link">&para;</a></h2>
+<p>Every acoustic survey tool -- MBES, SBES, USBL, LBL, SBP, SSS -- relies on the same principle: send a sound pulse into water, measure what comes back. The accuracy of every depth, every position, every seabed image depends on how well we understand what happens to that sound pulse between transmission and reception.</p>
+<p>Sound travels roughly <strong>4.4 times faster in seawater (~1,500 m/s)</strong> than in air (~343 m/s). But unlike air, seawater is not uniform. Temperature, salinity, and pressure all change with depth, location, season, and time of day. These changes bend, slow, speed up, and absorb our acoustic signals. If we ignore them, our data is wrong.</p>
+<hr />
+<h2 id="speed-of-sound-in-seawater"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16a3 3 0 0 1-3-3c0-1.12.61-2.1 1.5-2.61l9.71-5.62-5.53 9.58c-.5.98-1.51 1.65-2.68 1.65m0-13c1.81 0 3.5.5 4.97 1.32l-2.1 1.21C14 5.19 13 5 12 5a8 8 0 0 0-8 8c0 2.21.89 4.21 2.34 5.65h.01c.39.39.39 1.02 0 1.41s-1.03.39-1.42.01A9.97 9.97 0 0 1 2 13 10 10 0 0 1 12 3m10 10c0 2.76-1.12 5.26-2.93 7.07-.39.38-1.02.38-1.41-.01a.996.996 0 0 1 0-1.41A7.95 7.95 0 0 0 20 13c0-1-.19-2-.54-2.9L20.67 8C21.5 9.5 22 11.18 22 13"/></svg></span> Speed of Sound in Seawater<a class="headerlink" href="#speed-of-sound-in-seawater" title="Permanent link">&para;</a></h2>
+<p>The speed of sound in seawater typically ranges from <strong>1,450 to 1,570 m/s</strong>. Three variables control it:</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Sensitivity</th>
+<th>Where It Dominates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>~4.5 m/s per 1 degC increase</td>
+<td>Upper water column (0--1,000 m)</td>
+</tr>
+<tr>
+<td><strong>Salinity</strong></td>
+<td>~1.3 m/s per 1 PSU increase</td>
+<td>Coastal/estuarine areas, near river outflows</td>
+</tr>
+<tr>
+<td><strong>Pressure (depth)</strong></td>
+<td>~1.7 m/s per 100 m depth increase</td>
+<td>Deep water (below ~1,000 m)</td>
+</tr>
+</tbody>
+</table>
+<p>Temperature is the dominant factor in shallow and mid-water depths. In the deep ocean, where temperature stabilises near 2--4 degC, pressure takes over and sound speed increases steadily with depth.</p>
+<h3 id="the-mackenzie-equation-1981">The Mackenzie Equation (1981)<a class="headerlink" href="#the-mackenzie-equation-1981" title="Permanent link">&para;</a></h3>
+<p>The most commonly used formula for calculating sound speed from measured T, S, and Z:</p>
+<div class="arithmatex">\[
+C = 1448.96 + 4.591T - 0.05304T^2 + 0.0002374T^3 + 0.0160Z + (1.340 - 0.01025T)(S - 35) + 1.675 \times 10^{-7}Z^2 - 7.139 \times 10^{-13}T \cdot Z^3
+\]</div>
+<p>Where:</p>
+<ul>
+<li><strong>C</strong> = speed of sound (m/s)</li>
+<li><strong>T</strong> = temperature (degC)</li>
+<li><strong>S</strong> = salinity (PSU)</li>
+<li><strong>Z</strong> = depth (m)</li>
+</ul>
+<p><strong>Valid ranges:</strong> 2--30 degC, 25--40 PSU, 0--8,000 m depth. Accuracy: ~0.1 m/s.</p>
+<p>In plain terms: the first three terms handle temperature (including its non-linear effect), the Z terms handle pressure, and the bracketed (S - 35) term adjusts for salinity deviation from the standard 35 PSU.</p>
+<h3 id="other-equations-youll-encounter">Other Equations You'll Encounter<a class="headerlink" href="#other-equations-youll-encounter" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Chen-Millero (UNESCO, 1977)</strong> -- the international standard. More complex polynomial, slightly wider valid range. Used by many CTD manufacturers and processing software. See the <a href="../formulas-and-conversions/">Formulas and Conversions</a> page for the simplified form.</li>
+<li><strong>Del Grosso (1974)</strong> -- alternative high-precision formulation, sometimes preferred for deep-water work.</li>
+<li><strong>Medwin (1975)</strong> -- simplified version useful for quick estimates in the field.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Which Equation Does My Software Use?</p>
+<p>Most survey software (Kongsberg SIS, QINSy, EIVA NaviPac) allows you to select the SV formula. If your SVP/CTD probe measures sound velocity directly (time-of-flight), the equation choice only matters for validation. If your probe is a CTD (measuring conductivity, temperature, pressure), the equation converts those measurements to sound velocity. Check your probe type and software settings at mobilisation.</p>
+</div>
+<hr />
+<h2 id="sound-velocity-profiles-svps"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span> Sound Velocity Profiles (SVPs)<a class="headerlink" href="#sound-velocity-profiles-svps" title="Permanent link">&para;</a></h2>
+<p>A sound velocity profile is a plot of sound speed against depth through the water column. It is the single most important environmental input for acoustic survey systems.</p>
+<h3 id="typical-deep-ocean-profile-structure">Typical Deep-Ocean Profile Structure<a class="headerlink" href="#typical-deep-ocean-profile-structure" title="Permanent link">&para;</a></h3>
+<p>A classic deep-ocean SVP has three distinct layers:</p>
+<ol>
+<li>
+<p><strong>Surface / Mixed Layer (0--100 m)</strong> -- Wind and wave action mix this layer, keeping temperature (and therefore sound speed) relatively uniform. Sound speed here is typically 1,500--1,530 m/s in temperate waters.</p>
+</li>
+<li>
+<p><strong>Thermocline (100--1,000 m)</strong> -- Temperature drops rapidly with depth. Since temperature dominates sound speed in this range, sound speed decreases sharply. This is the layer that causes most refraction problems for survey acoustics.</p>
+</li>
+<li>
+<p><strong>Deep Isothermal Layer (below ~1,000 m)</strong> -- Temperature stabilises near 2--4 degC. Pressure now dominates, and sound speed increases steadily with depth. At 4,000 m depth, sound speed is typically back up to ~1,540 m/s.</p>
+</li>
+</ol>
+<p>The minimum sound speed occurs where the thermocline meets the deep layer, typically around 700--1,200 m depth. This minimum creates the SOFAR channel (see below).</p>
+<h3 id="what-changes-a-profile">What Changes a Profile<a class="headerlink" href="#what-changes-a-profile" title="Permanent link">&para;</a></h3>
+<p>SVPs are not static. They change with:</p>
+<ul>
+<li><strong>Season</strong> -- Summer heating strengthens the thermocline and raises surface sound speed. Winter cooling weakens it. In some areas the thermocline disappears entirely in winter.</li>
+<li><strong>Location</strong> -- Tropical waters have a strong permanent thermocline. Polar waters may have near-uniform temperature throughout the column but salinity-driven layering instead.</li>
+<li><strong>Time of day</strong> -- Solar heating creates a shallow diurnal thermocline in the top 10--30 m, especially in calm conditions.</li>
+<li><strong>Local conditions</strong> -- River runoff (drops salinity), upwelling (brings cold water to surface), currents, and frontal boundaries can all change the profile rapidly.</li>
+</ul>
+<h3 id="the-halocline-and-pycnocline">The Halocline and Pycnocline<a class="headerlink" href="#the-halocline-and-pycnocline" title="Permanent link">&para;</a></h3>
+<p>The thermocline gets most of the attention, but two other boundaries matter:</p>
+<ul>
+<li><strong>Halocline</strong> -- a layer where salinity changes rapidly with depth. Common in fjords, estuaries, and polar regions where freshwater sits on top of saltwater. A halocline can cause sound speed changes even when temperature is uniform.</li>
+<li><strong>Pycnocline</strong> -- a layer where water density changes rapidly. Usually coincides with the thermocline or halocline. Relevant because density changes affect how sound energy propagates.</li>
+</ul>
+<p>In coastal and estuarine survey areas, salinity stratification can be just as problematic as temperature stratification. If you're working near a river mouth, expect rapid SVP changes.</p>
+<hr />
+<h2 id="refraction-why-sound-bends"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 5 7h3v7h2V7h3m3 10v-7h-2v7h-3l4 4 4-4z"/></svg></span> Refraction -- Why Sound Bends<a class="headerlink" href="#refraction-why-sound-bends" title="Permanent link">&para;</a></h2>
+<p>Sound in water does not travel in straight lines. It bends toward regions of lower sound speed. This is refraction, and it is governed by Snell's Law:</p>
+<div class="arithmatex">\[
+\frac{\sin(\theta_1)}{c_1} = \frac{\sin(\theta_2)}{c_2}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><strong>theta_1, theta_2</strong> = angles of the ray from vertical in layers 1 and 2</li>
+<li><strong>c_1, c_2</strong> = sound speeds in layers 1 and 2</li>
+</ul>
+<h3 id="what-this-means-in-practice">What This Means in Practice<a class="headerlink" href="#what-this-means-in-practice" title="Permanent link">&para;</a></h3>
+<p>In the thermocline, sound speed decreases with depth. Snell's Law tells us the ray bends <strong>downward</strong> (away from horizontal) -- sound curves toward the slower layer. Below the thermocline, sound speed increases with depth, so rays bend <strong>upward</strong>.</p>
+<p>This creates several important effects:</p>
+<ul>
+<li><strong>Shadow zones</strong> -- areas in the water column where sound from a source cannot reach because all rays have been refracted away. A USBL transceiver can lose track of a transponder if it falls in a shadow zone, even at relatively short ranges.</li>
+<li><strong>Convergence zones</strong> -- areas where refracted rays focus, creating pockets of stronger signal. These can cause false returns or multipath in acoustic positioning.</li>
+<li><strong>Sound channels</strong> -- where sound is trapped between layers of increasing sound speed above and below, bouncing back and forth and travelling enormous distances with minimal loss.</li>
+</ul>
+<h3 id="ray-tracing-how-survey-software-handles-refraction">Ray Tracing -- How Survey Software Handles Refraction<a class="headerlink" href="#ray-tracing-how-survey-software-handles-refraction" title="Permanent link">&para;</a></h3>
+<p>Multibeam processing software does not assume sound travels in straight lines. It performs <strong>ray tracing</strong>: stepping through the SVP layer by layer, applying Snell's Law at each boundary to calculate the curved path each beam follows.</p>
+<p>The process:</p>
+<ol>
+<li>Take the loaded SVP (layers of depth vs. sound speed)</li>
+<li>For each beam, start at the transducer with the known launch angle</li>
+<li>At each layer boundary, apply Snell's Law to compute the new ray direction</li>
+<li>Integrate along the curved path to get the horizontal offset and depth of the sounding</li>
+</ol>
+<p>If the SVP loaded in the software does not match the actual water column, the ray trace produces wrong results. The beam ends up in the wrong place. This is why SVP accuracy matters so much.</p>
+<div class="admonition tip">
+<p class="admonition-title">Go Deeper</p>
+<ul>
+<li><a href="../../sensors/sound-velocity-operations/">Sound Velocity Operations</a> -- deployment procedures, equipment, processing</li>
+<li><a href="../../sensors/svp-repeatability-test/">SVP Repeatability Test</a></li>
+<li><a href="../../sensors/sv-ctd-comparison-verification/">SV/CTD Comparison Verification</a></li>
+</ul>
+</div>
+<hr />
+<h2 id="absorption-why-frequency-matters"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4 9.91 6.09 12 8.18M4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.26c-.67.51-1.42.93-2.25 1.17v2.07c1.38-.32 2.63-.95 3.68-1.81L19.73 21 21 19.73l-9-9M19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.9 8.9 0 0 0 21 12c0-4.28-3-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71m-2.5 0c0-1.77-1-3.29-2.5-4.03v2.21l2.45 2.45c.05-.2.05-.42.05-.63"/></svg></span> Absorption -- Why Frequency Matters<a class="headerlink" href="#absorption-why-frequency-matters" title="Permanent link">&para;</a></h2>
+<p>As sound travels through seawater, energy is absorbed and converted to heat. This absorption is <strong>strongly frequency-dependent</strong> -- higher frequencies lose energy much faster than lower frequencies.</p>
+<h3 id="absorption-vs-frequency">Absorption vs. Frequency<a class="headerlink" href="#absorption-vs-frequency" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Frequency</th>
+<th>Typical Absorption</th>
+<th>Typical Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 kHz</td>
+<td>~0.08 dB/km</td>
+<td>Military sonar, ocean research</td>
+</tr>
+<tr>
+<td>10 kHz</td>
+<td>~1 dB/km</td>
+<td>Deep-water SBES, SBP</td>
+</tr>
+<tr>
+<td>12 kHz</td>
+<td>~1.2 dB/km</td>
+<td>Deep-water MBES (Kongsberg EM 122/124)</td>
+</tr>
+<tr>
+<td>30 kHz</td>
+<td>~8 dB/km</td>
+<td>USBL (Kongsberg HiPAP, Sonardyne Ranger)</td>
+</tr>
+<tr>
+<td>100 kHz</td>
+<td>~40 dB/km</td>
+<td>Shallow MBES, SSS</td>
+</tr>
+<tr>
+<td>200 kHz</td>
+<td>~50 dB/km</td>
+<td>Shallow-water MBES (Kongsberg EM 2040)</td>
+</tr>
+<tr>
+<td>400 kHz</td>
+<td>~100 dB/km</td>
+<td>Very shallow MBES, high-res imaging</td>
+</tr>
+</tbody>
+</table>
+<h3 id="three-absorption-mechanisms">Three Absorption Mechanisms<a class="headerlink" href="#three-absorption-mechanisms" title="Permanent link">&para;</a></h3>
+<p>Sound absorption in seawater comes from three distinct processes:</p>
+<ol>
+<li><strong>Boric acid relaxation (B(OH)3)</strong> -- significant only below ~10 kHz. Depends on pH and temperature.</li>
+<li><strong>Magnesium sulphate relaxation (MgSO4)</strong> -- dominant at typical echosounder frequencies (12--500 kHz). This is the main contributor for most survey sonars.</li>
+<li><strong>Pure water viscous absorption</strong> -- dominant above 1 MHz. Proportional to frequency squared.</li>
+</ol>
+<p>The standard model is <strong>Francois &amp; Garrison (1982)</strong>, which calculates absorption in dB/km as a function of frequency, temperature, salinity, depth, and pH. A simpler version by <strong>Ainslie &amp; McColm (1998)</strong> gives the same accuracy with fewer terms.</p>
+<h3 id="the-range-vs-resolution-tradeoff">The Range vs. Resolution Tradeoff<a class="headerlink" href="#the-range-vs-resolution-tradeoff" title="Permanent link">&para;</a></h3>
+<p>This frequency-absorption relationship is the fundamental reason different survey tasks use different sonar frequencies:</p>
+<ul>
+<li><strong>Deep-water MBES (12 kHz):</strong> Needs to reach 5,000+ m and back. At 12 kHz, absorption is only ~1.2 dB/km, so the signal survives the round trip. But wavelength is ~12.5 cm, limiting resolution.</li>
+<li><strong>Shallow-water MBES (200--400 kHz):</strong> In 20 m of water, even 50 dB/km absorption is negligible over a 40 m round trip. The short wavelength gives centimetre-level resolution.</li>
+<li><strong>Sub-bottom profiler (2--10 kHz):</strong> Low frequency penetrates the seabed. Higher frequencies give better layer resolution but less penetration.</li>
+<li><strong>Side scan sonar (100--500 kHz):</strong> Balances image resolution against the range needed for lane spacing.</li>
+<li><strong>USBL (20--30 kHz):</strong> Needs to reach an ROV at 2,000--3,000 m depth. At 30 kHz, absorption of ~8 dB/km means ~16--24 dB lost over the slant range -- significant but manageable with enough source level.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Practical Limit</p>
+<p>Frequencies above ~1 MHz are rarely used in survey because absorption is so high the signal cannot travel useful distances. This is why, for example, acoustic modems operate at lower frequencies than you might expect given the data rates needed.</p>
+</div>
+<hr />
+<h2 id="the-sofar-channel"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 14h2v2h-2c-1.38 0-2.74-.35-4-1-2.5 1.3-5.5 1.3-8 0-1.26.65-2.63 1-4 1H2v-2h2c1.39 0 2.78-.47 4-1.33 2.44 1.71 5.56 1.71 8 0 1.22.86 2.61 1.33 4 1.33m0 6h2v2h-2c-1.38 0-2.74-.35-4-1-2.5 1.3-5.5 1.3-8 0-1.26.65-2.63 1-4 1H2v-2h2c1.39 0 2.78-.47 4-1.33 2.44 1.71 5.56 1.71 8 0 1.22.86 2.61 1.33 4 1.33m2-14-4-4v3h-5v2h5v3"/></svg></span> The SOFAR Channel<a class="headerlink" href="#the-sofar-channel" title="Permanent link">&para;</a></h2>
+<p>The SOFAR (Sound Fixing and Ranging) channel is a natural sound duct in the ocean, centred on the depth of minimum sound speed (typically 700--1,200 m in mid-latitudes). Above this minimum, sound speed increases toward the warm surface. Below it, sound speed increases due to pressure.</p>
+<p>Sound rays near this minimum are continuously refracted back toward the axis of the channel -- upward-bending rays from above, downward-bending rays from below. The result is that sound is trapped and can travel <strong>thousands of kilometres</strong> with very little energy loss. Low-frequency sounds (around 10--20 Hz) from undersea earthquakes and whale calls have been detected across entire ocean basins through the SOFAR channel.</p>
+<h3 id="survey-relevance">Survey Relevance<a class="headerlink" href="#survey-relevance" title="Permanent link">&para;</a></h3>
+<p>The SOFAR channel is not something you directly interact with in most survey operations, but understanding it helps explain:</p>
+<ul>
+<li>Why deep-water SVPs have the characteristic shape they do (high at surface, minimum at mid-depth, high again at depth)</li>
+<li>Why LBL transponder networks in deep water may pick up unexpected acoustic noise from distant sources</li>
+<li>Why the minimum sound speed depth is a natural dividing line in the water column's acoustic behaviour</li>
+</ul>
+<hr />
+<h2 id="multipath-and-reflections"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 20h-8a1 1 0 0 1-1-1V4.97a1 1 0 0 1 .74-.97c.45-.12.91.08 1.13.47l8.02 14.03c.18.31.18.69 0 1s-.51.5-.89.5M2 20c-.38 0-.71-.19-.89-.5a.99.99 0 0 1 0-1L9.13 4.47c.22-.39.68-.59 1.13-.47a1 1 0 0 1 .74.97V19a1 1 0 0 1-1 1zm7-2V8.74L3.71 18z"/></svg></span> Multipath and Reflections<a class="headerlink" href="#multipath-and-reflections" title="Permanent link">&para;</a></h2>
+<p>In any body of water with a surface and a bottom, sound can reach a receiver by multiple paths:</p>
+<ul>
+<li><strong>Direct path</strong> -- the shortest route from source to receiver</li>
+<li><strong>Surface reflection</strong> -- sound bounces off the sea surface (which acts as a near-perfect reflector)</li>
+<li><strong>Bottom reflection</strong> -- sound bounces off the seabed (reflection strength depends on bottom type)</li>
+<li><strong>Multiple bounces</strong> -- combinations of surface and bottom reflections</li>
+<li><strong>Refracted paths</strong> -- sound bent through different water layers arriving at different times</li>
+</ul>
+<p>The problem: these multiple arrivals reach the receiver at different times, with different amplitudes and phases. The receiver may interpret them as separate returns or they may interfere with the direct signal.</p>
+<h3 id="multipath-effects-on-survey-systems">Multipath Effects on Survey Systems<a class="headerlink" href="#multipath-effects-on-survey-systems" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Effect</th>
+<th>Symptom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>USBL</strong></td>
+<td>Multiple acoustic arrivals cause the phase-difference calculation to use reflected signals instead of the direct path</td>
+<td>Erratic position jumps, increased scatter, systematic offsets</td>
+</tr>
+<tr>
+<td><strong>MBES</strong></td>
+<td>Bottom and surface reflections create false returns at incorrect depths</td>
+<td>Noise in the water column, ghost seabed returns</td>
+</tr>
+<tr>
+<td><strong>LBL</strong></td>
+<td>Multipath arrivals corrupt range measurements</td>
+<td>Range outliers, baseline inconsistencies</td>
+</tr>
+<tr>
+<td><strong>Acoustic comms</strong></td>
+<td>Delayed copies of the signal interfere with later symbols</td>
+<td>Data errors, reduced throughput</td>
+</tr>
+</tbody>
+</table>
+<p>Multipath is worst in <strong>shallow water</strong> where the surface and bottom are both close to the signal path, creating many reflection opportunities. It also worsens in areas with hard, flat seabeds (strong bottom reflection) and calm seas (strong surface reflection).</p>
+<hr />
+<h2 id="practical-implications-for-survey"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Practical Implications for Survey<a class="headerlink" href="#practical-implications-for-survey" title="Permanent link">&para;</a></h2>
+<h3 id="svp-casts-why-they-matter-so-much">SVP Casts -- Why They Matter So Much<a class="headerlink" href="#svp-casts-why-they-matter-so-much" title="Permanent link">&para;</a></h3>
+<p>Every acoustic range measurement converts travel time to distance using sound speed. Every MBES beam is ray-traced through the SVP. Every USBL slant range depends on an accurate integrated sound speed along the ray path. If the SVP is wrong, the geometry is wrong.</p>
+<p><strong>When to take an SVP cast:</strong></p>
+<ul>
+<li>At the start of every survey operation</li>
+<li>After significant weather changes (storms mix the water column)</li>
+<li>After moving to a new location (different water mass)</li>
+<li>When the surface SV sensor shows a change of more than ~2 m/s</li>
+<li>At intervals defined by the scope of work (often every 4--6 hours in coastal waters)</li>
+<li>Before and after USBL calibration</li>
+<li>Before and after LBL baseline measurements</li>
+</ul>
+<h3 id="mbes-smilefrown-artefacts">MBES Smile/Frown Artefacts<a class="headerlink" href="#mbes-smilefrown-artefacts" title="Permanent link">&para;</a></h3>
+<p>The classic symptom of an incorrect SVP in multibeam data is a <strong>systematic curve across the swath</strong> visible where adjacent survey lines overlap:</p>
+<ul>
+<li><strong>"Smiles" (outer beams curve upward)</strong> -- the SVP loaded in the software has sound speeds that are <strong>too high</strong> compared to reality. The ray trace over-corrects, pushing outer beams too shallow.</li>
+<li><strong>"Frowns" (outer beams curve downward)</strong> -- the SVP has sound speeds that are <strong>too low</strong>. The ray trace under-corrects, pushing outer beams too deep.</li>
+</ul>
+<p>These artefacts are <strong>worst at the outer beams</strong> (high beam angles) because those rays travel longer, more oblique paths through the water column and accumulate more refraction error. Nadir beams (pointing straight down) are barely affected because they pass through layers at near-normal incidence.</p>
+<p>A depth bias threshold of <strong>0.25% of water depth</strong> has been established as a practical limit compatible with MBES uncertainty budgets and IHO S-44 requirements. Beyond this, your SVP needs updating.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quick Field Check</p>
+<p>If you see smiles or frowns developing in your real-time coverage map, take a new SVP cast immediately. Don't wait for the scheduled interval. Also verify that the correct SVP is loaded -- sometimes the wrong profile is applied after a cast.</p>
+</div>
+<h3 id="usbl-positioning-errors">USBL Positioning Errors<a class="headerlink" href="#usbl-positioning-errors" title="Permanent link">&para;</a></h3>
+<p>USBL systems convert acoustic travel time to slant range using the mean sound speed along the ray path from the transceiver to the transponder. If the SVP is wrong:</p>
+<ul>
+<li>The computed slant range is wrong</li>
+<li>The ray path geometry is wrong (the beam bends differently than the software assumes)</li>
+<li>Both the depth and horizontal position of the transponder are affected</li>
+</ul>
+<p>In deep water with strong thermoclines, USBL errors from poor SVP data can reach <strong>several metres</strong> -- enough to exceed project specifications. This is why a full-column SVP cast (surface to seabed) is required before every USBL calibration.</p>
+<div class="admonition tip">
+<p class="admonition-title">Go Deeper</p>
+<ul>
+<li><a href="../../positioning/usbl-theory-and-error-budgets/">USBL Theory and Error Budgets</a> -- full breakdown of USBL error sources including SVP</li>
+<li><a href="../../positioning/hipap-usbl-calibration/">HiPAP USBL Calibration</a></li>
+<li><a href="../../sensors/mbes-calibration/">MBES Calibration (Patch Test)</a> -- includes SVP requirements for calibration</li>
+<li><a href="../../positioning/lbl-fundamentals/">LBL Fundamentals</a> -- SVP effects on baseline measurements</li>
+</ul>
+</div>
+<hr />
+<h2 id="summary"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key Takeaway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sound speed</td>
+<td>~1,500 m/s in seawater, varies with temperature, salinity, and pressure</td>
+</tr>
+<tr>
+<td>Temperature effect</td>
+<td>~4.5 m/s per degC -- dominates in shallow/mid water</td>
+</tr>
+<tr>
+<td>Salinity effect</td>
+<td>~1.3 m/s per PSU -- watch for it near coasts and river mouths</td>
+</tr>
+<tr>
+<td>Pressure effect</td>
+<td>~1.7 m/s per 100 m depth -- dominates in deep water</td>
+</tr>
+<tr>
+<td>SVP structure</td>
+<td>Mixed layer, thermocline, deep isothermal layer</td>
+</tr>
+<tr>
+<td>Refraction</td>
+<td>Sound bends toward lower velocity -- Snell's Law governs the geometry</td>
+</tr>
+<tr>
+<td>Absorption</td>
+<td>Higher frequency = more absorption = shorter range but better resolution</td>
+</tr>
+<tr>
+<td>SOFAR channel</td>
+<td>Sound trapped at the depth of minimum velocity -- travels vast distances</td>
+</tr>
+<tr>
+<td>Multipath</td>
+<td>Reflected signals corrupt direct-path measurements -- worse in shallow water</td>
+</tr>
+<tr>
+<td>SVP casts</td>
+<td>The most important field operation for acoustic data quality</td>
+</tr>
+<tr>
+<td>Smile/frown</td>
+<td>Classic MBES artefact from incorrect SVP -- worst at outer beams</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../sensors/sound-velocity-operations/">Sound Velocity Operations</a></li>
+<li><a href="../../sensors/svp-repeatability-test/">SVP Repeatability Test</a></li>
+<li><a href="../../sensors/sv-ctd-comparison-verification/">SV/CTD Comparison Verification</a></li>
+<li><a href="../../sensors/mbes-calibration/">MBES Calibration and Verification (Patch Test)</a></li>
+<li><a href="../../sensors/mbes-operations-and-settings/">MBES Operations and Settings</a></li>
+<li><a href="../../positioning/usbl-theory-and-error-budgets/">USBL Theory and Error Budgets</a></li>
+<li><a href="../../positioning/hipap-usbl-calibration/">HiPAP USBL Calibration</a></li>
+<li><a href="../../positioning/lbl-fundamentals/">LBL Fundamentals</a></li>
+<li><a href="../formulas-and-conversions/">Common Formulas and Conversions</a></li>
+<li><a href="../tpu-error-budgets/">TPU and Error Budgets</a></li>
+</ul>
+<hr />
+<h2 id="sources"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg></span> Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DOSITS -- Speed of Sound Tutorial: <a href="https://dosits.org/tutorials/science/tutorial-speed/">https://dosits.org/tutorials/science/tutorial-speed/</a></li>
+<li>DOSITS -- Sound Speed (Decision Makers): <a href="https://dosits.org/decision-makers/tutorials/science/sound-speed/">https://dosits.org/decision-makers/tutorials/science/sound-speed/</a></li>
+<li>Britannica -- Seawater Acoustic Properties: <a href="https://www.britannica.com/science/seawater/Acoustic-properties">https://www.britannica.com/science/seawater/Acoustic-properties</a></li>
+<li>LibreTexts -- Sound in the Ocean (Stewart): <a href="https://geo.libretexts.org/Bookshelves/Oceanography/Introduction_to_Physical_Oceanography_(Stewart)/03:_The_Physical_Setting/3.6:_Sound_in_the_Ocean">https://geo.libretexts.org/Bookshelves/Oceanography/Introduction_to_Physical_Oceanography_(Stewart)/03:_The_Physical_Setting/3.6:_Sound_in_the_Ocean</a></li>
+<li>IHR -- Improved Techniques for MBES Ray Tracing SVP: <a href="https://ihr.iho.int/articles/improved-techniques-to-resolve-the-water-column-sound-speed-structure-for-multibeam-ray-tracing/">https://ihr.iho.int/articles/improved-techniques-to-resolve-the-water-column-sound-speed-structure-for-multibeam-ray-tracing/</a></li>
+<li>INFOMAR -- SVP and Oceanographic Controls: <a href="https://www.infomar.ie/surveys/equipment/sound-velocity-profiles-and-oceanographic-controls">https://www.infomar.ie/surveys/equipment/sound-velocity-profiles-and-oceanographic-controls</a></li>
+<li>Arc.id.au -- Sonar Ray Tracing: <a href="https://www.arc.id.au/SonarRayTracing.html">https://www.arc.id.au/SonarRayTracing.html</a></li>
+<li>Engineering Toolbox -- Sound Speed in Water: <a href="https://www.engineeringtoolbox.com/sound-speed-water-d_598.html">https://www.engineeringtoolbox.com/sound-speed-water-d_598.html</a></li>
+<li>Mackenzie, K.V. (1981). "Nine-term equation for sound speed in the oceans." <em>Journal of the Acoustical Society of America</em>, 70(3), 807--812.</li>
+<li>Francois, R.E. &amp; Garrison, G.R. (1982). "Sound absorption based on ocean measurements." <em>Journal of the Acoustical Society of America</em>, 72(3), 896--907.</li>
+<li>Ainslie, M.A. &amp; McColm, J.G. (1998). "A simplified formula for viscous and chemical absorption in sea water." <em>Journal of the Acoustical Society of America</em>, 103(3), 1671--1672.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../g882-depth-altimeter-calibration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: G882 Depth/Altimeter Calibration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                G882 Depth/Altimeter Calibration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../survey-line-planning/" class="md-footer__link md-footer__link--next" aria-label="Next: Survey Line Planning and Design">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Survey Line Planning and Design
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

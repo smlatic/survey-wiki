@@ -1,0 +1,3146 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/reference/formulas-and-conversions/">
+      
+      
+        <link rel="prev" href="../industry-standards-reference/">
+      
+      
+        <link rel="next" href="../g882-depth-altimeter-calibration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Common Formulas and Conversions - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#common-formulas-and-conversions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Common Formulas and Conversions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../positioning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../positioning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordinate-systems-datums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coordinate Systems and Datums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpu-error-budgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TPU and Error Budgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acceptance-criteria-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acceptance Criteria Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../industry-standards-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industry Standards Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Formulas and Conversions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Formulas and Conversions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-velocity-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Velocity Formulas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Velocity Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplified-chen-millero-unesco-1983" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplified Chen-Millero (UNESCO, 1983)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#del-grosso-1974" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Del Grosso (1974)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Which
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinate Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinate Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decimal-degrees-dd-to-degrees-minutes-seconds-dms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal Degrees (DD) to Degrees Minutes Seconds (DMS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dms-to-decimal-degrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMS to Decimal Degrees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-distance-approximations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Distance Approximations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-propagation-rss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Propagation (RSS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Propagation (RSS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-sum-of-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Sum of Squares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iho-s-44-tvu-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IHO S-44 TVU Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoustic-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic Geometry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acoustic Geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slant-range-to-ground-range-and-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slant Range to Ground Range and Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-range-from-slant-range-and-altitude-sss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground Range from Slant Range and Altitude (SSS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-height-from-sss-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Height from SSS Shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usbl-position-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL Position Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layback-towed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layback (Towed Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-from-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth from Pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bearing-and-distance-between-two-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bearing and Distance Between Two Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bearing and Distance Between Two Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplified-short-distances-100-km" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplified (Short Distances, &lt; 100 km)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vincenty-formula-accurate-any-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vincenty Formula (Accurate, Any Distance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utm-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTM Projection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UTM Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utm-zone-from-longitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTM Zone from Longitude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#central-meridian-from-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Central Meridian from Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utm-scale-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTM Scale Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Angle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-conversion-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Conversion Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Conversion Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../g882-depth-altimeter-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G882 Depth/Altimeter Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../underwater-acoustics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Underwater Acoustics Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survey-line-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Line Planning and Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vessel-motion-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vessel Motion Effects on Survey Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marine-environment-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marine Environment Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-velocity-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Velocity Formulas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Velocity Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplified-chen-millero-unesco-1983" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplified Chen-Millero (UNESCO, 1983)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#del-grosso-1974" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Del Grosso (1974)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Which
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinate Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinate Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decimal-degrees-dd-to-degrees-minutes-seconds-dms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal Degrees (DD) to Degrees Minutes Seconds (DMS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dms-to-decimal-degrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMS to Decimal Degrees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-distance-approximations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Distance Approximations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-propagation-rss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Propagation (RSS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Propagation (RSS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-sum-of-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Sum of Squares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iho-s-44-tvu-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IHO S-44 TVU Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoustic-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic Geometry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acoustic Geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slant-range-to-ground-range-and-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slant Range to Ground Range and Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-range-from-slant-range-and-altitude-sss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground Range from Slant Range and Altitude (SSS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-height-from-sss-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Height from SSS Shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usbl-position-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USBL Position Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layback-towed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layback (Towed Systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-from-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth from Pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bearing-and-distance-between-two-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bearing and Distance Between Two Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bearing and Distance Between Two Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplified-short-distances-100-km" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplified (Short Distances, &lt; 100 km)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vincenty-formula-accurate-any-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vincenty Formula (Accurate, Any Distance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utm-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTM Projection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UTM Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utm-zone-from-longitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTM Zone from Longitude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#central-meridian-from-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Central Meridian from Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utm-scale-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTM Scale Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Angle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-conversion-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Conversion Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Conversion Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Reference
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">calculations</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">conversions</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">coordinates</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">formulas</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">geometry</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sound-velocity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">units</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="common-formulas-and-conversions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 2v4h10V4zm0 6v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2z"/></svg></span> Common Formulas and Conversions<a class="headerlink" href="#common-formulas-and-conversions" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Reference</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> <strong>Quick Reference</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-01</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Quick-reference collection of formulas and unit conversions commonly used in offshore hydrographic survey. Covers sound velocity, coordinate conversions, error propagation, acoustic geometry, depth from pressure, bearing and distance, UTM projection, and unit conversion tables.</p>
+</div>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When performing field calculations (SV, depth, range, bearing, error budgets)</li>
+<li>When converting between units or coordinate formats</li>
+<li>When checking software output against manual calculations</li>
+<li>When writing calibration or survey reports that include derived values</li>
+</ul>
+<hr />
+<h2 id="sound-velocity-formulas"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 21c-3 0-4.19-4.24-5.45-8.72C10.14 9.04 9 5 7.5 5 4.11 5 4 11.93 4 12H2c0-.37.06-9 5.5-9 3 0 4.21 4.25 5.47 8.74C13.83 14.8 15 19 16.5 19c3.44 0 3.53-6.93 3.53-7h2c0 .37-.06 9-5.53 9"/></svg></span> Sound Velocity Formulas<a class="headerlink" href="#sound-velocity-formulas" title="Permanent link">&para;</a></h2>
+<h3 id="simplified-chen-millero-unesco-1983">Simplified Chen-Millero (UNESCO, 1983)<a class="headerlink" href="#simplified-chen-millero-unesco-1983" title="Permanent link">&para;</a></h3>
+<p>The most commonly used SV formula in oceanography. Computes SV from temperature (T in deg C), salinity (S in PSU/ppt), and pressure (P in dBar):</p>
+<div class="arithmatex">\[
+SV = 1449.2 + 4.6T - 0.055T^2 + 0.00029T^3 + (1.34 - 0.01T)(S - 35) + 0.016P
+\]</div>
+<p>This is a simplified version. The full Chen-Millero equation has ~40 terms. The simplified version is accurate to about 0.1 m/s for typical ocean conditions.</p>
+<h3 id="del-grosso-1974">Del Grosso (1974)<a class="headerlink" href="#del-grosso-1974" title="Permanent link">&para;</a></h3>
+<p>An alternative to Chen-Millero, sometimes preferred at high pressure (deep water):</p>
+<div class="arithmatex">\[
+SV = 1402.392 + \Delta T + \Delta S + \Delta P + \Delta_{cross}
+\]</div>
+<p>Del Grosso and Chen-Millero agree to within 0.5 m/s for most ocean conditions. They diverge at pressures above 1000 dBar (~1000 m depth). For deep water (&gt; 1000 m), Del Grosso may be more accurate.</p>
+<h3 id="when-to-use-which">When to Use Which<a class="headerlink" href="#when-to-use-which" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: left;">Best For</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chen-Millero (UNESCO)</td>
+<td style="text-align: left;">General use, shallow to moderate depth</td>
+<td style="text-align: left;">Most widely implemented in software</td>
+</tr>
+<tr>
+<td style="text-align: left;">Del Grosso</td>
+<td style="text-align: left;">Deep water (&gt; 1000 m)</td>
+<td style="text-align: left;">May be more accurate at high pressure</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wilson (1960)</td>
+<td style="text-align: left;">Legacy systems only</td>
+<td style="text-align: left;">Superseded by Chen-Millero. Still found in some older equipment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Medwin (simplified)</td>
+<td style="text-align: left;">Quick estimates</td>
+<td style="text-align: left;">Same form as Chen-Millero but uses depth <span class="arithmatex">\(D\)</span> directly</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quick SV Estimate</p>
+<p>For a rough field check: SV in seawater at the surface is typically 1490-1530 m/s. In the deep ocean (4000 m) it rises to about 1540-1555 m/s. Fresh water at 20 deg C: 1482 m/s. If your measured SV is outside these ranges, suspect a sensor error.</p>
+</div>
+<hr />
+<h2 id="coordinate-conversions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11.5A2.5 2.5 0 0 1 9.5 9 2.5 2.5 0 0 1 12 6.5 2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg></span> Coordinate Conversions<a class="headerlink" href="#coordinate-conversions" title="Permanent link">&para;</a></h2>
+<h3 id="decimal-degrees-dd-to-degrees-minutes-seconds-dms">Decimal Degrees (DD) to Degrees Minutes Seconds (DMS)<a class="headerlink" href="#decimal-degrees-dd-to-degrees-minutes-seconds-dms" title="Permanent link">&para;</a></h3>
+<p>Given DD = 54.567890:</p>
+<ol>
+<li>Degrees = integer part = 54</li>
+<li>Remaining = <span class="arithmatex">\(0.567890 \times 60 = 34.0734\)</span> minutes</li>
+<li>Minutes = integer part = 34</li>
+<li>Seconds = <span class="arithmatex">\(0.0734 \times 60 = 4.404\)</span> seconds</li>
+</ol>
+<p><strong>Result: 54° 34' 04.404"</strong></p>
+<h3 id="dms-to-decimal-degrees">DMS to Decimal Degrees<a class="headerlink" href="#dms-to-decimal-degrees" title="Permanent link">&para;</a></h3>
+<p>Given DMS = 54° 34' 04.404":</p>
+<div class="arithmatex">\[
+DD = 54 + \frac{34}{60} + \frac{4.404}{3600} = 54.567890
+\]</div>
+<h3 id="useful-distance-approximations">Useful Distance Approximations<a class="headerlink" href="#useful-distance-approximations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">At Latitude</th>
+<th style="text-align: left;">1° Latitude</th>
+<th style="text-align: left;">1° Longitude</th>
+<th style="text-align: left;">1' Latitude</th>
+<th style="text-align: left;">1' Longitude</th>
+<th style="text-align: left;">1" Latitude</th>
+<th style="text-align: left;">1" Longitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0° (equator)</td>
+<td style="text-align: left;">110.574 km</td>
+<td style="text-align: left;">111.320 km</td>
+<td style="text-align: left;">1842.9 m</td>
+<td style="text-align: left;">1855.3 m</td>
+<td style="text-align: left;">30.715 m</td>
+<td style="text-align: left;">30.922 m</td>
+</tr>
+<tr>
+<td style="text-align: left;">30°</td>
+<td style="text-align: left;">110.852 km</td>
+<td style="text-align: left;">96.486 km</td>
+<td style="text-align: left;">1847.5 m</td>
+<td style="text-align: left;">1608.1 m</td>
+<td style="text-align: left;">30.792 m</td>
+<td style="text-align: left;">26.802 m</td>
+</tr>
+<tr>
+<td style="text-align: left;">60°</td>
+<td style="text-align: left;">111.412 km</td>
+<td style="text-align: left;">55.800 km</td>
+<td style="text-align: left;">1856.9 m</td>
+<td style="text-align: left;">930.0 m</td>
+<td style="text-align: left;">30.948 m</td>
+<td style="text-align: left;">15.500 m</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Coordinate Order</p>
+<p>Different software uses different coordinate order. Always verify which comes first:</p>
+<ul>
+<li><strong>Latitude first</strong>: most navigation software, IHO standards, Google Maps</li>
+<li><strong>Longitude first (Easting, Northing)</strong>: most GIS software, EPSG convention, WKT format</li>
+<li><strong>Easting first</strong>: UTM convention (E, N)</li>
+</ul>
+<p>Getting this wrong results in positions being reflected about the equator or placed in the wrong hemisphere. Always check with a known point.</p>
+</div>
+<hr />
+<h2 id="error-propagation-rss"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 6H8.83l6 6-6 6H18v2H6v-2l6-6-6-6V4h12z"/></svg></span> Error Propagation (RSS)<a class="headerlink" href="#error-propagation-rss" title="Permanent link">&para;</a></h2>
+<h3 id="root-sum-of-squares">Root Sum of Squares<a class="headerlink" href="#root-sum-of-squares" title="Permanent link">&para;</a></h3>
+<p>When combining independent error sources:</p>
+<div class="arithmatex">\[
+\sigma_{total} = \sqrt{e_1^2 + e_2^2 + e_3^2 + \cdots + e_n^2}
+\]</div>
+<p>This applies when errors are independent, random, and normally distributed. If errors are correlated or systematic, RSS underestimates the combined error.</p>
+<h3 id="iho-s-44-tvu-formula">IHO S-44 TVU Formula<a class="headerlink" href="#iho-s-44-tvu-formula" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+TVU = \sqrt{a^2 + (b \times d)^2}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(a\)</span> = constant depth error (independent of depth)</li>
+<li><span class="arithmatex">\(b\)</span> = depth-dependent error coefficient</li>
+<li><span class="arithmatex">\(d\)</span> = depth in metres</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">IHO Order</th>
+<th style="text-align: left;">a (m)</th>
+<th style="text-align: left;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Exclusive</td>
+<td style="text-align: left;">0.15</td>
+<td style="text-align: left;">0.0075</td>
+</tr>
+<tr>
+<td style="text-align: left;">Special</td>
+<td style="text-align: left;">0.25</td>
+<td style="text-align: left;">0.0075</td>
+</tr>
+<tr>
+<td style="text-align: left;">1a / 1b</td>
+<td style="text-align: left;">0.50</td>
+<td style="text-align: left;">0.013</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1.00</td>
+<td style="text-align: left;">0.023</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked example (Special Order, 30 m depth):</strong></p>
+<div class="arithmatex">\[
+TVU = \sqrt{0.25^2 + (0.0075 \times 30)^2} = \sqrt{0.0625 + 0.0506} = \sqrt{0.1131} = \mathbf{0.336\,m}
+\]</div>
+<hr />
+<h2 id="acoustic-geometry"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 21h22L12 2"/></svg></span> Acoustic Geometry<a class="headerlink" href="#acoustic-geometry" title="Permanent link">&para;</a></h2>
+<h3 id="slant-range-to-ground-range-and-depth">Slant Range to Ground Range and Depth<a class="headerlink" href="#slant-range-to-ground-range-and-depth" title="Permanent link">&para;</a></h3>
+<p>Given slant range <span class="arithmatex">\(R\)</span> and angle from vertical <span class="arithmatex">\(\theta\)</span>:</p>
+<div class="arithmatex">\[
+\text{Ground range} = R \sin\theta
+\]</div>
+<div class="arithmatex">\[
+\text{Depth (below transducer)} = R \cos\theta
+\]</div>
+<p>For USBL, the slant range and angles come from the acoustic measurement.</p>
+<h3 id="ground-range-from-slant-range-and-altitude-sss">Ground Range from Slant Range and Altitude (SSS)<a class="headerlink" href="#ground-range-from-slant-range-and-altitude-sss" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{Ground range} = \sqrt{R_{slant}^2 - h^2}
+\]</div>
+<h3 id="target-height-from-sss-shadow">Target Height from SSS Shadow<a class="headerlink" href="#target-height-from-sss-shadow" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+h_{target} = \frac{L_{shadow} \times h_{altitude}}{R_{shadow\_end} - R_{target}}
+\]</div>
+<h3 id="usbl-position-error">USBL Position Error<a class="headerlink" href="#usbl-position-error" title="Permanent link">&para;</a></h3>
+<p>The horizontal position error from a USBL measurement at slant range <span class="arithmatex">\(R\)</span> with angular accuracy <span class="arithmatex">\(\sigma_\theta\)</span>:</p>
+<div class="arithmatex">\[
+\varepsilon_{horizontal} = R \sin(\sigma_\theta)
+\]</div>
+<p>For small angles: <span class="arithmatex">\(\varepsilon_{horizontal} \approx R \times \sigma_\theta\)</span> (in radians)</p>
+<p>Example: 1000 m slant range, 0.1° angle accuracy:</p>
+<div class="arithmatex">\[
+\varepsilon = 1000 \times \sin(0.1°) = 1000 \times 0.001745 = \mathbf{1.75\,m}
+\]</div>
+<h3 id="layback-towed-systems">Layback (Towed Systems)<a class="headerlink" href="#layback-towed-systems" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{Layback} = \sqrt{L_{cable}^2 - d_{towfish}^2}
+\]</div>
+<p>Assumes straight cable (no catenary). Reasonable approximation when cable is taut.</p>
+<hr />
+<h2 id="depth-from-pressure"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6"/></svg></span> Depth from Pressure<a class="headerlink" href="#depth-from-pressure" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+D = \frac{P}{\rho \, g}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(P\)</span> = pressure in Pascals (Pa)</li>
+<li><span class="arithmatex">\(\rho\)</span> = seawater density (typically 1025 kg/m³)</li>
+<li><span class="arithmatex">\(g\)</span> = gravitational acceleration (9.81 m/s²)</li>
+</ul>
+<p><strong>Practical version:</strong></p>
+<div class="arithmatex">\[
+D\,(m) = \frac{P\,(dBar)}{1.006}
+\]</div>
+<p>(for seawater at mid-latitudes)</p>
+<p>Or more precisely: <span class="arithmatex">\(D\,(m) = P\,(dBar) \times 0.993\)</span> (approximate, latitude-dependent)</p>
+<div class="admonition info">
+<p class="admonition-title">Pressure Units</p>
+<p>1 dBar approximately equals 1 m of seawater. This is convenient but not exact. The error is about 0.6% at the surface and increases with depth due to compressibility.</p>
+<p>1 bar = 10 dBar = 100 kPa = 14.504 psi</p>
+</div>
+<hr />
+<h2 id="bearing-and-distance-between-two-points"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg></span> Bearing and Distance Between Two Points<a class="headerlink" href="#bearing-and-distance-between-two-points" title="Permanent link">&para;</a></h2>
+<h3 id="simplified-short-distances-100-km">Simplified (Short Distances, &lt; 100 km)<a class="headerlink" href="#simplified-short-distances-100-km" title="Permanent link">&para;</a></h3>
+<p>For two points <span class="arithmatex">\((\phi_1, \lambda_1)\)</span> and <span class="arithmatex">\((\phi_2, \lambda_2)\)</span> in decimal degrees:</p>
+<div class="arithmatex">\[
+\Delta N = (\phi_2 - \phi_1) \times 111120
+\]</div>
+<div class="arithmatex">\[
+\Delta E = (\lambda_2 - \lambda_1) \times 111120 \times \cos(\bar{\phi})
+\]</div>
+<div class="arithmatex">\[
+\text{Distance} = \sqrt{\Delta N^2 + \Delta E^2}
+\]</div>
+<div class="arithmatex">\[
+\text{Bearing} = \text{atan2}(\Delta E,\, \Delta N)
+\]</div>
+<p>(result in radians, convert to degrees)</p>
+<h3 id="vincenty-formula-accurate-any-distance">Vincenty Formula (Accurate, Any Distance)<a class="headerlink" href="#vincenty-formula-accurate-any-distance" title="Permanent link">&para;</a></h3>
+<p>For precise calculations over any distance on the ellipsoid, use the Vincenty inverse formula. This is implemented in all survey software and most programming libraries. The key advantage of Vincenty over the simplified method is accuracy on long baselines and near the poles.</p>
+<hr />
+<h2 id="utm-projection"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4v4h4V4zm6 0v4h4V4zm0 6v4h4v-4zm0 6v4h4v-4zm-2 4v-4h-4v4zm-6 0v-4H4v4zm0-6v-4H4v4zm0-6V4H4v4zm2 6h4v-4h-4zM4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4c-1.08 0-2-.9-2-2V4a2 2 0 0 1 2-2"/></svg></span> UTM Projection<a class="headerlink" href="#utm-projection" title="Permanent link">&para;</a></h2>
+<h3 id="utm-zone-from-longitude">UTM Zone from Longitude<a class="headerlink" href="#utm-zone-from-longitude" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{Zone} = \left\lfloor \frac{\lambda + 180}{6} \right\rfloor + 1
+\]</div>
+<p>Exception zones exist for Norway (32V extended) and Svalbard (31X, 33X, 35X, 37X).</p>
+<h3 id="central-meridian-from-zone">Central Meridian from Zone<a class="headerlink" href="#central-meridian-from-zone" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\lambda_{CM} = (\text{Zone} \times 6) - 183
+\]</div>
+<h3 id="utm-scale-factor">UTM Scale Factor<a class="headerlink" href="#utm-scale-factor" title="Permanent link">&para;</a></h3>
+<p>At the central meridian: <span class="arithmatex">\(k_0 = 0.9996\)</span></p>
+<p>At the zone edges (3° from CM): <span class="arithmatex">\(k \approx 1.0004\)</span> (varies with latitude)</p>
+<p>Scale factor error at zone edge: approximately 0.04% (40 mm per 100 m). This matters for long pipeline distances.</p>
+<h3 id="convergence-angle">Convergence Angle<a class="headerlink" href="#convergence-angle" title="Permanent link">&para;</a></h3>
+<p>The angle between grid north and true north at a given point. Zero at the central meridian, increases with distance from CM and with latitude.</p>
+<div class="arithmatex">\[
+\gamma \approx (\lambda - \lambda_{CM}) \times \sin\phi
+\]</div>
+<p>Result in degrees (for small convergence angles).</p>
+<p><strong>Worked example:</strong></p>
+<p>Point at 60° N, 3° E. UTM Zone 31 (CM = 3° E).</p>
+<p><span class="arithmatex">\(\gamma = (3 - 3) \times \sin(60°) = \mathbf{0°}\)</span> (point is on the central meridian).</p>
+<p>Point at 60° N, 6° E (zone edge):</p>
+<p><span class="arithmatex">\(\gamma = (6 - 3) \times \sin(60°) = 3 \times 0.866 = \mathbf{2.6°}\)</span></p>
+<div class="admonition warning">
+<p class="admonition-title">Convergence and Heading</p>
+<p>Grid heading and true heading differ by the convergence angle. Pipeline KP bearings are usually grid bearings. If applying heading from a gyro (which measures true north) to grid coordinates, the convergence correction must be applied. Forgetting this produces systematic cross-track errors that increase with distance from the central meridian.</p>
+</div>
+<hr />
+<h2 id="unit-conversion-tables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4zm13 0L20 14h-3z"/></svg></span> Unit Conversion Tables<a class="headerlink" href="#unit-conversion-tables" title="Permanent link">&para;</a></h2>
+<h3 id="length">Length<a class="headerlink" href="#length" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">From</th>
+<th style="text-align: left;">To</th>
+<th style="text-align: left;">Multiply By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">Feet</td>
+<td style="text-align: left;">3.28084</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feet</td>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">0.30480</td>
+</tr>
+<tr>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">Fathoms</td>
+<td style="text-align: left;">0.54681</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fathoms</td>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">1.82880</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nautical miles</td>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">1852</td>
+</tr>
+<tr>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">Nautical miles</td>
+<td style="text-align: left;">0.000540</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kilometres</td>
+<td style="text-align: left;">Nautical miles</td>
+<td style="text-align: left;">0.539957</td>
+</tr>
+<tr>
+<td style="text-align: left;">Inches</td>
+<td style="text-align: left;">Metres</td>
+<td style="text-align: left;">0.0254</td>
+</tr>
+</tbody>
+</table>
+<h3 id="speed">Speed<a class="headerlink" href="#speed" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">From</th>
+<th style="text-align: left;">To</th>
+<th style="text-align: left;">Multiply By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Knots</td>
+<td style="text-align: left;">m/s</td>
+<td style="text-align: left;">0.51444</td>
+</tr>
+<tr>
+<td style="text-align: left;">m/s</td>
+<td style="text-align: left;">Knots</td>
+<td style="text-align: left;">1.94384</td>
+</tr>
+<tr>
+<td style="text-align: left;">Knots</td>
+<td style="text-align: left;">km/h</td>
+<td style="text-align: left;">1.852</td>
+</tr>
+<tr>
+<td style="text-align: left;">km/h</td>
+<td style="text-align: left;">Knots</td>
+<td style="text-align: left;">0.539957</td>
+</tr>
+<tr>
+<td style="text-align: left;">m/s</td>
+<td style="text-align: left;">km/h</td>
+<td style="text-align: left;">3.6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pressure">Pressure<a class="headerlink" href="#pressure" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">From</th>
+<th style="text-align: left;">To</th>
+<th style="text-align: left;">Multiply By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Bar</td>
+<td style="text-align: left;">PSI</td>
+<td style="text-align: left;">14.5038</td>
+</tr>
+<tr>
+<td style="text-align: left;">PSI</td>
+<td style="text-align: left;">Bar</td>
+<td style="text-align: left;">0.06895</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bar</td>
+<td style="text-align: left;">dBar</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">dBar</td>
+<td style="text-align: left;">kPa</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bar</td>
+<td style="text-align: left;">kPa</td>
+<td style="text-align: left;">100</td>
+</tr>
+<tr>
+<td style="text-align: left;">Atmosphere</td>
+<td style="text-align: left;">Bar</td>
+<td style="text-align: left;">1.01325</td>
+</tr>
+<tr>
+<td style="text-align: left;">Atmosphere</td>
+<td style="text-align: left;">dBar</td>
+<td style="text-align: left;">10.1325</td>
+</tr>
+</tbody>
+</table>
+<h3 id="angles">Angles<a class="headerlink" href="#angles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">From</th>
+<th style="text-align: left;">To</th>
+<th style="text-align: left;">Multiply By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">Radians</td>
+<td style="text-align: left;">0.017453 (<span class="arithmatex">\(\pi/180\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Radians</td>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">57.29578 (<span class="arithmatex">\(180/\pi\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">Mils (NATO)</td>
+<td style="text-align: left;">17.7778</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mils (NATO)</td>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">0.05625</td>
+</tr>
+<tr>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">Gradians</td>
+<td style="text-align: left;">1.11111</td>
+</tr>
+<tr>
+<td style="text-align: left;">Arc minutes</td>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">1/60</td>
+</tr>
+<tr>
+<td style="text-align: left;">Arc seconds</td>
+<td style="text-align: left;">Degrees</td>
+<td style="text-align: left;">1/3600</td>
+</tr>
+</tbody>
+</table>
+<h3 id="temperature">Temperature<a class="headerlink" href="#temperature" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Celsius to Fahrenheit</strong>: <span class="arithmatex">\(F = \frac{9}{5}C + 32\)</span></li>
+<li><strong>Fahrenheit to Celsius</strong>: <span class="arithmatex">\(C = \frac{5}{9}(F - 32)\)</span></li>
+</ul>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../tpu-error-budgets/">TPU and Error Budgets</a></li>
+<li><a href="../coordinate-systems-datums/">Coordinate Systems and Datums</a></li>
+<li><a href="../../sensors/sound-velocity-operations/">Sound Velocity Operations</a></li>
+<li><a href="../acceptance-criteria-reference/">Acceptance Criteria Reference</a></li>
+<li><a href="../../positioning/tidal-reduction-methods/">Tidal Theory and Reduction Methods</a></li>
+</ul>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">References</p>
+<ul>
+<li>IHO S-44, Edition 6.1.0, Standards for Hydrographic Surveys</li>
+<li>Chen &amp; Millero (1977), Speed of sound in seawater at high pressures, JASA 62(5)</li>
+<li>Del Grosso (1974), New equation for speed of sound in natural waters, JASA 56(4)</li>
+<li>Vincenty (1975), Direct and Inverse Solutions of Geodesics on the Ellipsoid</li>
+<li>DMA Technical Manual 8358.2, Datums, Ellipsoids, Grids, and Grid Reference Systems</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../industry-standards-reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Industry Standards Reference">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Industry Standards Reference
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../g882-depth-altimeter-calibration/" class="md-footer__link md-footer__link--next" aria-label="Next: G882 Depth/Altimeter Calibration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                G882 Depth/Altimeter Calibration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

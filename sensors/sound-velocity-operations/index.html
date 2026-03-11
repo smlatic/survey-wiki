@@ -1,0 +1,4379 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/sensors/sound-velocity-operations/">
+      
+      
+        <link rel="prev" href="../mbes-calibration/">
+      
+      
+        <link rel="next" href="../svp-repeatability-test/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Sound Velocity Operations - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sound-velocity-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sound Velocity Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../positioning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../positioning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Survey Sensors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multibeam (MBES)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multibeam (MBES)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mbes-installation-and-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MBES Installation and Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mbes-operations-and-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MBES Operations and Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mbes-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MBES Calibration (Patch Test)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Velocity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound Velocity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Velocity Operations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Velocity Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#svp-vs-ctd-measurement-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVP vs CTD Measurement Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equipment-accuracy-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equipment Accuracy Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-sound-velocity-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Sound Velocity Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Sound Velocity Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-mbes-uses-sound-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How MBES Uses Sound Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-smiles-and-frowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Smiles and Frowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantifying-the-error-the-025-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantifying the Error: The 0.25% Threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-validity-periods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Validity Periods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downline-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downline Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rov-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROV Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-frequency-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Frequency Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurement Frequency Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factors-affecting-sv-measurement-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Factors Affecting SV Measurement Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-velocity-formulae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Velocity Formulae
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Velocity Formulae">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formula-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formula Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-cases-lakes-caspian-sea-and-closed-water-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special Cases: Lakes, Caspian Sea, and Closed Water Bodies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Cases: Lakes, Caspian Sea, and Closed Water Bodies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lakes-baikal-tanganyika-malawi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lakes (Baikal, Tanganyika, Malawi)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caspian-sea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caspian Sea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-closed-water-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown Closed Water Bodies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermocline-effects-on-acoustic-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thermocline Effects on Acoustic Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thermocline Effects on Acoustic Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-mbes-outer-beams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact on MBES Outer Beams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-usbl-and-lbl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact on USBL and LBL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expendable-probes-xbt-xctd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expendable Probes (XBT / XCTD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-incomplete-casts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Incomplete Casts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-svs-vs-full-column-svp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-Time SVS vs Full-Column SVP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-file-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output File Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output File Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonardyne-fusion-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonardyne Fusion Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kongsberg-hipap-apos-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kongsberg HiPAP / APOS Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svp-repeatability-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SVP Repeatability Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sv-ctd-comparison-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SV/CTD Comparison Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Side Scan Sonar
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Side Scan Sonar
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../side-scan-sonar-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSS Theory and Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../side-scan-sonar-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSS Positioning Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depth Sensors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Depth Sensors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../depth-measurement-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depth Measurement Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sub-Bottom Profiler
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sub-Bottom Profiler
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sub-bottom-profiler-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sub-Bottom Profiler Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipe Tracker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipe Tracker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipetracker-hydropact-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipe Tracker (HydroPACT) Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipetracker-field-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cable/Pipetracker Field Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magnetometer & Gradiometer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Magnetometer & Gradiometer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../magnetometer-tvg-acceptance-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magnetometer/TVG Acceptance Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../surrogate-item-test-gma1000/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surrogate Item Test (GMA1000)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Camera Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-camera-dvr-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Camera and DVR Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voyis-observer-pro3-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voyis Observer Pro 3 Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#svp-vs-ctd-measurement-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVP vs CTD Measurement Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equipment-accuracy-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equipment Accuracy Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-sound-velocity-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Sound Velocity Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Sound Velocity Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-mbes-uses-sound-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How MBES Uses Sound Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-smiles-and-frowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Smiles and Frowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantifying-the-error-the-025-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantifying the Error: The 0.25% Threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-validity-periods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Validity Periods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downline-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downline Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rov-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROV Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-frequency-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Frequency Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurement Frequency Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factors-affecting-sv-measurement-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Factors Affecting SV Measurement Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-velocity-formulae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Velocity Formulae
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Velocity Formulae">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formula-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formula Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-cases-lakes-caspian-sea-and-closed-water-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special Cases: Lakes, Caspian Sea, and Closed Water Bodies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Cases: Lakes, Caspian Sea, and Closed Water Bodies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lakes-baikal-tanganyika-malawi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lakes (Baikal, Tanganyika, Malawi)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caspian-sea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caspian Sea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-closed-water-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown Closed Water Bodies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermocline-effects-on-acoustic-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thermocline Effects on Acoustic Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thermocline Effects on Acoustic Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-mbes-outer-beams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact on MBES Outer Beams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-usbl-and-lbl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact on USBL and LBL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expendable-probes-xbt-xctd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expendable Probes (XBT / XCTD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-incomplete-casts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Incomplete Casts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-svs-vs-full-column-svp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-Time SVS vs Full-Column SVP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-file-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output File Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output File Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonardyne-fusion-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonardyne Fusion Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kongsberg-hipap-apos-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kongsberg HiPAP / APOS Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Survey Sensors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Sound Velocity
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">calibration</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">caspian sea</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">chen millero</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">ctd</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">del grosso</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">deployment</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">lbl</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">mbes</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">saiv</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">seabird</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sound velocity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">svp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">usbl</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">valeport</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="sound-velocity-operations"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 13V5c0-1.66-1.34-3-3-3S4 3.34 4 5v8c-2.21 1.66-2.66 4.79-1 7s4.79 2.66 7 1 2.66-4.79 1-7a4.7 4.7 0 0 0-1-1M7 4c.55 0 1 .45 1 1v3H6V5c0-.55.45-1 1-1m11 3s-4 4.34-4 7.07c0 5.24 8 5.24 8 0C22 11.34 18 7 18 7"/></svg></span> Sound Velocity Operations<a class="headerlink" href="#sound-velocity-operations" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Calibration</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-2 12c-.25 0-.46-.18-.5-.42l-.37-2.65c-.63-.25-1.17-.59-1.69-.99l-2.49 1.01c-.22.08-.49 0-.61-.22l-2-3.46a.493.493 0 0 1 .12-.64l2.11-1.66L4.5 12l.07-1-2.11-1.63a.493.493 0 0 1-.12-.64l2-3.46c.12-.22.39-.31.61-.22l2.49 1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46.18.5.42l.37 2.65c.63.25 1.17.59 1.69.98l2.49-1c.22-.09.49 0 .61.22l2 3.46c.13.22.07.49-.12.64L19.43 11l.07 1-.07 1 2.11 1.63c.19.15.25.42.12.64l-2 3.46c-.12.22-.39.31-.61.22l-2.49-1c-.52.39-1.06.73-1.69.98l-.37 2.65c-.04.24-.25.42-.5.42zm1.25-18-.37 2.61c-1.2.25-2.26.89-3.03 1.78L5.44 7.35l-.75 1.3L6.8 10.2a5.55 5.55 0 0 0 0 3.6l-2.12 1.56.75 1.3 2.43-1.04c.77.88 1.82 1.52 3.01 1.76l.37 2.62h1.52l.37-2.61c1.19-.25 2.24-.89 3.01-1.77l2.43 1.04.75-1.3-2.12-1.55c.4-1.17.4-2.44 0-3.61l2.11-1.55-.75-1.3-2.41 1.04a5.42 5.42 0 0 0-3.03-1.77L12.75 4z"/></svg></span> <strong>Operations Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-01</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Detail the requirements for calibration, installation, deployment, and processing of sound velocity measurement equipment so that accurate sound velocity profiles are produced for use in acoustic survey operations including MBES, USBL, LBL, and SBES systems.</p>
+</div>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Full-column SVP/CTD cast</strong>: Before USBL calibration, at project start, before/after LBL baselines, after significant depth/location/weather change, and at intervals defined by the scope of work</li>
+<li><strong>Real-time SVS monitoring</strong>: Continuously during all acoustic operations (MBES, USBL, SBES) to detect water column changes between full casts</li>
+<li><strong>Expendable probes (XBT/XCTD)</strong>: In deep water (&gt; 1500 m) where winch-deployed casts are impractical or too time-consuming, or when vessel operations cannot be interrupted for a full cast</li>
+</ul>
+<hr />
+<h2 id="svp-vs-ctd-measurement-methods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> SVP vs CTD Measurement Methods<a class="headerlink" href="#svp-vs-ctd-measurement-methods" title="Permanent link">&para;</a></h2>
+<p>The speed of sound converts acoustic travel time to distance across all acoustic systems (LBL, USBL, MBES, SBES/altimeters).</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Measurement Principle</th>
+<th>Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SVP (Sound Velocity Profiler)</strong></td>
+<td>Digital time-of-flight measurement</td>
+<td>Direct sound velocity</td>
+</tr>
+<tr>
+<td><strong>CTD (Conductivity, Temperature, Depth)</strong></td>
+<td>Measures conductivity, pressure, and temperature; sound velocity is calculated from these using formulae</td>
+<td>Sound velocity, salinity, density, depth</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advantage of CTD</strong>: density (a function of salinity, temperature, depth, and local gravity) can be calculated for pressure-to-depth conversion.</p>
+<p>Both CTD and SVP systems may be:</p>
+<ul>
+<li><strong>Direct reading</strong> -- data outputs in real time on a display</li>
+<li><strong>Self-recording</strong> -- data is recorded internally during deployment and downloaded later. Can be pre-programmed with SV formulae, recording intervals, and trigger source for faster deployment/recovery.</li>
+</ul>
+<hr />
+<h2 id="equipment-accuracy-comparison"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07V2m-2 4.08V8h2V6.09c2.5.41 4.5 2.41 4.92 4.91H16v2h1.91c-.41 2.5-2.41 4.5-4.91 4.92V16h-2v1.91C8.5 17.5 6.5 15.5 6.08 13H8v-2H6.09C6.5 8.5 8.5 6.5 11 6.08M12 11a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> Equipment Accuracy Comparison<a class="headerlink" href="#equipment-accuracy-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Sound Velocity</th>
+<th>Conductivity</th>
+<th>Pressure</th>
+<th>Temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valeport</td>
+<td>SVX2</td>
+<td>+/-0.03 m/s</td>
+<td>+/-0.01 mS/cm</td>
+<td>+/-0.01% range</td>
+<td>+/-0.01 degC</td>
+</tr>
+<tr>
+<td>Valeport</td>
+<td>Midas SVP</td>
+<td>+/-0.02 m/s</td>
+<td>N/A</td>
+<td>+/-0.01% range</td>
+<td>+/-0.01 degC</td>
+</tr>
+<tr>
+<td>Valeport</td>
+<td>Midas CTD</td>
+<td>N/A</td>
+<td>+/-0.01 mS/cm</td>
+<td>+/-0.01% range</td>
+<td>+/-0.01 degC</td>
+</tr>
+<tr>
+<td>Valeport</td>
+<td>miniSVS 100 mm</td>
+<td>+/-0.017 m/s</td>
+<td>N/A</td>
+<td>Optional +/-0.05% range</td>
+<td>Optional +/-0.01 degC</td>
+</tr>
+<tr>
+<td>Valeport</td>
+<td>miniSVS 50 mm</td>
+<td>+/-0.019 m/s</td>
+<td>N/A</td>
+<td>Optional +/-0.05% range</td>
+<td>Optional +/-0.01 degC</td>
+</tr>
+<tr>
+<td>Valeport</td>
+<td>miniSVS 25 mm</td>
+<td>+/-0.02 m/s</td>
+<td>N/A</td>
+<td>Optional +/-0.05% range</td>
+<td>Optional +/-0.01 degC</td>
+</tr>
+<tr>
+<td>Seabird</td>
+<td>SBE25</td>
+<td>N/A</td>
+<td>+/-0.0003 S/m</td>
+<td>+/-0.1% range</td>
+<td>+/-0.002 degC</td>
+</tr>
+<tr>
+<td>Seabird</td>
+<td>SBE19plus</td>
+<td>N/A</td>
+<td>+/-0.0005 S/m</td>
+<td>+/-0.1% range (strain gauge) or +/-0.02% range (quartz)</td>
+<td>+/-0.005 degC</td>
+</tr>
+<tr>
+<td>Seabird</td>
+<td>SBE9plus</td>
+<td>N/A</td>
+<td>+/-0.0003 S/m</td>
+<td>+/-0.015% range</td>
+<td>+/-0.001 degC</td>
+</tr>
+<tr>
+<td>SAIV</td>
+<td>SD204</td>
+<td>Calc 0.05 m/s</td>
+<td>0.02 mS/cm</td>
+<td>0.01% FS</td>
+<td>0.01 degC</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">miniSVS variants</p>
+<p>Optional pressure or temperature sensor may be fitted, but not both simultaneously.</p>
+</div>
+<hr />
+<h2 id="why-sound-velocity-matters"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"/></svg></span> Why Sound Velocity Matters<a class="headerlink" href="#why-sound-velocity-matters" title="Permanent link">&para;</a></h2>
+<p>Every acoustic measurement in the water column -- MBES depths, USBL ranges, LBL baselines -- depends on knowing the speed of sound. Get the sound velocity wrong and every distance derived from acoustic travel time is wrong by the same proportion.</p>
+<h3 id="the-physics">The Physics<a class="headerlink" href="#the-physics" title="Permanent link">&para;</a></h3>
+<p>Sound travels through seawater at approximately 1,500 m/s, but the actual value varies from roughly 1,450 to 1,570 m/s depending on three factors:</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Sensitivity</th>
+<th>Dominant Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>~4.6 m/s per 1 degC increase</td>
+<td>Upper water column (0-1000 m), where temperature gradients are strongest</td>
+</tr>
+<tr>
+<td><strong>Salinity</strong></td>
+<td>~1.3 m/s per 1 PSU increase</td>
+<td>Coastal waters, estuaries, river plumes, enclosed seas</td>
+</tr>
+<tr>
+<td><strong>Pressure (depth)</strong></td>
+<td>~1.7 m/s per 100 m depth increase</td>
+<td>Deep water (below the thermocline), where temperature is stable and pressure dominates</td>
+</tr>
+</tbody>
+</table>
+<p>Temperature is the dominant variable in most survey situations. A 5 degC change in water temperature shifts sound velocity by approximately 23 m/s -- enough to cause measurable errors in both depth and range calculations.</p>
+<h3 id="how-mbes-uses-sound-velocity">How MBES Uses Sound Velocity<a class="headerlink" href="#how-mbes-uses-sound-velocity" title="Permanent link">&para;</a></h3>
+<p>Multibeam echosounders use sound velocity in two distinct ways:</p>
+<ol>
+<li>
+<p><strong>Beam steering at the transducer face.</strong> The surface sound velocity (from a hull-mounted SVS) determines how the transmitted fan of beams is formed and how received echoes are assigned to beam angles. An incorrect surface SV distorts the beam geometry, producing roll-like artifacts across the swath (Type III error).</p>
+</li>
+<li>
+<p><strong>Ray-tracing through the water column.</strong> The full-column SVP is used to compute the curved path each beam follows from the transducer to the seabed. Snell's Law governs the refraction at each layer boundary. An incorrect SVP means the ray-tracing places the sounding at the wrong depth and the wrong horizontal position.</p>
+</li>
+</ol>
+<h3 id="the-smiles-and-frowns">The Smiles and Frowns<a class="headerlink" href="#the-smiles-and-frowns" title="Permanent link">&para;</a></h3>
+<p>The classic diagnostic for SVP errors in MBES data is the shape of the across-track depth profile when surveying a flat seabed:</p>
+<table>
+<thead>
+<tr>
+<th>SVP Error</th>
+<th>What Happens</th>
+<th>Swath Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVP too fast (velocities higher than reality)</td>
+<td>Ray-tracing under-refracts the outer beams, placing them too deep at the edges</td>
+<td><strong>Frown</strong> -- edges curve downward relative to nadir</td>
+</tr>
+<tr>
+<td>SVP too slow (velocities lower than reality)</td>
+<td>Ray-tracing over-refracts the outer beams, placing them too shallow at the edges</td>
+<td><strong>Smile</strong> -- edges curve upward relative to nadir</td>
+</tr>
+<tr>
+<td>SVP outdated (thermocline has shifted)</td>
+<td>Asymmetric refraction errors</td>
+<td>Lopsided distortion or "wobble" in the outer swath</td>
+</tr>
+</tbody>
+</table>
+<p>These artifacts are most visible in the outer beams (beyond 45 deg) because those beams travel at steep angles through the water column and accumulate more refraction error. Nadir beams travel nearly vertically and are largely unaffected.</p>
+<div class="admonition tip">
+<p class="admonition-title">Overlap Check</p>
+<p>The fastest way to spot SVP errors is to compare overlapping swaths from adjacent survey lines. If the outer beams of one line disagree with the nadir of the overlapping line, the SVP needs updating. This disagreement will show the smile/frown pattern.</p>
+</div>
+<h3 id="quantifying-the-error-the-025-threshold">Quantifying the Error: The 0.25% Threshold<a class="headerlink" href="#quantifying-the-error-the-025-threshold" title="Permanent link">&para;</a></h3>
+<p>Research published through the International Hydrographic Review established a depth bias threshold of <strong>0.25% of water depth</strong> as the point at which SVP-induced errors become incompatible with MBES uncertainty budgets and risk failing IHO S-44 requirements.</p>
+<p>In practical terms:</p>
+<table>
+<thead>
+<tr>
+<th>Water Depth</th>
+<th>0.25% Threshold</th>
+<th>What This Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20 m</td>
+<td>0.05 m</td>
+<td>Very tight -- SVP must be accurate and current</td>
+</tr>
+<tr>
+<td>50 m</td>
+<td>0.125 m</td>
+<td>Manageable with regular casts</td>
+</tr>
+<tr>
+<td>200 m</td>
+<td>0.50 m</td>
+<td>More forgiving, but outer beams still sensitive</td>
+</tr>
+<tr>
+<td>1000 m</td>
+<td>2.50 m</td>
+<td>Absolute threshold is larger, but errors at outer beams can still exceed this</td>
+</tr>
+</tbody>
+</table>
+<p>Errors above 0.25% of water depth indicate the SVP is not representative of the actual water column. The fix is a fresh SVP cast. In variable coastal waters, this may mean multiple casts per day. Spatiotemporal interpolation of SVP data (using casts from different times and locations) has been shown to reduce depth bias by a factor of three compared to using a single static profile.</p>
+<h3 id="related-reading">Related Reading<a class="headerlink" href="#related-reading" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../../reference/underwater-acoustics/">Underwater Acoustics Fundamentals</a> -- the physics of sound propagation, absorption, and refraction that underpin all acoustic survey operations</li>
+</ul>
+<hr />
+<h2 id="calibration-validity-periods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 21 2-1 2 1v-7h-4m4-5V7l-2 1-2-1v2l-2 1 2 1v2l2-1 2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z"/></svg></span> Calibration Validity Periods<a class="headerlink" href="#calibration-validity-periods" title="Permanent link">&para;</a></h2>
+<p>Sound velocity sensors require calibration by the manufacturer or a certified test laboratory against a traceable standard.</p>
+<table>
+<thead>
+<tr>
+<th>Sensor Type</th>
+<th>Calibration Validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SV probes (SVP)</td>
+<td>2 years</td>
+</tr>
+<tr>
+<td>CTD probes</td>
+<td>1 year</td>
+</tr>
+<tr>
+<td>Combined CTD/SVP probes</td>
+<td>2 years, provided CTD-derived and directly measured SV agree within instrument and formula accuracy for the water type/depth</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Maintaining Validity</p>
+<ul>
+<li>Instruments must be maintained per manufacturer's instructions</li>
+<li>Regularly test against other calibrated units as confirmation</li>
+<li>If a calibration certificate may expire during a project, arrange a replacement before the expiry date</li>
+<li>If operational replacement is not feasible, the client may agree to continue use if the instrument tests successfully against a certified sensor</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Client-Specific Calibration Requirements</p>
+<p>Some clients mandate a <strong>1-year calibration validity for all sound velocity sensors</strong> regardless of sensor type, overriding the manufacturer's 2-year validity for SVP probes. Always check the project-specific calibration requirements before mobilisation and ensure all certificates will remain valid for the planned project duration.</p>
+</div>
+<hr />
+<h2 id="deployment-procedures"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 17-5-5h3V8h4v4h3zm0-15a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> Deployment Procedures<a class="headerlink" href="#deployment-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="manual-deployment">Manual Deployment<a class="headerlink" href="#manual-deployment" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Attach a safety line / deck lead to the probe -- do not deploy using only the data cable</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Confirm the water depth at the deployment location</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Obtain permission from the bridge before over-boarding</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Over-board the probe and hold near the surface for <strong>10 minutes</strong> while the instrument acquires ambient water temperature. Record barometric pressure in the logbook</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Lower the probe steadily to the seabed, then recover</td>
+</tr>
+<tr>
+<td>6</td>
+<td>On recovery, check sensors for fouling. If fouled, repeat the measurement. If fouling cannot be avoided, use only the down cast</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Rinse the instrument with fresh water on recovery</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Inform the bridge when the operation is complete</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Cable Management</p>
+<p>Unless on a reel, lay the cable out in a figure-of-eight pattern before deployment.</p>
+</div>
+<h3 id="downline-deployment">Downline Deployment<a class="headerlink" href="#downline-deployment" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Connect the probe above any clump weight or headache ball</li>
+<li>If direct reading, secure the communications cable to the downline at ~5 m intervals to prevent wrapping</li>
+<li>Follow the same 10-minute surface soak, steady lowering, fouling check, and fresh-water rinse procedures as manual deployment</li>
+</ul>
+<h3 id="rov-deployment">ROV Deployment<a class="headerlink" href="#rov-deployment" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Function-check and set up the instrument before launch; enable logging and record barometric pressure</li>
+<li>After launch, hold the ROV near the surface while the instrument acquires ambient temperature; monitor until temperature stabilises before continuing descent</li>
+<li>Once the TMS is at depth, the ROV exits the TMS to reach the seabed. Alternatively, with ROV supervisor permission, the TMS can be lowered to the seabed while the ROV remains inside (monitor via ROV altimeter)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">TMS Depth Gap</p>
+<p>Installing the SVP/CTD on the ROV TMS is a second choice to installation on the vehicle itself and should only be considered when insufficient cores are available on the ROV. The gap between TMS depth and ROV operating depth must be accounted for.</p>
+</div>
+<ul>
+<li>Unless the dive is specifically for obtaining an SVP, logging may be paused during operations but continuous SV monitoring by the online surveyor is recommended</li>
+<li>Re-enable logging before recovery to obtain an up cast</li>
+<li>Rinse the instrument with fresh water once on deck</li>
+</ul>
+<hr />
+<h2 id="measurement-frequency-requirements"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg></span> Measurement Frequency Requirements<a class="headerlink" href="#measurement-frequency-requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Occasion</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prior to USBL calibration or integrity check</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Start of a new project</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Before and after LBL baseline / box-in measurements</td>
+<td>Required (cast need only cover transponder depth range)</td>
+</tr>
+<tr>
+<td>During LBL operations</td>
+<td>Generally daily; may extend to weekly if water column is known to be stable</td>
+</tr>
+<tr>
+<td>During USBL operations</td>
+<td>Generally weekly; may extend to monthly if water column is known to be stable</td>
+</tr>
+<tr>
+<td>During MBES operations</td>
+<td>Generally daily; depends on operational conditions</td>
+</tr>
+<tr>
+<td>Prior to position-critical operations (e.g. structure installation)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Significant depth change (&gt;200 m)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Significant location change</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Weather change (e.g. storm mixing top layers, altering/removing thermocline)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Thermocline shift (e.g. prolonged warm stable weather lowering thermocline)</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="factors-affecting-sv-measurement-timing">Factors Affecting SV Measurement Timing<a class="headerlink" href="#factors-affecting-sv-measurement-timing" title="Permanent link">&para;</a></h3>
+<p>Consider the following when deciding whether to take a new cast:</p>
+<ul>
+<li>Task being carried out</li>
+<li>Date and location of the previous cast</li>
+<li>Change in depth</li>
+<li>Proximity to river mouths or currents</li>
+<li>Significant tidal changes</li>
+<li>Recent weather events</li>
+</ul>
+<hr />
+<h2 id="sound-velocity-formulae"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg></span> Sound Velocity Formulae<a class="headerlink" href="#sound-velocity-formulae" title="Permanent link">&para;</a></h2>
+<h3 id="formula-selection">Formula Selection<a class="headerlink" href="#formula-selection" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Depth Range</th>
+<th>Recommended Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Less than 1000 m</td>
+<td>Chen &amp; Millero (1977) or Del Grosso (1974)</td>
+</tr>
+<tr>
+<td>Greater than 1000 m</td>
+<td>Del Grosso (1974)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chen &amp; Millero</strong> -- C.T. Chen and F.J. Millero (1977), "Speed of sound in seawater at high pressures", Journal of the Acoustic Society of America 62(5):1129-1135</p>
+<p><strong>Del Grosso</strong> -- V.A. Del Grosso (1974), "New Equation for the Speed of Sound in Natural Waters (with Comparisons to Other Equations)", J. Acoust. Soc. Am., 56(4), pp 1084-1091</p>
+<h3 id="setup-recommendations">Setup Recommendations<a class="headerlink" href="#setup-recommendations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Synchronise instrument time with project time</li>
+<li>Record <strong>pressure</strong> (not depth) -- depth is calculated during processing</li>
+<li>Use SI units (metres, dbar, mS/cm); convert to imperial only after processing if required by the client</li>
+<li>Set the pressure tare before deploying the instrument or launching the ROV; record the tare value in the logbook</li>
+<li>Enter the correct latitude for the local gravity model (if available)</li>
+<li>Record atmospheric pressure in the logbook</li>
+<li>If self-logging, set the probe to record on pressure changes of 1 dbar</li>
+<li>Enable recording for both up and down casts</li>
+</ul>
+<hr />
+<h2 id="special-cases-lakes-caspian-sea-and-closed-water-bodies"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Special Cases: Lakes, Caspian Sea, and Closed Water Bodies<a class="headerlink" href="#special-cases-lakes-caspian-sea-and-closed-water-bodies" title="Permanent link">&para;</a></h2>
+<h3 id="lakes-baikal-tanganyika-malawi">Lakes (Baikal, Tanganyika, Malawi)<a class="headerlink" href="#lakes-baikal-tanganyika-malawi" title="Permanent link">&para;</a></h3>
+<p>These lakes have a salt composition effectively proportional to Standard Seawater diluted to the same salinity. The standard equations for salinity, density, and sound velocity are valid.</p>
+<h3 id="caspian-sea">Caspian Sea<a class="headerlink" href="#caspian-sea" title="Permanent link">&para;</a></h3>
+<p>The Caspian Sea has a different composition of salts, causing erroneous calculated values.</p>
+<p><strong>Correction method:</strong></p>
+<ol>
+<li>Determine salinity using the standard equation</li>
+<li><strong>Add 1.4 ppt</strong> to the salinity value</li>
+<li>Calculate density and sound velocity using the standard equations with the adjusted salinity</li>
+</ol>
+<h3 id="unknown-closed-water-bodies">Unknown Closed Water Bodies<a class="headerlink" href="#unknown-closed-water-bodies" title="Permanent link">&para;</a></h3>
+<p>For bodies of water with no documented evidence of salt composition, sound velocity must be determined by SVP. Simultaneous CTD measurements should also be taken to form profile pairs.</p>
+<p><strong>Least-squares comparison method:</strong></p>
+<ol>
+<li>Obtain as many combined CTD/SVP profile pairs as feasible (minimum 5, preferably 20) scattered across the area of interest</li>
+<li>For each profile pair:<ul>
+<li>Calculate salinity using the standard equations</li>
+<li>Incrementally add or subtract 0.1 ppt to the calculated salinity</li>
+<li>Recalculate sound velocity using the adjusted salinity</li>
+<li>Determine residuals between measured (SVP) and calculated (CTD-derived) sound velocity at each depth</li>
+<li>Calculate the sum of squared residuals</li>
+<li>Continue for at least 5 increments past the point where the sum of squares is minimised</li>
+<li>The correction for that profile pair is the increment/decrement at the minimum sum of squares</li>
+</ul>
+</li>
+<li>Use the mean correction across all profile pairs to adjust calculated salinity for density calculations</li>
+</ol>
+<hr />
+<h2 id="thermocline-effects-on-acoustic-systems"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3h4v2h-4zm0 4h4v2h-4zm0 4h4v2h-3.25l-.75-.9zm4 4v2h-2c0-.69-.1-1.37-.29-2zM7 3v2H3V3zm0 4v2H3V7zm0 4v1.1l-.75.9H3v-2zm-4 4h2.29c-.19.63-.29 1.31-.29 2H3zm12-2V5c0-1.66-1.34-3-3-3S9 3.34 9 5v8c-2.21 1.66-2.66 4.79-1 7s4.79 2.66 7 1 2.66-4.79 1-7a4.7 4.7 0 0 0-1-1m-3-9c.55 0 1 .45 1 1v3h-2V5c0-.55.45-1 1-1"/></svg></span> Thermocline Effects on Acoustic Systems<a class="headerlink" href="#thermocline-effects-on-acoustic-systems" title="Permanent link">&para;</a></h2>
+<p>A thermocline is a layer of rapid temperature change that causes a corresponding change in sound velocity. This gradient refracts acoustic energy, bending the ray path away from the straight-line assumption.</p>
+<h3 id="impact-on-mbes-outer-beams">Impact on MBES Outer Beams<a class="headerlink" href="#impact-on-mbes-outer-beams" title="Permanent link">&para;</a></h3>
+<p>Multibeam echosounders are particularly sensitive to sound velocity errors because outer beams travel at steep angles through the water column and are refracted more than nadir beams.</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Effect on Outer Beams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVP too high (warm bias)</td>
+<td>Beams refract upward -- outer swath depths appear <strong>too deep</strong> ("frown" shape)</td>
+</tr>
+<tr>
+<td>SVP too low (cold bias)</td>
+<td>Beams refract downward -- outer swath depths appear <strong>too shallow</strong> ("smile" shape)</td>
+</tr>
+<tr>
+<td>Outdated SVP (thermocline has shifted)</td>
+<td>Asymmetric distortion or "wobble" in the outer swath</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Practical Check</p>
+<p>Compare overlapping swaths from adjacent survey lines. If the outer beams of one line disagree with the nadir of the overlapping line by more than the required specification, a fresh SVP is needed.</p>
+</div>
+<h3 id="impact-on-usbl-and-lbl">Impact on USBL and LBL<a class="headerlink" href="#impact-on-usbl-and-lbl" title="Permanent link">&para;</a></h3>
+<p>For USBL and LBL, an incorrect sound velocity profile causes <strong>range errors</strong> (the slant range calculated from two-way travel time is wrong) and <strong>angular refraction errors</strong> (the assumed straight-line path deviates from the actual refracted path). These effects worsen with depth and horizontal offset.</p>
+<hr />
+<h2 id="expendable-probes-xbt-xctd"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2zm4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4z"/></svg></span> Expendable Probes (XBT / XCTD)<a class="headerlink" href="#expendable-probes-xbt-xctd" title="Permanent link">&para;</a></h2>
+<p>In deep water where winch-deployed SVP/CTD casts are impractical or would require stopping vessel operations, expendable probes provide a practical alternative.</p>
+<table>
+<thead>
+<tr>
+<th>Probe</th>
+<th>Measures</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XBT (Expendable Bathythermograph)</strong></td>
+<td>Temperature vs depth (fall-rate equation)</td>
+<td>Quick temperature profile; SV must be calculated using assumed salinity</td>
+</tr>
+<tr>
+<td><strong>XCTD (Expendable CTD)</strong></td>
+<td>Conductivity, temperature, depth</td>
+<td>Full SV calculation possible; more accurate than XBT</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Limitations</p>
+<ul>
+<li>Expendable probes are <strong>single-use</strong> -- factor consumable cost and stock into project planning</li>
+<li>XBT accuracy depends on the fall-rate equation, which can drift for older probe batches -- check the manufacturer's current coefficients</li>
+<li>XBT-derived SV requires an assumed salinity value, which introduces error in regions with variable salinity</li>
+<li>XCTD is preferred over XBT when sound velocity accuracy is critical</li>
+<li>Maximum depth rating varies by probe type (commonly 1000 m or 2000 m for XBT; up to 2000 m for XCTD)</li>
+</ul>
+</div>
+<hr />
+<h2 id="handling-incomplete-casts"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.5 18.5 6-6 4 4L22 6.92 20.59 5.5l-7.09 8-4-4L2 17z"/></svg></span> Handling Incomplete Casts<a class="headerlink" href="#handling-incomplete-casts" title="Permanent link">&para;</a></h2>
+<p>If a cast does not reach the full working depth (e.g., wire length limitation, instrument malfunction, or time constraints), the profile must be extended to cover the required depth range.</p>
+<div class="admonition danger">
+<p class="admonition-title">Never Extrapolate Constant Sound Velocity</p>
+<p>Extending a profile by repeating the last measured SV value to depth is <strong>incorrect and dangerous</strong>. Sound velocity changes with pressure (depth), and a constant extension ignores this fundamental relationship. In deep water, this error can be significant.</p>
+</div>
+<p><strong>Correct approach:</strong></p>
+<ol>
+<li><strong>Extrapolate the last known gradient</strong> -- continue the trend of the deepest measured portion of the profile to the required depth</li>
+<li>If historical profiles exist for the area, use the deeper portion of a recent nearby profile to extend the cast</li>
+<li>Document that the profile was extended and which method was used</li>
+<li>If the incomplete portion covers a depth range critical to the operation (e.g., the transponder depth for USBL), prioritise obtaining a full cast as soon as possible</li>
+</ol>
+<hr />
+<h2 id="real-time-svs-vs-full-column-svp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 5 7h3v7h2V7h3m3 10v-7h-2v7h-3l4 4 4-4z"/></svg></span> Real-Time SVS vs Full-Column SVP<a class="headerlink" href="#real-time-svs-vs-full-column-svp" title="Permanent link">&para;</a></h2>
+<p>These serve different purposes and are not interchangeable.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Real-Time SVS</th>
+<th>Full-Column SVP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it measures</strong></td>
+<td>Sound velocity at a single point (sensor depth)</td>
+<td>Sound velocity profile through the entire water column</td>
+</tr>
+<tr>
+<td><strong>Mounted where</strong></td>
+<td>On the hull (for MBES) or on the DVL/INS (subsea)</td>
+<td>Lowered through the water column on a cable or ROV</td>
+</tr>
+<tr>
+<td><strong>Updates</strong></td>
+<td>Continuously</td>
+<td>Per cast (discrete intervals)</td>
+</tr>
+<tr>
+<td><strong>Used for</strong></td>
+<td>MBES beam steering at the transducer face; DVL velocity correction</td>
+<td>USBL/LBL range calculation; MBES ray-tracing through the water column; depth computation</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">When Each Is Needed</p>
+<ul>
+<li><strong>Real-time SVS</strong> is needed whenever an MBES is operating (provides the surface SV for beam forming) and whenever a DVL requires sound velocity correction</li>
+<li><strong>Full-column SVP</strong> is needed for any system that calculates range or depth through a significant portion of the water column (USBL, LBL, MBES ray-tracing)</li>
+<li>Both are needed simultaneously during MBES operations -- the SVS corrects beam steering at the transducer face while the SVP corrects ray-tracing through the water column</li>
+</ul>
+</div>
+<hr />
+<h2 id="processing-steps"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 17v-3h3v-2l4 3.5-4 3.5v-2zm2 1v3h-3v2l-4-3.5 4-3.5v2zM12 8c-2.21 0-4 1.8-4 4 0 1.91 1.35 3.54 3.21 3.92L16 11.86A3.997 3.997 0 0 0 12 8m0 6c-1.1 0-2-.89-2-2s.9-2 2-2 2 .9 2 2-.89 2-2 2m9.66-5.27-2-3.46c-.12-.22-.38-.31-.61-.22l-2.49 1c-.51-.41-1.06-.74-1.69-1l-.37-2.63A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.26-1.17.59-1.69 1L5 5.05c-.23-.09-.5 0-.61.22l-2 3.46c-.13.21-.08.49.11.64L4.57 11l-.07 1 .07 1-2.11 1.63c-.2.15-.25.43-.12.64l2 3.46c.11.27.4.38.66.27l2.5-1c.24.19.5.37.76.53l1.65-1.4c-.77-.33-1.45-.82-2-1.45l-2.41 1-.77-1.3L6.8 13.8a5.55 5.55 0 0 1 0-3.6L4.69 8.65l.75-1.3 2.41 1c.78-.9 1.83-1.53 3-1.78l.4-2.57h1.5l.37 2.62c1.17.24 2.22.88 3 1.77l2.41-1 .75 1.3-2.08 1.51c.09.26.16.53.2.8h2l2.1-1.63a.48.48 0 0 0 .16-.64M12 8c-2.21 0-4 1.8-4 4 0 1.91 1.35 3.54 3.21 3.92L16 11.86A3.997 3.997 0 0 0 12 8m0 6c-1.1 0-2-.89-2-2s.9-2 2-2 2 .9 2 2-.89 2-2 2m0-6c-2.21 0-4 1.8-4 4 0 1.91 1.35 3.54 3.21 3.92L16 11.86A3.997 3.997 0 0 0 12 8m0 6c-1.1 0-2-.89-2-2s.9-2 2-2 2 .9 2 2-.89 2-2 2"/></svg></span> Processing Steps<a class="headerlink" href="#processing-steps" title="Permanent link">&para;</a></h2>
+<p>Processing shall be performed in SI units. If non-SI units are required, convert only after processing is complete.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Download and import data into the processing spreadsheet or software</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Check that data covers the full water column</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Separate into down and up casts (if applicable)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Check for pressure tare; apply correction if required</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>If CTD</strong>: calculate salinity using temperature, conductivity, and pressure (not depth)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>If CTD</strong>: calculate density using temperature, conductivity, and pressure (not depth)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Calculate depths from pressure</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>If CTD</strong>: calculate sound velocity using temperature, conductivity, and pressure (not depth)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Sort data into ascending depth order</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Prepare graphs and perform comparison checks (compare down vs up cast, compare against second instrument or recent nearby profile)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Save data in the correct format for the target software/instrumentation</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Mean Velocity</p>
+<p>Where the mean velocity is required, report the <strong>harmonic mean</strong> (not arithmetic mean).</p>
+</div>
+<h3 id="comparison-requirements">Comparison Requirements<a class="headerlink" href="#comparison-requirements" title="Permanent link">&para;</a></h3>
+<p>Every velocity profile must be checked against an alternative source:</p>
+<ul>
+<li>A second probe</li>
+<li>A recently obtained profile from another vessel in the same area</li>
+</ul>
+<p>Profiles should be carried out at the <strong>deepest location</strong> of the work site to avoid the need for interpolation.</p>
+<figure>
+  <img alt="SVP profile comparison" src="../../assets/images/sound-velocity/sound-velocity-profile-comparison.jpg" width="500" />
+<br />
+<figcaption>Example SVP profile comparison showing two casts overlaid. Profiles should agree within 0.5 m/s throughout the water column.</figcaption>
+</figure>
+<hr />
+<h2 id="output-file-formats"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8zm4 18H6V4h7v5h5zm-2-9v7.1L13.9 16l-2.8 2.8L8.3 16l2.8-2.8L8.9 11z"/></svg></span> Output File Formats<a class="headerlink" href="#output-file-formats" title="Permanent link">&para;</a></h2>
+<h3 id="sonardyne-fusion-systems">Sonardyne Fusion Systems<a class="headerlink" href="#sonardyne-fusion-systems" title="Permanent link">&para;</a></h3>
+<p>ASCII text files with <code>.pro</code> extension. Five lines of header text followed by two tab-separated columns (depth and velocity):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>0
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>0
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>0
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>0
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SV Dip description
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>2.0  1516.35
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>3.0  1516.32
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>4.0  1516.36
+</code></pre></div>
+<h3 id="kongsberg-hipap-apos-systems">Kongsberg HiPAP / APOS Systems<a class="headerlink" href="#kongsberg-hipap-apos-systems" title="Permanent link">&para;</a></h3>
+<p>ASCII text files with <code>.usr</code> extension. One line of header text followed by two comma-separated columns (depth and velocity):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SV Dip description,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2.0,1516.35
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>3.0,1516.32
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>4.0,1516.36
+</code></pre></div>
+<h3 id="navigation-software">Navigation Software<a class="headerlink" href="#navigation-software" title="Permanent link">&para;</a></h3>
+<p>Typically ASCII text format. Some systems require depths as negative values and data sorted in ascending depth order with no repeated depths. Refer to the specific software documentation.</p>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">Quality Checks</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Calibration certificate valid for the project duration</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Instrument function-tested (wet test during mobilisation where possible)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pressure tare set and recorded before deployment</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 10-minute surface soak completed before profiling</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Full water column coverage achieved</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Down and up casts separated and compared</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Profile compared against a second source (spare instrument or recent nearby cast)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Correct formula selected (Chen &amp; Millero or Del Grosso based on depth)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Data saved in correct format for each target system</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Sensors checked for fouling on recovery</li>
+</ul>
+</div>
+<hr />
+<h2 id="acceptance-criteria"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Down cast vs up cast agreement</td>
+<td>Within <strong>0.5 m/s</strong> throughout the profile (larger differences indicate sensor fouling or hysteresis)</td>
+</tr>
+<tr>
+<td>Comparison with second instrument</td>
+<td>Within <strong>combined instrument accuracy</strong> (typically &lt; 0.1 m/s for direct SV probes)</td>
+</tr>
+<tr>
+<td>Pressure tare residual</td>
+<td>&lt; <strong>0.5 dbar</strong> after correction</td>
+</tr>
+<tr>
+<td>Full water column coverage</td>
+<td>Cast must reach within <strong>10 m of the seabed</strong> or the maximum working depth</td>
+</tr>
+<tr>
+<td>Calibration certificate validity</td>
+<td>Must cover the <strong>entire project duration</strong> (check client-specific requirements)</td>
+</tr>
+<tr>
+<td>Surface soak stabilisation</td>
+<td>Temperature must stabilise to within <strong>0.02 degC</strong> before beginning the cast</td>
+</tr>
+<tr>
+<td>CTD-derived vs directly measured SV</td>
+<td>Within <strong>instrument + formula accuracy</strong> for the water type and depth (typically &lt; 0.2 m/s)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Likely Cause</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Down and up cast disagree by &gt; 0.5 m/s</td>
+<td>Sensor fouling during cast; thermal lag in CTD conductivity cell</td>
+<td>Check sensor for fouling on recovery; use only the down cast; reduce descent speed for CTD</td>
+</tr>
+<tr>
+<td>SV profile shows spikes or noise</td>
+<td>Air bubbles on sensor; electrical interference; damaged transducer path</td>
+<td>Re-deploy after checking sensor face is clean and free of bubbles</td>
+</tr>
+<tr>
+<td>MBES outer beams show "smile" or "frown"</td>
+<td>Outdated or incorrect SVP loaded</td>
+<td>Take a fresh cast; verify the correct profile is loaded in the MBES software</td>
+</tr>
+<tr>
+<td>Calculated SV disagrees with measured SV (CTD vs SVP)</td>
+<td>Wrong formula selected; salinity anomaly (e.g., Caspian Sea); sensor drift</td>
+<td>Verify formula selection (Chen &amp; Millero vs Del Grosso); check for non-standard water bodies; compare against reference instrument</td>
+</tr>
+<tr>
+<td>Profile does not reach full depth</td>
+<td>Wire too short; strong current pulling probe off-vertical; instrument depth limit</td>
+<td>Use a heavier clump weight; deploy from a less exposed location; switch to an expendable probe (XBT/XCTD) for deep water</td>
+</tr>
+<tr>
+<td>Pressure tare drifts between deployments</td>
+<td>Sensor drift or damage</td>
+<td>Re-tare before each deployment; if persistent, send sensor for recalibration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../positioning/usbl-theory-and-error-budgets/">USBL Theory and Error Budgets</a> -- sound velocity's role in USBL range calculation and error budgets</li>
+<li><a href="../../positioning/ins-dvl-calibration-guide/">INS/DVL Calibration Guide</a> -- SVS requirements for DVL velocity correction</li>
+</ul>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">References</p>
+<ul>
+<li>Chen C.T., Millero F.J. (1977) -- Speed of sound in seawater at high pressures. J. Acoust. Soc. Am. 62(5):1129-1135</li>
+<li>Del Grosso V.A. (1974) -- New Equation for the Speed of Sound in Natural Waters. J. Acoust. Soc. Am. 56(4):1084-1091</li>
+<li>Fofonoff N.P. and Millard R.C. Jr. (1983) -- Algorithms for computation of fundamental properties of seawater. UNESCO Technical Papers in Marine Science No. 44</li>
+<li>Leroy C.C. and Parthiot F. (1998) -- Depth-pressure relationship in the oceans and seas. J. Acoust. Soc. Am. 103(3):1346-1352</li>
+<li>Millero F.J. (2000) -- The equation of state of lakes. Aquatic Geochemistry 6(1):1-17</li>
+<li>Equipment manufacturer documentation (Valeport, Seabird, SAIV, Kongsberg, Sonardyne)</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../mbes-calibration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MBES Calibration (Patch Test)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                MBES Calibration (Patch Test)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../svp-repeatability-test/" class="md-footer__link md-footer__link--next" aria-label="Next: SVP Repeatability Test">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                SVP Repeatability Test
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>
