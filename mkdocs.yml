@@ -215,6 +215,9 @@ nav:
   - What's New: changelog.md
 
 extra:
+  analytics:
+    provider: google
+    property: G-W8P1PDKH17
   social: []
 
 extra_css:
