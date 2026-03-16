@@ -1,0 +1,67 @@
+{
+  "name": "Survey Reporting Overview",
+  "children": [
+    {
+      "name": "Report Types",
+      "children": [
+        {"name": "Mobilisation Report (15-30 pages)"},
+        {"name": "Calibration Report (5-15 pages)"},
+        {"name": "Daily Progress Report (2-5 pages)"},
+        {"name": "End-of-Project Report (30-80 pages)"},
+        {"name": "As-Built Report (20-50 pages)"}
+      ]
+    },
+    {
+      "name": "Mob Report Structure",
+      "children": [
+        {"name": "Cover Page & Revision History"},
+        {"name": "Vessel & Equipment Details"},
+        {"name": "Dimensional Control Survey"},
+        {"name": "System Configuration & Geodetics"},
+        {"name": "Calibration Results Summary"},
+        {"name": "Acceptance Testing & Conclusions"}
+      ]
+    },
+    {
+      "name": "Calibration Report Essentials",
+      "children": [
+        {"name": "Environmental Conditions & Equipment"},
+        {"name": "Procedure & Configuration"},
+        {"name": "Results: Offsets, Residuals, Pass/Fail"},
+        {"name": "Plots: Time Series, Scatter, Coverage"},
+        {"name": "Acceptance Criteria with Source Reference"}
+      ]
+    },
+    {
+      "name": "Data Presentation Standards",
+      "children": [
+        {"name": "Tables: Consistent Units, Right-Aligned Numbers"},
+        {"name": "Charts: North Arrow, Scale Bar, Legend"},
+        {"name": "Coordinates: Datum & Projection on Every Chart"},
+        {"name": "Cross-Sections: State Vertical Exaggeration"},
+        {"name": "Scatter Plots: Equal Aspect Ratio for Position Data"}
+      ]
+    },
+    {
+      "name": "QC Documentation",
+      "children": [
+        {"name": "Calibration Validity (Mob Report)"},
+        {"name": "SVP Currency (DPR / Processing Notes)"},
+        {"name": "Cross-Line Comparison (Processing Report)"},
+        {"name": "Tide Verification (Daily)"},
+        {"name": "Data Completeness (Coverage Charts)"},
+        {"name": "Artefact Assessment (Per Deliverable)"}
+      ]
+    },
+    {
+      "name": "Version Control & Troubleshooting",
+      "children": [
+        {"name": "Numbering: PROJECTCODE-VESSEL-DOCTYPE-SEQ"},
+        {"name": "Rev 0 Draft -> Rev A IFR -> Rev B Comments -> Rev 0 IFU"},
+        {"name": "Client Comment Response Tracking"},
+        {"name": "Single Source of Truth for All Values"},
+        {"name": "Cross-Check Values Between Reports"}
+      ]
+    }
+  ]
+}

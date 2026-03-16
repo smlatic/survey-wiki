@@ -1,0 +1,3381 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/mobilisation/heave-mru-theory/">
+      
+      
+        <link rel="prev" href="../gyro-types-and-calibration/">
+      
+      
+        <link rel="next" href="../mobilisation-checklist/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Heave, MRU Theory and Verification - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-W8P1PDKH17"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-W8P1PDKH17",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-W8P1PDKH17",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#heave-mru-theory-and-verification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Heave, MRU Theory and Verification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../positioning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../positioning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mobilisation & Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensional Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dimensional Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dimensional-control-survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensional Control Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dimensional-control-tape-measure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensional Control (Tape Measure)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attitude & Heading
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Attitude & Heading
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ahrs-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AHRS Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-ahrs-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static AHRS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gyro-types-and-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gyro Types and Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave, MRU Theory and Verification
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave, MRU Theory and Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theory-and-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory and Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theory and Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-heave-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Heave Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heave-measurement-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Measurement Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Heave Measurement Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#double-integration-of-accelerations-traditional-mru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double Integration of Accelerations (Traditional MRU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-derived-heave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS-Derived Heave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-heave-insgnss-blended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Heave (INS/GNSS Blended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-heave-true-heave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delayed Heave (True Heave)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-heave-filter-period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Heave Filter Period
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lever-arm-induced-heave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lever-Arm-Induced Heave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitch-and-roll-effect-on-outer-beam-bathymetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitch and Roll Effect on Outer Beam Bathymetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settlement-and-squat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settlement and Squat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-mru-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common MRU Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-sensor-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Sensor Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mru-installation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRU Installation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latency-and-interface-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Latency and Interface Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heave-verification-by-gnss-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Verification by GNSS Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heave-verification-by-tide-gauge-shallow-water" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Verification by Tide Gauge (Shallow Water)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settlement-and-squat-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settlement and Squat Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heave-filter-period-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Filter Period Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heave-spikes-in-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Spikes in Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systematic-depth-error-correlated-with-swell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic Depth Error Correlated with Swell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth-error-increases-at-higher-survey-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Error Increases at Higher Survey Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outer-beam-depth-scatter-worse-than-expected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outer Beam Depth Scatter Worse Than Expected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lever-arm-values-incorrect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lever Arm Values Incorrect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Checklists
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobilisation-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demobilisation-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demobilisation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theory-and-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory and Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theory and Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-heave-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Heave Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heave-measurement-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Measurement Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Heave Measurement Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#double-integration-of-accelerations-traditional-mru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double Integration of Accelerations (Traditional MRU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-derived-heave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS-Derived Heave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-heave-insgnss-blended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Heave (INS/GNSS Blended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-heave-true-heave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delayed Heave (True Heave)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-heave-filter-period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Heave Filter Period
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lever-arm-induced-heave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lever-Arm-Induced Heave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitch-and-roll-effect-on-outer-beam-bathymetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitch and Roll Effect on Outer Beam Bathymetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settlement-and-squat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settlement and Squat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-mru-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common MRU Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-sensor-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Sensor Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mru-installation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRU Installation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latency-and-interface-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Latency and Interface Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heave-verification-by-gnss-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Verification by GNSS Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heave-verification-by-tide-gauge-shallow-water" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Verification by Tide Gauge (Shallow Water)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settlement-and-squat-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settlement and Squat Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heave-filter-period-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Filter Period Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heave-spikes-in-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heave Spikes in Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systematic-depth-error-correlated-with-swell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic Depth Error Correlated with Swell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth-error-increases-at-higher-survey-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth Error Increases at Higher Survey Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outer-beam-depth-scatter-worse-than-expected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outer Beam Depth Scatter Worse Than Expected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lever-arm-values-incorrect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lever Arm Values Incorrect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mobilisation & Setup
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ahrs-calibration/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Attitude & Heading
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">attitude</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">filter</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">heave</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">lever-arm</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">motion</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">motion-sensor</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">mru</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">pitch</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">roll</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">settlement</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">squat</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="heave-mru-theory-and-verification"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 21c-3 0-4.19-4.24-5.45-8.72C10.14 9.04 9 5 7.5 5 4.11 5 4 11.93 4 12H2c0-.37.06-9 5.5-9 3 0 4.21 4.25 5.47 8.74C13.83 14.8 15 19 16.5 19c3.44 0 3.53-6.93 3.53-7h2c0 .37-.06 9-5.53 9"/></svg></span> Heave, MRU Theory and Verification<a class="headerlink" href="#heave-mru-theory-and-verification" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Equipment</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> <strong>Reference Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-01</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Comprehensive reference covering heave measurement principles, Motion Reference Unit (MRU) theory, heave filter behaviour, lever-arm-induced heave, settlement and squat effects, MRU installation requirements, and verification methods. Understanding heave is essential for bathymetric survey accuracy, as heave errors propagate directly into sounding depths.</p>
+</div>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<p>Refer to this article:</p>
+<ul>
+<li>When installing or relocating an MRU on a vessel or ROV</li>
+<li>When configuring heave filter settings for a new project area</li>
+<li>When investigating systematic depth errors in MBES data</li>
+<li>When verifying heave performance against GNSS-derived heave or tide gauge</li>
+<li>When assessing settlement and squat effects for a survey vessel</li>
+<li>During mobilisation to verify MRU configuration and lever arm entries</li>
+</ul>
+<hr />
+<h2 id="overview"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Heave is the vertical displacement of the transducer from its mean water level position. It is not simply "up and down motion" of the vessel. Accurate heave measurement and application is critical for bathymetric survey because any uncompensated heave appears directly as depth error in the soundings. An MRU measures accelerations and angular rates, from which heave, pitch, and roll are derived. The accuracy of heave at the transducer depends on the MRU measurement quality, the correctness of lever arm values, the heave filter configuration relative to sea conditions, and proper accounting for vessel settlement and squat at survey speed.</p>
+<hr />
+<h2 id="theory-and-principles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> Theory and Principles<a class="headerlink" href="#theory-and-principles" title="Permanent link">&para;</a></h2>
+<h3 id="what-heave-is">What Heave Is<a class="headerlink" href="#what-heave-is" title="Permanent link">&para;</a></h3>
+<p>Heave is the instantaneous vertical displacement of a point on the vessel (specifically the transducer) from its mean vertical position. It is the difference between where the transducer is right now and where it would be if the sea surface were perfectly flat.</p>
+<p>Key distinctions:</p>
+<ul>
+<li>Heave is measured at, or computed for, a specific point on the vessel. Heave at the bow is different from heave at the stern.</li>
+<li>Heave at the MRU location is not the same as heave at the transducer unless they are co-located.</li>
+<li>Heave is a relative measurement (displacement from mean), not an absolute measurement (distance from seabed or chart datum). Tidal reduction handles the absolute vertical reference.</li>
+</ul>
+<h3 id="heave-measurement-methods">Heave Measurement Methods<a class="headerlink" href="#heave-measurement-methods" title="Permanent link">&para;</a></h3>
+<h4 id="double-integration-of-accelerations-traditional-mru">Double Integration of Accelerations (Traditional MRU)<a class="headerlink" href="#double-integration-of-accelerations-traditional-mru" title="Permanent link">&para;</a></h4>
+<p>The MRU contains accelerometers that measure vertical acceleration. Heave is obtained by integrating acceleration twice:</p>
+<p><strong>Acceleration → Velocity → Displacement</strong></p>
+<ol>
+<li>Subtract gravity from the measured vertical acceleration to get the dynamic component</li>
+<li>Integrate once to get vertical velocity</li>
+<li>Integrate again to get vertical displacement (heave)</li>
+</ol>
+<p>The problem with double integration is drift. Any small bias in the accelerometer accumulates through integration and produces a steadily growing position error. This drift is removed by applying a high-pass filter that blocks frequencies below a cutoff, effectively removing the slow drift while passing the wave-frequency heave signal.</p>
+<h4 id="gnss-derived-heave">GNSS-Derived Heave<a class="headerlink" href="#gnss-derived-heave" title="Permanent link">&para;</a></h4>
+<p>High-rate GNSS vertical position (typically 10-20 Hz RTK or PPP) can be used as a heave source. The GNSS height is filtered to separate the wave-frequency component from the tidal and mean sea level component.</p>
+<p>Advantages: No integration drift, works for any wave period, not affected by lever arms.
+Limitations: Noisier than MRU for short-period waves, requires continuous GNSS lock, vertical accuracy is 2-3x worse than horizontal.</p>
+<h4 id="hybrid-heave-insgnss-blended">Hybrid Heave (INS/GNSS Blended)<a class="headerlink" href="#hybrid-heave-insgnss-blended" title="Permanent link">&para;</a></h4>
+<p>Modern systems (Applanix TrueHeave, Kongsberg Seapath) combine MRU accelerations with GNSS height observations in a Kalman filter. The MRU provides good short-period heave response while GNSS constrains the long-period component that the MRU high-pass filter would otherwise remove.</p>
+<p>This is the best approach when available, as it preserves accuracy across all wave periods.</p>
+<h3 id="delayed-heave-true-heave">Delayed Heave (True Heave)<a class="headerlink" href="#delayed-heave-true-heave" title="Permanent link">&para;</a></h3>
+<p>Real-time heave is a causal filter -- it can only use measurements up to the current moment. This limits its accuracy, particularly for the low-frequency component of heave where the high-pass filter must make compromises between drift removal and signal preservation.</p>
+<p>Delayed heave solves this by buffering measurements and processing them in both forward and reverse directions. A typical buffer length is <strong>150 seconds</strong> -- the sensor stores 150 seconds of acceleration data and reprocesses the heave using measurements from both before and after each time step. This eliminates the phase errors and amplitude attenuation inherent in real-time causal filtering.</p>
+<table>
+<thead>
+<tr>
+<th>Heave Method</th>
+<th>Processing</th>
+<th style="text-align: center;">Typical Accuracy</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-time heave</td>
+<td>Causal filter (current data only)</td>
+<td style="text-align: center;">5 cm or 5% of amplitude</td>
+<td>Online display, DP input, real-time QC</td>
+</tr>
+<tr>
+<td>Delayed heave (150s buffer)</td>
+<td>Non-causal filter (forward + reverse)</td>
+<td style="text-align: center;">Significantly better than real-time, especially for long-period swell</td>
+<td>Post-processing of final deliverable data</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">When to Use Delayed Heave</p>
+<p>Delayed heave should be applied in post-processing for all bathymetric deliverables. The improvement over real-time heave is most pronounced in long-period swell environments (Southern Ocean, West Africa, exposed Atlantic) where the real-time filter struggles with swell periods approaching or exceeding the filter cutoff. Systems like Applanix TrueHeave and Kongsberg delayed heave automatically compute and store the delayed heave data for later application.</p>
+</div>
+<p><strong>The 150-second buffer:</strong> This value represents a practical compromise. Longer buffers give better results for very long-period swell but increase the processing delay and memory requirements. For most offshore survey conditions, 150 seconds captures enough context to resolve swell periods up to approximately 25 seconds with minimal amplitude distortion.</p>
+<h3 id="the-heave-filter-period">The Heave Filter Period<a class="headerlink" href="#the-heave-filter-period" title="Permanent link">&para;</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">This Is the Most Common Heave Configuration Error</p>
+<p>The heave high-pass filter period is the single most important MRU setting for bathymetric survey. Getting it wrong causes systematic depth errors that are very difficult to detect.</p>
+</div>
+<p>The high-pass filter removes low-frequency drift from the double integration process. It is defined by a cutoff period (in seconds). Any real heave signal with a period longer than the filter cutoff will be attenuated or removed entirely.</p>
+<p><strong>The rule: the filter period must exceed the dominant swell period by at least 20%.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Dominant Swell Period</th>
+<th style="text-align: center;">Minimum Filter Period Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">6 seconds</td>
+<td style="text-align: center;">8 seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">8 seconds</td>
+<td style="text-align: center;">10 seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 seconds</td>
+<td style="text-align: center;">12 seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">12 seconds</td>
+<td style="text-align: center;">15 seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">15 seconds</td>
+<td style="text-align: center;">18 seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">18+ seconds</td>
+<td style="text-align: center;">22+ seconds (or use GNSS-aided heave)</td>
+</tr>
+</tbody>
+</table>
+<p>If the filter period is set to 10 seconds but the actual swell period is 12 seconds, the MRU will attenuate the real heave signal. The result is soundings that are systematically too deep in the trough and too shallow on the crest, with the error magnitude proportional to how much signal is being filtered out.</p>
+<div class="admonition tip">
+<p class="admonition-title">How to Check</p>
+<p>Compare the heave filter period against the observed swell period. On most vessels, the bridge weather station or the MRU's own spectral output will report the dominant wave period. If you are in a long-period swell environment (Southern Ocean, West Africa, exposed Atlantic), increase the filter period before starting survey.</p>
+</div>
+<h3 id="lever-arm-induced-heave">Lever-Arm-Induced Heave<a class="headerlink" href="#lever-arm-induced-heave" title="Permanent link">&para;</a></h3>
+<p>If the MRU is not at the transducer location, the vessel's pitch and roll create additional vertical motion at the transducer that is not measured by the MRU. This is called lever-arm-induced heave.</p>
+<p>The formula:</p>
+<div class="arithmatex">\[Induced\ heave = L_x \times \sin(pitch) + L_y \times \sin(roll)\]</div>
+<p>Where:</p>
+<ul>
+<li><strong>Lx</strong> is the longitudinal lever arm (fore-aft distance from MRU to transducer)</li>
+<li><strong>Ly</strong> is the transverse lever arm (port-starboard distance from MRU to transducer)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Lever Arm</th>
+<th style="text-align: center;">Pitch/Roll Angle</th>
+<th style="text-align: center;">Induced Heave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">5 m</td>
+<td style="text-align: center;">1 deg</td>
+<td style="text-align: center;">0.09 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">5 m</td>
+<td style="text-align: center;">3 deg</td>
+<td style="text-align: center;">0.26 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 m</td>
+<td style="text-align: center;">1 deg</td>
+<td style="text-align: center;">0.17 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 m</td>
+<td style="text-align: center;">3 deg</td>
+<td style="text-align: center;">0.52 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">20 m</td>
+<td style="text-align: center;">1 deg</td>
+<td style="text-align: center;">0.35 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">20 m</td>
+<td style="text-align: center;">3 deg</td>
+<td style="text-align: center;">1.05 m</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Lever Arm Errors</p>
+<p>If the lever arm values entered in the navigation software are wrong (from a DC survey error or a data entry mistake), the computed lever-arm-induced heave will be wrong by a proportional amount. A 1 m error in a 10 m lever arm combined with 3 deg of pitch produces approximately 0.05 m of systematic heave error. This is difficult to detect because it correlates with vessel motion and looks like real heave variation.</p>
+</div>
+<p>The navigation software computes total heave at the transducer as:</p>
+<div class="arithmatex">\[Heave_{transducer} = Heave_{MRU} + L_x \times \sin(pitch) + L_y \times \sin(roll)\]</div>
+<h3 id="pitch-and-roll-effect-on-outer-beam-bathymetry">Pitch and Roll Effect on Outer Beam Bathymetry<a class="headerlink" href="#pitch-and-roll-effect-on-outer-beam-bathymetry" title="Permanent link">&para;</a></h3>
+<p>Even small attitude errors cause significant depth errors at the outer beams of a multibeam swath. The depth error from an attitude error is:</p>
+<div class="arithmatex">\[Depth\ error = slant\_range \times \sin(attitude\_error)\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Beam Angle</th>
+<th style="text-align: center;">Water Depth</th>
+<th style="text-align: center;">Slant Range</th>
+<th style="text-align: center;">Depth Error at 0.1 deg Attitude Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">30 deg</td>
+<td style="text-align: center;">50 m</td>
+<td style="text-align: center;">58 m</td>
+<td style="text-align: center;">0.10 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">45 deg</td>
+<td style="text-align: center;">50 m</td>
+<td style="text-align: center;">71 m</td>
+<td style="text-align: center;">0.12 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">60 deg</td>
+<td style="text-align: center;">50 m</td>
+<td style="text-align: center;">100 m</td>
+<td style="text-align: center;">0.17 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">65 deg</td>
+<td style="text-align: center;">50 m</td>
+<td style="text-align: center;">118 m</td>
+<td style="text-align: center;">0.21 m</td>
+</tr>
+</tbody>
+</table>
+<p>At the swath edges (60-65 deg beam angle), a 0.1 deg attitude error produces 0.17-0.21 m of depth error in 50 m of water. This is why MRU accuracy matters more for wide-swath operations and why outer beam data quality degrades faster than nadir data.</p>
+<h3 id="settlement-and-squat">Settlement and Squat<a class="headerlink" href="#settlement-and-squat" title="Permanent link">&para;</a></h3>
+<p>When a vessel moves through the water, it sinks (settlement) and changes trim (squat). These effects change the effective draft of the transducer and must be accounted for in depth computations.</p>
+<ul>
+<li><strong>Settlement</strong>: The vessel sinks bodily due to increased water flow velocity under the hull (Bernoulli effect). Proportional to speed squared.</li>
+<li><strong>Squat</strong>: The vessel trims bow-down or stern-down depending on hull form and loading. Also speed-dependent.</li>
+</ul>
+<p>Typical values for survey vessels at survey speed (4-6 knots): 0.05 to 0.30 m combined settlement and squat. Large vessels or higher speeds can exceed 0.50 m.</p>
+<p>Settlement and squat must be measured or modelled for each vessel at the survey speed. Methods:</p>
+<ol>
+<li><strong>Speed runs over known depth</strong>: Survey a flat area at multiple speeds and compare depths. The difference from the static depth is the settlement/squat.</li>
+<li><strong>GNSS height comparison</strong>: Compare GNSS antenna height at different speeds against the static height. The difference (corrected for heave and attitude) gives settlement/squat.</li>
+<li><strong>Manufacturer model</strong>: Some vessel operators provide settlement/squat tables based on hull design and displacement.</li>
+</ol>
+<h3 id="common-mru-systems">Common MRU Systems<a class="headerlink" href="#common-mru-systems" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Type</th>
+<th style="text-align: center;">Typical Accuracy (Pitch/Roll)</th>
+<th style="text-align: center;">Heave Accuracy</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kongsberg Seatex MRU5+</td>
+<td>MRU</td>
+<td style="text-align: center;">0.01 deg</td>
+<td style="text-align: center;">5 cm or 5% (whichever greater)</td>
+<td>Industry standard for vessel MBES</td>
+</tr>
+<tr>
+<td>iXblue Octans</td>
+<td>FOG gyro + MRU</td>
+<td style="text-align: center;">0.01 deg</td>
+<td style="text-align: center;">5 cm or 5%</td>
+<td>Also provides heading</td>
+</tr>
+<tr>
+<td>iXblue PHINS</td>
+<td>FOG INS</td>
+<td style="text-align: center;">0.01 deg</td>
+<td style="text-align: center;">5 cm or 5%</td>
+<td>Full INS with DVL/GNSS aiding</td>
+</tr>
+<tr>
+<td>Teledyne TSS DMS-05</td>
+<td>MRU</td>
+<td style="text-align: center;">0.02 deg</td>
+<td style="text-align: center;">5 cm or 5%</td>
+<td>Compact, ROV-suitable</td>
+</tr>
+<tr>
+<td>SMC IMU-007/108</td>
+<td>MEMS MRU</td>
+<td style="text-align: center;">0.05 deg</td>
+<td style="text-align: center;">10 cm or 10%</td>
+<td>Lower cost, lower accuracy</td>
+</tr>
+<tr>
+<td>Applanix POS MV</td>
+<td>GNSS/INS</td>
+<td style="text-align: center;">0.01 deg</td>
+<td style="text-align: center;">5 cm or 5%</td>
+<td>TrueHeave post-processing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="real-world-sensor-performance">Real-World Sensor Performance<a class="headerlink" href="#real-world-sensor-performance" title="Permanent link">&para;</a></h3>
+<p>Manufacturer specifications tell one story. Independent testing tells another. A comparative study published in Hydro International tested multiple motion sensors simultaneously on the same vessel and found significant differences in heave performance:</p>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th style="text-align: center;">Heave Variation</th>
+<th>Behaviour During Turns</th>
+<th style="text-align: center;">Stabilisation Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Applanix POS MV 320</td>
+<td style="text-align: center;">1-2 cm</td>
+<td>Minimal disturbance</td>
+<td style="text-align: center;">Immediate</td>
+</tr>
+<tr>
+<td>CodaOctopus F180</td>
+<td style="text-align: center;">10-20 cm deviation</td>
+<td>Significant heave excursion during turns</td>
+<td style="text-align: center;">~30 seconds</td>
+</tr>
+<tr>
+<td>Kongsberg Seapath 200</td>
+<td style="text-align: center;">Up to 40 cm deviation</td>
+<td>Large heave error during vessel turns</td>
+<td style="text-align: center;">1.5-2 minutes</td>
+</tr>
+<tr>
+<td>TSS Marinus</td>
+<td style="text-align: center;">10-20 cm deviation</td>
+<td>Moderate disturbance during turns</td>
+<td style="text-align: center;">~1 minute</td>
+</tr>
+<tr>
+<td>iXblue Octans III</td>
+<td style="text-align: center;">Good in steady state</td>
+<td>Limited by GNSS dependency</td>
+<td style="text-align: center;">Variable</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Marketing vs Reality</p>
+<p>All of these sensors claim similar accuracy on their specification sheets. The differences only became apparent through controlled side-by-side testing. The key takeaway: do not assume equivalent performance based on published specs alone. If your project has tight vertical tolerances, validate the specific sensor you have on board.</p>
+</div>
+<p><strong>Practical implications:</strong></p>
+<ul>
+<li>Allow <strong>1-2 minutes post-turn stabilisation</strong> before resuming survey data acquisition, regardless of which sensor is in use. Sensors with worse turn performance may need longer.</li>
+<li>If using a sensor with known turn sensitivity (Seapath 200 or similar), flag data acquired during and immediately after turns for review in post-processing.</li>
+<li>Roll and pitch accuracy also degrades under high motion rates. At roll rates exceeding 8 deg/s, none of the tested sensors met their published specifications, with deviations exceeding 0.08 degrees.</li>
+</ul>
+<h3 id="mru-installation-requirements">MRU Installation Requirements<a class="headerlink" href="#mru-installation-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Centre of rotation</strong>: Mount the MRU as close as possible to the vessel's centre of gravity / centre of rotation. This minimises the lever-arm-induced heave computation and its associated errors.</li>
+<li><strong>Rigid mounting</strong>: The MRU must be bolted to a rigid structural member. Never mount on floating floors, removable deck plates, or structures that flex with vessel motion.</li>
+<li><strong>Axes alignment</strong>: Align the MRU axes to the vessel reference frame (typically X-forward, Y-starboard, Z-down). Small misalignments are corrected by the DC survey and AHRS calibration, but gross misalignment (e.g., axes swapped) causes incorrect pitch/roll application.</li>
+<li><strong>Vibration isolation</strong>: Mount away from engines, generators, and thrusters. High-frequency vibration aliases into the acceleration measurements and degrades heave quality.</li>
+<li><strong>Cable routing</strong>: Secure cables to prevent mechanical strain and water ingress. Label connectors clearly for demobilisation.</li>
+</ul>
+<h3 id="latency-and-interface-effects">Latency and Interface Effects<a class="headerlink" href="#latency-and-interface-effects" title="Permanent link">&para;</a></h3>
+<p>MRU attitude data has a time delay between measurement and output. If this latency is not correctly accounted for in the navigation software, dynamic attitude corrections are applied with a timing offset, causing motion-correlated depth errors.</p>
+<p>Typical MRU latency: 10-30 ms. At 1 deg/sec vessel roll rate (moderate sea state), a 20 ms latency error produces approximately 0.02 deg of roll error, which at 60 deg beam angle in 50 m depth gives approximately 0.03 m depth error.</p>
+<p><strong>The interface matters.</strong> Comparative testing has shown that the data interface between the MRU and the logging system introduces its own latency, and the choice of interface has a measurable effect on data quality:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th style="text-align: center;">Typical Added Latency</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serial (RS-232/422)</td>
+<td style="text-align: center;">~24 ms</td>
+<td>Measurable roll errors at high motion rates. Serial transmission is sequential, and at standard baud rates the time to transmit a full attitude telegram adds significant delay.</td>
+</tr>
+<tr>
+<td>Ethernet (UDP)</td>
+<td style="text-align: center;">&lt; 1 ms</td>
+<td>Negligible added latency. Combined with source-level timestamping (the sensor stamps each measurement with its own synchronised clock), this removes the interface latency problem entirely.</td>
+</tr>
+</tbody>
+</table>
+<p>At a roll rate of 8 deg/s, a 24 ms serial latency produces approximately 0.19 deg of effective roll error -- nearly 10 times the sensor's published accuracy. This error is systematic and correlates with motion, making it difficult to separate from real attitude in post-processing.</p>
+<div class="admonition tip">
+<p class="admonition-title">Best Practice</p>
+<p>Use Ethernet interfaces with source-level timestamping whenever the sensor supports it. If serial is the only option, measure the actual interface latency and enter it in the navigation software as part of the total sensor latency. Do not assume the manufacturer's default latency value accounts for the interface delay.</p>
+</div>
+<hr />
+<h2 id="prerequisites"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2zm.5 6.5L9 12l2 2 4.5-4.5L17 11l-6 6z"/></svg></span> Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> MRU installed on rigid mounting, aligned to vessel axes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dimensional control survey completed with lever arms to all transducers measured</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lever arm values entered in navigation software and verified</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Heave filter period set appropriately for expected sea conditions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> MRU powered on and output verified in navigation software</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> GNSS system operational (for GNSS-aided heave or GNSS heave comparison)</li>
+</ul>
+<hr />
+<h2 id="procedure"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 11 13 7.5l1.4-1.4 2.1 2.1L20.7 4l1.4 1.4zM11 7H2v2h9zm10 6.4L19.6 12 17 14.6 14.4 12 13 13.4l2.6 2.6-2.6 2.6 1.4 1.4 2.6-2.6 2.6 2.6 1.4-1.4-2.6-2.6zM11 15H2v2h9z"/></svg></span> Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h2>
+<h3 id="heave-verification-by-gnss-comparison">Heave Verification by GNSS Comparison<a class="headerlink" href="#heave-verification-by-gnss-comparison" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Configure the GNSS system to output high-rate vertical position (10 Hz minimum, RTK or PPP)</li>
+<li>Filter the GNSS height to extract the wave-frequency component (most navigation software does this automatically when configured for "GNSS heave")</li>
+<li>Log simultaneously: MRU heave and GNSS-derived heave at the same point (apply lever arm corrections to bring both to the same location)</li>
+<li>Log for minimum 30 minutes in conditions with measurable swell (&gt; 0.3 m heave amplitude)</li>
+<li>Compare the two heave signals: overlay time series, compute RMS difference</li>
+<li>Check for: amplitude agreement, phase agreement (timing), and any systematic offset</li>
+</ol>
+<h3 id="heave-verification-by-tide-gauge-shallow-water">Heave Verification by Tide Gauge (Shallow Water)<a class="headerlink" href="#heave-verification-by-tide-gauge-shallow-water" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Deploy a bottom-mounted pressure gauge or use a nearby tide gauge with known datum</li>
+<li>Survey a flat area in shallow water (&lt; 20 m) with MBES at very slow speed (&lt; 2 knots) over multiple tidal cycles</li>
+<li>Compare the observed depth variations (after heave correction) against the independent tide record</li>
+<li>If heave is working correctly, the depth residuals after tidal correction should show no correlation with wave motion</li>
+</ol>
+<h3 id="settlement-and-squat-measurement">Settlement and Squat Measurement<a class="headerlink" href="#settlement-and-squat-measurement" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select a flat, featureless survey area in moderate water depth (20-50 m)</li>
+<li>Survey the area at the lowest practical speed (1-2 knots) to establish a reference depth surface</li>
+<li>Survey the same area at the planned survey speed</li>
+<li>Survey again at 2 knots above and below the planned survey speed</li>
+<li>Compare mean depths at each speed. The difference from the low-speed reference is the settlement/squat value at that speed</li>
+<li>Plot speed vs settlement/squat. The relationship should be approximately quadratic.</li>
+<li>Enter the speed-dependent correction in the navigation software or apply in post-processing</li>
+</ol>
+<h3 id="heave-filter-period-verification">Heave Filter Period Verification<a class="headerlink" href="#heave-filter-period-verification" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Record the dominant swell period from the vessel weather station or by observing the MRU heave spectral output</li>
+<li>Confirm the MRU heave filter period exceeds the swell period by at least 20%</li>
+<li>If GNSS heave is available, compare MRU heave against GNSS heave at different filter settings:<ul>
+<li>At the correct setting, MRU and GNSS heave amplitudes should match</li>
+<li>If the MRU heave amplitude is less than GNSS heave, the filter is attenuating real signal (filter period too short)</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="acceptance-criteria"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Pass</th>
+<th style="text-align: center;">Investigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MRU heave vs GNSS heave (RMS difference)</td>
+<td style="text-align: center;">&lt; 0.05 m or &lt; 5% of heave amplitude</td>
+<td style="text-align: center;">&gt; 0.10 m or &gt; 10%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Heave phase agreement (MRU vs GNSS)</td>
+<td style="text-align: center;">No visible timing offset</td>
+<td style="text-align: center;">Consistent lead/lag in time series</td>
+</tr>
+<tr>
+<td style="text-align: left;">Heave filter period vs swell period</td>
+<td style="text-align: center;">Filter period &gt; 1.2 x swell period</td>
+<td style="text-align: center;">Filter period &lt; swell period</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pitch/roll accuracy (MRU spec)</td>
+<td style="text-align: center;">Within manufacturer specification</td>
+<td style="text-align: center;">Exceeds spec</td>
+</tr>
+<tr>
+<td style="text-align: left;">Settlement/squat repeatability</td>
+<td style="text-align: center;">Consistent to within 0.03 m at same speed</td>
+<td style="text-align: center;">Varies by &gt; 0.05 m</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lever arm entry verification</td>
+<td style="text-align: center;">Matches DC survey to 0.01 m</td>
+<td style="text-align: center;">Any discrepancy</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="heave-spikes-in-data">Heave Spikes in Data<a class="headerlink" href="#heave-spikes-in-data" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Sudden, large heave excursions (&gt; 1 m) that do not correlate with observed sea state.</p>
+<p><strong>Cause</strong>: Usually electrical noise, vibration aliasing, or sensor saturation.</p>
+<p><strong>Action</strong>:</p>
+<ol>
+<li>Check for nearby vibration sources (running engines, thrusters) and relocate MRU if possible</li>
+<li>Check cable connections for intermittent contact</li>
+<li>Check if the spikes correlate with specific vessel operations (thruster use, crane operations)</li>
+<li>If persistent, apply a despiking filter in post-processing, but investigate and resolve the root cause</li>
+</ol>
+<h3 id="systematic-depth-error-correlated-with-swell">Systematic Depth Error Correlated with Swell<a class="headerlink" href="#systematic-depth-error-correlated-with-swell" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Soundings show a consistent pattern of too-shallow crests and too-deep troughs relative to a flat seabed.</p>
+<p><strong>Cause</strong>: Heave filter period is shorter than the dominant swell period.</p>
+<p><strong>Action</strong>:</p>
+<ol>
+<li>Check the current filter period setting</li>
+<li>Compare against the observed swell period</li>
+<li>Increase the filter period to at least 1.2x the swell period</li>
+<li>Re-acquire data and confirm the pattern resolves</li>
+</ol>
+<h3 id="depth-error-increases-at-higher-survey-speed">Depth Error Increases at Higher Survey Speed<a class="headerlink" href="#depth-error-increases-at-higher-survey-speed" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Mean depth changes with vessel speed over the same area.</p>
+<p><strong>Cause</strong>: Settlement and squat not accounted for, or incorrectly modelled.</p>
+<p><strong>Action</strong>:</p>
+<ol>
+<li>Perform a settlement/squat speed run (see Procedure section)</li>
+<li>Apply the measured correction</li>
+<li>Verify by re-surveying at different speeds and confirming depth agreement</li>
+</ol>
+<h3 id="outer-beam-depth-scatter-worse-than-expected">Outer Beam Depth Scatter Worse Than Expected<a class="headerlink" href="#outer-beam-depth-scatter-worse-than-expected" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Cross-profile shows increasing depth noise toward the swath edges, beyond what refraction alone would explain.</p>
+<p><strong>Cause</strong>: MRU attitude accuracy is insufficient for the swath width, or MRU latency is incorrect.</p>
+<p><strong>Action</strong>:</p>
+<ol>
+<li>Check MRU specifications against the required attitude accuracy for the swath width and depth</li>
+<li>Verify MRU latency is correctly entered in navigation software</li>
+<li>If latency is suspect, run reciprocal survey lines and compare outer beam depths. A latency error will show speed-dependent and heading-dependent patterns.</li>
+<li>Reduce swath width if the MRU accuracy cannot support the full swath</li>
+</ol>
+<h3 id="lever-arm-values-incorrect">Lever Arm Values Incorrect<a class="headerlink" href="#lever-arm-values-incorrect" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Heave performance degrades in higher sea states but is acceptable in calm conditions.</p>
+<p><strong>Cause</strong>: When the sea is calm, lever-arm-induced heave is small, so errors in lever arm values have little effect. As sea state increases, pitch and roll amplitudes increase, and lever arm errors produce increasingly large heave errors.</p>
+<p><strong>Action</strong>:</p>
+<ol>
+<li>Re-verify lever arm values against the DC survey</li>
+<li>Check for data entry errors (swapped X/Y, wrong sign, metres vs millimetres)</li>
+<li>If the DC survey is suspect, re-measure the MRU-to-transducer lever arms</li>
+</ol>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../ahrs-calibration/">AHRS Calibration</a></li>
+<li><a href="../../sensors/mbes-calibration/">MBES Calibration (Patch Test)</a></li>
+<li><a href="../../sensors/mbes-operations-and-settings/">MBES Operations and Settings</a></li>
+<li><a href="../dimensional-control-survey/">Dimensional Control Survey</a></li>
+<li><a href="../../positioning/tidal-reduction-methods/">Tidal Theory and Reduction Methods</a></li>
+<li><a href="../../reference/tpu-error-budgets/">TPU and Error Budgets</a></li>
+<li><a href="../../reference/vessel-motion-effects/">Vessel Motion Effects on Survey Data</a> -- six degrees of freedom, real-world sensor comparison results, and practical recommendations for motion compensation</li>
+</ul>
+<hr />
+<h2 id="quick-reference"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m0 4v4h6V8zm8 0v4h6V8zm-8 6v4h6v-4zm8 0v4h6v-4z"/></svg></span> Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MRU heave filter period</td>
+<td style="text-align: center;">&gt; 1.2 x dominant swell period</td>
+</tr>
+<tr>
+<td style="text-align: left;">Typical survey vessel heave filter</td>
+<td style="text-align: center;">10-20 seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">MRU heave accuracy (survey grade)</td>
+<td style="text-align: center;">5 cm or 5% of amplitude</td>
+</tr>
+<tr>
+<td style="text-align: left;">Induced heave (10 m lever arm, 3 deg pitch)</td>
+<td style="text-align: center;">~0.52 m</td>
+</tr>
+<tr>
+<td style="text-align: left;">Typical settlement/squat at survey speed</td>
+<td style="text-align: center;">0.05-0.30 m</td>
+</tr>
+<tr>
+<td style="text-align: left;">MRU pitch/roll accuracy (survey grade)</td>
+<td style="text-align: center;">0.01-0.02 deg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Depth error from 0.1 deg roll at 60 deg beam, 50 m depth</td>
+<td style="text-align: center;">~0.17 m</td>
+</tr>
+<tr>
+<td style="text-align: left;">Typical MRU latency</td>
+<td style="text-align: center;">10-30 ms</td>
+</tr>
+<tr>
+<td style="text-align: left;">MRU heave vs GNSS heave acceptance</td>
+<td style="text-align: center;">&lt; 0.05 m RMS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Min heave verification logging</td>
+<td style="text-align: center;">30 minutes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">References</p>
+<ul>
+<li>IHO S-44, Edition 6.1.0, Standards for Hydrographic Surveys</li>
+<li>IMCA S 015, Guidelines for the use of Multibeam Echosounders</li>
+<li>Equipment manufacturer specifications (Kongsberg, iXblue, Teledyne, Applanix)</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../gyro-types-and-calibration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gyro Types and Calibration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Gyro Types and Calibration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mobilisation-checklist/" class="md-footer__link md-footer__link--next" aria-label="Next: Mobilisation Checklist">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Mobilisation Checklist
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3297 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/mobilisation/gyro-types-and-calibration/">
+      
+      
+        <link rel="prev" href="../static-ahrs-intersystem-check/">
+      
+      
+        <link rel="next" href="../heave-mru-theory/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Gyro Types and Calibration - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-W8P1PDKH17"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-W8P1PDKH17",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-W8P1PDKH17",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gyro-types-and-calibration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gyro Types and Calibration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../positioning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../positioning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mobilisation & Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensional Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dimensional Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dimensional-control-survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensional Control Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dimensional-control-tape-measure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensional Control (Tape Measure)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attitude & Heading
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Attitude & Heading
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ahrs-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AHRS Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-ahrs-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static AHRS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gyro Types and Calibration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gyro Types and Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gyro-types-and-accuracies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gyro Types and Accuracies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gyro Types and Accuracies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#settling-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settling Times
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-error-gyrocompasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed Error (Gyrocompasses)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gams-integer-ambiguity-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAMS Integer Ambiguity Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bench-test-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bench Test Procedure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vessel-gyro-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vessel Gyro Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gams-antenna-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAMS Antenna Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-total-station-calibration-by-total-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :material-total-station: Calibration by Total Station
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=":material-total-station: Calibration by Total Station">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dual-total-station-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual Total Station Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-logging-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Logging Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-with-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example with Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rov-gyro-calibration-by-lars-reference-tape-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROV Gyro Calibration by LARS Reference + Tape Measurements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROV Gyro Calibration by LARS Reference + Tape Measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle-a-calculation-rov-frame-misalignment-to-lars-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angle A Calculation (ROV frame misalignment to LARS frame)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-o-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-O Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-by-gnss-compass-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration by GNSS Compass Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration by GNSS Compass Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-o-calculation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-O Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-mounted-gyro-calibration-in-fabrication-yard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure-Mounted Gyro Calibration in Fabrication Yard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure-Mounted Gyro Calibration in Fabrication Yard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interchangeable-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interchangeable Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heave-mru-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave, MRU Theory and Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Checklists
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobilisation-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demobilisation-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demobilisation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gyro-types-and-accuracies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gyro Types and Accuracies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gyro Types and Accuracies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#settling-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settling Times
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-error-gyrocompasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed Error (Gyrocompasses)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gams-integer-ambiguity-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAMS Integer Ambiguity Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bench-test-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bench Test Procedure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vessel-gyro-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vessel Gyro Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gams-antenna-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAMS Antenna Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-total-station-calibration-by-total-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :material-total-station: Calibration by Total Station
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=":material-total-station: Calibration by Total Station">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dual-total-station-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual Total Station Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-logging-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Logging Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-with-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example with Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rov-gyro-calibration-by-lars-reference-tape-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROV Gyro Calibration by LARS Reference + Tape Measurements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROV Gyro Calibration by LARS Reference + Tape Measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle-a-calculation-rov-frame-misalignment-to-lars-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angle A Calculation (ROV frame misalignment to LARS frame)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-o-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-O Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-by-gnss-compass-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration by GNSS Compass Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration by GNSS Compass Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-o-calculation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-O Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-mounted-gyro-calibration-in-fabrication-yard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure-Mounted Gyro Calibration in Fabrication Yard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure-Mounted Gyro Calibration in Fabrication Yard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interchangeable-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interchangeable Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mobilisation & Setup
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ahrs-calibration/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Attitude & Heading
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">calibration</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">convergence</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">fog</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">gams</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">gnss compass</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">gyrocompass</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">heading</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">rlg</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">rov</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">spinning mass</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">structure</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">total station</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="gyro-types-and-calibration"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 9-3-9-3 9-9 3 9 3 3 9 3-9 9-3zM4 12l6-2 1 2zm8 8-2-6 2-1zm0-16 2 6-2 1zm2 10-1-2h7zm-5.3 3.3L5 19l1.7-3.7 1.6.5zm8.6-2L19 19l-3.7-1.7.5-1.6zM6.7 8.7 5 5l3.7 1.7-.5 1.5zm8.6-2L19 5l-1.7 3.7-1.6-.5z"/></svg></span> Gyro Types and Calibration<a class="headerlink" href="#gyro-types-and-calibration" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Calibration</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>Reference Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-01</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Detail the types, accuracies, installation requirements, and calibration methods for gyrocompasses used on vessels, ROVs, and structures in offshore survey operations. Covers spinning mass, fibre optic, ring laser, and GNSS-based heading systems.</p>
+</div>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Every mobilisation</strong> -- gyro calibration (C-O determination) is a standard mob activity</li>
+<li><strong>Understanding gyro behaviour during operations</strong> -- use this article as a reference for settling times, speed error, convergence, and troubleshooting heading issues</li>
+<li><strong>When heading discrepancies appear</strong> -- consult the troubleshooting section below when multiple heading references disagree</li>
+</ul>
+<hr />
+<h2 id="gyro-types-and-accuracies"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9.5 7.5 14h-5zM3 4h4v4H3zm2 16a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2M9 5v2h12V5zm0 14h12v-2H9zm0-6h12v-2H9z"/></svg></span> Gyro Types and Accuracies<a class="headerlink" href="#gyro-types-and-accuracies" title="Permanent link">&para;</a></h2>
+<p>A gyrocompass provides heading relative to True North for vessels, ROVs, and structures.</p>
+<table>
+<thead>
+<tr>
+<th>Heading Reference System</th>
+<th>System Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spinning mass gyrocompass</td>
+<td>+/-0.2 deg x secant(latitude)</td>
+</tr>
+<tr>
+<td>Fibre optic gyrocompass (FOG)</td>
+<td>+/-0.1 deg x secant(latitude)</td>
+</tr>
+<tr>
+<td>Ring laser gyrocompass (RLG)</td>
+<td>&lt;0.05 deg x secant(latitude)</td>
+</tr>
+<tr>
+<td>GNSS compass (GAMS), 2 m baseline</td>
+<td>+/-0.02 deg</td>
+</tr>
+<tr>
+<td>GNSS compass (GAMS), 4 m baseline</td>
+<td>+/-0.01 deg</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Latitude Dependency</p>
+<p>For spinning mass, FOG, and RLG types, the quoted accuracy requires the latitude (via a $GGA or $GLL telegram) to be interfaced to the gyrocompass, and the unit must have settled for the period specified in the manual.</p>
+<p><strong>Example</strong>: Spinning mass gyrocompass at 30 deg latitude:
++/-0.2 x secant(30) = +/-0.23 deg</p>
+</div>
+<h3 id="settling-times">Settling Times<a class="headerlink" href="#settling-times" title="Permanent link">&para;</a></h3>
+<p>After power-up, each gyro type requires a different amount of time to reach its quoted accuracy. Do not begin any calibration or survey operations until the gyro has fully settled.</p>
+<table>
+<thead>
+<tr>
+<th>Gyro Type</th>
+<th>Typical Settling Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spinning mass gyrocompass</td>
+<td>4 - 6 hours</td>
+</tr>
+<tr>
+<td>Fibre optic gyrocompass (FOG)</td>
+<td>20 - 30 minutes</td>
+</tr>
+<tr>
+<td>Ring laser gyrocompass (RLG)</td>
+<td>Near-instant (&lt; 5 minutes)</td>
+</tr>
+<tr>
+<td>MEMS gyrocompass</td>
+<td>5 - 10 minutes</td>
+</tr>
+<tr>
+<td>GNSS compass (GAMS)</td>
+<td>Time to resolve integer ambiguities (typically 2 - 10 minutes with clear sky view)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Spinning Mass Gyros and Power</p>
+<p>If a spinning mass gyrocompass loses power for any reason, the full 4-6 hour settling period must start again. This is why UPS protection is mandatory.</p>
+</div>
+<h3 id="speed-error-gyrocompasses">Speed Error (Gyrocompasses)<a class="headerlink" href="#speed-error-gyrocompasses" title="Permanent link">&para;</a></h3>
+<p>Gyrocompasses that use the Earth's rotation to find north (spinning mass, FOG, RLG) are affected by vessel speed. The gyrocompass senses the combined effect of Earth rotation and vessel motion. At speed, the north-finding mechanism is biased by the vessel's velocity component along the east-west axis.</p>
+<ul>
+<li>Most modern gyrocompasses accept a speed input (from the vessel's speed log or GNSS) and correct for this automatically</li>
+<li>If speed input is lost or incorrect, a heading error proportional to vessel speed and heading will appear</li>
+<li>The error is largest when steaming east or west, and zero when steaming due north or south</li>
+<li>Always verify that the speed input to the gyrocompass is active and reading correctly</li>
+</ul>
+<h3 id="gams-integer-ambiguity-failures">GAMS Integer Ambiguity Failures<a class="headerlink" href="#gams-integer-ambiguity-failures" title="Permanent link">&para;</a></h3>
+<p>GNSS-based heading systems (GAMS) determine heading by resolving the carrier phase integer ambiguity between two antennas. When this resolution fails or is incorrect:</p>
+<ul>
+<li><strong>Heading jumps by integer degrees</strong> -- the system locks onto a wrong integer solution, producing a discrete heading offset (not a gradual drift)</li>
+<li><strong>Symptoms</strong>: sudden heading change, typically by a whole-number amount (e.g., exactly 1 or 2 degrees), that does not correlate with vessel movement</li>
+<li><strong>Causes</strong>: multipath from nearby structures, antenna obstruction, moisture in antenna connectors, baseline distance entered incorrectly</li>
+<li><strong>Recovery</strong>: cycle the GAMS system, verify antenna baseline distance, check for antenna obstructions, ensure connectors are dry</li>
+</ul>
+<hr />
+<h2 id="bench-test-procedure"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2zm4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4z"/></svg></span> Bench Test Procedure<a class="headerlink" href="#bench-test-procedure" title="Permanent link">&para;</a></h2>
+<p>Prior to installation, every gyrocompass (except GNSS-based systems) must be bench tested in the workshop against a known heading.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Butt the gyrocompass housing against a baseline of known azimuth in the workshop</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Set the latitude for the test location; set speed to 0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Start data logging from power-up</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Log continuously for <strong>24 hours</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Display results graphically to confirm the gyrocompass conforms to manufacturer specification</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Include the bench test certificate with the shipment when the gyrocompass is mobilised</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">On Arrival</p>
+<p>When unpacking the equipment, take a copy of the bench test certificate for inclusion in the mobilisation report. Confirm the bench test was performed within 6 months of the project start date.</p>
+</div>
+<hr />
+<h2 id="convergence-calculation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Convergence Calculation<a class="headerlink" href="#convergence-calculation" title="Permanent link">&para;</a></h2>
+<p>A gyrocompass outputs azimuth relative to True North. To convert True North to Grid North, convergence must be applied.</p>
+<p><strong>Formula:</strong></p>
+<p><strong>Grid Heading = True Heading - (+/-Convergence)</strong></p>
+<ul>
+<li>Convergence varies depending on latitude, longitude, and the map projection in use</li>
+<li>The navigation software calculates and applies convergence to convert True heading to Grid heading</li>
+<li><strong>Sign convention for UTM</strong>: convergence is positive east of the central meridian in the Northern Hemisphere. West of the central meridian, convergence is negative. In the Southern Hemisphere the signs are reversed</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Critical During Alongside Calibrations</p>
+<p>When calibrating alongside, land survey techniques produce a bearing for the vessel's fore/aft axis. It is essential to establish whether this bearing is reported in True or Grid, and to apply convergence where applicable. Ensure the dimensional control team and the vessel surveyors use the same geodetic parameters.</p>
+</div>
+<hr />
+<h2 id="calibration-schedule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg></span> Calibration Schedule<a class="headerlink" href="#calibration-schedule" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Heading Reference System</th>
+<th>New Installation</th>
+<th>New Project</th>
+<th>Ongoing Projects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spinning mass gyrocompass</td>
+<td>Always</td>
+<td>Always</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Fibre optic gyrocompass (FOG)</td>
+<td>Always</td>
+<td>Not required unless specified by client</td>
+<td>Annually</td>
+</tr>
+<tr>
+<td>Ring laser gyrocompass (RLG)</td>
+<td>Always</td>
+<td>Not required unless specified by client</td>
+<td>Annually</td>
+</tr>
+<tr>
+<td>GNSS compass (GAMS)</td>
+<td>Always</td>
+<td>Not required unless specified by client</td>
+<td>Annually</td>
+</tr>
+</tbody>
+</table>
+<p>Where more than one heading reference is available, they should be continuously compared and monitored within the navigation software. Differences larger than the quoted accuracy of the instruments must be investigated and resolved. If necessary, operations must be halted until the difference is resolved.</p>
+<hr />
+<h2 id="vessel-gyro-installation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6h12v3.96L12 8 6 9.96M3.94 19H4c1.6 0 3-.88 4-2 1 1.12 2.4 2 4 2s3-.88 4-2c1 1.12 2.4 2 4 2h.05l1.9-6.69c.08-.25.05-.53-.06-.77-.13-.24-.34-.42-.6-.5L20 10.62V6a2 2 0 0 0-2-2h-3V1H9v3H6a2 2 0 0 0-2 2v4.62l-1.29.42c-.26.08-.47.26-.6.5-.11.24-.14.52-.06.77M20 21c-1.39 0-2.78-.47-4-1.33-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.37 0 2.74-.35 4-1 2.5 1.3 5.5 1.3 8 0 1.26.65 2.62 1 4 1h2v-2z"/></svg></span> Vessel Gyro Installation<a class="headerlink" href="#vessel-gyro-installation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Away from foot traffic to avoid being knocked or moved. Adequate power supply and cable routing access.</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>Must be on a UPS -- any power interruption requires the gyro to re-settle</td>
+</tr>
+<tr>
+<td><strong>Mounting surface</strong></td>
+<td>Fix a piece of marine plywood (or similar) to the floor using hot-melt glue. Always check with the marine crew before fixing to the deck.</td>
+</tr>
+<tr>
+<td><strong>Floating floor warning</strong></td>
+<td>Confirm with the marine crew that the floor is NOT a floating floor. Floating floors have no solid connection to the ship's superstructure and may move, invalidating any calibration.</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td>Orient the North alignment mark on the gyrocompass towards the bow. If practical, power up the gyrocompass, note the heading from the vessel's compass, gently rotate to the observed heading, then mark the floor around the housing before fixing.</td>
+</tr>
+<tr>
+<td><strong>Fixing method</strong></td>
+<td>Screw down (check screw length -- cables/pipework may be below the floor) and/or hot-melt glue (quick curing, easy to remove later)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gams-antenna-installation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.62 1 5.66 5.67-2.12 2.12-2.12-2.12-1.42 1.42 2.33 2.32-1.16 1.17.45.46a2.5 2.5 0 0 1 2.83.5l-3.53 3.53a2.5 2.5 0 0 1-.5-2.83l-.46-.45-1.17 1.16-2.32-2.33-1.42 1.42 2.12 2.12-2.12 2.12L1 11.62 3.14 9.5l2.12 2.12 1.41-1.41-2.83-2.83c-.78-.78-.78-2.05 0-2.83l.71-.71c.78-.78 2.05-.78 2.83 0l2.83 2.83 1.41-1.41L9.5 3.14zM18 14a4 4 0 0 1-4 4v-2a2 2 0 0 0 2-2zm4 0a8 8 0 0 1-8 8v-2a6 6 0 0 0 6-6z"/></svg></span> GAMS Antenna Installation<a class="headerlink" href="#gams-antenna-installation" title="Permanent link">&para;</a></h2>
+<p>GNSS Azimuth Measurement System (GAMS) antennas must be installed at the top of the mast or in an area with no overhead obstructions.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Baseline</strong></td>
+<td>Minimum 3 m between antennas (can be less if the job specification allows)</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td>Mount the bracket with antennas oriented fore and aft, in-line with the vessel axis</td>
+</tr>
+<tr>
+<td><strong>Forward antenna</strong></td>
+<td>Ensure the forward antenna is connected to the correct receiver socket -- wrong connection produces a heading 180 deg out</td>
+</tr>
+<tr>
+<td><strong>Baseline measurement</strong></td>
+<td>If no pre-defined bracket is supplied, the baseline distance must be measured during dimensional control. Greater accuracy in baseline measurement enables faster heading resolution</td>
+</tr>
+<tr>
+<td><strong>Moisture</strong></td>
+<td>Pre-mount antennas on the bracket and connect cables in a dry location -- moisture in connectors causes signal attenuation</td>
+</tr>
+<tr>
+<td><strong>Cable identification</strong></td>
+<td>Mark each antenna cable at both ends with different coloured tape to avoid confusion</td>
+</tr>
+<tr>
+<td><strong>Working at height</strong></td>
+<td>The installer must be working-at-height certified with a suitable risk assessment completed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="material-total-station-calibration-by-total-station">:material-total-station: Calibration by Total Station<a class="headerlink" href="#material-total-station-calibration-by-total-station" title="Permanent link">&para;</a></h2>
+<p>This method is used for vessel-mounted gyrocompasses while alongside. It is also valid for ROV gyrocompasses (ROV on quayside) and structures in a yard.</p>
+<h3 id="dual-total-station-setup">Dual Total Station Setup<a class="headerlink" href="#dual-total-station-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Set up two total stations on known control points on the quayside, close to the bow and stern of the vessel, with clear line of sight to targets on the vessel</li>
+<li>Targets should ideally be prisms mounted on dimensionally controlled points on the vessel centreline (or on the side, parallel to the centreline)</li>
+<li>Observe horizontal range and bearings to the prisms from the total stations</li>
+<li>Simultaneously log total station data and raw vessel gyrocompass data</li>
+</ol>
+<h3 id="pre-logging-checks">Pre-Logging Checks<a class="headerlink" href="#pre-logging-checks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Remove all existing C-O corrections from the gyrocompass</li>
+<li>Verify the correct latitude and speed (0) are entered</li>
+<li>Confirm the gyrocompass has fully settled</li>
+</ul>
+<h3 id="worked-example-with-convergence">Worked Example with Convergence<a class="headerlink" href="#worked-example-with-convergence" title="Permanent link">&para;</a></h3>
+<p>The total station bearings and gyrocompass data are processed to determine the C-O correction.</p>
+<p><strong>Key convergence consideration:</strong></p>
+<ul>
+<li>Establish whether the bearings from the dimensional control surveyors are True or Grid</li>
+<li>The convergence is calculated in the navigation software and depends on the geodetic parameters in use</li>
+<li>Both the dimensional control team and the vessel surveyors must use the same geodetic parameters</li>
+</ul>
+<h3 id="practical-notes">Practical Notes<a class="headerlink" href="#practical-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Conduct the calibration during a period with no crane operations (these cause vessel movement)</li>
+<li>Request the marine crew to tighten mooring ropes to reduce vessel movement in port</li>
+<li>This method provides a reference heading with precision typically &lt;0.1 deg (actual precision depends on vessel stability)</li>
+</ul>
+<hr />
+<h2 id="rov-gyro-calibration-by-lars-reference-tape-measurements"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.41 4 16 6.41v.18L18.41 9H22v2h-4.41L16 9.41V12h-1a2 2 0 0 1-2-2V7.5H9.86c-.09.37-.24.72-.44 1.05L15.18 19H20a2 2 0 0 1 2 2v1H2v-1a2 2 0 0 1 2-2h6.61l-4.69-8.5a4.006 4.006 0 0 1-3.81-3A4 4 0 0 1 5 2.63c2.13-.55 4.31.73 4.86 2.87H13V3a2 2 0 0 1 2-2h1v2.59L17.59 2H22v2zM6 4.5a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2"/></svg></span> ROV Gyro Calibration by LARS Reference + Tape Measurements<a class="headerlink" href="#rov-gyro-calibration-by-lars-reference-tape-measurements" title="Permanent link">&para;</a></h2>
+<p>This method is used for ROV-mounted gyrocompasses while the ROV is on deck on the LARS (Launch and Recovery System). It can be performed alongside or at sea (at sea: vessel should be stationary on a constant heading to avoid latency and speed bias).</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>The LARS system must first be observed by dimensional control to determine the orientation of the main structural members (beams) forming the platform the ROV sits on, relative to the vessel centreline.</p>
+<h3 id="measurement-procedure">Measurement Procedure<a class="headerlink" href="#measurement-procedure" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Measure taped or EDM offsets fore and aft on the ROV frame, perpendicular to the LARS reference beam</li>
+<li>Measure the distance between the fore and aft measurement points along the ROV frame</li>
+</ol>
+<h3 id="angle-a-calculation-rov-frame-misalignment-to-lars-frame">Angle A Calculation (ROV frame misalignment to LARS frame)<a class="headerlink" href="#angle-a-calculation-rov-frame-misalignment-to-lars-frame" title="Permanent link">&para;</a></h3>
+<p><strong>Angle A = tan-1( (a - b) / c )</strong></p>
+<p>Where:</p>
+<ul>
+<li>a = perpendicular offset at the forward measurement point</li>
+<li>b = perpendicular offset at the aft measurement point</li>
+<li>c = distance between the measurement points along the ROV frame</li>
+</ul>
+<p><strong>Worked example:</strong></p>
+<ul>
+<li>a = 0.665 m</li>
+<li>b = 0.625 m</li>
+<li>c = 2.340 m</li>
+<li>Angle A = tan-1( (0.665 - 0.625) / 2.340 ) = <strong>0.98 deg</strong></li>
+</ul>
+<h3 id="data-logging">Data Logging<a class="headerlink" href="#data-logging" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allow both the vessel and ROV gyrocompasses to settle</li>
+<li>Enter the local latitude into both gyrocompasses</li>
+<li>Log data from both gyrocompasses for a <strong>minimum of 30 minutes</strong></li>
+</ul>
+<h3 id="c-o-calculation">C-O Calculation<a class="headerlink" href="#c-o-calculation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>LARS heading</strong> = Vessel heading - LARS dimensional control correction (subtract if anticlockwise)</li>
+<li><strong>ROV heading</strong> = Observed ROV gyro heading + Angle A (add if the ROV frame faces anticlockwise relative to the LARS reference)</li>
+<li><strong>ROV gyrocompass C-O</strong> = LARS heading - ROV frame heading</li>
+</ol>
+<p><strong>Worked example:</strong></p>
+<ul>
+<li>Vessel heading: 189.91 deg</li>
+<li>LARS dimcon correction: 89.96 deg (anticlockwise, so subtract)</li>
+<li>LARS heading = 189.91 - 89.96 = <strong>99.95 deg</strong></li>
+<li>Observed ROV heading: 104.23 deg</li>
+<li>ROV heading = 104.23 + 0.98 = <strong>105.21 deg</strong></li>
+<li>C-O = 99.95 - 105.21 = <strong>-5.26 deg</strong></li>
+</ul>
+<p>A C-O of -5.26 deg must be applied to the ROV gyrocompass data to correct its heading.</p>
+<hr />
+<h2 id="calibration-by-gnss-compass-comparison"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.86 2-.52 1.93c4.41.85 7.86 4.3 8.71 8.72l1.95-.52C20.95 7.03 16.96 3.04 11.86 2m-1.04 3.86-.52 1.95c3.04.46 5.42 2.84 5.88 5.87l1.94-.52c-.66-3.72-3.57-6.66-7.3-7.3m-7.1 3.83A7.96 7.96 0 0 0 5 18.28V22h3v-1.59c.95.39 1.97.59 3 .59 1.14 0 2.27-.25 3.3-.72zm6.07.07-.53 1.96a3 3 0 0 1 3 3l1.97-.52c-.23-2.34-2.1-4.2-4.44-4.44"/></svg></span> Calibration by GNSS Compass Comparison<a class="headerlink" href="#calibration-by-gnss-compass-comparison" title="Permanent link">&para;</a></h2>
+<p>This method may be used for vessel-mounted gyrocompasses. It can be performed alongside or offshore (if offshore, the vessel must be stationary on a constant heading).</p>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Install dual GNSS antennas at known dimensionally controlled locations on the vessel, preferably on the centreline at a minimum distance of <strong>3 m apart</strong></li>
+<li>Enter the dimensional control offsets and the antenna separation distance into the GNSS system so it outputs heading relative to the vessel centreline</li>
+</ol>
+<h3 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allow the vessel gyrocompass to settle; enter local latitude and speed</li>
+<li>Log data from both the GNSS heading system and the gyrocompass for a <strong>minimum of 30 minutes</strong></li>
+</ul>
+<h3 id="c-o-calculation_1">C-O Calculation<a class="headerlink" href="#c-o-calculation_1" title="Permanent link">&para;</a></h3>
+<p><strong>Vessel gyrocompass C-O = GNSS heading - Vessel gyrocompass heading</strong></p>
+<p>This method provides a reference heading with precision &lt;0.1 deg; actual precision depends on the system used and the distance between the two GNSS antennas.</p>
+<hr />
+<h2 id="structure-mounted-gyro-calibration-in-fabrication-yard"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6V5a1 1 0 0 0-1-1H9V3H6v1H5v2h1v9H5v-2H3v2H2v2h1v4h2v-4h5v4h2v-4h1v-2h-1v-2h-2v2H9V6h8v4.62c-.47.17-.81.61-.81 1.14 0 .44.24.84.61 1.06V14h.62c.34 0 .61.28.61.62s-.27.62-.61.62c-.22 0-.42-.12-.53-.31a.62.62 0 0 0-.84-.22c-.3.16-.4.54-.23.84.33.56.94.92 1.6.92 1.01 0 1.84-.83 1.84-1.85 0-.78-.5-1.48-1.23-1.74v-.06c.38-.22.62-.62.62-1.06 0-.46-.27-.85-.65-1.06V6zM8 13.66l-1 1v-1.42l1-1zm0-2.95-1 1v-1.42l1-1zm-1-2V7.29l1-1v1.42z"/></svg></span> Structure-Mounted Gyro Calibration in Fabrication Yard<a class="headerlink" href="#structure-mounted-gyro-calibration-in-fabrication-yard" title="Permanent link">&para;</a></h2>
+<p>This method is used for gyrocompasses installed on structures. It requires two control points of known coordinates and a single total station, and is carried out in the fabrication yard prior to load-out.</p>
+<h3 id="procedure_1">Procedure<a class="headerlink" href="#procedure_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Fully install, power up, and settle the gyrocompass (set the correct latitude and speed for the calibration location)</li>
+<li>Determine the centreline and heading of the structure using land survey techniques</li>
+<li>If the heading is relative to Grid North, apply convergence to convert to True North for direct comparison with the gyrocompass</li>
+<li>Log gyro data for at least <strong>10 minutes</strong> (where power is available, log 24 hours to prove instrument stability)</li>
+<li>The C-O is determined by comparing the dimensionally controlled heading (relative to True North) with the observed gyrocompass heading</li>
+</ol>
+<h3 id="interchangeable-units">Interchangeable Units<a class="headerlink" href="#interchangeable-units" title="Permanent link">&para;</a></h3>
+<p>Where units are interchangeable between mount locations, each unit must be checked at each location.</p>
+<p>Where precision-engineered mounts (e.g. stabs and receptacles) are used:</p>
+<ul>
+<li>A receptacle can be installed in a workshop with the heading of the guide slots precisely determined</li>
+<li>The heading of the guide slots on the structure relative to the centreline must be determined by land survey</li>
+<li>A gyro/stab combination may then be verified in the workshop without needing to check on the structure itself</li>
+</ul>
+<p>This method provides a reference heading with precision &lt;0.1 deg.</p>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">Quality Checks</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Bench test performed within 6 months of project start (certificate included in mobilisation report)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Gyrocompass settled for the full period specified in the manual before any calibration</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> All C-O corrections removed from the system before logging calibration data</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Correct latitude and speed entered into the gyrocompass</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Convergence correctly identified (True vs Grid) and applied</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Same geodetic parameters used by dimensional control and vessel surveyors</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Minimum 30 minutes of data logged for comparison calibrations</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Multiple heading references continuously compared and monitored within navigation software</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> UPS connected to gyrocompass power supply</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> GAMS antennas mounted with minimum 3 m baseline, no overhead obstructions, moisture-free connections</li>
+</ul>
+</div>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">References</p>
+<ul>
+<li>IHO S-44 -- Standards for Hydrographic Surveys</li>
+<li>IMCA S 017 -- Guidelines for the use of USBL systems</li>
+<li>Equipment manufacturer calibration and installation guidelines</li>
+</ul>
+</div>
+<hr />
+<h2 id="acceptance-criteria"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Accept</th>
+<th>Marginal</th>
+<th>Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-O correction (spinning mass)</td>
+<td>&lt; 1.0 deg</td>
+<td>1.0 - 2.0 deg</td>
+<td>&gt; 2.0 deg (investigate mounting/settling)</td>
+</tr>
+<tr>
+<td>C-O correction (FOG/RLG)</td>
+<td>&lt; 0.5 deg</td>
+<td>0.5 - 1.0 deg</td>
+<td>&gt; 1.0 deg</td>
+</tr>
+<tr>
+<td>Bench test stability (24 hr)</td>
+<td>Within manufacturer spec</td>
+<td>--</td>
+<td>Exceeds manufacturer spec</td>
+</tr>
+<tr>
+<td>Heading comparison (multiple gyros)</td>
+<td>Within combined quoted accuracy</td>
+<td>--</td>
+<td>Difference exceeds combined quoted accuracy</td>
+</tr>
+<tr>
+<td>GAMS heading vs gyro</td>
+<td>Agreement within 0.5 deg (after C-O)</td>
+<td>--</td>
+<td>Disagreement &gt; 0.5 deg</td>
+</tr>
+<tr>
+<td>Settling time</td>
+<td>Completed per table above</td>
+<td>--</td>
+<td>Gyro not settled / still drifting</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely Cause</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gyro will not settle (heading keeps drifting after expected settling time)</td>
+<td>Power interruption during settling, incorrect latitude entered, unit placed on floating floor, vibration from nearby machinery</td>
+<td>Verify uninterrupted power, check latitude input, confirm mounting surface is rigid and connected to vessel structure</td>
+</tr>
+<tr>
+<td>Heading jumps by exact integer degrees</td>
+<td>GAMS integer ambiguity failure</td>
+<td>Cycle GAMS system, check antenna baseline, verify connectors are dry, check for multipath sources</td>
+</tr>
+<tr>
+<td>Heading error increases with vessel speed</td>
+<td>Speed error not corrected -- speed input missing or incorrect</td>
+<td>Verify speed log or GNSS speed feed is active and reading correctly at the gyrocompass</td>
+</tr>
+<tr>
+<td>Heading differs between two gyros by more than quoted accuracy</td>
+<td>One gyro not settled, C-O not applied, convergence mismatch, one gyro on floating floor</td>
+<td>Check settling status of both, verify C-O corrections applied, confirm same geodetic parameters, check mounting surfaces</td>
+</tr>
+<tr>
+<td>GAMS heading unstable or drops out</td>
+<td>Antenna obstruction, moisture in connectors, insufficient baseline</td>
+<td>Check sky view at both antennas, dry and reseat connectors, verify baseline &gt; 3 m</td>
+</tr>
+<tr>
+<td>Large C-O correction (&gt; 2 deg on spinning mass)</td>
+<td>Mounting shifted, unit knocked, incorrect latitude</td>
+<td>Re-level and re-orient the gyro housing, confirm latitude, allow full settling period</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../positioning/ixblue-ins-dvl-calibration/">ROVINS/PHINS DVL Calibration</a> -- INS/DVL calibration requiring accurate heading</li>
+<li><a href="../../positioning/sprint-syrinx-dvl-calibration/">SPRINT (Syrinx) DVL Calibration</a> -- INS/DVL calibration for Sonardyne systems</li>
+<li><a href="../../positioning/sprint-nav-dvl-verification/">SPRINT-NAV DVL Verification</a> -- post-calibration drift verification</li>
+<li><a href="../../sensors/svp-repeatability-test/">SVP Repeatability Test</a> -- sound velocity validation for acoustic systems</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../static-ahrs-intersystem-check/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Static AHRS Intersystem Check">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Static AHRS Intersystem Check
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../heave-mru-theory/" class="md-footer__link md-footer__link--next" aria-label="Next: Heave, MRU Theory and Verification">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Heave, MRU Theory and Verification
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

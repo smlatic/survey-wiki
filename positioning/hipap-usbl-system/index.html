@@ -1,0 +1,3680 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/positioning/hipap-usbl-system/">
+      
+      
+        <link rel="prev" href="../usbl-theory-and-error-budgets/">
+      
+      
+        <link rel="next" href="../hipap-usbl-calibration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>HiPAP USBL System Guide - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-W8P1PDKH17"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-W8P1PDKH17",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-W8P1PDKH17",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hipap-usbl-system-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HiPAP USBL System Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Positioning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GNSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-jamming-and-spoofing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Jamming and Spoofing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-accurate-height-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Accurate Height Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-gnss-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static GNSS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-gnss-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic GNSS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dgnss-integrity-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGNSS Integrity Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    USBL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-theory-and-error-budgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Theory and Error Budgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL System Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL System Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transponders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transponders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transponders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kongsberg-mst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kongsberg MST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kongsberg-cnode-mini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kongsberg cNODE Mini
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hipap-apos-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HiPAP APOS Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HiPAP APOS Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apos-transponders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APOS Transponders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="External Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-and-timing-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position and Timing Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position and Timing Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmea-gga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMEA GGA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zda-and-pps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZDA and PPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heading-and-motion-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heading and Motion Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Heading and Motion Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pos-mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POS MV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seapath
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apos-attitude-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APOS Attitude Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-svp-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import SVP Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#survey-apos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Survey APOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Survey APOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apos-survey-interface-asi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APOS Survey Interface (ASI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-apos-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start APOS Survey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-apos-survey-with-auv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using APOS Survey with AUV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using APOS Survey with AUV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outputs-to-hos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs to HOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modem-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modem Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-and-rescue-sar-emergency-locator-transmitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search and Rescue (SAR) - Emergency Locator Transmitter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-usbl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-hpr-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP Verification (Spin & Transit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-calibration-data-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Calibration Data Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-responder-latency-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Responder Latency Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cnode-transponder-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cNODE miniS Transponder Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LBL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LBL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lbl-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LBL Acoustic Positioning Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inertial Navigation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inertial Navigation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ins-theory-and-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS Theory and Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phins-rovins-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHINS/ROVINS Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-ins-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint INS Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ins-dvl-calibration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS/DVL Calibration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ixblue-ins-dvl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iXblue ROVINS/PHINS DVL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-nav-dvl-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint-Nav DVL Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-syrinx-dvl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Syrinx DVL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Timing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Synchronisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tides & Datums
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tides & Datums
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tidal-reduction-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tidal Theory and Reduction Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transponders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transponders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transponders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kongsberg-mst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kongsberg MST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kongsberg-cnode-mini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kongsberg cNODE Mini
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hipap-apos-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HiPAP APOS Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HiPAP APOS Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apos-transponders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APOS Transponders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="External Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-and-timing-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position and Timing Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position and Timing Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmea-gga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMEA GGA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zda-and-pps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZDA and PPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heading-and-motion-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heading and Motion Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Heading and Motion Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pos-mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POS MV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seapath
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apos-attitude-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APOS Attitude Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-svp-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import SVP Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#survey-apos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Survey APOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Survey APOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apos-survey-interface-asi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APOS Survey Interface (ASI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-apos-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start APOS Survey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-apos-survey-with-auv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using APOS Survey with AUV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using APOS Survey with AUV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outputs-to-hos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs to HOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modem-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modem Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-and-rescue-sar-emergency-locator-transmitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search and Rescue (SAR) - Emergency Locator Transmitter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Positioning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../usbl-theory-and-error-budgets/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    USBL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">APOS</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">ELT</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">MST</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">SAR</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">acoustic positioning</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">cnode</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">hipap</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kongsberg</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">transponder</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">underwater positioning</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">usbl</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="hipap-usbl-system-guide"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 4.93-1.41 1.41A8.01 8.01 0 0 1 20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12a6 6 0 0 0 6 6 6 6 0 0 0 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12a4 4 0 0 1-4 4 4 4 0 0 1-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-.74-.4-1.38-1-1.72V2h-1A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-2.76-1.12-5.26-2.93-7.07"/></svg></span> HiPAP USBL System Guide<a class="headerlink" href="#hipap-usbl-system-guide" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Equipment</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> <strong>Equipment Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-02</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Comprehensive operational guide for the Kongsberg HiPAP underwater positioning system. Covers system design and principles, transponder types (MST and cNODE), APOS software configuration, external interfaces (GPS, heading, motion), APOS Survey for dual-system operation, AUV operations, and Search and Rescue (SAR) emergency beacon setup.</p>
+</div>
+<hr />
+<h2 id="summary"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>HiPAP is an underwater positioning system that consists of a spherical transducer with several hundred elements that listen to signals from transponders in the water.</p>
+<hr />
+<h2 id="how-it-works"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg></span> How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>An acoustic pulse is transmitted through the water or a signal through a cable to the transponder on the underwater vehicle. The transponder responds with an acoustic pulse of a preset frequency which is detected by the elements on the HiPAP transducer. The time from the initial trigger pulse until the hydrophones detect the acoustic pulse is converted to a <strong>distance</strong> and the difference in time of detection on the 4 hydrophones is converted to an <strong>angle</strong> -- the position of the underwater vehicle is then determined.</p>
+<p>To get a more accurate position of the underwater vehicle, HiPAP is used as part of an Inertial Navigation System such as PHINS/ROVINS or Sprint.</p>
+<hr />
+<h2 id="design"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg></span> Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h2>
+<p><img alt="HiPAP Transducer Head" src="../../assets/images/hipap-system/hipap-system-01.jpg" /></p>
+<p>The HiPAP systems use an <strong>inverted right-handed coordinate system</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X</td>
+<td>Forward positive</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Starboard positive</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Down positive</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>Clockwise around X axis (Starboard down = positive)</td>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>Clockwise around Y axis (Forward up = positive)</td>
+</tr>
+</tbody>
+</table>
+<p>The head is a spherical transducer with several hundred elements covering the whole sphere under the vessel. The system dynamically controls the beam so it is always pointing towards the transponder. Data from roll/pitch sensors are used to compensate the position. The information collected is sent to a processing unit inside the ship where it is connected to a computer running the APOS software.</p>
+<hr />
+<h2 id="transponders"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m6 2c0-3.3-2.7-6-6-6s-6 2.7-6 6c0 2.2 1.2 4.1 3 5.2l1-1.7c-1.2-.7-2-2-2-3.4 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.5-.8 2.8-2 3.4l1 1.7c1.8-1 3-3 3-5.2M12 2C6.5 2 2 6.5 2 12c0 3.7 2 6.9 5 8.6l1-1.7c-2.4-1.4-4-4-4-6.9 0-4.4 3.6-8 8-8s8 3.6 8 8c0 3-1.6 5.5-4 6.9l1 1.7c3-1.7 5-4.9 5-8.6 0-5.5-4.5-10-10-10"/></svg></span> Transponders<a class="headerlink" href="#transponders" title="Permanent link">&para;</a></h2>
+<h3 id="kongsberg-mst">Kongsberg MST<a class="headerlink" href="#kongsberg-mst" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Depth Rating</th>
+<th>Range</th>
+<th>Beam Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MST 319/N</td>
+<td>1000 m</td>
+<td>1000 m</td>
+<td>180°</td>
+</tr>
+<tr>
+<td>MST 324/N</td>
+<td>2000 m</td>
+<td>2000 m</td>
+<td>80°</td>
+</tr>
+<tr>
+<td>MST 342/N</td>
+<td>4000 m</td>
+<td>4000 m</td>
+<td>40°</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NiMH battery operating lifetime:</strong></p>
+<ul>
+<li>MST 319 and MST 324: 64,800 replies</li>
+<li>MST 342: 32,400 replies</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When using MST 319/N without external power supply, take into account that the generation is old and the battery can be degraded. Battery lifetime will differ from specifications above.</p>
+</div>
+<p><img alt="MST Transponder Channel Selector" src="../../assets/images/hipap-system/hipap-system-02.jpg" /></p>
+<p>To change the channel, turn <strong>A</strong> to the first number and <strong>B</strong> to the second number. E.g. A=2 and B=5 = channel <strong>B25</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The Kongsberg MST family supports <strong>FSK mode only</strong>.</p>
+</div>
+<h3 id="kongsberg-cnode-mini">Kongsberg cNODE Mini<a class="headerlink" href="#kongsberg-cnode-mini" title="Permanent link">&para;</a></h3>
+<p><img alt="cNODE Beacons" src="../../assets/images/hipap-system/hipap-system-03.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Depth Rating</th>
+<th>Range</th>
+<th>Beam Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cNODE MiniS 34-180</td>
+<td>4000 m</td>
+<td>1000 m</td>
+<td>180°</td>
+</tr>
+<tr>
+<td>cNODE MiniS 34-40</td>
+<td>4000 m</td>
+<td>4000 m</td>
+<td>40°</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Battery lifetime:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Update Rate</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cymbal - Low power</td>
+<td>1 sec</td>
+<td>&gt; 2.5 days</td>
+</tr>
+<tr>
+<td>Cymbal - Low power</td>
+<td>3 sec</td>
+<td>&gt; 7 days</td>
+</tr>
+<tr>
+<td>FSK - High power</td>
+<td>3 sec</td>
+<td>&gt; 4.5 days</td>
+</tr>
+</tbody>
+</table>
+<p>To change the channel on the cNODE Mini transponder, the best way is to use the <strong>TTC unit</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Identifying Beacon Mode Without TTC</p>
+<p>When powering up the transponders:</p>
+<ul>
+<li><strong>Cymbal mode</strong> (M channels): you will hear <strong>one chirp</strong></li>
+<li><strong>FSK mode</strong> (B channels): you will hear <strong>three chirps</strong></li>
+</ul>
+<p>If the transponder is in Cymbal mode and you enter it in APOS as FSK, you will not get an answer from the transponder, and vice versa. The channel must be correct with respect to Cymbal or FSK.</p>
+</div>
+<p><img alt="cNODE Mode Configuration in APOS" src="../../assets/images/hipap-system/hipap-system-04.png" /></p>
+<p>To change the mode: read status from the Transponder (APOS needs to know if transponder is capable of Cymbal), then use the configuration menu to change mode. The swap must be done when the transponder has good acoustic contact with the HiPAP.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Cymbal protocol is supported from HiPAP 501/451/351/351P/101 systems onwards only.</p>
+</div>
+<hr />
+<h2 id="hipap-apos-software"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.7 18.6v-1l1.1-.8c.1-.1.2-.2.1-.3l-1-1.7c0-.1-.2-.1-.3-.1l-1.2.5c-.3-.2-.6-.4-.9-.5l-.2-1.3c0-.1-.1-.2-.2-.2h-2c-.2 0-.3.1-.3.2l-.2 1.3c-.3.2-.5.3-.8.5l-1.2-.5c-.1 0-.2 0-.3.1l-1 1.7c0 .1 0 .2.1.3l1.1.8v1l-1.1.8c-.1.1-.2.2-.1.3l1 1.7c.1.1.2.1.3.1l1.2-.5c.2.2.5.4.8.5l.2 1.3c.1.1.2.2.3.2h2c.1 0 .2-.1.2-.2l.2-1.3c.3-.2.5-.3.8-.5l1.2.4c.1 0 .2 0 .3-.1l1-1.7c.1-.1.1-.2 0-.2zm-3.7.9c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5M11 18c0-3.9 3.1-7 7-7 2 0 3.7.8 5 2.1V4c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h9.3c-.8-1.1-1.3-2.5-1.3-4M3 4h18v3H3z"/></svg></span> HiPAP APOS Software<a class="headerlink" href="#hipap-apos-software" title="Permanent link">&para;</a></h2>
+<p>The HiPAP and HPR systems are operated from the Kongsberg Acoustic Positioning Operating Station (APOS), a PC with a Windows-based operating system. The systems can be operated from one single APOS station or from multiple APOS operator stations connected to a network.</p>
+<h3 id="apos-transponders">APOS Transponders<a class="headerlink" href="#apos-transponders" title="Permanent link">&para;</a></h3>
+<p><img alt="APOS Transponder Overview" src="../../assets/images/hipap-system/hipap-system-05.jpg" /></p>
+<ol>
+<li>
+<p>On the left side you can see all transponders added to APOS. Go to step 4 if your transponder is in the list. If not, you need to add it to the system.</p>
+</li>
+<li>
+<p>Select <strong>Positioning &gt; New SSBL Positioning Wizard</strong> and fill fields 1-5. Click <strong>Next</strong>.</p>
+<p><img alt="SSBL Positioning Wizard" src="../../assets/images/hipap-system/hipap-system-06.png" /></p>
+</li>
+<li>
+<p>Select the mode you want to use. For mobile objects such as ROV, AUV, ROTV etc., <strong>Mobile</strong> mode should be selected. Specify <strong>Interrogation Interval</strong> and <strong>Maximum distance in meters</strong> if required. If the <strong>Active</strong> box is ticked, the created transponder will start to be interrogated immediately. Click <strong>Finish</strong> to complete.</p>
+<p><img alt="Mode Selection" src="../../assets/images/hipap-system/hipap-system-07.png" /></p>
+</li>
+<li>
+<p>Click on a transponder button on the APOS main screen to activate it. The HiPAP transceiver will start tracking.</p>
+</li>
+<li>
+<p>To change the configuration of the transponder, right click on a transponder button and select <strong>Properties</strong>.</p>
+<p><img alt="Transponder Properties" src="../../assets/images/hipap-system/hipap-system-08.png" /></p>
+<p>Tick/untick <strong>Responder</strong> depending if responder or transponder mode is preferred. Different drives can be selected under Responder.</p>
+<p>To delete a transponder from APOS, right click on the button and select <strong>Delete</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="external-interfaces"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.4 7.5c.8.8.8 2.1 0 2.8l-2.8 2.8-7.8-7.8 2.8-2.8c.8-.8 2.1-.8 2.8 0l1.8 1.8 3-3 1.4 1.4-3 3zm-5.8 5.8-1.4-1.4-2.8 2.8-2.1-2.1 2.8-2.8-1.4-1.4-2.8 2.8-1.5-1.4-2.8 2.8c-.8.8-.8 2.1 0 2.8l1.8 1.8-4 4 1.4 1.4 4-4 1.8 1.8c.8.8 2.1.8 2.8 0l2.8-2.8-1.4-1.4z"/></svg></span> External Interfaces<a class="headerlink" href="#external-interfaces" title="Permanent link">&para;</a></h2>
+<h3 id="position-and-timing-inputs">Position and Timing Inputs<a class="headerlink" href="#position-and-timing-inputs" title="Permanent link">&para;</a></h3>
+<h4 id="nmea-gga">NMEA GGA<a class="headerlink" href="#nmea-gga" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Configure an NMEA GGA message output from a GPS receiver and input to APOS via either serial COM port or ethernet port. A serial port is the only option if the APOS PC is not on the same VLAN as the GPS receiver.</p>
+<p>Select <strong>Configure &gt; External Interfaces</strong>. Right click on External Interfaces and select <strong>Add GPS</strong>.</p>
+<p><img alt="Add GPS Interface" src="../../assets/images/hipap-system/hipap-system-09.png" /></p>
+</li>
+<li>
+<p>Right click on the new interface and select <strong>NMEA format</strong>. Ensure GGA position is selected.</p>
+<p><img alt="NMEA Format Selection" src="../../assets/images/hipap-system/hipap-system-10.png" /></p>
+</li>
+<li>
+<p>Right click on the GGA input to rename it to something logical.</p>
+</li>
+<li>
+<p>The IOserver is a separate program running on the PC. If not already running on the taskbar, right click on the GGA input and select <strong>Activate IOserver</strong>. In the IOserver program, the configure tab enables you to select the correct COM port settings. You should then see the GGA message in the IOserver input box.</p>
+<p><img alt="IOserver Configuration" src="../../assets/images/hipap-system/hipap-system-11.png" /></p>
+</li>
+<li>
+<p>Select the correct projection in APOS to convert lat/long to easting and northing. On the main screen, select <strong>System &gt; Geographic Positioning Setup</strong>.</p>
+<p><img alt="Geographic Positioning Setup" src="../../assets/images/hipap-system/hipap-system-12.png" /></p>
+</li>
+<li>
+<p>Select the recently-added GGA input under <strong>GPS setup &amp; selection</strong> and enter the offset from the transceiver to the GPS antenna.</p>
+</li>
+<li>
+<p>Ensure that the correct UTM zone is selected. The <strong>Auto select UTM Zone</strong> can be used but should be checked before starting operation on a new project.</p>
+</li>
+<li>
+<p>On the main screen, right click on the vessel position and select <strong>Position setup &gt; Geographic positions</strong>. The vessel position should now be visible in easting and northing.</p>
+<p><img alt="Geographic Position Display" src="../../assets/images/hipap-system/hipap-system-13.png" /></p>
+</li>
+</ol>
+<h4 id="zda-and-pps">ZDA and PPS<a class="headerlink" href="#zda-and-pps" title="Permanent link">&para;</a></h4>
+<p>An NMEA ZDA message and PPS pulse should be output from a GPS receiver and inputted to APOS via either serial COM port or ethernet port.</p>
+<ol>
+<li>Select <strong>Configure &gt; External Interfaces</strong>. Right click on External Interfaces and select <strong>Add NMEA</strong>.</li>
+<li>Right click on the ZDA input and rename it to something logical.</li>
+<li>The PPS pulse should be interfaced to the ZDA COM port on <strong>pin 8</strong>.</li>
+<li>If the IOserver is not already running, right click on the ZDA input and select <strong>Activate IOserver</strong>. Configure the COM port settings.</li>
+<li>
+<p>Click <strong>TimeSync</strong> and select <strong>NMEA ZDA</strong> and <strong>1 PPS</strong>. If configured correctly, the Time Sync Status indicators should flash blue and green.</p>
+<p><img alt="Time Sync Configuration" src="../../assets/images/hipap-system/hipap-system-14.png" /></p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The system will only accept time sync sentences that are within one hour from the current system time. If the deviation is more than one hour, set the system time approximately first.</p>
+</div>
+<h3 id="heading-and-motion-inputs">Heading and Motion Inputs<a class="headerlink" href="#heading-and-motion-inputs" title="Permanent link">&para;</a></h3>
+<p>Heading and motion from survey-spec sensors should be configured in APOS. Common options are Applanix POS MV or Kongsberg Seapath heading and attitude systems.</p>
+<h4 id="pos-mv">POS MV<a class="headerlink" href="#pos-mv" title="Permanent link">&para;</a></h4>
+<p>Make sure output from POS MV to HiPAP is configured properly:</p>
+<p><img alt="POS MV Output Configuration" src="../../assets/images/hipap-system/hipap-system-15.jpg" /></p>
+<h4 id="seapath">Seapath<a class="headerlink" href="#seapath" title="Permanent link">&para;</a></h4>
+<p>On the Seapath PC, click <strong>System &gt; Change system mode &gt; Configuration</strong> (password: <code>stx</code>). Then click <strong>System &gt; NAV Engine &gt; Standard</strong>. In the NAV Engine configuration window, go to Input/Output and configure the output port with the <strong>EM3000 format</strong>. Both heading and attitude are contained within this message.</p>
+<p><img alt="Seapath NAV Engine Configuration" src="../../assets/images/hipap-system/hipap-system-16.jpg" /></p>
+<h4 id="apos-attitude-setup">APOS Attitude Setup<a class="headerlink" href="#apos-attitude-setup" title="Permanent link">&para;</a></h4>
+<p>Once the heading and attitude output messages have been configured:</p>
+<ol>
+<li>
+<p>Select <strong>Configure &gt; Transceiver</strong> &gt; relevant HiPAP system &gt; <strong>OK &gt; Attitude</strong>. The software allows for up to 3 heading and motion inputs.</p>
+</li>
+<li>
+<p>For both heading and attitude inputs, select the same format as outputted from the sensors, give them a logical name and configure the serial or network port settings. Green status = correctly configured. Red status = data received but not recognised.</p>
+</li>
+<li>
+<p><strong>Disable the Auto tick boxes</strong> for both heading and attitude so APOS will not switch to secondary sensors if connection with primary sensors is lost (important for calibration integrity).</p>
+<p><img alt="APOS Attitude Configuration" src="../../assets/images/hipap-system/hipap-system-17.jpg" /></p>
+</li>
+</ol>
+<h3 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h3>
+<p>Make sure output to QINSy/NaviScan is configured according to the driver in use. To configure: <strong>Configure &gt; Outputs &gt; NMEA Positions tab</strong>, right click on output &gt; <strong>Configure</strong>. Output can be via Serial or Network.</p>
+<p><img alt="Output Configuration" src="../../assets/images/hipap-system/hipap-system-18.png" /></p>
+<p>To create a new output: <strong>Configure &gt; Outputs &gt; NMEA Positions tab</strong>, select Serial or Network, then right click &gt; <strong>Add output</strong>.</p>
+<h3 id="import-svp-profile">Import SVP Profile<a class="headerlink" href="#import-svp-profile" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Critical</p>
+<p>Speed of sound in water has a critical influence on transponder position calculation. Make sure the newest sound velocity profile (SVP) is in use.</p>
+</div>
+<p>To update SVP in APOS:</p>
+<ol>
+<li>
+<p>Open <strong>Sound Velocity Viewer</strong></p>
+<p><img alt="Sound Velocity Viewer" src="../../assets/images/hipap-system/hipap-system-19.jpg" /></p>
+</li>
+<li>
+<p>Click <strong>Open</strong> and browse to the SVP file location</p>
+<p><img alt="SVP File Import" src="../../assets/images/hipap-system/hipap-system-20.jpg" /></p>
+</li>
+<li>
+<p>Once imported, click <strong>Activate</strong></p>
+</li>
+</ol>
+<hr />
+<h2 id="survey-apos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16V4H3v12zm0-14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-7v2h2v2H8v-2h2v-2H3a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2zM5 6h9v5H5zm10 0h4v2h-4zm4 3v5h-4V9zM5 12h4v2H5zm5 0h4v2h-4z"/></svg></span> Survey APOS<a class="headerlink" href="#survey-apos" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Requirements</p>
+<p>APOS Survey requires HiPAP Mk II transceivers running HiPAP SW version 2 or newer. The onboard system must run APOS version 4 or newer.</p>
+</div>
+<p>APOS Survey makes it possible for surveyors to utilise a vessel's HiPAP system. Acoustic interrogations are interleaved or run simultaneously with the DP system updates, without having to make changes to the vessel's APOS software or installation parameters.</p>
+<p><img alt="APOS Survey Overview" src="../../assets/images/hipap-system/hipap-system-21.png" /></p>
+<h3 id="apos-survey-interface-asi">APOS Survey Interface (ASI)<a class="headerlink" href="#apos-survey-interface-asi" title="Permanent link">&para;</a></h3>
+<p>A small program called ASI (APOS Survey Interface) must be installed on the existing vessel's APOS system. This program must be kept running at all times to maintain communication between the two systems. ASI transfers settings from the onboard vessel system to APOS Survey, but <strong>not</strong> the other way. It also enables APOS Survey to communicate with the onboard transceivers.</p>
+<p><img alt="ASI Program" src="../../assets/images/hipap-system/hipap-system-22.png" /></p>
+<h3 id="start-apos-survey">Start APOS Survey<a class="headerlink" href="#start-apos-survey" title="Permanent link">&para;</a></h3>
+<p>The recommended startup procedure:</p>
+<ol>
+<li>On the main system, start APOS if not running</li>
+<li>Start ASI on the main system</li>
+<li>Start only the ASI program on the APOS Survey</li>
+<li>Select which settings to be transferred from the onboard APOS</li>
+<li>Press the <strong>Import selected config</strong> button</li>
+<li>Start APOS</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is possible to configure APOS so that ASI starts automatically. In APOS menu <strong>Configure &gt; User options</strong>, enable <strong>Start the APOS Survey Interface (ASI)</strong>. Then run Main APOS first, followed by APOS Survey -- ASI will start on both PCs automatically.</p>
+</div>
+<h3 id="using-apos-survey-with-auv">Using APOS Survey with AUV<a class="headerlink" href="#using-apos-survey-with-auv" title="Permanent link">&para;</a></h3>
+<h4 id="outputs-to-hos">Outputs to HOS<a class="headerlink" href="#outputs-to-hos" title="Permanent link">&para;</a></h4>
+<p>Create an output to Hugin Operating System (HOS).</p>
+<p><img alt="HOS Output Configuration" src="../../assets/images/hipap-system/hipap-system-23.png" /></p>
+<p>This output will also be used as a link for telemetry transmission between HOS and AUV during mission execution. If using more than one AUV on the project, an output must be created for each vehicle.</p>
+<h4 id="modem-settings">Modem Settings<a class="headerlink" href="#modem-settings" title="Permanent link">&para;</a></h4>
+<p>To enable telemetry transmission the modem needs to be configured. Click <strong>Control &gt; Modem &gt; Properties</strong>:</p>
+<ol>
+<li>Setup system and transponder used for transmission</li>
+<li>Click <strong>COM port</strong></li>
+<li>Select communication type (same type as for Output)</li>
+</ol>
+<p><img alt="Modem Properties" src="../../assets/images/hipap-system/hipap-system-24.png" /></p>
+<p>Setup network/serial settings for the communication link. IP address should be the HOS IP -- for available ports ask the AUV team.</p>
+<p><img alt="Modem Network Settings" src="../../assets/images/hipap-system/hipap-system-25.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If using multiple AUVs, you'll need to switch between them for handshakes (position updates). The modem settings must be changed for every AUV that needs to be updated.</p>
+</div>
+<hr />
+<h2 id="search-and-rescue-sar-emergency-locator-transmitter"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> Search and Rescue (SAR) - Emergency Locator Transmitter<a class="headerlink" href="#search-and-rescue-sar-emergency-locator-transmitter" title="Permanent link">&para;</a></h2>
+<p>HiPAP and CPAP can be used as an Emergency Locator Transmitter (ELT) for emergency beacons using a frequency of <strong>37,500 Hz</strong>. This should also be possible with USBL units from other manufacturers.</p>
+<p>Setting up the ELT function in APOS:</p>
+<ol>
+<li>
+<p>Click <strong>Add new beacon</strong></p>
+<p><img alt="Add ELT Beacon" src="../../assets/images/hipap-system/hipap-system-26.png" /></p>
+</li>
+<li>
+<p>Select <strong>Multifunction Positioning Transponder (MPT)</strong> as the type. After this, it will be possible to pick <strong>EMA</strong> and <strong>EMB</strong> in the Channel dropdown menu. Serial number should be unique and not used by another beacon currently in APOS. <strong>Beacon/Pinger</strong> should be ticked on.</p>
+<p><img alt="ELT Beacon Configuration" src="../../assets/images/hipap-system/hipap-system-27.png" /></p>
+</li>
+<li>
+<p>Select <strong>All other NON DP use (Mobile)</strong></p>
+<p><img alt="ELT Mode Selection" src="../../assets/images/hipap-system/hipap-system-28.png" /></p>
+</li>
+<li>
+<p>In the properties after creating the EMA or EMB beacon:</p>
+<ul>
+<li>Depth should be <strong>Z-locked</strong> and the depth of the emergency beacon should be input</li>
+<li>External sensor should be set to <strong>Manual</strong></li>
+<li>The <strong>Pulse Repetition Rate (PRF)</strong> of the emergency beacon should also be specified</li>
+</ul>
+<p><img alt="ELT Properties" src="../../assets/images/hipap-system/hipap-system-29.png" /></p>
+</li>
+</ol>
+<p>Both EMA and EMB are setup the same way -- the only difference is the serial number. They can be activated as a normal beacon and should give the position of the emergency beacon.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../usbl-theory-and-error-budgets/" class="md-footer__link md-footer__link--prev" aria-label="Previous: USBL Theory and Error Budgets">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                USBL Theory and Error Budgets
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../hipap-usbl-calibration/" class="md-footer__link md-footer__link--next" aria-label="Next: HiPAP USBL Calibration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                HiPAP USBL Calibration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

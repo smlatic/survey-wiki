@@ -1,0 +1,4486 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydrographic and offshore survey procedures, calibration guides, and field reference material">
+      
+      
+      
+        <link rel="canonical" href="https://smlatic.github.io/survey-wiki/positioning/usbl-theory-and-error-budgets/">
+      
+      
+        <link rel="prev" href="../dgnss-integrity-check/">
+      
+      
+        <link rel="next" href="../hipap-usbl-system/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>USBL Theory and Error Budgets - Survey Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M292.9%20384c7.3-22.3%2021.9-42.5%2038.4-59.9C364%20289.7%20384%20243.2%20384%20192%20384%2086%20298%200%20192%200S0%2086%200%20192c0%2051.2%2020%2097.7%2052.7%20132.1%2016.5%2017.4%2031.2%2037.6%2038.4%2059.9h201.7zm-4.9%2048H96v16c0%2044.2%2035.8%2080%2080%2080h32c44.2%200%2080-35.8%2080-80zM184%20112c-39.8%200-72%2032.2-72%2072%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-66.3%2053.7-120%20120-120%2013.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M55.1%2073.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L147.2%20256%209.9%20393.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l137.3-137.4%20137.4%20137.3c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.8%20256l137.3-137.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192.5%20210.7z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144C384%2064.5%20312.4%200%20224%200S64%2064.5%2064%20144c0%2047.1%2025.1%2088.9%2064%20115.2V288c0%2017.7%2014.3%2032%2032%2032h128c17.7%200%2032-14.3%2032-32v-28.8c38.9-26.3%2064-68.1%2064-115.2m-224-16a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64m96%2032a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m189.5%20179.7c-6.8-16.3-25.5-24-41.8-17.2L224%20397.3%2044.3%20322.5c-16.3-6.8-35%20.9-41.8%2017.2s.9%2035%2017.2%2041.8L140.8%20432%2019.7%20482.5c-16.3%206.8-24%2025.5-17.2%2041.8s25.5%2024%2041.8%2017.2L224%20466.7l179.7%2074.8c16.3%206.8%2035-.9%2041.8-17.2s-.9-35-17.2-41.8L307.2%20432l121.1-50.5c16.3-6.8%2024-25.5%2017.2-41.8%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/study-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-W8P1PDKH17"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-W8P1PDKH17",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-W8P1PDKH17",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usbl-theory-and-error-budgets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Survey Wiki" class="md-header__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Survey Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              USBL Theory and Error Budgets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Positioning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sensors/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Survey Sensors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rov/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ROV Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mobilisation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mobilisation & Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reporting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reporting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../study-material/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Study Material
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What's New
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Survey Wiki" class="md-nav__button md-logo" aria-label="Survey Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Survey Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positioning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Positioning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GNSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-jamming-and-spoofing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Jamming and Spoofing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnss-accurate-height-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Accurate Height Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-gnss-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static GNSS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-gnss-intersystem-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic GNSS Intersystem Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dgnss-integrity-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGNSS Integrity Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    USBL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Theory and Error Budgets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Theory and Error Budgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-usbl-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How USBL Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gyro-aided-usbl-gusbl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gyro-Aided USBL (GUSBL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gyro-Aided USBL (GUSBL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transceiver-position-feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transceiver Position Feed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gusbl-output-datagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUSBL Output Datagrams
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-software-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Software Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration Software Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-vessel-fit-usbl-with-sensor-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Vessel-Fit USBL with Sensor Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-own-usbl-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Own USBL System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-vessel-fit-usbl-without-sensor-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: Vessel-Fit USBL without Sensor Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-budget-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Budget Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Budget Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-error-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Error Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-errors-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Errors Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#achievable-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Achievable Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portable-installation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portable Installation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mru-interfacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRU Interfacing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MRU Interfacing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transponder-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transponder Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transponder Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wideband-vs-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wideband vs Legacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omni-directional-vs-directional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omni-Directional vs Directional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suggested-horizontal-offsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Horizontal Offsets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardinal-point-method-dp-vessels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cardinal Point Method (DP Vessels)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-dp-vessel-method-6-line-box-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-DP Vessel Method (6-Line Box Pattern)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spin-check-pitchroll-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spin Check (Pitch/Roll Verification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transit-check-headingpitchroll-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transit Check (Heading/Pitch/Roll Verification)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transit Check (Heading/Pitch/Roll Verification)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transit-check-error-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transit Check Error Diagnosis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transponder-tracking-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transponder Tracking Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transponder Tracking Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-transponder-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Transponder Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multipath-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multipath Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multipath Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-multipath-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Multipath Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoustic-interference-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic Interference Diagnosis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acoustic Interference Diagnosis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symptoms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-conflict-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Conflict Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnosis Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-usbl-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL System Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-usbl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP USBL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hipap-hpr-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiPAP Verification (Spin & Transit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-calibration-data-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Calibration Data Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usbl-responder-latency-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USBL Responder Latency Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cnode-transponder-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cNODE miniS Transponder Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LBL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LBL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lbl-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LBL Acoustic Positioning Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inertial Navigation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inertial Navigation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ins-theory-and-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS Theory and Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phins-rovins-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHINS/ROVINS Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-ins-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint INS Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ins-dvl-calibration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS/DVL Calibration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ixblue-ins-dvl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iXblue ROVINS/PHINS DVL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-nav-dvl-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint-Nav DVL Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-syrinx-dvl-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Syrinx DVL Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Timing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Synchronisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tides & Datums
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tides & Datums
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tidal-reduction-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tidal Theory and Reduction Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sensors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survey Sensors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rov/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROV Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobilisation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobilisation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reporting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reference/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../study-material/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Material
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-usbl-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How USBL Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gyro-aided-usbl-gusbl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gyro-Aided USBL (GUSBL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gyro-Aided USBL (GUSBL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transceiver-position-feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transceiver Position Feed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gusbl-output-datagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUSBL Output Datagrams
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-software-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Software Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration Software Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-vessel-fit-usbl-with-sensor-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Vessel-Fit USBL with Sensor Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-own-usbl-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Own USBL System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-vessel-fit-usbl-without-sensor-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: Vessel-Fit USBL without Sensor Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-budget-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Budget Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Budget Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-error-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Error Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-errors-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Errors Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#achievable-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Achievable Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portable-installation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portable Installation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mru-interfacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRU Interfacing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MRU Interfacing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transponder-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transponder Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transponder Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wideband-vs-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wideband vs Legacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omni-directional-vs-directional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omni-Directional vs Directional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suggested-horizontal-offsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Horizontal Offsets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardinal-point-method-dp-vessels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cardinal Point Method (DP Vessels)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-dp-vessel-method-6-line-box-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-DP Vessel Method (6-Line Box Pattern)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spin-check-pitchroll-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spin Check (Pitch/Roll Verification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transit-check-headingpitchroll-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transit Check (Heading/Pitch/Roll Verification)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transit Check (Heading/Pitch/Roll Verification)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transit-check-error-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transit Check Error Diagnosis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transponder-tracking-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transponder Tracking Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transponder Tracking Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-transponder-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Transponder Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multipath-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multipath Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multipath Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-multipath-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Multipath Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoustic-interference-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic Interference Diagnosis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acoustic Interference Diagnosis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symptoms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-conflict-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Conflict Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnosis Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Positioning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    USBL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">GUSBL</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">acoustics</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">calibration</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">error budget</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">positioning</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">transducer alignment</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">transponder</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">usbl</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">verification</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="usbl-theory-and-error-budgets"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 3.93A9.97 9.97 0 0 0 2 11c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.94 7.94 0 0 1 4 11c0-2.21.89-4.22 2.34-5.66zm14.14 0-1.41 1.41A7.96 7.96 0 0 1 20 11c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.97 9.97 0 0 0 22 11c0-2.76-1.12-5.26-2.93-7.07M7.76 6.76A5.98 5.98 0 0 0 6 11c0 1.65.67 3.15 1.76 4.24l1.41-1.41A4 4 0 0 1 8 11c0-1.11.45-2.11 1.17-2.83zm8.48 0-1.41 1.41A4 4 0 0 1 16 11c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 11c0-1.65-.67-3.15-1.76-4.24M12 9a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-1 6v4h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7a1 1 0 0 0-1-1h-1v-4z"/></svg></span> USBL Theory and Error Budgets<a class="headerlink" href="#usbl-theory-and-error-budgets" title="Permanent link">&para;</a></h1>
+<div class="page-meta">
+<p><span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> <strong>Calibration</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> <strong>Reference Guide</strong></span>
+<span class="meta-item"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></span> <strong>2026-03-01</strong></span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Purpose</p>
+<p>Comprehensive reference covering USBL operating principles, Gyro-Aided USBL (GUSBL) systems, calibration software scenarios, error budget breakdown, portable installation guidance, MRU interfacing requirements, transponder selection, calibration methods for DP and non-DP vessels, and verification techniques including spin checks, transit lines, and position comparisons.</p>
+</div>
+<hr />
+<h2 id="when-to-use"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-2.47 8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17z"/></svg></span> When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>USBL calibration</strong>: At mobilisation, after any change to transceiver installation (pole re-deployment, bolt tightening), after sensor swap, or when verification indicates degraded performance</li>
+<li><strong>Error budget review</strong>: Before every project to confirm the system can meet the required positioning specification at the working depth</li>
+<li><strong>Verification (spin/transit)</strong>: After calibration, at project start, after any equipment change, and periodically during long-duration projects</li>
+</ul>
+<hr />
+<h2 id="how-usbl-works"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 21c-3 0-4.19-4.24-5.45-8.72C10.14 9.04 9 5 7.5 5 4.11 5 4 11.93 4 12H2c0-.37.06-9 5.5-9 3 0 4.21 4.25 5.47 8.74C13.83 14.8 15 19 16.5 19c3.44 0 3.53-6.93 3.53-7h2c0 .37-.06 9-5.53 9"/></svg></span> How USBL Works<a class="headerlink" href="#how-usbl-works" title="Permanent link">&para;</a></h2>
+<p>USBL (Ultra-Short Baseline) systems determine the absolute position of a subsea transponder using observations made relative to a vessel-mounted transceiver. The transceiver contains multiple transmit and receive elements (transducers) housed in a single unit. The baseline between pairs of transducer elements measures <strong>phase differences</strong> in the incoming acoustic signal, allowing the relative phase angle of the signal to be computed.</p>
+<p>A minimum of three transducer elements arranged with at least two orthogonal baselines enables measurement of acoustic phase angles in two planes. This yields two angles relative to the transceiver reference frame, which is directly related to the vessel axes.</p>
+<p>To determine the absolute position of a transponder, the following measurements are required:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Two-Way Travel Time (TWTT)</strong> -- converted to slant range using the sound velocity profile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Two acoustic angles</strong> -- horizontal and vertical direction of the incoming signal</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Vessel heading</strong> -- from gyrocompass</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Vessel pitch and roll</strong> -- from motion reference unit (MRU)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Transceiver position</strong> -- derived from GNSS antenna position and measured offsets</li>
+</ul>
+<p>The TWTT is converted to slant range using the loaded sound velocity profile. When operating in <strong>responder mode</strong> (transponder wired through the subsea vehicle), travel time is measured in one direction only, eliminating potential timing errors in half the equation. Responder mode is always preferable when practical.</p>
+<p>The topside interface outputs a data string to the navigation software each interrogation cycle. If the transponder is detected, data is output as dX, dY, dZ distances (vessel-relative Cartesian coordinates) corrected for pitch and roll in the ship's frame of reference.</p>
+<details class="example">
+<summary>Example Datagram ($PSIMSSB)</summary>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$PSIMSSB,102449.231,M23,A,,C,H,M,-100.10,50.50,200.20,1.436,N,,
+</code></pre></div>
+- <strong>C</strong> = Cartesian X/Y (vessel-relative coordinates)
+- <strong>A</strong> = Accepted fix
+- X, Y values in metres; depth in metres</p>
+</details>
+<hr />
+<h2 id="gyro-aided-usbl-gusbl"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg></span> Gyro-Aided USBL (GUSBL)<a class="headerlink" href="#gyro-aided-usbl-gusbl" title="Permanent link">&para;</a></h2>
+<p>Gyro-Aided USBL systems incorporate an <strong>Attitude and Heading Reference System (AHRS)</strong> directly into the transceiver head. They operate on the same principles as standard USBL but are effectively pre-calibrated -- the manufacturer measures any misalignment between the AHRS and the transceiver in a controlled environment.</p>
+<h3 id="transceiver-position-feed">Transceiver Position Feed<a class="headerlink" href="#transceiver-position-feed" title="Permanent link">&para;</a></h3>
+<p>A GUSBL system requires a positional feed for the transceiver head. There are two methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Navigation software feed</strong></td>
+<td>Transceiver X/Y/Z offsets entered in nav software; computed transceiver position ($GPGGA) sent to GUSBL topside. No lever-arm offsets from antenna to transceiver in the GUSBL.</td>
+<td>Simpler to implement</td>
+<td>Lower update rate for transceiver position computation</td>
+</tr>
+<tr>
+<td><strong>Direct GNSS feed</strong></td>
+<td>$GPGGA from GNSS receiver fed directly to GUSBL topside; lever-arms from antenna to transceiver entered in GUSBL in the transceiver's frame of reference</td>
+<td>Higher update rate (antenna position is attitude-corrected by the internal AHRS)</td>
+<td>Requires calculating offsets in the transceiver's reference frame; generally limited to small vessel applications</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gusbl-output-datagrams">GUSBL Output Datagrams<a class="headerlink" href="#gusbl-output-datagrams" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Manufacturer</th>
+<th>Datagram</th>
+<th>Coordinate System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kongsberg / Sonardyne</td>
+<td>$PSIMSSB</td>
+<td>dX/dY/dZ in vessel-relative Cartesian metres</td>
+</tr>
+<tr>
+<td>Exail (iXblue) GAPS</td>
+<td>$PTSAG</td>
+<td>UTM Lat/Long in WGS84 (degrees and minutes to 5 decimal places)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="calibration-software-scenarios"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.5 18.5c0-1.1.3-2.1.7-3H12c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5c0 .2 0 .4-.1.5.8-.3 1.6-.5 2.6-.5.5 0 1 .1 1.5.2V12c0-.3 0-.7-.1-1l2.1-1.6c.2-.2.2-.4.1-.6l-2-3.5c-.1-.3-.3-.3-.6-.3l-2.5 1c-.5-.4-1.1-.7-1.7-1l-.4-2.7c.1-.1-.2-.3-.4-.3h-4c-.2 0-.5.2-.5.4l-.4 2.7c-.6.2-1.1.6-1.7.9L5 5c-.3 0-.5 0-.7.3l-2 3.5c-.1.2 0 .4.2.6L4.6 11c0 .3-.1.7-.1 1s0 .7.1 1l-2.1 1.7c-.2.2-.2.4-.1.6l2 3.5c.1.2.3.2.6.2l2.5-1c.5.4 1.1.7 1.7 1l.4 2.7c0 .2.2.4.5.4h2.5c-.7-1.1-1.1-2.3-1.1-3.6m6.5-4V13l-2.2 2.2 2.2 2.2V16c1.4 0 2.5 1.1 2.5 2.5 0 .4-.1.8-.3 1.1l1.1 1.1c1.2-1.8.7-4.3-1.1-5.5-.6-.5-1.4-.7-2.2-.7m0 6.5c-1.4 0-2.5-1.1-2.5-2.5 0-.4.1-.8.3-1.1l-1.1-1.1c-1.2 1.8-.7 4.3 1.1 5.5.7.4 1.4.7 2.2.7V24l2.2-2.2-2.2-2.3z"/></svg></span> Calibration Software Scenarios<a class="headerlink" href="#calibration-software-scenarios" title="Permanent link">&para;</a></h2>
+<p>On construction vessels, most permanent-fit USBL systems will have calibration values derived independently from survey operations. Two common barriers to calibrating directly in the USBL software are:</p>
+<ol>
+<li>The high-accuracy survey sensors are often not interfaced directly to the USBL system</li>
+<li>Vessel policy may not allow subcontractors to update calibration values (due to DP certification requirements)</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Double Correction</p>
+<p>The surveyor must be aware of gyro and MRU calibration values entered in <strong>both</strong> the USBL system and navigation software to avoid applying corrections twice (double correcting the C-Os).</p>
+</div>
+<h3 id="scenario-1-vessel-fit-usbl-with-sensor-access">Scenario 1: Vessel-Fit USBL with Sensor Access<a class="headerlink" href="#scenario-1-vessel-fit-usbl-with-sensor-access" title="Permanent link">&para;</a></h3>
+<p>The USBL system is vessel-fit (part of the DP system). External sensors (DGNSS, gyro, MRU) are not common to both the USBL and navigation package, but can be calibrated, and vessel policy allows entering C-Os directly into the USBL system.</p>
+<p><strong>Use the manufacturer's software to calibrate.</strong> Vessel-fit systems will have secondary and tertiary attitude/heading sensors which must all be aligned with C-Os applied within the USBL topside (sensor switching is common and may occur without notice).</p>
+<p>When the USBL software is used:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> All attitude corrections (heading, pitch, roll) entered in USBL system -- navigation package corrections set to <strong>zero (0)</strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Scale correction entered in USBL system -- navigation software scale set to <strong>one (1)</strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> GNSS antenna offsets entered relative to the USBL reference in USBL software, and relative to the CRP in navigation software (ideally these two points should be coincident)</li>
+</ul>
+<h3 id="scenario-2-own-usbl-system">Scenario 2: Own USBL System<a class="headerlink" href="#scenario-2-own-usbl-system" title="Permanent link">&para;</a></h3>
+<p>The USBL system is installed by the survey team or used exclusively for survey operations. All external sensors are common to both the USBL software and navigation package.</p>
+<p><strong>Use the manufacturer's software for calibration.</strong></p>
+<h3 id="scenario-3-vessel-fit-usbl-without-sensor-access">Scenario 3: Vessel-Fit USBL without Sensor Access<a class="headerlink" href="#scenario-3-vessel-fit-usbl-without-sensor-access" title="Permanent link">&para;</a></h3>
+<p>The USBL system is vessel-fit. External sensors are not common to both systems, and vessel policy does <strong>not</strong> allow C-Os to be entered into the USBL system.</p>
+<p><strong>Use the navigation software to perform the calibration.</strong> C-Os are entered only in the navigation software and should be small if the USBL system is in good order.</p>
+<hr />
+<h2 id="error-budget-breakdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.96 11.31C10.82 8.1 11.5 6 13 6s2.18 2.1 3.04 5.31C17 14.92 18.1 19 22 19v-2c-2.2 0-3-2.46-4.03-6.2C17.08 7.46 16.15 4 13 4s-4.08 3.46-4.97 6.8C7.03 14.54 6.2 17 4 17V2H2v20h20v-2H4v-1c3.9 0 5-4.08 5.96-7.69"/></svg></span> Error Budget Breakdown<a class="headerlink" href="#error-budget-breakdown" title="Permanent link">&para;</a></h2>
+<p>The achievable accuracy of a USBL system depends on the combined contribution of each component. An error budget should contain accurate information about equipment accuracy and calibration quality.</p>
+<h3 id="primary-error-sources">Primary Error Sources<a class="headerlink" href="#primary-error-sources" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Error Source</th>
+<th>Effect</th>
+<th>Behaviour with Depth/Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>USBL transceiver accuracy</strong></td>
+<td>Angular measurement precision</td>
+<td>Horizontal error increases with depth</td>
+</tr>
+<tr>
+<td><strong>DGNSS system</strong></td>
+<td>Surface position of vessel</td>
+<td>Constant -- not affected by water depth</td>
+</tr>
+<tr>
+<td><strong>Heading sensor</strong></td>
+<td>Bearing to transponder</td>
+<td>Error increases with <strong>horizontal distance</strong> from vessel; less impact when target is below the vessel</td>
+</tr>
+<tr>
+<td><strong>Pitch and Roll sensor</strong></td>
+<td>Vertical angle correction</td>
+<td>Error increases with <strong>water depth</strong> -- most critical for deep water operations</td>
+</tr>
+<tr>
+<td><strong>Speed of Sound</strong></td>
+<td>Range calculation (slant range from TWTT)</td>
+<td>Error increases with depth and horizontal distance (ray bending from thermoclines)</td>
+</tr>
+<tr>
+<td><strong>Offset measurement accuracy</strong></td>
+<td>Transceiver-to-CRP geometry</td>
+<td>Constant -- not affected by water depth</td>
+</tr>
+<tr>
+<td><strong>Quality of calibrations</strong></td>
+<td>Residual alignment errors</td>
+<td>Amplified with depth (angular) or constant (offset)</td>
+</tr>
+<tr>
+<td><strong>Noise levels</strong></td>
+<td>Signal-to-noise ratio degradation</td>
+<td>Increases with depth, horizontal distance, and ambient noise</td>
+</tr>
+<tr>
+<td><strong>USBL pole stability</strong></td>
+<td>Dynamic errors from pole flex/movement</td>
+<td>Nearly impossible to quantify; avoid unstable poles for high-spec work</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-errors-manifest">How Errors Manifest<a class="headerlink" href="#how-errors-manifest" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Depth-Dependent vs Constant Errors</p>
+<ul>
+<li><strong>DGNSS and offset measurement errors</strong> are constant and not affected by water depth. A vessel spin in shallow water will reveal offset errors clearly, but in deep water any apparent transponder movement may be hard to distinguish from pitch/roll error.</li>
+<li><strong>Pitch and roll errors</strong> increase with water depth and are the most critical aspect for deep water operations. A spin check is the preferred method for validating pitch/roll corrections, though it cannot differentiate between pitch, roll, and offset errors individually.</li>
+<li><strong>Heading errors</strong> increase with horizontal distance from the vessel, making them most significant when positioning towed sensors or ROVs at touchdown deployed from a pipelay vessel. Heading errors do not increase with water depth.</li>
+<li><strong>Speed of sound errors</strong> are more apparent in deeper water. In areas with rapidly changing conditions (e.g., nearshore mixing of fresh river water and saltwater), sound velocity data may need to be collected much more frequently.</li>
+</ul>
+</div>
+<h3 id="achievable-accuracy">Achievable Accuracy<a class="headerlink" href="#achievable-accuracy" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Target Accuracy</p>
+<p>Positional accuracy better than <strong>0.3% of slant range</strong> (plus the absolute accuracy at 2-sigma/95% of the vessel surface positioning system) should be achievable for modern USBL systems.</p>
+</div>
+<hr />
+<h2 id="portable-installation-checklist"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Portable Installation Checklist<a class="headerlink" href="#portable-installation-checklist" title="Permanent link">&para;</a></h2>
+<p>When installing a temporary or portable USBL system using an over-the-side pole:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pole must be rigid enough for the vessel to manoeuvre at up to <strong>3 knots</strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Transceiver must be at least <strong>3 m below the vessel</strong> in the deployed position</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use <strong>stops and stays</strong> to ensure the pole returns to the same point when deployed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Fit a short adaptor pipe between the pole flange and the transceiver head</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use a <strong>non-conductive spacer and nylon bolt covers</strong> -- no metal-to-metal contact between transceiver head and pole</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Verify all bolts, washers, adaptors, and spacers are present and in good condition before installation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Support the transceiver head independently (e.g., with a choke strop) when attaching to the pole</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Plan deployment and recovery in clear, manageable steps -- use a small davit and winch where possible</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Transducer head must be recoverable to deck or safe height above waterline before vessel transit</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Secure all bolts with <strong>sprung washers and Loctite</strong></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Quick Test</p>
+<p>After installation, lower a transponder over the side and interrogate it (ensure sufficient water depth for the pole). The returns should highlight any gross offset or alignment errors, since the beacon's position relative to the transceiver should be roughly known based on where it was lowered.</p>
+</div>
+<hr />
+<h2 id="mru-interfacing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 13h2.79l4.31-8.21 1.18 8.96 3.22-4.09L17.83 13H21v2h-4l-2.33-2.33-4.75 6.06-.98-7.42L7 15H3z"/></svg></span> MRU Interfacing<a class="headerlink" href="#mru-interfacing" title="Permanent link">&para;</a></h2>
+<p>Latency in pitch and roll data fed to the USBL system is a common cause of positioning errors. Possible causes include insufficient MRU output rate and using an incorrect output format at high data rates (more bits per second than the baud rate can handle).</p>
+<h3 id="minimum-requirements">Minimum Requirements<a class="headerlink" href="#minimum-requirements" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Kongsberg HiPAP</th>
+<th>Sonardyne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Angular resolution</strong></td>
+<td>0.01 deg</td>
+<td>0.01 deg</td>
+</tr>
+<tr>
+<td><strong>Minimum output rate</strong></td>
+<td>25 Hz (preferably 100 Hz)</td>
+<td>10 Hz</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">String Selection</p>
+<p>The output string type matters for timing accuracy. For example, when using an Octans to provide heading, pitch, and roll to a HiPAP system, the EM3000 binary string is recommended -- it includes heading, pitch, and roll and is much more efficient with bit count than ASCII alternatives.</p>
+</div>
+<p>After interfacing the MRU, review trend plots in the USBL software to confirm attitude data is being received correctly and at the expected rate.</p>
+<hr />
+<h2 id="transponder-selection"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 4.93A9.97 9.97 0 0 0 2 12c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.94 7.94 0 0 1 4 12c0-2.21.89-4.22 2.34-5.66zm14.14 0-1.41 1.41A7.96 7.96 0 0 1 20 12c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.97 9.97 0 0 0 22 12c0-2.76-1.12-5.26-2.93-7.07M7.76 7.76A5.98 5.98 0 0 0 6 12c0 1.65.67 3.15 1.76 4.24l1.41-1.41A4 4 0 0 1 8 12c0-1.11.45-2.11 1.17-2.83zm8.48 0-1.41 1.41A4 4 0 0 1 16 12c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 12c0-1.65-.67-3.15-1.76-4.24M12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2"/></svg></span> Transponder Selection<a class="headerlink" href="#transponder-selection" title="Permanent link">&para;</a></h2>
+<h3 id="wideband-vs-legacy">Wideband vs Legacy<a class="headerlink" href="#wideband-vs-legacy" title="Permanent link">&para;</a></h3>
+<p>Always use <strong>wideband transponders</strong> in preference over legacy tone-based transponders with modern systems:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Wideband Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sonardyne</td>
+<td>WB2 or WB2+</td>
+</tr>
+<tr>
+<td>Kongsberg HiPAP</td>
+<td>CYMBAL transponder (M-Codes)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="omni-directional-vs-directional">Omni-Directional vs Directional<a class="headerlink" href="#omni-directional-vs-directional" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Transponder Type (Beam Width)</th>
+<th>Recommended Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Omni-directional (180 deg)</td>
+<td>Water depths less than 1800 m (not recommended beyond 1800 m)</td>
+</tr>
+<tr>
+<td>Directional (30 deg or 40 deg)</td>
+<td>Water depths greater than 1800 m</td>
+</tr>
+</tbody>
+</table>
+<p>When using a directional transponder, ensure the vessel's transceiver remains within the optimal part of the beam. The maximum horizontal offset can be calculated:</p>
+<div class="admonition example">
+<p class="admonition-title">Beam Width Formula</p>
+<div class="arithmatex">\[\tan(0.5 \times \text{BeamWidth}) \times \text{WD} = \text{Maximum Horizontal Offset}\]</div>
+<p>Example with 30 deg transponder in 850 m WD:</p>
+<p><span class="arithmatex">\(\tan(0.5 \times 30) \times 850 = 228\)</span> m</p>
+<p>In this case, limit cardinal points to ~200 m offset. However, 200 m offset in 850 m depth provides poor geometry -- an omni-directional transponder allowing 500 m offset would be more effective.</p>
+<p>In 1865 m WD with the same 30 deg transponder:</p>
+<p><span class="arithmatex">\(\tan(0.5 \times 30) \times 1865 = 500\)</span> m</p>
+<p>This is why directional transponders are only recommended for calibration in water depths greater than 1800 m -- it is only at these depths that a 500 m horizontal offset fits within the beam.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Directional transponders can still be used in shallower water for positioning operations directly below or close to the surface vessel, and will yield higher signal-to-noise ratios when used directly below the vessel. Choose the optimum balance between geometry and signal-to-noise ratio for your specific situation.</p>
+</div>
+<hr />
+<h2 id="calibration-methods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7C6.5 7 2 9.2 2 12c0 2.2 2.9 4.1 7 4.8V20l4-4-4-4v2.7c-3.2-.6-5-1.9-5-2.7 0-1.1 3-3 8-3s8 1.9 8 3c0 .7-1.5 1.9-4 2.5v2.1c3.5-.8 6-2.5 6-4.6 0-2.8-4.5-5-10-5"/></svg></span> Calibration Methods<a class="headerlink" href="#calibration-methods" title="Permanent link">&para;</a></h2>
+<h3 id="suggested-horizontal-offsets">Suggested Horizontal Offsets<a class="headerlink" href="#suggested-horizontal-offsets" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Water Depth (m)</th>
+<th>Kongsberg HiPAP Offset (m)</th>
+<th>Sonardyne CASIUS Offset (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>150</td>
+<td>150</td>
+<td>75</td>
+</tr>
+<tr>
+<td>400</td>
+<td>400</td>
+<td>200</td>
+</tr>
+<tr>
+<td>500</td>
+<td>500</td>
+<td>250</td>
+</tr>
+<tr>
+<td>750</td>
+<td>500</td>
+<td>375</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>500</td>
+<td>500</td>
+</tr>
+<tr>
+<td>2000+</td>
+<td>500</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p>Recommended calibration depth range is <strong>200-2000 m</strong>. The ideal depth is approximately 500 m for a good balance of geometry and signal-to-noise ratio. Maximum lateral offset from the seabed beacon should be limited to 500 m.</p>
+<hr />
+<h3 id="cardinal-point-method-dp-vessels">Cardinal Point Method (DP Vessels)<a class="headerlink" href="#cardinal-point-method-dp-vessels" title="Permanent link">&para;</a></h3>
+<p>The preferred calibration routine for DP vessels. The vessel navigates to each of four cardinal points around a seabed transponder and collects data on singular or reciprocal headings.</p>
+<ul>
+<li>Each dataset should contain <strong>100-200 fixes</strong> per heading per point</li>
+<li>With tight data clustering, 100 points is sufficient; with larger spread, collect 200+ (many will be thinned in post-processing)</li>
+<li>Reciprocal headings provide 100% data redundancy and are generally preferable</li>
+</ul>
+<p><strong>Data logged during calibration:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Transceiver position (derived from GNSS, gyro, and attitude sensors)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> USBL angles and ranges (X, Y, Z values) to the transponder</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Heading, pitch, and roll values</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Pre-Calibration Setup</p>
+<ul>
+<li>Record any previous calibration values in the online log before removing them</li>
+<li>If a gear correction is very large (e.g., transceiver mounted ~90 deg out), set an approximate value before starting</li>
+<li>Configure the USBL topside to output a raw data string to the navigation software</li>
+<li>On vessels with two transceivers, plan data acquisition for both in advance to minimise vessel moves</li>
+</ul>
+</div>
+<p><strong>QC Checks on Results:</strong></p>
+<ol>
+<li>The <strong>2DRMS</strong> of the transponder horizontal position should fall inside the total system error budget (2DRMS represents the 98.2% confidence level)</li>
+<li>The <strong>scale factor</strong> should be close to 1.0 -- deviation may indicate a sound velocity or offset (usually depth) problem</li>
+</ol>
+<hr />
+<h3 id="non-dp-vessel-method-6-line-box-pattern">Non-DP Vessel Method (6-Line Box Pattern)<a class="headerlink" href="#non-dp-vessel-method-6-line-box-pattern" title="Permanent link">&para;</a></h3>
+<p>When the vessel does not have DP capability, the calibration uses a designed line pattern of <strong>six lines run in reciprocal directions</strong>:</p>
+<ul>
+<li>Four outer lines form a square around the transponder position, with the furthest point at the appropriate horizontal offset (max 500 m)</li>
+<li>Two inner lines run perpendicular to each other, crossing directly over the transponder location</li>
+</ul>
+<p><strong>Best practices for non-DP calibration:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Choose a heading <strong>45 degrees to the prevailing weather</strong> -- never sail beam-on to weather</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Maintain <strong>constant vessel speed</strong> throughout each line</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Switch logging on and off at the <strong>same location</strong> along each line to ensure consistent fix counts</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> If the recording system rejects a data file, re-run that line</li>
+</ul>
+<hr />
+<h2 id="verification-procedures"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> Verification Procedures<a class="headerlink" href="#verification-procedures" title="Permanent link">&para;</a></h2>
+<p>After processing calibration data and entering corrections into the appropriate location, verification confirms the system is performing within specification.</p>
+<h3 id="spin-check-pitchroll-verification">Spin Check (Pitch/Roll Verification)<a class="headerlink" href="#spin-check-pitchroll-verification" title="Permanent link">&para;</a></h3>
+<p>The spin check identifies residual pitch, roll, and offset errors by manoeuvring the vessel through 360 degrees of rotation directly above the transponder.</p>
+<div class="admonition info">
+<p class="admonition-title">Static Spin, Not Continuous</p>
+<p>This is a <strong>static spin</strong> -- the vessel is held stationary at four distinct headings separated by 90 degrees. After each rotation, allow the vessel to settle fully and gyros to stabilize before logging.</p>
+</div>
+<p><strong>Procedure:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Position USBL transceiver directly above the transponder, using the transceiver as the centre of rotation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Record a sound velocity profile at the verification site and enter into USBL software</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Log 100 observations per heading on four headings separated by 90 degrees (minimum 400 total)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Verify USBL-to-GNSS antenna offsets are accurately defined</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>95% of points within <strong>0.3% of slant range + surface positioning error</strong> from the known point or mean position</li>
+<li>Mean position on any individual heading within <strong>0.2% of slant range</strong> from the overall mean position</li>
+<li>No significant artefacts (circular "doughnut" pattern indicates residual pitch/roll/offset error)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Distinguishing Offset from Angular Errors</p>
+<p>Test in a different water depth. An offset error produces a doughnut that does <strong>not</strong> change proportional to depth. An angular error produces a larger doughnut in deeper water and a smaller one in shallower water.</p>
+</div>
+<hr />
+<h3 id="transit-check-headingpitchroll-verification">Transit Check (Heading/Pitch/Roll Verification)<a class="headerlink" href="#transit-check-headingpitchroll-verification" title="Permanent link">&para;</a></h3>
+<p>Transit lines are run with consistent vessel heading, passing directly over the transponder at the intersection point. The vessel's long axis aligns with one line (longitudinal) and 90 degrees opposed for the second (lateral).</p>
+<ul>
+<li><strong>Longitudinal line</strong> reveals residual <strong>pitch</strong> errors</li>
+<li><strong>Lateral line</strong> reveals residual <strong>roll</strong> errors</li>
+</ul>
+<p>Transit distance: +/-50% of water depth or +/-250 m, whichever is greater, at maximum <strong>2 knots</strong>.</p>
+<h4 id="transit-check-error-diagnosis">Transit Check Error Diagnosis<a class="headerlink" href="#transit-check-error-diagnosis" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>Error Type</th>
+<th>Symptom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitudinal</td>
+<td>Pitch</td>
+<td>Transponder depth change (increasing or decreasing along the line)</td>
+</tr>
+<tr>
+<td>Longitudinal</td>
+<td>Heading</td>
+<td>Transponder lateral movement (across-track error)</td>
+</tr>
+<tr>
+<td>Longitudinal</td>
+<td>Sound Velocity</td>
+<td>Transponder fore/aft movement (and possible "smile" in depth profile)</td>
+</tr>
+<tr>
+<td>Lateral</td>
+<td>Roll</td>
+<td>Transponder depth change</td>
+</tr>
+<tr>
+<td>Lateral</td>
+<td>Heading</td>
+<td>Transponder longitudinal movement</td>
+</tr>
+<tr>
+<td>Lateral</td>
+<td>Sound Velocity</td>
+<td>Transponder port/starboard movement (and possible "smile" in depth profile)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Depth Profile Interpretation:</strong></p>
+<ul>
+<li>Constantly <strong>increasing or decreasing</strong> depth along a line indicates a <strong>pitch or roll bias</strong></li>
+<li><strong>"Smile" or "frown"</strong> shapes indicate <strong>scale (sound velocity) issues</strong></li>
+<li>Depths should ideally vary around a constant value</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>95% of points within <strong>0.3% of maximum slant range + surface positioning error</strong> from the known point or mean position</li>
+<li>Mean position of each transit dataset within <strong>0.2% of slant range</strong> from the spin verification mean</li>
+<li>An elongated spread in the position plot suggests a heading or scale error</li>
+</ul>
+<hr />
+<h3 id="position-verification">Position Verification<a class="headerlink" href="#position-verification" title="Permanent link">&para;</a></h3>
+<p>Conducted on a known structure by deploying an ROV to a published reference point or installing a transponder at a known location. Log a cumulative position fix, then turn to the reciprocal heading and repeat.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Each reciprocal fix's mean distance from the overall dataset mean shall be within <strong>0.25% of slant range</strong></li>
+<li>If the range between positions exceeds the error budget, investigate possible causes (consider the original positioning method and associated calibration data for the structure)</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Critical Rule</p>
+<p><strong>Never average the positions collected at reciprocal vessel headings.</strong> This defeats the intent of the exercise, which is to highlight the achievable accuracy of a USBL fix on any particular heading.</p>
+</div>
+<hr />
+<h2 id="transponder-tracking-operations"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h12v6l-4 4 4 4v6H6v-6l4-4-4-4zm10 14.5-4-4-4 4V20h8zm-4-5 4-4V4H8v3.5zM10 6h4v.75l-2 2-2-2z"/></svg></span> Transponder Tracking Operations<a class="headerlink" href="#transponder-tracking-operations" title="Permanent link">&para;</a></h2>
+<h3 id="update-rate">Update Rate<a class="headerlink" href="#update-rate" title="Permanent link">&para;</a></h3>
+<p>The update rate should match the achievable rate for the water depth. Overloading the system with an unreasonably fast rate provides no benefit.</p>
+<div class="admonition example">
+<p class="admonition-title">TWTT Calculation Example</p>
+<p>With an average sound velocity of 1500 m/s and a depth of 1000 m:</p>
+<p><strong>TWTT = (2 x 1000) / 1500 = ~1.3 seconds</strong></p>
+<p>Adding transponder turnaround time, a tracking interval faster than ~1.5 seconds is unreasonable for this scenario.</p>
+</div>
+<h3 id="multi-transponder-considerations">Multi-Transponder Considerations<a class="headerlink" href="#multi-transponder-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Most USBL systems interrogate transponders <strong>sequentially</strong> -- tracking intervals may need to increase to accommodate multiple returns</li>
+<li><strong>Prioritise</strong> the most critical transponders (e.g., ROV may need ~3 second updates; a crane hook may be fine at 10+ seconds)</li>
+<li>Transponders on <strong>battery power</strong> have a limited number of replies -- factor this into update rate and power settings</li>
+</ul>
+<h3 id="tracking-quality">Tracking Quality<a class="headerlink" href="#tracking-quality" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <strong>two beacons</strong> on the tracked vehicle where possible: one powered through the vehicle (responder) and one spare on battery (transponder)</li>
+<li>Mount transponders with the face raised as high as possible above the vehicle buoyancy without interfering with the tether</li>
+<li>Ensure clear line of sight between transceiver and transponder</li>
+<li>If tracking is inconsistent, adjust gain, detection threshold, and detection validate settings</li>
+<li>On DP vessels, vessel heading relative to the transponder is the most common cause of tracking issues -- adjust heading if needed</li>
+</ul>
+<hr />
+<h2 id="frequency-management"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 1 2 2 2 2 0 0 1-.47 1.29L16.7 22h-2.13L12 14.93 9.43 22H7.3l3.17-8.71A2 2 0 0 1 10 12a2 2 0 0 1 2-2m0-2a4 4 0 0 0-4 4c0 .5.1 1 .28 1.46l-.88 2.4A6.03 6.03 0 0 1 6 12a6 6 0 0 1 6-6 6 6 0 0 1 6 6c0 1.47-.53 2.81-1.4 3.86l-.88-2.4C15.9 13 16 12.5 16 12a4 4 0 0 0-4-4m0-4a8 8 0 0 0-8 8c0 2.36 1 4.5 2.64 5.94l-.72 2A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10c0 3.23-1.54 6.11-3.92 7.94l-.72-2C19 16.5 20 14.36 20 12a8 8 0 0 0-8-8"/></svg></span> Frequency Management<a class="headerlink" href="#frequency-management" title="Permanent link">&para;</a></h2>
+<p>Acoustic frequency management prevents interference between vessels operating in the same field. A <strong>Frequency Management Plan (FMP)</strong> is typically issued by the client for the work area.</p>
+<p>Key principles:</p>
+<ul>
+<li>Each vessel in the field is allocated specific acoustic channels -- <strong>only</strong> those channels are to be used</li>
+<li>No vessel uses frequencies not specifically allocated to it</li>
+<li>If additional or different requirements arise, contact the FMP issuer for a revision</li>
+</ul>
+<hr />
+<h2 id="multipath-effects"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 20h-8a1 1 0 0 1-1-1V4.97a1 1 0 0 1 .74-.97c.45-.12.91.08 1.13.47l8.02 14.03c.18.31.18.69 0 1s-.51.5-.89.5M2 20c-.38 0-.71-.19-.89-.5a.99.99 0 0 1 0-1L9.13 4.47c.22-.39.68-.59 1.13-.47a1 1 0 0 1 .74.97V19a1 1 0 0 1-1 1zm7-2V8.74L3.71 18z"/></svg></span> Multipath Effects<a class="headerlink" href="#multipath-effects" title="Permanent link">&para;</a></h2>
+<p>Multipath occurs when the acoustic signal reaches the transceiver via an indirect path (reflected off a surface) in addition to the direct path. The system cannot distinguish between them, resulting in corrupted angle measurements and degraded positioning.</p>
+<h3 id="common-multipath-sources">Common Multipath Sources<a class="headerlink" href="#common-multipath-sources" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Situation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jacket legs / risers</strong></td>
+<td>Working near fixed structures -- signal reflects off steel members</td>
+</tr>
+<tr>
+<td><strong>Moonpool edges</strong></td>
+<td>Transceiver deployed through moonpool -- signal bounces off internal walls</td>
+</tr>
+<tr>
+<td><strong>Vessel hull</strong></td>
+<td>Shallow water or high beam angles -- signal reflects off the hull</td>
+</tr>
+<tr>
+<td><strong>Seabed</strong></td>
+<td>Very shallow water -- strong seabed reflection arrives close in time to the direct signal</td>
+</tr>
+<tr>
+<td><strong>Thermoclines</strong></td>
+<td>Strong temperature gradients can refract and reflect acoustic energy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mitigation">Mitigation<a class="headerlink" href="#mitigation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Position the vessel so the transponder is as close to directly below the transceiver as operationally feasible</li>
+<li>When working near structures, keep the transponder clear of structural members in the acoustic path</li>
+<li>Use wideband signals (correlation-based detection is more resistant to multipath than tone-based)</li>
+<li>If multipath is suspected, compare USBL positions from different vessel headings -- multipath effects are heading-dependent</li>
+<li>In moonpool installations, ensure the transceiver is lowered well below the hull to clear the moonpool walls</li>
+</ul>
+<hr />
+<h2 id="acoustic-interference-diagnosis"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4 9.91 6.09 12 8.18M4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.26c-.67.51-1.42.93-2.25 1.17v2.07c1.38-.32 2.63-.95 3.68-1.81L19.73 21 21 19.73l-9-9M19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.9 8.9 0 0 0 21 12c0-4.28-3-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71m-2.5 0c0-1.77-1-3.29-2.5-4.03v2.21l2.45 2.45c.05-.2.05-.42.05-.63"/></svg></span> Acoustic Interference Diagnosis<a class="headerlink" href="#acoustic-interference-diagnosis" title="Permanent link">&para;</a></h2>
+<p>Acoustic interference occurs when other active acoustic systems operate on overlapping or harmonic frequencies, degrading USBL signal detection.</p>
+<h3 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sudden increase in rejected fixes or dropped tracking cycles</li>
+<li>Fix scatter increases without any change in environmental conditions</li>
+<li>Intermittent tracking loss that correlates with other system activity (e.g., MBES pinging, vessel DP USBL, nearby vessel operations)</li>
+</ul>
+<h3 id="common-conflict-sources">Common Conflict Sources<a class="headerlink" href="#common-conflict-sources" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Typical Frequency Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBES (shallow)</td>
+<td>200 - 400 kHz</td>
+</tr>
+<tr>
+<td>MBES (deep)</td>
+<td>12 - 30 kHz</td>
+</tr>
+<tr>
+<td>SBES / Altimeter</td>
+<td>200 kHz typical</td>
+</tr>
+<tr>
+<td>USBL (MF)</td>
+<td>19 - 34 kHz</td>
+</tr>
+<tr>
+<td>USBL (HF)</td>
+<td>35 - 55 kHz</td>
+</tr>
+<tr>
+<td>LBL transponders</td>
+<td>Various, per FMP</td>
+</tr>
+<tr>
+<td>Sub-bottom profiler</td>
+<td>2 - 16 kHz</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnosis-steps">Diagnosis Steps<a class="headerlink" href="#diagnosis-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Disable other acoustic systems one at a time</strong> and observe whether USBL tracking improves</li>
+<li><strong>Check the Frequency Management Plan (FMP)</strong> for channel allocations -- confirm no overlap</li>
+<li><strong>Review the USBL signal-to-noise display</strong> for periodic noise spikes that correlate with other system ping rates</li>
+<li><strong>Contact nearby vessels</strong> to check if they have changed acoustic channels or power settings</li>
+<li>If the conflict cannot be resolved by channel separation, coordinate transmit timing (time-division) between systems where the USBL software supports it</li>
+</ol>
+<hr />
+<h2 id="acceptance-criteria"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spin check -- 95% of points</td>
+<td>Within <strong>0.3% of slant range</strong> + surface positioning error from known/mean position</td>
+</tr>
+<tr>
+<td>Spin check -- mean per heading</td>
+<td>Within <strong>0.2% of slant range</strong> from overall mean</td>
+</tr>
+<tr>
+<td>Transit check -- 95% of points</td>
+<td>Within <strong>0.3% of max slant range</strong> + surface positioning error</td>
+</tr>
+<tr>
+<td>Transit check -- mean per dataset</td>
+<td>Within <strong>0.2% of slant range</strong> from spin verification mean</td>
+</tr>
+<tr>
+<td>Position verification -- reciprocal means</td>
+<td>Within <strong>0.25% of slant range</strong> from overall dataset mean</td>
+</tr>
+<tr>
+<td>Scale factor</td>
+<td>Close to <strong>1.0</strong> (deviation indicates SV or depth offset error)</td>
+</tr>
+<tr>
+<td>Overall system accuracy</td>
+<td>Better than <strong>0.3% of slant range</strong> + surface positioning accuracy (2-sigma)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Likely Cause</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circular "doughnut" pattern on spin check</td>
+<td>Residual pitch/roll or offset error</td>
+<td>Re-calibrate pitch and roll; verify offsets. Test at different depth to distinguish offset from angular error</td>
+</tr>
+<tr>
+<td>Transponder depth changes along transit line</td>
+<td>Pitch or roll bias</td>
+<td>Apply correction in appropriate plane; re-run transit to verify</td>
+</tr>
+<tr>
+<td>"Smile" or "frown" in depth profile</td>
+<td>Sound velocity error / scale factor issue</td>
+<td>Take fresh SVP; check SV profile is loaded correctly</td>
+</tr>
+<tr>
+<td>Elongated scatter on position plot</td>
+<td>Heading or scale error</td>
+<td>Review gyro calibration; check SV profile</td>
+</tr>
+<tr>
+<td>Tracking dropouts near structures</td>
+<td>Multipath / acoustic shadowing</td>
+<td>Reposition vessel; change heading to clear acoustic path</td>
+</tr>
+<tr>
+<td>Sudden increase in fix scatter</td>
+<td>Acoustic interference</td>
+<td>Disable other acoustic systems one by one; check FMP</td>
+</tr>
+<tr>
+<td>Large C-Os (&gt; 2 deg)</td>
+<td>Gross installation error or sensor misidentification</td>
+<td>Re-measure offsets; verify correct gyro/MRU is interfaced</td>
+</tr>
+<tr>
+<td>Fixes biased consistently in one direction</td>
+<td>Offset error or uncorrected lever arm</td>
+<td>Re-verify GNSS-to-transceiver offsets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-articles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../ins-dvl-calibration-guide/">INS/DVL Calibration Guide</a> -- DVL calibration using USBL as reference system</li>
+<li><a href="../../sensors/sound-velocity-operations/">Sound Velocity Operations</a> -- SVP requirements for accurate USBL range calculation</li>
+<li><a href="../../mobilisation/dimensional-control-survey/">Dimensional Control Survey</a> -- measuring transceiver offsets and lever arms</li>
+</ul>
+<hr />
+<h2 id="references"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>IMCA S017 -- Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__overlay" tabindex="-1" data-close-modal></div>
+    <div class="feedback-modal__container" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__header">
+        <h2 id="feedback-modal-title" class="feedback-modal__title">Improve this Wiki</h2>
+        <button class="feedback-modal__close" aria-label="Close" data-close-modal>
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="feedback-modal__body">
+        <p class="feedback-modal__description">
+          Spotted an error? Have a topic suggestion? Any feedback is welcome.
+        </p>
+        <iframe
+          id="feedback-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSefqK85bMV_5AVWXC3JKMwsmYt8VDWm8t0LMVo3tjtQb498bg/viewform?embedded=true"
+          class="feedback-modal__iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Feedback form"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../dgnss-integrity-check/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DGNSS Integrity Check">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                DGNSS Integrity Check
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../hipap-usbl-system/" class="md-footer__link md-footer__link--next" aria-label="Next: HiPAP USBL System Guide">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                HiPAP USBL System Guide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.footer", "navigation.path", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/study-material.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+    
+  </body>
+</html>

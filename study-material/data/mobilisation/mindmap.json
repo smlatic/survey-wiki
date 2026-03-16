@@ -1,0 +1,229 @@
+{
+  "name": "Mobilisation & Setup Overview",
+  "children": [
+    {
+      "name": "Dimensional Control Survey",
+      "children": [
+        {
+          "name": "Total Station Method",
+          "children": [
+            {"name": "Control points (min 5 common between setups)"},
+            {"name": "2 mm closure rule"},
+            {"name": "USMN network adjustment (3+ setups)"},
+            {"name": "Tilt compensator OFF on dynamic platforms"}
+          ]
+        },
+        {
+          "name": "Tape Measure Method",
+          "children": [
+            {"name": "Max 5 m distance"},
+            {"name": "ROV and small platform offsets"},
+            {"name": "Diagonal method for Z offsets"}
+          ]
+        },
+        {
+          "name": "Vessel Reference Frame",
+          "children": [
+            {"name": "CRP at centreline / aft perpendicular / baseline"},
+            {"name": "+X starboard, +Y forward, +Z up"},
+            {"name": "Thermal expansion correction for steel"}
+          ]
+        },
+        {
+          "name": "Target Types",
+          "children": [
+            {"name": "Tape targets (control networks)"},
+            {"name": "Magnetic targets (quick placement)"},
+            {"name": "Spike prism (point features)"},
+            {"name": "Peanut prism (elevated, needs level)"},
+            {"name": "Hidden point pole (inaccessible features)"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AHRS Calibration",
+      "children": [
+        {
+          "name": "GNSS Attitude Reference",
+          "children": [
+            {"name": "Multi-antenna baseline vectors"},
+            {"name": "Integer ambiguity resolution"},
+            {"name": "Heading accuracy: 0.229/L deg"},
+            {"name": "Pitch/roll accuracy: 0.372/L deg"}
+          ]
+        },
+        {
+          "name": "Procedure",
+          "children": [
+            {"name": "Remove existing C-O corrections first"},
+            {"name": "Static logging: min 1 hour alongside"},
+            {"name": "Dynamic logging: box pattern, 15 min per heading"},
+            {"name": "ROV gyro: two orientations (0 and 180 deg)"}
+          ]
+        },
+        {
+          "name": "Acceptance Criteria",
+          "children": [
+            {"name": "Heading GNSS vs gyro: < 0.5 deg"},
+            {"name": "Pitch/roll GNSS vs MRU: < 0.1 deg"},
+            {"name": "Heading C-O SD: < 0.10 deg"},
+            {"name": "Max HDOP/VDOP: 3.0"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gyro Types and Calibration",
+      "children": [
+        {
+          "name": "Gyro Types",
+          "children": [
+            {"name": "Spinning mass: +/-0.2 deg x sec(lat), 4-6 hr settle"},
+            {"name": "FOG: +/-0.1 deg x sec(lat), 20-30 min settle"},
+            {"name": "RLG: <0.05 deg x sec(lat), <5 min settle"},
+            {"name": "GAMS: +/-0.02 deg (2m baseline), 2-10 min"}
+          ]
+        },
+        {
+          "name": "Calibration Methods",
+          "children": [
+            {"name": "Dual total station (quayside)"},
+            {"name": "GNSS compass comparison"},
+            {"name": "ROV LARS reference + tape"},
+            {"name": "Structure yard calibration"}
+          ]
+        },
+        {
+          "name": "Key Considerations",
+          "children": [
+            {"name": "Speed error (E-W heading dependent)"},
+            {"name": "Convergence (True vs Grid North)"},
+            {"name": "UPS mandatory for power protection"},
+            {"name": "24-hour bench test before deployment"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heave and MRU",
+      "children": [
+        {
+          "name": "Heave Measurement Methods",
+          "children": [
+            {"name": "Double integration of accelerations (traditional)"},
+            {"name": "GNSS-derived heave (10-20 Hz RTK/PPP)"},
+            {"name": "Hybrid INS/GNSS blended (best approach)"},
+            {"name": "Delayed heave: 150 s buffer, non-causal filter"}
+          ]
+        },
+        {
+          "name": "Heave Filter Period",
+          "children": [
+            {"name": "Must exceed swell period by 20%"},
+            {"name": "Too short: attenuates real heave signal"},
+            {"name": "Typical range: 10-20 seconds"}
+          ]
+        },
+        {
+          "name": "Lever-Arm-Induced Heave",
+          "children": [
+            {"name": "Formula: Lx sin(pitch) + Ly sin(roll)"},
+            {"name": "10 m arm, 3 deg pitch = 0.52 m error"},
+            {"name": "Mount MRU near centre of rotation"}
+          ]
+        },
+        {
+          "name": "Settlement and Squat",
+          "children": [
+            {"name": "Settlement: Bernoulli effect, speed-squared"},
+            {"name": "Squat: trim change, hull-form dependent"},
+            {"name": "Typical 0.05-0.30 m at survey speed"},
+            {"name": "Measured by speed runs over known depth"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mobilisation Sequence",
+      "children": [
+        {
+          "name": "Pre-Mob",
+          "children": [
+            {"name": "Review scope, specs, geodetic parameters"},
+            {"name": "Check calibration certificates"},
+            {"name": "Prepare nav software configs in advance"}
+          ]
+        },
+        {
+          "name": "Installation Order",
+          "children": [
+            {"name": "1. GNSS antennas and receivers"},
+            {"name": "2. Heading and attitude sensors"},
+            {"name": "3. Acoustic systems (USBL, MBES)"},
+            {"name": "4. ROV equipment"},
+            {"name": "5. Ancillary systems"}
+          ]
+        },
+        {
+          "name": "Calibration Order",
+          "children": [
+            {"name": "1. Static GNSS check"},
+            {"name": "2. AHRS calibration"},
+            {"name": "3. Gyro comparison"},
+            {"name": "4. USBL calibration"},
+            {"name": "5. SVP cast"},
+            {"name": "6. MBES patch test"},
+            {"name": "7. INS/DVL calibration (ROV)"}
+          ]
+        },
+        {
+          "name": "Acceptance Testing",
+          "children": [
+            {"name": "End-to-end position test"},
+            {"name": "Reciprocal line test"},
+            {"name": "Data quality review through full workflow"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Demobilisation",
+      "children": [
+        {
+          "name": "Data Protection",
+          "children": [
+            {"name": "Backup to 2 independent locations"},
+            {"name": "Verify files open and are not corrupt"},
+            {"name": "Never disconnect before backup confirmed"}
+          ]
+        },
+        {
+          "name": "Disconnection",
+          "children": [
+            {"name": "Reverse installation order"},
+            {"name": "Ancillary first, then acoustic, then attitude, then GNSS"},
+            {"name": "Spinning mass gyros run down naturally"}
+          ]
+        },
+        {
+          "name": "Packing and Shipping",
+          "children": [
+            {"name": "Original transit cases with desiccant"},
+            {"name": "Protect transducer faces and optics"},
+            {"name": "Lithium battery shipping restrictions"},
+            {"name": "Photograph each case open and closed"}
+          ]
+        },
+        {
+          "name": "Knowledge Transfer",
+          "children": [
+            {"name": "Equipment condition reports"},
+            {"name": "Lessons learned documented"},
+            {"name": "Final offsets saved for next mob"}
+          ]
+        }
+      ]
+    }
+  ]
+}

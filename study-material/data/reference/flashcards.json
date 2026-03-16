@@ -1,0 +1,397 @@
+{
+  "title": "Reference Flashcards",
+  "cards": [
+    {
+      "front": "What is the WGS84 semi-major axis?",
+      "back": "6,378,137 m"
+    },
+    {
+      "front": "What is the practical difference between WGS84 and the latest ITRF realisation?",
+      "back": "Less than 2 cm. For all offshore survey purposes, they are interchangeable."
+    },
+    {
+      "front": "What is the formula for determining UTM zone number from longitude?",
+      "back": "$\\text{Zone} = \\lfloor (\\text{longitude} + 180) / 6 \\rfloor + 1$"
+    },
+    {
+      "front": "What is the UTM scale factor at the central meridian?",
+      "back": "0.9996 (grid distances are 0.04% shorter than ground distances)."
+    },
+    {
+      "front": "How do you compute the central meridian from a UTM zone number?",
+      "back": "$\\lambda_{CM} = (\\text{Zone} \\times 6) - 183$"
+    },
+    {
+      "front": "What is the convergence angle in UTM?",
+      "back": "The angle between grid north and true north at a given point. Zero at the central meridian, increases with distance from CM and with latitude. Approximate formula: $\\gamma \\approx (\\lambda - \\lambda_{CM}) \\times \\sin\\phi$"
+    },
+    {
+      "front": "What is the relationship $h = H + N$ in vertical datums?",
+      "back": "Ellipsoidal height (h) = Orthometric height (H) + Geoid undulation (N). GNSS measures h; subtract N to get H (height above MSL)."
+    },
+    {
+      "front": "What is the approximate geoid undulation in the North Sea?",
+      "back": "40-47 m (the geoid is 40-47 m above the ellipsoid)."
+    },
+    {
+      "front": "What is EGM2008?",
+      "back": "The current global standard geoid model (2008), with 2.5 arc-minute (~5 km) resolution and ~0.10-0.15 m RMS global accuracy."
+    },
+    {
+      "front": "How many parameters does a Helmert transformation use, and what are they?",
+      "back": "7 parameters: 3 translations (dX, dY, dZ in metres), 3 rotations (Rx, Ry, Rz in arc-seconds), and 1 scale factor (dS in ppm)."
+    },
+    {
+      "front": "What is the most common error when applying a Helmert transformation?",
+      "back": "Applying the transformation in the wrong direction. Parameters for 'WGS84 to ED50' convert FROM WGS84 TO ED50. To reverse, negate all 7 parameters."
+    },
+    {
+      "front": "What is a 'double transformation' error?",
+      "back": "Data already in WGS84 gets transformed to WGS84 again using local-to-WGS84 parameters, shifting everything by the full transformation amount."
+    },
+    {
+      "front": "What is the standard coordinate order for EPSG/ISO 6709 geographic CRS?",
+      "back": "Latitude, Longitude (Northing, Easting). However, many GIS systems and GeoJSON use Longitude, Latitude."
+    },
+    {
+      "front": "What is the EPSG code for WGS84 geographic coordinates?",
+      "back": "EPSG:4326"
+    },
+    {
+      "front": "What is the simplified Chen-Millero formula for sound velocity?",
+      "back": "$SV = 1449.2 + 4.6T - 0.055T^2 + 0.00029T^3 + (1.34 - 0.01T)(S - 35) + 0.016P$ where T = temperature (degC), S = salinity (PSU), P = pressure (dBar)."
+    },
+    {
+      "front": "When is the Del Grosso formula preferred over Chen-Millero for sound velocity?",
+      "back": "In deep water (> 1000 m depth), where Del Grosso may be more accurate at high pressures."
+    },
+    {
+      "front": "What is a typical surface sound velocity range in seawater?",
+      "back": "1,490-1,530 m/s"
+    },
+    {
+      "front": "What is the RSS (Root Sum of Squares) formula for combining independent errors?",
+      "back": "$\\sigma_{total} = \\sqrt{e_1^2 + e_2^2 + e_3^2 + \\cdots + e_n^2}$"
+    },
+    {
+      "front": "What is the IHO S-44 TVU formula?",
+      "back": "$TVU = \\sqrt{a^2 + (b \\times d)^2}$ where a = constant depth error, b = depth-dependent coefficient, d = depth in metres."
+    },
+    {
+      "front": "What are the IHO S-44 TVU coefficients for Exclusive Order?",
+      "back": "a = 0.15 m, b = 0.0075"
+    },
+    {
+      "front": "What are the IHO S-44 TVU coefficients for Special Order?",
+      "back": "a = 0.25 m, b = 0.0075"
+    },
+    {
+      "front": "What are the IHO S-44 TVU coefficients for Order 1a/1b?",
+      "back": "a = 0.50 m, b = 0.013"
+    },
+    {
+      "front": "What are the IHO S-44 TVU coefficients for Order 2?",
+      "back": "a = 1.00 m, b = 0.023"
+    },
+    {
+      "front": "How do you convert slant range and angle to ground range?",
+      "back": "$\\text{Ground range} = R \\sin\\theta$ where R = slant range and theta = angle from vertical."
+    },
+    {
+      "front": "How do you calculate depth below transducer from slant range?",
+      "back": "$\\text{Depth} = R \\cos\\theta$ where R = slant range and theta = angle from vertical."
+    },
+    {
+      "front": "What is the USBL horizontal position error formula?",
+      "back": "$\\varepsilon_{horizontal} = R \\sin(\\sigma_\\theta)$. For small angles: $\\varepsilon \\approx R \\times \\sigma_\\theta$ (in radians). At 1000 m range with 0.1 deg accuracy: ~1.75 m."
+    },
+    {
+      "front": "How do you calculate depth from pressure in seawater?",
+      "back": "$D = P / (\\rho \\cdot g)$. Practical version: $D(m) \\approx P(dBar) / 1.006$. Rule of thumb: 1 dBar approximately equals 1 m of seawater."
+    },
+    {
+      "front": "How many metres is 1 nautical mile?",
+      "back": "1,852 m"
+    },
+    {
+      "front": "How do you convert knots to m/s?",
+      "back": "Multiply by 0.51444 (1 knot = 0.51444 m/s)."
+    },
+    {
+      "front": "How do you convert metres to feet?",
+      "back": "Multiply by 3.28084"
+    },
+    {
+      "front": "How do you convert metres to fathoms?",
+      "back": "Multiply by 0.54681 (1 fathom = 1.8288 m)."
+    },
+    {
+      "front": "How do you convert degrees to radians?",
+      "back": "Multiply by $\\pi/180$ (approximately 0.017453)."
+    },
+    {
+      "front": "What is the relationship: 1 bar = ? dBar = ? kPa?",
+      "back": "1 bar = 10 dBar = 100 kPa"
+    },
+    {
+      "front": "What formula converts DMS coordinates to Decimal Degrees?",
+      "back": "$DD = D + M/60 + S/3600$"
+    },
+    {
+      "front": "What is TPU?",
+      "back": "Total Propagated Uncertainty. The process of combining all individual sensor uncertainties into a single value representing the total uncertainty in each sounding's position and depth."
+    },
+    {
+      "front": "What are the two key outputs of TPU?",
+      "back": "THU (Total Horizontal Uncertainty) and TVU (Total Vertical Uncertainty), both expressed at the 95% confidence level."
+    },
+    {
+      "front": "How do you convert 1-sigma uncertainty to 95% confidence?",
+      "back": "Multiply by 1.96"
+    },
+    {
+      "front": "What is the IHO Exclusive Order maximum THU (95%)?",
+      "back": "1 m"
+    },
+    {
+      "front": "What is the IHO Special Order maximum THU (95%)?",
+      "back": "2 m"
+    },
+    {
+      "front": "What is the IHO Order 1a/1b maximum THU (95%)?",
+      "back": "5 m + 5% of depth"
+    },
+    {
+      "front": "What is the IHO Order 2 maximum THU (95%)?",
+      "back": "20 m + 10% of depth"
+    },
+    {
+      "front": "At nadir, what dominates THU?",
+      "back": "The vessel positioning system (GNSS)."
+    },
+    {
+      "front": "Why are outer beam soundings less accurate than nadir soundings?",
+      "back": "Attitude errors are multiplied by longer slant range, sound velocity errors accumulate along longer ray paths, and timing errors produce larger offsets at oblique angles."
+    },
+    {
+      "front": "What is the relative TVU at 60-degree beam angle compared to nadir?",
+      "back": "Approximately 2.5x nadir TVU."
+    },
+    {
+      "front": "What is the typical horizontal uncertainty (1-sigma) for PPP GNSS positioning?",
+      "back": "0.05-0.15 m"
+    },
+    {
+      "front": "What is the typical heave uncertainty for an MRU?",
+      "back": "0.05 m or 5% of heave amplitude, whichever is greater."
+    },
+    {
+      "front": "If TPU exceeds specification, what is the first thing to check?",
+      "back": "Calibration quality. A well-calibrated system produces significantly lower TPU than a poorly calibrated one."
+    },
+    {
+      "front": "What is a good MBES patch test roll offset result?",
+      "back": "Less than 0.05 degrees residual."
+    },
+    {
+      "front": "What does IMCA S 015 cover?",
+      "back": "Guidelines for Survey Mobilisation and Calibration. Covers equipment installation, DC survey, sensor calibration, system integration, and acceptance testing."
+    },
+    {
+      "front": "What does IMCA S 017 cover?",
+      "back": "Guidelines for Position Reference Systems. Covers GNSS, USBL, LBL, INS/DVL, calibration requirements, accuracy standards, QC procedures, and integrity monitoring."
+    },
+    {
+      "front": "What does IMCA S 024 cover?",
+      "back": "Guidelines for Side Scan Sonar Operations. Covers line planning, altitude management, coverage requirements, and target classification."
+    },
+    {
+      "front": "What does IMCA M 244 cover?",
+      "back": "Guidance on the Use of Inertial Navigation Systems for Subsea Survey and Positioning. Covers INS/DVL system types, installation, calibration, aiding sources, and drift rate assessment."
+    },
+    {
+      "front": "What does IHO S-44 define?",
+      "back": "Standards for Hydrographic Surveys. Defines accuracy requirements by survey order (Exclusive, Special, 1a, 1b, 2), covering THU, TVU, feature detection, and data density."
+    },
+    {
+      "front": "What does DNVGL-ST-F101 cover?",
+      "back": "Submarine Pipeline Systems. Design, construction, and survey requirements including pipeline position accuracy, freespan criteria, depth of cover, and as-built survey content."
+    },
+    {
+      "front": "How should standards be cited in survey reports on first reference?",
+      "back": "Use the full standard number and edition: e.g. 'IHO S-44, Edition 6.1.0 (2024)'. Subsequent references can use the short form."
+    },
+    {
+      "front": "What are the three ocean layers relevant to acoustics?",
+      "back": "Mixed layer (surface to ~200 m, uniform temperature), Thermocline (~200-1000 m, rapid temperature decrease), Deep isothermal (below ~1000 m, stable temperature, pressure-driven SV increase)."
+    },
+    {
+      "front": "What is the thermocline?",
+      "back": "A layer of rapid temperature change with depth. Strongest in summer. Causes downward refraction and acoustic shadow zones."
+    },
+    {
+      "front": "What is the halocline?",
+      "back": "A layer of rapid salinity change with depth. Most pronounced near river mouths, polar regions, and areas with high evaporation/rainfall contrast."
+    },
+    {
+      "front": "What is the pycnocline?",
+      "back": "A layer of rapid density change with depth. Usually coincides with the thermocline. This is the layer that most affects acoustic propagation."
+    },
+    {
+      "front": "How does temperature affect sound speed in seawater?",
+      "back": "~4.5 m/s increase per 1 degC increase. Dominant factor in the upper ocean."
+    },
+    {
+      "front": "How does salinity affect sound speed in seawater?",
+      "back": "~1.3 m/s increase per 1 PSU increase. Secondary factor, most important near coasts and river mouths."
+    },
+    {
+      "front": "How does pressure/depth affect sound speed in seawater?",
+      "back": "~1.7 m/s increase per 100 m depth increase. Dominant factor in deep water."
+    },
+    {
+      "front": "What is a 'shadow zone' in underwater acoustics?",
+      "back": "An area in the water column where sound from a source cannot reach because all rays have been refracted away. Caused by negative sound speed gradients (thermocline)."
+    },
+    {
+      "front": "What is Snell's Law for sound refraction?",
+      "back": "$\\sin(\\theta_1)/c_1 = \\sin(\\theta_2)/c_2$ where theta = angle from vertical and c = sound speed. Sound bends toward regions of lower speed."
+    },
+    {
+      "front": "What is ray tracing in multibeam processing?",
+      "back": "Stepping through the SVP layer by layer, applying Snell's Law at each boundary to calculate the curved path each beam follows, to determine the correct horizontal offset and depth of each sounding."
+    },
+    {
+      "front": "What is the SOFAR channel?",
+      "back": "Sound Fixing and Ranging channel. A natural sound duct centred on the depth of minimum sound speed (~700-1,200 m). Sound is trapped and can travel thousands of kilometres with minimal loss."
+    },
+    {
+      "front": "What is multipath in underwater acoustics?",
+      "back": "Sound reaching a receiver via multiple paths (direct, surface reflection, bottom reflection, refracted paths). Causes erratic USBL positions, MBES noise, and LBL range outliers."
+    },
+    {
+      "front": "What causes 'smiles' in MBES data?",
+      "back": "The SVP loaded in software has sound speeds too high compared to reality. Outer beams are pushed too shallow."
+    },
+    {
+      "front": "What causes 'frowns' in MBES data?",
+      "back": "The SVP loaded in software has sound speeds too low compared to reality. Outer beams are pushed too deep."
+    },
+    {
+      "front": "Why is absorption frequency-dependent in seawater?",
+      "back": "Higher frequencies lose energy much faster. At 12 kHz: ~1.2 dB/km. At 200 kHz: ~50 dB/km. At 400 kHz: ~100 dB/km. This creates the range vs resolution tradeoff."
+    },
+    {
+      "front": "What is the Mackenzie equation used for?",
+      "back": "Calculating sound speed from temperature (T), salinity (S), and depth (Z). Valid for 2-30 degC, 25-40 PSU, 0-8,000 m. Accuracy ~0.1 m/s."
+    },
+    {
+      "front": "What are the six degrees of freedom for vessel motion?",
+      "back": "Translational: Heave (up/down), Surge (fore/aft), Sway (port/starboard). Rotational: Roll (side-to-side tilt), Pitch (bow up/down), Yaw (heading change)."
+    },
+    {
+      "front": "Which vessel motion has the most direct impact on depth data?",
+      "back": "Heave. 1 m of uncompensated heave = 1 m of depth error, affecting every sounding equally."
+    },
+    {
+      "front": "What depth error does a 1-degree roll error produce at 60-degree beam angle in 50 m water?",
+      "back": "Approximately 0.17 m of depth error, with a similar footprint position shift."
+    },
+    {
+      "front": "What is real-time heave vs delayed heave?",
+      "back": "Real-time: computed during acquisition from double-integrated accelerometer data with high-pass filtering. Contains phase errors. Delayed (true) heave: recomputed post-acquisition using a buffer of past and future data for greatly reduced phase error."
+    },
+    {
+      "front": "What is the recommended minimum delayed heave buffer?",
+      "back": "150 seconds (75 seconds before and 75 seconds after each measurement point)."
+    },
+    {
+      "front": "What latency does a serial interface (RS-232/RS-422) typically introduce for motion data?",
+      "back": "Approximately 24 ms. At 8 deg/s roll rate, this produces ~0.24 degrees of uncompensated roll error."
+    },
+    {
+      "front": "What happens to motion sensor accuracy at high roll rates (8 deg/s)?",
+      "back": "No sensor meets its published specification. Deviations exceed 0.08 degrees across the board. Published specs are valid for moderate sea states only."
+    },
+    {
+      "front": "What is the Applanix POS MV 320 heave accuracy during turns?",
+      "back": "1-2 cm variation with minimal degradation and immediate stabilisation."
+    },
+    {
+      "front": "How long does the Kongsberg Seapath 200 take to stabilise after a turn?",
+      "back": "1.5-2 minutes, with up to 40 cm heave deviation during the turn."
+    },
+    {
+      "front": "What is the Douglas Sea State 3 wave height range?",
+      "back": "0.5-1.25 m (Slight). Commonly used as the 'good weather' threshold in offshore contracts."
+    },
+    {
+      "front": "What is the typical wave height limit for ROV operations?",
+      "back": "Hs < 2.5-3.5 m (dependent on vessel and LARS)."
+    },
+    {
+      "front": "What is the typical wave height limit for dive operations?",
+      "back": "Hs < 1.0-1.5 m with wind < 15 knots. The most restrictive offshore operation."
+    },
+    {
+      "front": "What is the residual vessel motion artifact magnitude in MBES data?",
+      "back": "0.25-0.5% of water depth, correlating with vessel motion. Shows as along-track or across-track ripples in shaded-relief views."
+    },
+    {
+      "front": "What is the recommended SVP cast interval in stratified waters?",
+      "back": "Every 2-3 minutes. SVP can change on very short timescales in stratified environments."
+    },
+    {
+      "front": "How does the G882 magnetometer calibration work?",
+      "back": "Lower to known depths using a marked wire, record raw depth and altitude values at each point, then use linear regression to determine scale factor and bias coefficients."
+    },
+    {
+      "front": "What is the acceptable range for G882 depth scale factor?",
+      "back": "0.95 to 1.05 (near 1.0). Outside this range indicates a sensor hardware issue."
+    },
+    {
+      "front": "What is the maximum acceptable G882 depth bias?",
+      "back": "Less than 0.5 m absolute value. Greater suggests sensor offset or installation error."
+    },
+    {
+      "front": "How many depth points are needed for a G882 calibration?",
+      "back": "Minimum 5 points evenly spaced across the operating range. 7-10 preferred for better statistical confidence."
+    },
+    {
+      "front": "What is the MBES swath width formula?",
+      "back": "$W = 2 \\times d \\times \\tan(\\theta/2)$ where d = water depth and theta = total beam opening angle."
+    },
+    {
+      "front": "When planning MBES lines in areas with variable depth, which depth should line spacing be based on?",
+      "back": "The shallowest expected depth, because swath narrows as depth decreases. Planning for the deepest depth will leave gaps over shallows."
+    },
+    {
+      "front": "What direction should MBES lines run relative to depth contours?",
+      "back": "Parallel to depth contours wherever practical. This keeps depth consistent along each line and maintains valid line spacing."
+    },
+    {
+      "front": "What is the SSS towfish altitude rule of thumb?",
+      "back": "10-15% of the sonar range setting."
+    },
+    {
+      "front": "What SSS overlap is standard practice?",
+      "back": "10-33% overlap between adjacent lines (110-133% coverage)."
+    },
+    {
+      "front": "What is the typical magnetometer line spacing for UXO detection?",
+      "back": "2-5 m (very tight spacing)."
+    },
+    {
+      "front": "What are the IHO S-44 Exclusive Order requirements for THU and feature detection?",
+      "back": "THU: 1 m (95%). Feature detection: 0.5 m cube. 200% bathymetric coverage required."
+    },
+    {
+      "front": "What is the minimum run-in distance for hull-mounted MBES (no towed gear)?",
+      "back": "2-3 ship lengths."
+    },
+    {
+      "front": "What is the minimum run-in distance for towed gear?",
+      "back": "Equal to or greater than the tow cable length."
+    }
+  ]
+}
