@@ -1,0 +1,125 @@
+{
+  "title": "Reporting Quiz",
+  "questions": [
+    {
+      "question": "What is the key principle of survey report writing mentioned in the guide?",
+      "answerOptions": [
+        {"text": "Write the report as if you will never be available to explain it", "isCorrect": true, "rationale": "The guide explicitly states this principle: in two years, you probably won't be available to explain it."},
+        {"text": "Write the report as quickly as possible to meet deadlines", "isCorrect": false, "rationale": "Speed is not the guiding principle; clarity, completeness, and traceability are."},
+        {"text": "Write the report using as much technical jargon as possible", "isCorrect": false, "rationale": "The goal is that anyone should be able to understand what was done, not to impress with jargon."},
+        {"text": "Write the report only for the client's project manager", "isCorrect": false, "rationale": "Reports serve multiple audiences and purposes including quality evidence, future reference, and contractual deliverables."}
+      ],
+      "hint": "Think about the long-term purpose of a survey report and who might need it years later."
+    },
+    {
+      "question": "When should you begin drafting the mobilisation report?",
+      "answerOptions": [
+        {"text": "After the first survey line is completed", "isCorrect": false, "rationale": "The mob report should be substantially complete before the first survey line."},
+        {"text": "Before the mobilisation starts, filling in sections as each phase completes", "isCorrect": true, "rationale": "The guide recommends drafting the structure before mob starts and filling sections progressively to avoid last-minute rush."},
+        {"text": "After demobilisation, when all data is available", "isCorrect": false, "rationale": "The mob report is needed before survey operations begin, not after demob."},
+        {"text": "Only when the client requests it", "isCorrect": false, "rationale": "The mob report is a standard deliverable prepared proactively, not on request."}
+      ],
+      "hint": "The guide gives specific timing advice to avoid a last-minute rush."
+    },
+    {
+      "question": "What is the standard document numbering format described in the guide?",
+      "answerOptions": [
+        {"text": "DATE-AUTHOR-DOCTYPE-VERSION", "isCorrect": false, "rationale": "The convention does not use date or author in the numbering."},
+        {"text": "PROJECTCODE-VESSEL-DOCTYPE-SEQUENCE", "isCorrect": true, "rationale": "The example given is PRJ001-VESSEL01-MOB-001."},
+        {"text": "CLIENT-PROJECT-REPORTTYPE-NUMBER", "isCorrect": false, "rationale": "Client name is not part of the standard numbering convention described."},
+        {"text": "VESSEL-DATE-DOCTYPE-REVISION", "isCorrect": false, "rationale": "The convention uses project code first, not vessel, and sequence number, not revision."}
+      ],
+      "hint": "Look at the example: PRJ001-VESSEL01-MOB-001."
+    },
+    {
+      "question": "What revision status does 'Rev A' indicate?",
+      "answerOptions": [
+        {"text": "Draft for internal review", "isCorrect": false, "rationale": "Rev 0 is the draft for internal review."},
+        {"text": "Issued for Use (final approved version)", "isCorrect": false, "rationale": "Issued for Use is the final Rev 0 after all comments are resolved."},
+        {"text": "Issued for Review (IFR) to the client", "isCorrect": true, "rationale": "Rev A is the first issue sent to the client for comment."},
+        {"text": "Incorporating client comments", "isCorrect": false, "rationale": "Rev B incorporates client comments; Rev A is the initial client issue."}
+      ],
+      "hint": "The revision control table maps letter revisions to specific statuses."
+    },
+    {
+      "question": "What must always be stated on cross-section and profile plots?",
+      "answerOptions": [
+        {"text": "The software version used to generate the plot", "isCorrect": false, "rationale": "While useful metadata, the guide specifically warns about a different requirement."},
+        {"text": "The vertical exaggeration", "isCorrect": true, "rationale": "The guide warns that unstated VE can mislead clients -- a 10x VE makes a 1 deg slope look like 10 deg."},
+        {"text": "The name of the surveyor who processed the data", "isCorrect": false, "rationale": "Author attribution is for the report cover page, not individual plots."},
+        {"text": "The water temperature at the time of survey", "isCorrect": false, "rationale": "Environmental data is recorded elsewhere; VE is the critical plot requirement highlighted."}
+      ],
+      "hint": "The guide gives a specific warning about how this can mislead engineers and clients."
+    },
+    {
+      "question": "Which of the following is NOT listed as a standard section in the Daily Progress Report?",
+      "answerOptions": [
+        {"text": "Equipment Status", "isCorrect": false, "rationale": "Equipment Status is listed as a standard DPR section."},
+        {"text": "Planned Activities for the next 24 hours", "isCorrect": false, "rationale": "Planned Activities is a standard DPR section."},
+        {"text": "Calibration procedure details and offsets", "isCorrect": true, "rationale": "Calibration details belong in the calibration report or mob report, not the DPR."},
+        {"text": "Environmental Conditions", "isCorrect": false, "rationale": "Environmental Conditions is a standard DPR section."}
+      ],
+      "hint": "Think about what level of detail is appropriate for a daily report versus a calibration report."
+    },
+    {
+      "question": "What is the recommended best practice for writing the DPR?",
+      "answerOptions": [
+        {"text": "Write it from memory at the end of the shift to save time during operations", "isCorrect": false, "rationale": "The guide explicitly warns against writing from memory at end of shift."},
+        {"text": "Write it as events happen, keeping a running log with times for all events", "isCorrect": true, "rationale": "The guide says the DPR is often the primary record for resolving disputes about operational time and downtime."},
+        {"text": "Have the vessel master write it since they have the best overview", "isCorrect": false, "rationale": "The DPR is the surveyor's responsibility, not the vessel master's."},
+        {"text": "Copy the previous day's DPR and update only the statistics", "isCorrect": false, "rationale": "Each DPR should accurately record that specific day's events chronologically."}
+      ],
+      "hint": "The DPR is often used to resolve disputes about operational time."
+    },
+    {
+      "question": "What information must a calibration report contain to allow independent review?",
+      "answerOptions": [
+        {"text": "Only the final determined offsets and a pass/fail statement", "isCorrect": false, "rationale": "Offsets alone are insufficient; the full context of how they were determined is needed."},
+        {"text": "Environmental conditions, equipment details, procedure, results with residuals, and pass/fail assessment against stated acceptance criteria", "isCorrect": true, "rationale": "The guide requires all these elements so an independent reviewer can assess calibration validity."},
+        {"text": "The software screenshots showing the calibration was run", "isCorrect": false, "rationale": "Screenshots alone don't provide the structured information needed for independent assessment."},
+        {"text": "A signed statement from the senior surveyor confirming the calibration passed", "isCorrect": false, "rationale": "A signature without supporting data doesn't allow independent verification."}
+      ],
+      "hint": "An independent reviewer needs enough information to assess validity without contacting the author."
+    },
+    {
+      "question": "What is one of the most common reasons a report is rejected by a client?",
+      "answerOptions": [
+        {"text": "The report is too long and detailed", "isCorrect": false, "rationale": "Being too detailed is not listed as a common rejection cause."},
+        {"text": "Charts missing north arrows, scale bars, or coordinate information", "isCorrect": true, "rationale": "This is explicitly listed as one of the common causes for client rejection."},
+        {"text": "Using too many appendices", "isCorrect": false, "rationale": "Appendices are expected and useful; too many is not listed as a rejection cause."},
+        {"text": "Submitting the report too early", "isCorrect": false, "rationale": "Early submission is not a common rejection cause."}
+      ],
+      "hint": "Think about what makes a chart usable and interpretable."
+    },
+    {
+      "question": "When data values differ between the mobilisation report and the end-of-project report, what should you do?",
+      "answerOptions": [
+        {"text": "Use the mob report values since they were written first", "isCorrect": false, "rationale": "The mob report values may have been refined during operations."},
+        {"text": "Average the two values and report the mean", "isCorrect": false, "rationale": "Averaging without justification is not a valid approach."},
+        {"text": "State the change explicitly with justification for why the value was refined", "isCorrect": true, "rationale": "The guide says if a value changed (e.g., refined calibration), state this explicitly with justification."},
+        {"text": "Remove the conflicting value from the mob report to avoid confusion", "isCorrect": false, "rationale": "Altering previously issued reports is not appropriate; transparency about changes is required."}
+      ],
+      "hint": "Traceability and transparency are core reporting principles."
+    },
+    {
+      "question": "What is the typical length range for an End-of-Project report?",
+      "answerOptions": [
+        {"text": "5-15 pages", "isCorrect": false, "rationale": "5-15 pages is the typical range for a calibration report."},
+        {"text": "15-30 pages", "isCorrect": false, "rationale": "15-30 pages is the typical range for a mobilisation report."},
+        {"text": "30-80 pages", "isCorrect": true, "rationale": "The overview table states 30-80 pages for the End-of-Project report."},
+        {"text": "100-200 pages", "isCorrect": false, "rationale": "This exceeds the typical range given in the guide."}
+      ],
+      "hint": "Check the report types overview table."
+    },
+    {
+      "question": "How should coordinate information be handled across charts and tables in a report?",
+      "answerOptions": [
+        {"text": "Use whatever format the software exports by default", "isCorrect": false, "rationale": "Software defaults may be inconsistent; the guide requires deliberate consistency."},
+        {"text": "State datum and projection on every chart and coordinate table, use a consistent format throughout", "isCorrect": true, "rationale": "The guide requires datum/projection on every chart, consistent format (DD.DDDDDD or DD MM SS.SSS), explicit coordinate order, and UTM zone numbers."},
+        {"text": "Only state the datum once in the introduction section", "isCorrect": false, "rationale": "Datum and projection must be stated on every chart and coordinate table, not just once."},
+        {"text": "Convert all coordinates to decimal degrees for simplicity", "isCorrect": false, "rationale": "The format choice depends on the project; the key requirement is consistency and clear labelling."}
+      ],
+      "hint": "Think about what someone needs to correctly interpret a coordinate without flipping back to the introduction."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+<svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" font-family="'Source Sans 3','Segoe UI',sans-serif">
+  <rect x="1" y="1" width="758" height="398" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="24" y="34" font-size="16" font-weight="600" fill="#37474f">A depth loop: route and tide window</text>
+
+  <!-- ============ LEFT PANEL: plan view of the loop ============ -->
+  <text x="24" y="62" font-size="12" fill="#78909c">Plan view</text>
+
+  <!-- loop path: ref -> DQ1 -> DQ2 -> DQ3 -> back to ref -->
+  <g stroke="#3949ab" stroke-width="2" fill="none">
+    <path d="M 90 300 L 150 180"/>
+    <path d="M 150 180 L 250 130"/>
+    <path d="M 250 130 L 310 220"/>
+  </g>
+  <path d="M 310 220 L 90 300" stroke="#3949ab" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+
+  <!-- direction arrowheads -->
+  <g fill="#3949ab">
+    <polygon points="123,236 133,229 120,224" />
+    <polygon points="203,152 210,146 197,143" />
+    <polygon points="283,177 289,171 276,172" />
+  </g>
+  <polygon points="196,262 190,270 204,272" fill="#3949ab"/>
+
+  <!-- reference point: open AND close -->
+  <circle cx="90" cy="300" r="13" fill="none" stroke="#00897b" stroke-width="2.5"/>
+  <circle cx="90" cy="300" r="6" fill="#00897b"/>
+  <text x="60" y="336" font-size="12.5" font-weight="600" fill="#00897b">Reference point</text>
+  <text x="60" y="352" font-size="11.5" fill="#78909c">open AND close here</text>
+
+  <!-- stations -->
+  <g fill="#3949ab">
+    <circle cx="150" cy="180" r="7"/>
+    <circle cx="250" cy="130" r="7"/>
+    <circle cx="310" cy="220" r="7"/>
+  </g>
+  <g font-size="12" font-weight="600" fill="#37474f">
+    <text x="112" y="172">DQ1</text>
+    <text x="240" y="112">DQ2</text>
+    <text x="326" y="224">DQ3</text>
+  </g>
+  <text x="150" y="286" font-size="11.5" fill="#78909c">shortest sensible route,</text>
+  <text x="150" y="301" font-size="11.5" fill="#78909c">close back on the start</text>
+
+  <!-- ============ RIGHT PANEL: tide curve ============ -->
+  <text x="420" y="62" font-size="12" fill="#78909c">Tide during the loop</text>
+
+  <!-- axes -->
+  <g stroke="#cfd8dc" stroke-width="1">
+    <line x1="420" y1="330" x2="730" y2="330"/>
+    <line x1="420" y1="90" x2="420" y2="330"/>
+  </g>
+  <text x="726" y="348" font-size="11" fill="#90a4ae" text-anchor="end">time</text>
+  <text x="414" y="96" font-size="11" fill="#90a4ae" text-anchor="end" transform="rotate(-90 414 96)"></text>
+  <text x="410" y="212" font-size="11" fill="#90a4ae" text-anchor="middle" transform="rotate(-90 410 212)">tide height</text>
+
+  <!-- tide sine: HW at x=490, LW at x=660 -->
+  <path d="M 420 200 C 455 130, 525 130, 560 200 C 595 270, 665 270, 700 200 C 712 176, 722 160, 730 152"
+        fill="none" stroke="#90a4ae" stroke-width="2"/>
+
+  <!-- exclusion zones around HW and LW (about 30 min either side) -->
+  <g fill="#ef6c00" opacity="0.13">
+    <rect x="466" y="90" width="48" height="240"/>
+    <rect x="606" y="90" width="48" height="240"/>
+  </g>
+  <g font-size="11" fill="#ef6c00">
+    <text x="490" y="106" text-anchor="middle">HW &#177;30 min</text>
+    <text x="630" y="106" text-anchor="middle">LW &#177;30 min</text>
+    <text x="560" y="124" text-anchor="middle" font-size="10.5">avoid the turn of the tide</text>
+  </g>
+
+  <!-- loop window on the steady mid-tide slope -->
+  <rect x="524" y="90" width="72" height="240" fill="#00897b" opacity="0.12"/>
+  <g stroke="#00897b" stroke-width="1.5">
+    <line x1="524" y1="90" x2="524" y2="330" stroke-dasharray="4 4"/>
+    <line x1="596" y1="90" x2="596" y2="330" stroke-dasharray="4 4"/>
+  </g>
+  <text x="560" y="152" font-size="12" font-weight="600" fill="#00897b" text-anchor="middle">loop</text>
+  <text x="560" y="167" font-size="12" font-weight="600" fill="#00897b" text-anchor="middle">window</text>
+
+  <!-- open / close markers on the curve inside the window -->
+  <circle cx="530" cy="176" r="5" fill="#00897b"/>
+  <circle cx="590" cy="243" r="5" fill="#00897b"/>
+  <text x="518" y="196" font-size="11" fill="#37474f">open</text>
+  <text x="578" y="265" font-size="11" fill="#37474f">close</text>
+
+  <!-- misclosure note -->
+  <text x="420" y="374" font-size="11.5" fill="#78909c">Tide change between open and close drives the misclosure; the reduction spreads it linearly over time.</text>
+</svg>

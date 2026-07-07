@@ -1,0 +1,155 @@
+{
+  "title": "Handbook Quiz",
+  "questions": [
+    {
+      "question": "A vessel is classified as DP2. What does this mean in terms of redundancy?",
+      "answerOptions": [
+        {"text": "All critical active components are duplicated, so a single fault in any active system won't cause loss of position", "isCorrect": true, "rationale": "DP2 (Class 2) duplicates all critical active components -- generators, thrusters, control systems -- so a single fault won't cause loss of position."},
+        {"text": "The vessel has no redundancy and relies on a single control system", "isCorrect": false, "rationale": "That describes DP1 (Class 1), which has no redundancy."},
+        {"text": "All systems are duplicated and physically separated across watertight compartments", "isCorrect": false, "rationale": "That describes DP3 (Class 3), which adds physical separation on top of full duplication."},
+        {"text": "The vessel uses anchors instead of thrusters to hold position", "isCorrect": false, "rationale": "DP systems use thrusters to hold position without anchors. Anchor-based station-keeping is a different system entirely."}
+      ],
+      "hint": "Think about what happens if a single active component fails on a DP2 vessel."
+    },
+    {
+      "question": "Why can't radio waves be used for subsea positioning?",
+      "answerOptions": [
+        {"text": "Radio frequencies are reserved for surface communications only by regulation", "isCorrect": false, "rationale": "The limitation is physical, not regulatory. Radio waves attenuate rapidly in water."},
+        {"text": "Radio waves do not propagate through water, so acoustic systems are used instead", "isCorrect": true, "rationale": "Radio waves cannot propagate through water effectively, which is why subsea positioning relies on acoustic signals (sound) instead."},
+        {"text": "Radio waves travel too fast to allow accurate range measurements underwater", "isCorrect": false, "rationale": "Speed is not the issue; the fundamental problem is that radio waves are absorbed by water."},
+        {"text": "Radio waves interfere with marine life and are prohibited by MARPOL", "isCorrect": false, "rationale": "MARPOL deals with marine pollution prevention, not radio wave usage. The issue is physics, not regulation."}
+      ],
+      "hint": "Consider the physical properties of electromagnetic waves in water versus air."
+    },
+    {
+      "question": "What is the primary difference between USBL and LBL acoustic positioning systems?",
+      "answerOptions": [
+        {"text": "USBL uses a single transducer measuring angle and range, while LBL uses multiple seabed transponders for triangulation", "isCorrect": true, "rationale": "USBL measures angle and time delay from a single vessel-mounted transducer to a beacon. LBL places multiple transponders on the seabed and triangulates position from ranges to each one."},
+        {"text": "USBL is only used in shallow water while LBL only works in deep water", "isCorrect": false, "rationale": "Both can work at various depths, though LBL is often preferred for deepwater high-precision work. The key difference is method, not depth limit."},
+        {"text": "USBL provides centimeter-level accuracy while LBL can only achieve meter-level accuracy", "isCorrect": false, "rationale": "It is actually the opposite tendency -- LBL generally achieves higher precision (centimeter-level) than USBL, especially in deep water."},
+        {"text": "USBL is mounted on the ROV while LBL is mounted on the vessel", "isCorrect": false, "rationale": "USBL has a transducer on the vessel and a beacon on the ROV. LBL transponders are placed on the seabed, not on the vessel."}
+      ],
+      "hint": "Think about where the reference points are located in each system -- vessel-based versus seabed-based."
+    },
+    {
+      "question": "What does a DVL (Doppler Velocity Log) measure?",
+      "answerOptions": [
+        {"text": "The depth of water beneath the vessel using echo sounding", "isCorrect": false, "rationale": "That describes an echo sounder (SBES/MBES). A DVL measures velocity, not depth."},
+        {"text": "Speed and direction of movement relative to the seabed by measuring Doppler shift of acoustic returns", "isCorrect": true, "rationale": "A DVL sends acoustic beams toward the seabed and measures the Doppler shift of the return signals, giving speed and direction relative to the ocean floor."},
+        {"text": "The sound velocity profile through the water column", "isCorrect": false, "rationale": "Sound velocity profiles are measured by SVP probes, not DVLs."},
+        {"text": "Vessel pitch, roll, and heave for motion compensation", "isCorrect": false, "rationale": "Pitch, roll, and heave are measured by the MRU (Motion Reference Unit), not the DVL."}
+      ],
+      "hint": "The name contains 'Velocity' -- what velocity is being logged?"
+    },
+    {
+      "question": "Why is sound velocity profiling important for multibeam echo sounder operations?",
+      "answerOptions": [
+        {"text": "It determines the maximum range of the echo sounder", "isCorrect": false, "rationale": "While sound velocity affects propagation, the primary concern is data accuracy, not maximum range."},
+        {"text": "Incorrect sound velocity profiles warp beam angles and distort the final bathymetric data", "isCorrect": true, "rationale": "Sound speed varies with temperature, salinity, and depth. If these variations are not accounted for, beam angles are calculated incorrectly, producing warped or distorted survey data."},
+        {"text": "It is only needed for sub-bottom profiler operations, not multibeam", "isCorrect": false, "rationale": "Sound velocity corrections are critical for all acoustic systems, including multibeam echo sounders."},
+        {"text": "Sound velocity determines the frequency at which the echo sounder operates", "isCorrect": false, "rationale": "Operating frequency is a hardware setting, not determined by the sound velocity in the water."}
+      ],
+      "hint": "Think about what happens to acoustic beam geometry when the speed of sound changes through the water column."
+    },
+    {
+      "question": "On a survey vessel, what does the 'online team' do?",
+      "answerOptions": [
+        {"text": "Manage the vessel's internet and satellite connectivity", "isCorrect": false, "rationale": "On a survey vessel, 'online' and 'offline' refer to survey workflow roles, not internet connectivity."},
+        {"text": "Monitor and manage live, real-time survey operations including positioning and data acquisition", "isCorrect": true, "rationale": "The online team manages real-time operations: monitoring positioning, running data acquisition, managing equipment, and communicating with the bridge and ROV team during active survey work."},
+        {"text": "Process survey data after it has been collected and produce final deliverables", "isCorrect": false, "rationale": "That describes the offline team, who clean, process, QC, and prepare deliverables from acquired data."},
+        {"text": "Handle remote operations from an onshore operations center", "isCorrect": false, "rationale": "Remote operations centers are a separate concept. The online team refers to surveyors managing live operations."}
+      ],
+      "hint": "On a survey vessel, 'online' and 'offline' have specific meanings unrelated to internet access."
+    },
+    {
+      "question": "What is the purpose of an MBES patch test?",
+      "answerOptions": [
+        {"text": "To verify the multibeam transducer is physically attached correctly to the hull", "isCorrect": false, "rationale": "A patch test is a calibration procedure for measuring angular offsets, not a physical mounting check."},
+        {"text": "To calibrate and determine angular offsets (pitch, roll, heading) between the multibeam transducer and the vessel's motion sensor", "isCorrect": true, "rationale": "A patch test determines the angular offsets (pitch, roll, yaw/heading) between the MBES transducer and the vessel's motion reference unit, ensuring accurate bathymetric data."},
+        {"text": "To test the maximum depth capability of the multibeam system", "isCorrect": false, "rationale": "Patch tests are about angular calibration, not testing depth range capabilities."},
+        {"text": "To update the multibeam software to the latest firmware version", "isCorrect": false, "rationale": "Firmware updates are a maintenance task, not a calibration procedure."}
+      ],
+      "hint": "Think about the relationship between sensor mounting angles and data accuracy."
+    },
+    {
+      "question": "Which GNSS augmentation technique provides centimeter-level positioning accuracy?",
+      "answerOptions": [
+        {"text": "Standard standalone GNSS", "isCorrect": false, "rationale": "Standard GNSS only provides accuracy within a few meters."},
+        {"text": "DGNSS (Differential GNSS)", "isCorrect": false, "rationale": "DGNSS improves accuracy to sub-meter level but does not reach centimeter precision."},
+        {"text": "RTK (Real-Time Kinematic)", "isCorrect": true, "rationale": "RTK uses a base station on a known point to broadcast correction data to the rover receiver, bringing positional accuracy down to a few centimeters."},
+        {"text": "INS (Inertial Navigation System) alone", "isCorrect": false, "rationale": "INS tracks movement using accelerometers and gyroscopes and drifts over time without external corrections. It does not independently provide centimeter-level accuracy."}
+      ],
+      "hint": "This technique uses a base station on a known point to send real-time corrections."
+    },
+    {
+      "question": "What is the main advantage of deploying equipment through a moonpool rather than over the side?",
+      "answerOptions": [
+        {"text": "It allows larger equipment to be deployed", "isCorrect": false, "rationale": "Moonpool size is limited by the hull opening. Large structures are typically deployed by cranes over the side."},
+        {"text": "Equipment is sheltered from surface wave action, allowing operations in higher sea states", "isCorrect": true, "rationale": "A moonpool is a vertical opening through the hull, sheltering deployed equipment from wave action at the surface, allowing higher operational weather limits compared to over-the-side deployment."},
+        {"text": "It eliminates the need for a winch system", "isCorrect": false, "rationale": "Moonpool deployments still require winch systems to lower and raise equipment."},
+        {"text": "It provides better GPS signal reception for subsea equipment", "isCorrect": false, "rationale": "GPS signals do not penetrate water regardless of deployment method. Subsea positioning uses acoustics."}
+      ],
+      "hint": "Think about what happens to equipment as it passes through the water surface."
+    },
+    {
+      "question": "What is the typical round-trip latency for VSAT communications via geostationary satellites?",
+      "answerOptions": [
+        {"text": "10-20 ms", "isCorrect": false, "rationale": "This latency range is typical of fiber optic or terrestrial connections, not geostationary VSAT."},
+        {"text": "50-100 ms", "isCorrect": false, "rationale": "This is closer to the latency of LEO satellite systems like Iridium (~50 ms), not geostationary VSAT."},
+        {"text": "500-750 ms", "isCorrect": true, "rationale": "Geostationary satellites orbit at 36,000 km, so the signal takes ~250 ms each way, plus 300-500 ms of protocol overhead, totaling 500-750 ms round trip."},
+        {"text": "2000-3000 ms", "isCorrect": false, "rationale": "This would be excessive even for geostationary satellite communications."}
+      ],
+      "hint": "Geostationary satellites orbit at 36,000 km altitude. Consider the signal travel time plus protocol overhead."
+    },
+    {
+      "question": "What role does Side Scan Sonar (SSS) play in offshore surveying?",
+      "answerOptions": [
+        {"text": "It measures precise water depths across a wide swath beneath the vessel", "isCorrect": false, "rationale": "That describes multibeam echo sounders. Side scan sonar produces imagery of the seabed texture, not precise depth measurements."},
+        {"text": "It produces near-photographic acoustic imagery of the seabed for detecting objects like pipelines, debris, and wrecks", "isCorrect": true, "rationale": "SSS creates grayscale imagery by recording the intensity of returning acoustic echoes, excelling at object detection -- pipelines, debris, wrecks, boulders."},
+        {"text": "It penetrates beneath the seabed surface to reveal subsurface geological layers", "isCorrect": false, "rationale": "Sub-bottom profilers penetrate the seabed to reveal subsurface layers. SSS images the surface of the seabed."},
+        {"text": "It detects ferrous objects buried in the seabed sediment", "isCorrect": false, "rationale": "Detecting buried ferrous objects is the job of magnetometers and gradiometers, not side scan sonar."}
+      ],
+      "hint": "Think about what kind of output SSS produces -- images, not depth measurements."
+    },
+    {
+      "question": "What is the key difference between ROVs and AUVs?",
+      "answerOptions": [
+        {"text": "ROVs are connected to the surface by a tether, while AUVs operate autonomously without a physical connection", "isCorrect": true, "rationale": "ROVs are tethered to the surface for power and communications, controlled in real time. AUVs are pre-programmed and operate independently without a tether."},
+        {"text": "ROVs can only perform inspections, while AUVs are designed exclusively for construction work", "isCorrect": false, "rationale": "ROVs perform inspections AND construction tasks (work-class ROVs have manipulator arms). AUVs are primarily used for survey/mapping, not construction."},
+        {"text": "ROVs are used only in shallow water, while AUVs are designed for deep water only", "isCorrect": false, "rationale": "Both ROVs and AUVs can operate at various depths. The key difference is tethered versus autonomous operation."},
+        {"text": "ROVs use acoustic sensors while AUVs rely exclusively on cameras", "isCorrect": false, "rationale": "Both platforms can carry a variety of sensor payloads including cameras, sonars, and environmental sensors."}
+      ],
+      "hint": "The 'R' in ROV stands for 'Remotely' operated, while the 'A' in AUV stands for 'Autonomous.'"
+    },
+    {
+      "question": "Why is getting the datum wrong considered one of the most critical errors in offshore surveying?",
+      "answerOptions": [
+        {"text": "It causes equipment to malfunction and produce no data at all", "isCorrect": false, "rationale": "Using the wrong datum does not cause equipment failure -- the equipment works fine, but all the positions it records are systematically offset from reality."},
+        {"text": "Mixing up datums (e.g., WGS84 and a local datum) can introduce positional errors of tens or even hundreds of meters", "isCorrect": true, "rationale": "Different datums define different reference frameworks. Mixing them up shifts every position in the dataset, potentially by tens or hundreds of meters."},
+        {"text": "It only affects the display on screen but does not change the actual recorded coordinates", "isCorrect": false, "rationale": "A datum error affects the actual coordinate values, not just how they are displayed. Every recorded position will be wrong."},
+        {"text": "Datum errors are easily corrected in post-processing and are not a major concern", "isCorrect": false, "rationale": "While datum transformations exist, undetected datum errors can propagate through entire datasets and affect project decisions before anyone notices."}
+      ],
+      "hint": "Consider what happens when you apply positions from one reference framework to another without proper transformation."
+    },
+    {
+      "question": "When using AI tools in offshore surveying, which of the following is the most important best practice?",
+      "answerOptions": [
+        {"text": "Trust AI outputs completely since modern models are highly accurate", "isCorrect": false, "rationale": "AI tools are powerful but not infallible. Critical information must always be verified against project documentation and human expertise."},
+        {"text": "Avoid using AI entirely because it cannot understand survey-specific concepts", "isCorrect": false, "rationale": "AI tools can be useful for drafting reports, writing scripts, and brainstorming. The key is to use them as a starting point and verify the output."},
+        {"text": "Always verify critical AI outputs against project documentation, and never feed confidential project data into public AI systems", "isCorrect": true, "rationale": "Verification is essential since wrong AI output could derail a survey line. Confidential project information should not be shared with public AI systems for security reasons."},
+        {"text": "Only senior surveyors should be allowed to use AI tools", "isCorrect": false, "rationale": "AI tools are useful at all experience levels. Trainees are encouraged to experiment, while maintaining verification practices."}
+      ],
+      "hint": "Think about what could go wrong if you blindly trust AI output on a critical survey operation."
+    },
+    {
+      "question": "What is the minimum DP class required when divers are in the water?",
+      "answerOptions": [
+        {"text": "DP1", "isCorrect": false, "rationale": "DP1 has no redundancy. A single system failure could cause loss of position, which is unacceptable with divers in the water."},
+        {"text": "DP2", "isCorrect": true, "rationale": "DP2 is the minimum requirement when divers are in the water. The redundancy ensures that a single active component failure will not cause the vessel to lose position, protecting the divers."},
+        {"text": "DP3", "isCorrect": false, "rationale": "DP3 provides the highest level of redundancy with physical separation, but DP2 is the minimum requirement for diving operations."},
+        {"text": "No DP class is required; anchor-based positioning is sufficient for diving", "isCorrect": false, "rationale": "Modern diving support vessels use DP systems. DP2 is the minimum class required for operations with divers in the water."}
+      ],
+      "hint": "The quick rule of thumb relates DP class to the risk level of the operation."
+    }
+  ]
+}
