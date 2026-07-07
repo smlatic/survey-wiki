@@ -4,6 +4,24 @@ Stay up to date with the latest additions, improvements, and changes to the Surv
 
 ---
 
+## v1.5 -- 7 July 2026
+**Field Procedures, Diagrams & The Citation Audit**
+
+### :material-plus-circle: New Content
+- **Depth Loop Field Procedure** -- the acquisition side of running a depth loop: tide-window planning, hold-stability criteria, loop discipline, live misclosure QC, and a pitfalls table
+- **From Field Log to Final Report** -- how to actually write report narratives: single source of truth, curating the sequence of events, traceable results, template-ghost hunting, and review hygiene
+- **4 new diagrams**: patch test line plans, the roll "butterfly" cross-section, the geoid/ellipsoid/terrain height figure, and a depth loop schematic with tide window
+
+### :material-wrench: Improvements
+- **Citation audit**: every IMCA reference checked against the official IMCA guidance register and corrected -- several documents were cited with wrong titles or numbers. The Industry Standards Reference IMCA section is rewritten with the real document set (S 003, S 015/IOGP 373-19, S 016, S 017/M 244, S 019, S 022, and more)
+- Acceptance criteria tables now distinguish values from published standards vs **typical industry practice**
+- Study material (quizzes, flashcards, mind maps) corrected to match
+- Brand-specific guides (HiPAP, cNODE, PHINS/ROVINS, SPRINT, Voyis) now note that equivalent systems transfer
+- 31 broken internal links fixed across the handbook
+- Build pipeline hardened: pinned dependencies and a strict link check before every deploy
+
+---
+
 ## v1.4 -- 8 March 2026
 **Feedback & Finishing Touches**
 

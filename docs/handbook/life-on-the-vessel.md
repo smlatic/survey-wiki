@@ -118,8 +118,8 @@ The people who settle into offshore life quickest are the ones who find their ro
 !!! tip "Go Deeper"
     When it's time to prepare for your trip offshore, check the wiki's detailed checklists:
 
-    - [Mobilisation Checklist](../field-notes/mobilisation-checklist.md)
-    - [Demobilisation Checklist](../field-notes/demobilisation-checklist.md)
+    - [Mobilisation Checklist](../mobilisation/mobilisation-checklist.md)
+    - [Demobilisation Checklist](../mobilisation/demobilisation-checklist.md)
 
 ---
 

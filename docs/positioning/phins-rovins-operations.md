@@ -15,6 +15,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-02</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around iXblue (Exail) PHINS / ROVINS. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Operational guide for iXblue (Exail) PHINS and ROVINS subsea inertial navigation systems. Covers iXRepeater software, system startup and alignment procedures, post-processing data logging, internal offsets and coordinate conventions, filtering settings, QINSy driver configuration, and Edgetech subsea navigation integration.
 

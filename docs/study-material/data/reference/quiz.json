@@ -142,14 +142,14 @@
       "hint": "This value comes from IHO C-13, Chapter 7."
     },
     {
-      "question": "Which IMCA standard is the primary reference for offshore positioning systems including GNSS, USBL, and LBL?",
+      "question": "Which IMCA guidance document covers vessel USBL systems for offshore survey, positioning and DP operations?",
       "answerOptions": [
-        {"text": "IMCA S 015", "isCorrect": false, "rationale": "IMCA S 015 covers survey mobilisation and calibration, not positioning systems specifically."},
-        {"text": "IMCA S 017", "isCorrect": true, "rationale": "IMCA S 017 (Guidelines for Position Reference Systems) is the primary standard for offshore positioning including GNSS, USBL, LBL, INS/DVL, calibration requirements, and accuracy standards."},
-        {"text": "IMCA S 024", "isCorrect": false, "rationale": "IMCA S 024 covers side scan sonar operations, not positioning systems."},
-        {"text": "IMCA D 045", "isCorrect": false, "rationale": "IMCA D 045 covers survey report content guidelines, not positioning."}
+        {"text": "IMCA S 015", "isCorrect": false, "rationale": "IMCA S 015 (published jointly as IOGP 373-19) is the Guidelines for GNSS Positioning in the Oil and Gas Industry, not USBL."},
+        {"text": "IMCA S 017", "isCorrect": true, "rationale": "IMCA S 017 (also numbered M 244 in the Marine series) is the Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations."},
+        {"text": "IMCA S 019", "isCorrect": false, "rationale": "IMCA S 019 is the Guidance on Subsea Metrology."},
+        {"text": "IMCA S 003", "isCorrect": false, "rationale": "IMCA S 003 covers the use of multibeam echosounders for offshore surveys."}
       ],
-      "hint": "This standard defines what 'good enough' means for position accuracy offshore."
+      "hint": "The same document carries an M-series number in the IMCA Marine division."
     },
     {
       "question": "During a vessel turn, which motion sensor showed up to 40 cm heave deviation and required nearly 2 minutes to stabilise?",

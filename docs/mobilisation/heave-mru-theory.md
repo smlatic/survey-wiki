@@ -397,5 +397,5 @@ At a roll rate of 8 deg/s, a 24 ms serial latency produces approximately 0.19 de
 
 !!! quote "References"
     - IHO S-44, Edition 6.1.0, Standards for Hydrographic Surveys
-    - IMCA S 015, Guidelines for the use of Multibeam Echosounders
+    - IMCA S 003, Guidelines for the Use of Multibeam Echosounders for Offshore Surveys
     - Equipment manufacturer specifications (Kongsberg, iXblue, Teledyne, Applanix)

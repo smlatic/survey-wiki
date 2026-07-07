@@ -15,6 +15,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-02</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around Kongsberg cNODE transponders. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Configuration and installation guide for Kongsberg cNODE miniS transponders used for acoustic positioning with HiPAP USBL systems. Covers transponder software configuration, ROV mounting and initialisation, responder mode setup, and APOS software configuration for beacon tracking.
 

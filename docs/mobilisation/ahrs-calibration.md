@@ -390,6 +390,6 @@ Apply the following data snooping thresholds before accepting results:
 
 !!! quote "References"
     - IHO S-44, Edition 6.1.0 - Standards for Hydrographic Surveys
-    - IMCA S 017 - Guidelines for the use of USBL systems
-    - IMCA S 015 - Guidelines for the use of Multibeam Echosounders
+    - IMCA S 017 - Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
+    - IMCA S 003 - Guidelines for the Use of Multibeam Echosounders for Offshore Surveys
     - Equipment manufacturer calibration and installation guidelines (Kongsberg, iXblue, Applanix, Teledyne)

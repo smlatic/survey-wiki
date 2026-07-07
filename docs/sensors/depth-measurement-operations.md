@@ -4,7 +4,7 @@ category: calibration
 tags: [depth, pressure sensor, digiquartz, paroscientific, valeport, miniips, bathymetry, pressure to depth, UNESCO, density, CTD, closed loop, benchmark, metrology, level loop, FSD, barometer]
 equipment: [Paroscientific Digiquartz 8000, Valeport MiniIPS]
 date_added: 2026-03-08
-last_reviewed: 2026-03-08
+last_reviewed: 2026-07-07
 source_type: converted_procedure
 ---
 
@@ -407,6 +407,9 @@ Depth observations are taken **simultaneously** at the target location and at a 
 ### Closed Loops
 
 First and last readings are at the **same location**. Readings are adjusted for tide **linearly over time**.
+
+!!! tip "Running the loop in the field"
+    This section covers the reduction. For the acquisition side -- tide-window planning, hold-stability criteria, loop discipline, and live QC -- see [Depth Loop Field Procedure](depth-loop-field-procedure.md).
 
 **Requirements:**
 

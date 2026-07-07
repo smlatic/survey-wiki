@@ -3,7 +3,7 @@ title: Common Acceptance Criteria Reference
 category: reference
 tags: [acceptance-criteria, thresholds, pass-fail, qc, standards, imca, iho]
 date_added: 2026-03-01
-last_reviewed: 2026-03-01
+last_reviewed: 2026-07-07
 source_type: original
 ---
 
@@ -36,11 +36,11 @@ source_type: original
 | Static GNSS Check | Horizontal agreement (DGNSS) | < 1.0 m | 1.0-2.0 m | > 2.0 m | Project spec | [Static GNSS Check](../positioning/static-gnss-intersystem-check.md) |
 | Static GNSS Check | Horizontal agreement (PPP) | < 0.30 m | 0.30-0.50 m | > 0.50 m | Project spec | [Static GNSS Check](../positioning/static-gnss-intersystem-check.md) |
 | Static GNSS Check | Height agreement (DGNSS) | < 1.5 m | 1.5-3.0 m | > 3.0 m | Project spec | [Static GNSS Check](../positioning/static-gnss-intersystem-check.md) |
-| Static GNSS Check | HDOP | < 3.0 | 3.0-5.0 | > 5.0 | IHO S-44 | [Static GNSS Check](../positioning/static-gnss-intersystem-check.md) |
+| Static GNSS Check | HDOP | < 3.0 | 3.0-5.0 | > 5.0 | Typical practice | [Static GNSS Check](../positioning/static-gnss-intersystem-check.md) |
 | Dynamic GNSS Check | Horizontal agreement (DGNSS) | < 1.5 m | 1.5-3.0 m | > 3.0 m | Project spec | [Dynamic GNSS Check](../positioning/dynamic-gnss-intersystem-check.md) |
-| DGNSS Integrity | Horizontal agreement | < 0.30 m | 0.30-0.50 m | > 0.50 m | IMCA S 017 | [DGNSS Integrity](../positioning/dgnss-integrity-check.md) |
+| DGNSS Integrity | Horizontal agreement | < 0.30 m | 0.30-0.50 m | > 0.50 m | IMCA S 015 / IOGP 373-19 | [DGNSS Integrity](../positioning/dgnss-integrity-check.md) |
 | GNSS Height Check | Height agreement (PPP) | < 0.50 m | 0.50-1.0 m | > 1.0 m | Project spec | [GNSS Height Check](../positioning/gnss-accurate-height-check.md) |
-| Correction age | All GNSS systems | < 10 s | 10-30 s | > 30 s | IMCA S 017 | -- |
+| Correction age | All GNSS systems | < 10 s | 10-30 s | > 30 s | IMCA S 015 / IOGP 373-19 | -- |
 
 ---
 
@@ -61,12 +61,12 @@ source_type: original
 
 | Procedure | Parameter | Pass | Marginal | Fail | Standard | Wiki Article |
 |:--|:--|:-:|:-:|:-:|:--|:--|
-| AHRS Calibration | Heading C-O vs reference | < 0.5 deg | 0.5-1.0 deg | > 1.0 deg | IMCA S 017 | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
-| AHRS Calibration | Pitch C-O | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | IMCA S 017 | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
-| AHRS Calibration | Roll C-O | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | IMCA S 017 | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
+| AHRS Calibration | Heading C-O vs reference | < 0.5 deg | 0.5-1.0 deg | > 1.0 deg | Typical practice | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
+| AHRS Calibration | Pitch C-O | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | Typical practice | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
+| AHRS Calibration | Roll C-O | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | Typical practice | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
 | AHRS Calibration | Heading C-O SD | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | Best practice | [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
-| Static AHRS Check | Heading intersystem agreement | < 0.5 deg | 0.5-1.0 deg | > 1.0 deg | IMCA S 017 | [Static AHRS Check](../mobilisation/static-ahrs-intersystem-check.md) |
-| Static AHRS Check | Pitch/Roll intersystem agreement | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | IMCA S 017 | [Static AHRS Check](../mobilisation/static-ahrs-intersystem-check.md) |
+| Static AHRS Check | Heading intersystem agreement | < 0.5 deg | 0.5-1.0 deg | > 1.0 deg | Typical practice | [Static AHRS Check](../mobilisation/static-ahrs-intersystem-check.md) |
+| Static AHRS Check | Pitch/Roll intersystem agreement | < 0.1 deg | 0.1-0.2 deg | > 0.2 deg | Typical practice | [Static AHRS Check](../mobilisation/static-ahrs-intersystem-check.md) |
 | Gyro Comparison | Heading agreement (settled) | < 0.5 deg | 0.5-1.0 deg | > 1.0 deg | Manufacturer | [Gyro Types](../mobilisation/gyro-types-and-calibration.md) |
 
 ---
@@ -75,9 +75,9 @@ source_type: original
 
 | Procedure | Parameter | Pass | Marginal | Fail | Standard | Wiki Article |
 |:--|:--|:-:|:-:|:-:|:--|:--|
-| Patch Test | Roll offset | < 1.0 deg | 1.0-2.0 deg | > 2.0 deg | IHO S-44 | [MBES Calibration](../sensors/mbes-calibration.md) |
-| Patch Test | Pitch offset | < 1.0 deg | 1.0-2.0 deg | > 2.0 deg | IHO S-44 | [MBES Calibration](../sensors/mbes-calibration.md) |
-| Patch Test | Heading offset | < 1.0 deg | 1.0-2.0 deg | > 2.0 deg | IHO S-44 | [MBES Calibration](../sensors/mbes-calibration.md) |
+| Patch Test | Roll offset | < 1.0 deg | 1.0-2.0 deg | > 2.0 deg | Typical practice | [MBES Calibration](../sensors/mbes-calibration.md) |
+| Patch Test | Pitch offset | < 1.0 deg | 1.0-2.0 deg | > 2.0 deg | Typical practice | [MBES Calibration](../sensors/mbes-calibration.md) |
+| Patch Test | Heading offset | < 1.0 deg | 1.0-2.0 deg | > 2.0 deg | Typical practice | [MBES Calibration](../sensors/mbes-calibration.md) |
 | Patch Test | Latency | 0-100 ms | -- | < 0 ms or > 100 ms | Manufacturer | [MBES Calibration](../sensors/mbes-calibration.md) |
 | Patch Test | Offset stability | Consistent across cal areas | -- | Varies by > 0.3 deg between areas | Best practice | [MBES Calibration](../sensors/mbes-calibration.md) |
 
@@ -101,8 +101,8 @@ source_type: original
 | SV/CTD Comparison | SV agreement at all depths | < 0.5 m/s | 0.5-1.0 m/s | > 1.0 m/s | Best practice | [SV/CTD Comparison](../sensors/sv-ctd-comparison-verification.md) |
 | SV/CTD Comparison | Depth sensor agreement | < 0.5% of depth | 0.5-1.0% | > 1.0% | Best practice | [SV/CTD Comparison](../sensors/sv-ctd-comparison-verification.md) |
 | SVP Repeatability | SV agreement between casts | < 0.5 m/s at equivalent depths | 0.5-1.5 m/s | > 1.5 m/s | Best practice | [SVP Repeatability](../sensors/svp-repeatability-test.md) |
-| SVP Currency | Time since last cast (open ocean) | < 6 h | 6-12 h | > 12 h | IHO S-44 | [SV Operations](../sensors/sound-velocity-operations.md) |
-| SVP Currency | Time since last cast (stratified) | < 2 h | 2-4 h | > 4 h | IHO S-44 | [SV Operations](../sensors/sound-velocity-operations.md) |
+| SVP Currency | Time since last cast (open ocean) | < 6 h | 6-12 h | > 12 h | Typical practice | [SV Operations](../sensors/sound-velocity-operations.md) |
+| SVP Currency | Time since last cast (stratified) | < 2 h | 2-4 h | > 4 h | Typical practice | [SV Operations](../sensors/sound-velocity-operations.md) |
 
 ---
 
@@ -110,8 +110,8 @@ source_type: original
 
 | Procedure | Parameter | Pass | Marginal | Fail | Standard | Wiki Article |
 |:--|:--|:-:|:-:|:-:|:--|:--|
-| DC Survey (Total Station) | Measurement uncertainty (< 5 m) | < 0.005 m | 0.005-0.010 m | > 0.010 m | IMCA S 015 | [DC Survey](../mobilisation/dimensional-control-survey.md) |
-| DC Survey (Total Station) | Measurement uncertainty (5-20 m) | < 0.010 m | 0.010-0.020 m | > 0.020 m | IMCA S 015 | [DC Survey](../mobilisation/dimensional-control-survey.md) |
+| DC Survey (Total Station) | Measurement uncertainty (< 5 m) | < 0.005 m | 0.005-0.010 m | > 0.010 m | Typical practice | [DC Survey](../mobilisation/dimensional-control-survey.md) |
+| DC Survey (Total Station) | Measurement uncertainty (5-20 m) | < 0.010 m | 0.010-0.020 m | > 0.020 m | Typical practice | [DC Survey](../mobilisation/dimensional-control-survey.md) |
 | DC (Tape Measure) | Accuracy (< 1 m) | 0.01 m | 0.01-0.02 m | > 0.02 m | Best practice | [DC Tape Measure](../mobilisation/dimensional-control-tape-measure.md) |
 | DC (Tape Measure) | Accuracy (1-3 m) | 0.05 m | 0.05-0.10 m | > 0.10 m | Best practice | [DC Tape Measure](../mobilisation/dimensional-control-tape-measure.md) |
 
@@ -122,8 +122,8 @@ source_type: original
 | Procedure | Parameter | Pass | Marginal | Fail | Standard | Wiki Article |
 |:--|:--|:-:|:-:|:-:|:--|:--|
 | SSS Verification | Target position agreement (USBL) | < 5 m | 5-10 m | > 10 m | Project spec | [SSS Verification](../sensors/side-scan-sonar-verification.md) |
-| SSS Operations | Altitude stability | Within +/-20% of target | 20-30% variation | > 30% variation | IMCA S 024 | [SSS Operations](../sensors/side-scan-sonar-operations.md) |
-| SSS Operations | Line overlap | > 10% | 5-10% | < 5% | IMCA S 024 | [SSS Operations](../sensors/side-scan-sonar-operations.md) |
+| SSS Operations | Altitude stability | Within +/-20% of target | 20-30% variation | > 30% variation | Typical practice | [SSS Operations](../sensors/side-scan-sonar-operations.md) |
+| SSS Operations | Line overlap | > 10% | 5-10% | < 5% | Typical practice | [SSS Operations](../sensors/side-scan-sonar-operations.md) |
 | Mag/TVG | Noise floor (TVG) | < 1 nT | 1-3 nT | > 3 nT | Manufacturer | [Mag/TVG Test](../sensors/magnetometer-tvg-acceptance-test.md) |
 | Surrogate Item Test | Detection at operational altitude | Detected | Marginal detection | Not detected | Project spec | [Surrogate Test](../sensors/surrogate-item-test-gma1000.md) |
 | SBP | Cross-line tie (reflector depth) | < 0.5 m | 0.5-1.0 m | > 1.0 m | Best practice | [SBP Operations](../sensors/sub-bottom-profiler-operations.md) |
@@ -157,6 +157,9 @@ TVU formula: **TVU = sqrt(a^2 + (b x d)^2)** where d = depth in metres.
 !!! warning "Client Specification Prevails"
     The values in this table are typical industry standards. Client specifications, project-specific requirements, and national regulations may specify tighter or different thresholds. Always confirm acceptance criteria with the project specification before starting calibrations.
 
+!!! note "How the Standard column is used"
+    A named standard appears only where that document genuinely addresses the check. Rows marked **Typical practice** are widely used industry values that do not come from a published standard -- treat them as sensible defaults, and take the binding number from the project specification.
+
 ---
 
 ## :material-link-variant: Related Articles
@@ -170,7 +173,6 @@ TVU formula: **TVU = sqrt(a^2 + (b x d)^2)** where d = depth in metres.
 
 !!! quote "References"
     - IHO S-44, Edition 6.1.0, Standards for Hydrographic Surveys
-    - IMCA S 015, Guidelines for Survey Mobilisation and Calibration
-    - IMCA S 017, Guidelines for Positioning Systems
-    - IMCA S 024, Guidelines for Side Scan Sonar Operations
+    - IMCA S 015 / IOGP 373-19, Guidelines for GNSS Positioning in the Oil and Gas Industry
+    - IMCA S 017, Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
     - Equipment manufacturer specifications

@@ -16,6 +16,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around Sonardyne SPRINT-Nav. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Validate the accuracy and functionality of the ROV's SPRINT-NAV Inertial Navigation System (INS) and Doppler Velocity Log (DVL). The verification compares the fully aided INS position solution with INS + DVL only aiding to confirm reliable positioning and velocity estimation during underwater operations.
 

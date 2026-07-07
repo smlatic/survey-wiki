@@ -15,6 +15,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-02</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around Sonardyne SPRINT. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Operational guide for the Sonardyne Sprint AHRS/INS system. Covers the Lodestar Communication Hub (LCH) utility, Sprint software configuration, startup procedures, system offsets, DVL alignment and calibration, QINSy driver settings, angular rate filtering, Edgetech integration, factory reset procedures, internal log file recovery, and troubleshooting.
 

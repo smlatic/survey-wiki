@@ -16,6 +16,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around Sonardyne SPRINT / Syrinx. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Calibrate the DVL alignment for SPRINT INS systems (typically with Syrinx DVL) when mounted on a new vehicle. After INS alignment, the DVL calibration is performed according to the manufacturer's routine, and the INS software calculates the true misalignments of the DVL.
 

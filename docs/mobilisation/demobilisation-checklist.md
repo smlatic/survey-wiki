@@ -211,6 +211,6 @@ Disconnect in reverse installation order. Last installed, first removed.
 ---
 
 !!! quote "References"
-    - IMCA S 015, Guidelines for Survey Mobilisation and Calibration
+    - IMCA S 016, Guidance on Mobilisation Requirements for Offshore Survey Operations
     - Equipment manufacturer packing and shipping guidelines
     - IATA Dangerous Goods Regulations (for battery shipping)

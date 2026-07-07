@@ -42,20 +42,20 @@ You won't be the one deciding when or how these tests occur at first -- that's t
 !!! tip "Go Deeper"
     The wiki has detailed step-by-step procedures for every calibration type:
 
-    **USBL:** [HiPAP Calibration](../calibration/hipap-usbl-calibration.md) |
-    [Verification](../calibration/hipap-hpr-verification.md) |
-    [Theory](../calibration/usbl-theory-and-error-budgets.md)
+    **USBL:** [HiPAP Calibration](../positioning/hipap-usbl-calibration.md) |
+    [Verification](../positioning/hipap-hpr-verification.md) |
+    [Theory](../positioning/usbl-theory-and-error-budgets.md)
 
-    **INS/DVL:** [Calibration Guide](../calibration/ins-dvl-calibration-guide.md) |
-    [Sprint-Nav](../calibration/sprint-nav-dvl-verification.md)
+    **INS/DVL:** [Calibration Guide](../positioning/ins-dvl-calibration-guide.md) |
+    [Sprint-Nav](../positioning/sprint-nav-dvl-verification.md)
 
-    **MBES:** [Patch Test](../calibration/mbes-calibration.md)
+    **MBES:** [Patch Test](../sensors/mbes-calibration.md)
 
-    **Sound Velocity:** [SV Operations](../calibration/sound-velocity-operations.md) |
-    [SVP Repeatability](../calibration/svp-repeatability-test.md)
+    **Sound Velocity:** [SV Operations](../sensors/sound-velocity-operations.md) |
+    [SVP Repeatability](../sensors/svp-repeatability-test.md)
 
-    **Attitude/Heading:** [AHRS Calibration](../calibration/ahrs-calibration.md) |
-    [Gyro Types](../calibration/gyro-types-and-calibration.md)
+    **Attitude/Heading:** [AHRS Calibration](../mobilisation/ahrs-calibration.md) |
+    [Gyro Types](../mobilisation/gyro-types-and-calibration.md)
 
 ## Documentation and Reporting
 

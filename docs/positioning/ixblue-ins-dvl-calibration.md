@@ -16,6 +16,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around iXblue (Exail) INS. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Calibrate the Doppler Velocity Log (DVL) to the inertial navigation system (INS) reference frame on an ROV or ROTV. After INS alignment, a DVL calibration is performed according to the manufacturer's routine, and the INS processing software calculates the true misalignments of the DVL.
 

@@ -16,6 +16,8 @@ Earth isn't a perfect sphere. It's an oblate spheroid -- fatter at the equator, 
 
 For practical surveying, we don't work with the geoid directly. Instead, we use mathematical models called ellipsoids that approximate Earth's shape, smoothing out the irregularities into something we can compute with. You don't need to memorize the math behind them, but you do need to know which ellipsoid and datum your project uses. Get that wrong and every position you record will be offset from reality.
 
+![The three surfaces of height: the smooth ellipsoid, the undulating geoid that follows gravity, and the actual terrain. GNSS measures height above the ellipsoid (h), which relates to orthometric height (H) through the geoid separation (N)](../assets/images/diagrams/geoid-ellipsoid.svg)
+
 ## Datums, Projections, and Coordinate Systems
 
 Mapping a 3D surface onto a flat screen or chart requires three concepts working together: datums, projections, and coordinate systems.

@@ -217,5 +217,5 @@ Photograph:
 ---
 
 !!! quote "References"
-    - IMCA S 017, Guidelines for Position Reference Systems
+    - IMCA S 016, Guidance on Mobilisation Requirements for Offshore Survey Operations
     - Sensor manufacturer datasheets for reference point definitions

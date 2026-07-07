@@ -16,6 +16,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around Kongsberg HiPAP / APOS. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Perform an acoustic alignment of the HiPAP USBL transducer to the vessel's reference frame. The alignment determines the angular offsets between the heading/roll/pitch sensors and the HiPAP transducer, enabling the system to provide accurate subsea transponder positions at any water depth.
 

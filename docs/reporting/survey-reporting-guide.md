@@ -3,7 +3,7 @@ title: Survey Reporting Fundamentals
 category: reporting
 tags: [reporting, deliverables, calibration-report, mob-report, daily-report, end-of-project]
 date_added: 2026-03-01
-last_reviewed: 2026-03-01
+last_reviewed: 2026-07-07
 source_type: original
 ---
 
@@ -123,11 +123,11 @@ Always state the acceptance criteria used and their source:
 
 | Calibration | Key Parameter | Pass | Source |
 |:--|:--|:--|:--|
-| MBES Patch Test | Roll, Pitch, Heading offset | < 1.0 deg each | IHO S-44, project spec |
+| MBES Patch Test | Roll, Pitch, Heading offset | < 1.0 deg each | Typical practice, project spec |
 | MBES Patch Test | Latency | 0-100 ms, consistent | Project spec |
 | USBL Calibration | SD of residuals | < 0.5 m at operational depth | IMCA S 017 |
 | INS/DVL | Scale factor | 0.95-1.05 | Manufacturer spec |
-| AHRS | Heading C-O | < 0.5 deg | IMCA S 017 |
+| AHRS | Heading C-O | < 0.5 deg | Typical practice |
 | Static GNSS | Horizontal agreement | < 1.0 m (DGNSS) | Project spec |
 
 **Reference:** [Acceptance Criteria Reference](../reference/acceptance-criteria-reference.md)
@@ -289,6 +289,7 @@ Example: `PRJ001-VESSEL01-MOB-001` (first mob report for Vessel 01 on project PR
 
 ## :material-link-variant: Related Articles
 
+- [From Field Log to Final Report](writing-report-narratives.md) -- how to actually write the narrative and results sections
 - [Mobilisation Checklist](../mobilisation/mobilisation-checklist.md)
 - [Demobilisation Checklist](../mobilisation/demobilisation-checklist.md)
 - [Acceptance Criteria Reference](../reference/acceptance-criteria-reference.md)
@@ -298,6 +299,5 @@ Example: `PRJ001-VESSEL01-MOB-001` (first mob report for Vessel 01 on project PR
 ---
 
 !!! quote "References"
-    - IMCA S 015, Guidelines for Survey Mobilisation and Calibration
-    - IMCA D 045, Guidelines for Survey Report Content
+    - IMCA S 017, Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
     - Client-specific reporting requirements and templates

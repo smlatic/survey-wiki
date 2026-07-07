@@ -255,7 +255,7 @@ For structures requiring vertical installation (monopiles, caissons, conductors)
 ---
 
 !!! quote "References"
-    - IMCA S 015, Guidelines for Survey Mobilisation and Calibration
-    - IMCA S 017, Guidelines for Positioning Systems
+    - IMCA S 016, Guidance on Mobilisation Requirements for Offshore Survey Operations
+    - IMCA S 017, Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
     - DNVGL-ST-N001, Marine Operations and Marine Warranty
     - Project-specific installation procedures and engineering drawings

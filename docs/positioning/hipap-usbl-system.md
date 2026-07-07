@@ -15,6 +15,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-02</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around the Kongsberg HiPAP system. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Comprehensive operational guide for the Kongsberg HiPAP underwater positioning system. Covers system design and principles, transponder types (MST and cNODE), APOS software configuration, external interfaces (GPS, heading, motion), APOS Survey for dual-system operation, AUV operations, and Search and Rescue (SAR) emergency beacon setup.
 

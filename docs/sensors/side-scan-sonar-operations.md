@@ -348,5 +348,5 @@ Where:
 
 !!! quote "References"
     - IHO S-44, Edition 6.1.0, Standards for Hydrographic Surveys
-    - IMCA S 024, Guidelines for Side Scan Sonar Operations
+    - IMCA S 021, Guidelines for the Management of Peripheral Survey Sensors
     - Equipment manufacturer documentation

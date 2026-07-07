@@ -565,5 +565,5 @@ Acceptance criteria are project-specific and should be defined in the ITP. Typic
 !!! quote "References"
     - DNV-OS-F101 (Submarine Pipeline Systems)
     - DNV-RP-F109 (On-Bottom Stability)
-    - IMCA S 014/S 015 (Survey guidance)
+    - IMCA S 026 (Out of straightness survey) and IMCA S 029 (Measurement of depth of burial)
     - IHO S-44 (Hydrographic Survey Standards)

@@ -53,6 +53,12 @@ theme:
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
 
+validation:
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
 plugins:
   - search
   - tags
@@ -156,6 +162,7 @@ nav:
       - SSS Positioning Verification: sensors/side-scan-sonar-verification.md
     - Depth Sensors:
       - Depth Measurement Operations: sensors/depth-measurement-operations.md
+      - Depth Loop Field Procedure: sensors/depth-loop-field-procedure.md
     - Sub-Bottom Profiler:
       - Sub-Bottom Profiler Operations: sensors/sub-bottom-profiler-operations.md
     - Pipe Tracker:
@@ -196,6 +203,7 @@ nav:
   - Reporting:
     - reporting/index.md
     - Survey Reporting Fundamentals: reporting/survey-reporting-guide.md
+    - From Field Log to Final Report: reporting/writing-report-narratives.md
     - Study Material: reporting/study-material.md
   - Reference:
     - reference/index.md

@@ -1,0 +1,101 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" font-family="'Source Sans 3','Segoe UI',sans-serif">
+  <rect x="1" y="1" width="758" height="558" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="24" y="34" font-size="16" font-weight="600" fill="#37474f">Patch test line plans (plan view) &#8212; one pair per offset</text>
+
+  <!-- ================= PANEL 1: LATENCY ================= -->
+  <g>
+    <rect x="24" y="56" width="344" height="228" rx="6" fill="#fafafa" stroke="#eceff1"/>
+    <text x="40" y="82" font-size="13.5" font-weight="600" fill="#37474f">1. Latency</text>
+    <text x="40" y="99" font-size="11.5" fill="#78909c">same line, same direction, two speeds, over a feature</text>
+
+    <!-- feature -->
+    <g stroke="#90a4ae" fill="none" stroke-width="1.2">
+      <ellipse cx="196" cy="185" rx="26" ry="14"/>
+      <ellipse cx="196" cy="185" rx="14" ry="7"/>
+    </g>
+    <text x="196" y="222" font-size="10.5" fill="#90a4ae" text-anchor="middle">feature / bump</text>
+
+    <!-- pass 1 slow -->
+    <line x1="60" y1="150" x2="320" y2="150" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="320,150 308,144 308,156" fill="#3949ab"/>
+    <text x="64" y="140" font-size="11" fill="#3949ab">pass 1 &#8212; slow (e.g. 3 kn)</text>
+
+    <!-- pass 2 fast, same track (drawn just below for clarity) -->
+    <line x1="60" y1="166" x2="320" y2="166" stroke="#00897b" stroke-width="2" stroke-dasharray="7 4"/>
+    <polygon points="320,166 308,160 308,172" fill="#00897b"/>
+    <text x="64" y="256" font-size="11" fill="#00897b">pass 2 &#8212; fast (e.g. 6 kn), same track</text>
+    <text x="64" y="271" font-size="10.5" fill="#90a4ae">(passes drawn apart only for clarity)</text>
+  </g>
+
+  <!-- ================= PANEL 2: ROLL ================= -->
+  <g>
+    <rect x="392" y="56" width="344" height="228" rx="6" fill="#fafafa" stroke="#eceff1"/>
+    <text x="408" y="82" font-size="13.5" font-weight="600" fill="#37474f">2. Roll</text>
+    <text x="408" y="99" font-size="11.5" fill="#78909c">reciprocal pair (opposite directions), FLAT seabed</text>
+
+    <text x="564" y="196" font-size="10.5" fill="#90a4ae" text-anchor="middle">flat seabed &#8212; no contours</text>
+
+    <line x1="428" y1="150" x2="688" y2="150" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="688,150 676,144 676,156" fill="#3949ab"/>
+    <text x="432" y="140" font-size="11" fill="#3949ab">line 1 &#8594;</text>
+
+    <line x1="688" y1="166" x2="428" y2="166" stroke="#00897b" stroke-width="2"/>
+    <polygon points="428,166 440,160 440,172" fill="#00897b"/>
+    <text x="632" y="186" font-size="11" fill="#00897b">&#8592; line 2</text>
+
+    <text x="432" y="256" font-size="10.5" fill="#90a4ae">same track, run both ways</text>
+  </g>
+
+  <!-- ================= PANEL 3: PITCH ================= -->
+  <g>
+    <rect x="24" y="304" width="344" height="228" rx="6" fill="#fafafa" stroke="#eceff1"/>
+    <text x="40" y="330" font-size="13.5" font-weight="600" fill="#37474f">3. Pitch</text>
+    <text x="40" y="347" font-size="11.5" fill="#78909c">reciprocal pair, run UP/DOWN a slope</text>
+
+    <!-- slope contours perpendicular to line -->
+    <g stroke="#b0bec5" stroke-width="1.2" fill="none">
+      <path d="M 96 370 C 108 400, 108 470, 96 505"/>
+      <path d="M 156 370 C 168 400, 168 470, 156 505"/>
+      <path d="M 216 370 C 228 400, 228 470, 216 505"/>
+      <path d="M 276 370 C 288 400, 288 470, 276 505"/>
+    </g>
+    <g font-size="10" fill="#90a4ae">
+      <text x="92" y="366" text-anchor="middle">-40 m</text>
+      <text x="152" y="366" text-anchor="middle">-60 m</text>
+      <text x="212" y="366" text-anchor="middle">-80 m</text>
+      <text x="272" y="366" text-anchor="middle">-100 m</text>
+    </g>
+
+    <line x1="60" y1="428" x2="320" y2="428" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="320,428 308,422 308,434" fill="#3949ab"/>
+    <text x="64" y="418" font-size="11" fill="#3949ab">line 1 &#8594; downslope</text>
+
+    <line x1="320" y1="444" x2="60" y2="444" stroke="#00897b" stroke-width="2"/>
+    <polygon points="60,444 72,438 72,450" fill="#00897b"/>
+    <text x="176" y="466" font-size="11" fill="#00897b">&#8592; line 2 upslope</text>
+
+    <text x="64" y="506" font-size="10.5" fill="#90a4ae">slope &#8805;5&#176;, lines normal to the contours</text>
+  </g>
+
+  <!-- ================= PANEL 4: HEADING ================= -->
+  <g>
+    <rect x="392" y="304" width="344" height="228" rx="6" fill="#fafafa" stroke="#eceff1"/>
+    <text x="408" y="330" font-size="13.5" font-weight="600" fill="#37474f">4. Heading (yaw)</text>
+    <text x="408" y="347" font-size="11.5" fill="#78909c">parallel pair, SAME direction, feature in the outer beams</text>
+
+    <!-- feature between the lines -->
+    <g stroke="#90a4ae" fill="none" stroke-width="1.2">
+      <ellipse cx="564" cy="440" rx="22" ry="12"/>
+      <ellipse cx="564" cy="440" rx="11" ry="6"/>
+    </g>
+    <text x="564" y="472" font-size="10.5" fill="#90a4ae" text-anchor="middle">feature between the lines</text>
+
+    <line x1="428" y1="396" x2="688" y2="396" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="688,396 676,390 676,402" fill="#3949ab"/>
+    <text x="432" y="386" font-size="11" fill="#3949ab">line 1 &#8594;</text>
+
+    <line x1="428" y1="490" x2="688" y2="490" stroke="#00897b" stroke-width="2"/>
+    <polygon points="688,490 676,484 676,496" fill="#00897b"/>
+    <text x="432" y="512" font-size="11" fill="#00897b">line 2 &#8594; (same direction, offset track)</text>
+  </g>
+</svg>

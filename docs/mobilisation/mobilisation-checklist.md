@@ -251,6 +251,6 @@ Final verification before starting survey operations.
 ---
 
 !!! quote "References"
-    - IMCA S 015, Guidelines for Survey Mobilisation and Calibration
-    - IMCA S 017, Guidelines for Position Reference Systems
+    - IMCA S 016, Guidance on Mobilisation Requirements for Offshore Survey Operations
+    - IMCA S 017, Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
     - Client project specification and scope of work

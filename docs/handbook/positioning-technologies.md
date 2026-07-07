@@ -50,9 +50,9 @@ Radio waves don't propagate through water, so subsea positioning uses acoustics 
 Both systems use the same underlying principle: measuring acoustic travel times through water to determine position.
 
 !!! tip "Go Deeper"
-    - [USBL Theory and Error Budgets](../calibration/usbl-theory-and-error-budgets.md)
-    - [HiPAP USBL Calibration](../calibration/hipap-usbl-calibration.md)
-    - [HiPAP Verification (Spin & Transit)](../calibration/hipap-hpr-verification.md)
+    - [USBL Theory and Error Budgets](../positioning/usbl-theory-and-error-budgets.md)
+    - [HiPAP USBL Calibration](../positioning/hipap-usbl-calibration.md)
+    - [HiPAP Verification (Spin & Transit)](../positioning/hipap-hpr-verification.md)
 
 !!! tip "Go Deeper"
     - [LBL Acoustic Positioning Fundamentals](../positioning/lbl-fundamentals.md)
@@ -68,8 +68,8 @@ A DVL sends acoustic beams toward the seabed and measures the Doppler shift of t
 DVLs can be mounted on both vessels and ROVs (especially useful when operating near the seabed). They provide real-time velocity data that feeds into INS and other positioning systems to improve overall accuracy.
 
 !!! tip "Go Deeper"
-    - [INS Theory and Principles](../equipment/ins-theory-and-principles.md)
-    - [INS/DVL Calibration Guide](../calibration/ins-dvl-calibration-guide.md)
+    - [INS Theory and Principles](../positioning/ins-theory-and-principles.md)
+    - [INS/DVL Calibration Guide](../positioning/ins-dvl-calibration-guide.md)
 
 ### MRU (Motion Reference Unit)
 
@@ -79,7 +79,7 @@ The MRU tracks pitch, roll, and heave -- all the motion your vessel or ROV exper
 - **On an ROV:** Motion sensors on the vehicle itself feed orientation data into the positioning solution for accurate subsea work.
 
 !!! tip "Go Deeper"
-    - [Heave, MRU Theory and Verification](../equipment/heave-mru-theory.md)
+    - [Heave, MRU Theory and Verification](../mobilisation/heave-mru-theory.md)
 
 ### Sound Velocity
 

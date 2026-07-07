@@ -23,15 +23,13 @@ The wiki's Reference section has detailed tables and formulas you'll use on the 
 
 - [Industry Standards Reference](../reference/industry-standards-reference.md) - IMCA, IHO, and other regulatory bodies
 
-## Calibration Procedures
+## Procedures and Equipment Guides
 
-When you're ready for step-by-step procedures, the Calibration section covers everything:
+When you're ready for step-by-step procedures, the topic sections cover everything:
 
-- [All Calibration Procedures](../calibration/index.md) - USBL, MBES, INS/DVL, sound velocity, attitude, gyro, dimensional control, and geophysical calibrations
-
-## Equipment Guides
-
-- [All Equipment Guides](../equipment/index.md) - INS, MBES, heave/MRU, side scan sonar, sub-bottom profiler, pipe tracker, and video systems
+- [Positioning](../positioning/index.md) - GNSS, USBL, LBL, INS/DVL calibrations and verifications, time sync, tides
+- [Survey Sensors](../sensors/index.md) - MBES, sound velocity, side scan sonar, depth sensors, sub-bottom profiler, pipe tracker, magnetometer, and camera systems
+- [Mobilisation & Setup](../mobilisation/index.md) - Dimensional control, AHRS/gyro/MRU calibration and checks
 
 ## ROV Operations
 
@@ -39,8 +37,8 @@ When you're ready for step-by-step procedures, the Calibration section covers ev
 
 ## Field Checklists
 
-- [Mobilisation Checklist](../field-notes/mobilisation-checklist.md)
-- [Demobilisation Checklist](../field-notes/demobilisation-checklist.md)
+- [Mobilisation Checklist](../mobilisation/mobilisation-checklist.md)
+- [Demobilisation Checklist](../mobilisation/demobilisation-checklist.md)
 
 ## Recommended External Resources
 

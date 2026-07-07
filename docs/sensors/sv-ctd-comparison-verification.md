@@ -186,5 +186,5 @@ Compile a comparison report including:
 
 !!! quote "References"
     - Chen, C.T. and Millero, F.J. (1977), Speed of sound in seawater at high pressures, JASA 62(5)
-    - IMCA S 017, Guidelines for Position Reference Systems
+    - IMCA S 021, Guidelines for the Management of Peripheral Survey Sensors
     - Valeport / Seabird / AML instrument user manuals

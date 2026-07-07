@@ -195,19 +195,19 @@
     },
     {
       "front": "What does IMCA S 015 cover?",
-      "back": "Guidelines for Survey Mobilisation and Calibration. Covers equipment installation, DC survey, sensor calibration, system integration, and acceptance testing."
+      "back": "Guidelines for GNSS Positioning in the Oil and Gas Industry (published jointly with IOGP as Report 373-19). Covers GNSS correction services, accuracy, integrity monitoring, and QC."
     },
     {
       "front": "What does IMCA S 017 cover?",
-      "back": "Guidelines for Position Reference Systems. Covers GNSS, USBL, LBL, INS/DVL, calibration requirements, accuracy standards, QC procedures, and integrity monitoring."
+      "back": "Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations (also numbered M 244 in the Marine series)."
     },
     {
-      "front": "What does IMCA S 024 cover?",
-      "back": "Guidelines for Side Scan Sonar Operations. Covers line planning, altitude management, coverage requirements, and target classification."
+      "front": "What does IMCA S 016 cover?",
+      "back": "Guidance on Mobilisation Requirements for Offshore Survey Operations: equipment installation, dimensional control, calibrations, and readiness before operations."
     },
     {
-      "front": "What does IMCA M 244 cover?",
-      "back": "Guidance on the Use of Inertial Navigation Systems for Subsea Survey and Positioning. Covers INS/DVL system types, installation, calibration, aiding sources, and drift rate assessment."
+      "front": "What does IMCA S 019 cover?",
+      "back": "Guidance on Subsea Metrology: acoustic, inertial, photogrammetry, and laser metrology methods, uncertainty, planning, and deliverables."
     },
     {
       "front": "What does IHO S-44 define?",

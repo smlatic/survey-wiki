@@ -471,5 +471,5 @@ Recommended locations:
 
 !!! quote "References"
     - ISO 19901-7 (Metocean and positioning)
-    - IMCA S 015 (Guidance on vessel surveys)
+    - IMCA S 016 (Guidance on mobilisation requirements for offshore survey operations)
     - Spatial Analyzer documentation (New River Kinematics)

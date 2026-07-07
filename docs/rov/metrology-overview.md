@@ -525,7 +525,7 @@ This article is a **reference guide** for subsea acoustic metrology. Consult it:
 ---
 
 !!! quote "References"
-    - IMCA S 017 (Metrology standard)
+    - IMCA S 019 (Guidance on subsea metrology)
     - Sonardyne Fusion user documentation
     - Valeport SVX2 specifications
     - Chen & Millero / Del Grosso sound velocity formulas

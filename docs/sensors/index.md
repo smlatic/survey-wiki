@@ -34,6 +34,7 @@ Covers multibeam, sound velocity, depth sensors, side scan sonar, sub-bottom pro
     ---
 
     - [Depth Measurement Operations](depth-measurement-operations.md)
+    - [Depth Loop Field Procedure](depth-loop-field-procedure.md)
 
 -   :material-sine-wave: **Side Scan Sonar**
 

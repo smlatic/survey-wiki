@@ -132,14 +132,14 @@
       "hint": "Think about the difference between causal (real-time) and non-causal (post-processed) filtering."
     },
     {
-      "question": "During the static AHRS intersystem check, what is the maximum acceptable heading difference between any two systems per IMCA S 017?",
+      "question": "During the static AHRS intersystem check, what is the typical maximum acceptable heading difference between any two systems?",
       "answerOptions": [
-        {"text": "0.5 deg", "isCorrect": true, "rationale": "Per IMCA S 017, the heading tolerance between any two systems during a static intersystem check is 0.5 deg or less."},
-        {"text": "1.0 deg", "isCorrect": false, "rationale": "1.0 deg exceeds the acceptance criterion. If the difference is this large, investigation is required."},
-        {"text": "0.1 deg", "isCorrect": false, "rationale": "0.1 deg is the tolerance for pitch and roll differences, not heading."},
-        {"text": "0.3 deg", "isCorrect": false, "rationale": "0.3 deg is the AHRS calibration tolerance for GNSS reference vs GNSS/INS heading, not the intersystem check threshold."}
+        {"text": "0.5 deg", "isCorrect": true, "rationale": "Typical industry practice puts the heading tolerance between any two systems during a static intersystem check at 0.5 deg or less. The binding value comes from the project specification."},
+        {"text": "1.0 deg", "isCorrect": false, "rationale": "1.0 deg exceeds the typical acceptance criterion. If the difference is this large, investigation is required."},
+        {"text": "0.1 deg", "isCorrect": false, "rationale": "0.1 deg is the typical tolerance for pitch and roll differences, not heading."},
+        {"text": "0.3 deg", "isCorrect": false, "rationale": "0.3 deg is a typical AHRS calibration tolerance for GNSS reference vs GNSS/INS heading, not the intersystem check threshold."}
       ],
-      "hint": "This criterion comes from IMCA S 017 guidelines for position reference systems."
+      "hint": "A widely used industry value; the project specification always prevails."
     },
     {
       "question": "Why must the total station tilt compensator be switched OFF when performing a dimensional control survey on a vessel deck?",

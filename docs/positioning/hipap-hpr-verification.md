@@ -16,6 +16,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around Kongsberg HiPAP / APOS. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Verify the accuracy and functionality of a HiPAP USBL system in providing reliable underwater positioning data after calibration has been completed. The verification process validates the system's ability to track underwater transponders accurately at operational depth.
 

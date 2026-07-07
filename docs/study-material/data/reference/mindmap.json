@@ -227,10 +227,12 @@
         {
           "name": "IMCA Standards",
           "children": [
-            {"name": "S 015: Mobilisation & Calibration"},
-            {"name": "S 017: Position Reference Systems"},
-            {"name": "S 024: Side Scan Sonar Operations"},
-            {"name": "M 244: INS/DVL Operations"}
+            {"name": "S 003: Multibeam Echosounders"},
+            {"name": "S 015 / IOGP 373-19: GNSS Positioning"},
+            {"name": "S 016: Survey Mobilisation Requirements"},
+            {"name": "S 017 (M 244): Vessel USBL Systems"},
+            {"name": "S 019: Subsea Metrology"},
+            {"name": "S 022: Intro to Inertial Navigation"}
           ]
         },
         {

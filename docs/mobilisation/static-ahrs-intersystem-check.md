@@ -138,7 +138,7 @@ Compile results into a test report including:
 
 ## :material-check-decagram: Acceptance Criteria
 
-!!! success "Pass Criteria (per IMCA S 017)"
+!!! success "Pass Criteria (typical industry practice)"
 
     | Parameter | Tolerance Between Any Two Systems |
     |-----------|:---------------------------------:|
@@ -178,5 +178,5 @@ Compile results into a test report including:
 ---
 
 !!! quote "References"
-    - IMCA S 017, Guidelines for Position Reference Systems
+    - IMCA S 016, Guidance on Mobilisation Requirements for Offshore Survey Operations
     - Equipment manufacturer specifications for heading and attitude accuracy

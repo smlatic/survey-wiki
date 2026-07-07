@@ -18,5 +18,6 @@ Covers daily progress reports, mobilisation reports, calibration reports, end-of
     ---
 
     - [Survey Reporting Fundamentals](survey-reporting-guide.md)
+    - [From Field Log to Final Report](writing-report-narratives.md)
 
 </div>

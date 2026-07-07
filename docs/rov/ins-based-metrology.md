@@ -261,6 +261,6 @@ Aiding sources that constrain INS drift:
 ---
 
 !!! quote "References"
-    - IMCA S 017, Guidelines for Positioning Systems
+    - IMCA S 019, Guidance on Subsea Metrology
     - Manufacturer documentation for navigation-grade INS metrology processing
     - Project-specific metrology specification

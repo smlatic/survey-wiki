@@ -4,7 +4,7 @@ category: calibration
 tags: [mbes, multibeam, patch-test, calibration, roll, pitch, heading, latency, bathymetry]
 equipment: [Multibeam Echosounder, Motion Sensor, Gyro, Sound Velocity Profiler]
 date_added: 2026-03-01
-last_reviewed: 2026-03-01
+last_reviewed: 2026-07-07
 source_type: converted_procedure
 ---
 
@@ -50,6 +50,8 @@ The patch test (also called a calibration test or multibeam alignment test) dete
 
 Each offset type produces a characteristic data signature. Understanding these signatures is essential for diagnosing problems, both during the calibration itself and later during production survey QC.
 
+![Patch test line plans: latency uses one line at two speeds over a feature; roll uses a reciprocal pair over flat seabed; pitch uses a reciprocal pair over a slope; heading uses two parallel same-direction lines with a feature in the outer beams](../assets/images/diagrams/patch-test-line-plan.svg)
+
 ### Position Latency (Timing Offset)
 
 **What it is:** A time delay between the moment a position fix is received and the moment the echosounder records a ping. If the position is applied late (or early), every sounding is displaced along the vessel's track by a distance proportional to speed.
@@ -66,6 +68,8 @@ Each offset type produces a characteristic data signature. Understanding these s
 **What it is:** A residual angular misalignment of the transducer about the vessel's longitudinal (X) axis. This rotates the entire swath to port or starboard.
 
 **Data signature:** Two **reciprocal lines** (opposite directions) over a **flat seabed** will show data that matches at nadir but diverges symmetrically with increasing beam angle. In cross-section, the two swaths form a characteristic **"butterfly" or "bowtie" pattern**. The divergence increases linearly with beam angle and is independent of water depth at nadir.
+
+![Roll error cross-section: the two reciprocal swaths agree at nadir and diverge symmetrically towards the swath edges, forming the butterfly pattern over the flat true seabed](../assets/images/diagrams/roll-butterfly.svg)
 
 !!! tip "Roll vs Latency"
     Roll divergence is symmetrical about nadir in cross-section. If the pattern is asymmetrical or appears as a constant offset rather than a divergence, suspect a latency error, not roll.

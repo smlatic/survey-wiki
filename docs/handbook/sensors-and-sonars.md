@@ -23,9 +23,9 @@ tags:
 When budgets or project scope are modest, SBES may be sufficient. For anything requiring precision and full coverage, MBES is the go-to.
 
 !!! tip "Go Deeper"
-    - [MBES Installation and Setup](../equipment/mbes-installation-and-setup.md)
-    - [MBES Operations and Settings](../equipment/mbes-operations-and-settings.md)
-    - [MBES Calibration (Patch Test)](../calibration/mbes-calibration.md)
+    - [MBES Installation and Setup](../sensors/mbes-installation-and-setup.md)
+    - [MBES Operations and Settings](../sensors/mbes-operations-and-settings.md)
+    - [MBES Calibration (Patch Test)](../sensors/mbes-calibration.md)
 
 ## Side Scan Sonar
 
@@ -34,8 +34,8 @@ Side Scan Sonar (SSS) produces near-photographic imagery of the seabed's texture
 SSS excels at object detection -- pipelines, debris, wrecks, boulders. In route clearance surveys, operators use it to identify obstructions that could snag a future cable or pipeline. For full situational awareness, pair SSS with SBES or MBES: SSS tells you what's on the seabed, echo sounders tell you how deep it is.
 
 !!! tip "Go Deeper"
-    - [SSS Theory and Operations](../equipment/side-scan-sonar-operations.md)
-    - [SSS Positioning Verification](../equipment/side-scan-sonar-verification.md)
+    - [SSS Theory and Operations](../sensors/side-scan-sonar-operations.md)
+    - [SSS Positioning Verification](../sensors/side-scan-sonar-verification.md)
 
 ## Sub-Bottom Profilers, Magnetometers, and Gradiometers
 
@@ -46,9 +46,9 @@ Sometimes you need to see below the seabed surface, not just the top of it.
 **Magnetometers and Gradiometers** measure variations in the Earth's magnetic field to detect ferrous (iron-containing) objects. Old anchors, abandoned pipelines, unexploded ordnance -- anything with a ferromagnetic signature shows up as an anomaly against the background field. They're particularly important in cable route planning and pre-lay surveys, where hitting buried metal during installation could be costly or dangerous.
 
 !!! tip "Go Deeper"
-    - [Sub-Bottom Profiler Operations](../equipment/sub-bottom-profiler-operations.md)
-    - [Magnetometer/TVG Acceptance Test](../calibration/magnetometer-tvg-acceptance-test.md)
-    - [Surrogate Item Test (GMA1000)](../calibration/surrogate-item-test-gma1000.md)
+    - [Sub-Bottom Profiler Operations](../sensors/sub-bottom-profiler-operations.md)
+    - [Magnetometer/TVG Acceptance Test](../sensors/magnetometer-tvg-acceptance-test.md)
+    - [Surrogate Item Test (GMA1000)](../sensors/surrogate-item-test-gma1000.md)
 
 ## LIDAR, ROVs, and AUVs
 

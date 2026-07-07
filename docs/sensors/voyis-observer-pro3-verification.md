@@ -16,6 +16,10 @@ source_type: converted_procedure
 <span class="meta-item">:material-calendar: <strong>2026-03-01</strong></span>
 </div>
 
+!!! note "Brand-specific guide"
+    This article is written around the Voyis Observer Pro 3. Equivalent systems from other manufacturers work on the same principles -- the workflow transfers, the menus and commands differ.
+
+
 !!! abstract "Purpose"
     Ensure the accuracy and functionality of the Voyis FDI (Fast Digital Imaging) system in providing high-quality underwater images along with precise position and timing metadata. The verification validates the system's ability to capture images with accurate positioning.
 

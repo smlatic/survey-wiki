@@ -313,7 +313,7 @@ This method provides a reference heading with precision <0.1 deg.
 
 !!! quote "References"
     - IHO S-44 -- Standards for Hydrographic Surveys
-    - IMCA S 017 -- Guidelines for the use of USBL systems
+    - IMCA S 017 -- Guidance on Vessel USBL Systems for Use in Offshore Survey, Positioning and DP Operations
     - Equipment manufacturer calibration and installation guidelines
 
 ---

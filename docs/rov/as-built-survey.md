@@ -291,5 +291,5 @@ As-built data is a contractual deliverable. It must be accurate, complete, and a
 !!! quote "References"
     - DNVGL-ST-F101, Submarine Pipeline Systems
     - DNVGL-ST-N001, Marine Operations and Marine Warranty
-    - IMCA S 015, Guidelines for Survey Mobilisation and Calibration
+    - IMCA S 016, Guidance on Mobilisation Requirements for Offshore Survey Operations
     - Project-specific as-built specification and deliverables list
